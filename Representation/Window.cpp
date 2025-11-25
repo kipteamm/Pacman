@@ -9,7 +9,7 @@
 Window* Window::instance = nullptr;
 
 Window::Window() {
-    window.create(sf::VideoMode::getDesktopMode(), "Pacman - Torben Petré");
+    window.create(sf::VideoMode::getDesktopMode(), "Pacman - Torben Petre");
 }
 
 

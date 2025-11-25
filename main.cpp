@@ -5,5 +5,6 @@
 
 int main() {
     Game game;
-    // std::cout << game.status() << std::endl;
+
+    return 0;
 }

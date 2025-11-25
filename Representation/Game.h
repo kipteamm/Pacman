@@ -5,6 +5,8 @@
 #ifndef GAME_H
 #define GAME_H
 
+#include "State.h"
+#include <stack>
 
 
 class Game {
@@ -13,6 +15,8 @@ public:
 
 private:
     void loop();
+
+    std::stack<State> context;
 };
 
 

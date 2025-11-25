@@ -10,8 +10,10 @@
 
 
 Game::Game() {
+    const MenuState menuState();
+    context.push(menuState);
+
     const Window& window = *Window::getInstance();
-    std::cout << "Initiated game" << std::endl;
 
     while (window.isOpen()) {
         this->loop();
@@ -22,10 +24,10 @@ Game::Game() {
 void Game::loop() {
     Window& window = *Window::getInstance();
 
-    sf::Event event;
-    while (window.pollEvent(event)) {
-
-    }
+    // sf::Event event;
+    // while (window.pollEvent(event)) {
+    //
+    // }
 }
 
 
