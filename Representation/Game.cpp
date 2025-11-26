@@ -9,7 +9,8 @@
 
 
 Game::Game() {
-    context.push(std::make_unique<MenuState>());
+    scoreSystem = std::make_shared<logic::Score>();
+    context.push(std::make_unique<MenuState>(scoreSystem));
 
     const Window& window = *Window::getInstance();
 

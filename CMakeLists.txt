@@ -22,6 +22,8 @@ add_executable(Pacman main.cpp
         Representation/StateManager.h
         Representation/State.cpp
         Representation/State.h
+        Logic/Score.cpp
+        Logic/Score.h
 )
 
 target_link_libraries(Pacman PRIVATE sfml-graphics sfml-window sfml-system)

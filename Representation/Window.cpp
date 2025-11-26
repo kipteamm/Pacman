@@ -44,3 +44,8 @@ void Window::display() {
 void Window::close() {
     window.close();
 }
+
+
+unsigned int Window::getWidth() const {
+    return window.getSize().x;
+}

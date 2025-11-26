@@ -5,6 +5,10 @@
 #ifndef PACMAN_STATE_H
 #define PACMAN_STATE_H
 
+#include <memory>
+
+#include "../Logic/Score.h"
+
 #include <SFML/Graphics.hpp>
 
 
@@ -21,13 +25,15 @@ public:
 
 class MenuState final : public State {
 public:
-    MenuState();
+    explicit MenuState(const std::shared_ptr<logic::Score>& scoreSystem);
 
     void update() override {};
     void handleInput(const sf::Event::KeyEvent &keyPressed) override {};
     void render() override;
 
 private:
+    std::shared_ptr<logic::Score> scoreSystem;
+
     sf::Texture pacmanLogoTexture;
     sf::Sprite pacmanLogo;
 };

@@ -28,6 +28,8 @@ public:
     void display();
     void close();
 
+    [[nodiscard]] unsigned int getWidth() const;
+
 private:
     Window();
 

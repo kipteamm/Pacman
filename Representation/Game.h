@@ -6,9 +6,10 @@
 #define GAME_H
 
 #include <memory>
-
-#include "State.h"
 #include <stack>
+
+#include "../Logic/Score.h"
+#include "State.h"
 
 
 class Game {
@@ -18,6 +19,7 @@ public:
 private:
     void loop();
 
+    std::shared_ptr<logic::Score> scoreSystem;
     std::stack<std::unique_ptr<State>> context;
 };
 
