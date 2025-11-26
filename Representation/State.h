@@ -5,21 +5,31 @@
 #ifndef PACMAN_STATE_H
 #define PACMAN_STATE_H
 
+#include <SFML/Graphics.hpp>
+
 
 class State {
 public:
-    State();
+    State() = default;
     virtual ~State() = default;
 
-    virtual void handleInput();
+    virtual void update() = 0;
+    virtual void handleInput(const sf::Event::KeyEvent &keyPressed) = 0;
+    virtual void render() = 0;
 };
 
 
-class MenuState final: State {
+class MenuState final : public State {
 public:
     MenuState();
 
-    void handleInput() override;
+    void update() override {};
+    void handleInput(const sf::Event::KeyEvent &keyPressed) override {};
+    void render() override;
+
+private:
+    sf::Texture pacmanLogoTexture;
+    sf::Sprite pacmanLogo;
 };
 
 

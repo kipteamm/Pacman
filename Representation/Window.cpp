@@ -25,8 +25,22 @@ bool Window::isOpen() const {
     return window.isOpen();
 }
 
-
 bool Window::pollEvent(sf::Event &event) {
     return window.pollEvent(event);
 }
 
+void Window::draw(const sf::Drawable& drawable) {
+    window.draw(drawable);
+}
+
+void Window::clear() {
+    window.clear();
+}
+
+void Window::display() {
+    window.display();
+}
+
+void Window::close() {
+    window.close();
+}

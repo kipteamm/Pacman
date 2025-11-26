@@ -5,6 +5,8 @@
 #ifndef GAME_H
 #define GAME_H
 
+#include <memory>
+
 #include "State.h"
 #include <stack>
 
@@ -16,7 +18,7 @@ public:
 private:
     void loop();
 
-    std::stack<State> context;
+    std::stack<std::unique_ptr<State>> context;
 };
 
 

@@ -23,6 +23,10 @@ public:
      */
     bool isOpen() const;
     bool pollEvent(sf::Event& event);
+    void draw(const sf::Drawable& drawable);
+    void clear();
+    void display();
+    void close();
 
 private:
     Window();
