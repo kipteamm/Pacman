@@ -4,14 +4,17 @@
 
 #include <SFML/Window/Event.hpp>
 
+#include "States/MenuState.h"
 #include "Window.h"
 #include "Game.h"
 
 
 Game::Game() {
     scoreSystem = std::make_shared<logic::Score>();
+    context = std::make_unique<StateManager>();
+
     // Add game starting state to buffer for the assets loading in
-    context.push(std::make_unique<MenuState>(scoreSystem));
+    context->push(std::make_unique<MenuState>(scoreSystem, context.get()));
 
     const Window& window = *Window::getInstance();
 
@@ -30,7 +33,7 @@ void Game::loop() {
         switch (event.type) {
             case sf::Event::KeyReleased:
             case sf::Event::KeyPressed:
-                context.top()->handleInput(event.key);
+                context->top()->handleInput(event.key);
                 break;
 
             case sf::Event::Closed:
@@ -42,8 +45,8 @@ void Game::loop() {
         }
     }
 
-    context.top()->update();
-    context.top()->render();
+    context->top()->update();
+    context->top()->render();
 
     window.display();
 }

@@ -1,0 +1,22 @@
+//
+// Created by PPetre on 26/11/2025.
+//
+
+#ifndef LEVELSTATE_H
+#define LEVELSTATE_H
+
+#include "StateManager.h"
+
+
+class LevelState final : public State {
+public:
+    explicit LevelState(StateManager* context);
+
+    void update() override {};
+    void handleInput(const sf::Event::KeyEvent &keyPressed) override {};
+    void render() override;
+};
+
+
+
+#endif //LEVELSTATE_H
