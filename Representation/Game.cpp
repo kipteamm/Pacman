@@ -10,6 +10,7 @@
 
 Game::Game() {
     scoreSystem = std::make_shared<logic::Score>();
+    // Add game starting state to buffer for the assets loading in
     context.push(std::make_unique<MenuState>(scoreSystem));
 
     const Window& window = *Window::getInstance();
@@ -33,8 +34,9 @@ void Game::loop() {
                 break;
 
             case sf::Event::Closed:
+                scoreSystem->write();
                 window.close();
-                break;
+                return;
 
             default: break;
         }

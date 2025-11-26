@@ -5,10 +5,31 @@
 #ifndef PACMAN_SCORE_H
 #define PACMAN_SCORE_H
 
+#include <fstream>
+#include <vector>
+
+#include "Observer.h"
+
+
 namespace logic {
-    class Score {
+    class Score final : public Observer<int>, public Subject<int> {
     public:
-        Score() = default;
+        Score();
+        ~Score() override;
+
+        [[nodiscard]] std::vector<int> getHighscores();
+
+        void addScore(int score);
+        void write() const;
+
+    private:
+        std::string filename = "highscores.txt";
+
+
+        std::vector<int> highscores;
+
+        std::fstream createHighscoresFile() const;
+        void update(const int &subject) override;
     };
 }
 

@@ -34,7 +34,6 @@ public:
 private:
     std::shared_ptr<logic::Score> scoreSystem;
 
-    sf::Texture pacmanLogoTexture;
     sf::Sprite pacmanLogo;
 };
 

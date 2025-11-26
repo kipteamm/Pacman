@@ -18,12 +18,14 @@ add_executable(Pacman main.cpp
         Logic/Stopwatch.h
         Representation/Window.cpp
         Representation/Window.h
-        Representation/StateManager.cpp
-        Representation/StateManager.h
         Representation/State.cpp
         Representation/State.h
         Logic/Score.cpp
         Logic/Score.h
+        Logic/Observer.h
+        Logic/Observer.cpp
+        Representation/AssetManager.cpp
+        Representation/AssetManager.h
 )
 
 target_link_libraries(Pacman PRIVATE sfml-graphics sfml-window sfml-system)
