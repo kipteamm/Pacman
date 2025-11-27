@@ -30,6 +30,22 @@ add_executable(Pacman main.cpp
         Representation/States/StateManager.cpp
         Representation/States/LevelState.cpp
         Representation/States/LevelState.h
+        Logic/Entities/AbstractFactory.h
+        Logic/Entities/EntityModel.cpp
+        Logic/Entities/EntityModel.h
+        Representation/Entities/ConcreteFactory.cpp
+        Representation/Entities/ConcreteFactory.h
+        Logic/World.cpp
+        Logic/World.h
+        Representation/States/PausedState.cpp
+        Representation/States/PausedState.h
+        Representation/Entities/EntityView.cpp
+        Representation/Entities/EntityView.h
+        Logic/Stopwatch.cpp
+        Logic/Entities/PacManModel.cpp
+        Logic/Entities/PacManModel.h
+        Representation/Entities/PacManView.cpp
+        Representation/Entities/PacManView.h
 )
 
 target_link_libraries(Pacman PRIVATE sfml-graphics sfml-window sfml-system)

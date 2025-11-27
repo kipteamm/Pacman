@@ -4,6 +4,7 @@
 
 #include <SFML/Window/Event.hpp>
 
+#include "../Logic/Stopwatch.h"
 #include "States/MenuState.h"
 #include "Window.h"
 #include "Game.h"
@@ -16,17 +17,14 @@ Game::Game() {
     // Add game starting state to buffer for the assets loading in
     context->push(std::make_unique<MenuState>(scoreSystem, context.get()));
 
-    const Window& window = *Window::getInstance();
-
-    while (window.isOpen()) {
+    while (Window::getInstance().isOpen()) {
         this->loop();
     }
 }
 
 
-void Game::loop() {
-    Window& window = *Window::getInstance();
-    window.clear();
+void Game::loop() const {
+    Window& window = Window::getInstance();
 
     sf::Event event;
     while (window.pollEvent(event)) {
@@ -45,9 +43,12 @@ void Game::loop() {
         }
     }
 
-    context->top()->update();
-    context->top()->render();
+    logic::Stopwatch::getInstance().tick();
+    const double dt = logic::Stopwatch::getInstance().getDeltaTime();
+    context->top()->update(dt);
 
+    window.clear();
+    context->top()->render();
     window.display();
 }
 

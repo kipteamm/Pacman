@@ -16,7 +16,7 @@ public:
     Window(Window &other) = delete;
     void operator=(const Window &) = delete;
 
-    [[nodiscard]] static Window* getInstance();
+    [[nodiscard]] static Window& getInstance();
 
     /**
      * Directly exposing SFML RenderWindow methods to reduce verbosity
@@ -33,7 +33,6 @@ public:
 private:
     Window();
 
-    static Window* instance;
     sf::RenderWindow window;
 };
 

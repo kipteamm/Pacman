@@ -5,6 +5,9 @@
 #ifndef LEVELSTATE_H
 #define LEVELSTATE_H
 
+#include "../Entities/ConcreteFactory.h"
+#include "../Entities/EntityView.h"
+#include "../../Logic/World.h"
 #include "StateManager.h"
 
 
@@ -12,9 +15,15 @@ class LevelState final : public State {
 public:
     explicit LevelState(StateManager* context);
 
-    void update() override {};
-    void handleInput(const sf::Event::KeyEvent &keyPressed) override {};
+    void update(double dt) override;
+    void handleInput(const sf::Event::KeyEvent &keyPressed) override;
     void render() override;
+
+private:
+    std::shared_ptr<ConcreteFactory> factory;
+    std::unique_ptr<logic::World> world;
+
+    std::vector<std::shared_ptr<EntityView>> entityViews;
 };
 
 

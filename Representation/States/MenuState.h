@@ -1,7 +1,3 @@
-//
-// Created by PPetre on 26/11/2025.
-//
-
 #ifndef MENUSTATE_H
 #define MENUSTATE_H
 
@@ -15,7 +11,7 @@ class MenuState final : public State {
 public:
     explicit MenuState(const std::shared_ptr<logic::Score>& scoreSystem, StateManager* context);
 
-    void update() override {};
+    void update(double dt) override {};
     void handleInput(const sf::Event::KeyEvent &keyPressed) override;
     void render() override;
 

@@ -6,17 +6,14 @@
 #include "Window.h"
 
 
-Window* Window::instance = nullptr;
-
 Window::Window() {
     window.create(sf::VideoMode::getDesktopMode(), "Pacman - Torben Petre");
+    window.requestFocus();
 }
 
 
-Window *Window::getInstance() {
-    if (instance) return instance;
-
-    instance = new Window();
+Window& Window::getInstance() {
+    static Window instance;
     return instance;
 }
 
