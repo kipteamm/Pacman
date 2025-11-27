@@ -10,12 +10,26 @@ class Camera {
 public:
     explicit Camera();
 
+    void setScaling(float mapWidth, float mapHeight);
+
     [[nodiscard]] float xToPixel(float normalizedX) const;
     [[nodiscard]] float yToPixel(float normalizedY) const;
+
+    [[nodiscard]] float getTileWidth() const;
+    [[nodiscard]] float getTileHeight() const;
 
 private:
     float screenWidth;
     float screenHeight;
+
+    float tileWidth;
+    float tileHeight;
+
+    float viewWidth;
+    float viewHeight;
+
+    float offsetX;
+    float offsetY;
 };
 
 

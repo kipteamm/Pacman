@@ -7,7 +7,7 @@
 using namespace logic;
 
 
-PacManModel::PacManModel(const double normalizedX, const double normalizedY): EntityModel(normalizedX, normalizedY) {}
+PacManModel::PacManModel(const float normalizedX, const float normalizedY): EntityModel(normalizedX, normalizedY) {}
 
 
 void PacManModel::update(double dt) {

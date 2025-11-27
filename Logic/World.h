@@ -22,6 +22,9 @@ namespace logic {
         [[nodiscard]] float normalizeX(int value) const;
         [[nodiscard]] float normalizeY(int value) const;
 
+        [[nodiscard]] float getWidth() const;
+        [[nodiscard]] float getHeight() const;
+
         void loadLevel(const std::string& filename);
         void update(double dt);
         void handleMove(const Moves& move);

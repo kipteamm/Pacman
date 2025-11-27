@@ -15,11 +15,7 @@ class PacManView final : public EntityView {
 public:
     explicit PacManView(const std::shared_ptr<logic::PacManModel> &model, const std::shared_ptr<Camera> &camera);
 
-    void render() override;
     void update() override {};
-
-private:
-    sf::Sprite sprite;
 };
 
 

@@ -16,10 +16,7 @@ namespace logic {
         virtual ~AbstractFactory() = default;
 
         virtual std::shared_ptr<EntityModel> createPacMan(float x, float y) = 0;
-        // virtual std::shared_ptr<EntityModel> createWall(float x, float y) = 0;
-        // virtual std::shared_ptr<EntityModel> createGhost(float x, float y) = 0;
-        // virtual std::shared_ptr<EntityModel> createCoin(float x, float y) = 0;
-        // virtual std::shared_ptr<EntityModel> createFruit(float x, float y) = 0;
+        virtual std::shared_ptr<EntityModel> createWall(float x, float y, char type) = 0;
     };
 }
 

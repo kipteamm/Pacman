@@ -9,6 +9,8 @@ LevelState::LevelState(StateManager *context, const std::shared_ptr<ConcreteFact
 
     world = std::make_unique<logic::World>(factory);
     world->loadLevel("../Representation/levels/level_1.txt");
+
+    camera->setScaling(world->getWidth(), world->getHeight());
 };
 
 

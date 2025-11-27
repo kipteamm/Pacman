@@ -12,7 +12,7 @@ namespace logic {
 
     class PacManModel final : public EntityModel {
     public:
-        explicit PacManModel(double normalizedX, double normalizedY);
+        explicit PacManModel(float normalizedX, float normalizedY);
 
         void update(double dt) override;
     };

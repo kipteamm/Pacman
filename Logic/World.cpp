@@ -13,11 +13,19 @@ World::World(const std::shared_ptr<AbstractFactory> &factory) : factory(factory)
 
 
 float World::normalizeX(const int value) const {
-    return (static_cast<float>(value) / mapWidth) * 2 - 1;
+    return (static_cast<float>(value) + 0.5f) / mapWidth * 2.0f - 1.0f;
 }
 
 float World::normalizeY(const int value) const {
-    return (static_cast<float>(value) / mapHeight) * 2 - 1;
+    return (static_cast<float>(value) + 0.5f) / mapHeight * 2.0f - 1.0f;
+}
+
+float World::getWidth() const {
+    return mapWidth;
+}
+
+float World::getHeight() const {
+    return mapHeight;
 }
 
 
@@ -37,6 +45,14 @@ void World::loadLevel(const std::string &filename) {
     for (int row = 0; row < mapHeight; row++) {
         for (int col = 0; col < mapWidth; col++) {
             const char tile = map[row][col];
+            if (tile == ' ') continue;
+
+
+
+
+
+            if (tile == 'C') continue;
+
 
             const float x = normalizeX(col);
             const float y = normalizeY(row);
@@ -46,6 +62,15 @@ void World::loadLevel(const std::string &filename) {
             switch (tile) {
                 case 'P':
                     entity = factory->createPacMan(x, y); break;
+                case 't':
+                case 'b':
+                case 'l':
+                case 'r':
+                case '1':
+                case '2':
+                case '3':
+                case '4':
+                    entity = factory->createWall(x, y, tile); break;
 
                 default: throw std::runtime_error("Unsupported tile '" + std::string(1, tile) + "' in level '" + filename + "'");
             }
