@@ -3,3 +3,13 @@
 //
 
 #include "PacManModel.h"
+
+using namespace logic;
+
+
+PacManModel::PacManModel(const double x, const double y): EntityModel(x, y) {}
+
+
+void PacManModel::update(double dt) {
+
+}

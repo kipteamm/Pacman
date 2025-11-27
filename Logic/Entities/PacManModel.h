@@ -13,6 +13,8 @@ namespace logic {
     class PacManModel final : public EntityModel {
     public:
         explicit PacManModel(double x, double y);
+
+        void update(double dt) override;
     };
 }
 

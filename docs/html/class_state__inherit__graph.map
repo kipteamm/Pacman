@@ -1,0 +1,9 @@
+<map id="State" name="State">
+<area shape="rect" id="Node000001" title=" " alt="" coords="129,5,181,32"/>
+<area shape="rect" id="Node000002" href="$class_level_state.html" title=" " alt="" coords="5,80,89,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="126,42,67,82,65,77,121,40"/>
+<area shape="rect" id="Node000003" href="$class_menu_state.html" title=" " alt="" coords="113,80,197,107"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="157,46,157,81,153,78,153,50"/>
+<area shape="rect" id="Node000004" href="$class_paused_state.html" title=" " alt="" coords="222,80,318,107"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="189,38,252,79,247,80,187,43"/>
+</map>

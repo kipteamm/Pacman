@@ -5,7 +5,7 @@
 LevelState::LevelState(StateManager *context) : State(context) {
     factory = std::make_shared<ConcreteFactory>(entityViews);
 
-    world = std::make_unique<logic::World>();
+    world = std::make_unique<logic::World>(factory);
     world->loadLevel("../Representation/levels/level_1.txt");
 };
 

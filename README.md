@@ -1,3 +1,4 @@
+Generate with doxygen `doxygen doxygen.txt`
 
 ```
 Pacman

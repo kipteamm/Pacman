@@ -1,0 +1,17 @@
+<map id="Representation/Entities/PacManView.h" name="Representation/Entities/PacManView.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="56,5,213,48"/>
+<area shape="rect" id="Node000002" href="$_pac_man_model_8h.html" title=" " alt="" coords="5,96,130,139"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="118,51,94,85,90,82,120,46"/>
+<area shape="rect" id="Node000007" href="$_entity_view_8h.html" title=" " alt="" coords="154,104,248,131"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="150,46,185,91,180,92,150,51"/>
+<area shape="rect" id="Node000003" href="$_entity_model_8h.html" title=" " alt="" coords="62,187,164,213"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="79,137,101,173,96,173,79,142"/>
+<area shape="rect" id="Node000004" href="$_observer_8h.html" title=" " alt="" coords="108,261,206,288"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="121,211,144,248,139,248,120,216"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="84,336,152,363"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="152,287,134,324,130,320,148,290"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="176,336,215,363"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="165,286,184,323,179,322,162,291"/>
+<area shape="poly" id="edge7_Node000007_Node000003" title=" " alt="" coords="185,133,139,178,136,174,189,129"/>
+<area shape="poly" id="edge8_Node000007_Node000004" title=" " alt="" coords="199,129,178,214,168,248,163,245,173,213,196,133"/>
+</map>

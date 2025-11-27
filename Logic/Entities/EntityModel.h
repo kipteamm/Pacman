@@ -15,7 +15,7 @@ namespace logic {
         explicit EntityModel(double x, double y);
         ~EntityModel() override = default;
 
-        virtual void update(double dt);
+        virtual void update(double dt) = 0;
     };
 }
 

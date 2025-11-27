@@ -3,3 +3,8 @@
 //
 
 #include "EntityModel.h"
+
+using namespace logic;
+
+
+EntityModel::EntityModel(double x, double y) {}

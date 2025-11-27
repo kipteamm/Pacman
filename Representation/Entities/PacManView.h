@@ -12,6 +12,9 @@
 class PacManView : public EntityView {
 public:
     explicit PacManView(const std::shared_ptr<logic::PacManModel> &model);
+
+    void draw() override {};
+    void update() override {};
 };
 
 
