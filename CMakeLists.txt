@@ -46,6 +46,8 @@ add_executable(Pacman main.cpp
         Logic/Entities/PacManModel.h
         Representation/Entities/PacManView.cpp
         Representation/Entities/PacManView.h
+        Representation/Camera.cpp
+        Representation/Camera.h
 )
 
 target_link_libraries(Pacman PRIVATE sfml-graphics sfml-window sfml-system)

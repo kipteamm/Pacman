@@ -10,6 +10,7 @@
 AssetManager::AssetManager() {
     if (!font.loadFromFile("../Representation/assets/font.otf")) throw std::runtime_error("Could not load 'Representation/assets/font.otf' asset");
     if (!pacmanLogo.loadFromFile("../Representation/assets/pacman_logo.png")) throw std::runtime_error("Could not load 'Representation/assets/pacman_logo.png' asset");
+    if (!spriteSheet.loadFromFile("../Representation/assets/sprite_sheet.png")) throw std::runtime_error("Could not load 'Representation/assets/pacman_logo.png' asset");
 }
 
 AssetManager& AssetManager::getInstance() {
@@ -29,4 +30,9 @@ sf::Font &AssetManager::getFont() {
 sf::Texture &AssetManager::getPacmanLogo() {
     return pacmanLogo;
 }
+
+sf::Texture &AssetManager::getSpriteSheet() {
+    return spriteSheet;
+}
+
 

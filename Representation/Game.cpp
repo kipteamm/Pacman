@@ -30,7 +30,7 @@ void Game::loop() const {
     while (window.pollEvent(event)) {
         switch (event.type) {
             case sf::Event::KeyReleased:
-            case sf::Event::KeyPressed:
+            // case sf::Event::KeyPressed:
                 context->top()->handleInput(event.key);
                 break;
 

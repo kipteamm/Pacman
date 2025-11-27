@@ -1,6 +1,8 @@
 #include "PausedState.h"
 #include "LevelState.h"
 
+#include <iostream>
+
 
 LevelState::LevelState(StateManager *context) : State(context) {
     factory = std::make_shared<ConcreteFactory>(entityViews);
@@ -17,7 +19,7 @@ void LevelState::update(const double dt) {
 void LevelState::handleInput(const sf::Event::KeyEvent &keyPressed) {
     switch (keyPressed.code) {
         case sf::Keyboard::Escape:
-            this->context->swap(std::make_unique<PausedState>(this->context));
+            this->context->push(std::make_unique<PausedState>(this->context));
             return;
 
         case sf::Keyboard::Up:

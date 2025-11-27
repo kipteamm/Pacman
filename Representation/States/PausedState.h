@@ -13,8 +13,8 @@ public:
     explicit PausedState(StateManager* context);
 
     void update(double dt) override {};
-    void handleInput(const sf::Event::KeyEvent &keyPressed) override {};
-    void render() override {};
+    void handleInput(const sf::Event::KeyEvent &keyPressed) override;
+    void render() override;
 };
 
 

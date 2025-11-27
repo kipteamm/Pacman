@@ -22,7 +22,7 @@ public:
     [[nodiscard]] sf::Font& getFont();
 
     [[nodiscard]] sf::Texture& getPacmanLogo();
-    // [[nodiscard]] sf::Texture& getSpriteSheet();
+    [[nodiscard]] sf::Texture& getSpriteSheet();
 
 private:
     AssetManager();
@@ -30,7 +30,7 @@ private:
     sf::Font font;
 
     sf::Texture pacmanLogo;
-    // sf::Texture spriteSheet;
+    sf::Texture spriteSheet;
 };
 
 

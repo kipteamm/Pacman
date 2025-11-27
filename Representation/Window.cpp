@@ -7,7 +7,8 @@
 
 
 Window::Window() {
-    window.create(sf::VideoMode::getDesktopMode(), "Pacman - Torben Petre", sf::Style::Fullscreen);
+    // sf::Style::Fullscreen
+    window.create(sf::VideoMode::getDesktopMode(), "Pacman - Torben Petre", sf::Style::Default);
 }
 
 
