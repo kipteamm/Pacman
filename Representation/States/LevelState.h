@@ -9,11 +9,12 @@
 #include "../Entities/EntityView.h"
 #include "../../Logic/World.h"
 #include "StateManager.h"
+#include "../Camera.h"
 
 
 class LevelState final : public State {
 public:
-    explicit LevelState(StateManager* context);
+    explicit LevelState(StateManager* context, const std::shared_ptr<ConcreteFactory>& factory, const std::shared_ptr<Camera>& camera);
 
     void update(double dt) override;
     void handleInput(const sf::Event::KeyEvent &keyPressed) override;

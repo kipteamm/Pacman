@@ -11,14 +11,17 @@
 #include <vector>
 
 
-class ConcreteFactory : public logic::AbstractFactory {
+class ConcreteFactory final : public logic::AbstractFactory {
 public:
-    explicit ConcreteFactory(std::vector<std::shared_ptr<EntityView>>& entityViews);
+    explicit ConcreteFactory(const std::shared_ptr<Camera>& camera);
 
-    std::shared_ptr<logic::EntityModel> createPacMan(double x, double y) override;
+    void setViews(std::vector<std::shared_ptr<EntityView>>* views);
+
+    std::shared_ptr<logic::EntityModel> createPacMan(float x, float y) override;
 
 private:
-    std::vector<std::shared_ptr<EntityView>>& entityViews;
+    std::vector<std::shared_ptr<EntityView>>* entityViews = nullptr;
+    std::shared_ptr<Camera> camera;
 };
 
 

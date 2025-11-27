@@ -19,8 +19,8 @@ namespace logic {
     public:
         explicit World(const std::shared_ptr<AbstractFactory> &factory);
 
-        [[nodiscard]] double normalizeX(int value) const;
-        [[nodiscard]] double normalizeY(int value) const;
+        [[nodiscard]] float normalizeX(int value) const;
+        [[nodiscard]] float normalizeY(int value) const;
 
         void loadLevel(const std::string& filename);
         void update(double dt);
@@ -30,8 +30,8 @@ namespace logic {
         std::shared_ptr<AbstractFactory> factory;
         std::vector<std::shared_ptr<EntityModel>> entities;
 
-        int mapHeight = 20;
-        int mapWidth = 20;
+        float mapHeight = 20;
+        float mapWidth = 20;
     };
 
 }

@@ -8,14 +8,14 @@
 
 class Camera {
 public:
-    explicit Camera(int width, int height);
+    explicit Camera();
 
-    double xToPixel(double normalizedX) const;
-    double yToPixel(double normalizedY) const;
+    [[nodiscard]] float xToPixel(float normalizedX) const;
+    [[nodiscard]] float yToPixel(float normalizedY) const;
 
 private:
-    int screenWidth;
-    int screenHeight;
+    float screenWidth;
+    float screenHeight;
 };
 
 

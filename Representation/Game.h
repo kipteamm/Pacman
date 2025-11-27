@@ -7,8 +7,10 @@
 
 #include <memory>
 
+#include "Entities/ConcreteFactory.h"
 #include "States/StateManager.h"
 #include "../Logic/Score.h"
+#include "Camera.h"
 
 
 class Game {
@@ -18,6 +20,8 @@ public:
 private:
     void loop() const;
 
+    std::shared_ptr<ConcreteFactory> factory;
+    std::shared_ptr<Camera> camera;
     std::shared_ptr<logic::Score> scoreSystem;
     std::unique_ptr<StateManager> context{};
 };

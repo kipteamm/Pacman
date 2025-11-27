@@ -29,6 +29,7 @@ public:
     void close();
 
     [[nodiscard]] unsigned int getWidth() const;
+    [[nodiscard]] unsigned int getHeight() const;
 
 private:
     Window();

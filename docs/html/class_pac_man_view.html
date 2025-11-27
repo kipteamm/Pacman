@@ -88,11 +88,9 @@ $(function(){initNavTree('class_pac_man_view.html','','class_pac_man_view-member
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">PacManView Class Reference</div></div>
+  <div class="headertitle"><div class="title">PacManView Class Reference<span class="mlabels"><span class="mlabel final">final</span></span></div></div>
 </div><!--header-->
 <div class="contents">
-
-<p><code>#include &lt;<a class="el" href="_pac_man_view_8h_source.html">PacManView.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for PacManView:</div>
 <div class="dyncontent">
@@ -120,22 +118,25 @@ Collaboration diagram for PacManView:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a9b62070167478634ecc4690d4f761062" id="r_a9b62070167478634ecc4690d4f761062"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9b62070167478634ecc4690d4f761062">PacManView</a> (const std::shared_ptr&lt; <a class="el" href="classlogic_1_1_pac_man_model.html">logic::PacManModel</a> &gt; &amp;<a class="el" href="class_entity_view.html#a5d95738cd4f30a10597eea2e4e106a3a">model</a>)</td></tr>
+<tr class="memitem:ad63e899d9cc25f5768dd14be586898a6" id="r_ad63e899d9cc25f5768dd14be586898a6"><td class="memItemLeft" align="right" valign="top"><a id="ad63e899d9cc25f5768dd14be586898a6" name="ad63e899d9cc25f5768dd14be586898a6"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>PacManView</b> (const std::shared_ptr&lt; <a class="el" href="classlogic_1_1_pac_man_model.html">logic::PacManModel</a> &gt; &amp;model, const std::shared_ptr&lt; <a class="el" href="class_camera.html">Camera</a> &gt; &amp;camera)</td></tr>
+<tr class="memitem:aab3ded05604e30d5e1d12c9daeb7e706" id="r_aab3ded05604e30d5e1d12c9daeb7e706"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aab3ded05604e30d5e1d12c9daeb7e706">render</a> () override</td></tr>
+<tr class="memitem:a596380e3f184c1af8da584e38ec095fb" id="r_a596380e3f184c1af8da584e38ec095fb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a596380e3f184c1af8da584e38ec095fb">update</a> () override</td></tr>
 <tr class="inherit_header pub_methods_class_entity_view"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_class_entity_view')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="class_entity_view.html">EntityView</a></td></tr>
-<tr class="memitem:ab13f63c859119d9f20e240b17c16bcd0 inherit pub_methods_class_entity_view" id="r_ab13f63c859119d9f20e240b17c16bcd0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entity_view.html#ab13f63c859119d9f20e240b17c16bcd0">EntityView</a> (const std::shared_ptr&lt; <a class="el" href="classlogic_1_1_entity_model.html">logic::EntityModel</a> &gt; &amp;<a class="el" href="class_entity_view.html#a5d95738cd4f30a10597eea2e4e106a3a">model</a>)</td></tr>
-<tr class="memitem:a70a3d71f8ab3b4ae864e4f12564419bd inherit pub_methods_class_entity_view" id="r_a70a3d71f8ab3b4ae864e4f12564419bd"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entity_view.html#a70a3d71f8ab3b4ae864e4f12564419bd">draw</a> ()=0</td></tr>
-<tr class="inherit_header pub_methods_classlogic_1_1_observer"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classlogic_1_1_observer')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="classlogic_1_1_observer.html">logic::Observer</a></td></tr>
-<tr class="memitem:a9ffb621699cd68a8e165297d145f593e inherit pub_methods_classlogic_1_1_observer" id="r_a9ffb621699cd68a8e165297d145f593e"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlogic_1_1_observer.html#a9ffb621699cd68a8e165297d145f593e">~Observer</a> ()=default</td></tr>
-<tr class="memitem:abde36ace3e49511c155687a32dd765e1 inherit pub_methods_classlogic_1_1_observer" id="r_abde36ace3e49511c155687a32dd765e1"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlogic_1_1_observer.html#abde36ace3e49511c155687a32dd765e1">update</a> ()=0</td></tr>
+<tr class="memitem:ae20331a1dfed788332483f3cdb848475 inherit pub_methods_class_entity_view" id="r_ae20331a1dfed788332483f3cdb848475"><td class="memItemLeft" align="right" valign="top">
+&#160;</td><td class="memItemRight" valign="bottom"><b>EntityView</b> (const std::shared_ptr&lt; <a class="el" href="classlogic_1_1_entity_model.html">logic::EntityModel</a> &gt; &amp;model, const std::shared_ptr&lt; <a class="el" href="class_camera.html">Camera</a> &gt; &amp;camera)</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_attribs_class_entity_view"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_class_entity_view')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Attributes inherited from <a class="el" href="class_entity_view.html">EntityView</a></td></tr>
-<tr class="memitem:a5d95738cd4f30a10597eea2e4e106a3a inherit pro_attribs_class_entity_view" id="r_a5d95738cd4f30a10597eea2e4e106a3a"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classlogic_1_1_entity_model.html">logic::EntityModel</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entity_view.html#a5d95738cd4f30a10597eea2e4e106a3a">model</a></td></tr>
+<tr class="memitem:a5d95738cd4f30a10597eea2e4e106a3a inherit pro_attribs_class_entity_view" id="r_a5d95738cd4f30a10597eea2e4e106a3a"><td class="memItemLeft" align="right" valign="top">
+std::shared_ptr&lt; <a class="el" href="classlogic_1_1_entity_model.html">logic::EntityModel</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>model</b></td></tr>
+<tr class="memitem:aa715fe2dbb753b6352573f0ec542f03b inherit pro_attribs_class_entity_view" id="r_aa715fe2dbb753b6352573f0ec542f03b"><td class="memItemLeft" align="right" valign="top">
+std::shared_ptr&lt; <a class="el" href="class_camera.html">Camera</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>camera</b></td></tr>
 </table>
-<a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a9b62070167478634ecc4690d4f761062" name="a9b62070167478634ecc4690d4f761062"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9b62070167478634ecc4690d4f761062">&#9670;&#160;</a></span>PacManView()</h2>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="aab3ded05604e30d5e1d12c9daeb7e706" name="aab3ded05604e30d5e1d12c9daeb7e706"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab3ded05604e30d5e1d12c9daeb7e706">&#9670;&#160;</a></span>render()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -144,24 +145,53 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">PacManView::PacManView </td>
+          <td class="memname">void PacManView::render </td>
           <td>(</td>
-          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="classlogic_1_1_pac_man_model.html">logic::PacManModel</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>model</em></span></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Implements <a class="el" href="class_entity_view.html">EntityView</a>.</p>
+
+</div>
+</div>
+<a id="a596380e3f184c1af8da584e38ec095fb" name="a596380e3f184c1af8da584e38ec095fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a596380e3f184c1af8da584e38ec095fb">&#9670;&#160;</a></span>update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PacManView::update </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="classlogic_1_1_observer.html">logic::Observer</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>Representation/Entities/<a class="el" href="_pac_man_view_8h_source.html">PacManView.h</a></li>
-<li>Representation/Entities/<a class="el" href="_pac_man_view_8cpp.html">PacManView.cpp</a></li>
+<li>Representation/Entities/<b>PacManView.cpp</b></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

@@ -4,6 +4,7 @@ var hierarchy =
       [ "ConcreteFactory", "class_concrete_factory.html", null ]
     ] ],
     [ "AssetManager", "class_asset_manager.html", null ],
+    [ "Camera", "class_camera.html", null ],
     [ "Game", "class_game.html", null ],
     [ "logic::Observer", "classlogic_1_1_observer.html", [
       [ "EntityView", "class_entity_view.html", [

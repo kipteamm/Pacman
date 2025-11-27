@@ -4,8 +4,8 @@
 #include <iostream>
 
 
-LevelState::LevelState(StateManager *context) : State(context) {
-    factory = std::make_shared<ConcreteFactory>(entityViews);
+LevelState::LevelState(StateManager *context, const std::shared_ptr<ConcreteFactory>& factory, const std::shared_ptr<Camera>& camera) : State(context) {
+    factory->setViews(&this->entityViews);
 
     world = std::make_unique<logic::World>(factory);
     world->loadLevel("../Representation/levels/level_1.txt");
@@ -48,6 +48,6 @@ void LevelState::handleInput(const sf::Event::KeyEvent &keyPressed) {
 
 void LevelState::render() {
     for (const auto& view : entityViews) {
-        view->draw();
+        view->render();
     }
 }

@@ -4,15 +4,20 @@
 
 #include "Camera.h"
 
+#include "Window.h"
 
-Camera::Camera(const int width, const int height) : screenWidth(width), screenHeight(height) {}
+
+Camera::Camera() {
+    screenWidth = static_cast<float>(Window::getInstance().getWidth());
+    screenHeight = static_cast<float>(Window::getInstance().getHeight());
+}
 
 
-double Camera::xToPixel(const double normalizedX) const {
+float Camera::xToPixel(const float normalizedX) const {
     return (normalizedX + 1) / 2 * screenWidth;
 }
 
-double Camera::yToPixel(const double normalizedY) const {
+float Camera::yToPixel(const float normalizedY) const {
     return (normalizedY + 1) / 2 * screenHeight;
 }
 

@@ -10,7 +10,12 @@
 #include <iostream>
 
 
-MenuState::MenuState(const std::shared_ptr<logic::Score>& scoreSystem, StateManager* context) : State(std::move(context)), scoreSystem(scoreSystem) {
+MenuState::MenuState(
+    const std::shared_ptr<logic::Score>& scoreSystem,
+    StateManager* context,
+    const std::shared_ptr<ConcreteFactory>& factory,
+    const std::shared_ptr<Camera>& camera
+) : State(context), scoreSystem(scoreSystem), factory(factory), camera(camera) {
     this->pacmanLogo.setTexture(AssetManager::getInstance().getPacmanLogo(), true);
 
     const float x = Window::getInstance().getWidth() / 2 - this->pacmanLogo.getGlobalBounds().width / 2;
@@ -21,7 +26,7 @@ MenuState::MenuState(const std::shared_ptr<logic::Score>& scoreSystem, StateMana
 void MenuState::handleInput(const sf::Event::KeyEvent &keyPressed) {
     switch (keyPressed.code) {
         case sf::Keyboard::Space:
-            this->context->swap(std::make_unique<LevelState>(this->context));
+            this->context->swap(std::make_unique<LevelState>(this->context, factory, camera));
             break;
 
         default: break;

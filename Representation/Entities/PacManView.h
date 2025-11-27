@@ -5,16 +5,21 @@
 #ifndef PACMANVIEW_H
 #define PACMANVIEW_H
 
+#include <SFML/Graphics/Sprite.hpp>
+
 #include "../../Logic/Entities/PacManModel.h"
 #include "EntityView.h"
 
 
-class PacManView : public EntityView {
+class PacManView final : public EntityView {
 public:
-    explicit PacManView(const std::shared_ptr<logic::PacManModel> &model);
+    explicit PacManView(const std::shared_ptr<logic::PacManModel> &model, const std::shared_ptr<Camera> &camera);
 
-    void draw() override {};
+    void render() override;
     void update() override {};
+
+private:
+    sf::Sprite sprite;
 };
 
 

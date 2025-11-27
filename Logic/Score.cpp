@@ -1,6 +1,7 @@
 #include "Score.h"
 
 #include <algorithm>
+#include <iostream>
 
 
 using namespace logic;
@@ -41,6 +42,8 @@ void Score::addScore(const int score) {
 }
 
 void Score::write() const {
+    if (highscores.empty()) return;
+
     std::ofstream out(filename, std::ios::trunc);
     out.seekp(0);
 

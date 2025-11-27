@@ -91,8 +91,6 @@ $(function(){initNavTree('classlogic_1_1_subject.html','','classlogic_1_1_subjec
   <div class="headertitle"><div class="title">logic::Subject Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
-
-<p><code>#include &lt;<a class="el" href="_observer_8h_source.html">Observer.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for logic::Subject:</div>
 <div class="dyncontent">
@@ -110,119 +108,21 @@ Inheritance diagram for logic::Subject:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ae4238075ca667706bba792bfb96ee6c0" id="r_ae4238075ca667706bba792bfb96ee6c0"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae4238075ca667706bba792bfb96ee6c0">~Subject</a> ()=default</td></tr>
-<tr class="memitem:a62a415ccc278f93b40f386a10a669d50" id="r_a62a415ccc278f93b40f386a10a669d50"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a62a415ccc278f93b40f386a10a669d50">attach</a> (const std::shared_ptr&lt; <a class="el" href="classlogic_1_1_observer.html">Observer</a> &gt; &amp;observer)</td></tr>
-<tr class="memitem:a867eae02dd2392c01ee949a5fdb8099d" id="r_a867eae02dd2392c01ee949a5fdb8099d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a867eae02dd2392c01ee949a5fdb8099d">detach</a> (const std::shared_ptr&lt; <a class="el" href="classlogic_1_1_observer.html">Observer</a> &gt; &amp;observer)</td></tr>
-<tr class="memitem:af104c2baf37c7aa63b2ef6d32c2b3a9c" id="r_af104c2baf37c7aa63b2ef6d32c2b3a9c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af104c2baf37c7aa63b2ef6d32c2b3a9c">notify</a> ()</td></tr>
+<tr class="memitem:a62a415ccc278f93b40f386a10a669d50" id="r_a62a415ccc278f93b40f386a10a669d50"><td class="memItemLeft" align="right" valign="top"><a id="a62a415ccc278f93b40f386a10a669d50" name="a62a415ccc278f93b40f386a10a669d50"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>attach</b> (const std::shared_ptr&lt; <a class="el" href="classlogic_1_1_observer.html">Observer</a> &gt; &amp;observer)</td></tr>
+<tr class="memitem:a867eae02dd2392c01ee949a5fdb8099d" id="r_a867eae02dd2392c01ee949a5fdb8099d"><td class="memItemLeft" align="right" valign="top"><a id="a867eae02dd2392c01ee949a5fdb8099d" name="a867eae02dd2392c01ee949a5fdb8099d"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>detach</b> (const std::shared_ptr&lt; <a class="el" href="classlogic_1_1_observer.html">Observer</a> &gt; &amp;observer)</td></tr>
+<tr class="memitem:af104c2baf37c7aa63b2ef6d32c2b3a9c" id="r_af104c2baf37c7aa63b2ef6d32c2b3a9c"><td class="memItemLeft" align="right" valign="top"><a id="af104c2baf37c7aa63b2ef6d32c2b3a9c" name="af104c2baf37c7aa63b2ef6d32c2b3a9c"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>notify</b> ()</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-attribs" class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:a2053bceb8a22b4ee7be76ef1d338b505" id="r_a2053bceb8a22b4ee7be76ef1d338b505"><td class="memItemLeft" align="right" valign="top">std::list&lt; std::shared_ptr&lt; <a class="el" href="classlogic_1_1_observer.html">Observer</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2053bceb8a22b4ee7be76ef1d338b505">observers</a></td></tr>
+<tr class="memitem:a2053bceb8a22b4ee7be76ef1d338b505" id="r_a2053bceb8a22b4ee7be76ef1d338b505"><td class="memItemLeft" align="right" valign="top"><a id="a2053bceb8a22b4ee7be76ef1d338b505" name="a2053bceb8a22b4ee7be76ef1d338b505"></a>
+std::list&lt; std::shared_ptr&lt; <a class="el" href="classlogic_1_1_observer.html">Observer</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>observers</b></td></tr>
 </table>
-<a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ae4238075ca667706bba792bfb96ee6c0" name="ae4238075ca667706bba792bfb96ee6c0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae4238075ca667706bba792bfb96ee6c0">&#9670;&#160;</a></span>~Subject()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual logic::Subject::~Subject </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel virtual">virtual</span><span class="mlabel default">default</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a62a415ccc278f93b40f386a10a669d50" name="a62a415ccc278f93b40f386a10a669d50"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a62a415ccc278f93b40f386a10a669d50">&#9670;&#160;</a></span>attach()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Subject::attach </td>
-          <td>(</td>
-          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="classlogic_1_1_observer.html">Observer</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>observer</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a867eae02dd2392c01ee949a5fdb8099d" name="a867eae02dd2392c01ee949a5fdb8099d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a867eae02dd2392c01ee949a5fdb8099d">&#9670;&#160;</a></span>detach()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Subject::detach </td>
-          <td>(</td>
-          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="classlogic_1_1_observer.html">Observer</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>observer</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="af104c2baf37c7aa63b2ef6d32c2b3a9c" name="af104c2baf37c7aa63b2ef6d32c2b3a9c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af104c2baf37c7aa63b2ef6d32c2b3a9c">&#9670;&#160;</a></span>notify()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Subject::notify </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
-<a id="a2053bceb8a22b4ee7be76ef1d338b505" name="a2053bceb8a22b4ee7be76ef1d338b505"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2053bceb8a22b4ee7be76ef1d338b505">&#9670;&#160;</a></span>observers</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::list&lt;std::shared_ptr&lt;<a class="el" href="classlogic_1_1_observer.html">Observer</a>&gt; &gt; logic::Subject::observers</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>Logic/<a class="el" href="_observer_8h_source.html">Observer.h</a></li>
-<li>Logic/<a class="el" href="_observer_8cpp.html">Observer.cpp</a></li>
+<li>Logic/<b>Observer.cpp</b></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

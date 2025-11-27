@@ -91,8 +91,6 @@ $(function(){initNavTree('class_entity_view.html','','class_entity_view-members'
   <div class="headertitle"><div class="title">EntityView Class Reference<span class="mlabels"><span class="mlabel abstract">abstract</span></span></div></div>
 </div><!--header-->
 <div class="contents">
-
-<p><code>#include &lt;<a class="el" href="_entity_view_8h_source.html">EntityView.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for EntityView:</div>
 <div class="dyncontent">
@@ -118,94 +116,24 @@ Collaboration diagram for EntityView:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ab13f63c859119d9f20e240b17c16bcd0" id="r_ab13f63c859119d9f20e240b17c16bcd0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab13f63c859119d9f20e240b17c16bcd0">EntityView</a> (const std::shared_ptr&lt; <a class="el" href="classlogic_1_1_entity_model.html">logic::EntityModel</a> &gt; &amp;<a class="el" href="#a5d95738cd4f30a10597eea2e4e106a3a">model</a>)</td></tr>
-<tr class="memitem:a70a3d71f8ab3b4ae864e4f12564419bd" id="r_a70a3d71f8ab3b4ae864e4f12564419bd"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a70a3d71f8ab3b4ae864e4f12564419bd">draw</a> ()=0</td></tr>
+<tr class="memitem:ae20331a1dfed788332483f3cdb848475" id="r_ae20331a1dfed788332483f3cdb848475"><td class="memItemLeft" align="right" valign="top"><a id="ae20331a1dfed788332483f3cdb848475" name="ae20331a1dfed788332483f3cdb848475"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>EntityView</b> (const std::shared_ptr&lt; <a class="el" href="classlogic_1_1_entity_model.html">logic::EntityModel</a> &gt; &amp;model, const std::shared_ptr&lt; <a class="el" href="class_camera.html">Camera</a> &gt; &amp;camera)</td></tr>
+<tr class="memitem:a2c2086b3f1ea2ed9ddb062eda44b8415" id="r_a2c2086b3f1ea2ed9ddb062eda44b8415"><td class="memItemLeft" align="right" valign="top"><a id="a2c2086b3f1ea2ed9ddb062eda44b8415" name="a2c2086b3f1ea2ed9ddb062eda44b8415"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>render</b> ()=0</td></tr>
 <tr class="inherit_header pub_methods_classlogic_1_1_observer"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classlogic_1_1_observer')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="classlogic_1_1_observer.html">logic::Observer</a></td></tr>
-<tr class="memitem:a9ffb621699cd68a8e165297d145f593e inherit pub_methods_classlogic_1_1_observer" id="r_a9ffb621699cd68a8e165297d145f593e"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlogic_1_1_observer.html#a9ffb621699cd68a8e165297d145f593e">~Observer</a> ()=default</td></tr>
-<tr class="memitem:abde36ace3e49511c155687a32dd765e1 inherit pub_methods_classlogic_1_1_observer" id="r_abde36ace3e49511c155687a32dd765e1"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlogic_1_1_observer.html#abde36ace3e49511c155687a32dd765e1">update</a> ()=0</td></tr>
+<tr class="memitem:abde36ace3e49511c155687a32dd765e1 inherit pub_methods_classlogic_1_1_observer" id="r_abde36ace3e49511c155687a32dd765e1"><td class="memItemLeft" align="right" valign="top">
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>update</b> ()=0</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-attribs" class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:a5d95738cd4f30a10597eea2e4e106a3a" id="r_a5d95738cd4f30a10597eea2e4e106a3a"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classlogic_1_1_entity_model.html">logic::EntityModel</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5d95738cd4f30a10597eea2e4e106a3a">model</a></td></tr>
+<tr class="memitem:a5d95738cd4f30a10597eea2e4e106a3a" id="r_a5d95738cd4f30a10597eea2e4e106a3a"><td class="memItemLeft" align="right" valign="top"><a id="a5d95738cd4f30a10597eea2e4e106a3a" name="a5d95738cd4f30a10597eea2e4e106a3a"></a>
+std::shared_ptr&lt; <a class="el" href="classlogic_1_1_entity_model.html">logic::EntityModel</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>model</b></td></tr>
+<tr class="memitem:aa715fe2dbb753b6352573f0ec542f03b" id="r_aa715fe2dbb753b6352573f0ec542f03b"><td class="memItemLeft" align="right" valign="top"><a id="aa715fe2dbb753b6352573f0ec542f03b" name="aa715fe2dbb753b6352573f0ec542f03b"></a>
+std::shared_ptr&lt; <a class="el" href="class_camera.html">Camera</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>camera</b></td></tr>
 </table>
-<a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ab13f63c859119d9f20e240b17c16bcd0" name="ab13f63c859119d9f20e240b17c16bcd0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab13f63c859119d9f20e240b17c16bcd0">&#9670;&#160;</a></span>EntityView()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">EntityView::EntityView </td>
-          <td>(</td>
-          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="classlogic_1_1_entity_model.html">logic::EntityModel</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>model</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a70a3d71f8ab3b4ae864e4f12564419bd" name="a70a3d71f8ab3b4ae864e4f12564419bd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a70a3d71f8ab3b4ae864e4f12564419bd">&#9670;&#160;</a></span>draw()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void EntityView::draw </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
-<a id="a5d95738cd4f30a10597eea2e4e106a3a" name="a5d95738cd4f30a10597eea2e4e106a3a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5d95738cd4f30a10597eea2e4e106a3a">&#9670;&#160;</a></span>model</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::shared_ptr&lt;<a class="el" href="classlogic_1_1_entity_model.html">logic::EntityModel</a>&gt; EntityView::model</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>Representation/Entities/<a class="el" href="_entity_view_8h_source.html">EntityView.h</a></li>
-<li>Representation/Entities/<a class="el" href="_entity_view_8cpp.html">EntityView.cpp</a></li>
+<li>Representation/Entities/<b>EntityView.cpp</b></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

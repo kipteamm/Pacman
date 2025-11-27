@@ -12,10 +12,17 @@ namespace logic {
 
     class EntityModel : public Subject {
     public:
-        explicit EntityModel(double x, double y);
+        explicit EntityModel(float normalizedX, float normalizedY);
         ~EntityModel() override = default;
 
         virtual void update(double dt) = 0;
+
+        [[nodiscard]] float getX() const;
+        [[nodiscard]] float getY() const;
+
+    protected:
+        float x;
+        float y;
     };
 }
 

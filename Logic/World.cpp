@@ -12,12 +12,12 @@ using namespace logic;
 World::World(const std::shared_ptr<AbstractFactory> &factory) : factory(factory) {}
 
 
-double World::normalizeX(const int value) const {
-    return (static_cast<double>(value) / mapWidth) * 2 - 1;
+float World::normalizeX(const int value) const {
+    return (static_cast<float>(value) / mapWidth) * 2 - 1;
 }
 
-double World::normalizeY(const int value) const {
-    return (static_cast<double>(value) / mapHeight) * 2 - 1;
+float World::normalizeY(const int value) const {
+    return (static_cast<float>(value) / mapHeight) * 2 - 1;
 }
 
 
@@ -31,16 +31,15 @@ void World::loadLevel(const std::string &filename) {
         map.push_back(line);
     }
 
-    this->mapHeight = map.size();
-    this->mapWidth = map[0].size();
+    this->mapHeight = static_cast<float>(map.size());
+    this->mapWidth = static_cast<float>(map[0].size());
 
     for (int row = 0; row < mapHeight; row++) {
         for (int col = 0; col < mapWidth; col++) {
             const char tile = map[row][col];
 
-            // Add 0.5 to center the tile
-            const double x = normalizeX(col + 0.5);
-            const double y = normalizeY(row + 0.5);
+            const float x = normalizeX(col);
+            const float y = normalizeY(row);
 
             std::shared_ptr<EntityModel> entity;
 

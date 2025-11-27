@@ -5,4 +5,4 @@
 #include "EntityView.h"
 
 
-EntityView::EntityView(const std::shared_ptr<logic::EntityModel> &model) : model(model) {}
+EntityView::EntityView(const std::shared_ptr<logic::EntityModel> &model, const std::shared_ptr<Camera>& camera) : model(model), camera(camera) {}

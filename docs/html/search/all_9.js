@@ -1,6 +1,8 @@
 var searchData=
 [
-  ['normalizex_0',['normalizeX',['../classlogic_1_1_world.html#a3e5a31a2841512efb1e70f3fa9dbf72c',1,'logic::World']]],
-  ['normalizey_1',['normalizeY',['../classlogic_1_1_world.html#ad2ba433567f4fb8e4bb1f676e83eb865',1,'logic::World']]],
-  ['notify_2',['notify',['../classlogic_1_1_subject.html#af104c2baf37c7aa63b2ef6d32c2b3a9c',1,'logic::Subject']]]
+  ['score_0',['Score',['../classlogic_1_1_score.html',1,'logic']]],
+  ['state_1',['State',['../class_state.html',1,'']]],
+  ['statemanager_2',['StateManager',['../class_state_manager.html',1,'']]],
+  ['stopwatch_3',['Stopwatch',['../classlogic_1_1_stopwatch.html',1,'logic::Stopwatch'],['../classlogic_1_1_stopwatch.html#aef5301b0593339e01c50a83022e7b801',1,'logic::Stopwatch::Stopwatch()']]],
+  ['subject_4',['Subject',['../classlogic_1_1_subject.html',1,'logic']]]
 ];

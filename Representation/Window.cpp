@@ -46,3 +46,7 @@ void Window::close() {
 unsigned int Window::getWidth() const {
     return window.getSize().x;
 }
+
+unsigned int Window::getHeight() const {
+    return window.getSize().y;
+}

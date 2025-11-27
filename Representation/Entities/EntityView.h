@@ -7,16 +7,18 @@
 
 #include "../../Logic/Entities/EntityModel.h"
 #include "../../Logic/Observer.h"
+#include "../Camera.h"
 
 
 class EntityView : public logic::Observer {
 public:
-    explicit EntityView(const std::shared_ptr<logic::EntityModel>& model);
+    explicit EntityView(const std::shared_ptr<logic::EntityModel>& model, const std::shared_ptr<Camera>& camera);
 
-    virtual void draw() = 0;
+    virtual void render() = 0;
 
 protected:
     std::shared_ptr<logic::EntityModel> model;
+    std::shared_ptr<Camera> camera;
 };
 
 

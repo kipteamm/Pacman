@@ -11,11 +11,13 @@
 
 
 Game::Game() {
+    camera = std::make_shared<Camera>();
+    factory = std::make_shared<ConcreteFactory>(camera);
     scoreSystem = std::make_shared<logic::Score>();
     context = std::make_unique<StateManager>();
 
     // Add game starting state to buffer for the assets loading in
-    context->push(std::make_unique<MenuState>(scoreSystem, context.get()));
+    context->push(std::make_unique<MenuState>(scoreSystem, context.get(), factory, camera));
 
     while (Window::getInstance().isOpen()) {
         this->loop();

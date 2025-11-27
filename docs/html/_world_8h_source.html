@@ -91,7 +91,7 @@ $(function(){initNavTree('_world_8h_source.html','',''); });
   <div class="headertitle"><div class="title">World.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="_world_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">//</span></div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">//</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// Created by PPetre on 26/11/2025.</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">//</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
@@ -100,32 +100,32 @@ $(function(){initNavTree('_world_8h_source.html','',''); });
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="_abstract_factory_8h.html">Entities/AbstractFactory.h</a>&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;Entities/AbstractFactory.h&quot;</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacelogic.html">logic</a> {</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="namespacelogic.html#a2ff69ac881d2a3e3d7a4142b7776afb3a19d623ed9d84cd892cb0d6618771bfc5">   15</a></span>    <span class="keyword">enum</span> <a class="code hl_enumeration" href="namespacelogic.html#a2ff69ac881d2a3e3d7a4142b7776afb3">Moves</a> { <a class="code hl_enumvalue" href="namespacelogic.html#a2ff69ac881d2a3e3d7a4142b7776afb3ae6e7782195a5da54721a065c1e31b6ec">UP</a>, <a class="code hl_enumvalue" href="namespacelogic.html#a2ff69ac881d2a3e3d7a4142b7776afb3a454de50c4b204fc9eb4043e3493cef5b">LEFT</a>, <a class="code hl_enumvalue" href="namespacelogic.html#a2ff69ac881d2a3e3d7a4142b7776afb3ac231e8df5dd5f8ea2500f2a19efbd972">RIGHT</a>, <a class="code hl_enumvalue" href="namespacelogic.html#a2ff69ac881d2a3e3d7a4142b7776afb3a19d623ed9d84cd892cb0d6618771bfc5">DOWN</a> };</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keyword">enum</span> Moves { UP, LEFT, RIGHT, DOWN };</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
 <div class="foldopen" id="foldopen00018" data-start="{" data-end="};">
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="classlogic_1_1_world.html">   18</a></span>    <span class="keyword">class </span><a class="code hl_function" href="classlogic_1_1_world.html#a49af3d008de3a278c445bdb77bf11dd8">World</a> {</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="classlogic_1_1_world.html">   18</a></span>    <span class="keyword">class </span>World {</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <span class="keyword">explicit</span> <a class="code hl_function" href="classlogic_1_1_world.html#a49af3d008de3a278c445bdb77bf11dd8">World</a>(<span class="keyword">const</span> std::shared_ptr&lt;AbstractFactory&gt; &amp;factory);</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <span class="keyword">explicit</span> World(<span class="keyword">const</span> std::shared_ptr&lt;AbstractFactory&gt; &amp;factory);</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        [[nodiscard]] <span class="keywordtype">double</span> <a class="code hl_function" href="classlogic_1_1_world.html#a3e5a31a2841512efb1e70f3fa9dbf72c">normalizeX</a>(<span class="keywordtype">int</span> value) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        [[nodiscard]] <span class="keywordtype">double</span> <a class="code hl_function" href="classlogic_1_1_world.html#ad2ba433567f4fb8e4bb1f676e83eb865">normalizeY</a>(<span class="keywordtype">int</span> value) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        [[nodiscard]] <span class="keywordtype">float</span> normalizeX(<span class="keywordtype">int</span> value) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        [[nodiscard]] <span class="keywordtype">float</span> normalizeY(<span class="keywordtype">int</span> value) <span class="keyword">const</span>;</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classlogic_1_1_world.html#a6a08c827c3a0def12b7700211353735f">loadLevel</a>(<span class="keyword">const</span> std::string&amp; filename);</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classlogic_1_1_world.html#a7324f85a75feb36ed26c85a39cc3a6c8">update</a>(<span class="keywordtype">double</span> dt);</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classlogic_1_1_world.html#a718b87f3d21ce5e35d8b2a605e1f6efd">handleMove</a>(<span class="keyword">const</span> <a class="code hl_enumeration" href="namespacelogic.html#a2ff69ac881d2a3e3d7a4142b7776afb3">Moves</a>&amp; move);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="keywordtype">void</span> loadLevel(<span class="keyword">const</span> std::string&amp; filename);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <span class="keywordtype">void</span> update(<span class="keywordtype">double</span> dt);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <span class="keywordtype">void</span> handleMove(<span class="keyword">const</span> Moves&amp; move);</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keyword">private</span>:</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        std::shared_ptr&lt;AbstractFactory&gt; factory;</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        std::vector&lt;std::shared_ptr&lt;EntityModel&gt;&gt; entities;</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <span class="keywordtype">int</span> mapHeight = 20;</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <span class="keywordtype">int</span> mapWidth = 20;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <span class="keywordtype">float</span> mapHeight = 20;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <span class="keywordtype">float</span> mapWidth = 20;</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    };</div>
 </div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
@@ -134,26 +134,14 @@ $(function(){initNavTree('_world_8h_source.html','',''); });
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="preprocessor">#endif </span><span class="comment">//WORLD_H</span></div>
-<div class="ttc" id="a_abstract_factory_8h_html"><div class="ttname"><a href="_abstract_factory_8h.html">AbstractFactory.h</a></div></div>
-<div class="ttc" id="aclasslogic_1_1_world_html_a3e5a31a2841512efb1e70f3fa9dbf72c"><div class="ttname"><a href="classlogic_1_1_world.html#a3e5a31a2841512efb1e70f3fa9dbf72c">logic::World::normalizeX</a></div><div class="ttdeci">double normalizeX(int value) const</div><div class="ttdef"><b>Definition</b> World.cpp:13</div></div>
-<div class="ttc" id="aclasslogic_1_1_world_html_a49af3d008de3a278c445bdb77bf11dd8"><div class="ttname"><a href="classlogic_1_1_world.html#a49af3d008de3a278c445bdb77bf11dd8">logic::World::World</a></div><div class="ttdeci">World(const std::shared_ptr&lt; AbstractFactory &gt; &amp;factory)</div><div class="ttdef"><b>Definition</b> World.cpp:10</div></div>
-<div class="ttc" id="aclasslogic_1_1_world_html_a6a08c827c3a0def12b7700211353735f"><div class="ttname"><a href="classlogic_1_1_world.html#a6a08c827c3a0def12b7700211353735f">logic::World::loadLevel</a></div><div class="ttdeci">void loadLevel(const std::string &amp;filename)</div><div class="ttdef"><b>Definition</b> World.cpp:22</div></div>
-<div class="ttc" id="aclasslogic_1_1_world_html_a718b87f3d21ce5e35d8b2a605e1f6efd"><div class="ttname"><a href="classlogic_1_1_world.html#a718b87f3d21ce5e35d8b2a605e1f6efd">logic::World::handleMove</a></div><div class="ttdeci">void handleMove(const Moves &amp;move)</div><div class="ttdef"><b>Definition</b> World.cpp:32</div></div>
-<div class="ttc" id="aclasslogic_1_1_world_html_a7324f85a75feb36ed26c85a39cc3a6c8"><div class="ttname"><a href="classlogic_1_1_world.html#a7324f85a75feb36ed26c85a39cc3a6c8">logic::World::update</a></div><div class="ttdeci">void update(double dt)</div><div class="ttdef"><b>Definition</b> World.cpp:26</div></div>
-<div class="ttc" id="aclasslogic_1_1_world_html_ad2ba433567f4fb8e4bb1f676e83eb865"><div class="ttname"><a href="classlogic_1_1_world.html#ad2ba433567f4fb8e4bb1f676e83eb865">logic::World::normalizeY</a></div><div class="ttdeci">double normalizeY(int value) const</div><div class="ttdef"><b>Definition</b> World.cpp:17</div></div>
 <div class="ttc" id="anamespacelogic_html"><div class="ttname"><a href="namespacelogic.html">logic</a></div><div class="ttdef"><b>Definition</b> AbstractFactory.h:13</div></div>
-<div class="ttc" id="anamespacelogic_html_a2ff69ac881d2a3e3d7a4142b7776afb3"><div class="ttname"><a href="namespacelogic.html#a2ff69ac881d2a3e3d7a4142b7776afb3">logic::Moves</a></div><div class="ttdeci">Moves</div><div class="ttdef"><b>Definition</b> World.h:15</div></div>
-<div class="ttc" id="anamespacelogic_html_a2ff69ac881d2a3e3d7a4142b7776afb3a19d623ed9d84cd892cb0d6618771bfc5"><div class="ttname"><a href="namespacelogic.html#a2ff69ac881d2a3e3d7a4142b7776afb3a19d623ed9d84cd892cb0d6618771bfc5">logic::DOWN</a></div><div class="ttdeci">@ DOWN</div><div class="ttdef"><b>Definition</b> World.h:15</div></div>
-<div class="ttc" id="anamespacelogic_html_a2ff69ac881d2a3e3d7a4142b7776afb3a454de50c4b204fc9eb4043e3493cef5b"><div class="ttname"><a href="namespacelogic.html#a2ff69ac881d2a3e3d7a4142b7776afb3a454de50c4b204fc9eb4043e3493cef5b">logic::LEFT</a></div><div class="ttdeci">@ LEFT</div><div class="ttdef"><b>Definition</b> World.h:15</div></div>
-<div class="ttc" id="anamespacelogic_html_a2ff69ac881d2a3e3d7a4142b7776afb3ac231e8df5dd5f8ea2500f2a19efbd972"><div class="ttname"><a href="namespacelogic.html#a2ff69ac881d2a3e3d7a4142b7776afb3ac231e8df5dd5f8ea2500f2a19efbd972">logic::RIGHT</a></div><div class="ttdeci">@ RIGHT</div><div class="ttdef"><b>Definition</b> World.h:15</div></div>
-<div class="ttc" id="anamespacelogic_html_a2ff69ac881d2a3e3d7a4142b7776afb3ae6e7782195a5da54721a065c1e31b6ec"><div class="ttname"><a href="namespacelogic.html#a2ff69ac881d2a3e3d7a4142b7776afb3ae6e7782195a5da54721a065c1e31b6ec">logic::UP</a></div><div class="ttdeci">@ UP</div><div class="ttdef"><b>Definition</b> World.h:15</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_431317b2a5ab8e1409cdf5bbbce19c0e.html">Logic</a></li><li class="navelem"><a href="_world_8h.html">World.h</a></li>
+    <li class="navelem"><b>Logic</b></li><li class="navelem"><b>World.h</b></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
   </ul>
 </div>

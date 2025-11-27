@@ -91,8 +91,6 @@ $(function(){initNavTree('class_state.html','','class_state-members'); });
   <div class="headertitle"><div class="title">State Class Reference<span class="mlabels"><span class="mlabel abstract">abstract</span></span></div></div>
 </div><!--header-->
 <div class="contents">
-
-<p><code>#include &lt;<a class="el" href="_state_manager_8h_source.html">StateManager.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for State:</div>
 <div class="dyncontent">
@@ -120,175 +118,23 @@ Collaboration diagram for State:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a8a5aa75c97f9f6c7aac7a917c5667a92" id="r_a8a5aa75c97f9f6c7aac7a917c5667a92"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8a5aa75c97f9f6c7aac7a917c5667a92">State</a> (<a class="el" href="class_state_manager.html">StateManager</a> *ctx)</td></tr>
-<tr class="memitem:a783d52422b544bb226e13de8ecfd6ad6" id="r_a783d52422b544bb226e13de8ecfd6ad6"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a783d52422b544bb226e13de8ecfd6ad6">~State</a> ()=default</td></tr>
-<tr class="memitem:ac4a5be39cd72ab792e73e339754dfc5f" id="r_ac4a5be39cd72ab792e73e339754dfc5f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac4a5be39cd72ab792e73e339754dfc5f">update</a> (double dt)=0</td></tr>
-<tr class="memitem:a03d494dbd02afaae6c75cbaa32740b3f" id="r_a03d494dbd02afaae6c75cbaa32740b3f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a03d494dbd02afaae6c75cbaa32740b3f">handleInput</a> (const sf::Event::KeyEvent &amp;keyPressed)=0</td></tr>
-<tr class="memitem:a71f5105bcdc39481be7684d853fe12e9" id="r_a71f5105bcdc39481be7684d853fe12e9"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a71f5105bcdc39481be7684d853fe12e9">render</a> ()=0</td></tr>
+<tr class="memitem:a8a5aa75c97f9f6c7aac7a917c5667a92" id="r_a8a5aa75c97f9f6c7aac7a917c5667a92"><td class="memItemLeft" align="right" valign="top"><a id="a8a5aa75c97f9f6c7aac7a917c5667a92" name="a8a5aa75c97f9f6c7aac7a917c5667a92"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>State</b> (<a class="el" href="class_state_manager.html">StateManager</a> *ctx)</td></tr>
+<tr class="memitem:ac4a5be39cd72ab792e73e339754dfc5f" id="r_ac4a5be39cd72ab792e73e339754dfc5f"><td class="memItemLeft" align="right" valign="top"><a id="ac4a5be39cd72ab792e73e339754dfc5f" name="ac4a5be39cd72ab792e73e339754dfc5f"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>update</b> (double dt)=0</td></tr>
+<tr class="memitem:a03d494dbd02afaae6c75cbaa32740b3f" id="r_a03d494dbd02afaae6c75cbaa32740b3f"><td class="memItemLeft" align="right" valign="top"><a id="a03d494dbd02afaae6c75cbaa32740b3f" name="a03d494dbd02afaae6c75cbaa32740b3f"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>handleInput</b> (const sf::Event::KeyEvent &amp;keyPressed)=0</td></tr>
+<tr class="memitem:a71f5105bcdc39481be7684d853fe12e9" id="r_a71f5105bcdc39481be7684d853fe12e9"><td class="memItemLeft" align="right" valign="top"><a id="a71f5105bcdc39481be7684d853fe12e9" name="a71f5105bcdc39481be7684d853fe12e9"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>render</b> ()=0</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-attribs" class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:af91d20024869ed20bc5b45a3ef7770e4" id="r_af91d20024869ed20bc5b45a3ef7770e4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_state_manager.html">StateManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af91d20024869ed20bc5b45a3ef7770e4">context</a></td></tr>
+<tr class="memitem:af91d20024869ed20bc5b45a3ef7770e4" id="r_af91d20024869ed20bc5b45a3ef7770e4"><td class="memItemLeft" align="right" valign="top"><a id="af91d20024869ed20bc5b45a3ef7770e4" name="af91d20024869ed20bc5b45a3ef7770e4"></a>
+<a class="el" href="class_state_manager.html">StateManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>context</b></td></tr>
 </table>
-<a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a8a5aa75c97f9f6c7aac7a917c5667a92" name="a8a5aa75c97f9f6c7aac7a917c5667a92"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8a5aa75c97f9f6c7aac7a917c5667a92">&#9670;&#160;</a></span>State()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">State::State </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_state_manager.html">StateManager</a> *</td>          <td class="paramname"><span class="paramname"><em>ctx</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a783d52422b544bb226e13de8ecfd6ad6" name="a783d52422b544bb226e13de8ecfd6ad6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a783d52422b544bb226e13de8ecfd6ad6">&#9670;&#160;</a></span>~State()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual State::~State </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel virtual">virtual</span><span class="mlabel default">default</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a03d494dbd02afaae6c75cbaa32740b3f" name="a03d494dbd02afaae6c75cbaa32740b3f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a03d494dbd02afaae6c75cbaa32740b3f">&#9670;&#160;</a></span>handleInput()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void State::handleInput </td>
-          <td>(</td>
-          <td class="paramtype">const sf::Event::KeyEvent &amp;</td>          <td class="paramname"><span class="paramname"><em>keyPressed</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Implemented in <a class="el" href="class_level_state.html#abbd8e8c8aac5947b9a954c65afb63402">LevelState</a>, <a class="el" href="class_menu_state.html#ab0a752741d44348fff67fdee8cad16f5">MenuState</a>, and <a class="el" href="class_paused_state.html#a60cf07692dbd712ede263ebdc6566263">PausedState</a>.</p>
-
-</div>
-</div>
-<a id="a71f5105bcdc39481be7684d853fe12e9" name="a71f5105bcdc39481be7684d853fe12e9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a71f5105bcdc39481be7684d853fe12e9">&#9670;&#160;</a></span>render()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void State::render </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Implemented in <a class="el" href="class_level_state.html#a35bcf6729c5becf048fc132fc891cbf4">LevelState</a>, <a class="el" href="class_menu_state.html#ac216e0b4c7f5c5d39520165c45af0da6">MenuState</a>, and <a class="el" href="class_paused_state.html#a37b3c32ccc689b9529a61aba74ba077c">PausedState</a>.</p>
-
-</div>
-</div>
-<a id="ac4a5be39cd72ab792e73e339754dfc5f" name="ac4a5be39cd72ab792e73e339754dfc5f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac4a5be39cd72ab792e73e339754dfc5f">&#9670;&#160;</a></span>update()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void State::update </td>
-          <td>(</td>
-          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>dt</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Implemented in <a class="el" href="class_level_state.html#a68aa0d4c21370812ce261b7fff11786f">LevelState</a>, <a class="el" href="class_menu_state.html#a98b2778bfb8aaa192c2a23e8c3d89204">MenuState</a>, and <a class="el" href="class_paused_state.html#a5f7e76236a2130625fd579700f79a043">PausedState</a>.</p>
-
-</div>
-</div>
-<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
-<a id="af91d20024869ed20bc5b45a3ef7770e4" name="af91d20024869ed20bc5b45a3ef7770e4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af91d20024869ed20bc5b45a3ef7770e4">&#9670;&#160;</a></span>context</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_state_manager.html">StateManager</a>* State::context</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>Representation/States/<a class="el" href="_state_manager_8h_source.html">StateManager.h</a></li>
-<li>Representation/States/<a class="el" href="_state_manager_8cpp.html">StateManager.cpp</a></li>
+<li>Representation/States/<b>StateManager.cpp</b></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

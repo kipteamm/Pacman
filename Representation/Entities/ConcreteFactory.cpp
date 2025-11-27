@@ -7,15 +7,21 @@
 #include "PacManView.h"
 
 
-ConcreteFactory::ConcreteFactory(std::vector<std::shared_ptr<EntityView> > &entityViews) : entityViews(entityViews) {}
+ConcreteFactory::ConcreteFactory(const std::shared_ptr<Camera>& camera) : camera(camera) {}
 
 
-std::shared_ptr<logic::EntityModel> ConcreteFactory::createPacMan(double x, double y) {
+
+void ConcreteFactory::setViews(std::vector<std::shared_ptr<EntityView>>* views) {
+    this->entityViews = views;
+}
+
+
+std::shared_ptr<logic::EntityModel> ConcreteFactory::createPacMan(float x, float y) {
     const auto model = std::make_shared<logic::PacManModel>(x, y);
-    const auto view = std::make_shared<PacManView>(model);
+    const auto view = std::make_shared<PacManView>(model, camera);
 
     model->attach(view);
-    entityViews.push_back(view);
+    entityViews->push_back(view);
 
     return model;
 }
