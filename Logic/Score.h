@@ -12,7 +12,7 @@
 
 
 namespace logic {
-    class Score final : public Observer<int>, public Subject<int> {
+    class Score final : public Observer, public Subject {
     public:
         Score();
         ~Score() override;
@@ -29,7 +29,7 @@ namespace logic {
         std::vector<int> highscores;
 
         std::fstream createHighscoresFile() const;
-        void update(const int &subject) override;
+        void update() override;
     };
 }
 

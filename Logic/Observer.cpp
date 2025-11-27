@@ -4,21 +4,20 @@
 
 #include "Observer.h"
 
+using namespace logic;
 
-template<typename T>
-void Subject<T>::attach(Observer<T> *observer) {
+
+void Subject::attach(const std::shared_ptr<Observer> &observer) {
     observers.push_back(observer);
 }
 
-template<typename T>
-void Subject<T>::detach(Observer<T> *observer) {
+void Subject::detach(const std::shared_ptr<Observer> &observer) {
     observers.remove(observer);
 }
 
 
-template<typename T>
-void Subject<T>::notify(const T& subject) {
-    for (Observer<T>* observer : observers) {
-        observer->update(subject);
+void Subject::notify() {
+    for (const std::shared_ptr<Observer> observer : observers) {
+        observer->update();
     }
 }

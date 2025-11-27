@@ -65,7 +65,7 @@ std::fstream Score::createHighscoresFile() const {
 }
 
 
-void Score::update(const int& subject) {
+void Score::update() {
     return;
 }
 

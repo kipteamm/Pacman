@@ -16,7 +16,7 @@ public:
     Game();
 
 private:
-    void loop();
+    void loop() const;
 
     std::shared_ptr<logic::Score> scoreSystem;
     std::unique_ptr<StateManager> context{};

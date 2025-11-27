@@ -5,42 +5,39 @@
 #ifndef OBSERVER_H
 #define OBSERVER_H
 
+#include <memory>
 #include <list>
 
 
 /**
- * Using templates and inheritance for the Observer pattern
- * to assure the presence of specific functions when later
- * applying the pattern. The templates allow the inheriting
- * children to still vary to some extend.
- *
  * Based on https://refactoring.guru/design-patterns/observer/cpp/example
  */
 
 
-template<typename T>
-class Observer {
-public:
-    virtual ~Observer() = default;
+namespace logic {
+    class Observer {
+    public:
+        virtual ~Observer() = default;
 
-    virtual void update(const T& subject) = 0;
-};
+        virtual void update() = 0;
+    };
 
 
-template<typename T>
-class Subject {
-public:
-    virtual ~Subject() = default;
+    class Subject {
+    public:
+        virtual ~Subject() = default;
 
-    // TODO: FIX POINTER
-    void attach(Observer<T>* observer);
-    void detach(Observer<T>* observer);
+        // TODO: FIX POINTER
+        void attach(const std::shared_ptr<Observer> &observer);
+        void detach(const std::shared_ptr<Observer> &observer);
 
-    void notify(const T& subject);
+        void notify();
 
-protected:
-    std::list<Observer<T>*> observers;
-};
+    protected:
+        std::list<std::shared_ptr<Observer>> observers;
+    };
+}
+
 
 
 #endif //OBSERVER_H
