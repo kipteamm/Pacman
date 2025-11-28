@@ -9,6 +9,7 @@
 
 
 namespace logic {
+    enum Moves { NONE, UP, LEFT, RIGHT, DOWN };
 
     class EntityModel : public Subject {
     public:
@@ -17,12 +18,28 @@ namespace logic {
 
         virtual void update(double dt) = 0;
 
+        [[nodiscard]] bool checkCollision(float otherX, float otherY, float width, float height) const;
         [[nodiscard]] float getX() const;
         [[nodiscard]] float getY() const;
 
     protected:
         float x;
         float y;
+    };
+
+    class MovingEntityModel : public EntityModel {
+    public:
+        MovingEntityModel(float x, float y, float speed);
+
+        virtual void move(bool colliding, float x, float y) = 0;
+
+        [[nodiscard]] Moves getDirection() const;
+        [[nodiscard]] float getSpeed() const;
+
+    protected:
+        float speed;
+
+        Moves direction = NONE;
     };
 }
 

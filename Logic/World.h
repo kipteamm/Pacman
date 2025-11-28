@@ -8,13 +8,10 @@
 #include <vector>
 
 #include "Entities/AbstractFactory.h"
+#include "Entities/PacManModel.h"
 
 
 namespace logic {
-
-    enum Moves { UP, LEFT, RIGHT, DOWN };
-
-
     class World {
     public:
         explicit World(const std::shared_ptr<AbstractFactory> &factory);
@@ -28,15 +25,20 @@ namespace logic {
         void loadLevel(const std::string& filename);
         void update(double dt);
         void handleMove(const Moves& move);
+        void move(const std::shared_ptr<MovingEntityModel>& entity, float dt) const;
 
     private:
-        std::shared_ptr<AbstractFactory> factory;
-        std::vector<std::shared_ptr<EntityModel>> entities;
-
         float mapHeight = 20;
         float mapWidth = 20;
-    };
 
+        float tileWidth = 16;
+        float tileHeight = 16;
+
+        std::shared_ptr<AbstractFactory> factory;
+        std::vector<std::shared_ptr<EntityModel>> interactables;
+        std::vector<std::shared_ptr<WallModel>> walls;
+        std::shared_ptr<PacManModel> pacman;
+    };
 }
 
 

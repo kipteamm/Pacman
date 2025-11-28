@@ -17,9 +17,9 @@ public:
 
     void setViews(std::vector<std::shared_ptr<EntityView>>* views);
 
-    std::shared_ptr<logic::EntityModel> createPacMan(float x, float y) override;
-    std::shared_ptr<logic::EntityModel> createWall(float x, float y, char type) override;
-    std::shared_ptr<logic::EntityModel> createCoin(float x, float y) override;
+    std::shared_ptr<logic::PacManModel> createPacMan(float x, float y) override;
+    std::shared_ptr<logic::WallModel> createWall(float x, float y, char type) override;
+    std::shared_ptr<logic::CoinModel> createCoin(float x, float y) override;
 
 private:
     std::vector<std::shared_ptr<EntityView>>* entityViews = nullptr;

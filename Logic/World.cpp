@@ -39,8 +39,10 @@ void World::loadLevel(const std::string &filename) {
         map.push_back(line);
     }
 
-    this->mapHeight = static_cast<float>(map.size());
     this->mapWidth = static_cast<float>(map[0].size());
+    this->mapHeight = static_cast<float>(map.size());
+    this->tileWidth = 1 / mapWidth;
+    this->tileHeight = 1 / mapHeight;
 
     for (int row = 0; row < mapHeight; row++) {
         for (int col = 0; col < mapWidth; col++) {
@@ -50,13 +52,11 @@ void World::loadLevel(const std::string &filename) {
             const float x = normalizeX(col);
             const float y = normalizeY(row);
 
-            std::shared_ptr<EntityModel> entity;
-
             switch (tile) {
                 case 'P':
-                    entity = factory->createPacMan(x, y); break;
+                    pacman = factory->createPacMan(x, y); break;
                 case 'C':
-                    entity = factory->createCoin(x, y); break;
+                    interactables.push_back(factory->createCoin(x, y)); break;
                 case 't':
                 case 'b':
                 case 'l':
@@ -77,22 +77,47 @@ void World::loadLevel(const std::string &filename) {
                 case '4':
                 case '5':
                 case '6':
-                    entity = factory->createWall(x, y, tile); break;
+                    walls.push_back(factory->createWall(x, y, tile)); break;
 
                 default: throw std::runtime_error("Unsupported tile '" + std::string(1, tile) + "' in level '" + filename + "'");
             }
-
-            entities.push_back(entity);
         }
     }
 }
 
 void World::update(const double dt) {
-    for (auto& entity: entities) {
-        entity->update(dt);
-    }
+    move(pacman, dt);
+
+    // for (auto& entity: entities) {
+    //     entity->update(dt);
+    // }
 }
 
 void World::handleMove(const Moves &move) {
-
+    pacman->setNextDirection(move);
 }
+
+
+void World::move(const std::shared_ptr<MovingEntityModel>& entity, const float dt) const {
+    const float distance = entity->getSpeed() * dt;
+    float x = entity->getX();
+    float y = entity->getY();
+
+    switch(entity->getDirection()) {
+        case Moves::LEFT: x -= distance; break;
+        case Moves::RIGHT: x += distance; break;
+        case Moves::UP: y -= distance; break;
+        case Moves::DOWN: x += distance; break;
+        case Moves::NONE: return;
+    }
+
+    bool collides = false;
+    for (const std::shared_ptr<WallModel>& wall : walls) {
+        if (!wall->checkCollision(x, y, tileWidth, tileHeight)) continue;
+        collides = true;
+        break;
+    }
+
+    entity->move(collides, x, y);
+}
+

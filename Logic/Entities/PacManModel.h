@@ -10,11 +10,19 @@
 
 namespace logic {
 
-    class PacManModel final : public EntityModel {
+    class PacManModel final : public MovingEntityModel {
     public:
-        explicit PacManModel(float normalizedX, float normalizedY);
+        explicit PacManModel(float normalizedX, float normalizedY, float speed);
 
+        [[nodiscard]] Moves getNextDirection() const;
+
+        void setNextDirection(const Moves& move);
+
+        void move(bool colliding, float x, float y) override;
         void update(double dt) override;
+
+    private:
+        Moves nextDirection = RIGHT;
     };
 }
 

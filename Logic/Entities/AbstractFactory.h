@@ -9,15 +9,19 @@
 
 #include <memory>
 
+#include "PacManModel.h"
+#include "WallModel.h"
+#include "CoinModel.h"
+
 
 namespace logic {
     class AbstractFactory {
     public:
         virtual ~AbstractFactory() = default;
 
-        virtual std::shared_ptr<EntityModel> createPacMan(float x, float y) = 0;
-        virtual std::shared_ptr<EntityModel> createWall(float x, float y, char type) = 0;
-        virtual std::shared_ptr<EntityModel> createCoin(float x, float y) = 0;
+        virtual std::shared_ptr<PacManModel> createPacMan(float x, float y) = 0;
+        virtual std::shared_ptr<WallModel> createWall(float x, float y, char type) = 0;
+        virtual std::shared_ptr<CoinModel> createCoin(float x, float y) = 0;
     };
 }
 
