@@ -24,6 +24,36 @@ WallView::WallView(const std::shared_ptr<logic::WallModel> &model, const std::sh
         case 'r':
             rectLeft = 2;
             rectTop = 7; break;
+        case 'm':
+            rectLeft = 3;
+            rectTop = 7; break;
+        case 'e':
+            rectLeft = 4;
+            rectTop = 6; break;
+        case 'f':
+            rectLeft = 4;
+            rectTop = 7; break;
+        case 'h':
+            rectLeft = 5;
+            rectTop = 8; break;
+        case 'j':
+            rectLeft = 5;
+            rectTop = 6; break;
+        case 'k':
+            rectLeft = 5;
+            rectTop = 7; break;
+        case 'u':
+            rectLeft = 6;
+            rectTop = 7; break;
+        case 'i':
+            rectLeft = 6;
+            rectTop = 6; break;
+        case 'o':
+            rectLeft = 6;
+            rectTop = 8; break;
+        case 'p':
+            rectLeft = 4;
+            rectTop = 8; break;
         case '1':
             rectLeft = 0;
             rectTop = 6; break;
@@ -35,6 +65,12 @@ WallView::WallView(const std::shared_ptr<logic::WallModel> &model, const std::sh
             rectTop = 8; break;
         case '4':
             rectLeft = 0;
+            rectTop = 8; break;
+        case '5':
+            rectLeft = 3;
+            rectTop = 6; break;
+        case '6':
+            rectLeft = 3;
             rectTop = 8; break;
 
         default: throw std::runtime_error("Invalid wall type");

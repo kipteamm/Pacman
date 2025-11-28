@@ -4,6 +4,7 @@ var annotated_dup =
       [ "AbstractFactory", "classlogic_1_1_abstract_factory.html", null ],
       [ "EntityModel", "classlogic_1_1_entity_model.html", null ],
       [ "PacManModel", "classlogic_1_1_pac_man_model.html", null ],
+      [ "WallModel", "classlogic_1_1_wall_model.html", null ],
       [ "Observer", "classlogic_1_1_observer.html", null ],
       [ "Subject", "classlogic_1_1_subject.html", null ],
       [ "Score", "classlogic_1_1_score.html", null ],
@@ -21,5 +22,6 @@ var annotated_dup =
     [ "PausedState", "class_paused_state.html", null ],
     [ "State", "class_state.html", null ],
     [ "StateManager", "class_state_manager.html", null ],
+    [ "WallView", "class_wall_view.html", null ],
     [ "Window", "class_window.html", "class_window" ]
 ];

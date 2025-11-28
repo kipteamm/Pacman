@@ -4,9 +4,11 @@
 
 #include "../../Logic/Entities/PacManModel.h"
 #include "../../Logic/Entities/WallModel.h"
+#include "../../Logic/Entities/CoinModel.h"
 #include "ConcreteFactory.h"
 #include "PacManView.h"
 #include "WallView.h"
+#include "CoinView.h"
 
 
 ConcreteFactory::ConcreteFactory(const std::shared_ptr<Camera>& camera) : camera(camera) {}
@@ -32,6 +34,16 @@ std::shared_ptr<logic::EntityModel> ConcreteFactory::createPacMan(float x, float
 std::shared_ptr<logic::EntityModel> ConcreteFactory::createWall(float x, float y, char type) {
     const auto model = std::make_shared<logic::WallModel>(x, y);
     const auto view = std::make_shared<WallView>(model, camera, type);
+
+    model->attach(view);
+    entityViews->push_back(view);
+
+    return model;
+}
+
+std::shared_ptr<logic::EntityModel> ConcreteFactory::createCoin(float x, float y) {
+    const auto model = std::make_shared<logic::CoinModel>(x, y);
+    const auto view = std::make_shared<CoinView>(model, camera);
 
     model->attach(view);
     entityViews->push_back(view);

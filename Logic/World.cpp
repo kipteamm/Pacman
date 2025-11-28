@@ -47,13 +47,6 @@ void World::loadLevel(const std::string &filename) {
             const char tile = map[row][col];
             if (tile == ' ') continue;
 
-
-
-
-
-            if (tile == 'C') continue;
-
-
             const float x = normalizeX(col);
             const float y = normalizeY(row);
 
@@ -62,14 +55,28 @@ void World::loadLevel(const std::string &filename) {
             switch (tile) {
                 case 'P':
                     entity = factory->createPacMan(x, y); break;
+                case 'C':
+                    entity = factory->createCoin(x, y); break;
                 case 't':
                 case 'b':
                 case 'l':
                 case 'r':
+                case 'm':
+                case 'e':
+                case 'f':
+                case 'h':
+                case 'j':
+                case 'k':
+                case 'u':
+                case 'i':
+                case 'o':
+                case 'p':
                 case '1':
                 case '2':
                 case '3':
                 case '4':
+                case '5':
+                case '6':
                     entity = factory->createWall(x, y, tile); break;
 
                 default: throw std::runtime_error("Unsupported tile '" + std::string(1, tile) + "' in level '" + filename + "'");

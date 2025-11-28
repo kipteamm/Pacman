@@ -52,6 +52,10 @@ add_executable(Pacman main.cpp
         Logic/Entities/WallModel.h
         Representation/Entities/WallView.cpp
         Representation/Entities/WallView.h
+        Representation/Entities/CoinView.cpp
+        Representation/Entities/CoinView.h
+        Logic/Entities/CoinModel.cpp
+        Logic/Entities/CoinModel.h
 )
 
 target_link_libraries(Pacman PRIVATE sfml-graphics sfml-window sfml-system)

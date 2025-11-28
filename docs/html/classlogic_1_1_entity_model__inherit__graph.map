@@ -1,7 +1,9 @@
 <map id="logic::EntityModel" name="logic::EntityModel">
-<area shape="rect" id="Node000001" title=" " alt="" coords="12,80,138,107"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="88,80,214,107"/>
 <area shape="rect" id="Node000003" href="$classlogic_1_1_pac_man_model.html" title=" " alt="" coords="5,155,145,181"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="77,121,78,155,72,153,73,124"/>
-<area shape="rect" id="Node000002" href="$classlogic_1_1_subject.html" title=" " alt="" coords="25,5,125,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="76,45,78,80,72,79,74,50"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="129,117,90,156,86,152,124,118"/>
+<area shape="rect" id="Node000004" href="$classlogic_1_1_wall_model.html" title=" " alt="" coords="169,155,285,181"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="176,115,217,154,211,154,174,120"/>
+<area shape="rect" id="Node000002" href="$classlogic_1_1_subject.html" title=" " alt="" coords="101,5,201,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="152,46,153,81,149,79,150,50"/>
 </map>
