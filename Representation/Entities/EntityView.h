@@ -16,7 +16,7 @@ class EntityView : public logic::Observer {
 public:
     explicit EntityView(const std::shared_ptr<logic::EntityModel>& model, const std::shared_ptr<Camera>& camera);
 
-    void render();
+    virtual void render();
 
 protected:
     std::shared_ptr<logic::EntityModel> model;

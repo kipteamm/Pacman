@@ -9,7 +9,7 @@
 
 #include <memory>
 
-#include "PacManModel.h"
+#include "PacmanModel.h"
 #include "WallModel.h"
 #include "CoinModel.h"
 
@@ -19,7 +19,7 @@ namespace logic {
     public:
         virtual ~AbstractFactory() = default;
 
-        virtual std::shared_ptr<PacManModel> createPacMan(float x, float y) = 0;
+        virtual std::shared_ptr<PacmanModel> createPacMan(float x, float y) = 0;
         virtual std::shared_ptr<WallModel> createWall(float x, float y, char type) = 0;
         virtual std::shared_ptr<CoinModel> createCoin(float x, float y) = 0;
     };

@@ -8,7 +8,7 @@
 #include <vector>
 
 #include "Entities/AbstractFactory.h"
-#include "Entities/PacManModel.h"
+#include "Entities/PacmanModel.h"
 
 
 namespace logic {
@@ -37,7 +37,7 @@ namespace logic {
         std::shared_ptr<AbstractFactory> factory;
         std::vector<std::shared_ptr<EntityModel>> interactables;
         std::vector<std::shared_ptr<WallModel>> walls;
-        std::shared_ptr<PacManModel> pacman;
+        std::shared_ptr<PacmanModel> pacman;
     };
 }
 

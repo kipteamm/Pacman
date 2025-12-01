@@ -3,7 +3,7 @@
 //
 
 #include "ConcreteFactory.h"
-#include "PacManView.h"
+#include "PacmanView.h"
 #include "WallView.h"
 #include "CoinView.h"
 
@@ -17,9 +17,9 @@ void ConcreteFactory::setViews(std::vector<std::shared_ptr<EntityView>>* views) 
 }
 
 
-std::shared_ptr<logic::PacManModel> ConcreteFactory::createPacMan(float x, float y) {
-    const auto model = std::make_shared<logic::PacManModel>(x, y, 0.5);
-    const auto view = std::make_shared<PacManView>(model, camera);
+std::shared_ptr<logic::PacmanModel> ConcreteFactory::createPacMan(float x, float y) {
+    const auto model = std::make_shared<logic::PacmanModel>(x, y, 0.5);
+    const auto view = std::make_shared<PacmanView>(model, camera);
 
     model->attach(view);
     entityViews->push_back(view);
