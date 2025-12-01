@@ -11,10 +11,13 @@ EntityModel::EntityModel(const float normalizedX, const float normalizedY) : x(n
 
 
 bool EntityModel::checkCollision(const float otherX, const float otherY, const float width, const float height) const {
-    return  x < otherX + width &&
-            x + width > otherX &&
-            y < otherY + height &&
-            y + height > otherY;
+    // TODO: not the solution, things get stuck
+    constexpr float epsilon = 0.00001f;
+
+    return  x < otherX + width - epsilon &&
+            x + width - epsilon > otherX &&
+            y < otherY + height - epsilon &&
+            y + height - epsilon > otherY;
 }
 
 float EntityModel::getX() const {
@@ -26,7 +29,7 @@ float EntityModel::getY() const {
 }
 
 
-MovingEntityModel::MovingEntityModel(const float x, const float y, const float speed) : EntityModel(x, y), speed(speed) {}
+MovingEntityModel::MovingEntityModel(const float x, const float y, const float speed) : EntityModel(x, y), speed(speed), direction(Moves::RIGHT) {}
 
 
 Moves MovingEntityModel::getDirection() const {

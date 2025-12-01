@@ -5,13 +5,11 @@
 #ifndef ABSTRACTFACTORY_H
 #define ABSTRACTFACTORY_H
 
-#include "EntityModel.h"
-
-#include <memory>
-
 #include "PacmanModel.h"
 #include "WallModel.h"
 #include "CoinModel.h"
+
+#include <memory>
 
 
 namespace logic {

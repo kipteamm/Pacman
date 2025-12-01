@@ -18,7 +18,7 @@ namespace logic {
 
         void setNextDirection(const Moves& move);
 
-        void move(bool colliding, float x, float y) override;
+        void move(const World &world, float dt) override;
         void update(double dt) override;
 
     private:

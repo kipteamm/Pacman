@@ -24,6 +24,7 @@ private:
     std::shared_ptr<ConcreteFactory> factory;
     std::unique_ptr<logic::World> world;
 
+    // TODO: change for a map or smth to do proper layering
     std::vector<std::shared_ptr<EntityView>> entityViews;
 };
 

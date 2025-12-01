@@ -1,7 +1,3 @@
-//
-// Created by PPetre on 27/11/2025.
-//
-
 #include "../AssetManager.h"
 #include "PacmanView.h"
 #include "../Window.h"
@@ -9,17 +5,17 @@
 
 PacmanView::PacmanView(const std::shared_ptr<logic::PacmanModel> &model, const std::shared_ptr<Camera> &camera) : EntityView(model, camera), pacman(model) {
     sprite.setTexture(AssetManager::getInstance().getSpriteSheet());
-    sprite.setTextureRect(sf::IntRect(sf::IntRect(0, 0, 16, 16)));
+    sprite.setTextureRect(sf::IntRect(sf::IntRect(16, 0, 16, 16)));
+    sprite.setOrigin(8, 8);
 
     directionSprite.setTexture(AssetManager::getInstance().getSpriteSheet());
+    directionSprite.setOrigin(8, 8);
 }
 
 
 void PacmanView::render() {
-    sprite.setOrigin(8.0f, 8.0f);
-
-    const float x = camera->xToPixel(model->getX());
-    const float y = camera->yToPixel(model->getY());
+    float x = camera->xToPixel(model->getX());
+    float y = camera->yToPixel(model->getY());
     sprite.setPosition(x, y);
 
     const float scaleX = camera->getTileWidth() / 16.0f;
@@ -28,21 +24,26 @@ void PacmanView::render() {
 
     Window::getInstance().draw(sprite);
 
+    // OBSERVER!!! VERPlAATS DIT!!!
     switch (pacman->getNextDirection()) {
         case logic::Moves::UP:
-            sprite.setTextureRect(sf::IntRect(sf::IntRect(0, 0, 16, 16)));
+            directionSprite.setTextureRect(sf::IntRect(sf::IntRect(14 * 16, 2 * 16, 16, 16)));
+            y -= camera->getTileWidth();
             break;
 
         case logic::Moves::DOWN:
-            sprite.setTextureRect(sf::IntRect(sf::IntRect(0, 0, 16, 16)));
+            directionSprite.setTextureRect(sf::IntRect(sf::IntRect(14 * 16, 3 * 16, 16, 16)));
+            y += camera->getTileWidth();
             break;
 
         case logic::Moves::LEFT:
-            sprite.setTextureRect(sf::IntRect(sf::IntRect(0, 0, 16, 16)));
+            directionSprite.setTextureRect(sf::IntRect(sf::IntRect(14 * 16, 4 * 16, 16, 16)));
+            x -= camera->getTileWidth();
             break;
 
         case logic::Moves::RIGHT:
-            sprite.setTextureRect(sf::IntRect(sf::IntRect(0, 0, 16, 16)));
+            directionSprite.setTextureRect(sf::IntRect(sf::IntRect(14 * 16, 5 * 16, 16, 16)));
+            x += camera->getTileWidth();
             break;
 
         default: return;

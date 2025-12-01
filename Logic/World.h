@@ -22,10 +22,11 @@ namespace logic {
         [[nodiscard]] float getWidth() const;
         [[nodiscard]] float getHeight() const;
 
+        [[nodiscard]] bool collides(const Moves& direction, float distance, float &x, float &y) const;
+
         void loadLevel(const std::string& filename);
         void update(double dt);
         void handleMove(const Moves& move);
-        void move(const std::shared_ptr<MovingEntityModel>& entity, float dt) const;
 
     private:
         float mapHeight = 20;
