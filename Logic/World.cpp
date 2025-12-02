@@ -41,8 +41,8 @@ void World::loadLevel(const std::string &filename) {
 
     this->mapWidth = static_cast<float>(map[0].size());
     this->mapHeight = static_cast<float>(map.size());
-    this->tileWidth = 1 / mapWidth;
-    this->tileHeight = 1 / mapHeight;
+    this->tileWidth = 2 / mapWidth;
+    this->tileHeight = 2 / mapHeight;
 
     for (int row = 0; row < mapHeight; row++) {
         for (int col = 0; col < mapWidth; col++) {
@@ -86,7 +86,7 @@ void World::loadLevel(const std::string &filename) {
 }
 
 void World::update(const double dt) {
-    move(pacman, dt);
+    pacman->move(*this, dt);
 
     // for (auto& entity: entities) {
     //     entity->update(dt);
@@ -98,17 +98,13 @@ void World::handleMove(const Moves &move) {
 }
 
 
-void World::move(const std::shared_ptr<MovingEntityModel>& entity, const float dt) const {
-    const float distance = entity->getSpeed() * dt;
-    float x = entity->getX();
-    float y = entity->getY();
-
-    switch(entity->getDirection()) {
+bool World::collides(const Moves& direction, const float distance, float &x, float &y) const {
+    switch(direction) {
         case Moves::LEFT: x -= distance; break;
         case Moves::RIGHT: x += distance; break;
         case Moves::UP: y -= distance; break;
-        case Moves::DOWN: x += distance; break;
-        case Moves::NONE: return;
+        case Moves::DOWN: y += distance; break;
+        case Moves::NONE: throw std::runtime_error("Invalid move");
     }
 
     bool collides = false;
@@ -118,6 +114,6 @@ void World::move(const std::shared_ptr<MovingEntityModel>& entity, const float d
         break;
     }
 
-    entity->move(collides, x, y);
+    return collides;
 }
 

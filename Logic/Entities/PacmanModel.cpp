@@ -3,6 +3,7 @@
 //
 
 #include "PacmanModel.h"
+#include "../World.h"
 
 using namespace logic;
 
@@ -21,15 +22,27 @@ void PacmanModel::setNextDirection(const Moves& move) {
 }
 
 
-void PacmanModel::move(const bool colliding, const float x, const float y) {
-    if (colliding) {
-        this->direction = this->nextDirection;
-        return;
+void PacmanModel::move(const World &world, const float dt) {
+    const float distance = speed * dt;
+
+    if (this->direction != this->nextDirection) {
+        float x = this->x;
+        float y = this->y;
+        const bool collides = world.collides(this->nextDirection, distance, x, y);
+
+        if (!collides) {
+            this->direction = this->nextDirection;
+        }
     }
+
+    float x = this->x;
+    float y = this->y;
+    if (world.collides(this->direction, distance, x, y)) return;
 
     this->x = x;
     this->y = y;
 }
+
 
 void PacmanModel::update(double dt) {
 

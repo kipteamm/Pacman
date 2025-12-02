@@ -27,11 +27,13 @@ namespace logic {
         float y;
     };
 
+    class World;
+
     class MovingEntityModel : public EntityModel {
     public:
         MovingEntityModel(float x, float y, float speed);
 
-        virtual void move(bool colliding, float x, float y) = 0;
+        virtual void move(const World &world, float dt) = 0;
 
         [[nodiscard]] Moves getDirection() const;
         [[nodiscard]] float getSpeed() const;
