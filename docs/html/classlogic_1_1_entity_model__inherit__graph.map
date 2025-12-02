@@ -1,9 +1,13 @@
 <map id="logic::EntityModel" name="logic::EntityModel">
-<area shape="rect" id="Node000001" title=" " alt="" coords="88,80,214,107"/>
-<area shape="rect" id="Node000003" href="$classlogic_1_1_pac_man_model.html" title=" " alt="" coords="5,155,145,181"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="129,117,90,156,86,152,124,118"/>
-<area shape="rect" id="Node000004" href="$classlogic_1_1_wall_model.html" title=" " alt="" coords="169,155,285,181"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="176,115,217,154,211,154,174,120"/>
-<area shape="rect" id="Node000002" href="$classlogic_1_1_subject.html" title=" " alt="" coords="101,5,201,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="152,46,153,81,149,79,150,50"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="168,80,294,107"/>
+<area shape="rect" id="Node000003" href="$classlogic_1_1_coin_model.html" title=" " alt="" coords="5,155,124,181"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="187,115,95,156,92,152,190,111"/>
+<area shape="rect" id="Node000004" href="$classlogic_1_1_moving_entity_model.html" title=" " alt="" coords="148,155,315,181"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="233,120,234,155,229,153,230,125"/>
+<area shape="rect" id="Node000006" href="$classlogic_1_1_wall_model.html" title=" " alt="" coords="338,155,455,181"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="274,111,370,154,365,155,274,116"/>
+<area shape="rect" id="Node000002" href="$classlogic_1_1_subject.html" title=" " alt="" coords="181,5,281,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="232,45,234,81,229,79,230,50"/>
+<area shape="rect" id="Node000005" href="$classlogic_1_1_pacman_model.html" title=" " alt="" coords="162,229,301,256"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="233,195,233,230,229,227,229,199"/>
 </map>

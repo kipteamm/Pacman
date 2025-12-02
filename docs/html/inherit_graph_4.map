@@ -1,19 +1,25 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" href="$classlogic_1_1_observer.html" title=" " alt="" coords="5,56,115,83"/>
-<area shape="rect" id="Node000001" href="$class_entity_view.html" title=" " alt="" coords="183,43,268,69"/>
-<area shape="poly" id="edge2_Node000000_Node000001" title=" " alt="" coords="129,61,185,58,180,61,131,66"/>
-<area shape="rect" id="Node000004" href="$classlogic_1_1_score.html" title=" " alt="" coords="180,93,270,120"/>
-<area shape="poly" id="edge5_Node000000_Node000004" title=" " alt="" coords="129,82,182,95,177,98,130,88"/>
-<area shape="rect" id="Node000002" href="$class_pac_man_view.html" title=" " alt="" coords="356,5,455,32"/>
-<area shape="poly" id="edge3_Node000001_Node000002" title=" " alt="" coords="282,42,359,28,354,30,284,47"/>
-<area shape="rect" id="Node000003" href="$class_wall_view.html" title=" " alt="" coords="368,56,443,83"/>
-<area shape="poly" id="edge4_Node000001_Node000003" title=" " alt="" coords="283,58,370,66,365,67,283,63"/>
-<area shape="rect" id="Node000005" href="$classlogic_1_1_subject.html" title=" " alt="" coords="10,119,110,145"/>
-<area shape="poly" id="edge9_Node000005_Node000004" title=" " alt="" coords="125,119,182,112,178,115,126,125"/>
-<area shape="rect" id="Node000006" href="$classlogic_1_1_entity_model.html" title=" " alt="" coords="163,144,288,171"/>
-<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="125,139,165,147,160,148,126,145"/>
-<area shape="rect" id="Node000007" href="$classlogic_1_1_pac_man_model.html" title=" " alt="" coords="336,119,475,145"/>
-<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="303,144,338,141,333,142,304,149"/>
-<area shape="rect" id="Node000008" href="$classlogic_1_1_wall_model.html" title=" " alt="" coords="348,169,464,196"/>
-<area shape="poly" id="edge8_Node000006_Node000008" title=" " alt="" coords="303,166,350,175,344,174,303,171"/>
+<area shape="rect" id="Node000000" href="$classlogic_1_1_observer.html" title=" " alt="" coords="5,107,115,133"/>
+<area shape="rect" id="Node000001" href="$class_entity_view.html" title=" " alt="" coords="183,81,268,108"/>
+<area shape="poly" id="edge2_Node000000_Node000001" title=" " alt="" coords="129,107,185,99,181,103,131,112"/>
+<area shape="rect" id="Node000005" href="$classlogic_1_1_score.html" title=" " alt="" coords="180,132,270,159"/>
+<area shape="poly" id="edge6_Node000000_Node000005" title=" " alt="" coords="130,128,182,137,177,140,131,133"/>
+<area shape="rect" id="Node000002" href="$class_coin_view.html" title=" " alt="" coords="381,5,458,32"/>
+<area shape="poly" id="edge3_Node000001_Node000002" title=" " alt="" coords="266,72,335,42,383,28,378,30,337,46,269,77"/>
+<area shape="rect" id="Node000003" href="$class_pacman_view.html" title=" " alt="" coords="370,56,469,83"/>
+<area shape="poly" id="edge4_Node000001_Node000003" title=" " alt="" coords="282,85,373,75,368,77,284,90"/>
+<area shape="rect" id="Node000004" href="$class_wall_view.html" title=" " alt="" coords="382,107,457,133"/>
+<area shape="poly" id="edge5_Node000001_Node000004" title=" " alt="" coords="283,99,384,114,379,116,283,105"/>
+<area shape="rect" id="Node000006" href="$classlogic_1_1_subject.html" title=" " alt="" coords="10,157,110,184"/>
+<area shape="poly" id="edge12_Node000006_Node000005" title=" " alt="" coords="125,158,182,151,178,154,126,163"/>
+<area shape="rect" id="Node000007" href="$classlogic_1_1_entity_model.html" title=" " alt="" coords="163,196,288,223"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="125,183,168,194,163,196,125,188"/>
+<area shape="rect" id="Node000008" href="$classlogic_1_1_coin_model.html" title=" " alt="" coords="360,157,479,184"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="303,191,363,182,357,183,304,196"/>
+<area shape="rect" id="Node000009" href="$classlogic_1_1_moving_entity_model.html" title=" " alt="" coords="336,208,503,235"/>
+<area shape="poly" id="edge9_Node000007_Node000009" title=" " alt="" coords="303,211,338,216,333,216,304,217"/>
+<area shape="rect" id="Node000011" href="$classlogic_1_1_wall_model.html" title=" " alt="" coords="362,259,478,285"/>
+<area shape="poly" id="edge11_Node000007_Node000011" title=" " alt="" coords="281,226,337,244,375,258,369,258,335,249,280,231"/>
+<area shape="rect" id="Node000010" href="$classlogic_1_1_pacman_model.html" title=" " alt="" coords="551,208,691,235"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="519,219,554,221,548,222,519,224"/>
 </map>

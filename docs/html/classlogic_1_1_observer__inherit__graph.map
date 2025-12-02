@@ -1,11 +1,13 @@
 <map id="logic::Observer" name="logic::Observer">
-<area shape="rect" id="Node000001" title=" " alt="" coords="110,5,220,32"/>
-<area shape="rect" id="Node000002" href="$class_entity_view.html" title=" " alt="" coords="67,80,151,107"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="148,42,121,81,117,78,144,46"/>
-<area shape="rect" id="Node000005" href="$classlogic_1_1_score.html" title=" " alt="" coords="176,80,266,107"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="185,42,214,80,209,80,183,47"/>
-<area shape="rect" id="Node000003" href="$class_pac_man_view.html" title=" " alt="" coords="5,155,104,181"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="93,119,66,156,62,152,88,120"/>
-<area shape="rect" id="Node000004" href="$class_wall_view.html" title=" " alt="" coords="128,155,203,181"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="129,117,158,154,153,154,127,121"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="157,5,267,32"/>
+<area shape="rect" id="Node000002" href="$class_entity_view.html" title=" " alt="" coords="114,80,198,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="195,43,168,81,164,78,191,46"/>
+<area shape="rect" id="Node000006" href="$classlogic_1_1_score.html" title=" " alt="" coords="223,80,313,107"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="232,42,261,80,256,79,230,47"/>
+<area shape="rect" id="Node000003" href="$class_coin_view.html" title=" " alt="" coords="5,155,83,181"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="126,117,65,156,62,152,122,114"/>
+<area shape="rect" id="Node000004" href="$class_pacman_view.html" title=" " alt="" coords="107,155,205,181"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="158,121,158,156,154,153,154,124"/>
+<area shape="rect" id="Node000005" href="$class_wall_view.html" title=" " alt="" coords="229,155,304,181"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="188,113,250,154,245,154,187,118"/>
 </map>

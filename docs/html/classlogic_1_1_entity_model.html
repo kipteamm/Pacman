@@ -96,13 +96,17 @@ Inheritance diagram for logic::EntityModel:</div>
 <div class="dyncontent">
 <div class="center"><img src="classlogic_1_1_entity_model__inherit__graph.png" border="0" usemap="#alogic_1_1_entity_model_inherit__map" loading="lazy" alt="Inheritance graph"/></div>
 <map name="alogic_1_1_entity_model_inherit__map" id="alogic_1_1_entity_model_inherit__map">
-<area shape="rect" title=" " alt="" coords="88,80,214,107"/>
-<area shape="rect" href="classlogic_1_1_pac_man_model.html" title=" " alt="" coords="5,155,145,181"/>
-<area shape="poly" title=" " alt="" coords="129,117,90,156,86,152,124,118"/>
-<area shape="rect" href="classlogic_1_1_wall_model.html" title=" " alt="" coords="169,155,285,181"/>
-<area shape="poly" title=" " alt="" coords="176,115,217,154,211,154,174,120"/>
-<area shape="rect" href="classlogic_1_1_subject.html" title=" " alt="" coords="101,5,201,32"/>
-<area shape="poly" title=" " alt="" coords="152,46,153,81,149,79,150,50"/>
+<area shape="rect" title=" " alt="" coords="168,80,294,107"/>
+<area shape="rect" href="classlogic_1_1_coin_model.html" title=" " alt="" coords="5,155,124,181"/>
+<area shape="poly" title=" " alt="" coords="187,115,95,156,92,152,190,111"/>
+<area shape="rect" href="classlogic_1_1_moving_entity_model.html" title=" " alt="" coords="148,155,315,181"/>
+<area shape="poly" title=" " alt="" coords="233,120,234,155,229,153,230,125"/>
+<area shape="rect" href="classlogic_1_1_wall_model.html" title=" " alt="" coords="338,155,455,181"/>
+<area shape="poly" title=" " alt="" coords="274,111,370,154,365,155,274,116"/>
+<area shape="rect" href="classlogic_1_1_subject.html" title=" " alt="" coords="181,5,281,32"/>
+<area shape="poly" title=" " alt="" coords="232,45,234,81,229,79,230,50"/>
+<area shape="rect" href="classlogic_1_1_pacman_model.html" title=" " alt="" coords="162,229,301,256"/>
+<area shape="poly" title=" " alt="" coords="233,195,233,230,229,227,229,199"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -122,6 +126,8 @@ Public Member Functions</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><b>EntityModel</b> (float normalizedX, float normalizedY)</td></tr>
 <tr class="memitem:ad7a96599846595302163e6a8e93a2f26" id="r_ad7a96599846595302163e6a8e93a2f26"><td class="memItemLeft" align="right" valign="top"><a id="ad7a96599846595302163e6a8e93a2f26" name="ad7a96599846595302163e6a8e93a2f26"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>update</b> (double dt)=0</td></tr>
+<tr class="memitem:a2e9fbaa32bfdf721f1e4eccea63051ff" id="r_a2e9fbaa32bfdf721f1e4eccea63051ff"><td class="memItemLeft" align="right" valign="top"><a id="a2e9fbaa32bfdf721f1e4eccea63051ff" name="a2e9fbaa32bfdf721f1e4eccea63051ff"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>checkCollision</b> (float otherX, float otherY, float width, float height) const</td></tr>
 <tr class="memitem:af195623401b99cb6cedfd85e3048eb69" id="r_af195623401b99cb6cedfd85e3048eb69"><td class="memItemLeft" align="right" valign="top"><a id="af195623401b99cb6cedfd85e3048eb69" name="af195623401b99cb6cedfd85e3048eb69"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><b>getX</b> () const</td></tr>
 <tr class="memitem:ad28f13d597d2375dad9dd3eed0eb27cb" id="r_ad28f13d597d2375dad9dd3eed0eb27cb"><td class="memItemLeft" align="right" valign="top"><a id="ad28f13d597d2375dad9dd3eed0eb27cb" name="ad28f13d597d2375dad9dd3eed0eb27cb"></a>

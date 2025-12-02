@@ -8,7 +8,8 @@ var hierarchy =
     [ "Game", "class_game.html", null ],
     [ "logic::Observer", "classlogic_1_1_observer.html", [
       [ "EntityView", "class_entity_view.html", [
-        [ "PacManView", "class_pac_man_view.html", null ],
+        [ "CoinView", "class_coin_view.html", null ],
+        [ "PacmanView", "class_pacman_view.html", null ],
         [ "WallView", "class_wall_view.html", null ]
       ] ],
       [ "logic::Score", "classlogic_1_1_score.html", null ]
@@ -22,7 +23,10 @@ var hierarchy =
     [ "logic::Stopwatch", "classlogic_1_1_stopwatch.html", null ],
     [ "logic::Subject", "classlogic_1_1_subject.html", [
       [ "logic::EntityModel", "classlogic_1_1_entity_model.html", [
-        [ "logic::PacManModel", "classlogic_1_1_pac_man_model.html", null ],
+        [ "logic::CoinModel", "classlogic_1_1_coin_model.html", null ],
+        [ "logic::MovingEntityModel", "classlogic_1_1_moving_entity_model.html", [
+          [ "logic::PacmanModel", "classlogic_1_1_pacman_model.html", null ]
+        ] ],
         [ "logic::WallModel", "classlogic_1_1_wall_model.html", null ]
       ] ],
       [ "logic::Score", "classlogic_1_1_score.html", null ]
