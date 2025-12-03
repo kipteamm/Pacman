@@ -12,7 +12,7 @@ namespace logic {
 
     class PacmanModel final : public MovingEntityModel {
     public:
-        explicit PacmanModel(float normalizedX, float normalizedY, float speed);
+        explicit PacmanModel(float normalizedX, float normalizedY, float mapWidth, float mapHeight, float speed);
 
         [[nodiscard]] Moves getNextDirection() const;
 

@@ -5,6 +5,8 @@
 #ifndef LEVELSTATE_H
 #define LEVELSTATE_H
 
+#include <unordered_map>
+
 #include "../Entities/ConcreteFactory.h"
 #include "../Entities/EntityView.h"
 #include "../../Logic/World.h"
@@ -24,8 +26,11 @@ private:
     std::shared_ptr<ConcreteFactory> factory;
     std::unique_ptr<logic::World> world;
 
-    // TODO: change for a map or smth to do proper layering
-    std::vector<std::shared_ptr<EntityView>> entityViews;
+    std::unordered_map<Layer, std::vector<std::shared_ptr<EntityView>>> entityViews{
+        {Layer::BACKGROUND, std::vector<std::shared_ptr<EntityView>>()},
+        {Layer::FOREGROUND, std::vector<std::shared_ptr<EntityView>>()},
+        {Layer::PACMAN, std::vector<std::shared_ptr<EntityView>>()}
+    };
 };
 
 

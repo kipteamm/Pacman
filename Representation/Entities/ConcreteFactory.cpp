@@ -12,17 +12,17 @@ ConcreteFactory::ConcreteFactory(const std::shared_ptr<Camera>& camera) : camera
 
 
 
-void ConcreteFactory::setViews(std::vector<std::shared_ptr<EntityView>>* views) {
+void ConcreteFactory::setViews(std::unordered_map<Layer, std::vector<std::shared_ptr<EntityView>>>* views) {
     this->entityViews = views;
 }
 
 
-std::shared_ptr<logic::PacmanModel> ConcreteFactory::createPacMan(float x, float y) {
-    const auto model = std::make_shared<logic::PacmanModel>(x, y, 0.5);
+std::shared_ptr<logic::PacmanModel> ConcreteFactory::createPacMan(float x, float y, float mapWidth, float mapHeight) {
+    const auto model = std::make_shared<logic::PacmanModel>(x, y, mapWidth, mapHeight, 7.5);
     const auto view = std::make_shared<PacmanView>(model, camera);
 
     model->attach(view);
-    entityViews->push_back(view);
+    entityViews->at(Layer::PACMAN).push_back(view);
 
     return model;
 }
@@ -33,7 +33,7 @@ std::shared_ptr<logic::WallModel> ConcreteFactory::createWall(float x, float y, 
     const auto view = std::make_shared<WallView>(model, camera, type);
 
     model->attach(view);
-    entityViews->push_back(view);
+    entityViews->at(Layer::BACKGROUND).push_back(view);
 
     return model;
 }
@@ -43,7 +43,7 @@ std::shared_ptr<logic::CoinModel> ConcreteFactory::createCoin(float x, float y) 
     const auto view = std::make_shared<CoinView>(model, camera);
 
     model->attach(view);
-    entityViews->push_back(view);
+    entityViews->at(Layer::BACKGROUND).push_back(view);
 
     return model;
 }

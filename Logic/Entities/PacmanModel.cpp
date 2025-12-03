@@ -3,12 +3,15 @@
 //
 
 #include "PacmanModel.h"
+
+#include <iostream>
+
 #include "../World.h"
 
 using namespace logic;
 
 
-PacmanModel::PacmanModel(const float normalizedX, const float normalizedY, const float speed): MovingEntityModel(normalizedX, normalizedY, speed), nextDirection(Moves::RIGHT) {}
+PacmanModel::PacmanModel(const float normalizedX, const float normalizedY, const float mapWidth, const float mapHeight, const float speed): MovingEntityModel(normalizedX, normalizedY, mapWidth, mapHeight, speed), nextDirection(Moves::RIGHT) {}
 
 
 Moves PacmanModel::getNextDirection() const {
@@ -17,26 +20,33 @@ Moves PacmanModel::getNextDirection() const {
 
 
 void PacmanModel::setNextDirection(const Moves& move) {
-    if (this->direction == Moves::NONE) this->direction = move;
+    // if (this->direction == Moves::NONE) this->direction = move;
     this->nextDirection = move;
 }
 
 
 void PacmanModel::move(const World &world, const float dt) {
-    const float distance = speed * dt;
+    float nextDistance = speed * dt;
+    float distance = speed * dt;
 
     if (this->direction != this->nextDirection) {
         float x = this->x;
         float y = this->y;
-        const bool collides = world.collides(this->nextDirection, distance, x, y);
 
-        if (!collides) {
+        if (nextDirection == Moves::RIGHT || nextDirection == Moves::LEFT) nextDistance /= mapWidth;
+        else nextDistance /= mapHeight;
+
+        if (!world.collides(this->nextDirection, nextDistance, x, y)) {
             this->direction = this->nextDirection;
         }
     }
 
     float x = this->x;
     float y = this->y;
+
+    if (direction == Moves::RIGHT || direction == Moves::LEFT) distance /= mapWidth;
+    else distance /= mapHeight;
+
     if (world.collides(this->direction, distance, x, y)) return;
 
     this->x = x;

@@ -49,7 +49,15 @@ void LevelState::handleInput(const sf::Event::KeyEvent &keyPressed) {
 }
 
 void LevelState::render() {
-    for (const auto& view : entityViews) {
+    for (const auto& view : this->entityViews[Layer::BACKGROUND]) {
+        view->render();
+    }
+
+    for (const auto& view : this->entityViews[Layer::FOREGROUND]) {
+        view->render();
+    }
+
+    for (const auto& view : this->entityViews[Layer::PACMAN]) {
         view->render();
     }
 }

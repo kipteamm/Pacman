@@ -42,6 +42,10 @@ void Window::close() {
     window.close();
 }
 
+void Window::setFramerateLimit(const unsigned int frameRate) {
+    window.setFramerateLimit(frameRate);
+}
+
 
 unsigned int Window::getWidth() const {
     return window.getSize().x;

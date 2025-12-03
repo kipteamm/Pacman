@@ -27,6 +27,7 @@ public:
     void clear();
     void display();
     void close();
+    void setFramerateLimit(unsigned int frameRate);
 
     [[nodiscard]] unsigned int getWidth() const;
     [[nodiscard]] unsigned int getHeight() const;

@@ -18,6 +18,7 @@ Game::Game() {
 
     // Add game starting state to buffer for the assets loading in
     context->push(std::make_unique<MenuState>(scoreSystem, context.get(), factory, camera));
+    Window::getInstance().setFramerateLimit(80);
 
     while (Window::getInstance().isOpen()) {
         this->loop();

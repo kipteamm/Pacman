@@ -5,6 +5,7 @@
 #include "World.h"
 
 #include <fstream>
+#include <iostream>
 
 using namespace logic;
 
@@ -54,7 +55,7 @@ void World::loadLevel(const std::string &filename) {
 
             switch (tile) {
                 case 'P':
-                    pacman = factory->createPacMan(x, y); break;
+                    pacman = factory->createPacMan(x, y, mapWidth, mapHeight); break;
                 case 'C':
                     interactables.push_back(factory->createCoin(x, y)); break;
                 case 't':
@@ -93,7 +94,7 @@ void World::update(const double dt) {
     // }
 }
 
-void World::handleMove(const Moves &move) {
+void World::handleMove(const Moves &move) const {
     pacman->setNextDirection(move);
 }
 
@@ -104,16 +105,13 @@ bool World::collides(const Moves& direction, const float distance, float &x, flo
         case Moves::RIGHT: x += distance; break;
         case Moves::UP: y -= distance; break;
         case Moves::DOWN: y += distance; break;
-        case Moves::NONE: throw std::runtime_error("Invalid move");
     }
 
-    bool collides = false;
     for (const std::shared_ptr<WallModel>& wall : walls) {
         if (!wall->checkCollision(x, y, tileWidth, tileHeight)) continue;
-        collides = true;
-        break;
+        return true;
     }
 
-    return collides;
+    return false;
 }
 

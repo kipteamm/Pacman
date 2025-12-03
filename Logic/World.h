@@ -26,7 +26,7 @@ namespace logic {
 
         void loadLevel(const std::string& filename);
         void update(double dt);
-        void handleMove(const Moves& move);
+        void handleMove(const Moves& move) const;
 
     private:
         float mapHeight = 20;

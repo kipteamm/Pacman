@@ -9,7 +9,7 @@
 
 
 namespace logic {
-    enum Moves { NONE, UP, LEFT, RIGHT, DOWN };
+    enum Moves { UP, LEFT, RIGHT, DOWN };
 
     class EntityModel : public Subject {
     public:
@@ -31,7 +31,7 @@ namespace logic {
 
     class MovingEntityModel : public EntityModel {
     public:
-        MovingEntityModel(float x, float y, float speed);
+        MovingEntityModel(float x, float y, float mapWidth, float mapHeight, float speed);
 
         virtual void move(const World &world, float dt) = 0;
 
@@ -39,9 +39,12 @@ namespace logic {
         [[nodiscard]] float getSpeed() const;
 
     protected:
+        float mapWidth;
+        float mapHeight;
+
         float speed;
 
-        Moves direction = NONE;
+        Moves direction = Moves::RIGHT;
     };
 }
 
