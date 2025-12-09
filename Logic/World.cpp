@@ -1,9 +1,4 @@
-//
-// Created by PPetre on 26/11/2025.
-//
-
 #include "World.h"
-
 #include <fstream>
 #include <iostream>
 
@@ -108,10 +103,11 @@ bool World::collides(const Moves& direction, const float distance, float &x, flo
     }
 
     for (const std::shared_ptr<WallModel>& wall : walls) {
-        if (!wall->checkCollision(x, y, tileWidth, tileHeight)) continue;
-        return true;
+        const float wallX = wall->getX();
+        const float wallY = wall->getY();
+        
+        if (std::abs(x - wallX) < tileWidth / 2.0f && std::abs(y - wallY) < tileHeight / 2.0f) return true;
     }
 
     return false;
 }
-

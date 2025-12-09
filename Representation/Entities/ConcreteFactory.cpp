@@ -18,7 +18,7 @@ void ConcreteFactory::setViews(std::unordered_map<Layer, std::vector<std::shared
 
 
 std::shared_ptr<logic::PacmanModel> ConcreteFactory::createPacMan(float x, float y, float mapWidth, float mapHeight) {
-    const auto model = std::make_shared<logic::PacmanModel>(x, y, mapWidth, mapHeight, 7.5);
+    const auto model = std::make_shared<logic::PacmanModel>(x, y, mapWidth, mapHeight, 4);
     const auto view = std::make_shared<PacmanView>(model, camera);
 
     model->attach(view);
