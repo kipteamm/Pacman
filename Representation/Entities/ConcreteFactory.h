@@ -23,6 +23,7 @@ public:
     void setViews(std::unordered_map<Layer, std::vector<std::shared_ptr<EntityView>>>* views);
 
     std::shared_ptr<logic::PacmanModel> createPacMan(float x, float y, float mapWidth, float mapHeight) override;
+    std::shared_ptr<logic::GhostModel> createGhost(float x, float y, float mapWidth, float mapHeight, char c) override;
     std::shared_ptr<logic::WallModel> createWall(float x, float y, char type) override;
     std::shared_ptr<logic::CoinModel> createCoin(float x, float y) override;
 

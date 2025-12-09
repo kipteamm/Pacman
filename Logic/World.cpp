@@ -49,9 +49,9 @@ void World::loadLevel(const std::string &filename) {
             const float y = normalizeY(row);
 
             switch (tile) {
-                case 'P':
+                case '*':
                     pacman = factory->createPacMan(x, y, mapWidth, mapHeight); break;
-                case 'C':
+                case '.':
                     interactables.push_back(factory->createCoin(x, y)); break;
                 case 't':
                 case 'b':
@@ -74,6 +74,14 @@ void World::loadLevel(const std::string &filename) {
                 case '5':
                 case '6':
                     walls.push_back(factory->createWall(x, y, tile)); break;
+                case 'R':
+                    interactables.push_back(factory->createGhost(x, y, mapWidth, mapHeight, tile)); break;
+                case 'P':
+                    interactables.push_back(factory->createGhost(x, y, mapWidth, mapHeight, tile)); break;
+                case 'C':
+                    interactables.push_back(factory->createGhost(x, y, mapWidth, mapHeight, tile)); break;
+                case 'O':
+                    interactables.push_back(factory->createGhost(x, y, mapWidth, mapHeight, tile)); break;
 
                 default: throw std::runtime_error("Unsupported tile '" + std::string(1, tile) + "' in level '" + filename + "'");
             }

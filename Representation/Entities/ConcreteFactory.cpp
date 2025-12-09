@@ -4,6 +4,7 @@
 
 #include "ConcreteFactory.h"
 #include "PacmanView.h"
+#include "GhostView.h"
 #include "WallView.h"
 #include "CoinView.h"
 
@@ -27,6 +28,15 @@ std::shared_ptr<logic::PacmanModel> ConcreteFactory::createPacMan(float x, float
     return model;
 }
 
+std::shared_ptr<logic::GhostModel> ConcreteFactory::createGhost(const float x, const float y, const float mapWidth, const float mapHeight, const char c) {
+    const auto model = std::make_shared<logic::GhostModel>(x, y, mapWidth, mapHeight, 3);
+    const auto view = std::make_shared<GhostView>(model, camera, c);
+
+    model->attach(view);
+    entityViews->at(Layer::FOREGROUND).push_back(view);
+
+    return model;
+}
 
 std::shared_ptr<logic::WallModel> ConcreteFactory::createWall(float x, float y, char type) {
     const auto model = std::make_shared<logic::WallModel>(x, y);

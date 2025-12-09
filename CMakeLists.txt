@@ -56,6 +56,10 @@ add_executable(Pacman main.cpp
         Representation/Entities/CoinView.h
         Logic/Entities/CoinModel.cpp
         Logic/Entities/CoinModel.h
+        Logic/Entities/GhostModel.cpp
+        Logic/Entities/GhostModel.h
+        Representation/Entities/GhostView.cpp
+        Representation/Entities/GhostView.h
 )
 
 target_link_libraries(Pacman PRIVATE sfml-graphics sfml-window sfml-system)

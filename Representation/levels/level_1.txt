@@ -1,11 +1,11 @@
 1tttt5tttttttt5tttt2
-lCCCCmCCCCCCCCmCCCCr
-lCukCeCjhhhhkCeCjiCr
-lCmCCCCCCCCCCCCCCmCr
-lCeCjkCuk  jiCjkCeCr
-lCCCCCCm    mCCCCCCr
-lCfCjkCphhhhoCjkCfCr
-lCmCCCCCCPCCCCCCCmCr
-lCpkCfCjhhhhkCfCjoCr
-lCCCCmCCCCCCCCmCCCCr
+l....m........m....r
+l.uk.e.jhhhhk.e.ji.r
+l.m..............m.r
+l.e.jk.uk  ji.jk.e.r
+l......mRPCOm......r
+l.f.jk.phhhho.jk.f.r
+l.m......*.......m.r
+l.pk.f.jhhhhk.f.jo.r
+l....m........m....r
 4bbbb6bbbbbbbb6bbbb3
