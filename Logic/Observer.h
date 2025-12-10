@@ -15,11 +15,14 @@
 
 
 namespace logic {
+
+    enum Events { DIRECTION_CHANGED, ISMOVING_CHANGED };
+
     class Observer {
     public:
         virtual ~Observer() = default;
 
-        virtual void update() = 0;
+        virtual void update(Events event) = 0;
     };
 
 
@@ -31,7 +34,7 @@ namespace logic {
         void attach(const std::shared_ptr<Observer> &observer);
         void detach(const std::shared_ptr<Observer> &observer);
 
-        void notify();
+        void notify(Events event);
 
     protected:
         std::list<std::shared_ptr<Observer>> observers;

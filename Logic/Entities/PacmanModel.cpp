@@ -7,7 +7,7 @@
 using namespace logic;
 
 
-PacmanModel::PacmanModel(const float normalizedX, const float normalizedY, const float mapWidth, const float mapHeight, const float speed) : MovingEntityModel(normalizedX, normalizedY, mapWidth, mapHeight, speed), nextDirection(Moves::RIGHT) {
+PacmanModel::PacmanModel(const float normalizedX, const float normalizedY, const float mapWidth, const float mapHeight, const float speed) : MovingEntityModel(normalizedX, normalizedY, mapWidth, mapHeight, speed), nextDirection(Moves::RIGHT), moving(true) {
     gridX = static_cast<int>((normalizedX + 1.0f) * mapWidth / 2.0f);
     gridY = static_cast<int>((normalizedY + 1.0f) * mapHeight / 2.0f);
     
@@ -15,15 +15,22 @@ PacmanModel::PacmanModel(const float normalizedX, const float normalizedY, const
     targetY = y;
 }
 
+
 Moves PacmanModel::getNextDirection() const {
     return nextDirection;
 }
 
-void PacmanModel::setNextDirection(const Moves& move) {
-    nextDirection = move;
+bool PacmanModel::isMoving() const {
+    return moving;
 }
 
-bool PacmanModel::canMoveInDirection(const World& world, Moves dir) const {
+
+void PacmanModel::setNextDirection(const Moves& move) {
+    nextDirection = move;
+    this->notify(Events::DIRECTION_CHANGED);
+}
+
+bool PacmanModel::canMoveInDirection(const World& world, const Moves dir) const {
     int newGridX = gridX;
     int newGridY = gridY;
     
@@ -60,10 +67,19 @@ void PacmanModel::move(const World& world, const float dt) {
     const float distToTargetY = std::abs(y - targetY);
 
     if (distToTargetX < epsilon && distToTargetY < epsilon) {
-        if (nextDirection != direction && canMoveInDirection(world, nextDirection)) direction = nextDirection;
+        if (nextDirection != direction && canMoveInDirection(world, nextDirection)) {
+            direction = nextDirection;
+            this->notify(Events::DIRECTION_CHANGED);
+        }
+
         if (!canMoveInDirection(world, direction)) {
             x = targetX;
             y = targetY;
+
+            if (!moving) return;
+            moving = false;
+            notify(Events::ISMOVING_CHANGED);
+
             return;
         }
 
@@ -76,7 +92,7 @@ void PacmanModel::move(const World& world, const float dt) {
 
         updateTarget();
     }
-    
+
     const float dx = targetX - x;
     const float dy = targetY - y;
     
@@ -96,6 +112,10 @@ void PacmanModel::move(const World& world, const float dt) {
     
     if (std::abs(x - targetX) < epsilon) x = targetX;
     if (std::abs(y - targetY) < epsilon) y = targetY;
+    if (moving) return;
+
+    moving = true;
+    notify(Events::ISMOVING_CHANGED);
 }
 
 void PacmanModel::update(double dt) {

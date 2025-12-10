@@ -11,6 +11,7 @@ namespace logic {
         PacmanModel(float normalizedX, float normalizedY, float mapWidth, float mapHeight, float speed);
 
         [[nodiscard]] Moves getNextDirection() const;
+        [[nodiscard]] bool isMoving() const;
         [[nodiscard]] int getGridX() const { return gridX; }
         [[nodiscard]] int getGridY() const { return gridY; }
 
@@ -21,6 +22,7 @@ namespace logic {
 
     private:
         Moves nextDirection;
+        bool moving;
 
         float targetX;
         float targetY;

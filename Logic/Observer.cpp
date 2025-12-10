@@ -16,8 +16,8 @@ void Subject::detach(const std::shared_ptr<Observer> &observer) {
 }
 
 
-void Subject::notify() {
-    for (const std::shared_ptr<Observer> observer : observers) {
-        observer->update();
+void Subject::notify(const Events event) {
+    for (const std::shared_ptr<Observer>& observer : observers) {
+        observer->update(event);
     }
 }

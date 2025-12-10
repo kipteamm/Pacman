@@ -21,3 +21,15 @@ void EntityView::render() {
 
     Window::getInstance().draw(sprite);
 }
+
+
+size_t EntityView::getFrameIndex(const float dt, const size_t max) {
+    elapsedTime += dt;
+
+    if (elapsedTime > frameDuration) {
+        elapsedTime -= frameDuration;
+        frameIndex = (frameIndex + 1) % max;
+    }
+
+    return frameIndex;
+}

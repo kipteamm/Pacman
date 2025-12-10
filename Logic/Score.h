@@ -29,7 +29,7 @@ namespace logic {
         std::vector<int> highscores;
 
         [[nodiscard]] std::fstream createHighscoresFile() const;
-        void update() override;
+        void update(Events event) override;
     };
 }
 
