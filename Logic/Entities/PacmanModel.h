@@ -12,8 +12,6 @@ namespace logic {
 
         [[nodiscard]] Moves getNextDirection() const;
         [[nodiscard]] bool isMoving() const;
-        [[nodiscard]] int getGridX() const { return gridX; }
-        [[nodiscard]] int getGridY() const { return gridY; }
 
         void setNextDirection(const Moves& move);
         void move(const World& world, float dt) override;
@@ -23,11 +21,6 @@ namespace logic {
     private:
         Moves nextDirection;
         bool moving;
-
-        float targetX;
-        float targetY;
-        int gridX;
-        int gridY;
 
         void updateTarget();
 

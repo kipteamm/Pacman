@@ -7,13 +7,7 @@
 using namespace logic;
 
 
-PacmanModel::PacmanModel(const float normalizedX, const float normalizedY, const float mapWidth, const float mapHeight, const float speed) : MovingEntityModel(normalizedX, normalizedY, mapWidth, mapHeight, speed), nextDirection(Moves::RIGHT), moving(true) {
-    gridX = static_cast<int>((normalizedX + 1.0f) * mapWidth / 2.0f);
-    gridY = static_cast<int>((normalizedY + 1.0f) * mapHeight / 2.0f);
-    
-    targetX = x;
-    targetY = y;
-}
+PacmanModel::PacmanModel(const float normalizedX, const float normalizedY, const float mapWidth, const float mapHeight, const float speed) : MovingEntityModel(normalizedX, normalizedY, mapWidth, mapHeight, speed), nextDirection(Moves::RIGHT), moving(true) {}
 
 
 Moves PacmanModel::getNextDirection() const {

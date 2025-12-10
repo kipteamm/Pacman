@@ -38,9 +38,17 @@ namespace logic {
         [[nodiscard]] Moves getDirection() const;
         [[nodiscard]] float getSpeed() const;
 
+        [[nodiscard]] int getGridX() const { return gridX; }
+        [[nodiscard]] int getGridY() const { return gridY; }
+
     protected:
         float mapWidth;
         float mapHeight;
+
+        float targetX;
+        float targetY;
+        int gridX;
+        int gridY;
 
         float speed;
 

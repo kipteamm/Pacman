@@ -9,7 +9,7 @@
 #include "CoinView.h"
 
 
-ConcreteFactory::ConcreteFactory(const std::shared_ptr<Camera>& camera) : camera(camera) {}
+ConcreteFactory::ConcreteFactory(const std::shared_ptr<Camera>& camera) : camera(camera), entityViews(nullptr) {}
 
 
 
@@ -28,9 +28,9 @@ std::shared_ptr<logic::PacmanModel> ConcreteFactory::createPacMan(float x, float
     return model;
 }
 
-std::shared_ptr<logic::GhostModel> ConcreteFactory::createGhost(const float x, const float y, const float mapWidth, const float mapHeight, const char c) {
-    const auto model = std::make_shared<logic::GhostModel>(x, y, mapWidth, mapHeight, 3);
-    const auto view = std::make_shared<GhostView>(model, camera, c);
+std::shared_ptr<logic::GhostModel> ConcreteFactory::createGhost(const float x, const float y, const float mapWidth, const float mapHeight, const logic::GhostType type) {
+    const auto model = std::make_shared<logic::GhostModel>(x, y, mapWidth, mapHeight, 3, type);
+    const auto view = std::make_shared<GhostView>(model, camera, type);
 
     model->attach(view);
     entityViews->at(Layer::FOREGROUND).push_back(view);

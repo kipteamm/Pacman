@@ -74,14 +74,14 @@ void World::loadLevel(const std::string &filename) {
                 case '5':
                 case '6':
                     walls.push_back(factory->createWall(x, y, tile)); break;
-                case 'R':
-                    interactables.push_back(factory->createGhost(x, y, mapWidth, mapHeight, tile)); break;
+                case 'B':
+                    interactables.push_back(factory->createGhost(x, y, mapWidth, mapHeight, GhostType::BLINKY)); break;
                 case 'P':
-                    interactables.push_back(factory->createGhost(x, y, mapWidth, mapHeight, tile)); break;
+                    interactables.push_back(factory->createGhost(x, y, mapWidth, mapHeight, GhostType::PINKY)); break;
+                case 'I':
+                    interactables.push_back(factory->createGhost(x, y, mapWidth, mapHeight, GhostType::INKY)); break;
                 case 'C':
-                    interactables.push_back(factory->createGhost(x, y, mapWidth, mapHeight, tile)); break;
-                case 'O':
-                    interactables.push_back(factory->createGhost(x, y, mapWidth, mapHeight, tile)); break;
+                    interactables.push_back(factory->createGhost(x, y, mapWidth, mapHeight, GhostType::CLYDE)); break;
 
                 default: throw std::runtime_error("Unsupported tile '" + std::string(1, tile) + "' in level '" + filename + "'");
             }

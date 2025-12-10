@@ -31,7 +31,13 @@ float EntityModel::getY() const {
 }
 
 
-MovingEntityModel::MovingEntityModel(const float x, const float y, const float mapWidth, const float mapHeight, const float speed) : EntityModel(x, y), mapWidth(mapWidth), mapHeight(mapHeight), speed(speed), direction(Moves::RIGHT) {}
+MovingEntityModel::MovingEntityModel(const float x, const float y, const float mapWidth, const float mapHeight, const float speed) : EntityModel(x, y), mapWidth(mapWidth), mapHeight(mapHeight), speed(speed) {
+    gridX = static_cast<int>((x + 1.0f) * mapWidth / 2.0f);
+    gridY = static_cast<int>((y + 1.0f) * mapHeight / 2.0f);
+
+    targetX = x;
+    targetY = y;
+}
 
 
 Moves MovingEntityModel::getDirection() const {

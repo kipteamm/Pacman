@@ -7,6 +7,16 @@
 using namespace logic;
 
 
-GhostModel::GhostModel(const float normalizedX, const float normalizedY, const float mapWidth, const float mapHeight, const float speed) : MovingEntityModel(normalizedX, normalizedY, mapWidth, mapHeight, speed) {
-
+GhostModel::GhostModel(const float normalizedX, const float normalizedY, const float mapWidth, const float mapHeight, const float speed, const GhostType type) : MovingEntityModel(normalizedX, normalizedY, mapWidth, mapHeight, speed), type(type) {
+    if (type == GhostType::BLINKY || type == GhostType::PINKY) {
+        this->state = GhostState::CHASING;
+    } else {
+        this->state = GhostState::WAITING;
+    }
 }
+
+
+void GhostModel::move(const World& world, float dt) {
+    if (this->state == GhostState::WAITING) return;
+}
+
