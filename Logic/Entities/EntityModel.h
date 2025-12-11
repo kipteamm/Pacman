@@ -20,7 +20,6 @@ namespace logic {
 
         virtual void update(const World& world, double dt) = 0;
 
-        [[nodiscard]] bool checkCollision(float otherX, float otherY, float width, float height) const;
         [[nodiscard]] float getX() const;
         [[nodiscard]] float getY() const;
 

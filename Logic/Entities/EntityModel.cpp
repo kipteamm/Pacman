@@ -12,16 +12,6 @@ using namespace logic;
 EntityModel::EntityModel(const float normalizedX, const float normalizedY) : x(normalizedX), y(normalizedY) {}
 
 
-bool EntityModel::checkCollision(const float otherX, const float otherY, const float width, const float height) const {
-    // TODO: not the solution, things get stuck
-    constexpr float epsilon = 0.005f;
-
-    const float diffWidth = std::abs(x - otherX) + epsilon;
-    const float diffHeight = std::abs(y - otherY) + epsilon;
-
-    return diffWidth < width && diffHeight < height;
-}
-
 float EntityModel::getX() const {
     return x;
 }

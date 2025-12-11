@@ -33,6 +33,7 @@ void GhostModel::update(const World& world, const double dt) {
 
     if (waitingTime > startCooldown) {
         state = GhostState::EXITING;
+        direction = getPossibleMoves(world)[0];
     }
 }
 

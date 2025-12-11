@@ -83,3 +83,4 @@ void GhostView::render() {
     Window::getInstance().draw(sprite);
     Window::getInstance().draw(debug);
 }
+
