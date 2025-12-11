@@ -16,6 +16,7 @@ namespace logic {
         void setNextDirection(const Moves& move);
         void update(const World& world, double dt) override {};
         void move(const World& world, float dt) override;
+        void respawn() override;
 
     private:
         Moves nextDirection;

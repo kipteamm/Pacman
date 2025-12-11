@@ -1,8 +1,6 @@
 #include "PausedState.h"
 #include "LevelState.h"
 
-#include <iostream>
-
 
 LevelState::LevelState(StateManager *context, const std::shared_ptr<ConcreteFactory>& factory, const std::shared_ptr<Camera>& camera) : State(context) {
     factory->setViews(&this->entityViews);

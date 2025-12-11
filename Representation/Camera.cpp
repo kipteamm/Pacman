@@ -9,7 +9,7 @@
 
 Camera::Camera() {
     screenWidth = static_cast<float>(Window::getInstance().getWidth());
-    screenHeight = static_cast<float>(Window::getInstance().getHeight());
+    screenHeight = static_cast<float>(Window::getInstance().getHeight()) - 100;
 
     tileWidth = 0;
     tileHeight = 0;
@@ -33,6 +33,13 @@ void Camera::setScaling(const float mapWidth, const float mapHeight) {
 
     offsetX = (screenWidth - viewWidth) / 2.0f;
     offsetY = (screenHeight - viewHeight) / 2.0f;
+}
+
+void Camera::resize() {
+    this->screenWidth = Window::getInstance().getWidth();
+    this->screenHeight = Window::getInstance().getHeight() - 100;
+
+    this->setScaling(this->viewWidth / tileWidth, this->viewHeight / tileHeight);
 }
 
 

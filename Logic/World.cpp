@@ -119,12 +119,39 @@ void World::loadLevel(const std::string &filename) {
     }
 }
 
+void World::resetLevel() {
+    pacman->respawn();
+
+    for (const auto& ghost : ghosts) {
+        ghost->respawn();
+    }
+
+    restarting = false;
+    restartTime = 0;
+}
+
+
 void World::update(const double dt) {
+    if (restarting) {
+        restartTime += dt;
+
+        if (restartTime >= DEATH_DURATION) resetLevel();
+        return;
+    }
+
     pacman->move(*this, dt);
+
+    constexpr float epsilon = 0.1f;
 
     for (const auto& ghost : ghosts) {
         ghost->update(*this, dt);
         ghost->move(*this, dt);
+
+        if (std::abs(pacman->getX() - ghost->getX()) > epsilon || std::abs(pacman->getY() - ghost->getY()) > epsilon) continue;
+        lives--;
+
+        restarting = true;
+        pacman->notify(Events::DEATH);
     }
 }
 

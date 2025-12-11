@@ -23,10 +23,10 @@ Moves AmbushGhost::decideNextMove(const World &world, const PacmanModel &pacman)
     int targetY = pacman.getGridY();
 
     switch(pacman.getDirection()) {
-        case Moves::UP:    targetY -= 1; break;
-        case Moves::DOWN:  targetY += 1; break;
-        case Moves::LEFT:  targetX -= 1; break;
-        case Moves::RIGHT: targetX += 1; break;
+        case Moves::UP:    targetY -= 2; break;
+        case Moves::DOWN:  targetY += 2; break;
+        case Moves::LEFT:  targetX -= 2; break;
+        case Moves::RIGHT: targetX += 2; break;
     }
 
     return minimizeDistance(world, targetX, targetY);

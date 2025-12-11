@@ -24,6 +24,7 @@ namespace logic {
 
         void update(const World& world, double dt) override;
         void move(const World& world, float dt) override;
+        void respawn() override;
 
     protected:
         GhostState state;

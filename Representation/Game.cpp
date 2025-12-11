@@ -42,6 +42,10 @@ void Game::loop() const {
                 window.close();
                 return;
 
+            case sf::Event::Resized:
+                camera->resize();
+                break;
+
             default: break;
         }
     }

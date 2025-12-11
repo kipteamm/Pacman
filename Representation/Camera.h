@@ -11,6 +11,7 @@ public:
     explicit Camera();
 
     void setScaling(float mapWidth, float mapHeight);
+    void resize();
 
     [[nodiscard]] float xToPixel(float normalizedX) const;
     [[nodiscard]] float yToPixel(float normalizedY) const;

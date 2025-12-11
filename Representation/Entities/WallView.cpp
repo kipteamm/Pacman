@@ -7,7 +7,7 @@
 #include "WallView.h"
 
 
-WallView::WallView(const std::shared_ptr<logic::WallModel> &model, const std::shared_ptr<Camera> &camera, const char type) : EntityView(model, camera) {
+WallView::WallView(const std::shared_ptr<logic::WallModel> &model, const std::shared_ptr<Camera> &camera, const char type) : EntityView(model, camera, 0) {
     sprite.setTexture(AssetManager::getInstance().getSpriteSheet());
     int rectLeft, rectTop;
 

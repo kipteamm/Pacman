@@ -28,29 +28,12 @@ void GhostModel::setState(const GhostState state) {
 
 
 void GhostModel::update(const World& world, const double dt) {
-    if (state == GhostState::WAITING) {
-        waitingTime += dt;
+    if (state != GhostState::WAITING) return;
+    waitingTime += dt;
 
-        // std::cout << waitingTime << std::endl;
-
-        if (waitingTime > startCooldown) {
-            state = GhostState::EXITING;
-        }
-        return;
-    };
-
-    // constexpr float epsilon = 0.01f;
-    //
-    // if (state == GhostState::EXITING) {
-    //     const float exitX = world.normalizeX(world.getGhostExitX());
-    //     const float exitY = world.normalizeY(world.getGhostExitY());
-    //
-    //     if (std::abs(x - exitX) < epsilon && std::abs(y - exitY) < epsilon) {
-    //         x = exitX;
-    //         y = exitY;
-    //         state = GhostState::CHASING;
-    //     }
-    // }
+    if (waitingTime > startCooldown) {
+        state = GhostState::EXITING;
+    }
 }
 
 
@@ -108,6 +91,22 @@ void GhostModel::move(const World& world, const float dt) {
     if (std::abs(y - targetY) < epsilon) y = targetY;
 }
 
+void GhostModel::respawn() {
+    state = GhostState::WAITING;
+    waitingTime = 0;
+
+    x = spawnX;
+    y = spawnY;
+
+    gridX = static_cast<int>((x + 1.0f) * mapWidth / 2.0f);
+    gridY = static_cast<int>((y + 1.0f) * mapHeight / 2.0f);
+
+    targetX = x;
+    targetY = y;
+
+    notify(Events::RESPAWN);
+}
+
 
 std::vector<Moves> GhostModel::getPossibleMoves(const World &world) const {
     std::vector<Moves> moves;
@@ -136,9 +135,11 @@ std::vector<Moves> GhostModel::getPossibleMoves(const World &world) const {
     return moves;
 }
 
+
 Moves GhostModel::maximizeDistance(const World &world, const PacmanModel &pacman) {
     return Moves::UP;
 }
+
 
 Moves GhostModel::minimizeDistance(const World &world, const int targetX, const int targetY) const {
     const std::vector<Moves> options = getPossibleMoves(world);
@@ -177,6 +178,7 @@ bool GhostModel::sameDirection(const Moves a, const Moves b) const {
     return (b == Moves::LEFT || b == Moves::RIGHT);
 }
 
+
 bool GhostModel::isAtIntersection(const World &world) const {
     for (int i = Moves::UP; i <= Moves::DOWN; i++) {
         const Moves move = static_cast<Moves>(i);
@@ -201,4 +203,3 @@ bool GhostModel::isAtIntersection(const World &world) const {
 
     return false;
 }
-

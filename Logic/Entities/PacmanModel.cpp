@@ -93,3 +93,19 @@ void PacmanModel::move(const World& world, const float dt) {
     moving = true;
     notify(Events::ISMOVING_CHANGED);
 }
+
+
+void PacmanModel::respawn() {
+    x = spawnX;
+    y = spawnY;
+    direction = Moves::RIGHT;
+
+    gridX = static_cast<int>((x + 1.0f) * mapWidth / 2.0f);
+    gridY = static_cast<int>((y + 1.0f) * mapHeight / 2.0f);
+
+    targetX = x;
+    targetY = y;
+
+    moving = true;
+    notify(Events::RESPAWN);
+}

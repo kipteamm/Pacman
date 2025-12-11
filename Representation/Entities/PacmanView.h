@@ -24,8 +24,9 @@ private:
     // to use PacmanModel specific functions without needing to dynamic cast
     std::shared_ptr<logic::PacmanModel> pacman;
     bool moving = true;
+    bool dying = false;
 
-    std::unordered_map<logic::Moves, std::vector<sf::IntRect>> animations{};
+    std::unordered_map<int, std::vector<sf::IntRect>> animations{};
     std::vector<sf::IntRect>* animation;
 
     sf::Sprite directionSprite;

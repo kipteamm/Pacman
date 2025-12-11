@@ -14,7 +14,7 @@
 
 class EntityView : public logic::Observer {
 public:
-    explicit EntityView(const std::shared_ptr<logic::EntityModel>& model, const std::shared_ptr<Camera>& camera);
+    explicit EntityView(const std::shared_ptr<logic::EntityModel>& model, const std::shared_ptr<Camera>& camera, float frameDuration);
 
     [[nodiscard]] size_t getFrameIndex(float dt, size_t max);
 
@@ -26,7 +26,7 @@ protected:
     sf::Sprite sprite;
 
     // Animation
-    float frameDuration = 0.08;
+    float frameDuration;
     float elapsedTime = 0;
     size_t frameIndex = 0;
 };

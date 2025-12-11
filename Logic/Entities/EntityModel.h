@@ -34,6 +34,7 @@ namespace logic {
         MovingEntityModel(float x, float y, float mapWidth, float mapHeight, float speed);
 
         virtual void move(const World &world, float dt) = 0;
+        virtual void respawn() = 0;
 
         [[nodiscard]] Moves getDirection() const;
         [[nodiscard]] float getSpeed() const;
@@ -44,9 +45,12 @@ namespace logic {
     protected:
         float mapWidth;
         float mapHeight;
+        float spawnX;
+        float spawnY;
 
         float targetX;
         float targetY;
+
         int gridX;
         int gridY;
 

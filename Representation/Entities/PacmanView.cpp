@@ -4,7 +4,7 @@
 #include "../Window.h"
 
 
-PacmanView::PacmanView(const std::shared_ptr<logic::PacmanModel> &model, const std::shared_ptr<Camera> &camera) : EntityView(model, camera), pacman(model) {
+PacmanView::PacmanView(const std::shared_ptr<logic::PacmanModel> &model, const std::shared_ptr<Camera> &camera) : EntityView(model, camera, 0.08), pacman(model) {
     sprite.setTexture(AssetManager::getInstance().getSpriteSheet());
 
     // Up animation
@@ -39,6 +39,26 @@ PacmanView::PacmanView(const std::shared_ptr<logic::PacmanModel> &model, const s
         sf::IntRect{16, 16, 16, 16},
     };
 
+    // DEATH animation
+    animations[5] = {
+        sf::IntRect{48, 0, 16, 16},
+        sf::IntRect{64, 0, 16, 16},
+        sf::IntRect{80, 0, 16, 16},
+        sf::IntRect{96, 0, 16, 16},
+        sf::IntRect{112, 0, 16, 16},
+        sf::IntRect{128, 0, 16, 16},
+        sf::IntRect{144, 0, 16, 16},
+        sf::IntRect{160, 0, 16, 16},
+        sf::IntRect{176, 0, 16, 16},
+        sf::IntRect{192, 0, 16, 16},
+        sf::IntRect{208, 0, 16, 16},
+        sf::IntRect{208, 0, 16, 16},
+        sf::IntRect{208, 0, 16, 16},
+        sf::IntRect{112, 112, 16, 16},
+        sf::IntRect{112, 112, 16, 16},
+        sf::IntRect{112, 112, 16, 16},
+    };
+
     animation = &animations[pacman->getDirection()];
     sprite.setOrigin(8, 8);
 
@@ -51,6 +71,24 @@ void PacmanView::update(const logic::Events event) {
     switch (event) {
         case logic::Events::DIRECTION_CHANGED:
             animation = &animations[pacman->getDirection()]; break;
+
+        case logic::Events::RESPAWN:
+            dying = false;
+            moving = true;
+            animation = &animations[pacman->getDirection()];
+
+            frameIndex = 0;
+            elapsedTime = 0;
+            break;
+
+        case logic::Events::DEATH:
+            dying = true;
+            animation = &animations[5];
+
+            frameIndex = 0;
+            elapsedTime = 0;
+            break;
+
         case logic::Events::ISMOVING_CHANGED:
             moving = pacman->isMoving(); break;
 
@@ -96,7 +134,7 @@ void PacmanView::render() {
 
     Window::getInstance().draw(directionSprite);
 
-    if (!moving) {
+    if (!moving && !dying) {
         Window::getInstance().draw(sprite);
         return;
     }

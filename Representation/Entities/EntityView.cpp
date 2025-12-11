@@ -5,7 +5,7 @@
 #include "EntityView.h"
 #include "../Window.h"
 
-EntityView::EntityView(const std::shared_ptr<logic::EntityModel> &model, const std::shared_ptr<Camera>& camera) : model(model), camera(camera) {}
+EntityView::EntityView(const std::shared_ptr<logic::EntityModel> &model, const std::shared_ptr<Camera>& camera, const float frameDuration) : model(model), camera(camera), frameDuration(frameDuration) {}
 
 
 void EntityView::render() {

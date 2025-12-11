@@ -16,7 +16,7 @@
 
 namespace logic {
 
-    enum Events { DIRECTION_CHANGED, ISMOVING_CHANGED };
+    enum Events { DIRECTION_CHANGED, ISMOVING_CHANGED, DEATH, RESPAWN };
 
     class Observer {
     public:

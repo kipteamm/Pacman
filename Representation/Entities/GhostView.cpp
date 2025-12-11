@@ -8,7 +8,7 @@
 #include "GhostView.h"
 
 
-GhostView::GhostView(const std::shared_ptr<logic::GhostModel>& model, const std::shared_ptr<Camera>& camera, const int spriteY) : EntityView(model, camera), ghost(model) {
+GhostView::GhostView(const std::shared_ptr<logic::GhostModel>& model, const std::shared_ptr<Camera>& camera, const int spriteY) : EntityView(model, camera, 0.16), ghost(model) {
     // Up animation
     animations[logic::Moves::UP] = {
         sf::IntRect{64, spriteY, 16, 16},
