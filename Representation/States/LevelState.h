@@ -12,11 +12,12 @@
 #include "../../Logic/World.h"
 #include "StateManager.h"
 #include "../Camera.h"
+#include "../../Logic/Score.h"
 
 
 class LevelState final : public State {
 public:
-    explicit LevelState(StateManager* context, const std::shared_ptr<ConcreteFactory>& factory, const std::shared_ptr<Camera>& camera);
+    explicit LevelState(StateManager* context, const std::shared_ptr<ConcreteFactory>& factory, const std::shared_ptr<Camera>& camera, const std::shared_ptr<logic::Score>& scoreSystem);
 
     void update(double dt) override;
     void handleInput(const sf::Event::KeyEvent &keyPressed) override;
@@ -25,6 +26,7 @@ public:
 private:
     std::shared_ptr<ConcreteFactory> factory;
     std::unique_ptr<logic::World> world;
+    std::shared_ptr<logic::Score> scoreSystem;
 
     std::unordered_map<Layer, std::vector<std::shared_ptr<EntityView>>> entityViews{
         {Layer::BACKGROUND, std::vector<std::shared_ptr<EntityView>>()},

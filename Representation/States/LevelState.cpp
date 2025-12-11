@@ -5,7 +5,7 @@
 #include "../Window.h"
 
 
-LevelState::LevelState(StateManager *context, const std::shared_ptr<ConcreteFactory>& factory, const std::shared_ptr<Camera>& camera) : State(context) {
+LevelState::LevelState(StateManager *context, const std::shared_ptr<ConcreteFactory>& factory, const std::shared_ptr<Camera>& camera, const std::shared_ptr<logic::Score>& scoreSystem) : State(context), scoreSystem(scoreSystem) {
     factory->setViews(&this->entityViews);
 
     world = std::make_unique<logic::World>(factory);
@@ -35,12 +35,13 @@ LevelState::LevelState(StateManager *context, const std::shared_ptr<ConcreteFact
     const float spriteWidth = 16.0f * scaleX;
     const float gap = 4.0f * scaleX;
 
+    // TODO: fix resizing
     live1.setPosition(mapLeftPixel, uiYPosition);
     live2.setPosition(mapLeftPixel + spriteWidth + gap, uiYPosition);
     live3.setPosition(mapLeftPixel + (spriteWidth + gap) * 2, uiYPosition);
 
     scoreText.setFont(AssetManager::getInstance().getFont());
-    scoreText.setString("999999");
+    scoreText.setString("0");
     scoreText.setCharacterSize(static_cast<unsigned int>(16 * scaleY));
     scoreText.setFillColor(sf::Color::White);
 
@@ -51,6 +52,9 @@ LevelState::LevelState(StateManager *context, const std::shared_ptr<ConcreteFact
 
 
 void LevelState::update(const double dt) {
+    scoreSystem->update(dt);
+    scoreText.setString(std::to_string(scoreSystem->getScore()));
+
     switch (world->update(dt)) {
         case logic::GAME_OVER:
             // this->context->swap();

@@ -8,7 +8,7 @@ using namespace logic;
 
 
 
-Score::Score() {
+Score::Score() : score(0) {
     // Try to open the file in read and write mode
     // If the fil does not exist, create it, the function
     // will try to reopen the file in read and write after creation
@@ -34,12 +34,17 @@ std::vector<int> Score::getHighscores() {
     return highscores;
 }
 
+int Score::getScore() const {
+    return score;
+}
+
 
 void Score::addScore(const int score) {
     highscores.push_back(score);
 
     std::ranges::sort(highscores, std::greater<>());
 }
+
 
 void Score::write() const {
     if (highscores.empty()) return;
@@ -53,6 +58,19 @@ void Score::write() const {
     }
 
     out.close();
+}
+
+void Score::update(const double dt) {
+    timeLastCoin += dt;
+
+    static double accumulator = 0;
+    accumulator += dt;
+
+    if (accumulator < 1 || score <= 0) return;
+
+    score -= SCORE_DECAY;
+    accumulator = 0;
+    notify(Events::SCORE_UPDATE);
 }
 
 
@@ -69,6 +87,30 @@ std::fstream Score::createHighscoresFile() const {
 
 
 void Score::update(const Events event) {
-    return;
+    switch (event) {
+        case Events::GAME_OVER:
+            addScore(score); break;
+
+        case Events::COIN_EATEN: {
+            const int timeBonus = static_cast<int>(50.0 / (timeLastCoin + 0.5));
+            score += (BASE_COIN_POINTS + timeBonus);
+
+            timeLastCoin = 0.0;
+            break;
+        }
+
+        case Events::GHOST_EATEN:
+            score += GHOST_POINTS;  break;
+
+        case Events::FRUIT_EATEN:
+            score += FRUIT_POINTS; break;
+
+        case Events::LEVEL_COMPLETED:
+            score += LEVEL_CLEAR_POINTS; break;
+
+        default: return;
+    }
+
+    notify(Events::SCORE_UPDATE);
 }
 

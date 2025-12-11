@@ -26,7 +26,7 @@ MenuState::MenuState(
 void MenuState::handleInput(const sf::Event::KeyEvent &keyPressed) {
     switch (keyPressed.code) {
         case sf::Keyboard::Space:
-            this->context->swap(std::make_unique<LevelState>(this->context, factory, camera));
+            this->context->swap(std::make_unique<LevelState>(this->context, factory, camera, scoreSystem));
             break;
 
         default: break;
