@@ -31,6 +31,12 @@ private:
         {Layer::FOREGROUND, std::vector<std::shared_ptr<EntityView>>()},
         {Layer::PACMAN, std::vector<std::shared_ptr<EntityView>>()}
     };
+
+    sf::Sprite live1;
+    sf::Sprite live2;
+    sf::Sprite live3;
+
+    sf::Text scoreText;
 };
 
 

@@ -1,6 +1,9 @@
 #include "PausedState.h"
 #include "LevelState.h"
 
+#include "../AssetManager.h"
+#include "../Window.h"
+
 
 LevelState::LevelState(StateManager *context, const std::shared_ptr<ConcreteFactory>& factory, const std::shared_ptr<Camera>& camera) : State(context) {
     factory->setViews(&this->entityViews);
@@ -9,11 +12,52 @@ LevelState::LevelState(StateManager *context, const std::shared_ptr<ConcreteFact
     world->loadLevel("../Representation/levels/level_1.txt");
 
     camera->setScaling(world->getWidth(), world->getHeight());
+
+    live1.setTexture(AssetManager::getInstance().getSpriteSheet());
+    live2.setTexture(AssetManager::getInstance().getSpriteSheet());
+    live3.setTexture(AssetManager::getInstance().getSpriteSheet());
+
+    live1.setTextureRect({16, 0, 16, 16});
+    live2.setTextureRect({16, 0, 16, 16});
+    live3.setTextureRect({16, 0, 16, 16});
+
+    const float scaleX = camera->getTileWidth() / 16.0f;
+    const float scaleY = camera->getTileHeight() / 16.0f;
+
+    live1.setScale(scaleX, scaleY);
+    live2.setScale(scaleX, scaleY);
+    live3.setScale(scaleX, scaleY);
+
+    const float mapLeftPixel = camera->xToPixel(-1.0f);
+    const float mapRightPixel = camera->xToPixel(1.0f);
+    const float uiYPosition = camera->yToPixel(1.0f) + 10.0f;
+
+    const float spriteWidth = 16.0f * scaleX;
+    const float gap = 4.0f * scaleX;
+
+    live1.setPosition(mapLeftPixel, uiYPosition);
+    live2.setPosition(mapLeftPixel + spriteWidth + gap, uiYPosition);
+    live3.setPosition(mapLeftPixel + (spriteWidth + gap) * 2, uiYPosition);
+
+    scoreText.setFont(AssetManager::getInstance().getFont());
+    scoreText.setString("999999");
+    scoreText.setCharacterSize(static_cast<unsigned int>(16 * scaleY));
+    scoreText.setFillColor(sf::Color::White);
+
+    const sf::FloatRect textBounds = scoreText.getLocalBounds();
+    scoreText.setOrigin(textBounds.width, 0);
+    scoreText.setPosition(mapRightPixel, uiYPosition);
 };
 
 
 void LevelState::update(const double dt) {
-    world->update(dt);
+    switch (world->update(dt)) {
+        case logic::GAME_OVER:
+            // this->context->swap();
+            return;
+
+        default: return;
+    }
 }
 
 void LevelState::handleInput(const sf::Event::KeyEvent &keyPressed) {
@@ -58,4 +102,11 @@ void LevelState::render() {
     for (const auto& view : this->entityViews[Layer::PACMAN]) {
         view->render();
     }
+
+    const unsigned int lives = world->getLives();
+    if (lives > 0) Window::getInstance().draw(live1);
+    if (lives > 1) Window::getInstance().draw(live2);
+    if (lives > 2) Window::getInstance().draw(live3);
+
+    Window::getInstance().draw(scoreText);
 }

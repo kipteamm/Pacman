@@ -26,12 +26,15 @@ namespace logic {
         [[nodiscard]] int getGhostExitY() const;
 
         [[nodiscard]] std::shared_ptr<PacmanModel> getPacman() const;
+        [[nodiscard]] unsigned int getLives() const;
 
         [[nodiscard]] bool collidesWithWall(float x, float y, bool passDoor) const;
 
         void loadLevel(const std::string& filename);
         void resetLevel();
-        void update(double dt);
+
+        [[nodiscard]] Events update(double dt);
+
         void handleMove(const Moves& move) const;
 
     private:
@@ -54,7 +57,7 @@ namespace logic {
         std::vector<std::shared_ptr<WallModel>> walls;
 
         std::shared_ptr<PacmanModel> pacman;
-        int lives = 3;
+        unsigned int lives = 3;
     };
 }
 

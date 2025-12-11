@@ -36,6 +36,11 @@ std::shared_ptr<PacmanModel> World::getPacman() const {
     return this->pacman;
 }
 
+unsigned int World::getLives() const {
+    return lives;
+}
+
+
 bool World::collidesWithWall(const float x, const float y, const bool passDoor) const {
     for (const std::shared_ptr<WallModel>& wall : walls) {
         if (wall->isDoor() && passDoor) continue;
@@ -131,17 +136,17 @@ void World::resetLevel() {
 }
 
 
-void World::update(const double dt) {
+Events World::update(const double dt) {
     if (restarting) {
         restartTime += dt;
 
         if (restartTime >= DEATH_DURATION) resetLevel();
-        return;
+        return Events::NO_EVENT;
     }
 
     pacman->move(*this, dt);
 
-    constexpr float epsilon = 0.1f;
+    constexpr float epsilon = 0.05f;
 
     for (const auto& ghost : ghosts) {
         ghost->update(*this, dt);
@@ -150,11 +155,16 @@ void World::update(const double dt) {
         if (std::abs(pacman->getX() - ghost->getX()) > epsilon || std::abs(pacman->getY() - ghost->getY()) > epsilon) continue;
         lives--;
 
+        if (lives == 0) return Events::GAME_OVER;
+
         restarting = true;
         pacman->notify(Events::DEATH);
     }
+
+    return Events::NO_EVENT;
 }
 
 void World::handleMove(const Moves &move) const {
+    if (restarting) return;
     pacman->setNextDirection(move);
 }
