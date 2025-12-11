@@ -120,10 +120,12 @@ Collaboration diagram for WallView:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a3b2ccffe35120691f16790aaf29bd0df" id="r_a3b2ccffe35120691f16790aaf29bd0df"><td class="memItemLeft" align="right" valign="top"><a id="a3b2ccffe35120691f16790aaf29bd0df" name="a3b2ccffe35120691f16790aaf29bd0df"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>WallView</b> (const std::shared_ptr&lt; <a class="el" href="classlogic_1_1_wall_model.html">logic::WallModel</a> &gt; &amp;model, const std::shared_ptr&lt; <a class="el" href="class_camera.html">Camera</a> &gt; &amp;camera, char type)</td></tr>
-<tr class="memitem:a2fa0aa6bb4169390b59db15d2e7388ec" id="r_a2fa0aa6bb4169390b59db15d2e7388ec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2fa0aa6bb4169390b59db15d2e7388ec">update</a> () override</td></tr>
+<tr class="memitem:a7998113d539249cc76c8b639be199a98" id="r_a7998113d539249cc76c8b639be199a98"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7998113d539249cc76c8b639be199a98">update</a> (logic::Events event) override</td></tr>
 <tr class="inherit_header pub_methods_class_entity_view"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_class_entity_view')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="class_entity_view.html">EntityView</a></td></tr>
 <tr class="memitem:ae20331a1dfed788332483f3cdb848475 inherit pub_methods_class_entity_view" id="r_ae20331a1dfed788332483f3cdb848475"><td class="memItemLeft" align="right" valign="top">
 &#160;</td><td class="memItemRight" valign="bottom"><b>EntityView</b> (const std::shared_ptr&lt; <a class="el" href="classlogic_1_1_entity_model.html">logic::EntityModel</a> &gt; &amp;model, const std::shared_ptr&lt; <a class="el" href="class_camera.html">Camera</a> &gt; &amp;camera)</td></tr>
+<tr class="memitem:a5052ee0e188d9e3e624cf7996ded9af6 inherit pub_methods_class_entity_view" id="r_a5052ee0e188d9e3e624cf7996ded9af6"><td class="memItemLeft" align="right" valign="top">
+size_t&#160;</td><td class="memItemRight" valign="bottom"><b>getFrameIndex</b> (float dt, size_t max)</td></tr>
 <tr class="memitem:adf2869ddecd4e3f5bf1ae25684b2ee61 inherit pub_methods_class_entity_view" id="r_adf2869ddecd4e3f5bf1ae25684b2ee61"><td class="memItemLeft" align="right" valign="top">
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>render</b> ()</td></tr>
 </table><table class="memberdecls">
@@ -136,10 +138,16 @@ std::shared_ptr&lt; <a class="el" href="classlogic_1_1_entity_model.html">logic:
 std::shared_ptr&lt; <a class="el" href="class_camera.html">Camera</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>camera</b></td></tr>
 <tr class="memitem:a39508da83001b63aa61b24af79890a83 inherit pro_attribs_class_entity_view" id="r_a39508da83001b63aa61b24af79890a83"><td class="memItemLeft" align="right" valign="top">
 sf::Sprite&#160;</td><td class="memItemRight" valign="bottom"><b>sprite</b></td></tr>
+<tr class="memitem:aea9fe4f4b1f0f0dd5304de4a18fe365c inherit pro_attribs_class_entity_view" id="r_aea9fe4f4b1f0f0dd5304de4a18fe365c"><td class="memItemLeft" align="right" valign="top">
+float&#160;</td><td class="memItemRight" valign="bottom"><b>frameDuration</b> = 0.08</td></tr>
+<tr class="memitem:a43665858104eca1ef3b645da90ed2611 inherit pro_attribs_class_entity_view" id="r_a43665858104eca1ef3b645da90ed2611"><td class="memItemLeft" align="right" valign="top">
+float&#160;</td><td class="memItemRight" valign="bottom"><b>elapsedTime</b> = 0</td></tr>
+<tr class="memitem:a4b012644058a2001c1fffe05679b92ef inherit pro_attribs_class_entity_view" id="r_a4b012644058a2001c1fffe05679b92ef"><td class="memItemLeft" align="right" valign="top">
+size_t&#160;</td><td class="memItemRight" valign="bottom"><b>frameIndex</b> = 0</td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a2fa0aa6bb4169390b59db15d2e7388ec" name="a2fa0aa6bb4169390b59db15d2e7388ec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2fa0aa6bb4169390b59db15d2e7388ec">&#9670;&#160;</a></span>update()</h2>
+<a id="a7998113d539249cc76c8b639be199a98" name="a7998113d539249cc76c8b639be199a98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7998113d539249cc76c8b639be199a98">&#9670;&#160;</a></span>update()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -150,7 +158,7 @@ sf::Sprite&#160;</td><td class="memItemRight" valign="bottom"><b>sprite</b></td>
         <tr>
           <td class="memname">void WallView::update </td>
           <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype">logic::Events</td>          <td class="paramname"><span class="paramname"><em>event</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>

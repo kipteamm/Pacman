@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['stopwatch_0',['Stopwatch',['../classlogic_1_1_stopwatch.html#aef5301b0593339e01c50a83022e7b801',1,'logic::Stopwatch']]]
+  ['random_0',['Random',['../classlogic_1_1_random.html#affaefb818059c94b4b5993ad8d05b595',1,'logic::Random']]]
 ];

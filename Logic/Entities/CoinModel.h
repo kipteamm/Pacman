@@ -13,7 +13,7 @@ namespace logic {
     public:
         explicit CoinModel(float normalizedX, float normalizedY);
 
-        void update(double dt) override {};
+        void update(const World& world, double dt) override {};
     };
 }
 

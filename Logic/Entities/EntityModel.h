@@ -11,12 +11,14 @@
 namespace logic {
     enum Moves { UP, LEFT, RIGHT, DOWN };
 
+    class World;
+
     class EntityModel : public Subject {
     public:
         explicit EntityModel(float normalizedX, float normalizedY);
         ~EntityModel() override = default;
 
-        virtual void update(double dt) = 0;
+        virtual void update(const World& world, double dt) = 0;
 
         [[nodiscard]] bool checkCollision(float otherX, float otherY, float width, float height) const;
         [[nodiscard]] float getX() const;
@@ -26,8 +28,6 @@ namespace logic {
         float x;
         float y;
     };
-
-    class World;
 
     class MovingEntityModel : public EntityModel {
     public:

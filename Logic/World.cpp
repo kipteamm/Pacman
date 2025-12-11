@@ -24,6 +24,21 @@ float World::getHeight() const {
     return mapHeight;
 }
 
+std::shared_ptr<PacmanModel> World::getPacman() const {
+    return this->pacman;
+}
+
+bool World::collidesWithWall(const float x, const float y) const {
+    for (const std::shared_ptr<WallModel>& wall : walls) {
+        const float wallX = wall->getX();
+        const float wallY = wall->getY();
+
+        if (std::abs(x - wallX) < tileWidth / 2.0f && std::abs(y - wallY) < tileHeight / 2.0f) return true;
+    }
+
+    return false;
+}
+
 
 void World::loadLevel(const std::string &filename) {
     std::fstream fileStream(filename);
@@ -52,7 +67,7 @@ void World::loadLevel(const std::string &filename) {
                 case '*':
                     pacman = factory->createPacMan(x, y, mapWidth, mapHeight); break;
                 case '.':
-                    interactables.push_back(factory->createCoin(x, y)); break;
+                    collectibles.push_back(factory->createCoin(x, y)); break;
                 case 't':
                 case 'b':
                 case 'l':
@@ -75,13 +90,13 @@ void World::loadLevel(const std::string &filename) {
                 case '6':
                     walls.push_back(factory->createWall(x, y, tile)); break;
                 case 'B':
-                    interactables.push_back(factory->createGhost(x, y, mapWidth, mapHeight, GhostType::BLINKY)); break;
+                    ghosts.push_back(factory->createBlinky(x, y, mapWidth, mapHeight)); break;
                 case 'P':
-                    interactables.push_back(factory->createGhost(x, y, mapWidth, mapHeight, GhostType::PINKY)); break;
+                    ghosts.push_back(factory->createPinky(x, y, mapWidth, mapHeight)); break;
                 case 'I':
-                    interactables.push_back(factory->createGhost(x, y, mapWidth, mapHeight, GhostType::INKY)); break;
+                    ghosts.push_back(factory->createInky(x, y, mapWidth, mapHeight)); break;
                 case 'C':
-                    interactables.push_back(factory->createGhost(x, y, mapWidth, mapHeight, GhostType::CLYDE)); break;
+                    ghosts.push_back(factory->createClyde(x, y, mapWidth, mapHeight)); break;
 
                 default: throw std::runtime_error("Unsupported tile '" + std::string(1, tile) + "' in level '" + filename + "'");
             }
@@ -92,30 +107,12 @@ void World::loadLevel(const std::string &filename) {
 void World::update(const double dt) {
     pacman->move(*this, dt);
 
-    // for (auto& entity: entities) {
-    //     entity->update(dt);
-    // }
+    for (const auto& ghost : ghosts) {
+        ghost->update(*this, dt);
+        ghost->move(*this, dt);
+    }
 }
 
 void World::handleMove(const Moves &move) const {
     pacman->setNextDirection(move);
-}
-
-
-bool World::collides(const Moves& direction, const float distance, float &x, float &y) const {
-    switch(direction) {
-        case Moves::LEFT: x -= distance; break;
-        case Moves::RIGHT: x += distance; break;
-        case Moves::UP: y -= distance; break;
-        case Moves::DOWN: y += distance; break;
-    }
-
-    for (const std::shared_ptr<WallModel>& wall : walls) {
-        const float wallX = wall->getX();
-        const float wallY = wall->getY();
-        
-        if (std::abs(x - wallX) < tileWidth / 2.0f && std::abs(y - wallY) < tileHeight / 2.0f) return true;
-    }
-
-    return false;
 }

@@ -120,7 +120,7 @@ Collaboration diagram for logic::WallModel:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:af9b66700b2b2a7f0b213fdadbb751e48" id="r_af9b66700b2b2a7f0b213fdadbb751e48"><td class="memItemLeft" align="right" valign="top"><a id="af9b66700b2b2a7f0b213fdadbb751e48" name="af9b66700b2b2a7f0b213fdadbb751e48"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>WallModel</b> (float normalizedX, float normalizedY)</td></tr>
-<tr class="memitem:aaa16f3800a1712c26f6afc6d3773f697" id="r_aaa16f3800a1712c26f6afc6d3773f697"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaa16f3800a1712c26f6afc6d3773f697">update</a> (double dt) override</td></tr>
+<tr class="memitem:a457f717c1e099ce10353d5391b2cc861" id="r_a457f717c1e099ce10353d5391b2cc861"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a457f717c1e099ce10353d5391b2cc861">update</a> (const <a class="el" href="classlogic_1_1_world.html">World</a> &amp;world, double dt) override</td></tr>
 <tr class="inherit_header pub_methods_classlogic_1_1_entity_model"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classlogic_1_1_entity_model')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="classlogic_1_1_entity_model.html">logic::EntityModel</a></td></tr>
 <tr class="memitem:a791da21c5860667eae2c5bccd30dbd9b inherit pub_methods_classlogic_1_1_entity_model" id="r_a791da21c5860667eae2c5bccd30dbd9b"><td class="memItemLeft" align="right" valign="top">
 &#160;</td><td class="memItemRight" valign="bottom"><b>EntityModel</b> (float normalizedX, float normalizedY)</td></tr>
@@ -135,8 +135,8 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>getY</b> () const</t
 void&#160;</td><td class="memItemRight" valign="bottom"><b>attach</b> (const std::shared_ptr&lt; <a class="el" href="classlogic_1_1_observer.html">Observer</a> &gt; &amp;observer)</td></tr>
 <tr class="memitem:a867eae02dd2392c01ee949a5fdb8099d inherit pub_methods_classlogic_1_1_subject" id="r_a867eae02dd2392c01ee949a5fdb8099d"><td class="memItemLeft" align="right" valign="top">
 void&#160;</td><td class="memItemRight" valign="bottom"><b>detach</b> (const std::shared_ptr&lt; <a class="el" href="classlogic_1_1_observer.html">Observer</a> &gt; &amp;observer)</td></tr>
-<tr class="memitem:af104c2baf37c7aa63b2ef6d32c2b3a9c inherit pub_methods_classlogic_1_1_subject" id="r_af104c2baf37c7aa63b2ef6d32c2b3a9c"><td class="memItemLeft" align="right" valign="top">
-void&#160;</td><td class="memItemRight" valign="bottom"><b>notify</b> ()</td></tr>
+<tr class="memitem:a9b8fd61bd7407486a7be6b0756f79a11 inherit pub_methods_classlogic_1_1_subject" id="r_a9b8fd61bd7407486a7be6b0756f79a11"><td class="memItemLeft" align="right" valign="top">
+void&#160;</td><td class="memItemRight" valign="bottom"><b>notify</b> (Events event)</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -150,8 +150,8 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>y</b></td></tr>
 std::list&lt; std::shared_ptr&lt; <a class="el" href="classlogic_1_1_observer.html">Observer</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>observers</b></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="aaa16f3800a1712c26f6afc6d3773f697" name="aaa16f3800a1712c26f6afc6d3773f697"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaa16f3800a1712c26f6afc6d3773f697">&#9670;&#160;</a></span>update()</h2>
+<a id="a457f717c1e099ce10353d5391b2cc861" name="a457f717c1e099ce10353d5391b2cc861"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a457f717c1e099ce10353d5391b2cc861">&#9670;&#160;</a></span>update()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -160,15 +160,19 @@ std::list&lt; std::shared_ptr&lt; <a class="el" href="classlogic_1_1_observer.ht
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void WallModel::update </td>
+          <td class="memname">void logic::WallModel::update </td>
           <td>(</td>
-          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>dt</em></span></td><td>)</td>
+          <td class="paramtype">const <a class="el" href="classlogic_1_1_world.html">World</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>world</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>dt</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">

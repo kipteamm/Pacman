@@ -8,8 +8,3 @@ using namespace logic;
 
 
 WallModel::WallModel(const float normalizedX, const float normalizedY) : EntityModel(normalizedX, normalizedY) {}
-
-
-void WallModel::update(double dt) {
-
-}

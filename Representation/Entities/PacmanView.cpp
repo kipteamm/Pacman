@@ -60,24 +60,9 @@ void PacmanView::update(const logic::Events event) {
 
 
 void PacmanView::render() {
-    if (!moving) {
-        Window::getInstance().draw(sprite);
-        return;
-    }
-
     float x = camera->xToPixel(model->getX());
     float y = camera->yToPixel(model->getY());
     sprite.setPosition(x, y);
-
-    const float scaleX = camera->getTileWidth() / 16.0f;
-    const float scaleY = camera->getTileHeight() / 16.0f;
-    sprite.setScale(scaleX, scaleY);
-
-    const double dt = logic::Stopwatch::getInstance().getDeltaTime();
-    const sf::IntRect rect = animation->at(getFrameIndex(static_cast<float>(dt), animation->size()));
-    sprite.setTextureRect(rect);
-
-    Window::getInstance().draw(sprite);
 
     switch (pacman->getNextDirection()) {
         case logic::Moves::UP:
@@ -104,7 +89,23 @@ void PacmanView::render() {
     }
 
     directionSprite.setPosition(x, y);
+
+    const float scaleX = camera->getTileWidth() / 16.0f;
+    const float scaleY = camera->getTileHeight() / 16.0f;
     directionSprite.setScale(scaleX, scaleY);
 
     Window::getInstance().draw(directionSprite);
+
+    if (!moving) {
+        Window::getInstance().draw(sprite);
+        return;
+    }
+
+    sprite.setScale(scaleX, scaleY);
+
+    const double dt = logic::Stopwatch::getInstance().getDeltaTime();
+    const sf::IntRect rect = animation->at(getFrameIndex(static_cast<float>(dt), animation->size()));
+    sprite.setTextureRect(rect);
+
+    Window::getInstance().draw(sprite);
 }

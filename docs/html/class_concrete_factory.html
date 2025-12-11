@@ -116,13 +116,99 @@ Collaboration diagram for ConcreteFactory:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:abd5e4ef9b5fac2edff5cdbadcfdeb213" id="r_abd5e4ef9b5fac2edff5cdbadcfdeb213"><td class="memItemLeft" align="right" valign="top"><a id="abd5e4ef9b5fac2edff5cdbadcfdeb213" name="abd5e4ef9b5fac2edff5cdbadcfdeb213"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>ConcreteFactory</b> (const std::shared_ptr&lt; <a class="el" href="class_camera.html">Camera</a> &gt; &amp;camera)</td></tr>
-<tr class="memitem:aa16aa8f0e84557b3112745303ac55dee" id="r_aa16aa8f0e84557b3112745303ac55dee"><td class="memItemLeft" align="right" valign="top"><a id="aa16aa8f0e84557b3112745303ac55dee" name="aa16aa8f0e84557b3112745303ac55dee"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setViews</b> (std::vector&lt; std::shared_ptr&lt; <a class="el" href="class_entity_view.html">EntityView</a> &gt; &gt; *views)</td></tr>
-<tr class="memitem:aa995c91fe0e4e46834fc26a50831f8a0" id="r_aa995c91fe0e4e46834fc26a50831f8a0"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classlogic_1_1_pacman_model.html">logic::PacmanModel</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa995c91fe0e4e46834fc26a50831f8a0">createPacMan</a> (float x, float y) override</td></tr>
+<tr class="memitem:a69dc709d543df39e1d6e49b241a750d9" id="r_a69dc709d543df39e1d6e49b241a750d9"><td class="memItemLeft" align="right" valign="top"><a id="a69dc709d543df39e1d6e49b241a750d9" name="a69dc709d543df39e1d6e49b241a750d9"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setViews</b> (std::unordered_map&lt; Layer, std::vector&lt; std::shared_ptr&lt; <a class="el" href="class_entity_view.html">EntityView</a> &gt; &gt; &gt; *views)</td></tr>
+<tr class="memitem:ad27adc03b34b54f5d033f0f51a41edbf" id="r_ad27adc03b34b54f5d033f0f51a41edbf"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classlogic_1_1_pacman_model.html">logic::PacmanModel</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad27adc03b34b54f5d033f0f51a41edbf">createPacMan</a> (float x, float y, float mapWidth, float mapHeight) override</td></tr>
+<tr class="memitem:a66813dbe6892cef0aab915c699be49fe" id="r_a66813dbe6892cef0aab915c699be49fe"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classlogic_1_1_chasing_ghost.html">logic::ChasingGhost</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a66813dbe6892cef0aab915c699be49fe">createBlinky</a> (float x, float y, float mapWidth, float mapHeight) override</td></tr>
+<tr class="memitem:a06286775ea970b5373965f7bc52c73ca" id="r_a06286775ea970b5373965f7bc52c73ca"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classlogic_1_1_ambush_ghost.html">logic::AmbushGhost</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a06286775ea970b5373965f7bc52c73ca">createPinky</a> (float x, float y, float mapWidth, float mapHeight) override</td></tr>
+<tr class="memitem:ab8a2f15c82a5c7372c2ccf55df474172" id="r_ab8a2f15c82a5c7372c2ccf55df474172"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classlogic_1_1_ambush_ghost.html">logic::AmbushGhost</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab8a2f15c82a5c7372c2ccf55df474172">createInky</a> (float x, float y, float mapWidth, float mapHeight) override</td></tr>
+<tr class="memitem:a1889b76ce9ad24ade0938c73a5d3470e" id="r_a1889b76ce9ad24ade0938c73a5d3470e"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classlogic_1_1_random_ghost.html">logic::RandomGhost</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1889b76ce9ad24ade0938c73a5d3470e">createClyde</a> (float x, float y, float mapWidth, float mapHeight) override</td></tr>
 <tr class="memitem:a95febfe91440eda48ddce03e062df401" id="r_a95febfe91440eda48ddce03e062df401"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classlogic_1_1_wall_model.html">logic::WallModel</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a95febfe91440eda48ddce03e062df401">createWall</a> (float x, float y, char type) override</td></tr>
 <tr class="memitem:a93d8f084fc8bbd7ae4251cd0ec789dbf" id="r_a93d8f084fc8bbd7ae4251cd0ec789dbf"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classlogic_1_1_coin_model.html">logic::CoinModel</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a93d8f084fc8bbd7ae4251cd0ec789dbf">createCoin</a> (float x, float y) override</td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a66813dbe6892cef0aab915c699be49fe" name="a66813dbe6892cef0aab915c699be49fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66813dbe6892cef0aab915c699be49fe">&#9670;&#160;</a></span>createBlinky()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt; <a class="el" href="classlogic_1_1_chasing_ghost.html">logic::ChasingGhost</a> &gt; ConcreteFactory::createBlinky </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>y</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>mapWidth</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>mapHeight</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="classlogic_1_1_abstract_factory.html">logic::AbstractFactory</a>.</p>
+
+</div>
+</div>
+<a id="a1889b76ce9ad24ade0938c73a5d3470e" name="a1889b76ce9ad24ade0938c73a5d3470e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1889b76ce9ad24ade0938c73a5d3470e">&#9670;&#160;</a></span>createClyde()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt; <a class="el" href="classlogic_1_1_random_ghost.html">logic::RandomGhost</a> &gt; ConcreteFactory::createClyde </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>y</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>mapWidth</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>mapHeight</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="classlogic_1_1_abstract_factory.html">logic::AbstractFactory</a>.</p>
+
+</div>
+</div>
 <a id="a93d8f084fc8bbd7ae4251cd0ec789dbf" name="a93d8f084fc8bbd7ae4251cd0ec789dbf"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a93d8f084fc8bbd7ae4251cd0ec789dbf">&#9670;&#160;</a></span>createCoin()</h2>
 
@@ -154,8 +240,49 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setViews</b> (std::ve
 
 </div>
 </div>
-<a id="aa995c91fe0e4e46834fc26a50831f8a0" name="aa995c91fe0e4e46834fc26a50831f8a0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa995c91fe0e4e46834fc26a50831f8a0">&#9670;&#160;</a></span>createPacMan()</h2>
+<a id="ab8a2f15c82a5c7372c2ccf55df474172" name="ab8a2f15c82a5c7372c2ccf55df474172"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8a2f15c82a5c7372c2ccf55df474172">&#9670;&#160;</a></span>createInky()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt; <a class="el" href="classlogic_1_1_ambush_ghost.html">logic::AmbushGhost</a> &gt; ConcreteFactory::createInky </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>y</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>mapWidth</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>mapHeight</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="classlogic_1_1_abstract_factory.html">logic::AbstractFactory</a>.</p>
+
+</div>
+</div>
+<a id="ad27adc03b34b54f5d033f0f51a41edbf" name="ad27adc03b34b54f5d033f0f51a41edbf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad27adc03b34b54f5d033f0f51a41edbf">&#9670;&#160;</a></span>createPacMan()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -171,7 +298,58 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setViews</b> (std::ve
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>y</em></span>&#160;)</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>y</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>mapWidth</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>mapHeight</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="classlogic_1_1_abstract_factory.html">logic::AbstractFactory</a>.</p>
+
+</div>
+</div>
+<a id="a06286775ea970b5373965f7bc52c73ca" name="a06286775ea970b5373965f7bc52c73ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06286775ea970b5373965f7bc52c73ca">&#9670;&#160;</a></span>createPinky()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt; <a class="el" href="classlogic_1_1_ambush_ghost.html">logic::AmbushGhost</a> &gt; ConcreteFactory::createPinky </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>y</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>mapWidth</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>mapHeight</em></span>&#160;)</td>
         </tr>
       </table>
   </td>

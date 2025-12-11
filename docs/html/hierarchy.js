@@ -9,11 +9,13 @@ var hierarchy =
     [ "logic::Observer", "classlogic_1_1_observer.html", [
       [ "EntityView", "class_entity_view.html", [
         [ "CoinView", "class_coin_view.html", null ],
+        [ "GhostView", "class_ghost_view.html", null ],
         [ "PacmanView", "class_pacman_view.html", null ],
         [ "WallView", "class_wall_view.html", null ]
       ] ],
       [ "logic::Score", "classlogic_1_1_score.html", null ]
     ] ],
+    [ "logic::Random", "classlogic_1_1_random.html", null ],
     [ "State", "class_state.html", [
       [ "LevelState", "class_level_state.html", null ],
       [ "MenuState", "class_menu_state.html", null ],
@@ -25,6 +27,11 @@ var hierarchy =
       [ "logic::EntityModel", "classlogic_1_1_entity_model.html", [
         [ "logic::CoinModel", "classlogic_1_1_coin_model.html", null ],
         [ "logic::MovingEntityModel", "classlogic_1_1_moving_entity_model.html", [
+          [ "logic::GhostModel", "classlogic_1_1_ghost_model.html", [
+            [ "logic::AmbushGhost", "classlogic_1_1_ambush_ghost.html", null ],
+            [ "logic::ChasingGhost", "classlogic_1_1_chasing_ghost.html", null ],
+            [ "logic::RandomGhost", "classlogic_1_1_random_ghost.html", null ]
+          ] ],
           [ "logic::PacmanModel", "classlogic_1_1_pacman_model.html", null ]
         ] ],
         [ "logic::WallModel", "classlogic_1_1_wall_model.html", null ]

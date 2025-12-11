@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['window_0',['Window',['../class_window.html#a3b760cdf58517c8c4a91237ccc582b57',1,'Window']]]
+  ['stopwatch_0',['Stopwatch',['../classlogic_1_1_stopwatch.html#aef5301b0593339e01c50a83022e7b801',1,'logic::Stopwatch']]]
 ];

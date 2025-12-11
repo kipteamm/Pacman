@@ -96,15 +96,17 @@ Inheritance diagram for EntityView:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_entity_view__inherit__graph.png" border="0" usemap="#a_entity_view_inherit__map" loading="lazy" alt="Inheritance graph"/></div>
 <map name="a_entity_view_inherit__map" id="a_entity_view_inherit__map">
-<area shape="rect" title=" " alt="" coords="114,80,198,107"/>
+<area shape="rect" title=" " alt="" coords="164,80,249,107"/>
 <area shape="rect" href="class_coin_view.html" title=" " alt="" coords="5,155,83,181"/>
-<area shape="poly" title=" " alt="" coords="126,117,65,156,62,152,122,114"/>
-<area shape="rect" href="class_pacman_view.html" title=" " alt="" coords="107,155,205,181"/>
-<area shape="poly" title=" " alt="" coords="158,121,158,156,154,153,154,124"/>
-<area shape="rect" href="class_wall_view.html" title=" " alt="" coords="229,155,304,181"/>
-<area shape="poly" title=" " alt="" coords="188,113,250,154,245,154,187,118"/>
-<area shape="rect" href="classlogic_1_1_observer.html" title=" " alt="" coords="101,5,211,32"/>
-<area shape="poly" title=" " alt="" coords="157,46,158,81,154,79,155,50"/>
+<area shape="poly" title=" " alt="" coords="166,116,74,156,71,152,163,111"/>
+<area shape="rect" href="class_ghost_view.html" title=" " alt="" coords="107,155,192,181"/>
+<area shape="poly" title=" " alt="" coords="190,118,161,156,158,152,185,120"/>
+<area shape="rect" href="class_pacman_view.html" title=" " alt="" coords="216,155,314,181"/>
+<area shape="poly" title=" " alt="" coords="228,117,258,155,253,154,225,121"/>
+<area shape="rect" href="class_wall_view.html" title=" " alt="" coords="338,155,414,181"/>
+<area shape="poly" title=" " alt="" coords="251,111,349,154,344,154,250,116"/>
+<area shape="rect" href="classlogic_1_1_observer.html" title=" " alt="" coords="152,5,261,32"/>
+<area shape="poly" title=" " alt="" coords="208,46,209,81,204,78,205,50"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -122,11 +124,13 @@ Collaboration diagram for EntityView:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ae20331a1dfed788332483f3cdb848475" id="r_ae20331a1dfed788332483f3cdb848475"><td class="memItemLeft" align="right" valign="top"><a id="ae20331a1dfed788332483f3cdb848475" name="ae20331a1dfed788332483f3cdb848475"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>EntityView</b> (const std::shared_ptr&lt; <a class="el" href="classlogic_1_1_entity_model.html">logic::EntityModel</a> &gt; &amp;model, const std::shared_ptr&lt; <a class="el" href="class_camera.html">Camera</a> &gt; &amp;camera)</td></tr>
+<tr class="memitem:a5052ee0e188d9e3e624cf7996ded9af6" id="r_a5052ee0e188d9e3e624cf7996ded9af6"><td class="memItemLeft" align="right" valign="top"><a id="a5052ee0e188d9e3e624cf7996ded9af6" name="a5052ee0e188d9e3e624cf7996ded9af6"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><b>getFrameIndex</b> (float dt, size_t max)</td></tr>
 <tr class="memitem:adf2869ddecd4e3f5bf1ae25684b2ee61" id="r_adf2869ddecd4e3f5bf1ae25684b2ee61"><td class="memItemLeft" align="right" valign="top"><a id="adf2869ddecd4e3f5bf1ae25684b2ee61" name="adf2869ddecd4e3f5bf1ae25684b2ee61"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>render</b> ()</td></tr>
 <tr class="inherit_header pub_methods_classlogic_1_1_observer"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classlogic_1_1_observer')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="classlogic_1_1_observer.html">logic::Observer</a></td></tr>
-<tr class="memitem:abde36ace3e49511c155687a32dd765e1 inherit pub_methods_classlogic_1_1_observer" id="r_abde36ace3e49511c155687a32dd765e1"><td class="memItemLeft" align="right" valign="top">
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>update</b> ()=0</td></tr>
+<tr class="memitem:a037d49687e2bcd83c56fd8af8111ca0e inherit pub_methods_classlogic_1_1_observer" id="r_a037d49687e2bcd83c56fd8af8111ca0e"><td class="memItemLeft" align="right" valign="top">
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>update</b> (Events event)=0</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-attribs" class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -136,6 +140,12 @@ std::shared_ptr&lt; <a class="el" href="classlogic_1_1_entity_model.html">logic:
 std::shared_ptr&lt; <a class="el" href="class_camera.html">Camera</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>camera</b></td></tr>
 <tr class="memitem:a39508da83001b63aa61b24af79890a83" id="r_a39508da83001b63aa61b24af79890a83"><td class="memItemLeft" align="right" valign="top"><a id="a39508da83001b63aa61b24af79890a83" name="a39508da83001b63aa61b24af79890a83"></a>
 sf::Sprite&#160;</td><td class="memItemRight" valign="bottom"><b>sprite</b></td></tr>
+<tr class="memitem:aea9fe4f4b1f0f0dd5304de4a18fe365c" id="r_aea9fe4f4b1f0f0dd5304de4a18fe365c"><td class="memItemLeft" align="right" valign="top"><a id="aea9fe4f4b1f0f0dd5304de4a18fe365c" name="aea9fe4f4b1f0f0dd5304de4a18fe365c"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>frameDuration</b> = 0.08</td></tr>
+<tr class="memitem:a43665858104eca1ef3b645da90ed2611" id="r_a43665858104eca1ef3b645da90ed2611"><td class="memItemLeft" align="right" valign="top"><a id="a43665858104eca1ef3b645da90ed2611" name="a43665858104eca1ef3b645da90ed2611"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>elapsedTime</b> = 0</td></tr>
+<tr class="memitem:a4b012644058a2001c1fffe05679b92ef" id="r_a4b012644058a2001c1fffe05679b92ef"><td class="memItemLeft" align="right" valign="top"><a id="a4b012644058a2001c1fffe05679b92ef" name="a4b012644058a2001c1fffe05679b92ef"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><b>frameIndex</b> = 0</td></tr>
 </table>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>Representation/Entities/<a class="el" href="_entity_view_8h_source.html">EntityView.h</a></li>

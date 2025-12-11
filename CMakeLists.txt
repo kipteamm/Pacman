@@ -14,7 +14,6 @@ find_package(SFML 2.6.2 REQUIRED COMPONENTS graphics window system)
 add_executable(Pacman main.cpp
         Representation/Game.cpp
         Representation/Game.h
-        Logic/Random.h
         Logic/Stopwatch.h
         Representation/Window.cpp
         Representation/Window.h
@@ -56,10 +55,18 @@ add_executable(Pacman main.cpp
         Representation/Entities/CoinView.h
         Logic/Entities/CoinModel.cpp
         Logic/Entities/CoinModel.h
-        Logic/Entities/GhostModel.cpp
-        Logic/Entities/GhostModel.h
+        Logic/Entities/Ghosts/GhostModel.cpp
+        Logic/Entities/Ghosts/GhostModel.h
         Representation/Entities/GhostView.cpp
         Representation/Entities/GhostView.h
+        Logic/Entities/Ghosts/ChasingGhost.cpp
+        Logic/Entities/Ghosts/ChasingGhost.h
+        Logic/Entities/Ghosts/AmbushGhost.cpp
+        Logic/Entities/Ghosts/AmbushGhost.h
+        Logic/Entities/Ghosts/RandomGhost.cpp
+        Logic/Entities/Ghosts/RandomGhost.h
+        Logic/Random.cpp
+        Logic/Random.h
 )
 
 target_link_libraries(Pacman PRIVATE sfml-graphics sfml-window sfml-system)

@@ -7,13 +7,13 @@
 
 #include <unordered_map>
 
-#include "../../Logic/Entities/GhostModel.h"
+#include "../../Logic/Entities/Ghosts/GhostModel.h"
 #include "EntityView.h"
 
 
 class GhostView final : public EntityView {
 public:
-    explicit GhostView(const std::shared_ptr<logic::GhostModel> &model, const std::shared_ptr<Camera> &camera, logic::GhostType type);
+    explicit GhostView(const std::shared_ptr<logic::GhostModel> &model, const std::shared_ptr<Camera> &camera, int spriteY);
 
     void update(logic::Events event) override {};
     void render() override;

@@ -37,11 +37,8 @@ bool PacmanModel::canMoveInDirection(const World& world, const Moves dir) const 
     
     const float normalizedX = (static_cast<float>(newGridX) + 0.5f) / mapWidth * 2.0f - 1.0f;
     const float normalizedY = (static_cast<float>(newGridY) + 0.5f) / mapHeight * 2.0f - 1.0f;
-    
-    float checkX = normalizedX;
-    float checkY = normalizedY;
-    
-    return !world.collides(dir, 0.0f, checkX, checkY);
+
+    return !world.collidesWithWall(normalizedX, normalizedY);
 }
 
 void PacmanModel::updateTarget() {
@@ -50,9 +47,7 @@ void PacmanModel::updateTarget() {
 }
 
 void PacmanModel::move(const World& world, const float dt) {
-    const float distancePerSecond = speed;
-    const float moveDistance = distancePerSecond * dt;
-    
+    const float moveDistance = speed * dt;
     const float normalizedWidthPerCell = 2.0f / mapWidth;
     const float normalizedHeightPerCell = 2.0f / mapHeight;
 
@@ -110,8 +105,4 @@ void PacmanModel::move(const World& world, const float dt) {
 
     moving = true;
     notify(Events::ISMOVING_CHANGED);
-}
-
-void PacmanModel::update(double dt) {
-    // Called by observer pattern if needed
 }
