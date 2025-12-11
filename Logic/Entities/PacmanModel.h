@@ -17,12 +17,9 @@ namespace logic {
         void update(const World& world, double dt) override {};
         void move(const World& world, float dt) override;
 
-
     private:
         Moves nextDirection;
         bool moving;
-
-        void updateTarget();
 
         [[nodiscard]] bool canMoveInDirection(const World& world, Moves dir) const;
     };

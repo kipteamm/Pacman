@@ -47,3 +47,9 @@ Moves MovingEntityModel::getDirection() const {
 float MovingEntityModel::getSpeed() const {
     return speed;
 }
+
+
+void MovingEntityModel::updateTarget() {
+    targetX = (static_cast<float>(gridX) + 0.5f) / mapWidth * 2.0f - 1.0f;
+    targetY = (static_cast<float>(gridY) + 0.5f) / mapHeight * 2.0f - 1.0f;
+}

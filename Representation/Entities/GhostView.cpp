@@ -39,6 +39,16 @@ GhostView::GhostView(const std::shared_ptr<logic::GhostModel>& model, const std:
 }
 
 
+void GhostView::update(const logic::Events event) {
+    switch (event) {
+        case logic::Events::DIRECTION_CHANGED:
+            animation = &animations[ghost->getDirection()]; break;
+
+        default: break;
+    }
+}
+
+
 void GhostView::render() {
     const float x = camera->xToPixel(model->getX());
     const float y = camera->yToPixel(model->getY());
@@ -58,10 +68,12 @@ void GhostView::render() {
     switch (ghost->getState()) {
         case logic::GhostState::WAITING:
             debug.setString("WAITING"); break;
-        // case logic::GhostState::LOOKING:
-        //     debug.setString("LOOKING"); break;
+        case logic::GhostState::EXITING:
+            debug.setString("EXITING"); break;
         case logic::GhostState::CHASING:
             debug.setString("CHASING"); break;
+        case logic::GhostState::FRIGHTENED:
+            debug.setString("FRIGHTENED"); break;
     }
 
     debug.setCharacterSize(16);

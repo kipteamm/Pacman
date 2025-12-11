@@ -53,6 +53,8 @@ namespace logic {
         float speed;
 
         Moves direction = Moves::RIGHT;
+
+        void updateTarget();
     };
 }
 

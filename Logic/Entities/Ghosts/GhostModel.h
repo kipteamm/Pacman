@@ -12,7 +12,7 @@
 
 
 namespace logic {
-    enum class GhostState { WAITING, CHASING, FRIGHTENED, DEAD };
+    enum class GhostState { WAITING, EXITING, CHASING, FRIGHTENED };
 
     class GhostModel : public MovingEntityModel {
     public:
@@ -39,6 +39,7 @@ namespace logic {
         double startCooldown;
         double waitingTime;
 
+        [[nodiscard]] bool sameDirection(Moves a, Moves b) const;
         [[nodiscard]] bool isAtIntersection(const World &world) const;
     };
 

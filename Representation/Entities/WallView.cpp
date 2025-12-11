@@ -72,6 +72,9 @@ WallView::WallView(const std::shared_ptr<logic::WallModel> &model, const std::sh
         case '6':
             rectLeft = 3;
             rectTop = 8; break;
+        case 'd':
+            rectLeft = 7;
+            rectTop = 6; break;
 
         default: throw std::runtime_error("Invalid wall type");
     }

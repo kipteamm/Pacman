@@ -22,9 +22,12 @@ namespace logic {
         [[nodiscard]] float getWidth() const;
         [[nodiscard]] float getHeight() const;
 
+        [[nodiscard]] int getGhostExitX() const;
+        [[nodiscard]] int getGhostExitY() const;
+
         [[nodiscard]] std::shared_ptr<PacmanModel> getPacman() const;
 
-        [[nodiscard]] bool collidesWithWall(float x, float y) const;
+        [[nodiscard]] bool collidesWithWall(float x, float y, bool passDoor) const;
 
         void loadLevel(const std::string& filename);
         void update(double dt);
@@ -36,6 +39,9 @@ namespace logic {
 
         float tileWidth = 16;
         float tileHeight = 16;
+
+        int ghostExitX;
+        int ghostExitY;
 
         std::shared_ptr<AbstractFactory> factory;
         std::vector<std::shared_ptr<EntityModel>> collectibles;

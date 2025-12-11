@@ -1,8 +1,8 @@
 1tttt5tttttttt5tttt2
 l....m........m....r
 l.uk.e.jhhhhk.e.ji.r
-l.m..............m.r
-l.e.jk.uk  ji.jk.e.r
+l.m......#.......m.r
+l.e.jk.ukddji.jk.e.r
 l......mBPICm......r
 l.f.jk.phhhho.jk.f.r
 l.m......*.......m.r

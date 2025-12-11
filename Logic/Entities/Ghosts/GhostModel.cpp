@@ -2,8 +2,11 @@
 // Created by toroe on 09/12/2025.
 //
 
+#include "../../Random.h"
 #include "../../World.h"
 #include "GhostModel.h"
+
+#include <iostream>
 
 
 using namespace logic;
@@ -19,77 +22,71 @@ GhostModel::GhostModel(
 ) : MovingEntityModel(normalizedX, normalizedY, mapWidth, mapHeight, speed), state(GhostState::WAITING), defaultSpeed(speed), startCooldown(cooldown), waitingTime(0) {}
 
 
-// void GhostModel::updateTarget(const World& world) {
-    // if (this->type == GhostType::PINKY || this->type == GhostType::INKY) {
-    //     double shortestDistance = std::numeric_limits<double>::max();
-    //     const std::shared_ptr<PacmanModel>& pacman = world.getPacman();
-    //
-    //     int pacmanX = pacman->getGridX();
-    //     int pacmanY = pacman->getGridY();
-    //
-    //     switch (pacman->getDirection()) {
-    //         case Moves::LEFT:
-    //             pacmanX--; break;
-    //         case Moves::RIGHT:
-    //             pacmanX++; break;
-    //         case Moves::UP:
-    //             pacmanY--; break;
-    //         case Moves::DOWN:
-    //             pacmanY++; break;
-    //     }
-    //
-    //     // ReSharper disable once CppJoinDeclarationAndAssignment
-    //     double manhattanDistance;
-    //
-    //     manhattanDistance = std::abs(pacmanX - (gridX - 1)) + std::abs(pacmanY - gridY);
-    //     if (!world.collidesWithWall(gridX - 1, gridY) && manhattanDistance < shortestDistance) {
-    //         direction = Moves::LEFT;
-    //         shortestDistance = manhattanDistance;
-    //     }
-    //
-    //     manhattanDistance = std::abs(pacmanX - (gridX + 1)) + std::abs(pacmanY - gridY);
-    //     if (!world.collidesWithWall(gridX + 1, gridY) && manhattanDistance < shortestDistance) {
-    //         direction = Moves::RIGHT;
-    //         shortestDistance = manhattanDistance;
-    //     }
-    //
-    //     manhattanDistance = std::abs(pacmanX - gridX) + std::abs(pacmanY - (gridY - 1));
-    //     if (!world.collidesWithWall(gridX, gridY - 1) && manhattanDistance < shortestDistance) {
-    //         direction = Moves::UP;
-    //         shortestDistance = manhattanDistance;
-    //     }
-    //
-    //     manhattanDistance = std::abs(pacmanX - gridX) + std::abs(pacmanY - (gridY + 1));
-    //     if (!world.collidesWithWall(gridX, gridY + 1) && manhattanDistance < shortestDistance) {
-    //         direction = Moves::DOWN;
-    //     }
-    //
-    //     this->state = GhostState::CHASING;
-    //     targetX = (static_cast<float>(gridX) + 0.5f) / mapWidth * 2.0f - 1.0f;
-    //     targetY = (static_cast<float>(gridY) + 0.5f) / mapHeight * 2.0f - 1.0f;
-    // }
-// }
-
-
 void GhostModel::setState(const GhostState state) {
     this->state = state;
 }
 
 
 void GhostModel::update(const World& world, const double dt) {
-    if (this->state != GhostState::WAITING) return;
-    waitingTime += dt;
+    if (state == GhostState::WAITING) {
+        waitingTime += dt;
 
-    if (waitingTime > startCooldown) {
-        this->state = GhostState::CHASING;
-    }
+        // std::cout << waitingTime << std::endl;
+
+        if (waitingTime > startCooldown) {
+            state = GhostState::EXITING;
+        }
+        return;
+    };
+
+    // constexpr float epsilon = 0.01f;
+    //
+    // if (state == GhostState::EXITING) {
+    //     const float exitX = world.normalizeX(world.getGhostExitX());
+    //     const float exitY = world.normalizeY(world.getGhostExitY());
+    //
+    //     if (std::abs(x - exitX) < epsilon && std::abs(y - exitY) < epsilon) {
+    //         x = exitX;
+    //         y = exitY;
+    //         state = GhostState::CHASING;
+    //     }
+    // }
 }
 
 
 void GhostModel::move(const World& world, const float dt) {
-    if (state == GhostState::CHASING) speed = defaultSpeed;
-    else if (state == GhostState::FRIGHTENED) speed = defaultSpeed * 0.5f;
-    else return;
+    if (state == GhostState::WAITING) return;
+    if (state == GhostState::FRIGHTENED) speed = defaultSpeed * 0.5f;
+    else speed = defaultSpeed;
+
+    constexpr float epsilon = 0.01f;
+
+    // Target reached
+    if (std::abs(x - targetX) < epsilon && std::abs(y - targetY) < epsilon) {
+        x = targetX;
+        y = targetY;
+
+        switch(direction) {
+            case Moves::LEFT:  gridX--; break;
+            case Moves::RIGHT: gridX++; break;
+            case Moves::UP:    gridY--; break;
+            case Moves::DOWN:  gridY++; break;
+        }
+
+        if (state == GhostState::EXITING && gridX == world.getGhostExitX() && gridY == world.getGhostExitY()) {
+            state = GhostState::CHASING;
+        }
+
+        if (isAtIntersection(world)) {
+            if (state == GhostState::EXITING) direction = minimizeDistance(world, world.getGhostExitX(), world.getGhostExitY());
+            else if (state == GhostState::FRIGHTENED) direction = maximizeDistance(world, *world.getPacman());
+            else direction = decideNextMove(world, *world.getPacman());
+
+            notify(DIRECTION_CHANGED);
+        }
+
+        updateTarget();
+    }
 
     const float moveDistance = speed * dt;
     const float normalizedWidthPerCell = 2.0f / mapWidth;
@@ -98,28 +95,17 @@ void GhostModel::move(const World& world, const float dt) {
     const float dx = targetX - x;
     const float dy = targetY - y;
 
-    float moveX = 0.0f;
-    float moveY = 0.0f;
-
-    if (direction == Moves::LEFT || direction == Moves::RIGHT) {
+    if (dx != 0) {
         const float sign = (dx > 0) ? 1.0f : -1.0f;
-        moveX = sign * std::min(moveDistance * normalizedWidthPerCell, std::abs(dx));
-    } else {
+        x += sign * std::min(std::abs(dx), moveDistance * normalizedWidthPerCell);
+    }
+    else if (dy != 0) {
         const float sign = (dy > 0) ? 1.0f : -1.0f;
-        moveY = sign * std::min(moveDistance * normalizedHeightPerCell, std::abs(dy));
+        y += sign * std::min(std::abs(dy), moveDistance * normalizedHeightPerCell);
     }
 
-    x += moveX;
-    y += moveY;
-
-    if (!isAtIntersection(world)) return;
-
-    // snap to grid to assure being able to turn...?
-    // x = world.normalizeX(gridX);
-    // y = world.normalizeY(gridY);
-
-    if (state == GhostState::FRIGHTENED) direction = maximizeDistance(world, *world.getPacman());
-    else direction = decideNextMove(world, *world.getPacman());
+    if (std::abs(x - targetX) < epsilon) x = targetX;
+    if (std::abs(y - targetY) < epsilon) y = targetY;
 }
 
 
@@ -143,7 +129,7 @@ std::vector<Moves> GhostModel::getPossibleMoves(const World &world) const {
                 moveY++; break;
         }
 
-        if (world.collidesWithWall(world.normalizeX(moveX), world.normalizeY(moveY))) continue;
+        if (world.collidesWithWall(world.normalizeX(moveX), world.normalizeY(moveY), state == GhostState::EXITING)) continue;
         moves.push_back(move);
     }
 
@@ -157,7 +143,7 @@ Moves GhostModel::maximizeDistance(const World &world, const PacmanModel &pacman
 Moves GhostModel::minimizeDistance(const World &world, const int targetX, const int targetY) const {
     const std::vector<Moves> options = getPossibleMoves(world);
 
-    Moves bestMove = options[0];
+    std::vector<Moves> bestCandidates;
     float shortestDistance = 99999.0f;
 
     for (const Moves move : options) {
@@ -172,20 +158,29 @@ Moves GhostModel::minimizeDistance(const World &world, const int targetX, const 
 
         float dist = std::abs(nextX - targetX) + std::abs(nextY - targetY);
 
-        // Ties broken at random?
-        if (dist > shortestDistance) continue;
-        shortestDistance = dist;
-        bestMove = move;
+        if (dist < shortestDistance) {
+            shortestDistance = dist;
+            bestCandidates.clear();
+            bestCandidates.push_back(move);
+        }
+        else if (std::abs(dist - shortestDistance) < 0.001f) {
+            bestCandidates.push_back(move);
+        }
     }
 
-    return bestMove;
+    return bestCandidates[Random::getInstance().getInt(0, bestCandidates.size() - 1)];
 }
 
+
+bool GhostModel::sameDirection(const Moves a, const Moves b) const {
+    if (a == Moves::UP || a == Moves::DOWN) return (b == Moves::UP || b == Moves::DOWN);
+    return (b == Moves::LEFT || b == Moves::RIGHT);
+}
 
 bool GhostModel::isAtIntersection(const World &world) const {
     for (int i = Moves::UP; i <= Moves::DOWN; i++) {
         const Moves move = static_cast<Moves>(i);
-        if (move == direction) continue;
+        if (sameDirection(move, direction)) continue;
 
         int moveX = gridX;
         int moveY = gridY;
@@ -201,7 +196,7 @@ bool GhostModel::isAtIntersection(const World &world) const {
                 moveY++; break;
         }
 
-        if (!world.collidesWithWall(world.normalizeX(moveX), world.normalizeY(moveY))) return true;
+        if (!world.collidesWithWall(world.normalizeX(moveX), world.normalizeY(moveY), state == GhostState::EXITING)) return true;
     }
 
     return false;

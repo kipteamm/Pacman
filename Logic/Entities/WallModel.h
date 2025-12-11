@@ -10,9 +10,14 @@
 namespace logic {
     class WallModel final : public EntityModel {
     public:
-        explicit WallModel(float normalizedX, float normalizedY);
+        explicit WallModel(float normalizedX, float normalizedY, bool isDoor);
 
         void update(const World& world, double dt) override {};
+
+        [[nodiscard]] bool isDoor() const { return door; };
+
+    private:
+        bool door;
     };
 }
 

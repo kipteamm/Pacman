@@ -5,7 +5,7 @@
 using namespace logic;
 
 
-World::World(const std::shared_ptr<AbstractFactory> &factory) : factory(factory) {}
+World::World(const std::shared_ptr<AbstractFactory> &factory) : ghostExitX(0), ghostExitY(0), factory(factory) {}
 
 
 float World::normalizeX(const int value) const {
@@ -24,12 +24,22 @@ float World::getHeight() const {
     return mapHeight;
 }
 
+int World::getGhostExitX() const {
+    return ghostExitX;
+}
+
+int World::getGhostExitY() const {
+    return ghostExitY;
+}
+
 std::shared_ptr<PacmanModel> World::getPacman() const {
     return this->pacman;
 }
 
-bool World::collidesWithWall(const float x, const float y) const {
+bool World::collidesWithWall(const float x, const float y, const bool passDoor) const {
     for (const std::shared_ptr<WallModel>& wall : walls) {
+        if (wall->isDoor() && passDoor) continue;
+
         const float wallX = wall->getX();
         const float wallY = wall->getY();
 
@@ -68,6 +78,10 @@ void World::loadLevel(const std::string &filename) {
                     pacman = factory->createPacMan(x, y, mapWidth, mapHeight); break;
                 case '.':
                     collectibles.push_back(factory->createCoin(x, y)); break;
+                case '#':
+                    ghostExitX = col;
+                    ghostExitY = row;
+                    collectibles.push_back(factory->createCoin(x, y)); break;
                 case 't':
                 case 'b':
                 case 'l':
@@ -88,6 +102,7 @@ void World::loadLevel(const std::string &filename) {
                 case '4':
                 case '5':
                 case '6':
+                case 'd':
                     walls.push_back(factory->createWall(x, y, tile)); break;
                 case 'B':
                     ghosts.push_back(factory->createBlinky(x, y, mapWidth, mapHeight)); break;
