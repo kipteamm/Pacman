@@ -156,7 +156,10 @@ Events World::update(const double dt) {
         if (std::abs(pacman->getX() - ghost->getX()) > epsilon || std::abs(pacman->getY() - ghost->getY()) > epsilon) continue;
         lives--;
 
-        if (lives == 0) return Events::GAME_OVER;
+        if (lives == 0) {
+            notify(Events::GAME_OVER);
+            return Events::GAME_OVER;
+        };
 
         restarting = true;
         pacman->notify(Events::DEATH);

@@ -67,6 +67,8 @@ add_executable(Pacman main.cpp
         Logic/Entities/Ghosts/RandomGhost.h
         Logic/Random.cpp
         Logic/Random.h
+        Representation/States/GameOverState.cpp
+        Representation/States/GameOverState.h
 )
 
 target_link_libraries(Pacman PRIVATE sfml-graphics sfml-window sfml-system)

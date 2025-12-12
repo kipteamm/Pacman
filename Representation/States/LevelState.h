@@ -27,6 +27,7 @@ private:
     std::shared_ptr<ConcreteFactory> factory;
     std::unique_ptr<logic::World> world;
     std::shared_ptr<logic::Score> scoreSystem;
+    std::shared_ptr<Camera> camera;
 
     std::unordered_map<Layer, std::vector<std::shared_ptr<EntityView>>> entityViews{
         {Layer::BACKGROUND, std::vector<std::shared_ptr<EntityView>>()},

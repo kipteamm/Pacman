@@ -1,11 +1,12 @@
 #include "PausedState.h"
 #include "LevelState.h"
 
+#include "GameOverState.h"
 #include "../AssetManager.h"
 #include "../Window.h"
 
 
-LevelState::LevelState(StateManager *context, const std::shared_ptr<ConcreteFactory>& factory, const std::shared_ptr<Camera>& camera, const std::shared_ptr<logic::Score>& scoreSystem) : State(context), scoreSystem(scoreSystem) {
+LevelState::LevelState(StateManager *context, const std::shared_ptr<ConcreteFactory>& factory, const std::shared_ptr<Camera>& camera, const std::shared_ptr<logic::Score>& scoreSystem) : State(context), factory(factory), scoreSystem(scoreSystem), camera(camera) {
     factory->setViews(&this->entityViews);
 
     world = std::make_unique<logic::World>(factory);
@@ -64,7 +65,7 @@ void LevelState::update(const double dt) {
 
     switch (world->update(dt)) {
         case logic::GAME_OVER:
-            // this->context->swap();
+            this->context->swap(std::make_unique<GameOverState>(this->context, scoreSystem, factory, camera));
             return;
 
         default: return;

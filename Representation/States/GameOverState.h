@@ -1,17 +1,19 @@
-#ifndef MENUSTATE_H
-#define MENUSTATE_H
+//
+// Created by PPetre on 12/12/2025.
+//
+
+#ifndef GAMEOVERSTATE_H
+#define GAMEOVERSTATE_H
 
 #include "../Entities/ConcreteFactory.h"
 #include "../../Logic/Score.h"
 #include "StateManager.h"
 #include "../Camera.h"
 
-#include <memory>
 
-
-class MenuState final : public State {
+class GameOverState final : public State {
 public:
-    explicit MenuState(
+    explicit GameOverState(
         StateManager* context,
         const std::shared_ptr<logic::Score>& scoreSystem,
         const std::shared_ptr<ConcreteFactory>& factory,
@@ -26,9 +28,8 @@ private:
     std::shared_ptr<logic::Score> scoreSystem;
     std::shared_ptr<ConcreteFactory> factory;
     std::shared_ptr<Camera> camera;
-
-    sf::Sprite pacmanLogo;
 };
 
 
-#endif //MENUSTATE_H
+
+#endif //GAMEOVERSTATE_H

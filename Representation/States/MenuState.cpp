@@ -11,8 +11,8 @@
 
 
 MenuState::MenuState(
-    const std::shared_ptr<logic::Score>& scoreSystem,
     StateManager* context,
+    const std::shared_ptr<logic::Score>& scoreSystem,
     const std::shared_ptr<ConcreteFactory>& factory,
     const std::shared_ptr<Camera>& camera
 ) : State(context), scoreSystem(scoreSystem), factory(factory), camera(camera) {
