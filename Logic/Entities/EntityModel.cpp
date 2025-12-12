@@ -21,7 +21,10 @@ float EntityModel::getY() const {
 }
 
 
-MovingEntityModel::MovingEntityModel(const float x, const float y, const float mapWidth, const float mapHeight, const float speed) : EntityModel(x, y), mapWidth(mapWidth), mapHeight(mapHeight), speed(speed), spawnX(x), spawnY(y) {
+CollectibleEntityModel::CollectibleEntityModel(const float normalizedX, const float normalizedY) : EntityModel(normalizedX, normalizedY) {}
+
+
+MovingEntityModel::MovingEntityModel(const float x, const float y, const float mapWidth, const float mapHeight, const float speed) : EntityModel(x, y), mapWidth(mapWidth), mapHeight(mapHeight), spawnX(x), spawnY(y), speed(speed) {
     gridX = static_cast<int>((x + 1.0f) * mapWidth / 2.0f);
     gridY = static_cast<int>((y + 1.0f) * mapHeight / 2.0f);
 

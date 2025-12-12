@@ -9,3 +9,14 @@ CoinView::CoinView(const std::shared_ptr<logic::CoinModel> &model, const std::sh
     sprite.setTexture(AssetManager::getInstance().getSpriteSheet());
     sprite.setTextureRect(sf::IntRect(sf::IntRect(14 * 16, 16, 16, 16)));
 }
+
+
+void CoinView::update(const logic::Events event) {
+    switch (event) {
+        case logic::Events::COIN_EATEN:
+            this->markedForDeletion = true;
+            break;
+
+        default: break;
+    }
+}

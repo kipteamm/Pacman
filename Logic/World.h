@@ -12,7 +12,7 @@
 
 
 namespace logic {
-    class World {
+    class World final : public Subject {
     public:
         explicit World(const std::shared_ptr<AbstractFactory> &factory);
 
@@ -48,16 +48,16 @@ namespace logic {
         int ghostExitY;
 
         float DEATH_DURATION = 1;
-        bool restarting = false;
+        bool restarting;
         float restartTime = 0;
 
         std::shared_ptr<AbstractFactory> factory;
-        std::vector<std::shared_ptr<EntityModel>> collectibles;
+        std::vector<std::shared_ptr<CollectibleEntityModel>> collectibles;
         std::vector<std::shared_ptr<GhostModel>> ghosts;
         std::vector<std::shared_ptr<WallModel>> walls;
 
         std::shared_ptr<PacmanModel> pacman;
-        unsigned int lives = 3;
+        unsigned int lives;
     };
 }
 

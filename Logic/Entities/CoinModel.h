@@ -9,11 +9,11 @@
 
 namespace logic {
 
-    class CoinModel final : public EntityModel {
+    class CoinModel final : public CollectibleEntityModel {
     public:
         explicit CoinModel(float normalizedX, float normalizedY);
 
-        void update(const World& world, double dt) override {};
+        [[nodiscard]] Events collect() override;
     };
 }
 

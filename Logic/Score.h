@@ -33,6 +33,8 @@ namespace logic {
     private:
         std::string filename = "highscores.txt";
 
+        bool paused = false;
+        double accumulator;
         double timeLastCoin;
         std::vector<int> highscores;
         int score;

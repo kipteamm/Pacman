@@ -23,6 +23,10 @@ void EntityView::render() {
 }
 
 
+bool EntityView::shouldDelete() const {
+    return this->markedForDeletion;
+}
+
 size_t EntityView::getFrameIndex(const float dt, const size_t max) {
     elapsedTime += dt;
 

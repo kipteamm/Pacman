@@ -5,7 +5,7 @@
 using namespace logic;
 
 
-World::World(const std::shared_ptr<AbstractFactory> &factory) : ghostExitX(0), ghostExitY(0), factory(factory) {}
+World::World(const std::shared_ptr<AbstractFactory> &factory) : ghostExitX(0), ghostExitY(0), restarting(false), factory(factory), lives(3) {}
 
 
 float World::normalizeX(const int value) const {
@@ -133,6 +133,7 @@ void World::resetLevel() {
 
     restarting = false;
     restartTime = 0;
+    notify(Events::RESPAWN);
 }
 
 
@@ -159,6 +160,17 @@ Events World::update(const double dt) {
 
         restarting = true;
         pacman->notify(Events::DEATH);
+        notify(Events::DEATH);
+    }
+
+    for (auto it = collectibles.begin(); it != collectibles.end(); ) {
+        if (std::abs(pacman->getX() - (*it)->getX()) <= epsilon && std::abs(pacman->getY() - (*it)->getY()) <= epsilon) {
+            notify((*it)->collect());
+            it = collectibles.erase(it);
+            continue;
+        }
+
+        ++it;
     }
 
     return Events::NO_EVENT;

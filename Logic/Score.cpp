@@ -61,9 +61,11 @@ void Score::write() const {
 }
 
 void Score::update(const double dt) {
+    if (paused) return;
+
     timeLastCoin += dt;
 
-    static double accumulator = 0;
+    accumulator = 0;
     accumulator += dt;
 
     if (accumulator < 1 || score <= 0) return;
@@ -107,6 +109,12 @@ void Score::update(const Events event) {
 
         case Events::LEVEL_COMPLETED:
             score += LEVEL_CLEAR_POINTS; break;
+
+        case Events::DEATH:
+            paused = true; break;
+
+        case Events::RESPAWN:
+            paused = false; break;
 
         default: return;
     }

@@ -18,8 +18,6 @@ namespace logic {
         explicit EntityModel(float normalizedX, float normalizedY);
         ~EntityModel() override = default;
 
-        virtual void update(const World& world, double dt) = 0;
-
         [[nodiscard]] float getX() const;
         [[nodiscard]] float getY() const;
 
@@ -27,6 +25,15 @@ namespace logic {
         float x;
         float y;
     };
+
+
+    class CollectibleEntityModel : public EntityModel {
+    public:
+        explicit CollectibleEntityModel(float normalizedX, float normalizedY);
+
+        [[nodiscard]] virtual Events collect() = 0;
+    };
+
 
     class MovingEntityModel : public EntityModel {
     public:

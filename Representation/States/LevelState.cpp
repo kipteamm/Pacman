@@ -10,6 +10,7 @@ LevelState::LevelState(StateManager *context, const std::shared_ptr<ConcreteFact
 
     world = std::make_unique<logic::World>(factory);
     world->loadLevel("../Representation/levels/level_1.txt");
+    world->attach(scoreSystem);
 
     camera->setScaling(world->getWidth(), world->getHeight());
 
@@ -41,7 +42,7 @@ LevelState::LevelState(StateManager *context, const std::shared_ptr<ConcreteFact
     live3.setPosition(mapLeftPixel + (spriteWidth + gap) * 2, uiYPosition);
 
     scoreText.setFont(AssetManager::getInstance().getFont());
-    scoreText.setString("0");
+    scoreText.setString("0     ");
     scoreText.setCharacterSize(static_cast<unsigned int>(16 * scaleY));
     scoreText.setFillColor(sf::Color::White);
 
@@ -54,6 +55,12 @@ LevelState::LevelState(StateManager *context, const std::shared_ptr<ConcreteFact
 void LevelState::update(const double dt) {
     scoreSystem->update(dt);
     scoreText.setString(std::to_string(scoreSystem->getScore()));
+
+    for (auto& [_, views] : this->entityViews) {
+        std::erase_if(views,[](const std::shared_ptr<EntityView>& view) {
+            return view->shouldDelete();
+        });
+    }
 
     switch (world->update(dt)) {
         case logic::GAME_OVER:

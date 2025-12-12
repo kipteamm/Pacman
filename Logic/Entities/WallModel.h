@@ -12,8 +12,6 @@ namespace logic {
     public:
         explicit WallModel(float normalizedX, float normalizedY, bool isDoor);
 
-        void update(const World& world, double dt) override {};
-
         [[nodiscard]] bool isDoor() const { return door; };
 
     private:

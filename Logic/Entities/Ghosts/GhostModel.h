@@ -22,7 +22,7 @@ namespace logic {
         void setState(GhostState state);
         [[nodiscard]] GhostState getState() const { return this->state; };
 
-        void update(const World& world, double dt) override;
+        void update(const World& world, double dt);
         void move(const World& world, float dt) override;
         void respawn() override;
 
