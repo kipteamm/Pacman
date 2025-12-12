@@ -3,6 +3,7 @@ var namespacelogic =
     [ "AbstractFactory", "classlogic_1_1_abstract_factory.html", null ],
     [ "CoinModel", "classlogic_1_1_coin_model.html", null ],
     [ "EntityModel", "classlogic_1_1_entity_model.html", null ],
+    [ "CollectibleEntityModel", "classlogic_1_1_collectible_entity_model.html", null ],
     [ "MovingEntityModel", "classlogic_1_1_moving_entity_model.html", null ],
     [ "AmbushGhost", "classlogic_1_1_ambush_ghost.html", null ],
     [ "ChasingGhost", "classlogic_1_1_chasing_ghost.html", null ],

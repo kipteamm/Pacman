@@ -29,6 +29,7 @@ public:
     std::shared_ptr<logic::RandomGhost> createClyde(float x, float y, float mapWidth, float mapHeight) override;
     std::shared_ptr<logic::WallModel> createWall(float x, float y, char type) override;
     std::shared_ptr<logic::CoinModel> createCoin(float x, float y) override;
+    std::shared_ptr<logic::FruitModel> createFruit(float x, float y) override;
 
 private:
     std::unordered_map<Layer, std::vector<std::shared_ptr<EntityView>>>* entityViews;

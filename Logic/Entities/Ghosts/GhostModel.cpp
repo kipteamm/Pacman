@@ -23,6 +23,7 @@ GhostModel::GhostModel(
 
 
 void GhostModel::setState(const GhostState state) {
+    this->previousState = this->state;
     this->state = state;
 }
 
@@ -32,6 +33,7 @@ void GhostModel::update(const World& world, const double dt) {
     waitingTime += dt;
 
     if (waitingTime > startCooldown) {
+        previousState = GhostState::WAITING;
         state = GhostState::EXITING;
         direction = getPossibleMoves(world)[0];
     }
@@ -40,7 +42,7 @@ void GhostModel::update(const World& world, const double dt) {
 
 void GhostModel::move(const World& world, const float dt) {
     if (state == GhostState::WAITING) return;
-    if (state == GhostState::FRIGHTENED) speed = defaultSpeed * 0.5f;
+    if (state == GhostState::FRIGHTENED) speed = defaultSpeed * 0.6f;
     else speed = defaultSpeed;
 
     constexpr float epsilon = 0.01f;
@@ -57,11 +59,23 @@ void GhostModel::move(const World& world, const float dt) {
             case Moves::DOWN:  gridY++; break;
         }
 
+        int nextGridX = gridX;
+        int nextGridY = gridY;
+
+        switch(direction) {
+            case Moves::LEFT:  nextGridX--; break;
+            case Moves::RIGHT: nextGridX++; break;
+            case Moves::UP:    nextGridY--; break;
+            case Moves::DOWN:  nextGridY++; break;
+        }
+
         if (state == GhostState::EXITING && gridX == world.getGhostExitX() && gridY == world.getGhostExitY()) {
+            previousState = GhostState::EXITING;
             state = GhostState::CHASING;
         }
 
-        if (isAtIntersection(world)) {
+        const bool wall = world.collidesWithWall(world.normalizeX(nextGridX), world.normalizeY(nextGridY), state == GhostState::EXITING);
+        if (isAtIntersection(world) || wall) {
             if (state == GhostState::EXITING) direction = minimizeDistance(world, world.getGhostExitX(), world.getGhostExitY());
             else if (state == GhostState::FRIGHTENED) direction = maximizeDistance(world, *world.getPacman());
             else direction = decideNextMove(world, *world.getPacman());
@@ -93,6 +107,7 @@ void GhostModel::move(const World& world, const float dt) {
 }
 
 void GhostModel::respawn() {
+    previousState = this->state;
     state = GhostState::WAITING;
     waitingTime = 0;
 
@@ -137,8 +152,35 @@ std::vector<Moves> GhostModel::getPossibleMoves(const World &world) const {
 }
 
 
-Moves GhostModel::maximizeDistance(const World &world, const PacmanModel &pacman) {
-    return Moves::UP;
+Moves GhostModel::maximizeDistance(const World &world, const PacmanModel &pacman) const {
+    const std::vector<Moves> options = getPossibleMoves(world);
+
+    std::vector<Moves> bestCandidates;
+    float longestDistance = 0;
+
+    for (const Moves move : options) {
+        int nextX = gridX;
+        int nextY = gridY;
+
+        // Simulate a move
+        if (move == Moves::UP) nextY--;
+        else if (move == Moves::DOWN) nextY++;
+        else if (move == Moves::LEFT) nextX--;
+        else if (move == Moves::RIGHT) nextX++;
+
+        float dist = std::abs(nextX - pacman.getX()) + std::abs(nextY - pacman.getY());
+
+        if (dist > longestDistance) {
+            longestDistance = dist;
+            bestCandidates.clear();
+            bestCandidates.push_back(move);
+        }
+        else if (std::abs(dist - longestDistance) < 0.001f) {
+            bestCandidates.push_back(move);
+        }
+    }
+
+    return bestCandidates[Random::getInstance().getInt(0, bestCandidates.size() - 1)];
 }
 
 

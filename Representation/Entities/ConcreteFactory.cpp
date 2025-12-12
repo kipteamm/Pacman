@@ -5,12 +5,12 @@
 #include "ConcreteFactory.h"
 #include "PacmanView.h"
 #include "GhostView.h"
+#include "FruitView.h"
 #include "WallView.h"
 #include "CoinView.h"
 
 
 ConcreteFactory::ConcreteFactory(const std::shared_ptr<Camera>& camera) : entityViews(nullptr), camera(camera) {}
-
 
 
 void ConcreteFactory::setViews(std::unordered_map<Layer, std::vector<std::shared_ptr<EntityView>>>* views) {
@@ -81,6 +81,16 @@ std::shared_ptr<logic::WallModel> ConcreteFactory::createWall(float x, float y, 
 std::shared_ptr<logic::CoinModel> ConcreteFactory::createCoin(float x, float y) {
     const auto model = std::make_shared<logic::CoinModel>(x, y);
     const auto view = std::make_shared<CoinView>(model, camera);
+
+    model->attach(view);
+    entityViews->at(Layer::BACKGROUND).push_back(view);
+
+    return model;
+}
+
+std::shared_ptr<logic::FruitModel> ConcreteFactory::createFruit(float x, float y) {
+    const auto model = std::make_shared<logic::FruitModel>(x, y, 100);
+    const auto view = std::make_shared<FruitView>(model, camera);
 
     model->attach(view);
     entityViews->at(Layer::BACKGROUND).push_back(view);

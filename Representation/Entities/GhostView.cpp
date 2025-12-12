@@ -33,6 +33,12 @@ GhostView::GhostView(const std::shared_ptr<logic::GhostModel>& model, const std:
         sf::IntRect{48, spriteY, 16, 16},
     };
 
+    // Frightened animation
+    animations[5] = {
+        sf::IntRect{128, 32, 16, 16},
+        sf::IntRect{144, 32, 16, 16},
+    };
+
     animation = &animations[ghost->getDirection()];
     sprite.setTexture(AssetManager::getInstance().getSpriteSheet());
     sprite.setOrigin(8, 8);
@@ -42,6 +48,16 @@ GhostView::GhostView(const std::shared_ptr<logic::GhostModel>& model, const std:
 void GhostView::update(const logic::Events event) {
     switch (event) {
         case logic::Events::DIRECTION_CHANGED:
+        case logic::Events::RESPAWN:
+            if (frightened) return;
+            animation = &animations[ghost->getDirection()]; break;
+
+        case logic::Events::GHOST_FRIGHTENED:
+            frightened = true;
+            animation = &animations[5]; break;
+
+        case logic::Events::GHOST_NORMAL:
+            frightened = false;
             animation = &animations[ghost->getDirection()]; break;
 
         default: break;

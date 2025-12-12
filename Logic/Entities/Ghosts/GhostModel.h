@@ -20,7 +20,8 @@ namespace logic {
         ~GhostModel() override = default;
 
         void setState(GhostState state);
-        [[nodiscard]] GhostState getState() const { return this->state; };
+        [[nodiscard]] GhostState getState() const { return this->state; }
+        [[nodiscard]] GhostState getPreviousState() const { return this->previousState; }
 
         void update(const World& world, double dt);
         void move(const World& world, float dt) override;
@@ -28,10 +29,11 @@ namespace logic {
 
     protected:
         GhostState state;
+        GhostState previousState;
         float defaultSpeed;
 
         [[nodiscard]] std::vector<Moves> getPossibleMoves(const World& world) const;
-        [[nodiscard]] Moves maximizeDistance(const World& world, const PacmanModel& pacman);
+        [[nodiscard]] Moves maximizeDistance(const World& world, const PacmanModel& pacman) const;
         [[nodiscard]] Moves minimizeDistance(const World& world, int targetX, int targetY) const;
 
         virtual Moves decideNextMove(const World& world, const PacmanModel& pacman) = 0;

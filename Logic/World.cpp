@@ -5,7 +5,7 @@
 using namespace logic;
 
 
-World::World(const std::shared_ptr<AbstractFactory> &factory) : ghostExitX(0), ghostExitY(0), restarting(false), factory(factory), lives(3) {}
+World::World(const std::shared_ptr<AbstractFactory> &factory) : ghostExitX(0), ghostExitY(0), state(WorldState::PLAYING), factory(factory), lives(3) {}
 
 
 float World::normalizeX(const int value) const {
@@ -83,6 +83,8 @@ void World::loadLevel(const std::string &filename) {
                     pacman = factory->createPacMan(x, y, mapWidth, mapHeight); break;
                 case '.':
                     collectibles.push_back(factory->createCoin(x, y)); break;
+                case 'F':
+                    collectibles.push_back(factory->createFruit(x, y)); break;
                 case '#':
                     ghostExitX = col;
                     ghostExitY = row;
@@ -131,18 +133,32 @@ void World::resetLevel() {
         ghost->respawn();
     }
 
-    restarting = false;
-    restartTime = 0;
+    state = WorldState::PLAYING;
     notify(Events::RESPAWN);
+}
+
+void World::resetFright() {
+    for (const auto& ghost : ghosts) {
+        ghost->setState(ghost->getPreviousState());
+        ghost->notify(Events::GHOST_NORMAL);
+    }
+
+    state = WorldState::PLAYING;
 }
 
 
 Events World::update(const double dt) {
-    if (restarting) {
-        restartTime += dt;
+    if (state == WorldState::RESTARTING) {
+        timer += dt;
 
-        if (restartTime >= DEATH_DURATION) resetLevel();
+        if (timer >= DEATH_DURATION) resetLevel();
         return Events::NO_EVENT;
+    }
+
+    if (state == WorldState::FRIGHTENED) {
+        timer += dt;
+
+        if (timer >= FEAR_DURATION) resetFright();
     }
 
     pacman->move(*this, dt);
@@ -154,6 +170,13 @@ Events World::update(const double dt) {
         ghost->move(*this, dt);
 
         if (std::abs(pacman->getX() - ghost->getX()) > epsilon || std::abs(pacman->getY() - ghost->getY()) > epsilon) continue;
+        if (state == WorldState::FRIGHTENED) {
+            ghost->respawn();
+            ghost->setState(GhostState::CHASING);
+
+            continue;
+        }
+
         lives--;
 
         if (lives == 0) {
@@ -161,14 +184,28 @@ Events World::update(const double dt) {
             return Events::GAME_OVER;
         };
 
-        restarting = true;
+        state = WorldState::RESTARTING;
+        timer = 0;
+
         pacman->notify(Events::DEATH);
         notify(Events::DEATH);
     }
 
     for (auto it = collectibles.begin(); it != collectibles.end(); ) {
         if (std::abs(pacman->getX() - (*it)->getX()) <= epsilon && std::abs(pacman->getY() - (*it)->getY()) <= epsilon) {
-            notify((*it)->collect());
+            const Events event = (*it)->collect();
+            notify(event);
+
+            if (event == Events::FRUIT_EATEN) {
+                state = WorldState::FRIGHTENED;
+                timer = 0;
+
+                for (const auto& ghost : ghosts) {
+                    ghost->setState(GhostState::FRIGHTENED);
+                    ghost->notify(Events::GHOST_FRIGHTENED);
+                }
+            }
+
             it = collectibles.erase(it);
             continue;
         }
@@ -176,10 +213,12 @@ Events World::update(const double dt) {
         ++it;
     }
 
+    // if (collectibles.empty()) return Events::LEVEL_COMPLETED;
+
     return Events::NO_EVENT;
 }
 
 void World::handleMove(const Moves &move) const {
-    if (restarting) return;
+    if (state == WorldState::RESTARTING) return;
     pacman->setNextDirection(move);
 }

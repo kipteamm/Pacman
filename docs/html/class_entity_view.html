@@ -122,8 +122,10 @@ Collaboration diagram for EntityView:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ae20331a1dfed788332483f3cdb848475" id="r_ae20331a1dfed788332483f3cdb848475"><td class="memItemLeft" align="right" valign="top"><a id="ae20331a1dfed788332483f3cdb848475" name="ae20331a1dfed788332483f3cdb848475"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>EntityView</b> (const std::shared_ptr&lt; <a class="el" href="classlogic_1_1_entity_model.html">logic::EntityModel</a> &gt; &amp;model, const std::shared_ptr&lt; <a class="el" href="class_camera.html">Camera</a> &gt; &amp;camera)</td></tr>
+<tr class="memitem:a88a87b2d89dc4fac6f8501cfb9abd54a" id="r_a88a87b2d89dc4fac6f8501cfb9abd54a"><td class="memItemLeft" align="right" valign="top"><a id="a88a87b2d89dc4fac6f8501cfb9abd54a" name="a88a87b2d89dc4fac6f8501cfb9abd54a"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>EntityView</b> (const std::shared_ptr&lt; <a class="el" href="classlogic_1_1_entity_model.html">logic::EntityModel</a> &gt; &amp;model, const std::shared_ptr&lt; <a class="el" href="class_camera.html">Camera</a> &gt; &amp;camera, float frameDuration)</td></tr>
+<tr class="memitem:a3a163d4781bde3d7d38be65d5fe1920c" id="r_a3a163d4781bde3d7d38be65d5fe1920c"><td class="memItemLeft" align="right" valign="top"><a id="a3a163d4781bde3d7d38be65d5fe1920c" name="a3a163d4781bde3d7d38be65d5fe1920c"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>shouldDelete</b> () const</td></tr>
 <tr class="memitem:a5052ee0e188d9e3e624cf7996ded9af6" id="r_a5052ee0e188d9e3e624cf7996ded9af6"><td class="memItemLeft" align="right" valign="top"><a id="a5052ee0e188d9e3e624cf7996ded9af6" name="a5052ee0e188d9e3e624cf7996ded9af6"></a>
 size_t&#160;</td><td class="memItemRight" valign="bottom"><b>getFrameIndex</b> (float dt, size_t max)</td></tr>
 <tr class="memitem:adf2869ddecd4e3f5bf1ae25684b2ee61" id="r_adf2869ddecd4e3f5bf1ae25684b2ee61"><td class="memItemLeft" align="right" valign="top"><a id="adf2869ddecd4e3f5bf1ae25684b2ee61" name="adf2869ddecd4e3f5bf1ae25684b2ee61"></a>
@@ -140,8 +142,10 @@ std::shared_ptr&lt; <a class="el" href="classlogic_1_1_entity_model.html">logic:
 std::shared_ptr&lt; <a class="el" href="class_camera.html">Camera</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>camera</b></td></tr>
 <tr class="memitem:a39508da83001b63aa61b24af79890a83" id="r_a39508da83001b63aa61b24af79890a83"><td class="memItemLeft" align="right" valign="top"><a id="a39508da83001b63aa61b24af79890a83" name="a39508da83001b63aa61b24af79890a83"></a>
 sf::Sprite&#160;</td><td class="memItemRight" valign="bottom"><b>sprite</b></td></tr>
+<tr class="memitem:a379078707695e98c1a78f76c05f183aa" id="r_a379078707695e98c1a78f76c05f183aa"><td class="memItemLeft" align="right" valign="top"><a id="a379078707695e98c1a78f76c05f183aa" name="a379078707695e98c1a78f76c05f183aa"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>markedForDeletion</b> = false</td></tr>
 <tr class="memitem:aea9fe4f4b1f0f0dd5304de4a18fe365c" id="r_aea9fe4f4b1f0f0dd5304de4a18fe365c"><td class="memItemLeft" align="right" valign="top"><a id="aea9fe4f4b1f0f0dd5304de4a18fe365c" name="aea9fe4f4b1f0f0dd5304de4a18fe365c"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>frameDuration</b> = 0.08</td></tr>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>frameDuration</b></td></tr>
 <tr class="memitem:a43665858104eca1ef3b645da90ed2611" id="r_a43665858104eca1ef3b645da90ed2611"><td class="memItemLeft" align="right" valign="top"><a id="a43665858104eca1ef3b645da90ed2611" name="a43665858104eca1ef3b645da90ed2611"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><b>elapsedTime</b> = 0</td></tr>
 <tr class="memitem:a4b012644058a2001c1fffe05679b92ef" id="r_a4b012644058a2001c1fffe05679b92ef"><td class="memItemLeft" align="right" valign="top"><a id="a4b012644058a2001c1fffe05679b92ef" name="a4b012644058a2001c1fffe05679b92ef"></a>

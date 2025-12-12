@@ -12,6 +12,10 @@
 
 
 namespace logic {
+
+    enum WorldState { RESTARTING, FRIGHTENED, PLAYING };
+
+
     class World final : public Subject {
     public:
         explicit World(const std::shared_ptr<AbstractFactory> &factory);
@@ -32,6 +36,7 @@ namespace logic {
 
         void loadLevel(const std::string& filename);
         void resetLevel();
+        void resetFright();
 
         [[nodiscard]] Events update(double dt);
 
@@ -48,8 +53,10 @@ namespace logic {
         int ghostExitY;
 
         float DEATH_DURATION = 1;
-        bool restarting;
-        float restartTime = 0;
+        float FEAR_DURATION = 6;
+
+        WorldState state;
+        float timer = 0;
 
         std::shared_ptr<AbstractFactory> factory;
         std::vector<std::shared_ptr<CollectibleEntityModel>> collectibles;

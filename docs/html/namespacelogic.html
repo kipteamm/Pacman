@@ -97,6 +97,7 @@ Classes</h2></td></tr>
 <tr class="memitem:AbstractFactory" id="r_AbstractFactory"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlogic_1_1_abstract_factory.html">AbstractFactory</a></td></tr>
 <tr class="memitem:CoinModel" id="r_CoinModel"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlogic_1_1_coin_model.html">CoinModel</a></td></tr>
 <tr class="memitem:EntityModel" id="r_EntityModel"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlogic_1_1_entity_model.html">EntityModel</a></td></tr>
+<tr class="memitem:CollectibleEntityModel" id="r_CollectibleEntityModel"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlogic_1_1_collectible_entity_model.html">CollectibleEntityModel</a></td></tr>
 <tr class="memitem:MovingEntityModel" id="r_MovingEntityModel"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlogic_1_1_moving_entity_model.html">MovingEntityModel</a></td></tr>
 <tr class="memitem:AmbushGhost" id="r_AmbushGhost"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlogic_1_1_ambush_ghost.html">AmbushGhost</a></td></tr>
 <tr class="memitem:ChasingGhost" id="r_ChasingGhost"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlogic_1_1_chasing_ghost.html">ChasingGhost</a></td></tr>
@@ -119,13 +120,39 @@ Enumerations</h2></td></tr>
 , <b>DOWN</b>
  }</td></tr>
 <tr class="memitem:a0adadbaf39d39f42c97e3f52a88ea866" id="r_a0adadbaf39d39f42c97e3f52a88ea866"><td class="memItemLeft" align="right" valign="top"><a id="a0adadbaf39d39f42c97e3f52a88ea866" name="a0adadbaf39d39f42c97e3f52a88ea866"></a>enum class &#160;</td><td class="memItemRight" valign="bottom"><b>GhostState</b> { <b>WAITING</b>
+, <b>EXITING</b>
 , <b>CHASING</b>
 , <b>FRIGHTENED</b>
-, <b>DEAD</b>
  }</td></tr>
-<tr class="memitem:a5054eadf2d20b609706894ae1bc5f250" id="r_a5054eadf2d20b609706894ae1bc5f250"><td class="memItemLeft" align="right" valign="top"><a id="a5054eadf2d20b609706894ae1bc5f250" name="a5054eadf2d20b609706894ae1bc5f250"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>Events</b> { <b>DIRECTION_CHANGED</b>
-, <b>ISMOVING_CHANGED</b>
+<tr class="memitem:a5054eadf2d20b609706894ae1bc5f250" id="r_a5054eadf2d20b609706894ae1bc5f250"><td class="memItemLeft" align="right" valign="top"><a id="a5054eadf2d20b609706894ae1bc5f250" name="a5054eadf2d20b609706894ae1bc5f250"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>Events</b> { <br />
+&#160;&#160;<b>NO_EVENT</b>
+, <b>GAME_OVER</b>
+, <b>LEVEL_COMPLETED</b>
+, <b>DIRECTION_CHANGED</b>
+, <br />
+&#160;&#160;<b>ISMOVING_CHANGED</b>
+, <b>DEATH</b>
+, <b>RESPAWN</b>
+, <b>FRUIT_EATEN</b>
+, <br />
+&#160;&#160;<b>GHOST_EATEN</b>
+, <b>COIN_EATEN</b>
+, <b>SCORE_UPDATE</b>
+<br />
  }</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:accce5f3260a0adf8f69dc49c170383fd" id="r_accce5f3260a0adf8f69dc49c170383fd"><td class="memItemLeft" align="right" valign="top"><a id="accce5f3260a0adf8f69dc49c170383fd" name="accce5f3260a0adf8f69dc49c170383fd"></a>
+constexpr int&#160;</td><td class="memItemRight" valign="bottom"><b>SCORE_DECAY</b> = 10</td></tr>
+<tr class="memitem:a9737ba9906c9346f5b702fa83fc94f9b" id="r_a9737ba9906c9346f5b702fa83fc94f9b"><td class="memItemLeft" align="right" valign="top"><a id="a9737ba9906c9346f5b702fa83fc94f9b" name="a9737ba9906c9346f5b702fa83fc94f9b"></a>
+constexpr int&#160;</td><td class="memItemRight" valign="bottom"><b>GHOST_POINTS</b> = 200</td></tr>
+<tr class="memitem:aa484dfa6600e06df9fb56254e2291074" id="r_aa484dfa6600e06df9fb56254e2291074"><td class="memItemLeft" align="right" valign="top"><a id="aa484dfa6600e06df9fb56254e2291074" name="aa484dfa6600e06df9fb56254e2291074"></a>
+constexpr int&#160;</td><td class="memItemRight" valign="bottom"><b>FRUIT_POINTS</b> = 100</td></tr>
+<tr class="memitem:ae0d1b7b4cddc655b4425231ddb413a63" id="r_ae0d1b7b4cddc655b4425231ddb413a63"><td class="memItemLeft" align="right" valign="top"><a id="ae0d1b7b4cddc655b4425231ddb413a63" name="ae0d1b7b4cddc655b4425231ddb413a63"></a>
+constexpr int&#160;</td><td class="memItemRight" valign="bottom"><b>LEVEL_CLEAR_POINTS</b> = 500</td></tr>
+<tr class="memitem:af62c6308f17aead2b08ef3bb0dd4d7e9" id="r_af62c6308f17aead2b08ef3bb0dd4d7e9"><td class="memItemLeft" align="right" valign="top"><a id="af62c6308f17aead2b08ef3bb0dd4d7e9" name="af62c6308f17aead2b08ef3bb0dd4d7e9"></a>
+constexpr int&#160;</td><td class="memItemRight" valign="bottom"><b>BASE_COIN_POINTS</b> = 10</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Based on <a href="https://refactoring.guru/design-patterns/observer/cpp/example">https://refactoring.guru/design-patterns/observer/cpp/example</a> </p>

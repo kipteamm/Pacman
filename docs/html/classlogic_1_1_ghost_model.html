@@ -134,8 +134,10 @@ Public Member Functions</h2></td></tr>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>setState</b> (GhostState state)</td></tr>
 <tr class="memitem:ad19fb94c7dcf4d37b7c2704ef8349e59" id="r_ad19fb94c7dcf4d37b7c2704ef8349e59"><td class="memItemLeft" align="right" valign="top"><a id="ad19fb94c7dcf4d37b7c2704ef8349e59" name="ad19fb94c7dcf4d37b7c2704ef8349e59"></a>
 GhostState&#160;</td><td class="memItemRight" valign="bottom"><b>getState</b> () const</td></tr>
-<tr class="memitem:a041a7778cfd0b5cad9b811f92c617c2d" id="r_a041a7778cfd0b5cad9b811f92c617c2d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a041a7778cfd0b5cad9b811f92c617c2d">update</a> (const <a class="el" href="classlogic_1_1_world.html">World</a> &amp;world, double dt) override</td></tr>
+<tr class="memitem:a6fc446e4a8a9756e8884963a9d04e79d" id="r_a6fc446e4a8a9756e8884963a9d04e79d"><td class="memItemLeft" align="right" valign="top"><a id="a6fc446e4a8a9756e8884963a9d04e79d" name="a6fc446e4a8a9756e8884963a9d04e79d"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>update</b> (const <a class="el" href="classlogic_1_1_world.html">World</a> &amp;world, double dt)</td></tr>
 <tr class="memitem:ad425e09310daff53acca7884ecf01722" id="r_ad425e09310daff53acca7884ecf01722"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad425e09310daff53acca7884ecf01722">move</a> (const <a class="el" href="classlogic_1_1_world.html">World</a> &amp;world, float dt) override</td></tr>
+<tr class="memitem:ab699975eea1214f470e49afe60bc7436" id="r_ab699975eea1214f470e49afe60bc7436"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab699975eea1214f470e49afe60bc7436">respawn</a> () override</td></tr>
 <tr class="inherit_header pub_methods_classlogic_1_1_moving_entity_model"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classlogic_1_1_moving_entity_model')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="classlogic_1_1_moving_entity_model.html">logic::MovingEntityModel</a></td></tr>
 <tr class="memitem:a5a1b102fc6367727cdeb272b138f5efe inherit pub_methods_classlogic_1_1_moving_entity_model" id="r_a5a1b102fc6367727cdeb272b138f5efe"><td class="memItemLeft" align="right" valign="top">
 &#160;</td><td class="memItemRight" valign="bottom"><b>MovingEntityModel</b> (float x, float y, float mapWidth, float mapHeight, float speed)</td></tr>
@@ -150,8 +152,6 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>getGridY</b> () const<
 <tr class="inherit_header pub_methods_classlogic_1_1_entity_model"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classlogic_1_1_entity_model')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="classlogic_1_1_entity_model.html">logic::EntityModel</a></td></tr>
 <tr class="memitem:a791da21c5860667eae2c5bccd30dbd9b inherit pub_methods_classlogic_1_1_entity_model" id="r_a791da21c5860667eae2c5bccd30dbd9b"><td class="memItemLeft" align="right" valign="top">
 &#160;</td><td class="memItemRight" valign="bottom"><b>EntityModel</b> (float normalizedX, float normalizedY)</td></tr>
-<tr class="memitem:a2e9fbaa32bfdf721f1e4eccea63051ff inherit pub_methods_classlogic_1_1_entity_model" id="r_a2e9fbaa32bfdf721f1e4eccea63051ff"><td class="memItemLeft" align="right" valign="top">
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>checkCollision</b> (float otherX, float otherY, float width, float height) const</td></tr>
 <tr class="memitem:af195623401b99cb6cedfd85e3048eb69 inherit pub_methods_classlogic_1_1_entity_model" id="r_af195623401b99cb6cedfd85e3048eb69"><td class="memItemLeft" align="right" valign="top">
 float&#160;</td><td class="memItemRight" valign="bottom"><b>getX</b> () const</td></tr>
 <tr class="memitem:ad28f13d597d2375dad9dd3eed0eb27cb inherit pub_methods_classlogic_1_1_entity_model" id="r_ad28f13d597d2375dad9dd3eed0eb27cb"><td class="memItemLeft" align="right" valign="top">
@@ -168,12 +168,15 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>notify</b> (Events ev
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:ac30640f6b3ae3c410767d7007ec7dfa6" id="r_ac30640f6b3ae3c410767d7007ec7dfa6"><td class="memItemLeft" align="right" valign="top"><a id="ac30640f6b3ae3c410767d7007ec7dfa6" name="ac30640f6b3ae3c410767d7007ec7dfa6"></a>
 std::vector&lt; Moves &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getPossibleMoves</b> (const <a class="el" href="classlogic_1_1_world.html">World</a> &amp;world) const</td></tr>
-<tr class="memitem:af56ccd3379550dc662edb40cb21f26f7" id="r_af56ccd3379550dc662edb40cb21f26f7"><td class="memItemLeft" align="right" valign="top"><a id="af56ccd3379550dc662edb40cb21f26f7" name="af56ccd3379550dc662edb40cb21f26f7"></a>
+<tr class="memitem:aff42824cf9af8027a5b1a8857abf141c" id="r_aff42824cf9af8027a5b1a8857abf141c"><td class="memItemLeft" align="right" valign="top"><a id="aff42824cf9af8027a5b1a8857abf141c" name="aff42824cf9af8027a5b1a8857abf141c"></a>
 Moves&#160;</td><td class="memItemRight" valign="bottom"><b>maximizeDistance</b> (const <a class="el" href="classlogic_1_1_world.html">World</a> &amp;world, const <a class="el" href="classlogic_1_1_pacman_model.html">PacmanModel</a> &amp;pacman)</td></tr>
-<tr class="memitem:a058cfe1b83e9966a1c5bbec863d96d15" id="r_a058cfe1b83e9966a1c5bbec863d96d15"><td class="memItemLeft" align="right" valign="top"><a id="a058cfe1b83e9966a1c5bbec863d96d15" name="a058cfe1b83e9966a1c5bbec863d96d15"></a>
-Moves&#160;</td><td class="memItemRight" valign="bottom"><b>minimizeDistance</b> (const <a class="el" href="classlogic_1_1_world.html">World</a> &amp;world, int targetX, int targetY)</td></tr>
+<tr class="memitem:a08b71f3c16393cd24854d72b3d999bf6" id="r_a08b71f3c16393cd24854d72b3d999bf6"><td class="memItemLeft" align="right" valign="top"><a id="a08b71f3c16393cd24854d72b3d999bf6" name="a08b71f3c16393cd24854d72b3d999bf6"></a>
+Moves&#160;</td><td class="memItemRight" valign="bottom"><b>minimizeDistance</b> (const <a class="el" href="classlogic_1_1_world.html">World</a> &amp;world, int targetX, int targetY) const</td></tr>
 <tr class="memitem:aeaff730512105a10b0e2733d5d88626c" id="r_aeaff730512105a10b0e2733d5d88626c"><td class="memItemLeft" align="right" valign="top"><a id="aeaff730512105a10b0e2733d5d88626c" name="aeaff730512105a10b0e2733d5d88626c"></a>
 virtual Moves&#160;</td><td class="memItemRight" valign="bottom"><b>decideNextMove</b> (const <a class="el" href="classlogic_1_1_world.html">World</a> &amp;world, const <a class="el" href="classlogic_1_1_pacman_model.html">PacmanModel</a> &amp;pacman)=0</td></tr>
+<tr class="inherit_header pro_methods_classlogic_1_1_moving_entity_model"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_methods_classlogic_1_1_moving_entity_model')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Member Functions inherited from <a class="el" href="classlogic_1_1_moving_entity_model.html">logic::MovingEntityModel</a></td></tr>
+<tr class="memitem:a3fde35c4d0a5778899d254e8cc19d1ed inherit pro_methods_classlogic_1_1_moving_entity_model" id="r_a3fde35c4d0a5778899d254e8cc19d1ed"><td class="memItemLeft" align="right" valign="top">
+void&#160;</td><td class="memItemRight" valign="bottom"><b>updateTarget</b> ()</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-attribs" class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -186,6 +189,10 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>defaultSpeed</b></td
 float&#160;</td><td class="memItemRight" valign="bottom"><b>mapWidth</b></td></tr>
 <tr class="memitem:afc09af10ffdd306af809d8e5e0430bbb inherit pro_attribs_classlogic_1_1_moving_entity_model" id="r_afc09af10ffdd306af809d8e5e0430bbb"><td class="memItemLeft" align="right" valign="top">
 float&#160;</td><td class="memItemRight" valign="bottom"><b>mapHeight</b></td></tr>
+<tr class="memitem:a800015b877d060944e3012495f9227e0 inherit pro_attribs_classlogic_1_1_moving_entity_model" id="r_a800015b877d060944e3012495f9227e0"><td class="memItemLeft" align="right" valign="top">
+float&#160;</td><td class="memItemRight" valign="bottom"><b>spawnX</b></td></tr>
+<tr class="memitem:ad02726bb3dab24225b885ab123879a5d inherit pro_attribs_classlogic_1_1_moving_entity_model" id="r_ad02726bb3dab24225b885ab123879a5d"><td class="memItemLeft" align="right" valign="top">
+float&#160;</td><td class="memItemRight" valign="bottom"><b>spawnY</b></td></tr>
 <tr class="memitem:a05d0d3d10bf5e02f67694242f0a6da27 inherit pro_attribs_classlogic_1_1_moving_entity_model" id="r_a05d0d3d10bf5e02f67694242f0a6da27"><td class="memItemLeft" align="right" valign="top">
 float&#160;</td><td class="memItemRight" valign="bottom"><b>targetX</b></td></tr>
 <tr class="memitem:a840c96b184267e5bb8962f0559999573 inherit pro_attribs_classlogic_1_1_moving_entity_model" id="r_a840c96b184267e5bb8962f0559999573"><td class="memItemLeft" align="right" valign="top">
@@ -239,8 +246,8 @@ std::list&lt; std::shared_ptr&lt; <a class="el" href="classlogic_1_1_observer.ht
 
 </div>
 </div>
-<a id="a041a7778cfd0b5cad9b811f92c617c2d" name="a041a7778cfd0b5cad9b811f92c617c2d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a041a7778cfd0b5cad9b811f92c617c2d">&#9670;&#160;</a></span>update()</h2>
+<a id="ab699975eea1214f470e49afe60bc7436" name="ab699975eea1214f470e49afe60bc7436"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab699975eea1214f470e49afe60bc7436">&#9670;&#160;</a></span>respawn()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -249,14 +256,10 @@ std::list&lt; std::shared_ptr&lt; <a class="el" href="classlogic_1_1_observer.ht
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void GhostModel::update </td>
+          <td class="memname">void GhostModel::respawn </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classlogic_1_1_world.html">World</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>world</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
-          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>dt</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -266,7 +269,7 @@ std::list&lt; std::shared_ptr&lt; <a class="el" href="classlogic_1_1_observer.ht
 </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="classlogic_1_1_entity_model.html">logic::EntityModel</a>.</p>
+<p>Implements <a class="el" href="classlogic_1_1_moving_entity_model.html">logic::MovingEntityModel</a>.</p>
 
 </div>
 </div>

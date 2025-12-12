@@ -132,6 +132,8 @@ Public Member Functions</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><b>MovingEntityModel</b> (float x, float y, float mapWidth, float mapHeight, float speed)</td></tr>
 <tr class="memitem:a6a80731adfff4cdf806e320145d34e7f" id="r_a6a80731adfff4cdf806e320145d34e7f"><td class="memItemLeft" align="right" valign="top"><a id="a6a80731adfff4cdf806e320145d34e7f" name="a6a80731adfff4cdf806e320145d34e7f"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>move</b> (const <a class="el" href="classlogic_1_1_world.html">World</a> &amp;world, float dt)=0</td></tr>
+<tr class="memitem:a96e734c1cc7b91eece9ae00451c64a62" id="r_a96e734c1cc7b91eece9ae00451c64a62"><td class="memItemLeft" align="right" valign="top"><a id="a96e734c1cc7b91eece9ae00451c64a62" name="a96e734c1cc7b91eece9ae00451c64a62"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>respawn</b> ()=0</td></tr>
 <tr class="memitem:aab982269578096285c7e2f2fb3d23fd0" id="r_aab982269578096285c7e2f2fb3d23fd0"><td class="memItemLeft" align="right" valign="top"><a id="aab982269578096285c7e2f2fb3d23fd0" name="aab982269578096285c7e2f2fb3d23fd0"></a>
 Moves&#160;</td><td class="memItemRight" valign="bottom"><b>getDirection</b> () const</td></tr>
 <tr class="memitem:a74c4a717cb9c1ca3482ceecd8987f862" id="r_a74c4a717cb9c1ca3482ceecd8987f862"><td class="memItemLeft" align="right" valign="top"><a id="a74c4a717cb9c1ca3482ceecd8987f862" name="a74c4a717cb9c1ca3482ceecd8987f862"></a>
@@ -143,10 +145,6 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>getGridY</b> () const<
 <tr class="inherit_header pub_methods_classlogic_1_1_entity_model"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classlogic_1_1_entity_model')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="classlogic_1_1_entity_model.html">logic::EntityModel</a></td></tr>
 <tr class="memitem:a791da21c5860667eae2c5bccd30dbd9b inherit pub_methods_classlogic_1_1_entity_model" id="r_a791da21c5860667eae2c5bccd30dbd9b"><td class="memItemLeft" align="right" valign="top">
 &#160;</td><td class="memItemRight" valign="bottom"><b>EntityModel</b> (float normalizedX, float normalizedY)</td></tr>
-<tr class="memitem:a58632955a67cf54160b37b0b9bbfc206 inherit pub_methods_classlogic_1_1_entity_model" id="r_a58632955a67cf54160b37b0b9bbfc206"><td class="memItemLeft" align="right" valign="top">
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>update</b> (const <a class="el" href="classlogic_1_1_world.html">World</a> &amp;world, double dt)=0</td></tr>
-<tr class="memitem:a2e9fbaa32bfdf721f1e4eccea63051ff inherit pub_methods_classlogic_1_1_entity_model" id="r_a2e9fbaa32bfdf721f1e4eccea63051ff"><td class="memItemLeft" align="right" valign="top">
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>checkCollision</b> (float otherX, float otherY, float width, float height) const</td></tr>
 <tr class="memitem:af195623401b99cb6cedfd85e3048eb69 inherit pub_methods_classlogic_1_1_entity_model" id="r_af195623401b99cb6cedfd85e3048eb69"><td class="memItemLeft" align="right" valign="top">
 float&#160;</td><td class="memItemRight" valign="bottom"><b>getX</b> () const</td></tr>
 <tr class="memitem:ad28f13d597d2375dad9dd3eed0eb27cb inherit pub_methods_classlogic_1_1_entity_model" id="r_ad28f13d597d2375dad9dd3eed0eb27cb"><td class="memItemLeft" align="right" valign="top">
@@ -159,12 +157,21 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>detach</b> (const std
 <tr class="memitem:a9b8fd61bd7407486a7be6b0756f79a11 inherit pub_methods_classlogic_1_1_subject" id="r_a9b8fd61bd7407486a7be6b0756f79a11"><td class="memItemLeft" align="right" valign="top">
 void&#160;</td><td class="memItemRight" valign="bottom"><b>notify</b> (Events event)</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pro-methods" class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:a3fde35c4d0a5778899d254e8cc19d1ed" id="r_a3fde35c4d0a5778899d254e8cc19d1ed"><td class="memItemLeft" align="right" valign="top"><a id="a3fde35c4d0a5778899d254e8cc19d1ed" name="a3fde35c4d0a5778899d254e8cc19d1ed"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>updateTarget</b> ()</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-attribs" class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:a35faacbbe3ae7d25f4f6da240d47e34b" id="r_a35faacbbe3ae7d25f4f6da240d47e34b"><td class="memItemLeft" align="right" valign="top"><a id="a35faacbbe3ae7d25f4f6da240d47e34b" name="a35faacbbe3ae7d25f4f6da240d47e34b"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><b>mapWidth</b></td></tr>
 <tr class="memitem:afc09af10ffdd306af809d8e5e0430bbb" id="r_afc09af10ffdd306af809d8e5e0430bbb"><td class="memItemLeft" align="right" valign="top"><a id="afc09af10ffdd306af809d8e5e0430bbb" name="afc09af10ffdd306af809d8e5e0430bbb"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><b>mapHeight</b></td></tr>
+<tr class="memitem:a800015b877d060944e3012495f9227e0" id="r_a800015b877d060944e3012495f9227e0"><td class="memItemLeft" align="right" valign="top"><a id="a800015b877d060944e3012495f9227e0" name="a800015b877d060944e3012495f9227e0"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>spawnX</b></td></tr>
+<tr class="memitem:ad02726bb3dab24225b885ab123879a5d" id="r_ad02726bb3dab24225b885ab123879a5d"><td class="memItemLeft" align="right" valign="top"><a id="ad02726bb3dab24225b885ab123879a5d" name="ad02726bb3dab24225b885ab123879a5d"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>spawnY</b></td></tr>
 <tr class="memitem:a05d0d3d10bf5e02f67694242f0a6da27" id="r_a05d0d3d10bf5e02f67694242f0a6da27"><td class="memItemLeft" align="right" valign="top"><a id="a05d0d3d10bf5e02f67694242f0a6da27" name="a05d0d3d10bf5e02f67694242f0a6da27"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><b>targetX</b></td></tr>
 <tr class="memitem:a840c96b184267e5bb8962f0559999573" id="r_a840c96b184267e5bb8962f0559999573"><td class="memItemLeft" align="right" valign="top"><a id="a840c96b184267e5bb8962f0559999573" name="a840c96b184267e5bb8962f0559999573"></a>

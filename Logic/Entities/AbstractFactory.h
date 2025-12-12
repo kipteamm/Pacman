@@ -14,6 +14,7 @@
 
 #include <memory>
 
+#include "FruitModel.h"
 
 
 namespace logic {
@@ -28,6 +29,7 @@ namespace logic {
         virtual std::shared_ptr<RandomGhost> createClyde(float x, float y, float mapWidth, float mapHeight) = 0;
         virtual std::shared_ptr<WallModel> createWall(float x, float y, char type) = 0;
         virtual std::shared_ptr<CoinModel> createCoin(float x, float y) = 0;
+        virtual std::shared_ptr<FruitModel> createFruit(float x, float y) = 0;
     };
 }
 

@@ -69,6 +69,10 @@ add_executable(Pacman main.cpp
         Logic/Random.h
         Representation/States/GameOverState.cpp
         Representation/States/GameOverState.h
+        Logic/Entities/FruitModel.cpp
+        Logic/Entities/FruitModel.h
+        Representation/Entities/FruitView.cpp
+        Representation/Entities/FruitView.h
 )
 
 target_link_libraries(Pacman PRIVATE sfml-graphics sfml-window sfml-system)

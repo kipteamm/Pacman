@@ -21,8 +21,10 @@ public:
 private:
     std::shared_ptr<logic::GhostModel> ghost;
 
-    std::unordered_map<logic::Moves, std::vector<sf::IntRect>> animations{};
+    std::unordered_map<int, std::vector<sf::IntRect>> animations{};
     std::vector<sf::IntRect>* animation;
+
+    bool frightened = false;
 };
 
 
