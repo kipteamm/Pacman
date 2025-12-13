@@ -12,7 +12,7 @@
 
 
 namespace logic {
-    enum class GhostState { WAITING, EXITING, CHASING, FRIGHTENED };
+    enum class GhostState { WAITING, EXITING, CHASING };
 
     class GhostModel : public MovingEntityModel {
     public:
@@ -21,7 +21,8 @@ namespace logic {
 
         void setState(GhostState state);
         [[nodiscard]] GhostState getState() const { return this->state; }
-        [[nodiscard]] GhostState getPreviousState() const { return this->previousState; }
+
+        void setFrightened(bool frightened);
 
         void update(const World& world, double dt);
         void move(const World& world, float dt) override;
@@ -29,8 +30,8 @@ namespace logic {
 
     protected:
         GhostState state;
-        GhostState previousState;
         float defaultSpeed;
+        bool frightened = false;
 
         [[nodiscard]] std::vector<Moves> getPossibleMoves(const World& world) const;
         [[nodiscard]] Moves maximizeDistance(const World& world, const PacmanModel& pacman) const;

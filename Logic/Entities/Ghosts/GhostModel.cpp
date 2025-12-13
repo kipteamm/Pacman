@@ -23,8 +23,19 @@ GhostModel::GhostModel(
 
 
 void GhostModel::setState(const GhostState state) {
-    this->previousState = this->state;
     this->state = state;
+}
+
+
+void GhostModel::setFrightened(const bool frightened) {
+    this->frightened = frightened;
+
+    if (frightened) {
+        speed = defaultSpeed * 0.6f;
+        return;
+    }
+
+    speed = defaultSpeed;
 }
 
 
@@ -33,7 +44,6 @@ void GhostModel::update(const World& world, const double dt) {
     waitingTime += dt;
 
     if (waitingTime > startCooldown) {
-        previousState = GhostState::WAITING;
         state = GhostState::EXITING;
         direction = getPossibleMoves(world)[0];
     }
@@ -42,8 +52,6 @@ void GhostModel::update(const World& world, const double dt) {
 
 void GhostModel::move(const World& world, const float dt) {
     if (state == GhostState::WAITING) return;
-    if (state == GhostState::FRIGHTENED) speed = defaultSpeed * 0.6f;
-    else speed = defaultSpeed;
 
     constexpr float epsilon = 0.01f;
 
@@ -70,14 +78,13 @@ void GhostModel::move(const World& world, const float dt) {
         }
 
         if (state == GhostState::EXITING && gridX == world.getGhostExitX() && gridY == world.getGhostExitY()) {
-            previousState = GhostState::EXITING;
             state = GhostState::CHASING;
         }
 
         const bool wall = world.collidesWithWall(world.normalizeX(nextGridX), world.normalizeY(nextGridY), state == GhostState::EXITING);
         if (isAtIntersection(world) || wall) {
             if (state == GhostState::EXITING) direction = minimizeDistance(world, world.getGhostExitX(), world.getGhostExitY());
-            else if (state == GhostState::FRIGHTENED) direction = maximizeDistance(world, *world.getPacman());
+            else if (frightened) direction = maximizeDistance(world, *world.getPacman());
             else direction = decideNextMove(world, *world.getPacman());
 
             notify(DIRECTION_CHANGED);
@@ -107,7 +114,6 @@ void GhostModel::move(const World& world, const float dt) {
 }
 
 void GhostModel::respawn() {
-    previousState = this->state;
     state = GhostState::WAITING;
     waitingTime = 0;
 
@@ -156,7 +162,7 @@ Moves GhostModel::maximizeDistance(const World &world, const PacmanModel &pacman
     const std::vector<Moves> options = getPossibleMoves(world);
 
     std::vector<Moves> bestCandidates;
-    float longestDistance = 0;
+    int longestDistance = 0;
 
     for (const Moves move : options) {
         int nextX = gridX;
@@ -168,14 +174,14 @@ Moves GhostModel::maximizeDistance(const World &world, const PacmanModel &pacman
         else if (move == Moves::LEFT) nextX--;
         else if (move == Moves::RIGHT) nextX++;
 
-        float dist = std::abs(nextX - pacman.getX()) + std::abs(nextY - pacman.getY());
+        int dist = std::abs(nextX - pacman.getGridX()) + std::abs(nextY - pacman.getGridY());
 
         if (dist > longestDistance) {
             longestDistance = dist;
             bestCandidates.clear();
             bestCandidates.push_back(move);
         }
-        else if (std::abs(dist - longestDistance) < 0.001f) {
+        else if (std::abs(dist - longestDistance) == 0) {
             bestCandidates.push_back(move);
         }
     }
@@ -188,7 +194,7 @@ Moves GhostModel::minimizeDistance(const World &world, const int targetX, const 
     const std::vector<Moves> options = getPossibleMoves(world);
 
     std::vector<Moves> bestCandidates;
-    float shortestDistance = 99999.0f;
+    int shortestDistance = 99999;
 
     for (const Moves move : options) {
         int nextX = gridX;
@@ -200,14 +206,14 @@ Moves GhostModel::minimizeDistance(const World &world, const int targetX, const 
         else if (move == Moves::LEFT) nextX--;
         else if (move == Moves::RIGHT) nextX++;
 
-        float dist = std::abs(nextX - targetX) + std::abs(nextY - targetY);
+        int dist = std::abs(nextX - targetX) + std::abs(nextY - targetY);
 
         if (dist < shortestDistance) {
             shortestDistance = dist;
             bestCandidates.clear();
             bestCandidates.push_back(move);
         }
-        else if (std::abs(dist - shortestDistance) < 0.001f) {
+        else if (std::abs(dist - shortestDistance) == 0) {
             bestCandidates.push_back(move);
         }
     }

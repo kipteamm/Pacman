@@ -88,8 +88,6 @@ void GhostView::render() {
             debug.setString("EXITING"); break;
         case logic::GhostState::CHASING:
             debug.setString("CHASING"); break;
-        case logic::GhostState::FRIGHTENED:
-            debug.setString("FRIGHTENED"); break;
     }
 
     debug.setCharacterSize(16);
