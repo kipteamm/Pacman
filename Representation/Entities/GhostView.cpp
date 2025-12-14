@@ -33,8 +33,28 @@ GhostView::GhostView(const std::shared_ptr<logic::GhostModel>& model, const std:
         sf::IntRect{48, spriteY, 16, 16},
     };
 
+    // (Eyes) Up animation
+    animations[logic::Moves::UP + 4] = {
+        sf::IntRect{160, 48, 16, 16},
+    };
+
+    // (Eyes) Down animation
+    animations[logic::Moves::DOWN + 4] = {
+        sf::IntRect{176, 48, 16, 16},
+    };
+
+    // (Eyes) Right animation
+    animations[logic::Moves::RIGHT + 4] = {
+        sf::IntRect{128, 48, 16, 16},
+    };
+
+    // (Eyes) Left animation
+    animations[logic::Moves::LEFT + 4] = {
+        sf::IntRect{144, 48, 16, 16},
+    };
+
     // Frightened animation
-    animations[5] = {
+    animations[8] = {
         sf::IntRect{128, 32, 16, 16},
         sf::IntRect{144, 32, 16, 16},
     };
@@ -48,16 +68,21 @@ GhostView::GhostView(const std::shared_ptr<logic::GhostModel>& model, const std:
 void GhostView::update(const logic::Events event) {
     switch (event) {
         case logic::Events::DIRECTION_CHANGED:
-        case logic::Events::RESPAWN:
             if (frightened) return;
-            animation = &animations[ghost->getDirection()]; break;
+            animation = &animations[ghost->getDirection() + animationOffset]; break;
 
         case logic::Events::GHOST_FRIGHTENED:
             frightened = true;
-            animation = &animations[5]; break;
+            animation = &animations[8]; break;
+
+        case logic::Events::GHOST_EATEN:
+            frightened = false;
+            animationOffset = 4;
+            animation = &animations[ghost->getDirection() + animationOffset]; break;
 
         case logic::Events::GHOST_NORMAL:
-            frightened = false;
+        case logic::Events::RESPAWN:
+            animationOffset = 0;
             animation = &animations[ghost->getDirection()]; break;
 
         default: break;
@@ -88,6 +113,8 @@ void GhostView::render() {
             debug.setString("EXITING"); break;
         case logic::GhostState::CHASING:
             debug.setString("CHASING"); break;
+        case logic::GhostState::DEAD:
+            debug.setString("DEAD"); break;
     }
 
     debug.setCharacterSize(16);

@@ -139,8 +139,7 @@ void World::resetLevel() {
 
 void World::resetFright() {
     for (const auto& ghost : ghosts) {
-        ghost->setFrightened(false);
-        ghost->notify(Events::GHOST_NORMAL);
+        ghost->setFrightened(false, *this);
     }
 
     state = WorldState::PLAYING;
@@ -171,8 +170,9 @@ Events World::update(const double dt) {
 
         if (std::abs(pacman->getX() - ghost->getX()) > epsilon || std::abs(pacman->getY() - ghost->getY()) > epsilon) continue;
         if (state == WorldState::FRIGHTENED) {
-            ghost->respawn();
-            ghost->setState(GhostState::WAITING);
+            if (ghost->getState() == GhostState::DEAD) continue;
+            ghost->eat();
+            notify(Events::GHOST_EATEN);
 
             continue;
         }
@@ -201,7 +201,7 @@ Events World::update(const double dt) {
                 timer = 0;
 
                 for (const auto& ghost : ghosts) {
-                    ghost->setFrightened(true);
+                    ghost->setFrightened(true, *this);
                     ghost->notify(Events::GHOST_FRIGHTENED);
                 }
             }

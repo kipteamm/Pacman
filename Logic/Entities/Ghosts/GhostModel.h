@@ -12,7 +12,7 @@
 
 
 namespace logic {
-    enum class GhostState { WAITING, EXITING, CHASING };
+    enum class GhostState { WAITING, EXITING, CHASING, DEAD };
 
     class GhostModel : public MovingEntityModel {
     public:
@@ -22,28 +22,35 @@ namespace logic {
         void setState(GhostState state);
         [[nodiscard]] GhostState getState() const { return this->state; }
 
-        void setFrightened(bool frightened);
+        void setFrightened(bool frightened, const World& world);
 
         void update(const World& world, double dt);
         void move(const World& world, float dt) override;
+
         void respawn() override;
+        void eat();
 
     protected:
         GhostState state;
         float defaultSpeed;
-        bool frightened = false;
 
         [[nodiscard]] std::vector<Moves> getPossibleMoves(const World& world) const;
         [[nodiscard]] Moves maximizeDistance(const World& world, const PacmanModel& pacman) const;
         [[nodiscard]] Moves minimizeDistance(const World& world, int targetX, int targetY) const;
 
         virtual Moves decideNextMove(const World& world, const PacmanModel& pacman) = 0;
+        void updateDirection(const World& world);
 
     private:
+        int gridSpawnX;
+        int gridSpawnY;
+
+        bool frightened = false;
+
         double startCooldown;
         double waitingTime;
 
-        [[nodiscard]] bool sameDirection(Moves a, Moves b) const;
+        [[nodiscard]] static bool sameDirection(Moves a, Moves b) ;
         [[nodiscard]] bool isAtIntersection(const World &world) const;
     };
 

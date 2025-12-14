@@ -19,7 +19,10 @@ GhostModel::GhostModel(
     const float mapHeight,
     const float speed,
     const double cooldown
-) : MovingEntityModel(normalizedX, normalizedY, mapWidth, mapHeight, speed), state(GhostState::WAITING), defaultSpeed(speed), startCooldown(cooldown), waitingTime(0) {}
+) : MovingEntityModel(normalizedX, normalizedY, mapWidth, mapHeight, speed), state(GhostState::WAITING), defaultSpeed(speed), startCooldown(cooldown), waitingTime(0) {
+    gridSpawnX = static_cast<int>((normalizedX + 1.0f) * mapWidth / 2.0f);
+    gridSpawnY = static_cast<int>((normalizedY + 1.0f) * mapHeight / 2.0f);
+}
 
 
 void GhostModel::setState(const GhostState state) {
@@ -27,14 +30,17 @@ void GhostModel::setState(const GhostState state) {
 }
 
 
-void GhostModel::setFrightened(const bool frightened) {
+void GhostModel::setFrightened(const bool frightened, const World& world) {
     this->frightened = frightened;
+    updateDirection(world);
 
     if (frightened) {
         speed = defaultSpeed * 0.6f;
         return;
     }
 
+    if (state == GhostState::DEAD) return;
+    notify(Events::GHOST_NORMAL);
     speed = defaultSpeed;
 }
 
@@ -67,28 +73,25 @@ void GhostModel::move(const World& world, const float dt) {
             case Moves::DOWN:  gridY++; break;
         }
 
-        int nextGridX = gridX;
-        int nextGridY = gridY;
-
-        switch(direction) {
-            case Moves::LEFT:  nextGridX--; break;
-            case Moves::RIGHT: nextGridX++; break;
-            case Moves::UP:    nextGridY--; break;
-            case Moves::DOWN:  nextGridY++; break;
-        }
+        // int nextGridX = gridX;
+        // int nextGridY = gridY;
+        //
+        // switch(direction) {
+        //     case Moves::LEFT:  nextGridX--; break;
+        //     case Moves::RIGHT: nextGridX++; break;
+        //     case Moves::UP:    nextGridY--; break;
+        //     case Moves::DOWN:  nextGridY++; break;
+        // }
+        // const bool wall = world.collidesWithWall(world.normalizeX(nextGridX), world.normalizeY(nextGridY), state == GhostState::EXITING);
 
         if (state == GhostState::EXITING && gridX == world.getGhostExitX() && gridY == world.getGhostExitY()) {
             state = GhostState::CHASING;
         }
-
-        const bool wall = world.collidesWithWall(world.normalizeX(nextGridX), world.normalizeY(nextGridY), state == GhostState::EXITING);
-        if (isAtIntersection(world) || wall) {
-            if (state == GhostState::EXITING) direction = minimizeDistance(world, world.getGhostExitX(), world.getGhostExitY());
-            else if (frightened) direction = maximizeDistance(world, *world.getPacman());
-            else direction = decideNextMove(world, *world.getPacman());
-
-            notify(DIRECTION_CHANGED);
+        if (state == GhostState::DEAD && gridX == gridSpawnX && gridY == gridSpawnY) {
+            respawn();
         }
+
+        if (isAtIntersection(world)) updateDirection(world);
 
         updateTarget();
     }
@@ -113,9 +116,13 @@ void GhostModel::move(const World& world, const float dt) {
     if (std::abs(y - targetY) < epsilon) y = targetY;
 }
 
+
 void GhostModel::respawn() {
     state = GhostState::WAITING;
     waitingTime = 0;
+
+    frightened = false;
+    speed = defaultSpeed;
 
     x = spawnX;
     y = spawnY;
@@ -127,6 +134,13 @@ void GhostModel::respawn() {
     targetY = y;
 
     notify(Events::RESPAWN);
+}
+
+void GhostModel::eat() {
+    state = GhostState::DEAD;
+    speed = defaultSpeed * 2;
+
+    notify(Events::GHOST_EATEN);
 }
 
 
@@ -150,7 +164,7 @@ std::vector<Moves> GhostModel::getPossibleMoves(const World &world) const {
                 moveY++; break;
         }
 
-        if (world.collidesWithWall(world.normalizeX(moveX), world.normalizeY(moveY), state == GhostState::EXITING)) continue;
+        if (world.collidesWithWall(world.normalizeX(moveX), world.normalizeY(moveY), state == GhostState::EXITING || state == GhostState::DEAD)) continue;
         moves.push_back(move);
     }
 
@@ -222,7 +236,7 @@ Moves GhostModel::minimizeDistance(const World &world, const int targetX, const 
 }
 
 
-bool GhostModel::sameDirection(const Moves a, const Moves b) const {
+bool GhostModel::sameDirection(const Moves a, const Moves b) {
     if (a == Moves::UP || a == Moves::DOWN) return (b == Moves::UP || b == Moves::DOWN);
     return (b == Moves::LEFT || b == Moves::RIGHT);
 }
@@ -247,8 +261,18 @@ bool GhostModel::isAtIntersection(const World &world) const {
                 moveY++; break;
         }
 
-        if (!world.collidesWithWall(world.normalizeX(moveX), world.normalizeY(moveY), state == GhostState::EXITING)) return true;
+        if (!world.collidesWithWall(world.normalizeX(moveX), world.normalizeY(moveY), state == GhostState::EXITING || state == GhostState::DEAD)) return true;
     }
 
     return false;
+}
+
+
+void GhostModel::updateDirection(const World& world) {
+    if (state == GhostState::EXITING) direction = minimizeDistance(world, world.getGhostExitX(), world.getGhostExitY());
+    else if (state == GhostState::DEAD) direction = minimizeDistance(world, gridSpawnX, gridSpawnY);
+    else if (frightened) direction = maximizeDistance(world, *world.getPacman());
+    else direction = decideNextMove(world, *world.getPacman());
+
+    notify(Events::DIRECTION_CHANGED);
 }

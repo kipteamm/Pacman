@@ -56,7 +56,7 @@ namespace logic {
         float FEAR_DURATION = 6;
 
         WorldState state;
-        float timer = 0;
+        double timer = 0;
 
         std::shared_ptr<AbstractFactory> factory;
         std::vector<std::shared_ptr<CollectibleEntityModel>> collectibles;

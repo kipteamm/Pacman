@@ -25,6 +25,7 @@ private:
     std::vector<sf::IntRect>* animation;
 
     bool frightened = false;
+    int animationOffset = 0;
 };
 
 

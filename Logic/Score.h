@@ -32,11 +32,11 @@ namespace logic {
 
     private:
         std::string filename = "highscores.txt";
-
-        bool paused = false;
-        double accumulator;
-        double timeLastCoin;
         std::vector<int> highscores;
+        bool paused = false;
+
+        double timeLastCoin = 0;
+        double accumulator = 0;
         int score;
 
         [[nodiscard]] std::fstream createHighscoresFile() const;
