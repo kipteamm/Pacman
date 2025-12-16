@@ -102,7 +102,11 @@ void Score::update(const Events event) {
         }
 
         case Events::GHOST_EATEN:
-            score += GHOST_POINTS;  break;
+            score += ghostPoints;
+            ghostPoints *= 2; break;
+
+        case Events::GHOST_FRIGHTENED:
+            ghostPoints = GHOST_POINTS; break;
 
         case Events::FRUIT_EATEN:
             score += FRUIT_POINTS; break;

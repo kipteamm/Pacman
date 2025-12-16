@@ -128,7 +128,7 @@ void GhostModel::respawn() {
 
 void GhostModel::eat() {
     state = GhostState::DEAD;
-    speed = defaultSpeed * 2;
+    speed = defaultSpeed * 2.5f;
 
     notify(Events::GHOST_EATEN);
 }

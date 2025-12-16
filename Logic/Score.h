@@ -34,6 +34,7 @@ namespace logic {
         std::string filename = "highscores.txt";
         std::vector<int> highscores;
         bool paused = false;
+        int ghostPoints;
 
         double timeLastCoin = 0;
         double accumulator = 0;

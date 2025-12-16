@@ -1,0 +1,56 @@
+#ifndef PACMAN_DIFFICULTY_H
+#define PACMAN_DIFFICULTY_H
+#include <unordered_map>
+
+
+namespace logic {
+
+
+    struct DifficultySpecs {
+        int spriteOffset;
+        float pacmanSpeed;
+        float ghostSpeed;
+        float frighenedGhostSpeed;
+        int frightTime;
+        int flashesh;
+    };
+
+
+    // https://pacman.holenet.info/#LvlSpecs
+    class Difficulty {
+    public:
+        /**
+         * Singletons should not be cloneable or assignable.
+         */
+        Difficulty(Difficulty &other) = delete;
+        void operator=(const Difficulty &) = delete;
+
+        [[nodiscard]] static Difficulty& getInstance();
+
+        void increaseDifficulty();
+        [[nodiscard]] DifficultySpecs* getDifficulty();
+
+    private:
+        Difficulty();
+
+        int difficulty = 0;
+
+        std::unordered_map<int, DifficultySpecs> difficultyMap = {
+            {0, DifficultySpecs{0, 4, 2.4, 0.5, 6, 5}},
+            {1, DifficultySpecs{1, 4.4, 2.6, 0.6, 5, 5}},
+            {2, DifficultySpecs{2, 4.4, 2.6, 0.6, 4, 5}},
+            {3, DifficultySpecs{2, 4.4, 2.6, 0.6, 3, 5}},
+            {4, DifficultySpecs{3, 4.5, 2.8, 0.7, 2, 5}},
+            {5, DifficultySpecs{3, 4.5, 2.8, 0.7, 5, 5}},
+            {6, DifficultySpecs{4, 4.5, 2.8, 0.7, 2, 5}},
+            {7, DifficultySpecs{5, 4.5, 2.8, 0.7, 2, 5}},
+            {8, DifficultySpecs{5, 4.5, 2.8, 0.7, 1, 3}},
+            {9, DifficultySpecs{6, 4.5, 2.8, 0.7, 2, 4}},
+            {10, DifficultySpecs{7, 4.5, 2.8, 0.8, 1, 8}},
+        };
+    };
+}
+
+
+
+#endif

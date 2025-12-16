@@ -103,25 +103,6 @@ void GhostView::render() {
     const sf::IntRect rect = animation->at(getFrameIndex(static_cast<float>(dt), animation->size()));
     sprite.setTextureRect(rect);
 
-    sf::Text debug;
-    debug.setFont(AssetManager::getInstance().getFont());
-
-    switch (ghost->getState()) {
-        case logic::GhostState::WAITING:
-            debug.setString("WAITING"); break;
-        case logic::GhostState::EXITING:
-            debug.setString("EXITING"); break;
-        case logic::GhostState::CHASING:
-            debug.setString("CHASING"); break;
-        case logic::GhostState::DEAD:
-            debug.setString("DEAD"); break;
-    }
-
-    debug.setCharacterSize(16);
-    debug.setFillColor(sf::Color::White);
-    debug.setPosition(x - 50, y - 50);
-    Window::getInstance().draw(debug);
-
     Window::getInstance().draw(sprite);
 }
 

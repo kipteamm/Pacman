@@ -199,6 +199,7 @@ Events World::update(const double dt) {
             if (event == Events::FRUIT_EATEN) {
                 state = WorldState::FRIGHTENED;
                 timer = 0;
+                notify(Events::GHOST_FRIGHTENED);
 
                 for (const auto& ghost : ghosts) {
                     ghost->setFrightened(true, *this);
