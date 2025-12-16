@@ -7,6 +7,7 @@
 #include "GhostModel.h"
 
 #include <iostream>
+#include <queue>
 
 
 using namespace logic;
@@ -73,17 +74,6 @@ void GhostModel::move(const World& world, const float dt) {
             case Moves::DOWN:  gridY++; break;
         }
 
-        // int nextGridX = gridX;
-        // int nextGridY = gridY;
-        //
-        // switch(direction) {
-        //     case Moves::LEFT:  nextGridX--; break;
-        //     case Moves::RIGHT: nextGridX++; break;
-        //     case Moves::UP:    nextGridY--; break;
-        //     case Moves::DOWN:  nextGridY++; break;
-        // }
-        // const bool wall = world.collidesWithWall(world.normalizeX(nextGridX), world.normalizeY(nextGridY), state == GhostState::EXITING);
-
         if (state == GhostState::EXITING && gridX == world.getGhostExitX() && gridY == world.getGhostExitY()) {
             state = GhostState::CHASING;
         }
@@ -91,7 +81,7 @@ void GhostModel::move(const World& world, const float dt) {
             respawn();
         }
 
-        if (isAtIntersection(world)) updateDirection(world);
+        if (state == GhostState::DEAD || isAtIntersection(world)) updateDirection(world);
 
         updateTarget();
     }
@@ -236,6 +226,57 @@ Moves GhostModel::minimizeDistance(const World &world, const int targetX, const 
 }
 
 
+void GhostModel::updatePathToSpawn(const World& world) {
+    cachedPath.clear();
+
+    const int width = static_cast<int>(mapWidth);
+    const int height = static_cast<int>(mapHeight);
+
+    std::vector<std::vector<logic::Moves>> comeFromMap(width, std::vector<logic::Moves>(height, static_cast<Moves>(-1)));
+    std::vector<std::vector<bool>> visited(width, std::vector<bool>(height, false));
+
+    std::queue<std::pair<int, int>> q;
+    q.emplace(gridX, gridY);
+    visited[gridX][gridY] = true;
+
+    while (!q.empty()) {
+        auto [cx, cy] = q.front(); q.pop();
+        if (cx == gridSpawnX && cy == gridSpawnY) break;
+
+        struct Dir { int dx, dy; logic::Moves move; };
+        Dir dirs[] = { {-1, 0, Moves::LEFT}, {1, 0, Moves::RIGHT}, {0, -1, Moves::UP}, {0, 1, Moves::DOWN} };
+
+        for (const auto& dir : dirs) {
+            int nx = cx + dir.dx;
+            int ny = cy + dir.dy;
+
+            if (nx < 0 || nx >= width || ny < 0 || ny >= height) continue;
+            if (visited[nx][ny] || world.collidesWithWall(world.normalizeX(nx), world.normalizeY(ny), true)) continue;
+
+            visited[nx][ny] = true;
+            comeFromMap[nx][ny] = dir.move;
+            q.emplace(nx, ny);
+        }
+    }
+
+    int currentX = gridSpawnX;
+    int currentY = gridSpawnY;
+
+    while (currentX != gridX || currentY != gridY) {
+        Moves move = comeFromMap[currentX][currentY];
+        cachedPath.push_front(move);
+
+        switch (move) {
+            case Moves::LEFT:  currentX++; break;
+            case Moves::RIGHT: currentX--; break;
+            case Moves::UP:    currentY++; break;
+            case Moves::DOWN:  currentY--; break;
+        }
+    }
+}
+
+
+
 bool GhostModel::sameDirection(const Moves a, const Moves b) {
     if (a == Moves::UP || a == Moves::DOWN) return (b == Moves::UP || b == Moves::DOWN);
     return (b == Moves::LEFT || b == Moves::RIGHT);
@@ -270,8 +311,15 @@ bool GhostModel::isAtIntersection(const World &world) const {
 
 void GhostModel::updateDirection(const World& world) {
     if (state == GhostState::EXITING) direction = minimizeDistance(world, world.getGhostExitX(), world.getGhostExitY());
-    else if (state == GhostState::DEAD) direction = minimizeDistance(world, gridSpawnX, gridSpawnY);
+
+    else if (state == GhostState::DEAD) {
+        if (cachedPath.empty()) updatePathToSpawn(world);
+        direction = cachedPath.front();
+        cachedPath.pop_front();
+    }
+
     else if (frightened) direction = maximizeDistance(world, *world.getPacman());
+
     else direction = decideNextMove(world, *world.getPacman());
 
     notify(Events::DIRECTION_CHANGED);

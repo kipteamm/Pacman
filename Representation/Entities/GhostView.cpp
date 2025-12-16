@@ -120,8 +120,8 @@ void GhostView::render() {
     debug.setCharacterSize(16);
     debug.setFillColor(sf::Color::White);
     debug.setPosition(x - 50, y - 50);
+    Window::getInstance().draw(debug);
 
     Window::getInstance().draw(sprite);
-    Window::getInstance().draw(debug);
 }
 

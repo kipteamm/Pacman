@@ -99,6 +99,7 @@ void PacmanModel::respawn() {
     x = spawnX;
     y = spawnY;
     direction = Moves::RIGHT;
+    nextDirection = Moves::RIGHT;
 
     gridX = static_cast<int>((x + 1.0f) * mapWidth / 2.0f);
     gridY = static_cast<int>((y + 1.0f) * mapHeight / 2.0f);

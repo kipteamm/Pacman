@@ -28,6 +28,7 @@ bool EntityView::shouldDelete() const {
 }
 
 size_t EntityView::getFrameIndex(const float dt, const size_t max) {
+    if (frameIndex >= max) frameIndex = 0;
     elapsedTime += dt;
 
     if (elapsedTime > frameDuration) {

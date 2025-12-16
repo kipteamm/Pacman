@@ -12,7 +12,16 @@
 
 
 namespace logic {
+
     enum class GhostState { WAITING, EXITING, CHASING, DEAD };
+
+
+    struct PathNode {
+        int x, y;
+        logic::Moves firstMove;
+        int parentX, parentY;
+    };
+
 
     class GhostModel : public MovingEntityModel {
     public:
@@ -49,6 +58,9 @@ namespace logic {
 
         double startCooldown;
         double waitingTime;
+
+        std::list<Moves> cachedPath;
+        void updatePathToSpawn(const World& world);
 
         [[nodiscard]] static bool sameDirection(Moves a, Moves b) ;
         [[nodiscard]] bool isAtIntersection(const World &world) const;
