@@ -19,7 +19,7 @@ void ConcreteFactory::setViews(std::unordered_map<Layer, std::vector<std::shared
 
 
 std::shared_ptr<logic::PacmanModel> ConcreteFactory::createPacMan(float x, float y, float mapWidth, float mapHeight) {
-    const auto model = std::make_shared<logic::PacmanModel>(x, y, mapWidth, mapHeight, 4);
+    const auto model = std::make_shared<logic::PacmanModel>(x, y, mapWidth, mapHeight);
     const auto view = std::make_shared<PacmanView>(model, camera);
 
     model->attach(view);
@@ -29,7 +29,7 @@ std::shared_ptr<logic::PacmanModel> ConcreteFactory::createPacMan(float x, float
 }
 
 std::shared_ptr<logic::ChasingGhost> ConcreteFactory::createBlinky(const float x, const float y, const float mapWidth, const float mapHeight) {
-    const auto model = std::make_shared<logic::ChasingGhost>(x, y, mapWidth, mapHeight, 2.4, 0);
+    const auto model = std::make_shared<logic::ChasingGhost>(x, y, mapWidth, mapHeight, 0);
     const auto view = std::make_shared<GhostView>(model, camera, 32);
 
     model->attach(view);
@@ -39,7 +39,7 @@ std::shared_ptr<logic::ChasingGhost> ConcreteFactory::createBlinky(const float x
 }
 
 std::shared_ptr<logic::AmbushGhost> ConcreteFactory::createPinky(const float x, const float y, const float mapWidth, const float mapHeight) {
-    const auto model = std::make_shared<logic::AmbushGhost>(x, y, mapWidth, mapHeight, 2.4, 0);
+    const auto model = std::make_shared<logic::AmbushGhost>(x, y, mapWidth, mapHeight, 0);
     const auto view = std::make_shared<GhostView>(model, camera, 48);
 
     model->attach(view);
@@ -49,7 +49,7 @@ std::shared_ptr<logic::AmbushGhost> ConcreteFactory::createPinky(const float x, 
 }
 
 std::shared_ptr<logic::AmbushGhost> ConcreteFactory::createInky(const float x, const float y, const float mapWidth, const float mapHeight) {
-    const auto model = std::make_shared<logic::AmbushGhost>(x, y, mapWidth, mapHeight, 2.4, 5);
+    const auto model = std::make_shared<logic::AmbushGhost>(x, y, mapWidth, mapHeight, 5);
     const auto view = std::make_shared<GhostView>(model, camera, 64);
 
     model->attach(view);
@@ -59,7 +59,7 @@ std::shared_ptr<logic::AmbushGhost> ConcreteFactory::createInky(const float x, c
 }
 
 std::shared_ptr<logic::RandomGhost> ConcreteFactory::createClyde(const float x, const float y, const float mapWidth, const float mapHeight) {
-    const auto model = std::make_shared<logic::RandomGhost>(x, y, mapWidth, mapHeight, 2.4, 10);
+    const auto model = std::make_shared<logic::RandomGhost>(x, y, mapWidth, mapHeight, 10);
     const auto view = std::make_shared<GhostView>(model, camera, 80);
 
     model->attach(view);

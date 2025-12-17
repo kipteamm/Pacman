@@ -25,7 +25,7 @@ namespace logic {
 
     class GhostModel : public MovingEntityModel {
     public:
-        explicit GhostModel(float normalizedX, float normalizedY, float mapWidth, float mapHeight, float speed, double cooldown);
+        explicit GhostModel(float normalizedX, float normalizedY, float mapWidth, float mapHeight, double cooldown);
         ~GhostModel() override = default;
 
         void setState(GhostState state);

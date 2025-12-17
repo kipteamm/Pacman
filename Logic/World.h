@@ -7,6 +7,7 @@
 #include <string>
 #include <vector>
 
+#include "Difficulty.h"
 #include "Entities/AbstractFactory.h"
 #include "Entities/PacmanModel.h"
 
@@ -53,10 +54,12 @@ namespace logic {
         int ghostExitY;
 
         float DEATH_DURATION = 1;
-        float FEAR_DURATION = 6;
+        float FEAR_DURATION = Difficulty::getInstance().getDifficulty()->frightTime;
+        float FLASH_TIMESTAMP = FEAR_DURATION - (0.4f * Difficulty::getInstance().getDifficulty()->flashesh);
 
         WorldState state;
         double timer = 0;
+        bool flashing = false;
 
         std::shared_ptr<AbstractFactory> factory;
         std::vector<std::shared_ptr<CollectibleEntityModel>> collectibles;

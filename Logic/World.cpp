@@ -2,6 +2,8 @@
 #include <fstream>
 #include <iostream>
 
+#include "Difficulty.h"
+
 using namespace logic;
 
 
@@ -143,6 +145,7 @@ void World::resetFright() {
     }
 
     state = WorldState::PLAYING;
+    flashing = false;
 }
 
 
@@ -168,6 +171,10 @@ Events World::update(const double dt) {
         ghost->update(*this, dt);
         ghost->move(*this, dt);
 
+        if (timer > FLASH_TIMESTAMP && !flashing && state == WorldState::FRIGHTENED) {
+            ghost->notify(Events::FRIGHTENED_FLASHING);
+        }
+
         if (std::abs(pacman->getX() - ghost->getX()) > epsilon || std::abs(pacman->getY() - ghost->getY()) > epsilon) continue;
         if (state == WorldState::FRIGHTENED) {
             if (ghost->getState() == GhostState::DEAD) continue;
@@ -190,6 +197,8 @@ Events World::update(const double dt) {
         pacman->notify(Events::DEATH);
         notify(Events::DEATH);
     }
+
+    flashing = (timer > FLASH_TIMESTAMP) && (state == WorldState::FRIGHTENED);
 
     for (auto it = collectibles.begin(); it != collectibles.end(); ) {
         if (std::abs(pacman->getX() - (*it)->getX()) <= epsilon && std::abs(pacman->getY() - (*it)->getY()) <= epsilon) {

@@ -12,7 +12,7 @@ namespace logic {
 
     class RandomGhost final : public GhostModel {
     public:
-        explicit RandomGhost(float normalizedX, float normalizedY, float mapWidth, float mapHeight, float speed, double cooldown);
+        explicit RandomGhost(float normalizedX, float normalizedY, float mapWidth, float mapHeight, double cooldown);
 
     private:
         Moves decideNextMove(const World &world, const PacmanModel &pacman) override;

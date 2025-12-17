@@ -11,7 +11,7 @@ namespace logic {
 
     class AmbushGhost final : public GhostModel {
         public:
-            explicit AmbushGhost(float normalizedX, float normalizedY, float mapWidth, float mapHeight, float speed, double cooldown);
+            explicit AmbushGhost(float normalizedX, float normalizedY, float mapWidth, float mapHeight, double cooldown);
 
         private:
             Moves decideNextMove(const World &world, const PacmanModel &pacman) override;

@@ -11,7 +11,7 @@ namespace logic {
         float pacmanSpeed;
         float ghostSpeed;
         float frighenedGhostSpeed;
-        int frightTime;
+        float frightTime;
         int flashesh;
     };
 
@@ -44,9 +44,9 @@ namespace logic {
             {5, DifficultySpecs{3, 4.5, 2.8, 0.7, 5, 5}},
             {6, DifficultySpecs{4, 4.5, 2.8, 0.7, 2, 5}},
             {7, DifficultySpecs{5, 4.5, 2.8, 0.7, 2, 5}},
-            {8, DifficultySpecs{5, 4.5, 2.8, 0.7, 1, 3}},
+            {8, DifficultySpecs{5, 4.5, 2.8, 0.7, 1, 2}},
             {9, DifficultySpecs{6, 4.5, 2.8, 0.7, 2, 4}},
-            {10, DifficultySpecs{7, 4.5, 2.8, 0.8, 1, 8}},
+            {10, DifficultySpecs{7, 4.5, 2.8, 0.8, 1, 2}},
         };
     };
 }

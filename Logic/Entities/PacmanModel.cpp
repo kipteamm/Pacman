@@ -3,11 +3,24 @@
 #include <cmath>
 #include <iostream>
 
+#include "../Difficulty.h"
+
 
 using namespace logic;
 
 
-PacmanModel::PacmanModel(const float normalizedX, const float normalizedY, const float mapWidth, const float mapHeight, const float speed) : MovingEntityModel(normalizedX, normalizedY, mapWidth, mapHeight, speed), nextDirection(Moves::RIGHT), moving(true) {}
+PacmanModel::PacmanModel(
+    const float normalizedX,
+    const float normalizedY,
+    const float mapWidth,
+    const float mapHeight
+) : MovingEntityModel(
+    normalizedX,
+    normalizedY,
+    mapWidth,
+    mapHeight,
+    Difficulty::getInstance().getDifficulty()->pacmanSpeed
+), nextDirection(Moves::RIGHT), moving(true) {}
 
 
 Moves PacmanModel::getNextDirection() const {

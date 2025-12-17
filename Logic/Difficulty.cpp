@@ -4,6 +4,9 @@
 
 #include "Difficulty.h"
 
+#include <iostream>
+#include <ostream>
+
 using namespace logic;
 
 

@@ -9,6 +9,8 @@
 #include <iostream>
 #include <queue>
 
+#include "../../Difficulty.h"
+
 
 using namespace logic;
 
@@ -18,9 +20,8 @@ GhostModel::GhostModel(
     const float normalizedY,
     const float mapWidth,
     const float mapHeight,
-    const float speed,
     const double cooldown
-) : MovingEntityModel(normalizedX, normalizedY, mapWidth, mapHeight, speed), state(GhostState::WAITING), defaultSpeed(speed), startCooldown(cooldown), waitingTime(0) {
+) : MovingEntityModel(normalizedX, normalizedY, mapWidth, mapHeight, Difficulty::getInstance().getDifficulty()->ghostSpeed), state(GhostState::WAITING), defaultSpeed(speed), startCooldown(cooldown), waitingTime(0) {
     gridSpawnX = static_cast<int>((normalizedX + 1.0f) * mapWidth / 2.0f);
     gridSpawnY = static_cast<int>((normalizedY + 1.0f) * mapHeight / 2.0f);
 }
@@ -36,7 +37,7 @@ void GhostModel::setFrightened(const bool frightened, const World& world) {
     updateDirection(world);
 
     if (frightened) {
-        speed = defaultSpeed * 0.6f;
+        speed = defaultSpeed * Difficulty::getInstance().getDifficulty()->frighenedGhostSpeed;
         return;
     }
 

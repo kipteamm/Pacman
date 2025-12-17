@@ -16,9 +16,8 @@ RandomGhost::RandomGhost(
     const float normalizedY,
     const float mapWidth,
     const float mapHeight,
-    const float speed,
     const double cooldown
-) : GhostModel(normalizedX, normalizedY, mapWidth, mapHeight, speed, cooldown) {}
+) : GhostModel(normalizedX, normalizedY, mapWidth, mapHeight, cooldown) {}
 
 
 Moves RandomGhost::decideNextMove(const World &world, const PacmanModel &pacman) {

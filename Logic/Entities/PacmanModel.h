@@ -8,7 +8,7 @@ namespace logic {
 
     class PacmanModel final : public MovingEntityModel {
     public:
-        PacmanModel(float normalizedX, float normalizedY, float mapWidth, float mapHeight, float speed);
+        PacmanModel(float normalizedX, float normalizedY, float mapWidth, float mapHeight);
 
         [[nodiscard]] Moves getNextDirection() const;
         [[nodiscard]] bool isMoving() const;

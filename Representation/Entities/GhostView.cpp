@@ -7,6 +7,8 @@
 #include "../Window.h"
 #include "GhostView.h"
 
+#include <iostream>
+
 
 GhostView::GhostView(const std::shared_ptr<logic::GhostModel>& model, const std::shared_ptr<Camera>& camera, const int spriteY) : EntityView(model, camera, 0.16), ghost(model) {
     // Up animation
@@ -59,6 +61,14 @@ GhostView::GhostView(const std::shared_ptr<logic::GhostModel>& model, const std:
         sf::IntRect{144, 32, 16, 16},
     };
 
+    // Frightened flashes
+    animations[9] = {
+        sf::IntRect{160, 32, 16, 16},
+        sf::IntRect{176, 32, 16, 16},
+        sf::IntRect{128, 32, 16, 16},
+        sf::IntRect{144, 32, 16, 16},
+    };
+
     animation = &animations[ghost->getDirection()];
     sprite.setTexture(AssetManager::getInstance().getSpriteSheet());
     sprite.setOrigin(8, 8);
@@ -82,8 +92,14 @@ void GhostView::update(const logic::Events event) {
 
         case logic::Events::GHOST_NORMAL:
         case logic::Events::RESPAWN:
+            frameDuration = 0.16;
             animationOffset = 0;
             animation = &animations[ghost->getDirection()]; break;
+
+        case logic::Events::FRIGHTENED_FLASHING:
+            animation = &animations[9];
+            std::cout << "FLASHING\n";
+            frameDuration = 0.1; break;
 
         default: break;
     }
