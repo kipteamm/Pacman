@@ -9,7 +9,7 @@ ELSEIF(UNIX)
     # Do linux specific includes
 ENDIF(WIN32)
 
-find_package(SFML 2.6.2 REQUIRED COMPONENTS graphics window system)
+find_package(SFML 2.6.2 REQUIRED COMPONENTS graphics window system audio)
 
 add_executable(Pacman main.cpp
         Representation/Game.cpp
@@ -77,6 +77,8 @@ add_executable(Pacman main.cpp
         Logic/Difficulty.h
         Representation/States/VictoryState.cpp
         Representation/States/VictoryState.h
+        Representation/SoundManager.cpp
+        Representation/SoundManager.h
 )
 
-target_link_libraries(Pacman PRIVATE sfml-graphics sfml-window sfml-system)
+target_link_libraries(Pacman PRIVATE sfml-graphics sfml-window sfml-system sfml-audio)

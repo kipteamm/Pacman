@@ -7,6 +7,8 @@
 
 #include <SFML/Graphics/Texture.hpp>
 #include <SFML/Graphics/Font.hpp>
+#include <SFML/Audio.hpp>
+#include <unordered_map>
 
 
 class AssetManager {
@@ -24,6 +26,8 @@ public:
     [[nodiscard]] sf::Texture& getPacmanLogo();
     [[nodiscard]] sf::Texture& getSpriteSheet();
 
+    [[nodiscard]] sf::SoundBuffer& getSoundBuffer(const std::string& name);
+
 private:
     AssetManager();
 
@@ -31,6 +35,8 @@ private:
 
     sf::Texture pacmanLogo;
     sf::Texture spriteSheet;
+
+    std::unordered_map<std::string, sf::SoundBuffer> soundBuffers;
 };
 
 

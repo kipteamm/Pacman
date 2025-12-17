@@ -16,6 +16,9 @@ LevelState::LevelState(StateManager *context, const std::shared_ptr<ConcreteFact
 
     Camera::getInstance().setScaling(world->getWidth(), world->getHeight());
 
+    soundManager = std::make_shared<SoundManager>();
+    world->attach(soundManager);
+
     live1.setTexture(AssetManager::getInstance().getSpriteSheet());
     live2.setTexture(AssetManager::getInstance().getSpriteSheet());
     live3.setTexture(AssetManager::getInstance().getSpriteSheet());
