@@ -3,12 +3,14 @@
 #include <algorithm>
 #include <iostream>
 
+#include "Difficulty.h"
+
 
 using namespace logic;
 
 
 
-Score::Score() : score(0) {
+Score::Score() : ghostPoints(0), score(0) {
     // Try to open the file in read and write mode
     // If the fil does not exist, create it, the function
     // will try to reopen the file in read and write after creation
@@ -64,14 +66,12 @@ void Score::update(const double dt) {
     if (paused) return;
 
     timeLastCoin += dt;
-
-    accumulator = 0;
     accumulator += dt;
 
     if (accumulator < 1 || score <= 0) return;
 
     score -= SCORE_DECAY;
-    accumulator = 0;
+    accumulator -= 1;
     notify(Events::SCORE_UPDATE);
 }
 
@@ -109,7 +109,7 @@ void Score::update(const Events event) {
             ghostPoints = GHOST_POINTS; break;
 
         case Events::FRUIT_EATEN:
-            score += FRUIT_POINTS; break;
+            score += Difficulty::getInstance().getDifficulty()->fruitPoints; break;
 
         case Events::LEVEL_COMPLETED:
             score += LEVEL_CLEAR_POINTS; break;

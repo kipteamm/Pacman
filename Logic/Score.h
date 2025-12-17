@@ -14,7 +14,6 @@
 namespace logic {
     constexpr int SCORE_DECAY = 10; // 10 points per second
     constexpr int GHOST_POINTS = 200;
-    constexpr int FRUIT_POINTS = 100;
     constexpr int LEVEL_CLEAR_POINTS = 500;
     constexpr int BASE_COIN_POINTS = 10;
 
