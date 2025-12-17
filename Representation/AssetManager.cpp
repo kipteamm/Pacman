@@ -39,7 +39,7 @@ sf::SoundBuffer& AssetManager::getSoundBuffer(const std::string& name) {
     if (soundBuffers.contains(name)) return soundBuffers[name];
 
     sf::SoundBuffer& buffer = soundBuffers[name];
-    if (!buffer.loadFromFile("../Representation/sounds/" + name)) throw std::runtime_error("Failed to load sound: " + name);
+    if (!buffer.loadFromFile("../Representation/sounds/eduard/" + name)) throw std::runtime_error("Failed to load sound: " + name);
 
     return buffer;
 }
