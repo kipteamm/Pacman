@@ -146,6 +146,7 @@ void World::resetFright() {
 
     state = WorldState::PLAYING;
     flashing = false;
+    notify(Events::GHOST_NORMAL);
 }
 
 

@@ -53,7 +53,7 @@ namespace logic {
         int ghostExitX;
         int ghostExitY;
 
-        float DEATH_DURATION = 1;
+        float DEATH_DURATION = 2;
         float FEAR_DURATION = Difficulty::getInstance().getDifficulty()->frightTime;
         float FLASH_TIMESTAMP = FEAR_DURATION - (0.4f * Difficulty::getInstance().getDifficulty()->flashesh);
 

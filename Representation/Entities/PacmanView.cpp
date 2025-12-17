@@ -54,6 +54,14 @@ PacmanView::PacmanView(const std::shared_ptr<logic::PacmanModel> &model) : Entit
         sf::IntRect{208, 0, 16, 16},
         sf::IntRect{208, 0, 16, 16},
         sf::IntRect{208, 0, 16, 16},
+        sf::IntRect{208, 0, 16, 16},
+        sf::IntRect{208, 0, 16, 16},
+        sf::IntRect{208, 0, 16, 16},
+        sf::IntRect{112, 112, 16, 16},
+        sf::IntRect{112, 112, 16, 16},
+        sf::IntRect{112, 112, 16, 16},
+        sf::IntRect{112, 112, 16, 16},
+        sf::IntRect{112, 112, 16, 16},
         sf::IntRect{112, 112, 16, 16},
         sf::IntRect{112, 112, 16, 16},
         sf::IntRect{112, 112, 16, 16},
@@ -100,39 +108,41 @@ void PacmanView::update(const logic::Events event) {
 void PacmanView::render() {
     float x = Camera::getInstance().xToPixel(model->getX());
     float y = Camera::getInstance().yToPixel(model->getY());
-    sprite.setPosition(x, y);
-
-    switch (pacman->getNextDirection()) {
-        case logic::Moves::UP:
-            directionSprite.setTextureRect(sf::IntRect(sf::IntRect(14 * 16, 2 * 16, 16, 16)));
-            y -= Camera::getInstance().getTileWidth();
-            break;
-
-        case logic::Moves::DOWN:
-            directionSprite.setTextureRect(sf::IntRect(sf::IntRect(14 * 16, 3 * 16, 16, 16)));
-            y += Camera::getInstance().getTileWidth();
-            break;
-
-        case logic::Moves::LEFT:
-            directionSprite.setTextureRect(sf::IntRect(sf::IntRect(14 * 16, 4 * 16, 16, 16)));
-            x -= Camera::getInstance().getTileWidth();
-            break;
-
-        case logic::Moves::RIGHT:
-            directionSprite.setTextureRect(sf::IntRect(sf::IntRect(14 * 16, 5 * 16, 16, 16)));
-            x += Camera::getInstance().getTileWidth();
-            break;
-
-        default: return;
-    }
-
-    directionSprite.setPosition(x, y);
 
     const float scaleX = Camera::getInstance().getTileWidth() / 16.0f;
     const float scaleY = Camera::getInstance().getTileHeight() / 16.0f;
     directionSprite.setScale(scaleX, scaleY);
 
-    Window::getInstance().draw(directionSprite);
+    if (!dying) {
+        sprite.setPosition(x, y);
+
+        switch (pacman->getNextDirection()) {
+            case logic::Moves::UP:
+                directionSprite.setTextureRect(sf::IntRect(sf::IntRect(14 * 16, 2 * 16, 16, 16)));
+                y -= Camera::getInstance().getTileWidth();
+                break;
+
+            case logic::Moves::DOWN:
+                directionSprite.setTextureRect(sf::IntRect(sf::IntRect(14 * 16, 3 * 16, 16, 16)));
+                y += Camera::getInstance().getTileWidth();
+                break;
+
+            case logic::Moves::LEFT:
+                directionSprite.setTextureRect(sf::IntRect(sf::IntRect(14 * 16, 4 * 16, 16, 16)));
+                x -= Camera::getInstance().getTileWidth();
+                break;
+
+            case logic::Moves::RIGHT:
+                directionSprite.setTextureRect(sf::IntRect(sf::IntRect(14 * 16, 5 * 16, 16, 16)));
+                x += Camera::getInstance().getTileWidth();
+                break;
+
+            default: return;
+        }
+
+        directionSprite.setPosition(x, y);
+        Window::getInstance().draw(directionSprite);
+    }
 
     if (!moving && !dying) {
         Window::getInstance().draw(sprite);

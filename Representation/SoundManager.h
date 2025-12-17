@@ -16,9 +16,12 @@ public:
     void update(logic::Events event) override;
 
 private:
-    sf::Sound eatingCoinSound;
-    //sf::Sound ghostEatenSound;
-    //sf::Sound deathSound;
+    std::vector<sf::Sound> coinSoundPool;
+    std::vector<sf::Sound> ghostSoundPool;
+
+    sf::Sound ghostMove;
+    sf::Sound ghostFright;
+    sf::Sound deathSound;
 
     void loadSound(sf::Sound& sound, const std::string& name);
 };
