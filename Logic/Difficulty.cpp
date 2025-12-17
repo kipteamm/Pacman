@@ -24,6 +24,10 @@ void Difficulty::increaseDifficulty() {
     difficulty++;
 }
 
+void Difficulty::reset() {
+    difficulty = 0;
+}
+
 
 DifficultySpecs* Difficulty::getDifficulty() {
     return &difficultyMap[difficulty];

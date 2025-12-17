@@ -29,6 +29,7 @@ namespace logic {
         [[nodiscard]] static Difficulty& getInstance();
 
         void increaseDifficulty();
+        void reset();
         [[nodiscard]] DifficultySpecs* getDifficulty();
 
     private:

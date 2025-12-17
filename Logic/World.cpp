@@ -187,6 +187,7 @@ Events World::update(const double dt) {
         lives--;
 
         if (lives == 0) {
+            Difficulty::getInstance().reset();
             notify(Events::GAME_OVER);
             return Events::GAME_OVER;
         };

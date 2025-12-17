@@ -32,8 +32,6 @@ Score::Score() : score(0) {
         }
 
         highscores.push_back(std::make_unique<Highscore>(username, std::stoi(score)));
-
-        // highscores.push_back(std::stoi(line));
     }
 
     fileStream.close();
@@ -59,8 +57,11 @@ void Score::setUser(const std::string& username) {
 
 void Score::addScore(const int score) {
     highscores.push_back(std::make_unique<Highscore>(username, score));
+    this->score = 0;
 
-    std::ranges::sort(highscores, std::greater<>());
+    std::ranges::sort(highscores, [](const auto& a, const auto& b) {
+        return *a < *b;
+    });
 }
 
 
