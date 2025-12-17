@@ -1,0 +1,7 @@
+<map id="VictoryState" name="VictoryState">
+<area shape="rect" id="Node000001" title=" " alt="" coords="10,180,103,207"/>
+<area shape="rect" id="Node000002" href="$class_state.html" title=" " alt="" coords="30,104,83,131"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="59,144,59,180,54,179,54,148"/>
+<area shape="rect" id="Node000003" href="$class_state_manager.html" title=" " alt="" coords="5,5,108,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="58,45,59,104,54,103,55,50"/>
+</map>

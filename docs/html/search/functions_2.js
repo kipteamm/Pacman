@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['random_0',['Random',['../classlogic_1_1_random.html#affaefb818059c94b4b5993ad8d05b595',1,'logic::Random']]]
+  ['difficulty_0',['Difficulty',['../classlogic_1_1_difficulty.html#a5eb779852a724e71aa0a932dc1889ac6',1,'logic::Difficulty']]]
 ];

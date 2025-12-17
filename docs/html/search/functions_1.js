@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['isopen_0',['isOpen',['../class_window.html#a761d614931fb5a5daa70e4f580c3e78e',1,'Window']]]
+  ['camera_0',['Camera',['../class_camera.html#acd4f99b146dbea1819151191a3c04547',1,'Camera']]]
 ];

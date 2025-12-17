@@ -1,13 +1,17 @@
 var annotated_dup =
 [
     [ "logic", "namespacelogic.html", [
+      [ "DifficultySpecs", "structlogic_1_1_difficulty_specs.html", null ],
+      [ "Difficulty", "classlogic_1_1_difficulty.html", "classlogic_1_1_difficulty" ],
       [ "AbstractFactory", "classlogic_1_1_abstract_factory.html", null ],
       [ "CoinModel", "classlogic_1_1_coin_model.html", null ],
       [ "EntityModel", "classlogic_1_1_entity_model.html", null ],
       [ "CollectibleEntityModel", "classlogic_1_1_collectible_entity_model.html", null ],
       [ "MovingEntityModel", "classlogic_1_1_moving_entity_model.html", null ],
+      [ "FruitModel", "classlogic_1_1_fruit_model.html", null ],
       [ "AmbushGhost", "classlogic_1_1_ambush_ghost.html", null ],
       [ "ChasingGhost", "classlogic_1_1_chasing_ghost.html", null ],
+      [ "PathNode", "structlogic_1_1_path_node.html", null ],
       [ "GhostModel", "classlogic_1_1_ghost_model.html", null ],
       [ "RandomGhost", "classlogic_1_1_random_ghost.html", null ],
       [ "PacmanModel", "classlogic_1_1_pacman_model.html", null ],
@@ -15,15 +19,17 @@ var annotated_dup =
       [ "Observer", "classlogic_1_1_observer.html", null ],
       [ "Subject", "classlogic_1_1_subject.html", null ],
       [ "Random", "classlogic_1_1_random.html", "classlogic_1_1_random" ],
+      [ "Highscore", "structlogic_1_1_highscore.html", null ],
       [ "Score", "classlogic_1_1_score.html", null ],
       [ "Stopwatch", "classlogic_1_1_stopwatch.html", "classlogic_1_1_stopwatch" ],
       [ "World", "classlogic_1_1_world.html", null ]
     ] ],
     [ "AssetManager", "class_asset_manager.html", "class_asset_manager" ],
-    [ "Camera", "class_camera.html", null ],
+    [ "Camera", "class_camera.html", "class_camera" ],
     [ "CoinView", "class_coin_view.html", null ],
     [ "ConcreteFactory", "class_concrete_factory.html", null ],
     [ "EntityView", "class_entity_view.html", null ],
+    [ "FruitView", "class_fruit_view.html", null ],
     [ "Game", "class_game.html", null ],
     [ "GameOverState", "class_game_over_state.html", null ],
     [ "GhostView", "class_ghost_view.html", null ],
@@ -31,8 +37,10 @@ var annotated_dup =
     [ "MenuState", "class_menu_state.html", null ],
     [ "PacmanView", "class_pacman_view.html", null ],
     [ "PausedState", "class_paused_state.html", null ],
+    [ "SoundManager", "class_sound_manager.html", null ],
     [ "State", "class_state.html", null ],
     [ "StateManager", "class_state_manager.html", null ],
+    [ "VictoryState", "class_victory_state.html", null ],
     [ "WallView", "class_wall_view.html", null ],
     [ "Window", "class_window.html", "class_window" ]
 ];

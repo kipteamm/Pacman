@@ -114,8 +114,6 @@ Collaboration diagram for ConcreteFactory:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:abd5e4ef9b5fac2edff5cdbadcfdeb213" id="r_abd5e4ef9b5fac2edff5cdbadcfdeb213"><td class="memItemLeft" align="right" valign="top"><a id="abd5e4ef9b5fac2edff5cdbadcfdeb213" name="abd5e4ef9b5fac2edff5cdbadcfdeb213"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>ConcreteFactory</b> (const std::shared_ptr&lt; <a class="el" href="class_camera.html">Camera</a> &gt; &amp;camera)</td></tr>
 <tr class="memitem:a69dc709d543df39e1d6e49b241a750d9" id="r_a69dc709d543df39e1d6e49b241a750d9"><td class="memItemLeft" align="right" valign="top"><a id="a69dc709d543df39e1d6e49b241a750d9" name="a69dc709d543df39e1d6e49b241a750d9"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>setViews</b> (std::unordered_map&lt; Layer, std::vector&lt; std::shared_ptr&lt; <a class="el" href="class_entity_view.html">EntityView</a> &gt; &gt; &gt; *views)</td></tr>
 <tr class="memitem:ad27adc03b34b54f5d033f0f51a41edbf" id="r_ad27adc03b34b54f5d033f0f51a41edbf"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classlogic_1_1_pacman_model.html">logic::PacmanModel</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad27adc03b34b54f5d033f0f51a41edbf">createPacMan</a> (float x, float y, float mapWidth, float mapHeight) override</td></tr>
@@ -125,6 +123,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setViews</b> (std::un
 <tr class="memitem:a1889b76ce9ad24ade0938c73a5d3470e" id="r_a1889b76ce9ad24ade0938c73a5d3470e"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classlogic_1_1_random_ghost.html">logic::RandomGhost</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1889b76ce9ad24ade0938c73a5d3470e">createClyde</a> (float x, float y, float mapWidth, float mapHeight) override</td></tr>
 <tr class="memitem:a95febfe91440eda48ddce03e062df401" id="r_a95febfe91440eda48ddce03e062df401"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classlogic_1_1_wall_model.html">logic::WallModel</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a95febfe91440eda48ddce03e062df401">createWall</a> (float x, float y, char type) override</td></tr>
 <tr class="memitem:a93d8f084fc8bbd7ae4251cd0ec789dbf" id="r_a93d8f084fc8bbd7ae4251cd0ec789dbf"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classlogic_1_1_coin_model.html">logic::CoinModel</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a93d8f084fc8bbd7ae4251cd0ec789dbf">createCoin</a> (float x, float y) override</td></tr>
+<tr class="memitem:a3359375a6a6022edc3aa911603b5c1dc" id="r_a3359375a6a6022edc3aa911603b5c1dc"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classlogic_1_1_fruit_model.html">logic::FruitModel</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3359375a6a6022edc3aa911603b5c1dc">createFruit</a> (float x, float y) override</td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="a66813dbe6892cef0aab915c699be49fe" name="a66813dbe6892cef0aab915c699be49fe"></a>
@@ -220,6 +219,37 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setViews</b> (std::un
       <table class="memname">
         <tr>
           <td class="memname">std::shared_ptr&lt; <a class="el" href="classlogic_1_1_coin_model.html">logic::CoinModel</a> &gt; ConcreteFactory::createCoin </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>y</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="classlogic_1_1_abstract_factory.html">logic::AbstractFactory</a>.</p>
+
+</div>
+</div>
+<a id="a3359375a6a6022edc3aa911603b5c1dc" name="a3359375a6a6022edc3aa911603b5c1dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3359375a6a6022edc3aa911603b5c1dc">&#9670;&#160;</a></span>createFruit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt; <a class="el" href="classlogic_1_1_fruit_model.html">logic::FruitModel</a> &gt; ConcreteFactory::createFruit </td>
           <td>(</td>
           <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
         </tr>

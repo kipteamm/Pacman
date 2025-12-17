@@ -1,23 +1,25 @@
 <map id="logic::EntityModel" name="logic::EntityModel">
-<area shape="rect" id="Node000001" title=" " alt="" coords="202,80,328,107"/>
-<area shape="rect" id="Node000003" href="$classlogic_1_1_collectible_entity_model.html" title=" " alt="" coords="5,155,157,197"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="221,115,130,156,127,152,224,111"/>
-<area shape="rect" id="Node000005" href="$classlogic_1_1_moving_entity_model.html" title=" " alt="" coords="181,163,349,189"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="266,120,267,164,263,162,264,125"/>
-<area shape="rect" id="Node000011" href="$classlogic_1_1_wall_model.html" title=" " alt="" coords="372,163,488,189"/>
-<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="305,111,407,162,402,163,304,116"/>
-<area shape="rect" id="Node000002" href="$classlogic_1_1_subject.html" title=" " alt="" coords="215,5,315,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="266,45,268,80,262,79,264,50"/>
-<area shape="rect" id="Node000004" href="$classlogic_1_1_coin_model.html" title=" " alt="" coords="22,245,140,272"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="82,211,84,245,78,244,80,216"/>
-<area shape="rect" id="Node000006" href="$classlogic_1_1_ghost_model.html" title=" " alt="" coords="183,245,310,272"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="261,203,251,247,247,244,257,206"/>
-<area shape="rect" id="Node000010" href="$classlogic_1_1_pacman_model.html" title=" " alt="" coords="334,245,473,272"/>
-<area shape="poly" id="edge9_Node000005_Node000010" title=" " alt="" coords="300,195,385,245,380,245,299,200"/>
-<area shape="rect" id="Node000007" href="$classlogic_1_1_ambush_ghost.html" title=" " alt="" coords="13,320,152,347"/>
-<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="206,279,112,322,110,317,201,278"/>
-<area shape="rect" id="Node000008" href="$classlogic_1_1_chasing_ghost.html" title=" " alt="" coords="177,320,316,347"/>
-<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="248,286,249,321,244,318,244,290"/>
-<area shape="rect" id="Node000009" href="$classlogic_1_1_random_ghost.html" title=" " alt="" coords="340,320,480,347"/>
-<area shape="poly" id="edge8_Node000006_Node000009" title=" " alt="" coords="289,276,384,319,379,319,288,281"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="316,80,442,107"/>
+<area shape="rect" id="Node000003" href="$classlogic_1_1_collectible_entity_model.html" title=" " alt="" coords="120,155,271,197"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="334,115,244,156,241,152,339,112"/>
+<area shape="rect" id="Node000006" href="$classlogic_1_1_moving_entity_model.html" title=" " alt="" coords="296,163,463,189"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="381,120,382,164,377,161,378,125"/>
+<area shape="rect" id="Node000012" href="$classlogic_1_1_wall_model.html" title=" " alt="" coords="486,163,603,189"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="419,111,521,162,516,163,418,116"/>
+<area shape="rect" id="Node000002" href="$classlogic_1_1_subject.html" title=" " alt="" coords="329,5,429,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="380,45,382,81,377,79,378,50"/>
+<area shape="rect" id="Node000004" href="$classlogic_1_1_coin_model.html" title=" " alt="" coords="5,245,124,272"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="147,208,87,247,83,243,150,204"/>
+<area shape="rect" id="Node000005" href="$classlogic_1_1_fruit_model.html" title=" " alt="" coords="147,245,264,272"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="201,211,207,246,202,244,198,215"/>
+<area shape="rect" id="Node000007" href="$classlogic_1_1_ghost_model.html" title=" " alt="" coords="307,245,433,272"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="378,203,373,247,369,244,374,207"/>
+<area shape="rect" id="Node000011" href="$classlogic_1_1_pacman_model.html" title=" " alt="" coords="458,245,597,272"/>
+<area shape="poly" id="edge10_Node000006_Node000011" title=" " alt="" coords="416,195,507,245,502,245,415,200"/>
+<area shape="rect" id="Node000008" href="$classlogic_1_1_ambush_ghost.html" title=" " alt="" coords="136,320,276,347"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="330,278,235,322,234,317,325,279"/>
+<area shape="rect" id="Node000009" href="$classlogic_1_1_chasing_ghost.html" title=" " alt="" coords="300,320,440,347"/>
+<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="372,286,372,321,368,318,368,290"/>
+<area shape="rect" id="Node000010" href="$classlogic_1_1_random_ghost.html" title=" " alt="" coords="464,320,604,347"/>
+<area shape="poly" id="edge9_Node000007_Node000010" title=" " alt="" coords="413,276,508,319,502,319,412,281"/>
 </map>

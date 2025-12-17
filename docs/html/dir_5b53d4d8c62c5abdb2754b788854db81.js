@@ -5,5 +5,6 @@ var dir_5b53d4d8c62c5abdb2754b788854db81 =
     [ "AssetManager.h", "_asset_manager_8h_source.html", null ],
     [ "Camera.h", "_camera_8h_source.html", null ],
     [ "Game.h", "_game_8h_source.html", null ],
+    [ "SoundManager.h", "_sound_manager_8h_source.html", null ],
     [ "Window.h", "_window_8h_source.html", null ]
 ];

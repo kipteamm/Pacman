@@ -103,15 +103,15 @@ $(function(){initNavTree('_level_state_8h_source.html','',''); });
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;../Entities/ConcreteFactory.h&quot;</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;../Entities/EntityView.h&quot;</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;../../Logic/World.h&quot;</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;StateManager.h&quot;</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;../Camera.h&quot;</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;../../Logic/Score.h&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;../../Logic/Score.h&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;../SoundManager.h&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;StateManager.h&quot;</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
 <div class="foldopen" id="foldopen00018" data-start="{" data-end="};">
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="class_level_state.html">   18</a></span><span class="keyword">class </span>LevelState final : <span class="keyword">public</span> State {</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keyword">explicit</span> LevelState(<a class="code hl_class" href="class_state_manager.html">StateManager</a>* context, <span class="keyword">const</span> std::shared_ptr&lt;ConcreteFactory&gt;&amp; factory, <span class="keyword">const</span> std::shared_ptr&lt;Camera&gt;&amp; camera, <span class="keyword">const</span> std::shared_ptr&lt;logic::Score&gt;&amp; scoreSystem);</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keyword">explicit</span> LevelState(<a class="code hl_class" href="class_state_manager.html">StateManager</a>* context, <span class="keyword">const</span> std::shared_ptr&lt;ConcreteFactory&gt;&amp; factory, <span class="keyword">const</span> std::shared_ptr&lt;logic::Score&gt;&amp; scoreSystem);</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keywordtype">void</span> update(<span class="keywordtype">double</span> dt) <span class="keyword">override</span>;</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keywordtype">void</span> handleInput(<span class="keyword">const</span> sf::Event::KeyEvent &amp;keyPressed) <span class="keyword">override</span>;</div>
@@ -121,7 +121,7 @@ $(function(){initNavTree('_level_state_8h_source.html','',''); });
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    std::shared_ptr&lt;ConcreteFactory&gt; factory;</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    std::unique_ptr&lt;logic::World&gt; world;</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    std::shared_ptr&lt;logic::Score&gt; scoreSystem;</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    std::shared_ptr&lt;Camera&gt; camera;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    std::shared_ptr&lt;SoundManager&gt; soundManager;</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    std::unordered_map&lt;Layer, std::vector&lt;std::shared_ptr&lt;EntityView&gt;&gt;&gt; entityViews{</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        {Layer::BACKGROUND, std::vector&lt;std::shared_ptr&lt;EntityView&gt;&gt;()},</div>

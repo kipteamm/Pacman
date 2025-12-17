@@ -128,16 +128,22 @@ Collaboration diagram for logic::GhostModel:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aa25a6d28f686ed660bcc04c6d8421490" id="r_aa25a6d28f686ed660bcc04c6d8421490"><td class="memItemLeft" align="right" valign="top"><a id="aa25a6d28f686ed660bcc04c6d8421490" name="aa25a6d28f686ed660bcc04c6d8421490"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>GhostModel</b> (float normalizedX, float normalizedY, float mapWidth, float mapHeight, float speed, double cooldown)</td></tr>
+<tr class="memitem:a4e26a4cb8d2bc7407960b444981b8143" id="r_a4e26a4cb8d2bc7407960b444981b8143"><td class="memItemLeft" align="right" valign="top"><a id="a4e26a4cb8d2bc7407960b444981b8143" name="a4e26a4cb8d2bc7407960b444981b8143"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>GhostModel</b> (float normalizedX, float normalizedY, float mapWidth, float mapHeight, double cooldown)</td></tr>
 <tr class="memitem:a0c165497fcb03c65f1026cf1d3cbe591" id="r_a0c165497fcb03c65f1026cf1d3cbe591"><td class="memItemLeft" align="right" valign="top"><a id="a0c165497fcb03c65f1026cf1d3cbe591" name="a0c165497fcb03c65f1026cf1d3cbe591"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>setState</b> (GhostState state)</td></tr>
 <tr class="memitem:ad19fb94c7dcf4d37b7c2704ef8349e59" id="r_ad19fb94c7dcf4d37b7c2704ef8349e59"><td class="memItemLeft" align="right" valign="top"><a id="ad19fb94c7dcf4d37b7c2704ef8349e59" name="ad19fb94c7dcf4d37b7c2704ef8349e59"></a>
 GhostState&#160;</td><td class="memItemRight" valign="bottom"><b>getState</b> () const</td></tr>
+<tr class="memitem:a972e4d6b0e95d11f67a0604c9f91a64f" id="r_a972e4d6b0e95d11f67a0604c9f91a64f"><td class="memItemLeft" align="right" valign="top"><a id="a972e4d6b0e95d11f67a0604c9f91a64f" name="a972e4d6b0e95d11f67a0604c9f91a64f"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>isFrightened</b> () const</td></tr>
+<tr class="memitem:ab44698edc35bb357b5261768a2bd4925" id="r_ab44698edc35bb357b5261768a2bd4925"><td class="memItemLeft" align="right" valign="top"><a id="ab44698edc35bb357b5261768a2bd4925" name="ab44698edc35bb357b5261768a2bd4925"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setFrightened</b> (bool frightened, const <a class="el" href="classlogic_1_1_world.html">World</a> &amp;world)</td></tr>
 <tr class="memitem:a6fc446e4a8a9756e8884963a9d04e79d" id="r_a6fc446e4a8a9756e8884963a9d04e79d"><td class="memItemLeft" align="right" valign="top"><a id="a6fc446e4a8a9756e8884963a9d04e79d" name="a6fc446e4a8a9756e8884963a9d04e79d"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>update</b> (const <a class="el" href="classlogic_1_1_world.html">World</a> &amp;world, double dt)</td></tr>
 <tr class="memitem:ad425e09310daff53acca7884ecf01722" id="r_ad425e09310daff53acca7884ecf01722"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad425e09310daff53acca7884ecf01722">move</a> (const <a class="el" href="classlogic_1_1_world.html">World</a> &amp;world, float dt) override</td></tr>
 <tr class="memitem:ab699975eea1214f470e49afe60bc7436" id="r_ab699975eea1214f470e49afe60bc7436"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab699975eea1214f470e49afe60bc7436">respawn</a> () override</td></tr>
+<tr class="memitem:a1b1a67a48cb40c36f2cb4d0fea310a0a" id="r_a1b1a67a48cb40c36f2cb4d0fea310a0a"><td class="memItemLeft" align="right" valign="top"><a id="a1b1a67a48cb40c36f2cb4d0fea310a0a" name="a1b1a67a48cb40c36f2cb4d0fea310a0a"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>eat</b> ()</td></tr>
 <tr class="inherit_header pub_methods_classlogic_1_1_moving_entity_model"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classlogic_1_1_moving_entity_model')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="classlogic_1_1_moving_entity_model.html">logic::MovingEntityModel</a></td></tr>
 <tr class="memitem:a5a1b102fc6367727cdeb272b138f5efe inherit pub_methods_classlogic_1_1_moving_entity_model" id="r_a5a1b102fc6367727cdeb272b138f5efe"><td class="memItemLeft" align="right" valign="top">
 &#160;</td><td class="memItemRight" valign="bottom"><b>MovingEntityModel</b> (float x, float y, float mapWidth, float mapHeight, float speed)</td></tr>
@@ -168,12 +174,14 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>notify</b> (Events ev
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:ac30640f6b3ae3c410767d7007ec7dfa6" id="r_ac30640f6b3ae3c410767d7007ec7dfa6"><td class="memItemLeft" align="right" valign="top"><a id="ac30640f6b3ae3c410767d7007ec7dfa6" name="ac30640f6b3ae3c410767d7007ec7dfa6"></a>
 std::vector&lt; Moves &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getPossibleMoves</b> (const <a class="el" href="classlogic_1_1_world.html">World</a> &amp;world) const</td></tr>
-<tr class="memitem:aff42824cf9af8027a5b1a8857abf141c" id="r_aff42824cf9af8027a5b1a8857abf141c"><td class="memItemLeft" align="right" valign="top"><a id="aff42824cf9af8027a5b1a8857abf141c" name="aff42824cf9af8027a5b1a8857abf141c"></a>
-Moves&#160;</td><td class="memItemRight" valign="bottom"><b>maximizeDistance</b> (const <a class="el" href="classlogic_1_1_world.html">World</a> &amp;world, const <a class="el" href="classlogic_1_1_pacman_model.html">PacmanModel</a> &amp;pacman)</td></tr>
+<tr class="memitem:a8748a0778f8514bce4b9e7c5138fd7da" id="r_a8748a0778f8514bce4b9e7c5138fd7da"><td class="memItemLeft" align="right" valign="top"><a id="a8748a0778f8514bce4b9e7c5138fd7da" name="a8748a0778f8514bce4b9e7c5138fd7da"></a>
+Moves&#160;</td><td class="memItemRight" valign="bottom"><b>maximizeDistance</b> (const <a class="el" href="classlogic_1_1_world.html">World</a> &amp;world, const <a class="el" href="classlogic_1_1_pacman_model.html">PacmanModel</a> &amp;pacman) const</td></tr>
 <tr class="memitem:a08b71f3c16393cd24854d72b3d999bf6" id="r_a08b71f3c16393cd24854d72b3d999bf6"><td class="memItemLeft" align="right" valign="top"><a id="a08b71f3c16393cd24854d72b3d999bf6" name="a08b71f3c16393cd24854d72b3d999bf6"></a>
 Moves&#160;</td><td class="memItemRight" valign="bottom"><b>minimizeDistance</b> (const <a class="el" href="classlogic_1_1_world.html">World</a> &amp;world, int targetX, int targetY) const</td></tr>
 <tr class="memitem:aeaff730512105a10b0e2733d5d88626c" id="r_aeaff730512105a10b0e2733d5d88626c"><td class="memItemLeft" align="right" valign="top"><a id="aeaff730512105a10b0e2733d5d88626c" name="aeaff730512105a10b0e2733d5d88626c"></a>
 virtual Moves&#160;</td><td class="memItemRight" valign="bottom"><b>decideNextMove</b> (const <a class="el" href="classlogic_1_1_world.html">World</a> &amp;world, const <a class="el" href="classlogic_1_1_pacman_model.html">PacmanModel</a> &amp;pacman)=0</td></tr>
+<tr class="memitem:a02f3a5dfbbe292be0919190ec3522a58" id="r_a02f3a5dfbbe292be0919190ec3522a58"><td class="memItemLeft" align="right" valign="top"><a id="a02f3a5dfbbe292be0919190ec3522a58" name="a02f3a5dfbbe292be0919190ec3522a58"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>updateDirection</b> (const <a class="el" href="classlogic_1_1_world.html">World</a> &amp;world)</td></tr>
 <tr class="inherit_header pro_methods_classlogic_1_1_moving_entity_model"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_methods_classlogic_1_1_moving_entity_model')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Member Functions inherited from <a class="el" href="classlogic_1_1_moving_entity_model.html">logic::MovingEntityModel</a></td></tr>
 <tr class="memitem:a3fde35c4d0a5778899d254e8cc19d1ed inherit pro_methods_classlogic_1_1_moving_entity_model" id="r_a3fde35c4d0a5778899d254e8cc19d1ed"><td class="memItemLeft" align="right" valign="top">
 void&#160;</td><td class="memItemRight" valign="bottom"><b>updateTarget</b> ()</td></tr>
