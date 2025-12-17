@@ -75,6 +75,8 @@ add_executable(Pacman main.cpp
         Representation/Entities/FruitView.h
         Logic/Difficulty.cpp
         Logic/Difficulty.h
+        Representation/States/VictoryState.cpp
+        Representation/States/VictoryState.h
 )
 
 target_link_libraries(Pacman PRIVATE sfml-graphics sfml-window sfml-system)

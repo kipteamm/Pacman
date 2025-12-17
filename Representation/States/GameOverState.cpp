@@ -9,13 +9,13 @@
 #include "../Window.h"
 
 
-GameOverState::GameOverState(StateManager *context, const std::shared_ptr<logic::Score>& scoreSystem, const std::shared_ptr<ConcreteFactory>& factory, const std::shared_ptr<Camera>& camera) : State(context), scoreSystem(scoreSystem), factory(factory), camera(camera) {}
+GameOverState::GameOverState(StateManager *context, const std::shared_ptr<ConcreteFactory>& factory, const std::shared_ptr<logic::Score>& scoreSystem) : State(context), scoreSystem(scoreSystem), factory(factory) {}
 
 
 void GameOverState::handleInput(const sf::Event::KeyEvent &keyPressed) {
     switch (keyPressed.code) {
         case sf::Keyboard::Escape:
-            this->context->swap(std::make_unique<MenuState>(this->context, scoreSystem, factory, camera));
+            this->context->swap(std::make_unique<MenuState>(this->context, scoreSystem, factory));
             return;
 
         default: break;

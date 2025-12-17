@@ -223,7 +223,10 @@ Events World::update(const double dt) {
         ++it;
     }
 
-    // if (collectibles.empty()) return Events::LEVEL_COMPLETED;
+    if (collectibles.empty()) {
+        Difficulty::getInstance().increaseDifficulty();
+        return Events::LEVEL_COMPLETED;
+    }
 
     return Events::NO_EVENT;
 }

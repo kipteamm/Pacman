@@ -2,18 +2,19 @@
 #include "LevelState.h"
 
 #include "GameOverState.h"
+#include "VictoryState.h"
 #include "../AssetManager.h"
 #include "../Window.h"
 
 
-LevelState::LevelState(StateManager *context, const std::shared_ptr<ConcreteFactory>& factory, const std::shared_ptr<Camera>& camera, const std::shared_ptr<logic::Score>& scoreSystem) : State(context), factory(factory), scoreSystem(scoreSystem), camera(camera) {
+LevelState::LevelState(StateManager *context, const std::shared_ptr<ConcreteFactory>& factory, const std::shared_ptr<logic::Score>& scoreSystem) : State(context), factory(factory), scoreSystem(scoreSystem) {
     factory->setViews(&this->entityViews);
 
     world = std::make_unique<logic::World>(factory);
     world->loadLevel("../Representation/levels/level_1.txt");
     world->attach(scoreSystem);
 
-    camera->setScaling(world->getWidth(), world->getHeight());
+    Camera::getInstance().setScaling(world->getWidth(), world->getHeight());
 
     live1.setTexture(AssetManager::getInstance().getSpriteSheet());
     live2.setTexture(AssetManager::getInstance().getSpriteSheet());
@@ -23,16 +24,16 @@ LevelState::LevelState(StateManager *context, const std::shared_ptr<ConcreteFact
     live2.setTextureRect({16, 0, 16, 16});
     live3.setTextureRect({16, 0, 16, 16});
 
-    const float scaleX = camera->getTileWidth() / 16.0f;
-    const float scaleY = camera->getTileHeight() / 16.0f;
+    const float scaleX = Camera::getInstance().getTileWidth() / 16.0f;
+    const float scaleY = Camera::getInstance().getTileHeight() / 16.0f;
 
     live1.setScale(scaleX, scaleY);
     live2.setScale(scaleX, scaleY);
     live3.setScale(scaleX, scaleY);
 
-    const float mapLeftPixel = camera->xToPixel(-1.0f);
-    const float mapRightPixel = camera->xToPixel(1.0f);
-    const float uiYPosition = camera->yToPixel(1.0f) + 10.0f;
+    const float mapLeftPixel = Camera::getInstance().xToPixel(-1.0f);
+    const float mapRightPixel = Camera::getInstance().xToPixel(1.0f);
+    const float uiYPosition = Camera::getInstance().yToPixel(1.0f) + 10.0f;
 
     const float spriteWidth = 16.0f * scaleX;
     const float gap = 4.0f * scaleX;
@@ -65,7 +66,11 @@ void LevelState::update(const double dt) {
 
     switch (world->update(dt)) {
         case logic::GAME_OVER:
-            this->context->swap(std::make_unique<GameOverState>(this->context, scoreSystem, factory, camera));
+            this->context->swap(std::make_unique<GameOverState>(this->context, factory, scoreSystem));
+            return;
+
+        case logic::LEVEL_COMPLETED:
+            this->context->swap(std::make_unique<VictoryState>(this->context, factory, scoreSystem));
             return;
 
         default: return;

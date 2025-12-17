@@ -11,13 +11,12 @@
 
 
 Game::Game() {
-    camera = std::make_shared<Camera>();
-    factory = std::make_shared<ConcreteFactory>(camera);
+    factory = std::make_shared<ConcreteFactory>();
     scoreSystem = std::make_shared<logic::Score>();
     context = std::make_unique<StateManager>();
 
     // Add game starting state to buffer for the assets loading in
-    context->push(std::make_unique<MenuState>(context.get(), scoreSystem, factory, camera));
+    context->push(std::make_unique<MenuState>(context.get(), scoreSystem, factory));
     // Window::getInstance().setFramerateLimit(60);
 
     while (Window::getInstance().isOpen()) {
@@ -42,8 +41,8 @@ void Game::loop() const {
                 window.close();
                 return;
 
-            case sf::Event::Resized:
-                camera->resize();
+        case sf::Event::Resized:
+                Camera::getInstance().resize();
                 break;
 
             default: break;

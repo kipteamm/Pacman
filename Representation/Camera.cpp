@@ -20,6 +20,12 @@ Camera::Camera() {
 }
 
 
+Camera& Camera::getInstance() {
+    static Camera instance;
+    return instance;
+}
+
+
 void Camera::setScaling(const float mapWidth, const float mapHeight) {
     const float scaleX = screenWidth / mapWidth;
     const float scaleY = screenHeight / mapHeight;

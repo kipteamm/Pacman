@@ -14,7 +14,7 @@
 
 class PacmanView final : public EntityView {
 public:
-    explicit PacmanView(const std::shared_ptr<logic::PacmanModel> &model, const std::shared_ptr<Camera> &camera);
+    explicit PacmanView(const std::shared_ptr<logic::PacmanModel> &model);
 
     void update(logic::Events event) override;
     void render() override;

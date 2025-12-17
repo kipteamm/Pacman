@@ -11,7 +11,7 @@
 
 class WallView final : public EntityView {
 public:
-    explicit WallView(const std::shared_ptr<logic::WallModel> &model, const std::shared_ptr<Camera> &camera, char type);
+    explicit WallView(const std::shared_ptr<logic::WallModel> &model, char type);
 
     void update(logic::Events event) override {};
 };

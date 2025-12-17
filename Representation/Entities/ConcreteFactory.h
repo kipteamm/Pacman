@@ -18,7 +18,7 @@ enum Layer { PACMAN, FOREGROUND, BACKGROUND };
 
 class ConcreteFactory final : public logic::AbstractFactory {
 public:
-    explicit ConcreteFactory(const std::shared_ptr<Camera>& camera);
+    explicit ConcreteFactory();
 
     void setViews(std::unordered_map<Layer, std::vector<std::shared_ptr<EntityView>>>* views);
 
@@ -33,7 +33,6 @@ public:
 
 private:
     std::unordered_map<Layer, std::vector<std::shared_ptr<EntityView>>>* entityViews;
-    std::shared_ptr<Camera> camera;
 };
 
 

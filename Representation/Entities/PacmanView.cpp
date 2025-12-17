@@ -4,7 +4,7 @@
 #include "../Window.h"
 
 
-PacmanView::PacmanView(const std::shared_ptr<logic::PacmanModel> &model, const std::shared_ptr<Camera> &camera) : EntityView(model, camera, 0.08), pacman(model) {
+PacmanView::PacmanView(const std::shared_ptr<logic::PacmanModel> &model) : EntityView(model, 0.08), pacman(model) {
     sprite.setTexture(AssetManager::getInstance().getSpriteSheet());
 
     // Up animation
@@ -98,29 +98,29 @@ void PacmanView::update(const logic::Events event) {
 
 
 void PacmanView::render() {
-    float x = camera->xToPixel(model->getX());
-    float y = camera->yToPixel(model->getY());
+    float x = Camera::getInstance().xToPixel(model->getX());
+    float y = Camera::getInstance().yToPixel(model->getY());
     sprite.setPosition(x, y);
 
     switch (pacman->getNextDirection()) {
         case logic::Moves::UP:
             directionSprite.setTextureRect(sf::IntRect(sf::IntRect(14 * 16, 2 * 16, 16, 16)));
-            y -= camera->getTileWidth();
+            y -= Camera::getInstance().getTileWidth();
             break;
 
         case logic::Moves::DOWN:
             directionSprite.setTextureRect(sf::IntRect(sf::IntRect(14 * 16, 3 * 16, 16, 16)));
-            y += camera->getTileWidth();
+            y += Camera::getInstance().getTileWidth();
             break;
 
         case logic::Moves::LEFT:
             directionSprite.setTextureRect(sf::IntRect(sf::IntRect(14 * 16, 4 * 16, 16, 16)));
-            x -= camera->getTileWidth();
+            x -= Camera::getInstance().getTileWidth();
             break;
 
         case logic::Moves::RIGHT:
             directionSprite.setTextureRect(sf::IntRect(sf::IntRect(14 * 16, 5 * 16, 16, 16)));
-            x += camera->getTileWidth();
+            x += Camera::getInstance().getTileWidth();
             break;
 
         default: return;
@@ -128,8 +128,8 @@ void PacmanView::render() {
 
     directionSprite.setPosition(x, y);
 
-    const float scaleX = camera->getTileWidth() / 16.0f;
-    const float scaleY = camera->getTileHeight() / 16.0f;
+    const float scaleX = Camera::getInstance().getTileWidth() / 16.0f;
+    const float scaleY = Camera::getInstance().getTileHeight() / 16.0f;
     directionSprite.setScale(scaleX, scaleY);
 
     Window::getInstance().draw(directionSprite);

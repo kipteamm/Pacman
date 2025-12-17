@@ -13,7 +13,7 @@
 
 class GhostView final : public EntityView {
 public:
-    explicit GhostView(const std::shared_ptr<logic::GhostModel> &model, const std::shared_ptr<Camera> &camera, int spriteY);
+    explicit GhostView(const std::shared_ptr<logic::GhostModel> &model, int spriteY);
 
     void update(logic::Events event) override;
     void render() override;

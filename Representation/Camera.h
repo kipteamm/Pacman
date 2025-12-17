@@ -8,7 +8,13 @@
 
 class Camera {
 public:
-    explicit Camera();
+    /**
+     * Singletons should not be cloneable or assignable.
+     */
+    Camera(Camera &other) = delete;
+    void operator=(const Camera &) = delete;
+
+    [[nodiscard]] static Camera& getInstance();
 
     void setScaling(float mapWidth, float mapHeight);
     void resize();
@@ -20,6 +26,8 @@ public:
     [[nodiscard]] float getTileHeight() const;
 
 private:
+    Camera();
+
     float screenWidth;
     float screenHeight;
 

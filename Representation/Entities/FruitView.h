@@ -11,7 +11,7 @@
 
 class FruitView final : public EntityView {
 public:
-    explicit FruitView(const std::shared_ptr<logic::FruitModel> &model, const std::shared_ptr<Camera> &camera);
+    explicit FruitView(const std::shared_ptr<logic::FruitModel> &model);
 
     void update(logic::Events event) override;
 };

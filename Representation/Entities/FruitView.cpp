@@ -8,7 +8,7 @@
 #include "../../Logic/Difficulty.h"
 
 
-FruitView::FruitView(const std::shared_ptr<logic::FruitModel> &model, const std::shared_ptr<Camera> &camera) : EntityView(model, camera, 0) {
+FruitView::FruitView(const std::shared_ptr<logic::FruitModel> &model) : EntityView(model, 0) {
     sprite.setTexture(AssetManager::getInstance().getSpriteSheet());
     sprite.setTextureRect(sf::IntRect(
         (6 + logic::Difficulty::getInstance().getDifficulty()->spriteOffset) * 16,

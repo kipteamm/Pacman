@@ -14,8 +14,7 @@ public:
     explicit MenuState(
         StateManager* context,
         const std::shared_ptr<logic::Score>& scoreSystem,
-        const std::shared_ptr<ConcreteFactory>& factory,
-        const std::shared_ptr<Camera>& camera
+        const std::shared_ptr<ConcreteFactory>& factory
     );
 
     void update(double dt) override {};
@@ -25,7 +24,6 @@ public:
 private:
     std::shared_ptr<logic::Score> scoreSystem;
     std::shared_ptr<ConcreteFactory> factory;
-    std::shared_ptr<Camera> camera;
 
     sf::Sprite pacmanLogo;
 };

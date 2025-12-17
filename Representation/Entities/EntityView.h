@@ -14,7 +14,7 @@
 
 class EntityView : public logic::Observer {
 public:
-    explicit EntityView(const std::shared_ptr<logic::EntityModel>& model, const std::shared_ptr<Camera>& camera, float frameDuration);
+    explicit EntityView(const std::shared_ptr<logic::EntityModel>& model, float frameDuration);
 
     [[nodiscard]] bool shouldDelete() const;
     [[nodiscard]] size_t getFrameIndex(float dt, size_t max);
@@ -23,7 +23,6 @@ public:
 
 protected:
     std::shared_ptr<logic::EntityModel> model;
-    std::shared_ptr<Camera> camera;
     sf::Sprite sprite;
 
     bool markedForDeletion = false;

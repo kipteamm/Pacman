@@ -10,7 +10,7 @@
 #include <iostream>
 
 
-GhostView::GhostView(const std::shared_ptr<logic::GhostModel>& model, const std::shared_ptr<Camera>& camera, const int spriteY) : EntityView(model, camera, 0.16), ghost(model) {
+GhostView::GhostView(const std::shared_ptr<logic::GhostModel>& model, const int spriteY) : EntityView(model, 0.16), ghost(model) {
     // Up animation
     animations[logic::Moves::UP] = {
         sf::IntRect{64, spriteY, 16, 16},
@@ -97,8 +97,9 @@ void GhostView::update(const logic::Events event) {
             animation = &animations[ghost->getDirection()]; break;
 
         case logic::Events::FRIGHTENED_FLASHING:
+            if (!frightened) return;
+
             animation = &animations[9];
-            std::cout << "FLASHING\n";
             frameDuration = 0.1; break;
 
         default: break;
@@ -107,12 +108,12 @@ void GhostView::update(const logic::Events event) {
 
 
 void GhostView::render() {
-    const float x = camera->xToPixel(model->getX());
-    const float y = camera->yToPixel(model->getY());
+    const float x = Camera::getInstance().xToPixel(model->getX());
+    const float y = Camera::getInstance().yToPixel(model->getY());
     sprite.setPosition(x, y);
 
-    const float scaleX = camera->getTileWidth() / 16.0f;
-    const float scaleY = camera->getTileHeight() / 16.0f;
+    const float scaleX = Camera::getInstance().getTileWidth() / 16.0f;
+    const float scaleY = Camera::getInstance().getTileHeight() / 16.0f;
     sprite.setScale(scaleX, scaleY);
 
     const double dt = logic::Stopwatch::getInstance().getDeltaTime();

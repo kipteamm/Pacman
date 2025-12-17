@@ -11,7 +11,7 @@
 
 class CoinView final : public EntityView {
 public:
-    explicit CoinView(const std::shared_ptr<logic::CoinModel> &model, const std::shared_ptr<Camera> &camera);
+    explicit CoinView(const std::shared_ptr<logic::CoinModel> &model);
 
     void update(logic::Events event) override;
 };
