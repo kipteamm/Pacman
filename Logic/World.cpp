@@ -177,7 +177,7 @@ Events World::update(const double dt) {
         }
 
         if (std::abs(pacman->getX() - ghost->getX()) > epsilon || std::abs(pacman->getY() - ghost->getY()) > epsilon) continue;
-        if (state == WorldState::FRIGHTENED) {
+        if (ghost->isFrightened()) {
             if (ghost->getState() == GhostState::DEAD) continue;
             ghost->eat();
             notify(Events::GHOST_EATEN);

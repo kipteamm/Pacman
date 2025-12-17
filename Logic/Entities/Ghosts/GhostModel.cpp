@@ -110,7 +110,7 @@ void GhostModel::move(const World& world, const float dt) {
 
 void GhostModel::respawn() {
     state = GhostState::WAITING;
-    waitingTime = 0;
+    if (!frightened) waitingTime = 0;
 
     frightened = false;
     speed = defaultSpeed;

@@ -20,7 +20,8 @@ private:
     std::vector<sf::Sound> ghostSoundPool;
 
     sf::Sound ghostMove;
-    sf::Sound ghostFright;
+    sf::Sound ghostFrightened;
+    sf::Sound eatingFruit;
     sf::Sound deathSound;
 
     void loadSound(sf::Sound& sound, const std::string& name);

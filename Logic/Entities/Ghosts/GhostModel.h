@@ -30,6 +30,7 @@ namespace logic {
 
         void setState(GhostState state);
         [[nodiscard]] GhostState getState() const { return this->state; }
+        [[nodiscard]] bool isFrightened() const { return this->frightened; }
 
         void setFrightened(bool frightened, const World& world);
 

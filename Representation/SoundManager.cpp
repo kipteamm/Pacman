@@ -10,7 +10,10 @@
 SoundManager::SoundManager() {
     for (int i = 0; i < 4; ++i) {
         sf::Sound s;
+
         loadSound(s, "eatingCoin.flac");
+        s.setVolume(40 + i * 5);
+
         coinSoundPool.push_back(s);
     }
 
@@ -20,14 +23,15 @@ SoundManager::SoundManager() {
         ghostSoundPool.push_back(s);
     }
 
+    loadSound(eatingFruit, "eatingFruit.flac");
     loadSound(deathSound, "pacmanDeath.flac");
 
     loadSound(ghostMove, "ghostMove.flac");
     ghostMove.setLoop(true);
     ghostMove.play();
 
-    loadSound(ghostFright, "ghostFright.flac");
-    ghostFright.setLoop(true);
+    loadSound(ghostFrightened, "ghostFrightened.flac");
+    ghostFrightened.setLoop(true);
 }
 
 
@@ -63,18 +67,21 @@ void SoundManager::update(const logic::Events event) {
             sound->play(); break;
         }
 
+        case logic::Events::FRUIT_EATEN:
+            eatingFruit.play(); break;
+
         case logic::Events::GHOST_FRIGHTENED:
             ghostMove.stop();
-            ghostFright.play(); break;
+            ghostFrightened.play(); break;
 
         case logic::Events::GHOST_NORMAL:
         case logic::Events::RESPAWN:
-            ghostFright.stop();
+            ghostFrightened.stop();
             ghostMove.play(); break;
 
         case logic::Events::DEATH:
             ghostMove.stop();
-            ghostFright.stop();
+            ghostFrightened.stop();
             deathSound.play(); break;
 
         default: return;
