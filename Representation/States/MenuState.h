@@ -17,8 +17,8 @@ public:
         const std::shared_ptr<ConcreteFactory>& factory
     );
 
-    void update(double dt) override {};
     void handleInput(const sf::Event::KeyEvent &keyPressed) override;
+    void update(double dt) override;
     void render() override;
 
 private:
@@ -26,6 +26,10 @@ private:
     std::shared_ptr<ConcreteFactory> factory;
 
     sf::Sprite pacmanLogo;
+    std::string username;
+
+    bool renderCta = true;
+    double elapsedTime;
 };
 
 

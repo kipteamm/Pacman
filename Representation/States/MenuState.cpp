@@ -22,34 +22,88 @@ MenuState::MenuState(
 }
 
 
-void MenuState::handleInput(const sf::Event::KeyEvent &keyPressed) {
-    switch (keyPressed.code) {
-        case sf::Keyboard::Space:
-            this->context->swap(std::make_unique<LevelState>(this->context, factory, scoreSystem));
-            break;
+void MenuState::handleInput(const sf::Event::KeyEvent& keyPressed) {
+    // Handle Start Game
+    if (keyPressed.code == sf::Keyboard::Space || keyPressed.code == sf::Keyboard::Enter) {
+        if (username.empty()) return;
 
-        default: break;
+        scoreSystem->setUser(username);
+        this->context->swap(std::make_unique<LevelState>(this->context, factory, scoreSystem));
+        return;
     }
+
+    // Usernames
+    // Handle Backspace (Delete char)
+    if (keyPressed.code == sf::Keyboard::Backspace) {
+        if (username.empty()) return;
+
+        username.pop_back();
+        return;
+    }
+
+    if (username.size() >= 16) return;
+
+    // Username changing
+    char charToAdd = 0;
+    if (keyPressed.code >= sf::Keyboard::A && keyPressed.code <= sf::Keyboard::Z) {
+        const char base = keyPressed.shift ? 'A' : 'a';
+        charToAdd = base + (keyPressed.code - sf::Keyboard::A);
+    } else if (keyPressed.code >= sf::Keyboard::Num0 && keyPressed.code <= sf::Keyboard::Num9) {
+        charToAdd = '0' + (keyPressed.code - sf::Keyboard::Num0);
+    } else if (keyPressed.code >= sf::Keyboard::Numpad0 && keyPressed.code <= sf::Keyboard::Numpad9) {
+        charToAdd = '0' + (keyPressed.code - sf::Keyboard::Numpad0);
+    } else if (keyPressed.code == sf::Keyboard::Hyphen) {
+        charToAdd = keyPressed.shift ? '_' : '-';
+    }
+
+    if (charToAdd != 0) username += charToAdd;
 }
+
+
+void MenuState::update(const double dt) {
+    elapsedTime += dt;
+
+    // 0.4s on screen, 0.2s off-screen
+    const double SWITCH = renderCta ? 0.6 : 0.2;
+
+    if (elapsedTime < SWITCH) return;
+    elapsedTime = 0;
+    renderCta = !renderCta;
+}
+
 
 void MenuState::render() {
     Window::getInstance().draw(this->pacmanLogo);
+
+    sf::Text name{
+        "Playing as: " + username,
+        AssetManager::getInstance().getFont()
+    };
+    name.setCharacterSize(20);
+    name.setFillColor(sf::Color::Yellow);
+    name.setPosition(Window::getInstance().getWidth() / 2 - name.getGlobalBounds().width / 2, 400);
+    name.setString("Playing as: " + username + (username.size() < 16 && renderCta? "_": " "));
+
+    Window::getInstance().draw(name);
 
     sf::Text title{"Highscores", AssetManager::getInstance().getFont()};
     title.setCharacterSize(20);
     title.setFillColor(sf::Color::Yellow);
     title.setPosition(
         Window::getInstance().getWidth() / 2 - title.getGlobalBounds().width / 2,
-        400
+        500
     );
 
     Window::getInstance().draw(title);
 
-    const std::vector<int> highscores = this->scoreSystem->getHighscores();
-    int y = 400;
+    const auto highscores = this->scoreSystem->getHighscores();
+    int y = 500;
 
-    for (int i = 0; i < std::min(5, static_cast<int>(highscores.size())); i++) {
-        sf::Text score{std::to_string(highscores[i]), AssetManager::getInstance().getFont()};
+    for (int i = 0; i < std::min(5, static_cast<int>(highscores->size())); i++) {
+        sf::Text score{
+            highscores->at(i)->username + ": " + std::to_string(highscores->at(i)->score),
+            AssetManager::getInstance().getFont()
+        };
         score.setCharacterSize(20);
         score.setFillColor(sf::Color::White);
 
@@ -60,13 +114,13 @@ void MenuState::render() {
         Window::getInstance().draw(score);
     };
 
-    // TODO: animate this when dt is added
+    if (!renderCta) return;
     sf::Text cta{"Press 'space' to start", AssetManager::getInstance().getFont()};
     cta.setCharacterSize(20);
     cta.setFillColor(sf::Color::Yellow);
     cta.setPosition(
         Window::getInstance().getWidth() / 2 - cta.getGlobalBounds().width / 2,
-        850
+        950
     );
 
     Window::getInstance().draw(cta);

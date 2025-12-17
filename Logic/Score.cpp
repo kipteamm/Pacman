@@ -10,7 +10,7 @@ using namespace logic;
 
 
 
-Score::Score() : ghostPoints(0), score(0) {
+Score::Score() : score(0) {
     // Try to open the file in read and write mode
     // If the fil does not exist, create it, the function
     // will try to reopen the file in read and write after creation
@@ -21,7 +21,19 @@ Score::Score() : ghostPoints(0), score(0) {
 
     std::string line;
     while (std::getline(fileStream, line)) {
-        highscores.push_back(std::stoi(line));
+        std::string username;
+        std::string score;
+        bool colon = false;
+
+        for (char c : line) {
+            if (c == ':') colon = true;
+            else if (colon) score += c;
+            else username += c;
+        }
+
+        highscores.push_back(std::make_unique<Highscore>(username, std::stoi(score)));
+
+        // highscores.push_back(std::stoi(line));
     }
 
     fileStream.close();
@@ -32,8 +44,8 @@ Score::~Score() {
 }
 
 
-std::vector<int> Score::getHighscores() {
-    return highscores;
+std::vector<std::unique_ptr<Highscore>>* Score::getHighscores() {
+    return &highscores;
 }
 
 int Score::getScore() const {
@@ -41,8 +53,12 @@ int Score::getScore() const {
 }
 
 
+void Score::setUser(const std::string& username) {
+    this->username = username;
+}
+
 void Score::addScore(const int score) {
-    highscores.push_back(score);
+    highscores.push_back(std::make_unique<Highscore>(username, score));
 
     std::ranges::sort(highscores, std::greater<>());
 }
@@ -54,9 +70,9 @@ void Score::write() const {
     std::ofstream out(filename, std::ios::trunc);
     out.seekp(0);
 
-    out << highscores[0];
+    out << highscores[0]->username << ":" << highscores[0]->score;
     for (int i = 1; i < highscores.size(); i++) {
-        out << "\n" << highscores[i];
+        out << "\n" << highscores[i]->username << ":" << highscores[i]->score;
     }
 
     out.close();
