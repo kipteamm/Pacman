@@ -7,7 +7,7 @@
 using namespace logic;
 
 
-World::World(const std::shared_ptr<AbstractFactory> &factory) : ghostExitX(0), ghostExitY(0), state(WorldState::PLAYING), factory(factory), lives(3) {}
+World::World(const std::shared_ptr<AbstractFactory> &factory, const int lives) : ghostExitX(0), ghostExitY(0), state(WorldState::PLAYING), factory(factory), lives(lives) {}
 
 
 float World::normalizeX(const int value) const {

@@ -19,7 +19,7 @@ namespace logic {
 
     class World final : public Subject {
     public:
-        explicit World(const std::shared_ptr<AbstractFactory> &factory);
+        explicit World(const std::shared_ptr<AbstractFactory> &factory, int lives);
 
         [[nodiscard]] float normalizeX(int value) const;
         [[nodiscard]] float normalizeY(int value) const;

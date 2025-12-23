@@ -28,7 +28,7 @@ void MenuState::handleInput(const sf::Event::KeyEvent& keyPressed) {
         if (username.empty()) return;
 
         scoreSystem->setUser(username);
-        this->context->swap(std::make_unique<LevelState>(this->context, factory, scoreSystem));
+        this->context->swap(std::make_unique<LevelState>(this->context, factory, scoreSystem, 3));
         return;
     }
 

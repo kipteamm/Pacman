@@ -79,6 +79,8 @@ add_executable(Pacman main.cpp
         Representation/States/VictoryState.h
         Representation/SoundManager.cpp
         Representation/SoundManager.h
+        Representation/Entities/WorldView.cpp
+        Representation/Entities/WorldView.h
 )
 
 target_link_libraries(Pacman PRIVATE sfml-graphics sfml-window sfml-system sfml-audio)

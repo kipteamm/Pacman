@@ -12,7 +12,7 @@
 
 class VictoryState final : public State {
 public:
-    explicit VictoryState(StateManager* context, const std::shared_ptr<ConcreteFactory>& factory, const std::shared_ptr<logic::Score>& scoreSystem);
+    explicit VictoryState(StateManager* context, const std::shared_ptr<ConcreteFactory>& factory, const std::shared_ptr<logic::Score>& scoreSystem, int lives);
 
     void update(double dt) override {};
     void handleInput(const sf::Event::KeyEvent& keyPressed) override;
@@ -21,6 +21,8 @@ public:
 private:
     std::shared_ptr<ConcreteFactory> factory;
     std::shared_ptr<logic::Score> scoreSystem;
+
+    int lives;
 };
 
 

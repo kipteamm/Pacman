@@ -8,11 +8,11 @@
 #include "../Window.h"
 
 
-VictoryState::VictoryState(StateManager *context, const std::shared_ptr<ConcreteFactory>& factory, const std::shared_ptr<logic::Score>& scoreSystem) : State(context), factory(factory), scoreSystem(scoreSystem) {}
+VictoryState::VictoryState(StateManager *context, const std::shared_ptr<ConcreteFactory>& factory, const std::shared_ptr<logic::Score>& scoreSystem, const int lives) : State(context), factory(factory), scoreSystem(scoreSystem), lives(lives) {}
 
 
 void VictoryState::handleInput(const sf::Event::KeyEvent& keyPressed) {
-    this->context->swap(std::make_unique<LevelState>(context, factory, scoreSystem));
+    this->context->swap(std::make_unique<LevelState>(context, factory, scoreSystem, lives));
 }
 
 
