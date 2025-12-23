@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['observer_0',['Observer',['../classlogic_1_1_observer.html',1,'logic']]]
+  ['isopen_0',['isOpen',['../class_window.html#a761d614931fb5a5daa70e4f580c3e78e',1,'Window']]]
 ];

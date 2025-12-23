@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['window_0',['Window',['../class_window.html#a3b760cdf58517c8c4a91237ccc582b57',1,'Window']]]
+  ['random_0',['Random',['../classlogic_1_1_random.html#affaefb818059c94b4b5993ad8d05b595',1,'logic::Random']]]
 ];

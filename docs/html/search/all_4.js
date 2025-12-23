@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['isopen_0',['isOpen',['../class_window.html#a761d614931fb5a5daa70e4f580c3e78e',1,'Window']]]
+  ['fruitmodel_0',['FruitModel',['../classlogic_1_1_fruit_model.html',1,'logic']]],
+  ['fruitview_1',['FruitView',['../class_fruit_view.html',1,'']]]
 ];
