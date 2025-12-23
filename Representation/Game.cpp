@@ -1,7 +1,3 @@
-//
-// Created by PPetre on 24/11/2025.
-//
-
 #include <SFML/Window/Event.hpp>
 
 #include "../Logic/Stopwatch.h"
@@ -12,9 +8,8 @@
 
 Game::Game() {
     scoreSystem = std::make_shared<logic::Score>();
-    context = std::make_unique<StateManager>(scoreSystem);
 
-    // Add game starting state to buffer for the assets loading in
+    context = std::make_unique<StateManager>(scoreSystem);
     context->push(std::make_unique<MenuState>(context.get()));
     // Window::getInstance().setFramerateLimit(60);
 
@@ -27,9 +22,11 @@ Game::Game() {
 void Game::loop() const {
     Window& window = Window::getInstance();
 
+    // Firstly, handle SFML events.
     sf::Event event;
     while (window.pollEvent(event)) {
         switch (event.type) {
+            // Using KeyPressed event to be more responsive to player input
             // case sf::Event::KeyReleased:
             case sf::Event::KeyPressed:
                 context->top()->handleInput(event.key);
@@ -48,10 +45,13 @@ void Game::loop() const {
         }
     }
 
+    // Secondly update the Stopwatch and the current State with delta time
     logic::Stopwatch::getInstance().tick();
     const double dt = logic::Stopwatch::getInstance().getDeltaTime();
+
     context->top()->update(dt);
 
+    // Lastly clear the window and render the current State, display after
     window.clear();
     context->top()->render();
     window.display();

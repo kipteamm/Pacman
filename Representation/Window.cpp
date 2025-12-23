@@ -8,6 +8,8 @@ Window::Window() {
 
 
 Window& Window::getInstance() {
+    // The instance is created the first time this function is called.
+    // It is destroyed automatically when the program exits.
     static Window instance;
     return instance;
 }

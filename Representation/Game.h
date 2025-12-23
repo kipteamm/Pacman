@@ -9,6 +9,12 @@ public:
     Game();
 
 private:
+    /**
+     * @brief The main game loop.
+     *
+     * Will update the Stopwatch, World and the current State. After updating,
+     * it will call the render function of the current State.
+     */
     void loop() const;
 
     std::shared_ptr<logic::Score> scoreSystem;

@@ -13,8 +13,9 @@ public:
     void operator=(const Window &) = delete;
 
     /**
-     * Returns an instance of the Window class.
-     * @return Window
+     * @brief Returns an instance of the Window class.
+     *
+     * @return Window instance
      */
     [[nodiscard]] static Window& getInstance();
 

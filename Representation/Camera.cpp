@@ -1,14 +1,11 @@
-//
-// Created by PPetre on 27/11/2025.
-//
-
 #include "Camera.h"
-
 #include "Window.h"
 
 
 Camera::Camera() {
     screenWidth = static_cast<float>(Window::getInstance().getWidth());
+    // Subtracting 100 pixels from the screenheight to assure that the Game
+    // text UI always fits on screen.
     screenHeight = static_cast<float>(Window::getInstance().getHeight()) - 100;
 
     tileWidth = 0;
@@ -21,12 +18,17 @@ Camera::Camera() {
 
 
 Camera& Camera::getInstance() {
+    // The instance is created the first time this function is called.
+    // It is destroyed automatically when the program exits.
     static Camera instance;
     return instance;
 }
 
 
 void Camera::setScaling(const float mapWidth, const float mapHeight) {
+    // Calculate what the smallest dimension is (width or height) and take that
+    // as the scaling factor. Assures that the map always fits entirely on
+    // screen.
     const float scaleX = screenWidth / mapWidth;
     const float scaleY = screenHeight / mapHeight;
     const float scale = std::min(scaleX, scaleY);
@@ -43,6 +45,8 @@ void Camera::setScaling(const float mapWidth, const float mapHeight) {
 
 void Camera::resize() {
     this->screenWidth = Window::getInstance().getWidth();
+    // Subtracting 100 pixels from the screenheight to assure that the Game
+    // text UI always fits on screen.
     this->screenHeight = Window::getInstance().getHeight() - 100;
 
     this->setScaling(this->viewWidth / tileWidth, this->viewHeight / tileHeight);
