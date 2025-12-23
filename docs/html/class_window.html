@@ -98,27 +98,31 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a95028c2deac2197b676c422c4bc2ee3c" id="r_a95028c2deac2197b676c422c4bc2ee3c"><td class="memItemLeft" align="right" valign="top"><a id="a95028c2deac2197b676c422c4bc2ee3c" name="a95028c2deac2197b676c422c4bc2ee3c"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="class_window.html">Window</a> &amp;)=delete</td></tr>
 <tr class="memitem:a761d614931fb5a5daa70e4f580c3e78e" id="r_a761d614931fb5a5daa70e4f580c3e78e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a761d614931fb5a5daa70e4f580c3e78e">isOpen</a> () const</td></tr>
-<tr class="memitem:a7a0dc05fe03c166f3e2350e3316c6097" id="r_a7a0dc05fe03c166f3e2350e3316c6097"><td class="memItemLeft" align="right" valign="top"><a id="a7a0dc05fe03c166f3e2350e3316c6097" name="a7a0dc05fe03c166f3e2350e3316c6097"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>pollEvent</b> (sf::Event &amp;event)</td></tr>
-<tr class="memitem:adfb2d5826942693e289d13f314a341f7" id="r_adfb2d5826942693e289d13f314a341f7"><td class="memItemLeft" align="right" valign="top"><a id="adfb2d5826942693e289d13f314a341f7" name="adfb2d5826942693e289d13f314a341f7"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>draw</b> (const sf::Drawable &amp;drawable)</td></tr>
+<tr class="memdesc:a761d614931fb5a5daa70e4f580c3e78e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tell whether the window is open.  <br /></td></tr>
+<tr class="memitem:a7a0dc05fe03c166f3e2350e3316c6097" id="r_a7a0dc05fe03c166f3e2350e3316c6097"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7a0dc05fe03c166f3e2350e3316c6097">pollEvent</a> (sf::Event &amp;event)</td></tr>
+<tr class="memdesc:a7a0dc05fe03c166f3e2350e3316c6097"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pop the event on top of the event queue, if any, and return it.  <br /></td></tr>
+<tr class="memitem:adfb2d5826942693e289d13f314a341f7" id="r_adfb2d5826942693e289d13f314a341f7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adfb2d5826942693e289d13f314a341f7">draw</a> (const sf::Drawable &amp;drawable)</td></tr>
+<tr class="memdesc:adfb2d5826942693e289d13f314a341f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw a drawable object to the window.  <br /></td></tr>
 <tr class="memitem:a38bc43bdd1a97e5de7f346ba4c3957ef" id="r_a38bc43bdd1a97e5de7f346ba4c3957ef"><td class="memItemLeft" align="right" valign="top"><a id="a38bc43bdd1a97e5de7f346ba4c3957ef" name="a38bc43bdd1a97e5de7f346ba4c3957ef"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>clear</b> ()</td></tr>
+<tr class="memdesc:a38bc43bdd1a97e5de7f346ba4c3957ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear the window. <br /></td></tr>
 <tr class="memitem:afadfafa5a0b9472554759004aafb327e" id="r_afadfafa5a0b9472554759004aafb327e"><td class="memItemLeft" align="right" valign="top"><a id="afadfafa5a0b9472554759004aafb327e" name="afadfafa5a0b9472554759004aafb327e"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>display</b> ()</td></tr>
+<tr class="memdesc:afadfafa5a0b9472554759004aafb327e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Display on screen what has been drawn to the window since the last clear. <br /></td></tr>
 <tr class="memitem:a35055c04498121d39741bfcd5082705b" id="r_a35055c04498121d39741bfcd5082705b"><td class="memItemLeft" align="right" valign="top"><a id="a35055c04498121d39741bfcd5082705b" name="a35055c04498121d39741bfcd5082705b"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>close</b> ()</td></tr>
-<tr class="memitem:ad2d74b36b23465aaf39c47e6bc230da1" id="r_ad2d74b36b23465aaf39c47e6bc230da1"><td class="memItemLeft" align="right" valign="top"><a id="ad2d74b36b23465aaf39c47e6bc230da1" name="ad2d74b36b23465aaf39c47e6bc230da1"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setFramerateLimit</b> (unsigned int frameRate)</td></tr>
-<tr class="memitem:aba43b0511b05fc2a90f86f9737d8f434" id="r_aba43b0511b05fc2a90f86f9737d8f434"><td class="memItemLeft" align="right" valign="top"><a id="aba43b0511b05fc2a90f86f9737d8f434" name="aba43b0511b05fc2a90f86f9737d8f434"></a>
-unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>getWidth</b> () const</td></tr>
-<tr class="memitem:aa017b94c100e1953c13f7a9d1e411ef9" id="r_aa017b94c100e1953c13f7a9d1e411ef9"><td class="memItemLeft" align="right" valign="top"><a id="aa017b94c100e1953c13f7a9d1e411ef9" name="aa017b94c100e1953c13f7a9d1e411ef9"></a>
-unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>getHeight</b> () const</td></tr>
+<tr class="memdesc:a35055c04498121d39741bfcd5082705b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Close the window and destroy all the attached resources. <br /></td></tr>
+<tr class="memitem:ad2d74b36b23465aaf39c47e6bc230da1" id="r_ad2d74b36b23465aaf39c47e6bc230da1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad2d74b36b23465aaf39c47e6bc230da1">setFramerateLimit</a> (unsigned int frameRate)</td></tr>
+<tr class="memdesc:ad2d74b36b23465aaf39c47e6bc230da1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Limit the framerate to a maximum fixed frequency.  <br /></td></tr>
+<tr class="memitem:aba43b0511b05fc2a90f86f9737d8f434" id="r_aba43b0511b05fc2a90f86f9737d8f434"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aba43b0511b05fc2a90f86f9737d8f434">getWidth</a> () const</td></tr>
+<tr class="memdesc:aba43b0511b05fc2a90f86f9737d8f434"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the width of the rendering region of the window. This does not include the borders of the window.  <br /></td></tr>
+<tr class="memitem:aa017b94c100e1953c13f7a9d1e411ef9" id="r_aa017b94c100e1953c13f7a9d1e411ef9"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa017b94c100e1953c13f7a9d1e411ef9">getHeight</a> () const</td></tr>
+<tr class="memdesc:aa017b94c100e1953c13f7a9d1e411ef9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the height of the rendering region of the window. This does not include the titlebar or borders of the window.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a27532de1433b896e6586c3a9e045349d" id="r_a27532de1433b896e6586c3a9e045349d"><td class="memItemLeft" align="right" valign="top"><a id="a27532de1433b896e6586c3a9e045349d" name="a27532de1433b896e6586c3a9e045349d"></a>
-static <a class="el" href="class_window.html">Window</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getInstance</b> ()</td></tr>
+<tr class="memitem:a27532de1433b896e6586c3a9e045349d" id="r_a27532de1433b896e6586c3a9e045349d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_window.html">Window</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a27532de1433b896e6586c3a9e045349d">getInstance</a> ()</td></tr>
+<tr class="memdesc:a27532de1433b896e6586c3a9e045349d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an instance of the <a class="el" href="class_window.html">Window</a> class.  <br /></td></tr>
 </table>
 <a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a3b760cdf58517c8c4a91237ccc582b57" name="a3b760cdf58517c8c4a91237ccc582b57"></a>
@@ -148,11 +152,123 @@ static <a class="el" href="class_window.html">Window</a> &amp;&#160;</td><td cla
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="adfb2d5826942693e289d13f314a341f7" name="adfb2d5826942693e289d13f314a341f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adfb2d5826942693e289d13f314a341f7">&#9670;&#160;</a></span>draw()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Window::draw </td>
+          <td>(</td>
+          <td class="paramtype">const sf::Drawable &amp;</td>          <td class="paramname"><span class="paramname"><em>drawable</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Draw a drawable object to the window. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">drawable</td><td>Object to draw </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa017b94c100e1953c13f7a9d1e411ef9" name="aa017b94c100e1953c13f7a9d1e411ef9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa017b94c100e1953c13f7a9d1e411ef9">&#9670;&#160;</a></span>getHeight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int Window::getHeight </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the height of the rendering region of the window. This does not include the titlebar or borders of the window. </p>
+<dl class="section return"><dt>Returns</dt><dd>Height in pixels </dd></dl>
+
+</div>
+</div>
+<a id="a27532de1433b896e6586c3a9e045349d" name="a27532de1433b896e6586c3a9e045349d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27532de1433b896e6586c3a9e045349d">&#9670;&#160;</a></span>getInstance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_window.html">Window</a> &amp; Window::getInstance </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns an instance of the <a class="el" href="class_window.html">Window</a> class. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_window.html">Window</a> instance </dd></dl>
+
+</div>
+</div>
+<a id="aba43b0511b05fc2a90f86f9737d8f434" name="aba43b0511b05fc2a90f86f9737d8f434"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba43b0511b05fc2a90f86f9737d8f434">&#9670;&#160;</a></span>getWidth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int Window::getWidth </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the width of the rendering region of the window. This does not include the borders of the window. </p>
+<dl class="section return"><dt>Returns</dt><dd>Width in pixels </dd></dl>
+
+</div>
+</div>
 <a id="a761d614931fb5a5daa70e4f580c3e78e" name="a761d614931fb5a5daa70e4f580c3e78e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a761d614931fb5a5daa70e4f580c3e78e">&#9670;&#160;</a></span>isOpen()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">bool Window::isOpen </td>
@@ -161,8 +277,76 @@ static <a class="el" href="class_window.html">Window</a> &amp;&#160;</td><td cla
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
-<p>Directly exposing SFML RenderWindow methods to reduce verbosity </p>
+
+<p>Tell whether the window is open. </p>
+<dl class="section return"><dt>Returns</dt><dd>True if the window is open, false if has been closed. </dd></dl>
+
+</div>
+</div>
+<a id="a7a0dc05fe03c166f3e2350e3316c6097" name="a7a0dc05fe03c166f3e2350e3316c6097"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a0dc05fe03c166f3e2350e3316c6097">&#9670;&#160;</a></span>pollEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Window::pollEvent </td>
+          <td>(</td>
+          <td class="paramtype">sf::Event &amp;</td>          <td class="paramname"><span class="paramname"><em>event</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Pop the event on top of the event queue, if any, and return it. </p>
+<p>This function is not blocking: if there's no pending event then it will return false and leave <b>event</b> unmodified. Note that more than one event may be present in the event queue, thus you should always call this function in a loop to make sure that you process every pending event</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event</td><td>Event to be returned. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if an event was returned, or false if the event queue was empty. </dd></dl>
+
+</div>
+</div>
+<a id="ad2d74b36b23465aaf39c47e6bc230da1" name="ad2d74b36b23465aaf39c47e6bc230da1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2d74b36b23465aaf39c47e6bc230da1">&#9670;&#160;</a></span>setFramerateLimit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Window::setFramerateLimit </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int</td>          <td class="paramname"><span class="paramname"><em>frameRate</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Limit the framerate to a maximum fixed frequency. </p>
+<p>If a limit is set, the window will use a small delay after each call to <a class="el" href="#afadfafa5a0b9472554759004aafb327e" title="Display on screen what has been drawn to the window since the last clear.">display()</a> to ensure that the current frame lasted long enough to match the framerate limit. SFML will try to match the given limit as much as it can, but since it internally uses sf::sleep, whose precision depends on the underlying OS, the results may be a little unprecise as well (for example, you can get 65 FPS when requesting 60).</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">frameRate</td><td>Framerate limit, in frames per seconds (use 0 to disable limit). </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

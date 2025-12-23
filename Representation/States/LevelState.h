@@ -8,12 +8,11 @@
 #include <unordered_map>
 
 #include "../Entities/ConcreteFactory.h"
-#include "../Entities/EntityView.h"
+#include "../Entities/WorldView.h"
 #include "../../Logic/World.h"
 #include "../../Logic/Score.h"
 #include "../SoundManager.h"
 #include "StateManager.h"
-#include "../Entities/WorldView.h"
 
 
 class LevelState final : public State {

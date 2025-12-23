@@ -31,16 +31,18 @@ var annotated_dup =
     [ "EntityView", "class_entity_view.html", null ],
     [ "FruitView", "class_fruit_view.html", null ],
     [ "Game", "class_game.html", null ],
+    [ "GameContext", "struct_game_context.html", null ],
     [ "GameOverState", "class_game_over_state.html", null ],
     [ "GhostView", "class_ghost_view.html", null ],
     [ "LevelState", "class_level_state.html", null ],
     [ "MenuState", "class_menu_state.html", null ],
     [ "PacmanView", "class_pacman_view.html", null ],
     [ "PausedState", "class_paused_state.html", null ],
-    [ "SoundManager", "class_sound_manager.html", null ],
+    [ "SoundManager", "class_sound_manager.html", "class_sound_manager" ],
     [ "State", "class_state.html", null ],
     [ "StateManager", "class_state_manager.html", null ],
-    [ "VictoryState", "class_victory_state.html", null ],
+    [ "VictoryState", "class_victory_state.html", "class_victory_state" ],
     [ "WallView", "class_wall_view.html", null ],
-    [ "Window", "class_window.html", "class_window" ]
+    [ "Window", "class_window.html", "class_window" ],
+    [ "WorldView", "class_world_view.html", null ]
 ];

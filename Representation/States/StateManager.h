@@ -38,8 +38,6 @@ class StateManager {
 public:
     explicit StateManager(const std::shared_ptr<logic::Score>& scoreSystem);
 
-    // TODO: check this statement
-    // Returning a raw pointer because ownership should not be transferred
     [[nodiscard]] State* top();
     [[nodiscard]] bool empty() const;
     [[nodiscard]] GameContext* getGameContext() const;

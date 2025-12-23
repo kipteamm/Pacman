@@ -8,8 +8,6 @@
 #include <SFML/Graphics/Sprite.hpp>
 
 #include "../../Logic/Entities/EntityModel.h"
-#include "../../Logic/Observer.h"
-#include "../Camera.h"
 
 
 class EntityView : public logic::Observer {

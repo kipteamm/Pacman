@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['random_0',['Random',['../classlogic_1_1_random.html#affaefb818059c94b4b5993ad8d05b595',1,'logic::Random']]]
+  ['handleinput_0',['handleInput',['../class_victory_state.html#a40f5a4edb114f00014ecf856e8e1c22e',1,'VictoryState']]]
 ];

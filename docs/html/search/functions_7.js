@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['levelstate_0',['LevelState',['../class_level_state.html#a2fc5f8a177acb181f2936909f788a8fc',1,'LevelState']]],
-  ['loadlevel_1',['loadLevel',['../classlogic_1_1_world.html#a6a08c827c3a0def12b7700211353735f',1,'logic::World']]]
+  ['random_0',['Random',['../classlogic_1_1_random.html#affaefb818059c94b4b5993ad8d05b595',1,'logic::Random']]],
+  ['render_1',['render',['../class_victory_state.html#a7f9c4d40c8a336329c58e47e933e0b47',1,'VictoryState']]],
+  ['resize_2',['resize',['../class_camera.html#ac9e85ba11cf7753f44d6eba75f1856e4',1,'Camera']]]
 ];

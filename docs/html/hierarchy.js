@@ -8,6 +8,7 @@ var hierarchy =
     [ "logic::Difficulty", "classlogic_1_1_difficulty.html", null ],
     [ "logic::DifficultySpecs", "structlogic_1_1_difficulty_specs.html", null ],
     [ "Game", "class_game.html", null ],
+    [ "GameContext", "struct_game_context.html", null ],
     [ "logic::Highscore", "structlogic_1_1_highscore.html", null ],
     [ "logic::Observer", "classlogic_1_1_observer.html", [
       [ "EntityView", "class_entity_view.html", [
@@ -18,6 +19,7 @@ var hierarchy =
         [ "WallView", "class_wall_view.html", null ]
       ] ],
       [ "SoundManager", "class_sound_manager.html", null ],
+      [ "WorldView", "class_world_view.html", null ],
       [ "logic::Score", "classlogic_1_1_score.html", null ]
     ] ],
     [ "logic::PathNode", "structlogic_1_1_path_node.html", null ],

@@ -1,7 +1,3 @@
-//
-// Created by toroe on 17/12/2025.
-//
-
 #include "../AssetManager.h"
 #include "VictoryState.h"
 #include "LevelState.h"
@@ -27,5 +23,3 @@ void VictoryState::render() {
 
     Window::getInstance().draw(title);
 }
-
-

@@ -1,11 +1,13 @@
 <map id="logic::Observer" name="logic::Observer">
-<area shape="rect" id="Node000001" title=" " alt="" coords="316,5,425,32"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="376,5,485,32"/>
 <area shape="rect" id="Node000002" href="$class_entity_view.html" title=" " alt="" coords="208,80,293,107"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="339,39,273,82,270,77,334,41"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="388,37,283,82,281,77,383,39"/>
 <area shape="rect" id="Node000008" href="$class_sound_manager.html" title=" " alt="" coords="316,80,425,107"/>
-<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="372,46,373,81,368,78,369,50"/>
-<area shape="rect" id="Node000009" href="$classlogic_1_1_score.html" title=" " alt="" coords="450,80,540,107"/>
-<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="405,37,476,79,470,79,404,43"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="413,43,383,82,379,77,408,45"/>
+<area shape="rect" id="Node000009" href="$class_world_view.html" title=" " alt="" coords="449,80,532,107"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="452,42,483,80,478,79,450,46"/>
+<area shape="rect" id="Node000010" href="$classlogic_1_1_score.html" title=" " alt="" coords="556,80,646,107"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="475,36,574,79,569,79,474,41"/>
 <area shape="rect" id="Node000003" href="$class_coin_view.html" title=" " alt="" coords="5,155,83,181"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="201,115,81,157,79,152,200,110"/>
 <area shape="rect" id="Node000004" href="$class_fruit_view.html" title=" " alt="" coords="107,155,184,181"/>

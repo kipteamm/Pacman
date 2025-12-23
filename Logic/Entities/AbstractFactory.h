@@ -1,7 +1,3 @@
-//
-// Created by PPetre on 26/11/2025.
-//
-
 #ifndef ABSTRACTFACTORY_H
 #define ABSTRACTFACTORY_H
 
@@ -9,12 +5,9 @@
 #include "Ghosts/RandomGhost.h"
 #include "Ghosts/AmbushGhost.h"
 #include "PacmanModel.h"
+#include "FruitModel.h"
 #include "WallModel.h"
 #include "CoinModel.h"
-
-#include <memory>
-
-#include "FruitModel.h"
 
 
 namespace logic {

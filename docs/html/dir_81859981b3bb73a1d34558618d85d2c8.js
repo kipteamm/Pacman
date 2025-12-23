@@ -6,5 +6,6 @@ var dir_81859981b3bb73a1d34558618d85d2c8 =
     [ "FruitView.h", "_fruit_view_8h_source.html", null ],
     [ "GhostView.h", "_ghost_view_8h_source.html", null ],
     [ "PacmanView.h", "_pacman_view_8h_source.html", null ],
-    [ "WallView.h", "_wall_view_8h_source.html", null ]
+    [ "WallView.h", "_wall_view_8h_source.html", null ],
+    [ "WorldView.h", "_world_view_8h_source.html", null ]
 ];
