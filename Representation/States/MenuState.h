@@ -4,17 +4,12 @@
 #include "../Entities/ConcreteFactory.h"
 #include "../../Logic/Score.h"
 #include "StateManager.h"
-#include "../Camera.h"
-
-#include <memory>
 
 
 class MenuState final : public State {
 public:
     explicit MenuState(
-        StateManager* context,
-        const std::shared_ptr<logic::Score>& scoreSystem,
-        const std::shared_ptr<ConcreteFactory>& factory
+        StateManager* context
     );
 
     void handleInput(const sf::Event::KeyEvent &keyPressed) override;
@@ -23,7 +18,6 @@ public:
 
 private:
     std::shared_ptr<logic::Score> scoreSystem;
-    std::shared_ptr<ConcreteFactory> factory;
 
     sf::Sprite pacmanLogo;
     std::string username;

@@ -30,7 +30,6 @@ namespace logic {
     public:
         virtual ~Subject() = default;
 
-        // TODO: FIX POINTER
         void attach(const std::shared_ptr<Observer> &observer);
         void detach(const std::shared_ptr<Observer> &observer);
 

@@ -18,17 +18,17 @@
 
 class LevelState final : public State {
 public:
-    explicit LevelState(StateManager* context, const std::shared_ptr<ConcreteFactory>& factory, const std::shared_ptr<logic::Score>& scoreSystem, int lives);
+    explicit LevelState(StateManager* context);
 
     void update(double dt) override;
     void handleInput(const sf::Event::KeyEvent &keyPressed) override;
     void render() override;
 
 private:
-    std::shared_ptr<ConcreteFactory> factory;
-    std::shared_ptr<logic::World> world;
-    std::shared_ptr<logic::Score> scoreSystem;
     std::shared_ptr<SoundManager> soundManager;
+    std::shared_ptr<ConcreteFactory> factory;
+    std::shared_ptr<logic::Score> scoreSystem;
+    std::shared_ptr<logic::World> world;
     std::shared_ptr<WorldView> worldView;
 
     std::unordered_map<Layer, std::vector<std::shared_ptr<EntityView>>> entityViews{

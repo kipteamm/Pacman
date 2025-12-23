@@ -1,14 +1,11 @@
-//
-// Created by PPetre on 26/11/2025.
-//
-
 #ifndef STATEMANAGER_H
 #define STATEMANAGER_H
 
-#include <memory>
-#include <SFML/Graphics.hpp>
-
+#include <SFML/Window/Event.hpp>
 #include <stack>
+
+#include "../Entities/ConcreteFactory.h"
+#include "../../Logic/Score.h"
 
 
 class StateManager;
@@ -30,20 +27,30 @@ protected:
 };
 
 
+struct GameContext {
+    std::shared_ptr<ConcreteFactory> factory;
+    std::shared_ptr<logic::Score> scoreSystem;
+    int lives;
+};
+
+
 class StateManager {
 public:
-    StateManager() = default;
-
-    void swap(std::unique_ptr<State> state);
-    void push(std::unique_ptr<State> state);
-    void pop();
+    explicit StateManager(const std::shared_ptr<logic::Score>& scoreSystem);
 
     // TODO: check this statement
     // Returning a raw pointer because ownership should not be transferred
     [[nodiscard]] State* top();
     [[nodiscard]] bool empty() const;
+    [[nodiscard]] GameContext* getGameContext() const;
+
+    void swap(std::unique_ptr<State> state);
+    void push(std::unique_ptr<State> state);
+    void pop();
 
 private:
+    std::unique_ptr<GameContext> gameContext;
+
     std::stack<std::unique_ptr<State>> states;
 };
 

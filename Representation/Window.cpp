@@ -1,8 +1,3 @@
-//
-// Created by PPetre on 24/11/2025.
-//
-
-#include <SFML/Graphics.hpp>
 #include "Window.h"
 
 
@@ -45,7 +40,6 @@ void Window::close() {
 void Window::setFramerateLimit(const unsigned int frameRate) {
     window.setFramerateLimit(frameRate);
 }
-
 
 unsigned int Window::getWidth() const {
     return window.getSize().x;

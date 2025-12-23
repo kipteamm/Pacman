@@ -1,7 +1,3 @@
-//
-// Created by PPetre on 26/11/2025.
-//
-
 #ifndef CONCRETEFACTORY_H
 #define CONCRETEFACTORY_H
 

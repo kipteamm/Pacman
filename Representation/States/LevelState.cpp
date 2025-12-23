@@ -7,10 +7,13 @@
 #include "../Window.h"
 
 
-LevelState::LevelState(StateManager *context, const std::shared_ptr<ConcreteFactory>& factory, const std::shared_ptr<logic::Score>& scoreSystem, const int lives) : State(context), factory(factory), scoreSystem(scoreSystem) {
+LevelState::LevelState(StateManager *context) : State(context) {
+    factory = context->getGameContext()->factory;
     factory->setViews(&this->entityViews);
 
-    world = std::make_shared<logic::World>(factory, lives);
+    scoreSystem = context->getGameContext()->scoreSystem;
+
+    world = std::make_shared<logic::World>(factory, context->getGameContext()->lives);
     world->loadLevel("../Representation/levels/level_1.txt");
     world->attach(scoreSystem);
 
@@ -35,11 +38,13 @@ void LevelState::update(const double dt) {
 
     switch (world->update(dt)) {
         case logic::GAME_OVER:
-            this->context->swap(std::make_unique<GameOverState>(this->context, factory, scoreSystem));
+            this->context->getGameContext()->lives = 3;
+            this->context->swap(std::make_unique<GameOverState>(this->context));
             return;
 
         case logic::LEVEL_COMPLETED:
-            this->context->swap(std::make_unique<VictoryState>(this->context, factory, scoreSystem, world->getLives()));
+            this->context->getGameContext()->lives = world->getLives();
+            this->context->swap(std::make_unique<VictoryState>(this->context));
             return;
 
         default: return;

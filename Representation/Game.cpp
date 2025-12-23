@@ -11,12 +11,11 @@
 
 
 Game::Game() {
-    factory = std::make_shared<ConcreteFactory>();
     scoreSystem = std::make_shared<logic::Score>();
-    context = std::make_unique<StateManager>();
+    context = std::make_unique<StateManager>(scoreSystem);
 
     // Add game starting state to buffer for the assets loading in
-    context->push(std::make_unique<MenuState>(context.get(), scoreSystem, factory));
+    context->push(std::make_unique<MenuState>(context.get()));
     // Window::getInstance().setFramerateLimit(60);
 
     while (Window::getInstance().isOpen()) {

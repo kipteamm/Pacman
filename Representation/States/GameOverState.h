@@ -14,18 +14,12 @@
 class GameOverState final : public State {
 public:
     explicit GameOverState(
-        StateManager* context,
-        const std::shared_ptr<ConcreteFactory>& factory,
-        const std::shared_ptr<logic::Score>& scoreSystem
+        StateManager* context
     );
 
     void update(double dt) override {};
     void handleInput(const sf::Event::KeyEvent &keyPressed) override;
     void render() override;
-
-private:
-    std::shared_ptr<logic::Score> scoreSystem;
-    std::shared_ptr<ConcreteFactory> factory;
 };
 
 

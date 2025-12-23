@@ -1,18 +1,20 @@
-//
-// Created by toroe on 17/12/2025.
-//
-
 #ifndef PACMAN_SOUNDMANAGER_H
 #define PACMAN_SOUNDMANAGER_H
 
 #include <SFML/Audio/Sound.hpp>
 #include "../Logic/Observer.h"
+#include <vector>
 
 
 class SoundManager final : public logic::Observer {
 public:
     SoundManager();
 
+    /**
+     * @brief Starts playing sounds depending on the event.
+     *
+     * @param event logic::Event
+     */
     void update(logic::Events event) override;
 
 private:
@@ -24,6 +26,15 @@ private:
     sf::Sound eatingFruit;
     sf::Sound deathSound;
 
+    /**
+     * @brief Update a sf::Sound SoundBuffer object to hold the contents of the
+     * provided flac file.
+     *
+     * The file is retrieved from the AssetManager.
+     *
+     * @param sound Sound used by the SoundManager.
+     * @param name Filename of the sound.
+     */
     void loadSound(sf::Sound& sound, const std::string& name);
 };
 
