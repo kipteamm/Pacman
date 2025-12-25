@@ -1,25 +1,28 @@
 #include "PausedState.h"
 #include "LevelState.h"
 
+#include <ranges>
+
 #include "GameOverState.h"
 #include "VictoryState.h"
-#include "../AssetManager.h"
+#include "../Camera.h"
 #include "../Window.h"
 
 
-LevelState::LevelState(StateManager *context) : State(context) {
-    factory = context->getGameContext()->factory;
+LevelState::LevelState(StateManager& context) : State(context) {
+    factory = context.getGameContext()->factory;
     factory->setViews(&this->entityViews);
 
-    scoreSystem = context->getGameContext()->scoreSystem;
-
-    world = std::make_shared<logic::World>(factory, context->getGameContext()->lives);
+    world = std::make_shared<logic::World>(factory, context.getGameContext()->lives);
     world->loadLevel("../Representation/levels/level_1.txt");
-    world->attach(scoreSystem);
 
     Camera::getInstance().setScaling(world->getWidth(), world->getHeight());
 
-    soundManager = std::make_shared<SoundManager>();
+    scoreSystem = context.getGameContext()->scoreSystem;
+    world->attach(scoreSystem);
+
+    soundManager= context.getGameContext()->soundManager;
+    soundManager->start();
     world->attach(soundManager);
 
     worldView = std::make_shared<WorldView>(world, scoreSystem);
@@ -30,7 +33,7 @@ LevelState::LevelState(StateManager *context) : State(context) {
 void LevelState::update(const double dt) {
     scoreSystem->update(dt);
 
-    for (auto& [_, views] : this->entityViews) {
+    for (auto& views : this->entityViews | std::views::values) {
         std::erase_if(views,[](const std::shared_ptr<EntityView>& view) {
             return view->shouldDelete();
         });
@@ -38,13 +41,15 @@ void LevelState::update(const double dt) {
 
     switch (world->update(dt)) {
         case logic::GAME_OVER:
-            this->context->getGameContext()->lives = 3;
-            this->context->swap(std::make_unique<GameOverState>(this->context));
+            soundManager->stop();
+            this->context.getGameContext()->lives = 3;
+            this->context.swap(std::make_unique<GameOverState>(this->context));
             return;
 
         case logic::LEVEL_COMPLETED:
-            this->context->getGameContext()->lives = world->getLives();
-            this->context->swap(std::make_unique<VictoryState>(this->context));
+            soundManager->stop();
+            this->context.getGameContext()->lives = world->getLives();
+            this->context.swap(std::make_unique<VictoryState>(this->context));
             return;
 
         default: return;
@@ -54,7 +59,7 @@ void LevelState::update(const double dt) {
 void LevelState::handleInput(const sf::Event::KeyEvent &keyPressed) {
     switch (keyPressed.code) {
         case sf::Keyboard::Escape:
-            this->context->push(std::make_unique<PausedState>(this->context));
+            this->context.push(std::make_unique<PausedState>(this->context));
             return;
 
         case sf::Keyboard::Up:

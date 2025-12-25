@@ -9,24 +9,22 @@
 
 #include "../Entities/ConcreteFactory.h"
 #include "../Entities/WorldView.h"
-#include "../../Logic/World.h"
 #include "../../Logic/Score.h"
-#include "../SoundManager.h"
 #include "StateManager.h"
 
 
 class LevelState final : public State {
 public:
-    explicit LevelState(StateManager* context);
+    explicit LevelState(StateManager& context);
 
     void update(double dt) override;
     void handleInput(const sf::Event::KeyEvent &keyPressed) override;
     void render() override;
 
 private:
-    std::shared_ptr<SoundManager> soundManager;
     std::shared_ptr<ConcreteFactory> factory;
     std::shared_ptr<logic::Score> scoreSystem;
+    std::shared_ptr<SoundManager> soundManager;
     std::shared_ptr<logic::World> world;
     std::shared_ptr<WorldView> worldView;
 

@@ -2,6 +2,7 @@
 
 #include "../Logic/Stopwatch.h"
 #include "States/MenuState.h"
+#include "Camera.h"
 #include "Window.h"
 #include "Game.h"
 
@@ -10,7 +11,7 @@ Game::Game() {
     scoreSystem = std::make_shared<logic::Score>();
 
     context = std::make_unique<StateManager>(scoreSystem);
-    context->push(std::make_unique<MenuState>(context.get()));
+    context->push(std::make_unique<MenuState>(*context));
     // Window::getInstance().setFramerateLimit(60);
 
     while (Window::getInstance().isOpen()) {

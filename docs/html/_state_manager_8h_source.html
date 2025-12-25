@@ -91,58 +91,58 @@ $(function(){initNavTree('_state_manager_8h_source.html','',''); });
   <div class="headertitle"><div class="title">StateManager.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef STATEMANAGER_H</span></div>
+<a href="_state_manager_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef STATEMANAGER_H</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define STATEMANAGER_H</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;SFML/Window/Event.hpp&gt;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;stack&gt;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;../Entities/ConcreteFactory.h&quot;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;../../Logic/Score.h&quot;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="_sound_manager_8h.html">../SoundManager.h</a>&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="_concrete_factory_8h.html">../Entities/ConcreteFactory.h</a>&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="_score_8h.html">../../Logic/Score.h</a>&quot;</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">class </span><a class="code hl_class" href="class_state_manager.html">StateManager</a>;</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="foldopen" id="foldopen00013" data-start="{" data-end="};">
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="class_state.html">   13</a></span><span class="keyword">class </span>State {</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keyword">explicit</span> State(<a class="code hl_class" href="class_state_manager.html">StateManager</a>* ctx);</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keyword">virtual</span> ~State() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> update(<span class="keywordtype">double</span> dt) = 0;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> handleInput(<span class="keyword">const</span> sf::Event::KeyEvent &amp;keyPressed) = 0;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> render() = 0;</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">protected</span>:</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="comment">// TODO: check this statement</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="comment">// Using a raw pointer because the StateManager owns States and not vica versa</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <a class="code hl_class" href="class_state_manager.html">StateManager</a>* context;</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>};</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">class </span><a class="code hl_class" href="class_state_manager.html">StateManager</a>;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="foldopen" id="foldopen00014" data-start="{" data-end="};">
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="class_state.html">   14</a></span><span class="keyword">class </span><a class="code hl_function" href="class_state.html#a08febc2efb52c152040efda1fb93634b">State</a> {</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="class_state.html#a08febc2efb52c152040efda1fb93634b">State</a>(<a class="code hl_class" href="class_state_manager.html">StateManager</a>&amp; ctx);</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="class_state.html#a783d52422b544bb226e13de8ecfd6ad6">   18</a></span>    <span class="keyword">virtual</span> <a class="code hl_function" href="class_state.html#a783d52422b544bb226e13de8ecfd6ad6">~State</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="class_state.html#ac4a5be39cd72ab792e73e339754dfc5f">   20</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_state.html#ac4a5be39cd72ab792e73e339754dfc5f">update</a>(<span class="keywordtype">double</span> dt) = 0;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="class_state.html#a03d494dbd02afaae6c75cbaa32740b3f">   21</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_state.html#a03d494dbd02afaae6c75cbaa32740b3f">handleInput</a>(<span class="keyword">const</span> sf::Event::KeyEvent &amp;keyPressed) = 0;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="class_state.html#a71f5105bcdc39481be7684d853fe12e9">   22</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_state.html#a71f5105bcdc39481be7684d853fe12e9">render</a>() = 0;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="class_state.html#a9de31f1ce45c89c183bb929122eb9acb">   25</a></span>    <a class="code hl_class" href="class_state_manager.html">StateManager</a>&amp; <a class="code hl_variable" href="class_state.html#a9de31f1ce45c89c183bb929122eb9acb">context</a>;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>};</div>
 </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="foldopen" id="foldopen00030" data-start="{" data-end="};">
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="struct_game_context.html">   30</a></span><span class="keyword">struct </span><a class="code hl_struct" href="struct_game_context.html">GameContext</a> {</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    std::shared_ptr&lt;ConcreteFactory&gt; factory;</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    std::shared_ptr&lt;logic::Score&gt; scoreSystem;</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keywordtype">int</span> lives;</div>
+<div class="foldopen" id="foldopen00029" data-start="{" data-end="};">
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="struct_game_context.html">   29</a></span><span class="keyword">struct </span><a class="code hl_struct" href="struct_game_context.html">GameContext</a> {</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="struct_game_context.html#afdf5d2ffca6527325c758ac084511455">   30</a></span>    std::shared_ptr&lt;ConcreteFactory&gt; <a class="code hl_variable" href="struct_game_context.html#afdf5d2ffca6527325c758ac084511455">factory</a>;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="struct_game_context.html#a71bbe4645becbffc85188361f8f5bd05">   31</a></span>    std::shared_ptr&lt;logic::Score&gt; <a class="code hl_variable" href="struct_game_context.html#a71bbe4645becbffc85188361f8f5bd05">scoreSystem</a>;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="struct_game_context.html#ac0a6c91cc263d754fe99071b5b28ab51">   32</a></span>    std::shared_ptr&lt;SoundManager&gt; <a class="code hl_variable" href="struct_game_context.html#ac0a6c91cc263d754fe99071b5b28ab51">soundManager</a>;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="struct_game_context.html#a6deaaa31905458d5496432ebe8bfb598">   33</a></span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_game_context.html#a6deaaa31905458d5496432ebe8bfb598">lives</a>;</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>};</div>
 </div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
 <div class="foldopen" id="foldopen00037" data-start="{" data-end="};">
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="class_state_manager.html">   37</a></span><span class="keyword">class </span>StateManager {</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="class_state_manager.html">   37</a></span><span class="keyword">class </span><a class="code hl_function" href="class_state_manager.html#ad25aed1c97e25ef5fd8dfdf26c11a677">StateManager</a> {</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keyword">explicit</span> StateManager(<span class="keyword">const</span> std::shared_ptr&lt;logic::Score&gt;&amp; scoreSystem);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="class_state_manager.html#ad25aed1c97e25ef5fd8dfdf26c11a677">StateManager</a>(<span class="keyword">const</span> std::shared_ptr&lt;logic::Score&gt;&amp; scoreSystem);</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    [[nodiscard]] <a class="code hl_class" href="class_state.html">State</a>* top();</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    [[nodiscard]] <span class="keywordtype">bool</span> empty() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    [[nodiscard]] <a class="code hl_struct" href="struct_game_context.html">GameContext</a>* getGameContext() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    [[nodiscard]] <a class="code hl_class" href="class_state.html">State</a>* <a class="code hl_function" href="class_state_manager.html#a1531f44de3200c14c0acc23a2b1de03a">top</a>();</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    [[nodiscard]] <span class="keywordtype">bool</span> <a class="code hl_function" href="class_state_manager.html#af6a851b8d32355e96076092bf28f8464">empty</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    [[nodiscard]] <a class="code hl_struct" href="struct_game_context.html">GameContext</a>* <a class="code hl_function" href="class_state_manager.html#a4f6b9a731f528a6c7812fac68323ab7c">getGameContext</a>() <span class="keyword">const</span>;</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordtype">void</span> swap(std::unique_ptr&lt;State&gt; state);</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keywordtype">void</span> push(std::unique_ptr&lt;State&gt; state);</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keywordtype">void</span> pop();</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_state_manager.html#ab0f7726aa3e964ebf5cbafa9b5d3efa2">swap</a>(std::unique_ptr&lt;State&gt; state);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_state_manager.html#a18a5fbc8cbc2aeb4019e79fbbb147c6b">push</a>(std::unique_ptr&lt;State&gt; state);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_state_manager.html#ac33e949b156eae623755e59161c1700f">pop</a>();</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="keyword">private</span>:</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    std::unique_ptr&lt;GameContext&gt; gameContext;</div>
@@ -152,16 +152,36 @@ $(function(){initNavTree('_state_manager_8h_source.html','',''); });
 </div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="preprocessor">#endif </span><span class="comment">//STATEMANAGER_H</span></div>
-<div class="ttc" id="aclass_state_html"><div class="ttname"><a href="class_state.html">State</a></div><div class="ttdef"><b>Definition</b> StateManager.h:13</div></div>
+<div class="ttc" id="a_concrete_factory_8h_html"><div class="ttname"><a href="_concrete_factory_8h.html">ConcreteFactory.h</a></div></div>
+<div class="ttc" id="a_score_8h_html"><div class="ttname"><a href="_score_8h.html">Score.h</a></div></div>
+<div class="ttc" id="a_sound_manager_8h_html"><div class="ttname"><a href="_sound_manager_8h.html">SoundManager.h</a></div></div>
+<div class="ttc" id="aclass_state_html"><div class="ttname"><a href="class_state.html">State</a></div><div class="ttdef"><b>Definition</b> StateManager.h:14</div></div>
+<div class="ttc" id="aclass_state_html_a03d494dbd02afaae6c75cbaa32740b3f"><div class="ttname"><a href="class_state.html#a03d494dbd02afaae6c75cbaa32740b3f">State::handleInput</a></div><div class="ttdeci">virtual void handleInput(const sf::Event::KeyEvent &amp;keyPressed)=0</div></div>
+<div class="ttc" id="aclass_state_html_a08febc2efb52c152040efda1fb93634b"><div class="ttname"><a href="class_state.html#a08febc2efb52c152040efda1fb93634b">State::State</a></div><div class="ttdeci">State(StateManager &amp;ctx)</div><div class="ttdef"><b>Definition</b> StateManager.cpp:4</div></div>
+<div class="ttc" id="aclass_state_html_a71f5105bcdc39481be7684d853fe12e9"><div class="ttname"><a href="class_state.html#a71f5105bcdc39481be7684d853fe12e9">State::render</a></div><div class="ttdeci">virtual void render()=0</div></div>
+<div class="ttc" id="aclass_state_html_a783d52422b544bb226e13de8ecfd6ad6"><div class="ttname"><a href="class_state.html#a783d52422b544bb226e13de8ecfd6ad6">State::~State</a></div><div class="ttdeci">virtual ~State()=default</div></div>
+<div class="ttc" id="aclass_state_html_a9de31f1ce45c89c183bb929122eb9acb"><div class="ttname"><a href="class_state.html#a9de31f1ce45c89c183bb929122eb9acb">State::context</a></div><div class="ttdeci">StateManager &amp; context</div><div class="ttdef"><b>Definition</b> StateManager.h:25</div></div>
+<div class="ttc" id="aclass_state_html_ac4a5be39cd72ab792e73e339754dfc5f"><div class="ttname"><a href="class_state.html#ac4a5be39cd72ab792e73e339754dfc5f">State::update</a></div><div class="ttdeci">virtual void update(double dt)=0</div></div>
 <div class="ttc" id="aclass_state_manager_html"><div class="ttname"><a href="class_state_manager.html">StateManager</a></div><div class="ttdef"><b>Definition</b> StateManager.h:37</div></div>
-<div class="ttc" id="astruct_game_context_html"><div class="ttname"><a href="struct_game_context.html">GameContext</a></div><div class="ttdef"><b>Definition</b> StateManager.h:30</div></div>
+<div class="ttc" id="aclass_state_manager_html_a1531f44de3200c14c0acc23a2b1de03a"><div class="ttname"><a href="class_state_manager.html#a1531f44de3200c14c0acc23a2b1de03a">StateManager::top</a></div><div class="ttdeci">State * top()</div><div class="ttdef"><b>Definition</b> StateManager.cpp:17</div></div>
+<div class="ttc" id="aclass_state_manager_html_a18a5fbc8cbc2aeb4019e79fbbb147c6b"><div class="ttname"><a href="class_state_manager.html#a18a5fbc8cbc2aeb4019e79fbbb147c6b">StateManager::push</a></div><div class="ttdeci">void push(std::unique_ptr&lt; State &gt; state)</div><div class="ttdef"><b>Definition</b> StateManager.cpp:37</div></div>
+<div class="ttc" id="aclass_state_manager_html_a4f6b9a731f528a6c7812fac68323ab7c"><div class="ttname"><a href="class_state_manager.html#a4f6b9a731f528a6c7812fac68323ab7c">StateManager::getGameContext</a></div><div class="ttdeci">GameContext * getGameContext() const</div><div class="ttdef"><b>Definition</b> StateManager.cpp:26</div></div>
+<div class="ttc" id="aclass_state_manager_html_ab0f7726aa3e964ebf5cbafa9b5d3efa2"><div class="ttname"><a href="class_state_manager.html#ab0f7726aa3e964ebf5cbafa9b5d3efa2">StateManager::swap</a></div><div class="ttdeci">void swap(std::unique_ptr&lt; State &gt; state)</div><div class="ttdef"><b>Definition</b> StateManager.cpp:32</div></div>
+<div class="ttc" id="aclass_state_manager_html_ac33e949b156eae623755e59161c1700f"><div class="ttname"><a href="class_state_manager.html#ac33e949b156eae623755e59161c1700f">StateManager::pop</a></div><div class="ttdeci">void pop()</div><div class="ttdef"><b>Definition</b> StateManager.cpp:41</div></div>
+<div class="ttc" id="aclass_state_manager_html_ad25aed1c97e25ef5fd8dfdf26c11a677"><div class="ttname"><a href="class_state_manager.html#ad25aed1c97e25ef5fd8dfdf26c11a677">StateManager::StateManager</a></div><div class="ttdeci">StateManager(const std::shared_ptr&lt; logic::Score &gt; &amp;scoreSystem)</div><div class="ttdef"><b>Definition</b> StateManager.cpp:7</div></div>
+<div class="ttc" id="aclass_state_manager_html_af6a851b8d32355e96076092bf28f8464"><div class="ttname"><a href="class_state_manager.html#af6a851b8d32355e96076092bf28f8464">StateManager::empty</a></div><div class="ttdeci">bool empty() const</div><div class="ttdef"><b>Definition</b> StateManager.cpp:22</div></div>
+<div class="ttc" id="astruct_game_context_html"><div class="ttname"><a href="struct_game_context.html">GameContext</a></div><div class="ttdef"><b>Definition</b> StateManager.h:29</div></div>
+<div class="ttc" id="astruct_game_context_html_a6deaaa31905458d5496432ebe8bfb598"><div class="ttname"><a href="struct_game_context.html#a6deaaa31905458d5496432ebe8bfb598">GameContext::lives</a></div><div class="ttdeci">unsigned int lives</div><div class="ttdef"><b>Definition</b> StateManager.h:33</div></div>
+<div class="ttc" id="astruct_game_context_html_a71bbe4645becbffc85188361f8f5bd05"><div class="ttname"><a href="struct_game_context.html#a71bbe4645becbffc85188361f8f5bd05">GameContext::scoreSystem</a></div><div class="ttdeci">std::shared_ptr&lt; logic::Score &gt; scoreSystem</div><div class="ttdef"><b>Definition</b> StateManager.h:31</div></div>
+<div class="ttc" id="astruct_game_context_html_ac0a6c91cc263d754fe99071b5b28ab51"><div class="ttname"><a href="struct_game_context.html#ac0a6c91cc263d754fe99071b5b28ab51">GameContext::soundManager</a></div><div class="ttdeci">std::shared_ptr&lt; SoundManager &gt; soundManager</div><div class="ttdef"><b>Definition</b> StateManager.h:32</div></div>
+<div class="ttc" id="astruct_game_context_html_afdf5d2ffca6527325c758ac084511455"><div class="ttname"><a href="struct_game_context.html#afdf5d2ffca6527325c758ac084511455">GameContext::factory</a></div><div class="ttdeci">std::shared_ptr&lt; ConcreteFactory &gt; factory</div><div class="ttdef"><b>Definition</b> StateManager.h:30</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>Representation</b></li><li class="navelem"><b>States</b></li><li class="navelem"><b>StateManager.h</b></li>
+    <li class="navelem"><a href="dir_5b53d4d8c62c5abdb2754b788854db81.html">Representation</a></li><li class="navelem"><a href="dir_e03f3d55d8d082a661b7a3934d58006c.html">States</a></li><li class="navelem"><a href="_state_manager_8h.html">StateManager.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
   </ul>
 </div>

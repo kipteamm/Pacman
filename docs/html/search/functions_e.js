@@ -1,5 +1,19 @@
 var searchData=
 [
-  ['tick_0',['tick',['../classlogic_1_1_stopwatch.html#a76c97b8ae59f93b713e2bd191fda48ed',1,'logic::Stopwatch']]],
-  ['top_1',['top',['../class_state_manager.html#a1531f44de3200c14c0acc23a2b1de03a',1,'StateManager']]]
+  ['score_0',['Score',['../classlogic_1_1_score.html#a039c99843551e5e4b512ecee99e46617',1,'logic::Score']]],
+  ['setframeratelimit_1',['setFramerateLimit',['../class_window.html#ad2d74b36b23465aaf39c47e6bc230da1',1,'Window']]],
+  ['setfrightened_2',['setFrightened',['../classlogic_1_1_ghost_model.html#ab44698edc35bb357b5261768a2bd4925',1,'logic::GhostModel']]],
+  ['setnextdirection_3',['setNextDirection',['../classlogic_1_1_pacman_model.html#ab310b2f2dc17b219fb33b6f0d708dde9',1,'logic::PacmanModel']]],
+  ['setscaling_4',['setScaling',['../class_camera.html#a0e7b50980e8ebb0a28c05fa67aa5ab62',1,'Camera']]],
+  ['setstate_5',['setState',['../classlogic_1_1_ghost_model.html#a0c165497fcb03c65f1026cf1d3cbe591',1,'logic::GhostModel']]],
+  ['setuser_6',['setUser',['../classlogic_1_1_score.html#a549bb6a002478f2444e1b2e98de14f78',1,'logic::Score']]],
+  ['setviews_7',['setViews',['../class_concrete_factory.html#a69dc709d543df39e1d6e49b241a750d9',1,'ConcreteFactory']]],
+  ['shoulddelete_8',['shouldDelete',['../class_entity_view.html#a3a163d4781bde3d7d38be65d5fe1920c',1,'EntityView']]],
+  ['soundmanager_9',['SoundManager',['../class_sound_manager.html#abcc1fbf3488be5788a42c9a4fe56df35',1,'SoundManager']]],
+  ['start_10',['start',['../class_sound_manager.html#a5514e839347c036dd7ecf5b9af869015',1,'SoundManager']]],
+  ['state_11',['State',['../class_state.html#a08febc2efb52c152040efda1fb93634b',1,'State']]],
+  ['statemanager_12',['StateManager',['../class_state_manager.html#ad25aed1c97e25ef5fd8dfdf26c11a677',1,'StateManager']]],
+  ['stop_13',['stop',['../class_sound_manager.html#a3820a512212edaaf294a1d67ea9c9c55',1,'SoundManager']]],
+  ['stopwatch_14',['Stopwatch',['../classlogic_1_1_stopwatch.html#aef5301b0593339e01c50a83022e7b801',1,'logic::Stopwatch']]],
+  ['swap_15',['swap',['../class_state_manager.html#ab0f7726aa3e964ebf5cbafa9b5d3efa2',1,'StateManager']]]
 ];

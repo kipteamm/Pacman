@@ -1,0 +1,11 @@
+<map id="Logic/Entities/CoinModel.h" name="Logic/Entities/CoinModel.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,183,32"/>
+<area shape="rect" id="Node000002" href="$_entity_model_8h.html" title=" " alt="" coords="43,80,145,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="95,30,97,65,91,64,93,35"/>
+<area shape="rect" id="Node000003" href="$_observer_8h.html" title=" " alt="" coords="45,155,143,181"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="95,105,97,140,91,138,93,110"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="21,229,90,256"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="89,180,71,217,67,214,85,183"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="113,229,152,256"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="102,180,122,216,116,215,99,184"/>
+</map>

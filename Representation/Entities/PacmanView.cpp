@@ -2,6 +2,7 @@
 #include "../AssetManager.h"
 #include "PacmanView.h"
 #include "../Window.h"
+#include "../Camera.h"
 
 
 PacmanView::PacmanView(const std::shared_ptr<logic::PacmanModel> &model) : EntityView(model, 0.08), pacman(model) {

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['context_0',['context',['../class_state.html#af91d20024869ed20bc5b45a3ef7770e4',1,'State']]]
+  ['base_5fcoin_5fpoints_0',['BASE_COIN_POINTS',['../namespacelogic.html#af62c6308f17aead2b08ef3bb0dd4d7e9',1,'logic']]]
 ];

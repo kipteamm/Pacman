@@ -91,6 +91,8 @@ $(function(){initNavTree('classlogic_1_1_world.html','','classlogic_1_1_world-me
   <div class="headertitle"><div class="title">logic::World Class Reference<span class="mlabels"><span class="mlabel final">final</span></span></div></div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_world_8h_source.html">World.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for logic::World:</div>
 <div class="dyncontent">
@@ -114,53 +116,393 @@ Collaboration diagram for logic::World:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a3f4729efd28e1200d8fdb4ca84899828" id="r_a3f4729efd28e1200d8fdb4ca84899828"><td class="memItemLeft" align="right" valign="top"><a id="a3f4729efd28e1200d8fdb4ca84899828" name="a3f4729efd28e1200d8fdb4ca84899828"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>World</b> (const std::shared_ptr&lt; <a class="el" href="classlogic_1_1_abstract_factory.html">AbstractFactory</a> &gt; &amp;factory, int lives)</td></tr>
-<tr class="memitem:a97341026662de485f54f67a599be8f9e" id="r_a97341026662de485f54f67a599be8f9e"><td class="memItemLeft" align="right" valign="top"><a id="a97341026662de485f54f67a599be8f9e" name="a97341026662de485f54f67a599be8f9e"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>normalizeX</b> (int value) const</td></tr>
-<tr class="memitem:a38fccf0b927ef43caa843b57eeb80bbd" id="r_a38fccf0b927ef43caa843b57eeb80bbd"><td class="memItemLeft" align="right" valign="top"><a id="a38fccf0b927ef43caa843b57eeb80bbd" name="a38fccf0b927ef43caa843b57eeb80bbd"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>normalizeY</b> (int value) const</td></tr>
-<tr class="memitem:afa83f53e860fc135382c207fdf2c24d2" id="r_afa83f53e860fc135382c207fdf2c24d2"><td class="memItemLeft" align="right" valign="top"><a id="afa83f53e860fc135382c207fdf2c24d2" name="afa83f53e860fc135382c207fdf2c24d2"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>getWidth</b> () const</td></tr>
-<tr class="memitem:ae69def0cc098db7b1be0fddd6b331a36" id="r_ae69def0cc098db7b1be0fddd6b331a36"><td class="memItemLeft" align="right" valign="top"><a id="ae69def0cc098db7b1be0fddd6b331a36" name="ae69def0cc098db7b1be0fddd6b331a36"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>getHeight</b> () const</td></tr>
-<tr class="memitem:a3a5f13d633b6168cd0561b11b07f09aa" id="r_a3a5f13d633b6168cd0561b11b07f09aa"><td class="memItemLeft" align="right" valign="top"><a id="a3a5f13d633b6168cd0561b11b07f09aa" name="a3a5f13d633b6168cd0561b11b07f09aa"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>getGhostExitX</b> () const</td></tr>
-<tr class="memitem:a6da6edeecfc720601d7f7103d222018a" id="r_a6da6edeecfc720601d7f7103d222018a"><td class="memItemLeft" align="right" valign="top"><a id="a6da6edeecfc720601d7f7103d222018a" name="a6da6edeecfc720601d7f7103d222018a"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>getGhostExitY</b> () const</td></tr>
-<tr class="memitem:a104e4cd9a2f292e13bc9f39d088f1919" id="r_a104e4cd9a2f292e13bc9f39d088f1919"><td class="memItemLeft" align="right" valign="top"><a id="a104e4cd9a2f292e13bc9f39d088f1919" name="a104e4cd9a2f292e13bc9f39d088f1919"></a>
-std::shared_ptr&lt; <a class="el" href="classlogic_1_1_pacman_model.html">PacmanModel</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getPacman</b> () const</td></tr>
-<tr class="memitem:a401f196c090a4385f8ee8548137c7c54" id="r_a401f196c090a4385f8ee8548137c7c54"><td class="memItemLeft" align="right" valign="top"><a id="a401f196c090a4385f8ee8548137c7c54" name="a401f196c090a4385f8ee8548137c7c54"></a>
-unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>getLives</b> () const</td></tr>
-<tr class="memitem:ae37a7d1d42001f4fe44868f483b8f46f" id="r_ae37a7d1d42001f4fe44868f483b8f46f"><td class="memItemLeft" align="right" valign="top"><a id="ae37a7d1d42001f4fe44868f483b8f46f" name="ae37a7d1d42001f4fe44868f483b8f46f"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>collidesWithWall</b> (float x, float y, bool passDoor) const</td></tr>
-<tr class="memitem:a6a08c827c3a0def12b7700211353735f" id="r_a6a08c827c3a0def12b7700211353735f"><td class="memItemLeft" align="right" valign="top"><a id="a6a08c827c3a0def12b7700211353735f" name="a6a08c827c3a0def12b7700211353735f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>loadLevel</b> (const std::string &amp;filename)</td></tr>
-<tr class="memitem:a011ac2f63bf98a0fbb86bfd7df96aae8" id="r_a011ac2f63bf98a0fbb86bfd7df96aae8"><td class="memItemLeft" align="right" valign="top"><a id="a011ac2f63bf98a0fbb86bfd7df96aae8" name="a011ac2f63bf98a0fbb86bfd7df96aae8"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>resetLevel</b> ()</td></tr>
-<tr class="memitem:a60f56fd6e5eecfa8954cc1af85de7249" id="r_a60f56fd6e5eecfa8954cc1af85de7249"><td class="memItemLeft" align="right" valign="top"><a id="a60f56fd6e5eecfa8954cc1af85de7249" name="a60f56fd6e5eecfa8954cc1af85de7249"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>resetFright</b> ()</td></tr>
-<tr class="memitem:a0a5d7d270efe30e84b4ff99113e64956" id="r_a0a5d7d270efe30e84b4ff99113e64956"><td class="memItemLeft" align="right" valign="top"><a id="a0a5d7d270efe30e84b4ff99113e64956" name="a0a5d7d270efe30e84b4ff99113e64956"></a>
-Events&#160;</td><td class="memItemRight" valign="bottom"><b>update</b> (double dt)</td></tr>
-<tr class="memitem:ae8071121667bd00da2bea9a389c5af8a" id="r_ae8071121667bd00da2bea9a389c5af8a"><td class="memItemLeft" align="right" valign="top"><a id="ae8071121667bd00da2bea9a389c5af8a" name="ae8071121667bd00da2bea9a389c5af8a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>handleMove</b> (const Moves &amp;move) const</td></tr>
+<tr class="memitem:a3f4729efd28e1200d8fdb4ca84899828" id="r_a3f4729efd28e1200d8fdb4ca84899828"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3f4729efd28e1200d8fdb4ca84899828">World</a> (const std::shared_ptr&lt; <a class="el" href="classlogic_1_1_abstract_factory.html">AbstractFactory</a> &gt; &amp;factory, int lives)</td></tr>
+<tr class="memitem:a97341026662de485f54f67a599be8f9e" id="r_a97341026662de485f54f67a599be8f9e"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a97341026662de485f54f67a599be8f9e">normalizeX</a> (int value) const</td></tr>
+<tr class="memitem:a38fccf0b927ef43caa843b57eeb80bbd" id="r_a38fccf0b927ef43caa843b57eeb80bbd"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a38fccf0b927ef43caa843b57eeb80bbd">normalizeY</a> (int value) const</td></tr>
+<tr class="memitem:afa83f53e860fc135382c207fdf2c24d2" id="r_afa83f53e860fc135382c207fdf2c24d2"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afa83f53e860fc135382c207fdf2c24d2">getWidth</a> () const</td></tr>
+<tr class="memitem:ae69def0cc098db7b1be0fddd6b331a36" id="r_ae69def0cc098db7b1be0fddd6b331a36"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae69def0cc098db7b1be0fddd6b331a36">getHeight</a> () const</td></tr>
+<tr class="memitem:a3a5f13d633b6168cd0561b11b07f09aa" id="r_a3a5f13d633b6168cd0561b11b07f09aa"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3a5f13d633b6168cd0561b11b07f09aa">getGhostExitX</a> () const</td></tr>
+<tr class="memitem:a6da6edeecfc720601d7f7103d222018a" id="r_a6da6edeecfc720601d7f7103d222018a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6da6edeecfc720601d7f7103d222018a">getGhostExitY</a> () const</td></tr>
+<tr class="memitem:a104e4cd9a2f292e13bc9f39d088f1919" id="r_a104e4cd9a2f292e13bc9f39d088f1919"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classlogic_1_1_pacman_model.html">PacmanModel</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a104e4cd9a2f292e13bc9f39d088f1919">getPacman</a> () const</td></tr>
+<tr class="memitem:a401f196c090a4385f8ee8548137c7c54" id="r_a401f196c090a4385f8ee8548137c7c54"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a401f196c090a4385f8ee8548137c7c54">getLives</a> () const</td></tr>
+<tr class="memitem:ae37a7d1d42001f4fe44868f483b8f46f" id="r_ae37a7d1d42001f4fe44868f483b8f46f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae37a7d1d42001f4fe44868f483b8f46f">collidesWithWall</a> (float x, float y, bool passDoor) const</td></tr>
+<tr class="memitem:a6a08c827c3a0def12b7700211353735f" id="r_a6a08c827c3a0def12b7700211353735f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6a08c827c3a0def12b7700211353735f">loadLevel</a> (const std::string &amp;filename)</td></tr>
+<tr class="memitem:a011ac2f63bf98a0fbb86bfd7df96aae8" id="r_a011ac2f63bf98a0fbb86bfd7df96aae8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a011ac2f63bf98a0fbb86bfd7df96aae8">resetLevel</a> ()</td></tr>
+<tr class="memitem:a60f56fd6e5eecfa8954cc1af85de7249" id="r_a60f56fd6e5eecfa8954cc1af85de7249"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a60f56fd6e5eecfa8954cc1af85de7249">resetFright</a> ()</td></tr>
+<tr class="memitem:a0a5d7d270efe30e84b4ff99113e64956" id="r_a0a5d7d270efe30e84b4ff99113e64956"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacelogic.html#a5054eadf2d20b609706894ae1bc5f250">Events</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0a5d7d270efe30e84b4ff99113e64956">update</a> (double dt)</td></tr>
+<tr class="memitem:ae8071121667bd00da2bea9a389c5af8a" id="r_ae8071121667bd00da2bea9a389c5af8a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae8071121667bd00da2bea9a389c5af8a">handleMove</a> (const <a class="el" href="namespacelogic.html#a2ff69ac881d2a3e3d7a4142b7776afb3">Moves</a> &amp;move) const</td></tr>
 <tr class="inherit_header pub_methods_classlogic_1_1_subject"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classlogic_1_1_subject')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="classlogic_1_1_subject.html">logic::Subject</a></td></tr>
-<tr class="memitem:a62a415ccc278f93b40f386a10a669d50 inherit pub_methods_classlogic_1_1_subject" id="r_a62a415ccc278f93b40f386a10a669d50"><td class="memItemLeft" align="right" valign="top">
-void&#160;</td><td class="memItemRight" valign="bottom"><b>attach</b> (const std::shared_ptr&lt; <a class="el" href="classlogic_1_1_observer.html">Observer</a> &gt; &amp;observer)</td></tr>
-<tr class="memitem:a867eae02dd2392c01ee949a5fdb8099d inherit pub_methods_classlogic_1_1_subject" id="r_a867eae02dd2392c01ee949a5fdb8099d"><td class="memItemLeft" align="right" valign="top">
-void&#160;</td><td class="memItemRight" valign="bottom"><b>detach</b> (const std::shared_ptr&lt; <a class="el" href="classlogic_1_1_observer.html">Observer</a> &gt; &amp;observer)</td></tr>
-<tr class="memitem:a9b8fd61bd7407486a7be6b0756f79a11 inherit pub_methods_classlogic_1_1_subject" id="r_a9b8fd61bd7407486a7be6b0756f79a11"><td class="memItemLeft" align="right" valign="top">
-void&#160;</td><td class="memItemRight" valign="bottom"><b>notify</b> (Events event)</td></tr>
+<tr class="memitem:ae4238075ca667706bba792bfb96ee6c0 inherit pub_methods_classlogic_1_1_subject" id="r_ae4238075ca667706bba792bfb96ee6c0"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlogic_1_1_subject.html#ae4238075ca667706bba792bfb96ee6c0">~Subject</a> ()=default</td></tr>
+<tr class="memitem:a62a415ccc278f93b40f386a10a669d50 inherit pub_methods_classlogic_1_1_subject" id="r_a62a415ccc278f93b40f386a10a669d50"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlogic_1_1_subject.html#a62a415ccc278f93b40f386a10a669d50">attach</a> (const std::shared_ptr&lt; <a class="el" href="classlogic_1_1_observer.html">Observer</a> &gt; &amp;observer)</td></tr>
+<tr class="memitem:a867eae02dd2392c01ee949a5fdb8099d inherit pub_methods_classlogic_1_1_subject" id="r_a867eae02dd2392c01ee949a5fdb8099d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlogic_1_1_subject.html#a867eae02dd2392c01ee949a5fdb8099d">detach</a> (const std::shared_ptr&lt; <a class="el" href="classlogic_1_1_observer.html">Observer</a> &gt; &amp;observer)</td></tr>
+<tr class="memitem:a9b8fd61bd7407486a7be6b0756f79a11 inherit pub_methods_classlogic_1_1_subject" id="r_a9b8fd61bd7407486a7be6b0756f79a11"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlogic_1_1_subject.html#a9b8fd61bd7407486a7be6b0756f79a11">notify</a> (<a class="el" href="namespacelogic.html#a5054eadf2d20b609706894ae1bc5f250">Events</a> event)</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_attribs_classlogic_1_1_subject"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_classlogic_1_1_subject')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Attributes inherited from <a class="el" href="classlogic_1_1_subject.html">logic::Subject</a></td></tr>
-<tr class="memitem:a2053bceb8a22b4ee7be76ef1d338b505 inherit pro_attribs_classlogic_1_1_subject" id="r_a2053bceb8a22b4ee7be76ef1d338b505"><td class="memItemLeft" align="right" valign="top">
-std::list&lt; std::shared_ptr&lt; <a class="el" href="classlogic_1_1_observer.html">Observer</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>observers</b></td></tr>
+<tr class="memitem:a2053bceb8a22b4ee7be76ef1d338b505 inherit pro_attribs_classlogic_1_1_subject" id="r_a2053bceb8a22b4ee7be76ef1d338b505"><td class="memItemLeft" align="right" valign="top">std::list&lt; std::shared_ptr&lt; <a class="el" href="classlogic_1_1_observer.html">Observer</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlogic_1_1_subject.html#a2053bceb8a22b4ee7be76ef1d338b505">observers</a></td></tr>
 </table>
+<a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a3f4729efd28e1200d8fdb4ca84899828" name="a3f4729efd28e1200d8fdb4ca84899828"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f4729efd28e1200d8fdb4ca84899828">&#9670;&#160;</a></span>World()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">World::World </td>
+          <td>(</td>
+          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="classlogic_1_1_abstract_factory.html">AbstractFactory</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>factory</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>lives</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="ae37a7d1d42001f4fe44868f483b8f46f" name="ae37a7d1d42001f4fe44868f483b8f46f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae37a7d1d42001f4fe44868f483b8f46f">&#9670;&#160;</a></span>collidesWithWall()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool World::collidesWithWall </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>y</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>passDoor</em></span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3a5f13d633b6168cd0561b11b07f09aa" name="a3a5f13d633b6168cd0561b11b07f09aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a5f13d633b6168cd0561b11b07f09aa">&#9670;&#160;</a></span>getGhostExitX()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int World::getGhostExitX </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6da6edeecfc720601d7f7103d222018a" name="a6da6edeecfc720601d7f7103d222018a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6da6edeecfc720601d7f7103d222018a">&#9670;&#160;</a></span>getGhostExitY()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int World::getGhostExitY </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae69def0cc098db7b1be0fddd6b331a36" name="ae69def0cc098db7b1be0fddd6b331a36"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae69def0cc098db7b1be0fddd6b331a36">&#9670;&#160;</a></span>getHeight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float World::getHeight </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a401f196c090a4385f8ee8548137c7c54" name="a401f196c090a4385f8ee8548137c7c54"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a401f196c090a4385f8ee8548137c7c54">&#9670;&#160;</a></span>getLives()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int World::getLives </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a104e4cd9a2f292e13bc9f39d088f1919" name="a104e4cd9a2f292e13bc9f39d088f1919"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a104e4cd9a2f292e13bc9f39d088f1919">&#9670;&#160;</a></span>getPacman()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt; <a class="el" href="classlogic_1_1_pacman_model.html">PacmanModel</a> &gt; World::getPacman </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afa83f53e860fc135382c207fdf2c24d2" name="afa83f53e860fc135382c207fdf2c24d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa83f53e860fc135382c207fdf2c24d2">&#9670;&#160;</a></span>getWidth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float World::getWidth </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae8071121667bd00da2bea9a389c5af8a" name="ae8071121667bd00da2bea9a389c5af8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8071121667bd00da2bea9a389c5af8a">&#9670;&#160;</a></span>handleMove()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void World::handleMove </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespacelogic.html#a2ff69ac881d2a3e3d7a4142b7776afb3">Moves</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>move</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6a08c827c3a0def12b7700211353735f" name="a6a08c827c3a0def12b7700211353735f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a08c827c3a0def12b7700211353735f">&#9670;&#160;</a></span>loadLevel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void World::loadLevel </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>filename</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a97341026662de485f54f67a599be8f9e" name="a97341026662de485f54f67a599be8f9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97341026662de485f54f67a599be8f9e">&#9670;&#160;</a></span>normalizeX()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float World::normalizeX </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a38fccf0b927ef43caa843b57eeb80bbd" name="a38fccf0b927ef43caa843b57eeb80bbd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38fccf0b927ef43caa843b57eeb80bbd">&#9670;&#160;</a></span>normalizeY()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float World::normalizeY </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a60f56fd6e5eecfa8954cc1af85de7249" name="a60f56fd6e5eecfa8954cc1af85de7249"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60f56fd6e5eecfa8954cc1af85de7249">&#9670;&#160;</a></span>resetFright()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void World::resetFright </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a011ac2f63bf98a0fbb86bfd7df96aae8" name="a011ac2f63bf98a0fbb86bfd7df96aae8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a011ac2f63bf98a0fbb86bfd7df96aae8">&#9670;&#160;</a></span>resetLevel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void World::resetLevel </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0a5d7d270efe30e84b4ff99113e64956" name="a0a5d7d270efe30e84b4ff99113e64956"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a5d7d270efe30e84b4ff99113e64956">&#9670;&#160;</a></span>update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacelogic.html#a5054eadf2d20b609706894ae1bc5f250">Events</a> World::update </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>dt</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>Logic/<a class="el" href="_world_8h_source.html">World.h</a></li>
-<li>Logic/<b>World.cpp</b></li>
+<li>Logic/<a class="el" href="_world_8cpp.html">World.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

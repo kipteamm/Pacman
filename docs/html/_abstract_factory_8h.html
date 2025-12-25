@@ -91,23 +91,51 @@ $(function(){initNavTree('_abstract_factory_8h.html','',''); });
   <div class="headertitle"><div class="title">AbstractFactory.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="_entity_model_8h_source.html">EntityModel.h</a>&quot;</code><br />
-<code>#include &lt;memory&gt;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="_chasing_ghost_8h_source.html">Ghosts/ChasingGhost.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_random_ghost_8h_source.html">Ghosts/RandomGhost.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_ambush_ghost_8h_source.html">Ghosts/AmbushGhost.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_pacman_model_8h_source.html">PacmanModel.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_fruit_model_8h_source.html">FruitModel.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_wall_model_8h_source.html">WallModel.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_coin_model_8h_source.html">CoinModel.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for AbstractFactory.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="_abstract_factory_8h__incl.png" border="0" usemap="#a_logic_2_entities_2_abstract_factory_8h" loading="lazy" alt=""/></div>
 <map name="a_logic_2_entities_2_abstract_factory_8h" id="a_logic_2_entities_2_abstract_factory_8h">
-<area shape="rect" title=" " alt="" coords="5,5,213,32"/>
-<area shape="rect" href="_entity_model_8h.html" title=" " alt="" coords="14,80,116,107"/>
-<area shape="poly" title=" " alt="" coords="100,35,83,68,78,65,102,30"/>
-<area shape="rect" title=" " alt="" coords="114,229,182,256"/>
-<area shape="poly" title=" " alt="" coords="114,30,130,79,142,152,148,215,143,213,137,153,125,81,113,35"/>
-<area shape="rect" href="_observer_8h.html" title=" " alt="" coords="18,155,115,181"/>
-<area shape="poly" title=" " alt="" coords="66,105,68,139,63,139,64,110"/>
-<area shape="poly" title=" " alt="" coords="81,179,125,218,120,220,80,184"/>
-<area shape="rect" title=" " alt="" coords="47,229,86,256"/>
-<area shape="poly" title=" " alt="" coords="68,180,69,214,64,213,65,184"/>
+<area shape="rect" title=" " alt="" coords="472,5,679,32"/>
+<area shape="rect" href="_chasing_ghost_8h.html" title=" " alt="" coords="5,80,167,107"/>
+<area shape="poly" title=" " alt="" coords="488,35,183,80,181,75,491,30"/>
+<area shape="rect" href="_pacman_model_8h.html" title=" " alt="" coords="428,229,555,256"/>
+<area shape="poly" title=" " alt="" coords="574,30,553,108,506,217,502,214,547,106,571,35"/>
+<area shape="rect" href="_random_ghost_8h.html" title=" " alt="" coords="190,80,352,107"/>
+<area shape="poly" title=" " alt="" coords="520,34,340,78,338,74,524,31"/>
+<area shape="rect" href="_ambush_ghost_8h.html" title=" " alt="" coords="376,80,537,107"/>
+<area shape="poly" title=" " alt="" coords="553,34,492,74,489,69,557,31"/>
+<area shape="rect" href="_fruit_model_8h.html" title=" " alt="" coords="579,229,673,256"/>
+<area shape="poly" title=" " alt="" coords="581,30,597,79,624,214,619,213,591,81,579,35"/>
+<area shape="rect" href="_wall_model_8h.html" title=" " alt="" coords="664,155,756,181"/>
+<area shape="poly" title=" " alt="" coords="592,30,647,78,696,142,691,142,643,82,591,35"/>
+<area shape="rect" href="_coin_model_8h.html" title=" " alt="" coords="780,155,874,181"/>
+<area shape="poly" title=" " alt="" coords="597,30,796,146,790,147,596,35"/>
+<area shape="rect" href="_ghost_model_8h.html" title=" " alt="" coords="272,155,374,181"/>
+<area shape="poly" title=" " alt="" coords="127,105,269,148,265,151,128,110"/>
+<area shape="poly" title=" " alt="" coords="353,179,451,222,445,223,353,185"/>
+<area shape="rect" title=" " alt="" coords="295,229,352,256"/>
+<area shape="poly" title=" " alt="" coords="325,179,326,215,321,213,322,184"/>
+<area shape="rect" href="_entity_model_8h.html" title=" " alt="" coords="617,304,718,331"/>
+<area shape="poly" title=" " alt="" coords="522,254,625,297,620,298,522,259"/>
+<area shape="rect" href="_observer_8h.html" title=" " alt="" coords="619,379,716,405"/>
+<area shape="poly" title=" " alt="" coords="669,329,669,365,665,361,666,333"/>
+<area shape="rect" title=" " alt="" coords="594,453,663,480"/>
+<area shape="poly" title=" " alt="" coords="663,404,644,442,641,437,658,407"/>
+<area shape="rect" title=" " alt="" coords="687,453,725,480"/>
+<area shape="poly" title=" " alt="" coords="675,404,695,441,690,438,673,408"/>
+<area shape="poly" title=" " alt="" coords="281,105,308,142,303,142,280,110"/>
+<area shape="poly" title=" " alt="" coords="431,109,361,149,358,145,436,106"/>
+<area shape="poly" title=" " alt="" coords="634,254,655,292,650,290,632,259"/>
+<area shape="poly" title=" " alt="" coords="708,180,677,291,673,287,704,184"/>
+<area shape="poly" title=" " alt="" coords="816,181,694,295,691,291,811,183"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -115,22 +143,61 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="_abstract_factory_8h__dep__incl.png" border="0" usemap="#a_logic_2_entities_2_abstract_factory_8hdep" loading="lazy" alt=""/></div>
 <map name="a_logic_2_entities_2_abstract_factory_8hdep" id="a_logic_2_entities_2_abstract_factory_8hdep">
-<area shape="rect" title=" " alt="" coords="115,5,322,32"/>
-<area shape="rect" href="_world_8h.html" title=" " alt="" coords="92,88,193,115"/>
-<area shape="poly" title=" " alt="" coords="195,45,156,90,152,86,198,41"/>
-<area shape="rect" href="_concrete_factory_8h.html" title=" " alt="" coords="217,80,374,123"/>
-<area shape="poly" title=" " alt="" coords="242,41,279,80,274,80,241,46"/>
-<area shape="rect" href="_world_8cpp.html" title=" " alt="" coords="5,179,120,205"/>
-<area shape="poly" title=" " alt="" coords="120,129,76,180,72,176,122,124"/>
-<area shape="rect" href="_level_state_8h.html" title=" " alt="" coords="144,171,296,213"/>
-<area shape="poly" title=" " alt="" coords="164,124,205,170,199,171,163,129"/>
-<area shape="rect" href="_level_state_8cpp.html" title=" " alt="" coords="56,261,208,304"/>
-<area shape="poly" title=" " alt="" coords="191,223,154,263,151,259,186,225"/>
-<area shape="rect" href="_menu_state_8cpp.html" title=" " alt="" coords="232,261,384,304"/>
-<area shape="poly" title=" " alt="" coords="252,222,290,261,285,261,250,227"/>
-<area shape="poly" title=" " alt="" coords="270,133,239,172,236,168,266,136"/>
-<area shape="rect" href="_concrete_factory_8cpp.html" title=" " alt="" coords="320,171,477,213"/>
-<area shape="poly" title=" " alt="" coords="332,130,377,170,372,170,330,135"/>
+<area shape="rect" title=" " alt="" coords="711,5,918,32"/>
+<area shape="rect" href="_world_8h.html" title=" " alt="" coords="420,88,521,115"/>
+<area shape="poly" title=" " alt="" coords="743,37,522,91,520,86,748,35"/>
+<area shape="rect" href="_concrete_factory_8h.html" title=" " alt="" coords="1005,80,1162,123"/>
+<area shape="poly" title=" " alt="" coords="871,34,1017,79,1012,80,871,40"/>
+<area shape="rect" href="_ghost_model_8cpp.html" title=" " alt="" coords="5,171,152,213"/>
+<area shape="poly" title=" " alt="" coords="404,119,164,173,153,176,151,171,163,168,407,114"/>
+<area shape="rect" href="_pacman_model_8cpp.html" title=" " alt="" coords="176,179,389,205"/>
+<area shape="poly" title=" " alt="" coords="428,123,311,180,308,176,432,120"/>
+<area shape="rect" href="_world_8cpp.html" title=" " alt="" coords="413,179,528,205"/>
+<area shape="poly" title=" " alt="" coords="472,128,473,179,468,177,469,132"/>
+<area shape="rect" href="_world_view_8h.html" title=" " alt="" coords="552,171,709,213"/>
+<area shape="poly" title=" " alt="" coords="507,120,596,170,591,170,506,125"/>
+<area shape="rect" href="_world_view_8cpp.html" title=" " alt="" coords="373,261,530,304"/>
+<area shape="poly" title=" " alt="" coords="577,220,494,263,492,258,572,222"/>
+<area shape="rect" href="_level_state_8h.html" title=" " alt="" coords="555,261,706,304"/>
+<area shape="poly" title=" " alt="" coords="632,227,633,263,628,259,629,231"/>
+<area shape="rect" href="_level_state_8cpp.html" title=" " alt="" coords="858,352,1009,395"/>
+<area shape="poly" title=" " alt="" coords="716,306,865,351,859,351,716,312"/>
+<area shape="rect" href="_menu_state_8cpp.html" title=" " alt="" coords="1252,352,1404,395"/>
+<area shape="poly" title=" " alt="" coords="722,302,868,319,983,325,1096,332,1240,349,1254,354,1249,354,1239,355,1096,337,982,331,868,324,722,307"/>
+<area shape="rect" href="_victory_state_8cpp.html" title=" " alt="" coords="598,352,749,395"/>
+<area shape="poly" title=" " alt="" coords="648,316,666,353,661,350,646,320"/>
+<area shape="poly" title=" " alt="" coords="1021,128,683,263,682,258,1015,129"/>
+<area shape="rect" href="_concrete_factory_8cpp.html" title=" " alt="" coords="1234,171,1392,213"/>
+<area shape="poly" title=" " alt="" coords="1152,126,1262,170,1257,170,1152,131"/>
+<area shape="rect" href="_menu_state_8h.html" title=" " alt="" coords="1435,261,1586,304"/>
+<area shape="poly" title=" " alt="" coords="1123,130,1174,169,1198,192,1224,211,1437,264,1432,264,1221,216,1194,196,1170,173,1122,135"/>
+<area shape="rect" href="_state_manager_8h.html" title=" " alt="" coords="1008,171,1160,213"/>
+<area shape="poly" title=" " alt="" coords="1086,136,1086,172,1082,169,1082,140"/>
+<area shape="poly" title=" " alt="" coords="1457,311,1371,354,1370,349,1451,312"/>
+<area shape="rect" href="_game_8cpp.html" title=" " alt="" coords="1604,360,1777,387"/>
+<area shape="poly" title=" " alt="" coords="1567,309,1667,360,1662,359,1566,314"/>
+<area shape="rect" href="_game_over_state_8cpp.html" title=" " alt="" coords="1428,352,1580,395"/>
+<area shape="poly" title=" " alt="" coords="1510,318,1507,354,1503,350,1506,321"/>
+<area shape="poly" title=" " alt="" coords="996,209,719,264,707,266,706,261,718,259,990,210"/>
+<area shape="poly" title=" " alt="" coords="1175,210,1179,211,1423,259,1437,264,1432,264,1422,264,1178,216,1174,215"/>
+<area shape="rect" href="_game_8h.html" title=" " alt="" coords="1611,269,1770,296"/>
+<area shape="poly" title=" " alt="" coords="1175,204,1223,211,1411,232,1494,242,1599,259,1639,269,1634,269,1598,264,1493,248,1411,238,1222,216,1175,209"/>
+<area shape="rect" href="_game_over_state_8h.html" title=" " alt="" coords="1259,261,1410,304"/>
+<area shape="poly" title=" " alt="" coords="1157,216,1278,261,1273,261,1156,222"/>
+<area shape="rect" href="_paused_state_8h.html" title=" " alt="" coords="1083,261,1234,304"/>
+<area shape="poly" title=" " alt="" coords="1112,223,1144,262,1139,260,1110,228"/>
+<area shape="rect" href="_state_manager_8cpp.html" title=" " alt="" coords="907,261,1058,304"/>
+<area shape="poly" title=" " alt="" coords="1051,223,1007,263,1005,258,1047,225"/>
+<area shape="rect" href="_victory_state_8h.html" title=" " alt="" coords="731,261,882,304"/>
+<area shape="poly" title=" " alt="" coords="1007,218,872,263,871,258,1002,219"/>
+<area shape="poly" title=" " alt="" coords="1692,310,1692,361,1689,358,1689,314"/>
+<area shape="poly" title=" " alt="" coords="1246,304,1010,358,1009,353,1241,305"/>
+<area shape="poly" title=" " alt="" coords="1388,309,1467,352,1462,351,1387,314"/>
+<area shape="poly" title=" " alt="" coords="1094,310,987,354,985,349,1089,311"/>
+<area shape="rect" href="_paused_state_8cpp.html" title=" " alt="" coords="1076,352,1228,395"/>
+<area shape="poly" title=" " alt="" coords="1158,318,1155,354,1151,350,1154,321"/>
+<area shape="poly" title=" " alt="" coords="849,311,906,352,901,351,848,316"/>
+<area shape="poly" title=" " alt="" coords="765,312,705,354,703,349,760,314"/>
 </map>
 </div>
 </div>

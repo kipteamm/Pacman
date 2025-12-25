@@ -91,7 +91,7 @@ $(function(){initNavTree('_camera_8h_source.html','',''); });
   <div class="headertitle"><div class="title">Camera.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef CAMERA_H</span></div>
+<a href="_camera_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef CAMERA_H</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define CAMERA_H</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
@@ -99,7 +99,7 @@ $(function(){initNavTree('_camera_8h_source.html','',''); });
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="class_camera.html">    5</a></span><span class="keyword">class </span><a class="code hl_function" href="class_camera.html#acd4f99b146dbea1819151191a3c04547">Camera</a> {</div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">public</span>:</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="class_camera.html#acd4f99b146dbea1819151191a3c04547">   10</a></span>    <a class="code hl_function" href="class_camera.html#acd4f99b146dbea1819151191a3c04547">Camera</a>(<a class="code hl_function" href="class_camera.html#acd4f99b146dbea1819151191a3c04547">Camera</a> &amp;other) = <span class="keyword">delete</span>;</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keywordtype">void</span> operator=(<span class="keyword">const</span> <a class="code hl_function" href="class_camera.html#acd4f99b146dbea1819151191a3c04547">Camera</a> &amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="class_camera.html#a7eeb2e42536c113977174165dd29742d">   11</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_camera.html#a7eeb2e42536c113977174165dd29742d">operator=</a>(<span class="keyword">const</span> <a class="code hl_function" href="class_camera.html#acd4f99b146dbea1819151191a3c04547">Camera</a> &amp;) = <span class="keyword">delete</span>;</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span></div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    [[nodiscard]] <span class="keyword">static</span> <a class="code hl_function" href="class_camera.html#acd4f99b146dbea1819151191a3c04547">Camera</a>&amp; <a class="code hl_function" href="class_camera.html#aa84baebe5d771ddfd82a5b55bd3fde39">getInstance</a>();</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
@@ -143,6 +143,7 @@ $(function(){initNavTree('_camera_8h_source.html','',''); });
 <div class="ttc" id="aclass_camera_html_a0e7b50980e8ebb0a28c05fa67aa5ab62"><div class="ttname"><a href="class_camera.html#a0e7b50980e8ebb0a28c05fa67aa5ab62">Camera::setScaling</a></div><div class="ttdeci">void setScaling(float mapWidth, float mapHeight)</div><div class="ttdoc">Update the Camera scaling factors based on the current world.</div><div class="ttdef"><b>Definition</b> Camera.cpp:28</div></div>
 <div class="ttc" id="aclass_camera_html_a346c4b6b68e66e588a2bb6cf368a0829"><div class="ttname"><a href="class_camera.html#a346c4b6b68e66e588a2bb6cf368a0829">Camera::xToPixel</a></div><div class="ttdeci">float xToPixel(float normalizedX) const</div><div class="ttdef"><b>Definition</b> Camera.cpp:56</div></div>
 <div class="ttc" id="aclass_camera_html_a3ef86c610c0a7ea787816283afad38fe"><div class="ttname"><a href="class_camera.html#a3ef86c610c0a7ea787816283afad38fe">Camera::getTileWidth</a></div><div class="ttdeci">float getTileWidth() const</div><div class="ttdoc">Returns the width of a tile according to the current scaling factors.</div><div class="ttdef"><b>Definition</b> Camera.cpp:64</div></div>
+<div class="ttc" id="aclass_camera_html_a7eeb2e42536c113977174165dd29742d"><div class="ttname"><a href="class_camera.html#a7eeb2e42536c113977174165dd29742d">Camera::operator=</a></div><div class="ttdeci">void operator=(const Camera &amp;)=delete</div></div>
 <div class="ttc" id="aclass_camera_html_aa84baebe5d771ddfd82a5b55bd3fde39"><div class="ttname"><a href="class_camera.html#aa84baebe5d771ddfd82a5b55bd3fde39">Camera::getInstance</a></div><div class="ttdeci">static Camera &amp; getInstance()</div><div class="ttdoc">Returns an instance of the Camera class.</div><div class="ttdef"><b>Definition</b> Camera.cpp:20</div></div>
 <div class="ttc" id="aclass_camera_html_ac9e85ba11cf7753f44d6eba75f1856e4"><div class="ttname"><a href="class_camera.html#ac9e85ba11cf7753f44d6eba75f1856e4">Camera::resize</a></div><div class="ttdeci">void resize()</div><div class="ttdoc">Update the Camera scaling factors based on the current window size.</div><div class="ttdef"><b>Definition</b> Camera.cpp:46</div></div>
 <div class="ttc" id="aclass_camera_html_acd4f99b146dbea1819151191a3c04547"><div class="ttname"><a href="class_camera.html#acd4f99b146dbea1819151191a3c04547">Camera::Camera</a></div><div class="ttdeci">Camera(Camera &amp;other)=delete</div></div>
@@ -154,7 +155,7 @@ $(function(){initNavTree('_camera_8h_source.html','',''); });
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>Representation</b></li><li class="navelem"><b>Camera.h</b></li>
+    <li class="navelem"><a href="dir_5b53d4d8c62c5abdb2754b788854db81.html">Representation</a></li><li class="navelem"><a href="_camera_8h.html">Camera.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
   </ul>
 </div>

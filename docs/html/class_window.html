@@ -91,27 +91,25 @@ $(function(){initNavTree('class_window.html','','class_window-members'); });
   <div class="headertitle"><div class="title">Window Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_window_8h_source.html">Window.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a3b760cdf58517c8c4a91237ccc582b57" id="r_a3b760cdf58517c8c4a91237ccc582b57"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3b760cdf58517c8c4a91237ccc582b57">Window</a> (<a class="el" href="class_window.html">Window</a> &amp;other)=delete</td></tr>
-<tr class="memitem:a95028c2deac2197b676c422c4bc2ee3c" id="r_a95028c2deac2197b676c422c4bc2ee3c"><td class="memItemLeft" align="right" valign="top"><a id="a95028c2deac2197b676c422c4bc2ee3c" name="a95028c2deac2197b676c422c4bc2ee3c"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="class_window.html">Window</a> &amp;)=delete</td></tr>
+<tr class="memitem:a95028c2deac2197b676c422c4bc2ee3c" id="r_a95028c2deac2197b676c422c4bc2ee3c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a95028c2deac2197b676c422c4bc2ee3c">operator=</a> (const <a class="el" href="class_window.html">Window</a> &amp;)=delete</td></tr>
 <tr class="memitem:a761d614931fb5a5daa70e4f580c3e78e" id="r_a761d614931fb5a5daa70e4f580c3e78e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a761d614931fb5a5daa70e4f580c3e78e">isOpen</a> () const</td></tr>
 <tr class="memdesc:a761d614931fb5a5daa70e4f580c3e78e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tell whether the window is open.  <br /></td></tr>
 <tr class="memitem:a7a0dc05fe03c166f3e2350e3316c6097" id="r_a7a0dc05fe03c166f3e2350e3316c6097"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7a0dc05fe03c166f3e2350e3316c6097">pollEvent</a> (sf::Event &amp;event)</td></tr>
 <tr class="memdesc:a7a0dc05fe03c166f3e2350e3316c6097"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pop the event on top of the event queue, if any, and return it.  <br /></td></tr>
 <tr class="memitem:adfb2d5826942693e289d13f314a341f7" id="r_adfb2d5826942693e289d13f314a341f7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adfb2d5826942693e289d13f314a341f7">draw</a> (const sf::Drawable &amp;drawable)</td></tr>
 <tr class="memdesc:adfb2d5826942693e289d13f314a341f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw a drawable object to the window.  <br /></td></tr>
-<tr class="memitem:a38bc43bdd1a97e5de7f346ba4c3957ef" id="r_a38bc43bdd1a97e5de7f346ba4c3957ef"><td class="memItemLeft" align="right" valign="top"><a id="a38bc43bdd1a97e5de7f346ba4c3957ef" name="a38bc43bdd1a97e5de7f346ba4c3957ef"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>clear</b> ()</td></tr>
-<tr class="memdesc:a38bc43bdd1a97e5de7f346ba4c3957ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear the window. <br /></td></tr>
-<tr class="memitem:afadfafa5a0b9472554759004aafb327e" id="r_afadfafa5a0b9472554759004aafb327e"><td class="memItemLeft" align="right" valign="top"><a id="afadfafa5a0b9472554759004aafb327e" name="afadfafa5a0b9472554759004aafb327e"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>display</b> ()</td></tr>
-<tr class="memdesc:afadfafa5a0b9472554759004aafb327e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Display on screen what has been drawn to the window since the last clear. <br /></td></tr>
-<tr class="memitem:a35055c04498121d39741bfcd5082705b" id="r_a35055c04498121d39741bfcd5082705b"><td class="memItemLeft" align="right" valign="top"><a id="a35055c04498121d39741bfcd5082705b" name="a35055c04498121d39741bfcd5082705b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>close</b> ()</td></tr>
-<tr class="memdesc:a35055c04498121d39741bfcd5082705b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Close the window and destroy all the attached resources. <br /></td></tr>
+<tr class="memitem:a38bc43bdd1a97e5de7f346ba4c3957ef" id="r_a38bc43bdd1a97e5de7f346ba4c3957ef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a38bc43bdd1a97e5de7f346ba4c3957ef">clear</a> ()</td></tr>
+<tr class="memdesc:a38bc43bdd1a97e5de7f346ba4c3957ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear the window.  <br /></td></tr>
+<tr class="memitem:afadfafa5a0b9472554759004aafb327e" id="r_afadfafa5a0b9472554759004aafb327e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afadfafa5a0b9472554759004aafb327e">display</a> ()</td></tr>
+<tr class="memdesc:afadfafa5a0b9472554759004aafb327e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Display on screen what has been drawn to the window since the last clear.  <br /></td></tr>
+<tr class="memitem:a35055c04498121d39741bfcd5082705b" id="r_a35055c04498121d39741bfcd5082705b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a35055c04498121d39741bfcd5082705b">close</a> ()</td></tr>
+<tr class="memdesc:a35055c04498121d39741bfcd5082705b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Close the window and destroy all the attached resources.  <br /></td></tr>
 <tr class="memitem:ad2d74b36b23465aaf39c47e6bc230da1" id="r_ad2d74b36b23465aaf39c47e6bc230da1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad2d74b36b23465aaf39c47e6bc230da1">setFramerateLimit</a> (unsigned int frameRate)</td></tr>
 <tr class="memdesc:ad2d74b36b23465aaf39c47e6bc230da1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Limit the framerate to a maximum fixed frequency.  <br /></td></tr>
 <tr class="memitem:aba43b0511b05fc2a90f86f9737d8f434" id="r_aba43b0511b05fc2a90f86f9737d8f434"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aba43b0511b05fc2a90f86f9737d8f434">getWidth</a> () const</td></tr>
@@ -152,6 +150,63 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a38bc43bdd1a97e5de7f346ba4c3957ef" name="a38bc43bdd1a97e5de7f346ba4c3957ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38bc43bdd1a97e5de7f346ba4c3957ef">&#9670;&#160;</a></span>clear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Window::clear </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Clear the window. </p>
+
+</div>
+</div>
+<a id="a35055c04498121d39741bfcd5082705b" name="a35055c04498121d39741bfcd5082705b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35055c04498121d39741bfcd5082705b">&#9670;&#160;</a></span>close()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Window::close </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Close the window and destroy all the attached resources. </p>
+
+</div>
+</div>
+<a id="afadfafa5a0b9472554759004aafb327e" name="afadfafa5a0b9472554759004aafb327e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afadfafa5a0b9472554759004aafb327e">&#9670;&#160;</a></span>display()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Window::display </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Display on screen what has been drawn to the window since the last clear. </p>
+
+</div>
+</div>
 <a id="adfb2d5826942693e289d13f314a341f7" name="adfb2d5826942693e289d13f314a341f7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adfb2d5826942693e289d13f314a341f7">&#9670;&#160;</a></span>draw()</h2>
 
@@ -289,6 +344,31 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a95028c2deac2197b676c422c4bc2ee3c" name="a95028c2deac2197b676c422c4bc2ee3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95028c2deac2197b676c422c4bc2ee3c">&#9670;&#160;</a></span>operator=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Window::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_window.html">Window</a> &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel delete">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a7a0dc05fe03c166f3e2350e3316c6097" name="a7a0dc05fe03c166f3e2350e3316c6097"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7a0dc05fe03c166f3e2350e3316c6097">&#9670;&#160;</a></span>pollEvent()</h2>
 
@@ -352,7 +432,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>Representation/<a class="el" href="_window_8h_source.html">Window.h</a></li>
-<li>Representation/<b>Window.cpp</b></li>
+<li>Representation/<a class="el" href="_window_8cpp.html">Window.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

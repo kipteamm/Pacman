@@ -5,7 +5,6 @@
 #ifndef PACMANVIEW_H
 #define PACMANVIEW_H
 
-#include <SFML/Graphics/Sprite.hpp>
 #include <unordered_map>
 
 #include "../../Logic/Entities/PacmanModel.h"

@@ -34,10 +34,19 @@ SoundManager::SoundManager() {
     // to ghostFrieghtened and vica versa)
     loadSound(ghostMove, "ghostMove.flac");
     ghostMove.setLoop(true);
-    ghostMove.play();
 
     loadSound(ghostFrightened, "ghostFrightened.flac");
     ghostFrightened.setLoop(true);
+}
+
+
+void SoundManager::start() {
+    ghostMove.play();
+}
+
+void SoundManager::stop() {
+    ghostFrightened.stop();
+    ghostMove.stop();
 }
 
 
@@ -99,6 +108,11 @@ void SoundManager::update(const logic::Events event) {
             ghostMove.stop();
             ghostFrightened.stop();
             deathSound.play(); break;
+
+        // case logic::Events::LEVEL_COMPLETED:
+        // case logic::Events::GAME_OVER:
+        //     ghostMove.stop();
+        //     ghostFrightened.stop(); break;
 
         default: return;
     }

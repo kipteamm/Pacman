@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['handleinput_0',['handleInput',['../class_victory_state.html#a40f5a4edb114f00014ecf856e8e1c22e',1,'VictoryState']]]
+  ['fruitmodel_0',['FruitModel',['../classlogic_1_1_fruit_model.html#ac6e1d7bcf2758468e37789eb99a7382d',1,'logic::FruitModel']]],
+  ['fruitview_1',['FruitView',['../class_fruit_view.html#a522b425a1238f94f05c65a9a205308ac',1,'FruitView']]]
 ];

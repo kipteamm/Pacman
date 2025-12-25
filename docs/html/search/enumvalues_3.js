@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['up_0',['UP',['../namespacelogic.html#a2ff69ac881d2a3e3d7a4142b7776afb3ae6e7782195a5da54721a065c1e31b6ec',1,'logic']]]
+  ['exiting_0',['EXITING',['../namespacelogic.html#a0adadbaf39d39f42c97e3f52a88ea866a835d592fc110ac5d9471b44151d96d40',1,'logic']]]
 ];

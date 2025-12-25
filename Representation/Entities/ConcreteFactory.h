@@ -6,8 +6,6 @@
 #include "../../Logic/Entities/AbstractFactory.h"
 #include "EntityView.h"
 
-#include <vector>
-
 
 enum Layer { PACMAN, FOREGROUND, BACKGROUND };
 

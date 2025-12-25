@@ -8,9 +8,7 @@
 
 class MenuState final : public State {
 public:
-    explicit MenuState(
-        StateManager* context
-    );
+    explicit MenuState(StateManager& context);
 
     void handleInput(const sf::Event::KeyEvent &keyPressed) override;
     void update(double dt) override;

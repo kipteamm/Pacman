@@ -91,7 +91,7 @@ $(function(){initNavTree('_window_8h_source.html','',''); });
   <div class="headertitle"><div class="title">Window.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef WINDOW_H</span></div>
+<a href="_window_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef WINDOW_H</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define WINDOW_H</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;SFML/Graphics.hpp&gt;</span></div>
@@ -101,7 +101,7 @@ $(function(){initNavTree('_window_8h_source.html','',''); });
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="class_window.html">    7</a></span><span class="keyword">class </span><a class="code hl_function" href="class_window.html#a3b760cdf58517c8c4a91237ccc582b57">Window</a> {</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">public</span>:</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="class_window.html#a3b760cdf58517c8c4a91237ccc582b57">   12</a></span>    <a class="code hl_function" href="class_window.html#a3b760cdf58517c8c4a91237ccc582b57">Window</a>(<a class="code hl_function" href="class_window.html#a3b760cdf58517c8c4a91237ccc582b57">Window</a> &amp;other) = <span class="keyword">delete</span>;</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keywordtype">void</span> operator=(<span class="keyword">const</span> <a class="code hl_function" href="class_window.html#a3b760cdf58517c8c4a91237ccc582b57">Window</a> &amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="class_window.html#a95028c2deac2197b676c422c4bc2ee3c">   13</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_window.html#a95028c2deac2197b676c422c4bc2ee3c">operator=</a>(<span class="keyword">const</span> <a class="code hl_function" href="class_window.html#a3b760cdf58517c8c4a91237ccc582b57">Window</a> &amp;) = <span class="keyword">delete</span>;</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span></div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    [[nodiscard]] <span class="keyword">static</span> <a class="code hl_function" href="class_window.html#a3b760cdf58517c8c4a91237ccc582b57">Window</a>&amp; <a class="code hl_function" href="class_window.html#a27532de1433b896e6586c3a9e045349d">getInstance</a>();</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
@@ -144,6 +144,7 @@ $(function(){initNavTree('_window_8h_source.html','',''); });
 <div class="ttc" id="aclass_window_html_a3b760cdf58517c8c4a91237ccc582b57"><div class="ttname"><a href="class_window.html#a3b760cdf58517c8c4a91237ccc582b57">Window::Window</a></div><div class="ttdeci">Window(Window &amp;other)=delete</div></div>
 <div class="ttc" id="aclass_window_html_a761d614931fb5a5daa70e4f580c3e78e"><div class="ttname"><a href="class_window.html#a761d614931fb5a5daa70e4f580c3e78e">Window::isOpen</a></div><div class="ttdeci">bool isOpen() const</div><div class="ttdoc">Tell whether the window is open.</div><div class="ttdef"><b>Definition</b> Window.cpp:18</div></div>
 <div class="ttc" id="aclass_window_html_a7a0dc05fe03c166f3e2350e3316c6097"><div class="ttname"><a href="class_window.html#a7a0dc05fe03c166f3e2350e3316c6097">Window::pollEvent</a></div><div class="ttdeci">bool pollEvent(sf::Event &amp;event)</div><div class="ttdoc">Pop the event on top of the event queue, if any, and return it.</div><div class="ttdef"><b>Definition</b> Window.cpp:22</div></div>
+<div class="ttc" id="aclass_window_html_a95028c2deac2197b676c422c4bc2ee3c"><div class="ttname"><a href="class_window.html#a95028c2deac2197b676c422c4bc2ee3c">Window::operator=</a></div><div class="ttdeci">void operator=(const Window &amp;)=delete</div></div>
 <div class="ttc" id="aclass_window_html_aa017b94c100e1953c13f7a9d1e411ef9"><div class="ttname"><a href="class_window.html#aa017b94c100e1953c13f7a9d1e411ef9">Window::getHeight</a></div><div class="ttdeci">unsigned int getHeight() const</div><div class="ttdoc">Get the height of the rendering region of the window. This does not include the titlebar or borders o...</div><div class="ttdef"><b>Definition</b> Window.cpp:50</div></div>
 <div class="ttc" id="aclass_window_html_aba43b0511b05fc2a90f86f9737d8f434"><div class="ttname"><a href="class_window.html#aba43b0511b05fc2a90f86f9737d8f434">Window::getWidth</a></div><div class="ttdeci">unsigned int getWidth() const</div><div class="ttdoc">Get the width of the rendering region of the window. This does not include the borders of the window.</div><div class="ttdef"><b>Definition</b> Window.cpp:46</div></div>
 <div class="ttc" id="aclass_window_html_ad2d74b36b23465aaf39c47e6bc230da1"><div class="ttname"><a href="class_window.html#ad2d74b36b23465aaf39c47e6bc230da1">Window::setFramerateLimit</a></div><div class="ttdeci">void setFramerateLimit(unsigned int frameRate)</div><div class="ttdoc">Limit the framerate to a maximum fixed frequency.</div><div class="ttdef"><b>Definition</b> Window.cpp:42</div></div>
@@ -155,7 +156,7 @@ $(function(){initNavTree('_window_8h_source.html','',''); });
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>Representation</b></li><li class="navelem"><b>Window.h</b></li>
+    <li class="navelem"><a href="dir_5b53d4d8c62c5abdb2754b788854db81.html">Representation</a></li><li class="navelem"><a href="_window_8h.html">Window.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
   </ul>
 </div>

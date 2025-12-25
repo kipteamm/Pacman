@@ -5,9 +5,8 @@
 #include "../../Logic/Stopwatch.h"
 #include "../AssetManager.h"
 #include "../Window.h"
+#include "../Camera.h"
 #include "GhostView.h"
-
-#include <iostream>
 
 
 GhostView::GhostView(const std::shared_ptr<logic::GhostModel>& model, const int spriteY) : EntityView(model, 0.16), ghost(model) {

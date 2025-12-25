@@ -6,7 +6,7 @@
 
 class VictoryState final : public State {
 public:
-    explicit VictoryState(StateManager* context);
+    explicit VictoryState(StateManager& context);
 
     // Not in use
     void update(double dt) override {};

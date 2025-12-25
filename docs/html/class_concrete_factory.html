@@ -91,6 +91,8 @@ $(function(){initNavTree('class_concrete_factory.html','','class_concrete_factor
   <div class="headertitle"><div class="title">ConcreteFactory Class Reference<span class="mlabels"><span class="mlabel final">final</span></span></div></div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_concrete_factory_8h_source.html">ConcreteFactory.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for ConcreteFactory:</div>
 <div class="dyncontent">
@@ -114,8 +116,8 @@ Collaboration diagram for ConcreteFactory:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a69dc709d543df39e1d6e49b241a750d9" id="r_a69dc709d543df39e1d6e49b241a750d9"><td class="memItemLeft" align="right" valign="top"><a id="a69dc709d543df39e1d6e49b241a750d9" name="a69dc709d543df39e1d6e49b241a750d9"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setViews</b> (std::unordered_map&lt; Layer, std::vector&lt; std::shared_ptr&lt; <a class="el" href="class_entity_view.html">EntityView</a> &gt; &gt; &gt; *views)</td></tr>
+<tr class="memitem:a3168082099002e3a6edf4c8cd49847aa" id="r_a3168082099002e3a6edf4c8cd49847aa"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3168082099002e3a6edf4c8cd49847aa">ConcreteFactory</a> ()</td></tr>
+<tr class="memitem:a69dc709d543df39e1d6e49b241a750d9" id="r_a69dc709d543df39e1d6e49b241a750d9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a69dc709d543df39e1d6e49b241a750d9">setViews</a> (std::unordered_map&lt; <a class="el" href="_concrete_factory_8h.html#a9a8118be7780e95363d631cbca7e7800">Layer</a>, std::vector&lt; std::shared_ptr&lt; <a class="el" href="class_entity_view.html">EntityView</a> &gt; &gt; &gt; *views)</td></tr>
 <tr class="memitem:ad27adc03b34b54f5d033f0f51a41edbf" id="r_ad27adc03b34b54f5d033f0f51a41edbf"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classlogic_1_1_pacman_model.html">logic::PacmanModel</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad27adc03b34b54f5d033f0f51a41edbf">createPacMan</a> (float x, float y, float mapWidth, float mapHeight) override</td></tr>
 <tr class="memitem:a66813dbe6892cef0aab915c699be49fe" id="r_a66813dbe6892cef0aab915c699be49fe"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classlogic_1_1_chasing_ghost.html">logic::ChasingGhost</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a66813dbe6892cef0aab915c699be49fe">createBlinky</a> (float x, float y, float mapWidth, float mapHeight) override</td></tr>
 <tr class="memitem:a06286775ea970b5373965f7bc52c73ca" id="r_a06286775ea970b5373965f7bc52c73ca"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classlogic_1_1_ambush_ghost.html">logic::AmbushGhost</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a06286775ea970b5373965f7bc52c73ca">createPinky</a> (float x, float y, float mapWidth, float mapHeight) override</td></tr>
@@ -124,7 +126,35 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setViews</b> (std::un
 <tr class="memitem:a95febfe91440eda48ddce03e062df401" id="r_a95febfe91440eda48ddce03e062df401"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classlogic_1_1_wall_model.html">logic::WallModel</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a95febfe91440eda48ddce03e062df401">createWall</a> (float x, float y, char type) override</td></tr>
 <tr class="memitem:a93d8f084fc8bbd7ae4251cd0ec789dbf" id="r_a93d8f084fc8bbd7ae4251cd0ec789dbf"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classlogic_1_1_coin_model.html">logic::CoinModel</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a93d8f084fc8bbd7ae4251cd0ec789dbf">createCoin</a> (float x, float y) override</td></tr>
 <tr class="memitem:a3359375a6a6022edc3aa911603b5c1dc" id="r_a3359375a6a6022edc3aa911603b5c1dc"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classlogic_1_1_fruit_model.html">logic::FruitModel</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3359375a6a6022edc3aa911603b5c1dc">createFruit</a> (float x, float y) override</td></tr>
+<tr class="inherit_header pub_methods_classlogic_1_1_abstract_factory"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classlogic_1_1_abstract_factory')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="classlogic_1_1_abstract_factory.html">logic::AbstractFactory</a></td></tr>
+<tr class="memitem:a391dc2c32c339bb7841b7e41aef2fba5 inherit pub_methods_classlogic_1_1_abstract_factory" id="r_a391dc2c32c339bb7841b7e41aef2fba5"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlogic_1_1_abstract_factory.html#a391dc2c32c339bb7841b7e41aef2fba5">~AbstractFactory</a> ()=default</td></tr>
 </table>
+<a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a3168082099002e3a6edf4c8cd49847aa" name="a3168082099002e3a6edf4c8cd49847aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3168082099002e3a6edf4c8cd49847aa">&#9670;&#160;</a></span>ConcreteFactory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ConcreteFactory::ConcreteFactory </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="a66813dbe6892cef0aab915c699be49fe" name="a66813dbe6892cef0aab915c699be49fe"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a66813dbe6892cef0aab915c699be49fe">&#9670;&#160;</a></span>createBlinky()</h2>
@@ -163,7 +193,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setViews</b> (std::un
 </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="classlogic_1_1_abstract_factory.html">logic::AbstractFactory</a>.</p>
+<p>Implements <a class="el" href="classlogic_1_1_abstract_factory.html#aa6b1403ef13b4b8d060efd7334b2f44e">logic::AbstractFactory</a>.</p>
 
 </div>
 </div>
@@ -204,7 +234,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setViews</b> (std::un
 </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="classlogic_1_1_abstract_factory.html">logic::AbstractFactory</a>.</p>
+<p>Implements <a class="el" href="classlogic_1_1_abstract_factory.html#ad4f43b46a628d1b402b77da1fc764971">logic::AbstractFactory</a>.</p>
 
 </div>
 </div>
@@ -235,7 +265,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setViews</b> (std::un
 </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="classlogic_1_1_abstract_factory.html">logic::AbstractFactory</a>.</p>
+<p>Implements <a class="el" href="classlogic_1_1_abstract_factory.html#ad2b6e02006284a4f8eb4baa967637ff7">logic::AbstractFactory</a>.</p>
 
 </div>
 </div>
@@ -266,7 +296,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setViews</b> (std::un
 </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="classlogic_1_1_abstract_factory.html">logic::AbstractFactory</a>.</p>
+<p>Implements <a class="el" href="classlogic_1_1_abstract_factory.html#a33d41adc2b9ee8a25fec69e6d3e13bdc">logic::AbstractFactory</a>.</p>
 
 </div>
 </div>
@@ -307,7 +337,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setViews</b> (std::un
 </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="classlogic_1_1_abstract_factory.html">logic::AbstractFactory</a>.</p>
+<p>Implements <a class="el" href="classlogic_1_1_abstract_factory.html#aa29bbed65146e5a6f20f3afb0cbed6e7">logic::AbstractFactory</a>.</p>
 
 </div>
 </div>
@@ -348,7 +378,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setViews</b> (std::un
 </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="classlogic_1_1_abstract_factory.html">logic::AbstractFactory</a>.</p>
+<p>Implements <a class="el" href="classlogic_1_1_abstract_factory.html#a92c7a48371db61cad9311f518a543517">logic::AbstractFactory</a>.</p>
 
 </div>
 </div>
@@ -389,7 +419,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setViews</b> (std::un
 </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="classlogic_1_1_abstract_factory.html">logic::AbstractFactory</a>.</p>
+<p>Implements <a class="el" href="classlogic_1_1_abstract_factory.html#ab5743d48ea66970745a62b86f0cdcae7">logic::AbstractFactory</a>.</p>
 
 </div>
 </div>
@@ -425,13 +455,30 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setViews</b> (std::un
 </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="classlogic_1_1_abstract_factory.html">logic::AbstractFactory</a>.</p>
+<p>Implements <a class="el" href="classlogic_1_1_abstract_factory.html#a24bddc3b28d23f219cdf5c78fb965dde">logic::AbstractFactory</a>.</p>
+
+</div>
+</div>
+<a id="a69dc709d543df39e1d6e49b241a750d9" name="a69dc709d543df39e1d6e49b241a750d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69dc709d543df39e1d6e49b241a750d9">&#9670;&#160;</a></span>setViews()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ConcreteFactory::setViews </td>
+          <td>(</td>
+          <td class="paramtype">std::unordered_map&lt; <a class="el" href="_concrete_factory_8h.html#a9a8118be7780e95363d631cbca7e7800">Layer</a>, std::vector&lt; std::shared_ptr&lt; <a class="el" href="class_entity_view.html">EntityView</a> &gt; &gt; &gt; *</td>          <td class="paramname"><span class="paramname"><em>views</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>Representation/Entities/<a class="el" href="_concrete_factory_8h_source.html">ConcreteFactory.h</a></li>
-<li>Representation/Entities/<b>ConcreteFactory.cpp</b></li>
+<li>Representation/Entities/<a class="el" href="_concrete_factory_8cpp.html">ConcreteFactory.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

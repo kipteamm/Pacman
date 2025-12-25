@@ -1,13 +1,14 @@
 #include "StateManager.h"
 
 
-State::State(StateManager *ctx) : context(std::move(ctx)) {}
+State::State(StateManager& ctx) : context(ctx) {}
 
 
 StateManager::StateManager(const std::shared_ptr<logic::Score>& scoreSystem) {
     gameContext = std::make_unique<GameContext>(
         std::make_shared<ConcreteFactory>(),
         scoreSystem,
+        std::make_shared<SoundManager>(),
         3
     );
 }

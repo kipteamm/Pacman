@@ -7,14 +7,14 @@
 #include "../Window.h"
 
 
-PausedState::PausedState(StateManager *context) : State(context) {}
+PausedState::PausedState(StateManager& context) : State(context) {}
 
 
 void PausedState::handleInput(const sf::Event::KeyEvent &keyPressed) {
     switch (keyPressed.code) {
         case sf::Keyboard::Escape:
         case sf::Keyboard::Space:
-            this->context->pop();
+            this->context.pop();
             break;
 
         default: break;

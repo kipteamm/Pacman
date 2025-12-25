@@ -11,6 +11,17 @@ public:
     SoundManager();
 
     /**
+     * @brief Starts the sounds for a new game.
+     */
+    void start();
+
+    /**
+     * @brief Stops all the sounds.
+     */
+    void stop();
+
+
+    /**
      * @brief Starts playing sounds depending on the event.
      *
      * @param event logic::Event
@@ -30,12 +41,12 @@ private:
      * @brief Update a sf::Sound SoundBuffer object to hold the contents of the
      * provided flac file.
      *
-     * The file is retrieved from the AssetManager.
+     * The SoundBuffer is retrieved from the AssetManager.
      *
      * @param sound Sound used by the SoundManager.
      * @param name Filename of the sound.
      */
-    void loadSound(sf::Sound& sound, const std::string& name);
+    static void loadSound(sf::Sound& sound, const std::string& name);
 };
 
 

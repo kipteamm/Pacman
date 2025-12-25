@@ -10,10 +10,8 @@
 #include <iostream>
 
 
-MenuState::MenuState(
-    StateManager* context
-) : State(context) {
-    this->scoreSystem = context->getGameContext()->scoreSystem;
+MenuState::MenuState(StateManager& context) : State(context) {
+    this->scoreSystem = context.getGameContext()->scoreSystem;
     this->pacmanLogo.setTexture(AssetManager::getInstance().getPacmanLogo(), true);
 
     const float x = Window::getInstance().getWidth() / 2 - this->pacmanLogo.getGlobalBounds().width / 2;
@@ -27,7 +25,7 @@ void MenuState::handleInput(const sf::Event::KeyEvent& keyPressed) {
         if (username.empty()) return;
 
         scoreSystem->setUser(username);
-        this->context->swap(std::make_unique<LevelState>(this->context));
+        this->context.swap(std::make_unique<LevelState>(this->context));
         return;
     }
 

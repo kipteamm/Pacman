@@ -1,6 +1,21 @@
 var searchData=
 [
   ['camera_0',['Camera',['../class_camera.html#acd4f99b146dbea1819151191a3c04547',1,'Camera']]],
-  ['clear_1',['clear',['../class_window.html#a38bc43bdd1a97e5de7f346ba4c3957ef',1,'Window']]],
-  ['close_2',['close',['../class_window.html#a35055c04498121d39741bfcd5082705b',1,'Window']]]
+  ['chasingghost_1',['ChasingGhost',['../classlogic_1_1_chasing_ghost.html#a8a795f7a58402e4644b52cc1b1087a4c',1,'logic::ChasingGhost']]],
+  ['clear_2',['clear',['../class_window.html#a38bc43bdd1a97e5de7f346ba4c3957ef',1,'Window']]],
+  ['close_3',['close',['../class_window.html#a35055c04498121d39741bfcd5082705b',1,'Window']]],
+  ['coinmodel_4',['CoinModel',['../classlogic_1_1_coin_model.html#a6dae869e1fd50b615af90fca61ca9344',1,'logic::CoinModel']]],
+  ['coinview_5',['CoinView',['../class_coin_view.html#ae6fe3765f1357c43d1c97183d18f2f4d',1,'CoinView']]],
+  ['collect_6',['collect',['../classlogic_1_1_coin_model.html#aacddb1a7ab6acee3fa8665e07d8af626',1,'logic::CoinModel::collect()'],['../classlogic_1_1_collectible_entity_model.html#a2dc7828af5eb81d80f0aae4595d3a456',1,'logic::CollectibleEntityModel::collect()'],['../classlogic_1_1_fruit_model.html#a84b770e4aed04ff4e1064bc50331881c',1,'logic::FruitModel::collect()']]],
+  ['collectibleentitymodel_7',['CollectibleEntityModel',['../classlogic_1_1_collectible_entity_model.html#a56a630edd63809dcd3ed66e9627eed9e',1,'logic::CollectibleEntityModel']]],
+  ['collideswithwall_8',['collidesWithWall',['../classlogic_1_1_world.html#ae37a7d1d42001f4fe44868f483b8f46f',1,'logic::World']]],
+  ['concretefactory_9',['ConcreteFactory',['../class_concrete_factory.html#a3168082099002e3a6edf4c8cd49847aa',1,'ConcreteFactory']]],
+  ['createblinky_10',['createBlinky',['../classlogic_1_1_abstract_factory.html#aa6b1403ef13b4b8d060efd7334b2f44e',1,'logic::AbstractFactory::createBlinky()'],['../class_concrete_factory.html#a66813dbe6892cef0aab915c699be49fe',1,'ConcreteFactory::createBlinky()']]],
+  ['createclyde_11',['createClyde',['../classlogic_1_1_abstract_factory.html#ad4f43b46a628d1b402b77da1fc764971',1,'logic::AbstractFactory::createClyde()'],['../class_concrete_factory.html#a1889b76ce9ad24ade0938c73a5d3470e',1,'ConcreteFactory::createClyde()']]],
+  ['createcoin_12',['createCoin',['../classlogic_1_1_abstract_factory.html#ad2b6e02006284a4f8eb4baa967637ff7',1,'logic::AbstractFactory::createCoin()'],['../class_concrete_factory.html#a93d8f084fc8bbd7ae4251cd0ec789dbf',1,'ConcreteFactory::createCoin()']]],
+  ['createfruit_13',['createFruit',['../classlogic_1_1_abstract_factory.html#a33d41adc2b9ee8a25fec69e6d3e13bdc',1,'logic::AbstractFactory::createFruit()'],['../class_concrete_factory.html#a3359375a6a6022edc3aa911603b5c1dc',1,'ConcreteFactory::createFruit()']]],
+  ['createinky_14',['createInky',['../classlogic_1_1_abstract_factory.html#aa29bbed65146e5a6f20f3afb0cbed6e7',1,'logic::AbstractFactory::createInky()'],['../class_concrete_factory.html#ab8a2f15c82a5c7372c2ccf55df474172',1,'ConcreteFactory::createInky()']]],
+  ['createpacman_15',['createPacMan',['../classlogic_1_1_abstract_factory.html#a92c7a48371db61cad9311f518a543517',1,'logic::AbstractFactory::createPacMan()'],['../class_concrete_factory.html#ad27adc03b34b54f5d033f0f51a41edbf',1,'ConcreteFactory::createPacMan()']]],
+  ['createpinky_16',['createPinky',['../classlogic_1_1_abstract_factory.html#ab5743d48ea66970745a62b86f0cdcae7',1,'logic::AbstractFactory::createPinky()'],['../class_concrete_factory.html#a06286775ea970b5373965f7bc52c73ca',1,'ConcreteFactory::createPinky()']]],
+  ['createwall_17',['createWall',['../classlogic_1_1_abstract_factory.html#a24bddc3b28d23f219cdf5c78fb965dde',1,'logic::AbstractFactory::createWall()'],['../class_concrete_factory.html#a95febfe91440eda48ddce03e062df401',1,'ConcreteFactory::createWall()']]]
 ];

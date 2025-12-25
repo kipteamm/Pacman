@@ -91,6 +91,8 @@ $(function(){initNavTree('class_entity_view.html','','class_entity_view-members'
   <div class="headertitle"><div class="title">EntityView Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_entity_view_8h_source.html">EntityView.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for EntityView:</div>
 <div class="dyncontent">
@@ -124,35 +126,271 @@ Collaboration diagram for EntityView:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a9c92414ec58c2511b43e02ad827e717b" id="r_a9c92414ec58c2511b43e02ad827e717b"><td class="memItemLeft" align="right" valign="top"><a id="a9c92414ec58c2511b43e02ad827e717b" name="a9c92414ec58c2511b43e02ad827e717b"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>EntityView</b> (const std::shared_ptr&lt; <a class="el" href="classlogic_1_1_entity_model.html">logic::EntityModel</a> &gt; &amp;model, float frameDuration)</td></tr>
-<tr class="memitem:a3a163d4781bde3d7d38be65d5fe1920c" id="r_a3a163d4781bde3d7d38be65d5fe1920c"><td class="memItemLeft" align="right" valign="top"><a id="a3a163d4781bde3d7d38be65d5fe1920c" name="a3a163d4781bde3d7d38be65d5fe1920c"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>shouldDelete</b> () const</td></tr>
-<tr class="memitem:a5052ee0e188d9e3e624cf7996ded9af6" id="r_a5052ee0e188d9e3e624cf7996ded9af6"><td class="memItemLeft" align="right" valign="top"><a id="a5052ee0e188d9e3e624cf7996ded9af6" name="a5052ee0e188d9e3e624cf7996ded9af6"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>getFrameIndex</b> (float dt, size_t max)</td></tr>
-<tr class="memitem:adf2869ddecd4e3f5bf1ae25684b2ee61" id="r_adf2869ddecd4e3f5bf1ae25684b2ee61"><td class="memItemLeft" align="right" valign="top"><a id="adf2869ddecd4e3f5bf1ae25684b2ee61" name="adf2869ddecd4e3f5bf1ae25684b2ee61"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>render</b> ()</td></tr>
+<tr class="memitem:a9c92414ec58c2511b43e02ad827e717b" id="r_a9c92414ec58c2511b43e02ad827e717b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9c92414ec58c2511b43e02ad827e717b">EntityView</a> (const std::shared_ptr&lt; <a class="el" href="classlogic_1_1_entity_model.html">logic::EntityModel</a> &gt; &amp;<a class="el" href="#a5d95738cd4f30a10597eea2e4e106a3a">model</a>, float <a class="el" href="#aea9fe4f4b1f0f0dd5304de4a18fe365c">frameDuration</a>)</td></tr>
+<tr class="memitem:a3a163d4781bde3d7d38be65d5fe1920c" id="r_a3a163d4781bde3d7d38be65d5fe1920c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3a163d4781bde3d7d38be65d5fe1920c">shouldDelete</a> () const</td></tr>
+<tr class="memitem:a5052ee0e188d9e3e624cf7996ded9af6" id="r_a5052ee0e188d9e3e624cf7996ded9af6"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5052ee0e188d9e3e624cf7996ded9af6">getFrameIndex</a> (float dt, size_t max)</td></tr>
+<tr class="memitem:adf2869ddecd4e3f5bf1ae25684b2ee61" id="r_adf2869ddecd4e3f5bf1ae25684b2ee61"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adf2869ddecd4e3f5bf1ae25684b2ee61">render</a> ()</td></tr>
 <tr class="inherit_header pub_methods_classlogic_1_1_observer"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classlogic_1_1_observer')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="classlogic_1_1_observer.html">logic::Observer</a></td></tr>
-<tr class="memitem:a037d49687e2bcd83c56fd8af8111ca0e inherit pub_methods_classlogic_1_1_observer" id="r_a037d49687e2bcd83c56fd8af8111ca0e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlogic_1_1_observer.html#a037d49687e2bcd83c56fd8af8111ca0e">update</a> (Events event)=0</td></tr>
+<tr class="memitem:a9ffb621699cd68a8e165297d145f593e inherit pub_methods_classlogic_1_1_observer" id="r_a9ffb621699cd68a8e165297d145f593e"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlogic_1_1_observer.html#a9ffb621699cd68a8e165297d145f593e">~Observer</a> ()=default</td></tr>
+<tr class="memitem:a037d49687e2bcd83c56fd8af8111ca0e inherit pub_methods_classlogic_1_1_observer" id="r_a037d49687e2bcd83c56fd8af8111ca0e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlogic_1_1_observer.html#a037d49687e2bcd83c56fd8af8111ca0e">update</a> (<a class="el" href="namespacelogic.html#a5054eadf2d20b609706894ae1bc5f250">Events</a> event)=0</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-attribs" class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:a5d95738cd4f30a10597eea2e4e106a3a" id="r_a5d95738cd4f30a10597eea2e4e106a3a"><td class="memItemLeft" align="right" valign="top"><a id="a5d95738cd4f30a10597eea2e4e106a3a" name="a5d95738cd4f30a10597eea2e4e106a3a"></a>
-std::shared_ptr&lt; <a class="el" href="classlogic_1_1_entity_model.html">logic::EntityModel</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>model</b></td></tr>
-<tr class="memitem:a39508da83001b63aa61b24af79890a83" id="r_a39508da83001b63aa61b24af79890a83"><td class="memItemLeft" align="right" valign="top"><a id="a39508da83001b63aa61b24af79890a83" name="a39508da83001b63aa61b24af79890a83"></a>
-sf::Sprite&#160;</td><td class="memItemRight" valign="bottom"><b>sprite</b></td></tr>
-<tr class="memitem:a379078707695e98c1a78f76c05f183aa" id="r_a379078707695e98c1a78f76c05f183aa"><td class="memItemLeft" align="right" valign="top"><a id="a379078707695e98c1a78f76c05f183aa" name="a379078707695e98c1a78f76c05f183aa"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>markedForDeletion</b> = false</td></tr>
-<tr class="memitem:aea9fe4f4b1f0f0dd5304de4a18fe365c" id="r_aea9fe4f4b1f0f0dd5304de4a18fe365c"><td class="memItemLeft" align="right" valign="top"><a id="aea9fe4f4b1f0f0dd5304de4a18fe365c" name="aea9fe4f4b1f0f0dd5304de4a18fe365c"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>frameDuration</b></td></tr>
-<tr class="memitem:a43665858104eca1ef3b645da90ed2611" id="r_a43665858104eca1ef3b645da90ed2611"><td class="memItemLeft" align="right" valign="top"><a id="a43665858104eca1ef3b645da90ed2611" name="a43665858104eca1ef3b645da90ed2611"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>elapsedTime</b> = 0</td></tr>
-<tr class="memitem:a4b012644058a2001c1fffe05679b92ef" id="r_a4b012644058a2001c1fffe05679b92ef"><td class="memItemLeft" align="right" valign="top"><a id="a4b012644058a2001c1fffe05679b92ef" name="a4b012644058a2001c1fffe05679b92ef"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>frameIndex</b> = 0</td></tr>
+<tr class="memitem:a5d95738cd4f30a10597eea2e4e106a3a" id="r_a5d95738cd4f30a10597eea2e4e106a3a"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classlogic_1_1_entity_model.html">logic::EntityModel</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5d95738cd4f30a10597eea2e4e106a3a">model</a></td></tr>
+<tr class="memitem:a39508da83001b63aa61b24af79890a83" id="r_a39508da83001b63aa61b24af79890a83"><td class="memItemLeft" align="right" valign="top">sf::Sprite&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a39508da83001b63aa61b24af79890a83">sprite</a></td></tr>
+<tr class="memitem:a379078707695e98c1a78f76c05f183aa" id="r_a379078707695e98c1a78f76c05f183aa"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a379078707695e98c1a78f76c05f183aa">markedForDeletion</a> = false</td></tr>
+<tr class="memitem:aea9fe4f4b1f0f0dd5304de4a18fe365c" id="r_aea9fe4f4b1f0f0dd5304de4a18fe365c"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aea9fe4f4b1f0f0dd5304de4a18fe365c">frameDuration</a></td></tr>
+<tr class="memitem:a43665858104eca1ef3b645da90ed2611" id="r_a43665858104eca1ef3b645da90ed2611"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a43665858104eca1ef3b645da90ed2611">elapsedTime</a> = 0</td></tr>
+<tr class="memitem:a4b012644058a2001c1fffe05679b92ef" id="r_a4b012644058a2001c1fffe05679b92ef"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4b012644058a2001c1fffe05679b92ef">frameIndex</a> = 0</td></tr>
 </table>
+<a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a9c92414ec58c2511b43e02ad827e717b" name="a9c92414ec58c2511b43e02ad827e717b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c92414ec58c2511b43e02ad827e717b">&#9670;&#160;</a></span>EntityView()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">EntityView::EntityView </td>
+          <td>(</td>
+          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="classlogic_1_1_entity_model.html">logic::EntityModel</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>model</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>frameDuration</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a5052ee0e188d9e3e624cf7996ded9af6" name="a5052ee0e188d9e3e624cf7996ded9af6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5052ee0e188d9e3e624cf7996ded9af6">&#9670;&#160;</a></span>getFrameIndex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t EntityView::getFrameIndex </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>dt</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>max</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adf2869ddecd4e3f5bf1ae25684b2ee61" name="adf2869ddecd4e3f5bf1ae25684b2ee61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf2869ddecd4e3f5bf1ae25684b2ee61">&#9670;&#160;</a></span>render()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EntityView::render </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="class_ghost_view.html#a3898ad0c1ffa185f2fa7d8817f88e6f3">GhostView</a>, and <a class="el" href="class_pacman_view.html#a75442e323958cab1443ea85d55a3b473">PacmanView</a>.</p>
+
+</div>
+</div>
+<a id="a3a163d4781bde3d7d38be65d5fe1920c" name="a3a163d4781bde3d7d38be65d5fe1920c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a163d4781bde3d7d38be65d5fe1920c">&#9670;&#160;</a></span>shouldDelete()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool EntityView::shouldDelete </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
+<a id="a43665858104eca1ef3b645da90ed2611" name="a43665858104eca1ef3b645da90ed2611"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43665858104eca1ef3b645da90ed2611">&#9670;&#160;</a></span>elapsedTime</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float EntityView::elapsedTime = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aea9fe4f4b1f0f0dd5304de4a18fe365c" name="aea9fe4f4b1f0f0dd5304de4a18fe365c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea9fe4f4b1f0f0dd5304de4a18fe365c">&#9670;&#160;</a></span>frameDuration</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float EntityView::frameDuration</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4b012644058a2001c1fffe05679b92ef" name="a4b012644058a2001c1fffe05679b92ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b012644058a2001c1fffe05679b92ef">&#9670;&#160;</a></span>frameIndex</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t EntityView::frameIndex = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a379078707695e98c1a78f76c05f183aa" name="a379078707695e98c1a78f76c05f183aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a379078707695e98c1a78f76c05f183aa">&#9670;&#160;</a></span>markedForDeletion</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool EntityView::markedForDeletion = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5d95738cd4f30a10597eea2e4e106a3a" name="a5d95738cd4f30a10597eea2e4e106a3a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d95738cd4f30a10597eea2e4e106a3a">&#9670;&#160;</a></span>model</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;<a class="el" href="classlogic_1_1_entity_model.html">logic::EntityModel</a>&gt; EntityView::model</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a39508da83001b63aa61b24af79890a83" name="a39508da83001b63aa61b24af79890a83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39508da83001b63aa61b24af79890a83">&#9670;&#160;</a></span>sprite</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Sprite EntityView::sprite</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>Representation/Entities/<a class="el" href="_entity_view_8h_source.html">EntityView.h</a></li>
-<li>Representation/Entities/<b>EntityView.cpp</b></li>
+<li>Representation/Entities/<a class="el" href="_entity_view_8cpp.html">EntityView.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

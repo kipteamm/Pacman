@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['pacmanmodel_0',['PacmanModel',['../classlogic_1_1_pacman_model.html',1,'logic']]],
-  ['pacmanview_1',['PacmanView',['../class_pacman_view.html',1,'']]],
-  ['pathnode_2',['PathNode',['../structlogic_1_1_path_node.html',1,'logic']]],
-  ['pausedstate_3',['PausedState',['../class_paused_state.html',1,'']]],
-  ['pollevent_4',['pollEvent',['../class_window.html#a7a0dc05fe03c166f3e2350e3316c6097',1,'Window']]]
+  ['no_5fevent_0',['NO_EVENT',['../namespacelogic.html#a5054eadf2d20b609706894ae1bc5f250a9ebf8daa5da37d49ad7fdf38863ef780',1,'logic']]],
+  ['normalizex_1',['normalizeX',['../classlogic_1_1_world.html#a97341026662de485f54f67a599be8f9e',1,'logic::World']]],
+  ['normalizey_2',['normalizeY',['../classlogic_1_1_world.html#a38fccf0b927ef43caa843b57eeb80bbd',1,'logic::World']]],
+  ['notify_3',['notify',['../classlogic_1_1_subject.html#a9b8fd61bd7407486a7be6b0756f79a11',1,'logic::Subject']]]
 ];

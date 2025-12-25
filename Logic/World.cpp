@@ -2,8 +2,6 @@
 #include <fstream>
 #include <iostream>
 
-#include "Difficulty.h"
-
 using namespace logic;
 
 
@@ -177,6 +175,7 @@ Events World::update(const double dt) {
         }
 
         if (std::abs(pacman->getX() - ghost->getX()) > epsilon || std::abs(pacman->getY() - ghost->getY()) > epsilon) continue;
+        // TODO: oogjes kunnen u nog doden??
         if (ghost->isFrightened()) {
             if (ghost->getState() == GhostState::DEAD) continue;
             ghost->eat();

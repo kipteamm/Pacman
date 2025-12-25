@@ -1,13 +1,7 @@
-//
-// Created by toroe on 09/12/2025.
-//
-
 #ifndef PACMAN_GHOSTMODEL_H
 #define PACMAN_GHOSTMODEL_H
 
-#include "../EntityModel.h"
 #include "../PacmanModel.h"
-
 #include <vector>
 
 

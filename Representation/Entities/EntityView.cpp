@@ -3,6 +3,7 @@
 //
 
 #include "EntityView.h"
+#include "../Camera.h"
 #include "../Window.h"
 
 EntityView::EntityView(const std::shared_ptr<logic::EntityModel> &model, const float frameDuration) : model(model), frameDuration(frameDuration) {}

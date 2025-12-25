@@ -4,6 +4,7 @@
 #include <SFML/Window/Event.hpp>
 #include <stack>
 
+#include "../SoundManager.h"
 #include "../Entities/ConcreteFactory.h"
 #include "../../Logic/Score.h"
 
@@ -12,7 +13,7 @@ class StateManager;
 
 class State {
 public:
-    explicit State(StateManager* ctx);
+    explicit State(StateManager& ctx);
 
     virtual ~State() = default;
 
@@ -21,16 +22,15 @@ public:
     virtual void render() = 0;
 
 protected:
-    // TODO: check this statement
-    // Using a raw pointer because the StateManager owns States and not vica versa
-    StateManager* context;
+    StateManager& context;
 };
 
 
 struct GameContext {
     std::shared_ptr<ConcreteFactory> factory;
     std::shared_ptr<logic::Score> scoreSystem;
-    int lives;
+    std::shared_ptr<SoundManager> soundManager;
+    unsigned int lives;
 };
 
 

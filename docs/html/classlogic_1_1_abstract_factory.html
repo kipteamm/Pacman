@@ -91,6 +91,8 @@ $(function(){initNavTree('classlogic_1_1_abstract_factory.html','','classlogic_1
   <div class="headertitle"><div class="title">logic::AbstractFactory Class Reference<span class="mlabels"><span class="mlabel abstract">abstract</span></span></div></div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_abstract_factory_8h_source.html">AbstractFactory.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for logic::AbstractFactory:</div>
 <div class="dyncontent">
@@ -104,23 +106,346 @@ Inheritance diagram for logic::AbstractFactory:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a92c7a48371db61cad9311f518a543517" id="r_a92c7a48371db61cad9311f518a543517"><td class="memItemLeft" align="right" valign="top"><a id="a92c7a48371db61cad9311f518a543517" name="a92c7a48371db61cad9311f518a543517"></a>
-virtual std::shared_ptr&lt; <a class="el" href="classlogic_1_1_pacman_model.html">PacmanModel</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>createPacMan</b> (float x, float y, float mapWidth, float mapHeight)=0</td></tr>
-<tr class="memitem:aa6b1403ef13b4b8d060efd7334b2f44e" id="r_aa6b1403ef13b4b8d060efd7334b2f44e"><td class="memItemLeft" align="right" valign="top"><a id="aa6b1403ef13b4b8d060efd7334b2f44e" name="aa6b1403ef13b4b8d060efd7334b2f44e"></a>
-virtual std::shared_ptr&lt; <a class="el" href="classlogic_1_1_chasing_ghost.html">ChasingGhost</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>createBlinky</b> (float x, float y, float mapWidth, float mapHeight)=0</td></tr>
-<tr class="memitem:ab5743d48ea66970745a62b86f0cdcae7" id="r_ab5743d48ea66970745a62b86f0cdcae7"><td class="memItemLeft" align="right" valign="top"><a id="ab5743d48ea66970745a62b86f0cdcae7" name="ab5743d48ea66970745a62b86f0cdcae7"></a>
-virtual std::shared_ptr&lt; <a class="el" href="classlogic_1_1_ambush_ghost.html">AmbushGhost</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>createPinky</b> (float x, float y, float mapWidth, float mapHeight)=0</td></tr>
-<tr class="memitem:aa29bbed65146e5a6f20f3afb0cbed6e7" id="r_aa29bbed65146e5a6f20f3afb0cbed6e7"><td class="memItemLeft" align="right" valign="top"><a id="aa29bbed65146e5a6f20f3afb0cbed6e7" name="aa29bbed65146e5a6f20f3afb0cbed6e7"></a>
-virtual std::shared_ptr&lt; <a class="el" href="classlogic_1_1_ambush_ghost.html">AmbushGhost</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>createInky</b> (float x, float y, float mapWidth, float mapHeight)=0</td></tr>
-<tr class="memitem:ad4f43b46a628d1b402b77da1fc764971" id="r_ad4f43b46a628d1b402b77da1fc764971"><td class="memItemLeft" align="right" valign="top"><a id="ad4f43b46a628d1b402b77da1fc764971" name="ad4f43b46a628d1b402b77da1fc764971"></a>
-virtual std::shared_ptr&lt; <a class="el" href="classlogic_1_1_random_ghost.html">RandomGhost</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>createClyde</b> (float x, float y, float mapWidth, float mapHeight)=0</td></tr>
-<tr class="memitem:a24bddc3b28d23f219cdf5c78fb965dde" id="r_a24bddc3b28d23f219cdf5c78fb965dde"><td class="memItemLeft" align="right" valign="top"><a id="a24bddc3b28d23f219cdf5c78fb965dde" name="a24bddc3b28d23f219cdf5c78fb965dde"></a>
-virtual std::shared_ptr&lt; <a class="el" href="classlogic_1_1_wall_model.html">WallModel</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>createWall</b> (float x, float y, char type)=0</td></tr>
-<tr class="memitem:ad2b6e02006284a4f8eb4baa967637ff7" id="r_ad2b6e02006284a4f8eb4baa967637ff7"><td class="memItemLeft" align="right" valign="top"><a id="ad2b6e02006284a4f8eb4baa967637ff7" name="ad2b6e02006284a4f8eb4baa967637ff7"></a>
-virtual std::shared_ptr&lt; <a class="el" href="classlogic_1_1_coin_model.html">CoinModel</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>createCoin</b> (float x, float y)=0</td></tr>
-<tr class="memitem:a33d41adc2b9ee8a25fec69e6d3e13bdc" id="r_a33d41adc2b9ee8a25fec69e6d3e13bdc"><td class="memItemLeft" align="right" valign="top"><a id="a33d41adc2b9ee8a25fec69e6d3e13bdc" name="a33d41adc2b9ee8a25fec69e6d3e13bdc"></a>
-virtual std::shared_ptr&lt; <a class="el" href="classlogic_1_1_fruit_model.html">FruitModel</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>createFruit</b> (float x, float y)=0</td></tr>
+<tr class="memitem:a391dc2c32c339bb7841b7e41aef2fba5" id="r_a391dc2c32c339bb7841b7e41aef2fba5"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a391dc2c32c339bb7841b7e41aef2fba5">~AbstractFactory</a> ()=default</td></tr>
+<tr class="memitem:a92c7a48371db61cad9311f518a543517" id="r_a92c7a48371db61cad9311f518a543517"><td class="memItemLeft" align="right" valign="top">virtual std::shared_ptr&lt; <a class="el" href="classlogic_1_1_pacman_model.html">PacmanModel</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a92c7a48371db61cad9311f518a543517">createPacMan</a> (float x, float y, float mapWidth, float mapHeight)=0</td></tr>
+<tr class="memitem:aa6b1403ef13b4b8d060efd7334b2f44e" id="r_aa6b1403ef13b4b8d060efd7334b2f44e"><td class="memItemLeft" align="right" valign="top">virtual std::shared_ptr&lt; <a class="el" href="classlogic_1_1_chasing_ghost.html">ChasingGhost</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa6b1403ef13b4b8d060efd7334b2f44e">createBlinky</a> (float x, float y, float mapWidth, float mapHeight)=0</td></tr>
+<tr class="memitem:ab5743d48ea66970745a62b86f0cdcae7" id="r_ab5743d48ea66970745a62b86f0cdcae7"><td class="memItemLeft" align="right" valign="top">virtual std::shared_ptr&lt; <a class="el" href="classlogic_1_1_ambush_ghost.html">AmbushGhost</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab5743d48ea66970745a62b86f0cdcae7">createPinky</a> (float x, float y, float mapWidth, float mapHeight)=0</td></tr>
+<tr class="memitem:aa29bbed65146e5a6f20f3afb0cbed6e7" id="r_aa29bbed65146e5a6f20f3afb0cbed6e7"><td class="memItemLeft" align="right" valign="top">virtual std::shared_ptr&lt; <a class="el" href="classlogic_1_1_ambush_ghost.html">AmbushGhost</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa29bbed65146e5a6f20f3afb0cbed6e7">createInky</a> (float x, float y, float mapWidth, float mapHeight)=0</td></tr>
+<tr class="memitem:ad4f43b46a628d1b402b77da1fc764971" id="r_ad4f43b46a628d1b402b77da1fc764971"><td class="memItemLeft" align="right" valign="top">virtual std::shared_ptr&lt; <a class="el" href="classlogic_1_1_random_ghost.html">RandomGhost</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad4f43b46a628d1b402b77da1fc764971">createClyde</a> (float x, float y, float mapWidth, float mapHeight)=0</td></tr>
+<tr class="memitem:a24bddc3b28d23f219cdf5c78fb965dde" id="r_a24bddc3b28d23f219cdf5c78fb965dde"><td class="memItemLeft" align="right" valign="top">virtual std::shared_ptr&lt; <a class="el" href="classlogic_1_1_wall_model.html">WallModel</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a24bddc3b28d23f219cdf5c78fb965dde">createWall</a> (float x, float y, char type)=0</td></tr>
+<tr class="memitem:ad2b6e02006284a4f8eb4baa967637ff7" id="r_ad2b6e02006284a4f8eb4baa967637ff7"><td class="memItemLeft" align="right" valign="top">virtual std::shared_ptr&lt; <a class="el" href="classlogic_1_1_coin_model.html">CoinModel</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad2b6e02006284a4f8eb4baa967637ff7">createCoin</a> (float x, float y)=0</td></tr>
+<tr class="memitem:a33d41adc2b9ee8a25fec69e6d3e13bdc" id="r_a33d41adc2b9ee8a25fec69e6d3e13bdc"><td class="memItemLeft" align="right" valign="top">virtual std::shared_ptr&lt; <a class="el" href="classlogic_1_1_fruit_model.html">FruitModel</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a33d41adc2b9ee8a25fec69e6d3e13bdc">createFruit</a> (float x, float y)=0</td></tr>
 </table>
+<a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a391dc2c32c339bb7841b7e41aef2fba5" name="a391dc2c32c339bb7841b7e41aef2fba5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a391dc2c32c339bb7841b7e41aef2fba5">&#9670;&#160;</a></span>~AbstractFactory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual logic::AbstractFactory::~AbstractFactory </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel virtual">virtual</span><span class="mlabel default">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="aa6b1403ef13b4b8d060efd7334b2f44e" name="aa6b1403ef13b4b8d060efd7334b2f44e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6b1403ef13b4b8d060efd7334b2f44e">&#9670;&#160;</a></span>createBlinky()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual std::shared_ptr&lt; <a class="el" href="classlogic_1_1_chasing_ghost.html">ChasingGhost</a> &gt; logic::AbstractFactory::createBlinky </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>y</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>mapWidth</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>mapHeight</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="class_concrete_factory.html#a66813dbe6892cef0aab915c699be49fe">ConcreteFactory</a>.</p>
+
+</div>
+</div>
+<a id="ad4f43b46a628d1b402b77da1fc764971" name="ad4f43b46a628d1b402b77da1fc764971"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4f43b46a628d1b402b77da1fc764971">&#9670;&#160;</a></span>createClyde()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual std::shared_ptr&lt; <a class="el" href="classlogic_1_1_random_ghost.html">RandomGhost</a> &gt; logic::AbstractFactory::createClyde </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>y</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>mapWidth</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>mapHeight</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="class_concrete_factory.html#a1889b76ce9ad24ade0938c73a5d3470e">ConcreteFactory</a>.</p>
+
+</div>
+</div>
+<a id="ad2b6e02006284a4f8eb4baa967637ff7" name="ad2b6e02006284a4f8eb4baa967637ff7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2b6e02006284a4f8eb4baa967637ff7">&#9670;&#160;</a></span>createCoin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual std::shared_ptr&lt; <a class="el" href="classlogic_1_1_coin_model.html">CoinModel</a> &gt; logic::AbstractFactory::createCoin </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>y</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="class_concrete_factory.html#a93d8f084fc8bbd7ae4251cd0ec789dbf">ConcreteFactory</a>.</p>
+
+</div>
+</div>
+<a id="a33d41adc2b9ee8a25fec69e6d3e13bdc" name="a33d41adc2b9ee8a25fec69e6d3e13bdc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33d41adc2b9ee8a25fec69e6d3e13bdc">&#9670;&#160;</a></span>createFruit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual std::shared_ptr&lt; <a class="el" href="classlogic_1_1_fruit_model.html">FruitModel</a> &gt; logic::AbstractFactory::createFruit </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>y</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="class_concrete_factory.html#a3359375a6a6022edc3aa911603b5c1dc">ConcreteFactory</a>.</p>
+
+</div>
+</div>
+<a id="aa29bbed65146e5a6f20f3afb0cbed6e7" name="aa29bbed65146e5a6f20f3afb0cbed6e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa29bbed65146e5a6f20f3afb0cbed6e7">&#9670;&#160;</a></span>createInky()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual std::shared_ptr&lt; <a class="el" href="classlogic_1_1_ambush_ghost.html">AmbushGhost</a> &gt; logic::AbstractFactory::createInky </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>y</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>mapWidth</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>mapHeight</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="class_concrete_factory.html#ab8a2f15c82a5c7372c2ccf55df474172">ConcreteFactory</a>.</p>
+
+</div>
+</div>
+<a id="a92c7a48371db61cad9311f518a543517" name="a92c7a48371db61cad9311f518a543517"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92c7a48371db61cad9311f518a543517">&#9670;&#160;</a></span>createPacMan()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual std::shared_ptr&lt; <a class="el" href="classlogic_1_1_pacman_model.html">PacmanModel</a> &gt; logic::AbstractFactory::createPacMan </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>y</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>mapWidth</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>mapHeight</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="class_concrete_factory.html#ad27adc03b34b54f5d033f0f51a41edbf">ConcreteFactory</a>.</p>
+
+</div>
+</div>
+<a id="ab5743d48ea66970745a62b86f0cdcae7" name="ab5743d48ea66970745a62b86f0cdcae7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5743d48ea66970745a62b86f0cdcae7">&#9670;&#160;</a></span>createPinky()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual std::shared_ptr&lt; <a class="el" href="classlogic_1_1_ambush_ghost.html">AmbushGhost</a> &gt; logic::AbstractFactory::createPinky </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>y</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>mapWidth</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>mapHeight</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="class_concrete_factory.html#a06286775ea970b5373965f7bc52c73ca">ConcreteFactory</a>.</p>
+
+</div>
+</div>
+<a id="a24bddc3b28d23f219cdf5c78fb965dde" name="a24bddc3b28d23f219cdf5c78fb965dde"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24bddc3b28d23f219cdf5c78fb965dde">&#9670;&#160;</a></span>createWall()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual std::shared_ptr&lt; <a class="el" href="classlogic_1_1_wall_model.html">WallModel</a> &gt; logic::AbstractFactory::createWall </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>y</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char</td>          <td class="paramname"><span class="paramname"><em>type</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="class_concrete_factory.html#a95febfe91440eda48ddce03e062df401">ConcreteFactory</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>Logic/Entities/<a class="el" href="_abstract_factory_8h_source.html">AbstractFactory.h</a></li>
 </ul>

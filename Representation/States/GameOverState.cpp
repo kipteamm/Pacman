@@ -9,13 +9,13 @@
 #include "../Window.h"
 
 
-GameOverState::GameOverState(StateManager *context) : State(context) {}
+GameOverState::GameOverState(StateManager& context) : State(context) {}
 
 
 void GameOverState::handleInput(const sf::Event::KeyEvent &keyPressed) {
     switch (keyPressed.code) {
         case sf::Keyboard::Escape:
-            this->context->swap(std::make_unique<MenuState>(this->context));
+            this->context.swap(std::make_unique<MenuState>(this->context));
             return;
 
         default: break;

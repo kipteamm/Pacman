@@ -91,19 +91,19 @@ $(function(){initNavTree('_victory_state_8h_source.html','',''); });
   <div class="headertitle"><div class="title">VictoryState.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef PACMAN_VICTORYSTATE_H</span></div>
+<a href="_victory_state_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef PACMAN_VICTORYSTATE_H</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define PACMAN_VICTORYSTATE_H</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;StateManager.h&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="_state_manager_8h.html">StateManager.h</a>&quot;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
 <div class="foldopen" id="foldopen00007" data-start="{" data-end="};">
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="class_victory_state.html">    7</a></span><span class="keyword">class </span>VictoryState final : <span class="keyword">public</span> State {</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="class_victory_state.html">    7</a></span><span class="keyword">class </span><a class="code hl_function" href="class_victory_state.html#af63f6cc6fbbe77e0059f547a95fa1591">VictoryState</a> final : <span class="keyword">public</span> <a class="code hl_function" href="class_state.html#a08febc2efb52c152040efda1fb93634b">State</a> {</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="keyword">explicit</span> VictoryState(<a class="code hl_class" href="class_state_manager.html">StateManager</a>* context);</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="class_victory_state.html#af63f6cc6fbbe77e0059f547a95fa1591">VictoryState</a>(<a class="code hl_class" href="class_state_manager.html">StateManager</a>&amp; <a class="code hl_variable" href="class_state.html#a9de31f1ce45c89c183bb929122eb9acb">context</a>);</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="comment">// Not in use</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keywordtype">void</span> update(<span class="keywordtype">double</span> dt)<span class="keyword"> override </span>{};</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="class_victory_state.html#a0309c9c6668dd1f9a6ed0a58c0217871">   12</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_victory_state.html#a0309c9c6668dd1f9a6ed0a58c0217871">update</a>(<span class="keywordtype">double</span> dt)<span class="keyword"> override </span>{};</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span></div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_victory_state.html#a40f5a4edb114f00014ecf856e8e1c22e">handleInput</a>(<span class="keyword">const</span> sf::Event::KeyEvent&amp; keyPressed) <span class="keyword">override</span>;</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span></div>
@@ -113,16 +113,21 @@ $(function(){initNavTree('_victory_state_8h_source.html','',''); });
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#endif </span><span class="comment">//PACMAN_VICTORYSTATE_H</span></div>
+<div class="ttc" id="a_state_manager_8h_html"><div class="ttname"><a href="_state_manager_8h.html">StateManager.h</a></div></div>
+<div class="ttc" id="aclass_state_html_a08febc2efb52c152040efda1fb93634b"><div class="ttname"><a href="class_state.html#a08febc2efb52c152040efda1fb93634b">State::State</a></div><div class="ttdeci">State(StateManager &amp;ctx)</div><div class="ttdef"><b>Definition</b> StateManager.cpp:4</div></div>
+<div class="ttc" id="aclass_state_html_a9de31f1ce45c89c183bb929122eb9acb"><div class="ttname"><a href="class_state.html#a9de31f1ce45c89c183bb929122eb9acb">State::context</a></div><div class="ttdeci">StateManager &amp; context</div><div class="ttdef"><b>Definition</b> StateManager.h:25</div></div>
 <div class="ttc" id="aclass_state_manager_html"><div class="ttname"><a href="class_state_manager.html">StateManager</a></div><div class="ttdef"><b>Definition</b> StateManager.h:37</div></div>
+<div class="ttc" id="aclass_victory_state_html_a0309c9c6668dd1f9a6ed0a58c0217871"><div class="ttname"><a href="class_victory_state.html#a0309c9c6668dd1f9a6ed0a58c0217871">VictoryState::update</a></div><div class="ttdeci">void update(double dt) override</div><div class="ttdef"><b>Definition</b> VictoryState.h:12</div></div>
 <div class="ttc" id="aclass_victory_state_html_a40f5a4edb114f00014ecf856e8e1c22e"><div class="ttname"><a href="class_victory_state.html#a40f5a4edb114f00014ecf856e8e1c22e">VictoryState::handleInput</a></div><div class="ttdeci">void handleInput(const sf::Event::KeyEvent &amp;keyPressed) override</div><div class="ttdoc">Will load the next level regardless of what key was pressed.</div><div class="ttdef"><b>Definition</b> VictoryState.cpp:10</div></div>
 <div class="ttc" id="aclass_victory_state_html_a7f9c4d40c8a336329c58e47e933e0b47"><div class="ttname"><a href="class_victory_state.html#a7f9c4d40c8a336329c58e47e933e0b47">VictoryState::render</a></div><div class="ttdeci">void render() override</div><div class="ttdoc">Renders the Victory State.</div><div class="ttdef"><b>Definition</b> VictoryState.cpp:15</div></div>
+<div class="ttc" id="aclass_victory_state_html_af63f6cc6fbbe77e0059f547a95fa1591"><div class="ttname"><a href="class_victory_state.html#af63f6cc6fbbe77e0059f547a95fa1591">VictoryState::VictoryState</a></div><div class="ttdeci">VictoryState(StateManager &amp;context)</div><div class="ttdef"><b>Definition</b> VictoryState.cpp:7</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>Representation</b></li><li class="navelem"><b>States</b></li><li class="navelem"><b>VictoryState.h</b></li>
+    <li class="navelem"><a href="dir_5b53d4d8c62c5abdb2754b788854db81.html">Representation</a></li><li class="navelem"><a href="dir_e03f3d55d8d082a661b7a3934d58006c.html">States</a></li><li class="navelem"><a href="_victory_state_8h.html">VictoryState.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
   </ul>
 </div>

@@ -92,6 +92,7 @@ $(function(){initNavTree('_score_8h.html','',''); });
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;fstream&gt;</code><br />
+<code>#include &lt;utility&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
 <code>#include &quot;<a class="el" href="_observer_8h_source.html">Observer.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -99,17 +100,19 @@ Include dependency graph for Score.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="_score_8h__incl.png" border="0" usemap="#a_logic_2_score_8h" loading="lazy" alt=""/></div>
 <map name="a_logic_2_score_8h" id="a_logic_2_score_8h">
-<area shape="rect" title=" " alt="" coords="73,5,174,32"/>
+<area shape="rect" title=" " alt="" coords="109,5,210,32"/>
 <area shape="rect" title=" " alt="" coords="5,80,71,107"/>
-<area shape="poly" title=" " alt="" coords="107,35,66,72,62,68,110,30"/>
-<area shape="rect" title=" " alt="" coords="95,80,152,107"/>
-<area shape="poly" title=" " alt="" coords="125,30,126,65,121,64,122,35"/>
-<area shape="rect" href="_observer_8h.html" title=" " alt="" coords="177,80,262,107"/>
-<area shape="poly" title=" " alt="" coords="141,30,193,70,188,71,140,35"/>
-<area shape="rect" title=" " alt="" coords="146,155,215,181"/>
-<area shape="poly" title=" " alt="" coords="215,106,196,143,193,139,210,109"/>
-<area shape="rect" title=" " alt="" coords="239,155,277,181"/>
-<area shape="poly" title=" " alt="" coords="227,105,247,142,242,140,225,110"/>
+<area shape="poly" title=" " alt="" coords="137,35,74,74,71,70,140,30"/>
+<area shape="rect" title=" " alt="" coords="94,80,147,107"/>
+<area shape="poly" title=" " alt="" coords="154,31,137,68,132,65,151,35"/>
+<area shape="rect" title=" " alt="" coords="171,80,228,107"/>
+<area shape="poly" title=" " alt="" coords="167,30,188,66,182,66,165,35"/>
+<area shape="rect" href="_observer_8h.html" title=" " alt="" coords="253,80,338,107"/>
+<area shape="poly" title=" " alt="" coords="183,30,261,72,256,73,183,35"/>
+<area shape="rect" title=" " alt="" coords="222,155,291,181"/>
+<area shape="poly" title=" " alt="" coords="291,106,272,143,269,139,286,109"/>
+<area shape="rect" title=" " alt="" coords="315,155,353,181"/>
+<area shape="poly" title=" " alt="" coords="303,105,323,142,318,140,301,110"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -117,18 +120,51 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="_score_8h__dep__incl.png" border="0" usemap="#a_logic_2_score_8hdep" loading="lazy" alt=""/></div>
 <map name="a_logic_2_score_8hdep" id="a_logic_2_score_8hdep">
-<area shape="rect" title=" " alt="" coords="174,5,275,32"/>
-<area shape="rect" href="_score_8cpp.html" title=" " alt="" coords="5,88,121,115"/>
-<area shape="poly" title=" " alt="" coords="184,42,89,90,87,85,187,37"/>
-<area shape="rect" href="_game_8h.html" title=" " alt="" coords="145,88,304,115"/>
-<area shape="poly" title=" " alt="" coords="226,45,227,89,222,87,223,50"/>
-<area shape="rect" href="_menu_state_8h.html" title=" " alt="" coords="329,80,480,123"/>
-<area shape="poly" title=" " alt="" coords="267,36,360,79,355,80,266,41"/>
-<area shape="rect" href="_game_8cpp.html" title=" " alt="" coords="138,179,311,205"/>
-<area shape="poly" title=" " alt="" coords="226,128,227,179,222,177,222,132"/>
-<area shape="poly" title=" " alt="" coords="351,129,251,181,249,176,346,130"/>
-<area shape="rect" href="_menu_state_8cpp.html" title=" " alt="" coords="335,171,487,213"/>
-<area shape="poly" title=" " alt="" coords="409,136,412,172,407,169,405,140"/>
+<area shape="rect" title=" " alt="" coords="328,5,429,32"/>
+<area shape="rect" href="_score_8cpp.html" title=" " alt="" coords="45,88,160,115"/>
+<area shape="poly" title=" " alt="" coords="319,39,147,90,145,85,322,34"/>
+<area shape="rect" href="_world_view_8h.html" title=" " alt="" coords="184,80,341,123"/>
+<area shape="poly" title=" " alt="" coords="346,43,294,82,291,77,350,39"/>
+<area shape="rect" href="_level_state_8h.html" title=" " alt="" coords="187,171,338,213"/>
+<area shape="poly" title=" " alt="" coords="379,45,372,85,356,124,331,151,303,172,300,168,327,147,351,121,367,84,375,49"/>
+<area shape="rect" href="_menu_state_8h.html" title=" " alt="" coords="1067,171,1218,213"/>
+<area shape="poly" title=" " alt="" coords="445,24,604,43,698,59,791,77,954,122,1089,170,1084,170,952,127,790,83,697,64,603,49,445,29"/>
+<area shape="rect" href="_state_manager_8h.html" title=" " alt="" coords="627,80,778,123"/>
+<area shape="poly" title=" " alt="" coords="444,34,629,80,624,82,444,39"/>
+<area shape="rect" href="_world_view_8cpp.html" title=" " alt="" coords="5,171,163,213"/>
+<area shape="poly" title=" " alt="" coords="205,132,127,172,124,168,209,128"/>
+<area shape="poly" title=" " alt="" coords="264,136,265,172,260,169,261,140"/>
+<area shape="rect" href="_level_state_8cpp.html" title=" " alt="" coords="490,261,641,304"/>
+<area shape="poly" title=" " alt="" coords="349,216,497,260,492,261,348,221"/>
+<area shape="rect" href="_menu_state_8cpp.html" title=" " alt="" coords="884,261,1036,304"/>
+<area shape="poly" title=" " alt="" coords="354,211,500,228,615,235,729,241,872,259,886,264,881,263,872,264,728,246,614,240,500,234,354,216"/>
+<area shape="rect" href="_victory_state_8cpp.html" title=" " alt="" coords="230,261,381,304"/>
+<area shape="poly" title=" " alt="" coords="281,225,298,262,293,260,278,230"/>
+<area shape="poly" title=" " alt="" coords="1089,220,1003,263,1002,258,1084,221"/>
+<area shape="rect" href="_game_8cpp.html" title=" " alt="" coords="1236,269,1409,296"/>
+<area shape="poly" title=" " alt="" coords="1199,218,1299,269,1294,268,1198,223"/>
+<area shape="rect" href="_game_over_state_8cpp.html" title=" " alt="" coords="1060,261,1212,304"/>
+<area shape="poly" title=" " alt="" coords="1142,227,1139,263,1136,259,1138,231"/>
+<area shape="poly" title=" " alt="" coords="610,121,351,173,340,176,338,171,350,168,614,118"/>
+<area shape="poly" title=" " alt="" coords="794,117,1055,168,1069,173,1064,173,1054,173,793,122"/>
+<area shape="rect" href="_game_8h.html" title=" " alt="" coords="1243,179,1402,205"/>
+<area shape="poly" title=" " alt="" coords="794,109,995,133,1231,168,1271,178,1266,178,1230,173,994,138,794,115"/>
+<area shape="rect" href="_game_over_state_8h.html" title=" " alt="" coords="891,171,1042,213"/>
+<area shape="poly" title=" " alt="" coords="779,125,907,170,902,170,779,131"/>
+<area shape="rect" href="_paused_state_8h.html" title=" " alt="" coords="715,171,866,213"/>
+<area shape="poly" title=" " alt="" coords="735,131,773,171,768,170,733,136"/>
+<area shape="rect" href="_state_manager_8cpp.html" title=" " alt="" coords="539,171,690,213"/>
+<area shape="poly" title=" " alt="" coords="674,133,636,173,634,168,669,135"/>
+<area shape="rect" href="_victory_state_8h.html" title=" " alt="" coords="363,171,514,213"/>
+<area shape="poly" title=" " alt="" coords="629,127,501,173,500,167,624,129"/>
+<area shape="poly" title=" " alt="" coords="1325,219,1325,271,1321,267,1321,223"/>
+<area shape="poly" title=" " alt="" coords="878,214,642,268,641,262,873,214"/>
+<area shape="poly" title=" " alt="" coords="1020,218,1099,261,1094,260,1019,223"/>
+<area shape="poly" title=" " alt="" coords="726,219,619,263,618,258,721,220"/>
+<area shape="rect" href="_paused_state_8cpp.html" title=" " alt="" coords="708,261,860,304"/>
+<area shape="poly" title=" " alt="" coords="790,227,787,263,784,259,786,231"/>
+<area shape="poly" title=" " alt="" coords="481,220,538,261,533,260,480,225"/>
+<area shape="poly" title=" " alt="" coords="397,222,337,263,335,258,392,223"/>
 </map>
 </div>
 </div>
@@ -136,11 +172,19 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr class="memitem:logic_3A_3AHighscore" id="r_logic_3A_3AHighscore"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlogic_1_1_highscore.html">logic::Highscore</a></td></tr>
 <tr class="memitem:logic_3A_3AScore" id="r_logic_3A_3AScore"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlogic_1_1_score.html">logic::Score</a></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:logic" id="r_logic"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelogic.html">logic</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:accce5f3260a0adf8f69dc49c170383fd" id="r_accce5f3260a0adf8f69dc49c170383fd"><td class="memItemLeft" align="right" valign="top">constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelogic.html#accce5f3260a0adf8f69dc49c170383fd">logic::SCORE_DECAY</a> = 10</td></tr>
+<tr class="memitem:a9737ba9906c9346f5b702fa83fc94f9b" id="r_a9737ba9906c9346f5b702fa83fc94f9b"><td class="memItemLeft" align="right" valign="top">constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelogic.html#a9737ba9906c9346f5b702fa83fc94f9b">logic::GHOST_POINTS</a> = 200</td></tr>
+<tr class="memitem:ae0d1b7b4cddc655b4425231ddb413a63" id="r_ae0d1b7b4cddc655b4425231ddb413a63"><td class="memItemLeft" align="right" valign="top">constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelogic.html#ae0d1b7b4cddc655b4425231ddb413a63">logic::LEVEL_CLEAR_POINTS</a> = 500</td></tr>
+<tr class="memitem:af62c6308f17aead2b08ef3bb0dd4d7e9" id="r_af62c6308f17aead2b08ef3bb0dd4d7e9"><td class="memItemLeft" align="right" valign="top">constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelogic.html#af62c6308f17aead2b08ef3bb0dd4d7e9">logic::BASE_COIN_POINTS</a> = 10</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->

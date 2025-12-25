@@ -10,7 +10,7 @@
 
 class PausedState final : public State {
 public:
-    explicit PausedState(StateManager* context);
+    explicit PausedState(StateManager& context);
 
     void update(double dt) override {};
     void handleInput(const sf::Event::KeyEvent &keyPressed) override;
