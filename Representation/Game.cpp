@@ -8,12 +8,12 @@
 
 
 Game::Game() {
-    scoreSystem = std::make_shared<logic::Score>();
-
-    context = std::make_unique<StateManager>(scoreSystem);
+    context = std::make_unique<StateManager>();
     context->push(std::make_unique<MenuState>(*context));
-    // Window::getInstance().setFramerateLimit(60);
 
+    scoreSystem = context->getGameContext().scoreSystem;
+
+    // Window::getInstance().setFramerateLimit(60);
     while (Window::getInstance().isOpen()) {
         this->loop();
     }
@@ -30,7 +30,7 @@ void Game::loop() const {
             // Using KeyPressed event to be more responsive to player input
             // case sf::Event::KeyReleased:
             case sf::Event::KeyPressed:
-                context->top()->handleInput(event.key);
+                context->top().handleInput(event.key);
                 break;
 
             case sf::Event::Closed:
@@ -50,11 +50,11 @@ void Game::loop() const {
     logic::Stopwatch::getInstance().tick();
     const double dt = logic::Stopwatch::getInstance().getDeltaTime();
 
-    context->top()->update(dt);
+    context->top().update(dt);
 
     // Lastly clear the window and render the current State, display after
     window.clear();
-    context->top()->render();
+    context->top().render();
     window.display();
 }
 

@@ -10,18 +10,18 @@
 
 
 LevelState::LevelState(StateManager& context) : State(context) {
-    factory = context.getGameContext()->factory;
+    factory = context.getGameContext().factory;
     factory->setViews(&this->entityViews);
 
-    world = std::make_shared<logic::World>(factory, context.getGameContext()->lives);
+    world = std::make_shared<logic::World>(factory, context.getGameContext().lives);
     world->loadLevel("../Representation/levels/level_1.txt");
 
     Camera::getInstance().setScaling(world->getWidth(), world->getHeight());
 
-    scoreSystem = context.getGameContext()->scoreSystem;
+    scoreSystem = context.getGameContext().scoreSystem;
     world->attach(scoreSystem);
 
-    soundManager= context.getGameContext()->soundManager;
+    soundManager= context.getGameContext().soundManager;
     soundManager->start();
     world->attach(soundManager);
 
@@ -42,13 +42,13 @@ void LevelState::update(const double dt) {
     switch (world->update(dt)) {
         case logic::GAME_OVER:
             soundManager->stop();
-            this->context.getGameContext()->lives = 3;
+            this->context.getGameContext().lives = 3;
             this->context.swap(std::make_unique<GameOverState>(this->context));
             return;
 
         case logic::LEVEL_COMPLETED:
             soundManager->stop();
-            this->context.getGameContext()->lives = world->getLives();
+            this->context.getGameContext().lives = world->getLives();
             this->context.swap(std::make_unique<VictoryState>(this->context));
             return;
 

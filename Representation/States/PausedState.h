@@ -12,8 +12,19 @@ class PausedState final : public State {
 public:
     explicit PausedState(StateManager& context);
 
+    // Not in use
     void update(double dt) override {};
+
+    /**
+     * @brief Goes back to the LevelState when specific keys are pressed.
+     *
+     * @param keyPressed KeyPressed event
+     */
     void handleInput(const sf::Event::KeyEvent &keyPressed) override;
+
+    /**
+     * @brief Renders the PausedState
+     */
     void render() override;
 };
 

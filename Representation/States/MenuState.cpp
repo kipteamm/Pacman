@@ -11,7 +11,7 @@
 
 
 MenuState::MenuState(StateManager& context) : State(context) {
-    this->scoreSystem = context.getGameContext()->scoreSystem;
+    this->scoreSystem = context.getGameContext().scoreSystem;
     this->pacmanLogo.setTexture(AssetManager::getInstance().getPacmanLogo(), true);
 
     const float x = Window::getInstance().getWidth() / 2 - this->pacmanLogo.getGlobalBounds().width / 2;
