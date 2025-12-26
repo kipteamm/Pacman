@@ -1,5 +1,6 @@
-#include "AssetManager.h"
 #include <stdexcept>
+
+#include "AssetManager.h"
 
 
 AssetManager::AssetManager() {

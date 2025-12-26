@@ -1,7 +1,3 @@
-//
-// Created by PPetre on 26/11/2025.
-//
-
 #include "../AssetManager.h"
 #include "PausedState.h"
 #include "../Window.h"

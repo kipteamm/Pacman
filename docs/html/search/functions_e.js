@@ -12,7 +12,7 @@ var searchData=
   ['soundmanager_9',['SoundManager',['../class_sound_manager.html#abcc1fbf3488be5788a42c9a4fe56df35',1,'SoundManager']]],
   ['start_10',['start',['../class_sound_manager.html#a5514e839347c036dd7ecf5b9af869015',1,'SoundManager']]],
   ['state_11',['State',['../class_state.html#a08febc2efb52c152040efda1fb93634b',1,'State']]],
-  ['statemanager_12',['StateManager',['../class_state_manager.html#ad25aed1c97e25ef5fd8dfdf26c11a677',1,'StateManager']]],
+  ['statemanager_12',['StateManager',['../class_state_manager.html#a3e2be96d935eb56813b096a885d58587',1,'StateManager']]],
   ['stop_13',['stop',['../class_sound_manager.html#a3820a512212edaaf294a1d67ea9c9c55',1,'SoundManager']]],
   ['stopwatch_14',['Stopwatch',['../classlogic_1_1_stopwatch.html#aef5301b0593339e01c50a83022e7b801',1,'logic::Stopwatch']]],
   ['swap_15',['swap',['../class_state_manager.html#ab0f7726aa3e964ebf5cbafa9b5d3efa2',1,'StateManager']]]

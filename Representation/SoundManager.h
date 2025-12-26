@@ -2,8 +2,9 @@
 #define PACMAN_SOUNDMANAGER_H
 
 #include <SFML/Audio/Sound.hpp>
-#include "../Logic/Observer.h"
 #include <vector>
+
+#include "../Logic/Observer.h"
 
 
 class SoundManager final : public logic::Observer {

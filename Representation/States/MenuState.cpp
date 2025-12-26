@@ -1,7 +1,3 @@
-//
-// Created by PPetre on 26/11/2025.
-//
-
 #include "../AssetManager.h"
 #include "../Window.h"
 #include "LevelState.h"
@@ -10,37 +6,82 @@
 #include <iostream>
 
 
-MenuState::MenuState(StateManager& context) : State(context) {
+MenuState::MenuState(StateManager& context) : State(context), elapsedTime(0) {
     this->scoreSystem = context.getGameContext().scoreSystem;
-    this->pacmanLogo.setTexture(AssetManager::getInstance().getPacmanLogo(), true);
 
-    const float x = Window::getInstance().getWidth() / 2 - this->pacmanLogo.getGlobalBounds().width / 2;
-    this->pacmanLogo.setPosition(x, 100);
+    this->pacmanLogo.setTexture(AssetManager::getInstance().getPacmanLogo(), true);
+    this->pacmanLogo.setPosition(
+        Window::getInstance().getWidth() / 2 - this->pacmanLogo.getGlobalBounds().width / 2,
+        100
+    );
+
+    highscoresTitle = sf::Text{"Highscores", AssetManager::getInstance().getFont()};
+    highscoresTitle.setCharacterSize(20);
+    highscoresTitle.setFillColor(sf::Color::Yellow);
+    highscoresTitle.setPosition(
+        Window::getInstance().getWidth() / 2 - highscoresTitle.getGlobalBounds().width / 2,
+        500
+    );
+
+    const auto _highscores = this->scoreSystem->getHighscores();
+    int y = 500;
+
+    for (int i = 0; i < std::min(5, static_cast<int>(_highscores->size())); i++) {
+        sf::Text score{
+            _highscores->at(i)->username + ": " + std::to_string(_highscores->at(i)->score),
+            AssetManager::getInstance().getFont()
+        };
+        score.setCharacterSize(20);
+        score.setFillColor(sf::Color::White);
+
+        const float x = Window::getInstance().getWidth() / 2 - score.getGlobalBounds().width / 2;
+        y += 50;
+        score.setPosition(x, y);
+
+        highscores.push_back(score);
+    };
+
+    username = sf::Text{"Playing as: ", AssetManager::getInstance().getFont()};
+    username.setCharacterSize(20);
+    username.setFillColor(sf::Color::Yellow);
+
+    cta = sf::Text{"Press 'space' to start", AssetManager::getInstance().getFont()};
+    cta.setCharacterSize(20);
+    cta.setFillColor(sf::Color::Yellow);
+    cta.setPosition(
+        Window::getInstance().getWidth() / 2 - cta.getGlobalBounds().width / 2,
+        950
+    );
 }
 
 
+/**
+ * @warning Username changing has not been tested with AZERTY keyboard layouts.
+ */
 void MenuState::handleInput(const sf::Event::KeyEvent& keyPressed) {
     // Handle Start Game
     if (keyPressed.code == sf::Keyboard::Space || keyPressed.code == sf::Keyboard::Enter) {
-        if (username.empty()) return;
+        if (usernameValue.empty()) return;
 
-        scoreSystem->setUser(username);
+        scoreSystem->setUser(usernameValue);
         this->context.swap(std::make_unique<LevelState>(this->context));
         return;
     }
 
-    // Usernames
-    // Handle Backspace (Delete char)
-    if (keyPressed.code == sf::Keyboard::Backspace) {
-        if (username.empty()) return;
 
-        username.pop_back();
+    // Usernames
+
+    // Handle Backspace (delete char)
+    if (keyPressed.code == sf::Keyboard::Backspace) {
+        if (usernameValue.empty()) return;
+
+        usernameValue.pop_back();
         return;
     }
 
-    if (username.size() >= 16) return;
+    if (usernameValue.size() >= 16) return;
 
-    // Username changing
+    // New characters
     char charToAdd = 0;
     if (keyPressed.code >= sf::Keyboard::A && keyPressed.code <= sf::Keyboard::Z) {
         const char base = keyPressed.shift ? 'A' : 'a';
@@ -53,14 +94,22 @@ void MenuState::handleInput(const sf::Event::KeyEvent& keyPressed) {
         charToAdd = keyPressed.shift ? '_' : '-';
     }
 
-    if (charToAdd != 0) username += charToAdd;
+    if (charToAdd == 0) return;
+
+    // Update the internal usernameValue and sf::Text username outside the
+    // render loop to avoid redundant updates.
+    usernameValue += charToAdd;
+    username.setString("Playing as: " + usernameValue);
+    // Only reposition the username element here because the animated trailing
+    // underscore would make change the X position everytime it is appended.
+    username.setPosition(Window::getInstance().getWidth() / 2 - username.getGlobalBounds().width / 2, 400);
 }
 
 
 void MenuState::update(const double dt) {
     elapsedTime += dt;
 
-    // 0.4s on screen, 0.2s off-screen
+    // 0.6s on screen, 0.2s off-screen
     const double SWITCH = renderCta ? 0.6 : 0.2;
 
     if (elapsedTime < SWITCH) return;
@@ -72,53 +121,19 @@ void MenuState::update(const double dt) {
 void MenuState::render() {
     Window::getInstance().draw(this->pacmanLogo);
 
-    sf::Text name{
-        "Playing as: " + username,
-        AssetManager::getInstance().getFont()
-    };
-    name.setCharacterSize(20);
-    name.setFillColor(sf::Color::Yellow);
-    name.setPosition(Window::getInstance().getWidth() / 2 - name.getGlobalBounds().width / 2, 400);
-    name.setString("Playing as: " + username + (username.size() < 16 && renderCta? "_": " "));
+    // Username with trailing underscore to indicate editing. The underscore is
+    // animated with the same loop as the call to action. It will not be
+    // appended when the username is already of maxlength.
+    if (usernameValue.size() < 16 && renderCta) username.setString("Playing as: " + usernameValue + "_");
+    Window::getInstance().draw(username);
 
-    Window::getInstance().draw(name);
+    Window::getInstance().draw(highscoresTitle);
+    for (const sf::Text& highscore : highscores) {
+        Window::getInstance().draw(highscore);
+    }
 
-    sf::Text title{"Highscores", AssetManager::getInstance().getFont()};
-    title.setCharacterSize(20);
-    title.setFillColor(sf::Color::Yellow);
-    title.setPosition(
-        Window::getInstance().getWidth() / 2 - title.getGlobalBounds().width / 2,
-        500
-    );
-
-    Window::getInstance().draw(title);
-
-    const auto highscores = this->scoreSystem->getHighscores();
-    int y = 500;
-
-    for (int i = 0; i < std::min(5, static_cast<int>(highscores->size())); i++) {
-        sf::Text score{
-            highscores->at(i)->username + ": " + std::to_string(highscores->at(i)->score),
-            AssetManager::getInstance().getFont()
-        };
-        score.setCharacterSize(20);
-        score.setFillColor(sf::Color::White);
-
-        const float x = Window::getInstance().getWidth() / 2 - score.getGlobalBounds().width / 2;
-        y += 50;
-        score.setPosition(x, y);
-
-        Window::getInstance().draw(score);
-    };
-
+    // renderCta is a bool managed by the update function which is used to
+    // animate the call to action string.
     if (!renderCta) return;
-    sf::Text cta{"Press 'space' to start", AssetManager::getInstance().getFont()};
-    cta.setCharacterSize(20);
-    cta.setFillColor(sf::Color::Yellow);
-    cta.setPosition(
-        Window::getInstance().getWidth() / 2 - cta.getGlobalBounds().width / 2,
-        950
-    );
-
     Window::getInstance().draw(cta);
 }

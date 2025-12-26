@@ -59,7 +59,7 @@ var NAVTREEINDEX =
 [
 "_abstract_factory_8h.html",
 "classlogic_1_1_ambush_ghost.html#aa9bc569ca26c4715617977bbbec49ced",
-"functions_f.html"
+"functions_func.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

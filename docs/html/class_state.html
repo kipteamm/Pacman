@@ -124,42 +124,23 @@ Collaboration diagram for State:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a08febc2efb52c152040efda1fb93634b" id="r_a08febc2efb52c152040efda1fb93634b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a08febc2efb52c152040efda1fb93634b">State</a> (<a class="el" href="class_state_manager.html">StateManager</a> &amp;ctx)</td></tr>
-<tr class="memitem:a783d52422b544bb226e13de8ecfd6ad6" id="r_a783d52422b544bb226e13de8ecfd6ad6"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a783d52422b544bb226e13de8ecfd6ad6">~State</a> ()=default</td></tr>
 <tr class="memitem:ac4a5be39cd72ab792e73e339754dfc5f" id="r_ac4a5be39cd72ab792e73e339754dfc5f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac4a5be39cd72ab792e73e339754dfc5f">update</a> (double dt)=0</td></tr>
 <tr class="memitem:a03d494dbd02afaae6c75cbaa32740b3f" id="r_a03d494dbd02afaae6c75cbaa32740b3f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a03d494dbd02afaae6c75cbaa32740b3f">handleInput</a> (const sf::Event::KeyEvent &amp;keyPressed)=0</td></tr>
+<tr class="memdesc:a03d494dbd02afaae6c75cbaa32740b3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handler for KeyPressed events.  <br /></td></tr>
 <tr class="memitem:a71f5105bcdc39481be7684d853fe12e9" id="r_a71f5105bcdc39481be7684d853fe12e9"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a71f5105bcdc39481be7684d853fe12e9">render</a> ()=0</td></tr>
+<tr class="memdesc:a71f5105bcdc39481be7684d853fe12e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Render function that is called in the main <a class="el" href="class_game.html">Game</a> loop.  <br /></td></tr>
+<tr class="memitem:a783d52422b544bb226e13de8ecfd6ad6" id="r_a783d52422b544bb226e13de8ecfd6ad6"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a783d52422b544bb226e13de8ecfd6ad6">~State</a> ()=default</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pro-methods" class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:a08febc2efb52c152040efda1fb93634b" id="r_a08febc2efb52c152040efda1fb93634b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a08febc2efb52c152040efda1fb93634b">State</a> (<a class="el" href="class_state_manager.html">StateManager</a> &amp;ctx)</td></tr>
+<tr class="memdesc:a08febc2efb52c152040efda1fb93634b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the base <a class="el" href="class_state.html">State</a> object.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-attribs" class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:a9de31f1ce45c89c183bb929122eb9acb" id="r_a9de31f1ce45c89c183bb929122eb9acb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_state_manager.html">StateManager</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9de31f1ce45c89c183bb929122eb9acb">context</a></td></tr>
 </table>
 <a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a08febc2efb52c152040efda1fb93634b" name="a08febc2efb52c152040efda1fb93634b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a08febc2efb52c152040efda1fb93634b">&#9670;&#160;</a></span>State()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">State::State </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_state_manager.html">StateManager</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>ctx</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a783d52422b544bb226e13de8ecfd6ad6" name="a783d52422b544bb226e13de8ecfd6ad6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a783d52422b544bb226e13de8ecfd6ad6">&#9670;&#160;</a></span>~State()</h2>
 
@@ -182,6 +163,40 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="a08febc2efb52c152040efda1fb93634b" name="a08febc2efb52c152040efda1fb93634b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08febc2efb52c152040efda1fb93634b">&#9670;&#160;</a></span>State()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">State::State </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_state_manager.html">StateManager</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>ctx</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates the base <a class="el" href="class_state.html">State</a> object. </p>
+<p><a class="el" href="class_state.html">State</a> is a Base class and not supposed to be used separately.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ctx</td><td><a class="el" href="class_state_manager.html">StateManager</a> </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -208,6 +223,14 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Handler for KeyPressed events. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">keyPressed</td><td>SFML KeyEvent </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p>Implemented in <a class="el" href="class_game_over_state.html#a3ed23bddfcbd2e2acda494dec1abcab3">GameOverState</a>, <a class="el" href="class_level_state.html#abbd8e8c8aac5947b9a954c65afb63402">LevelState</a>, <a class="el" href="class_menu_state.html#ab0a752741d44348fff67fdee8cad16f5">MenuState</a>, <a class="el" href="class_paused_state.html#a60cf07692dbd712ede263ebdc6566263">PausedState</a>, and <a class="el" href="class_victory_state.html#a40f5a4edb114f00014ecf856e8e1c22e">VictoryState</a>.</p>
 
@@ -236,6 +259,9 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Render function that is called in the main <a class="el" href="class_game.html">Game</a> loop. </p>
+<p>Should render everything relevant to the current state, that could be UI components, game elements or specific Views. </p>
+
 <p>Implemented in <a class="el" href="class_game_over_state.html#ad696ff18e7d4449406861fe746d34986">GameOverState</a>, <a class="el" href="class_level_state.html#a35bcf6729c5becf048fc132fc891cbf4">LevelState</a>, <a class="el" href="class_menu_state.html#ac216e0b4c7f5c5d39520165c45af0da6">MenuState</a>, <a class="el" href="class_paused_state.html#a37b3c32ccc689b9529a61aba74ba077c">PausedState</a>, and <a class="el" href="class_victory_state.html#a7f9c4d40c8a336329c58e47e933e0b47">VictoryState</a>.</p>
 
 </div>
@@ -262,6 +288,13 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>@bief Update function that is called in the main <a class="el" href="class_game.html">Game</a> loop.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dt</td><td>Deltatime </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p>Implemented in <a class="el" href="class_game_over_state.html#af84f34348ab5505185886f973965d8af">GameOverState</a>, <a class="el" href="class_level_state.html#a68aa0d4c21370812ce261b7fff11786f">LevelState</a>, <a class="el" href="class_menu_state.html#a98b2778bfb8aaa192c2a23e8c3d89204">MenuState</a>, <a class="el" href="class_paused_state.html#a5f7e76236a2130625fd579700f79a043">PausedState</a>, and <a class="el" href="class_victory_state.html#a0309c9c6668dd1f9a6ed0a58c0217871">VictoryState</a>.</p>
 

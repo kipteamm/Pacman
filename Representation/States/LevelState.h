@@ -1,20 +1,19 @@
-//
-// Created by PPetre on 26/11/2025.
-//
-
 #ifndef LEVELSTATE_H
 #define LEVELSTATE_H
 
 #include <unordered_map>
 
-#include "../Entities/ConcreteFactory.h"
 #include "../Entities/WorldView.h"
-#include "../../Logic/Score.h"
 #include "StateManager.h"
 
 
 class LevelState final : public State {
 public:
+    /**
+     * @brief This State initiates a Pacman level by setting up a logic::World
+     * and rendering the game views.
+     * @param context StateManager
+     */
     explicit LevelState(StateManager& context);
 
     void update(double dt) override;

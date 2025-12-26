@@ -119,17 +119,20 @@ Collaboration diagram for VictoryState:</div>
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:af63f6cc6fbbe77e0059f547a95fa1591" id="r_af63f6cc6fbbe77e0059f547a95fa1591"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af63f6cc6fbbe77e0059f547a95fa1591">VictoryState</a> (<a class="el" href="class_state_manager.html">StateManager</a> &amp;<a class="el" href="class_state.html#a9de31f1ce45c89c183bb929122eb9acb">context</a>)</td></tr>
+<tr class="memdesc:af63f6cc6fbbe77e0059f547a95fa1591"><td class="mdescLeft">&#160;</td><td class="mdescRight">This <a class="el" href="class_state.html">State</a> determines the Victory menu at the end of a single Pacman level.  <br /></td></tr>
 <tr class="memitem:a0309c9c6668dd1f9a6ed0a58c0217871" id="r_a0309c9c6668dd1f9a6ed0a58c0217871"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0309c9c6668dd1f9a6ed0a58c0217871">update</a> (double dt) override</td></tr>
 <tr class="memitem:a40f5a4edb114f00014ecf856e8e1c22e" id="r_a40f5a4edb114f00014ecf856e8e1c22e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a40f5a4edb114f00014ecf856e8e1c22e">handleInput</a> (const sf::Event::KeyEvent &amp;keyPressed) override</td></tr>
 <tr class="memdesc:a40f5a4edb114f00014ecf856e8e1c22e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Will load the next level regardless of what key was pressed.  <br /></td></tr>
 <tr class="memitem:a7f9c4d40c8a336329c58e47e933e0b47" id="r_a7f9c4d40c8a336329c58e47e933e0b47"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7f9c4d40c8a336329c58e47e933e0b47">render</a> () override</td></tr>
 <tr class="memdesc:a7f9c4d40c8a336329c58e47e933e0b47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders the Victory <a class="el" href="class_state.html">State</a>.  <br /></td></tr>
 <tr class="inherit_header pub_methods_class_state"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_class_state')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="class_state.html">State</a></td></tr>
-<tr class="memitem:a08febc2efb52c152040efda1fb93634b inherit pub_methods_class_state" id="r_a08febc2efb52c152040efda1fb93634b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_state.html#a08febc2efb52c152040efda1fb93634b">State</a> (<a class="el" href="class_state_manager.html">StateManager</a> &amp;ctx)</td></tr>
 <tr class="memitem:a783d52422b544bb226e13de8ecfd6ad6 inherit pub_methods_class_state" id="r_a783d52422b544bb226e13de8ecfd6ad6"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_state.html#a783d52422b544bb226e13de8ecfd6ad6">~State</a> ()=default</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pro_methods_class_state"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_methods_class_state')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Member Functions inherited from <a class="el" href="class_state.html">State</a></td></tr>
+<tr class="memitem:a08febc2efb52c152040efda1fb93634b inherit pro_methods_class_state" id="r_a08febc2efb52c152040efda1fb93634b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_state.html#a08febc2efb52c152040efda1fb93634b">State</a> (<a class="el" href="class_state_manager.html">StateManager</a> &amp;ctx)</td></tr>
+<tr class="memdesc:a08febc2efb52c152040efda1fb93634b inherit pro_methods_class_state"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the base <a class="el" href="class_state.html">State</a> object.  <br /></td></tr>
 <tr class="inherit_header pro_attribs_class_state"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_class_state')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Attributes inherited from <a class="el" href="class_state.html">State</a></td></tr>
 <tr class="memitem:a9de31f1ce45c89c183bb929122eb9acb inherit pro_attribs_class_state" id="r_a9de31f1ce45c89c183bb929122eb9acb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_state_manager.html">StateManager</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_state.html#a9de31f1ce45c89c183bb929122eb9acb">context</a></td></tr>
 </table>
@@ -156,6 +159,14 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>This <a class="el" href="class_state.html">State</a> determines the Victory menu at the end of a single Pacman level. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">context</td><td><a class="el" href="class_state_manager.html">StateManager</a> </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -246,6 +257,13 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>@bief Update function that is called in the main <a class="el" href="class_game.html">Game</a> loop.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dt</td><td>Deltatime </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p>Implements <a class="el" href="class_state.html#ac4a5be39cd72ab792e73e339754dfc5f">State</a>.</p>
 

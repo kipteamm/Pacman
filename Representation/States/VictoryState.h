@@ -6,6 +6,11 @@
 
 class VictoryState final : public State {
 public:
+    /**
+     * @brief This State determines the Victory menu at the end of a single
+     * Pacman level.
+     * @param context StateManager
+     */
     explicit VictoryState(StateManager& context);
 
     // Not in use
@@ -13,7 +18,6 @@ public:
 
     /**
      * @brief Will load the next level regardless of what key was pressed.
-     *
      * @param keyPressed KeyPressed event
      */
     void handleInput(const sf::Event::KeyEvent& keyPressed) override;

@@ -8,7 +8,7 @@ var searchData=
   ['getfloat_5',['getFloat',['../classlogic_1_1_random.html#a2498fad76196a0ede1cc9ad2c1b843b7',1,'logic::Random']]],
   ['getfont_6',['getFont',['../class_asset_manager.html#aff9f49df1f49c7eee24f456a0df0b71e',1,'AssetManager']]],
   ['getframeindex_7',['getFrameIndex',['../class_entity_view.html#a5052ee0e188d9e3e624cf7996ded9af6',1,'EntityView']]],
-  ['getgamecontext_8',['getGameContext',['../class_state_manager.html#a4f6b9a731f528a6c7812fac68323ab7c',1,'StateManager']]],
+  ['getgamecontext_8',['getGameContext',['../class_state_manager.html#a6d83ab87367f81ddb8fa4093ee448781',1,'StateManager']]],
   ['getghostexitx_9',['getGhostExitX',['../classlogic_1_1_world.html#a3a5f13d633b6168cd0561b11b07f09aa',1,'logic::World']]],
   ['getghostexity_10',['getGhostExitY',['../classlogic_1_1_world.html#a6da6edeecfc720601d7f7103d222018a',1,'logic::World']]],
   ['getgridx_11',['getGridX',['../classlogic_1_1_moving_entity_model.html#aa90b5e5a34ae4c2c9a1066cb09b0adcf',1,'logic::MovingEntityModel']]],

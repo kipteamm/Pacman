@@ -1,6 +1,5 @@
 var NAVTREEINDEX1 =
 {
-"classlogic_1_1_ambush_ghost.html#aa9bc569ca26c4715617977bbbec49ced":[0,0,0,8,0],
 "classlogic_1_1_ambush_ghost.html#aa9bc569ca26c4715617977bbbec49ced":[1,0,0,8,0],
 "classlogic_1_1_chasing_ghost.html":[0,0,0,9],
 "classlogic_1_1_chasing_ghost.html":[1,0,0,9],
@@ -249,5 +248,6 @@ var NAVTREEINDEX1 =
 "functions.html":[1,3,0,0],
 "functions_c.html":[1,3,0,1],
 "functions_d.html":[1,3,0,2],
-"functions_e.html":[1,3,0,3]
+"functions_e.html":[1,3,0,3],
+"functions_f.html":[1,3,0,4]
 };

@@ -27,7 +27,7 @@ var searchData=
   ['start_24',['start',['../class_sound_manager.html#a5514e839347c036dd7ecf5b9af869015',1,'SoundManager']]],
   ['state_25',['State',['../class_state.html',1,'State'],['../class_state.html#a08febc2efb52c152040efda1fb93634b',1,'State::State()']]],
   ['state_26',['state',['../classlogic_1_1_ghost_model.html#a5af000ea440a4a194ae5c7d851a26f90',1,'logic::GhostModel']]],
-  ['statemanager_27',['StateManager',['../class_state_manager.html',1,'StateManager'],['../class_state_manager.html#ad25aed1c97e25ef5fd8dfdf26c11a677',1,'StateManager::StateManager()']]],
+  ['statemanager_27',['StateManager',['../class_state_manager.html',1,'StateManager'],['../class_state_manager.html#a3e2be96d935eb56813b096a885d58587',1,'StateManager::StateManager()']]],
   ['statemanager_2ecpp_28',['StateManager.cpp',['../_state_manager_8cpp.html',1,'']]],
   ['statemanager_2eh_29',['StateManager.h',['../_state_manager_8h.html',1,'']]],
   ['stop_30',['stop',['../class_sound_manager.html#a3820a512212edaaf294a1d67ea9c9c55',1,'SoundManager']]],
