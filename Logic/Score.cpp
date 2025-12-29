@@ -50,13 +50,19 @@ int Score::getScore() const {
     return score;
 }
 
+const Highscore& Score::getLastSscore() const {
+    return lastScore;
+}
+
 
 void Score::setUser(const std::string& username) {
     this->username = username;
 }
 
 void Score::addScore(const int score) {
-    highscores.push_back(std::make_unique<Highscore>(username, score));
+    std::unique_ptr<Highscore> highscore = std::make_unique<Highscore>(username, score);
+    lastScore = *highscore;
+    highscores.push_back(std::move(highscore));
     this->score = 0;
 
     std::ranges::sort(highscores, [](const auto& a, const auto& b) {

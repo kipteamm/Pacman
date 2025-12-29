@@ -1,6 +1,8 @@
 #ifndef PAUSEDSTATE_H
 #define PAUSEDSTATE_H
 
+#include <SFML/Graphics/Text.hpp>
+
 #include "StateManager.h"
 
 
@@ -13,9 +15,6 @@ public:
      */
     explicit PausedState(StateManager& context);
 
-    // Not in use
-    void update(double dt) override {};
-
     /**
      * @brief Goes back to the LevelState when specific keys are pressed.
      * @param keyPressed KeyPressed event
@@ -23,9 +22,24 @@ public:
     void handleInput(const sf::Event::KeyEvent &keyPressed) override;
 
     /**
+     * @brief This is used for UI animations.
+     * @param dt Deltatime
+     */
+    void update(double dt) override;
+
+    /**
      * @brief Renders the PausedState
      */
     void render() override;
+
+private:
+    sf::Text title;
+    sf::Text info;
+    sf::Text cta;
+
+    bool animationRender = true;
+    double elapsedTime;
+
 };
 
 

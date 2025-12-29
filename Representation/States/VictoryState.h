@@ -1,6 +1,8 @@
 #ifndef PACMAN_VICTORYSTATE_H
 #define PACMAN_VICTORYSTATE_H
 
+#include <SFML/Graphics/Text.hpp>
+
 #include "StateManager.h"
 
 
@@ -13,9 +15,6 @@ public:
      */
     explicit VictoryState(StateManager& context);
 
-    // Not in use
-    void update(double dt) override {};
-
     /**
      * @brief Will load the next level regardless of what key was pressed.
      * @param keyPressed KeyPressed event
@@ -23,9 +22,22 @@ public:
     void handleInput(const sf::Event::KeyEvent& keyPressed) override;
 
     /**
+     * @brief This is used for UI animations.
+     * @param dt Deltatime
+     */
+    void update(double dt) override;
+
+    /**
      * @brief Renders the Victory State.
      */
     void render() override;
+
+private:
+    sf::Text title;
+
+    sf::Text cta;
+    bool renderCta = true;
+    double elapsedTime;
 };
 
 

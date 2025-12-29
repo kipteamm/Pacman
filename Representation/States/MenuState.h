@@ -15,12 +15,6 @@ public:
     explicit MenuState(StateManager& context);
 
     /**
-     * @brief Update the MenuState, is used for UI animations.
-     * @param dt Deltatime
-     */
-    void update(double dt) override;
-
-    /**
      * @brief Will start the game when specific keys are a pressed. Also
      * handles usernames.
      *
@@ -32,6 +26,12 @@ public:
      * @param keyPressed SFML KeyEvent
      */
     void handleInput(const sf::Event::KeyEvent &keyPressed) override;
+
+    /**
+     * @brief Update the MenuState, is used for UI animations.
+     * @param dt Deltatime
+     */
+    void update(double dt) override;
 
     /**
      * @brief Renders the menu state.
@@ -50,7 +50,6 @@ private:
     std::string usernameValue;
 
     sf::Text cta;
-
     bool renderCta = true;
     double elapsedTime;
 };

@@ -46,7 +46,7 @@ MenuState::MenuState(StateManager& context) : State(context), elapsedTime(0) {
     username.setPosition(Window::getInstance().getWidth() / 2 - username.getGlobalBounds().width / 2, 400);
     username.setFillColor(sf::Color::Yellow);
 
-    cta = sf::Text{"Press 'space' to start", AssetManager::getInstance().getFont()};
+    cta = sf::Text{"Start with typing your username", AssetManager::getInstance().getFont()};
     cta.setCharacterSize(20);
     cta.setFillColor(sf::Color::Yellow);
     cta.setPosition(
@@ -81,6 +81,15 @@ void MenuState::handleInput(const sf::Event::KeyEvent& keyPressed) {
         // underscore would make change the X position everytime it is appended.
         username.setString("Playing as: " + usernameValue);
         username.setPosition(Window::getInstance().getWidth() / 2 - username.getGlobalBounds().width / 2, 400);
+
+        if (!usernameValue.empty()) return;
+        // Change the CTA text & position when no username is selected.
+        cta.setString("Start with typing your username");
+        cta.setPosition(
+            Window::getInstance().getWidth() / 2 - cta.getGlobalBounds().width / 2,
+            950
+        );
+
         return;
     }
 
@@ -106,6 +115,15 @@ void MenuState::handleInput(const sf::Event::KeyEvent& keyPressed) {
     // underscore would make change the X position everytime it is appended.
     username.setString("Playing as: " + usernameValue);
     username.setPosition(Window::getInstance().getWidth() / 2 - username.getGlobalBounds().width / 2, 400);
+
+    // Only change the CTA string and position when the username length is one.
+    // This way I avoid repositioning it without the position changing.
+    if (usernameValue.size() != 1) return;
+    cta.setString("Press 'enter' to start");
+    cta.setPosition(
+        Window::getInstance().getWidth() / 2 - cta.getGlobalBounds().width / 2,
+        950
+    );
 }
 
 

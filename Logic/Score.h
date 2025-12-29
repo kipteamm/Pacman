@@ -23,6 +23,7 @@ namespace logic {
         std::string username;
         int score;
 
+        Highscore() : username(""), score(0) {}
         Highscore(std::string username, const int score) : username(std::move(username)), score(score) {}
 
         bool operator<(const Highscore& other) const {
@@ -38,6 +39,7 @@ namespace logic {
 
         [[nodiscard]] std::vector<std::unique_ptr<Highscore>>* getHighscores();
         [[nodiscard]] int getScore() const;
+        [[nodiscard]] const Highscore& getLastSscore() const;
 
         void setUser(const std::string& username);
         void addScore(int score);
@@ -48,6 +50,7 @@ namespace logic {
         std::string filename = "highscores.txt";
         std::vector<std::unique_ptr<Highscore>> highscores;
         std::string username;
+        Highscore lastScore{};
 
         bool paused = false;
         int score;

@@ -58,28 +58,6 @@ void LevelState::update(const logic::Events event) {
 }
 
 
-void LevelState::update(const double dt) {
-    // Update the ScoreSystem (for score decay)
-    scoreSystem->update(dt);
-
-    world->update(dt);
-
-    // Only try to remove deleted entities when we know from an Observed event
-    // that at least one entity should be deleted.
-    if (!cleanupRequired) return;
-
-    // Will delete any entities which were notified to delete themselves after
-    // their Model was deleted by the World. Is called at the end of the update
-    // loop assuring the World update has finished.
-    for (auto& views : this->entityViews | std::views::values) {
-        std::erase_if(views,[](const std::shared_ptr<EntityView>& view) {
-            return view->shouldDelete();
-        });
-    }
-
-    cleanupRequired = false;
-}
-
 void LevelState::handleInput(const sf::Event::KeyEvent &keyPressed) {
     switch (keyPressed.code) {
         case sf::Keyboard::Escape:
@@ -89,6 +67,7 @@ void LevelState::handleInput(const sf::Event::KeyEvent &keyPressed) {
             // while paused. Pushing is done and not swapping because the
             // LevelState (and thus the World) must be preserved while paused.
             this->context.push(std::make_unique<PausedState>(this->context));
+            this->soundManager->stop();
             return;
 
         case sf::Keyboard::Up:
@@ -114,6 +93,30 @@ void LevelState::handleInput(const sf::Event::KeyEvent &keyPressed) {
         default: break;
     }
 }
+
+
+void LevelState::update(const double dt) {
+    // Update the ScoreSystem (for score decay)
+    scoreSystem->update(dt);
+
+    world->update(dt);
+
+    // Only try to remove deleted entities when we know from an Observed event
+    // that at least one entity should be deleted.
+    if (!cleanupRequired) return;
+
+    // Will delete any entities which were notified to delete themselves after
+    // their Model was deleted by the World. Is called at the end of the update
+    // loop assuring the World update has finished.
+    for (auto& views : this->entityViews | std::views::values) {
+        std::erase_if(views,[](const std::shared_ptr<EntityView>& view) {
+            return view->shouldDelete();
+        });
+    }
+
+    cleanupRequired = false;
+}
+
 
 void LevelState::render() {
     // Render based on layers, assuring certain things are always on top of

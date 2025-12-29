@@ -14,18 +14,18 @@ class StateManager;
 class State {
 public:
     /**
-     * @bief Update function that is called in the main Game loop.
-     *
-     * @param dt Deltatime
-     */
-    virtual void update(double dt) = 0;
-
-    /**
      * @brief Handler for KeyPressed events.
      *
      * @param keyPressed SFML KeyEvent
      */
     virtual void handleInput(const sf::Event::KeyEvent &keyPressed) = 0;
+
+    /**
+     * @bief Update function that is called in the main Game loop.
+     *
+     * @param dt Deltatime
+     */
+    virtual void update(double dt) = 0;
 
     /**
      * @brief Render function that is called in the main Game loop.
@@ -105,6 +105,12 @@ public:
      * @throws std::runtime_error When the manager stack is empty
      */
     void pop();
+
+    /**
+     * @brief Clears the state stack and pushes the new state.
+     * @param state State
+     */
+    void clear(std::unique_ptr<State> state);
 
 private:
     std::unique_ptr<GameContext> gameContext;

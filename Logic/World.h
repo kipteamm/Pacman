@@ -1,15 +1,10 @@
-//
-// Created by PPetre on 26/11/2025.
-//
-
 #ifndef WORLD_H
 #define WORLD_H
-#include <string>
-#include <vector>
 
-#include "Difficulty.h"
+#include <string>
+
 #include "Entities/AbstractFactory.h"
-#include "Entities/PacmanModel.h"
+#include "Difficulty.h"
 
 
 namespace logic {

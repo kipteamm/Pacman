@@ -27,16 +27,16 @@ public:
     void update(logic::Events event) override;
 
     /**
-     * @brief Updates ScoreSystem and World.
-     * @param dt Deltatime
-     */
-    void update(double dt) override;
-
-    /**
      * @brief Passes concrete Moves to the World instance & handles pausing.
      * @param keyPressed
      */
     void handleInput(const sf::Event::KeyEvent &keyPressed) override;
+
+    /**
+     * @brief Updates ScoreSystem and World.
+     * @param dt Deltatime
+     */
+    void update(double dt) override;
 
     /**
      * @brief Renders all Views associated with this level. Does this on a

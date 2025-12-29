@@ -36,3 +36,12 @@ void StateManager::pop() {
     if (states.empty()) throw std::runtime_error("StateManager stack is empty");
     states.pop();
 }
+
+
+void StateManager::clear(std::unique_ptr<State> state) {
+    while (!states.empty()) {
+        states.pop();
+    }
+
+    states.push(std::move(state));
+}

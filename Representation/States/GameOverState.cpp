@@ -1,15 +1,42 @@
-//
-// Created by PPetre on 12/12/2025.
-//
-
 #include "../AssetManager.h"
 #include "GameOverState.h"
-
 #include "MenuState.h"
 #include "../Window.h"
 
 
-GameOverState::GameOverState(StateManager& context) : State(context) {}
+GameOverState::GameOverState(StateManager& context) : State(context), elapsedTime(0) {
+    title = sf::Text{"Game Over", AssetManager::getInstance().getFont()};
+    title.setCharacterSize(40);
+    title.setFillColor(sf::Color::Red);
+    title.setPosition(
+        Window::getInstance().getWidth() / 2 - title.getGlobalBounds().width / 2,
+        200
+    );
+
+    const logic::Highscore& userScore = context.getGameContext().scoreSystem->getLastSscore();
+
+    score = sf::Text{
+        "Well done "
+            + userScore.username
+            + " you got: "
+            + std::to_string(userScore.score),
+        AssetManager::getInstance().getFont()
+    };
+    score.setCharacterSize(20);
+    score.setFillColor(sf::Color::White);
+    score.setPosition(
+        Window::getInstance().getWidth() / 2 - score.getGlobalBounds().width / 2,
+        270
+    );
+
+    cta = sf::Text{"Press 'esc' to return", AssetManager::getInstance().getFont()};
+    cta.setCharacterSize(20);
+    cta.setFillColor(sf::Color::Yellow);
+    cta.setPosition(
+        Window::getInstance().getWidth() / 2 - cta.getGlobalBounds().width / 2,
+        850
+    );
+}
 
 
 void GameOverState::handleInput(const sf::Event::KeyEvent &keyPressed) {
@@ -23,25 +50,22 @@ void GameOverState::handleInput(const sf::Event::KeyEvent &keyPressed) {
 }
 
 
+void GameOverState::update(const double dt) {
+    elapsedTime += dt;
+
+    // 0.6s on screen, 0.2s off-screen
+    const double SWITCH = renderCta ? 0.6 : 0.2;
+
+    if (elapsedTime < SWITCH) return;
+    elapsedTime = 0;
+    renderCta = !renderCta;
+}
+
 
 void GameOverState::render() {
-    sf::Text title{"Game Over", AssetManager::getInstance().getFont()};
-    title.setCharacterSize(40);
-    title.setFillColor(sf::Color::Yellow);
-    title.setPosition(
-        Window::getInstance().getWidth() / 2 - title.getGlobalBounds().width / 2,
-        200
-    );
-
     Window::getInstance().draw(title);
+    Window::getInstance().draw(score);
 
-    sf::Text cta{"Press 'esc' to return", AssetManager::getInstance().getFont()};
-    cta.setCharacterSize(20);
-    cta.setFillColor(sf::Color::Yellow);
-    cta.setPosition(
-        Window::getInstance().getWidth() / 2 - cta.getGlobalBounds().width / 2,
-        850
-    );
-
+    if (!renderCta) return;
     Window::getInstance().draw(cta);
 }
