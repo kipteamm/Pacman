@@ -43,6 +43,7 @@ MenuState::MenuState(StateManager& context) : State(context), elapsedTime(0) {
 
     username = sf::Text{"Playing as: ", AssetManager::getInstance().getFont()};
     username.setCharacterSize(20);
+    username.setPosition(Window::getInstance().getWidth() / 2 - username.getGlobalBounds().width / 2, 400);
     username.setFillColor(sf::Color::Yellow);
 
     cta = sf::Text{"Press 'space' to start", AssetManager::getInstance().getFont()};
@@ -76,6 +77,10 @@ void MenuState::handleInput(const sf::Event::KeyEvent& keyPressed) {
         if (usernameValue.empty()) return;
 
         usernameValue.pop_back();
+        // Only reposition the username element here because the animated trailing
+        // underscore would make change the X position everytime it is appended.
+        username.setString("Playing as: " + usernameValue);
+        username.setPosition(Window::getInstance().getWidth() / 2 - username.getGlobalBounds().width / 2, 400);
         return;
     }
 
@@ -96,12 +101,10 @@ void MenuState::handleInput(const sf::Event::KeyEvent& keyPressed) {
 
     if (charToAdd == 0) return;
 
-    // Update the internal usernameValue and sf::Text username outside the
-    // render loop to avoid redundant updates.
     usernameValue += charToAdd;
-    username.setString("Playing as: " + usernameValue);
     // Only reposition the username element here because the animated trailing
     // underscore would make change the X position everytime it is appended.
+    username.setString("Playing as: " + usernameValue);
     username.setPosition(Window::getInstance().getWidth() / 2 - username.getGlobalBounds().width / 2, 400);
 }
 
@@ -124,7 +127,7 @@ void MenuState::render() {
     // Username with trailing underscore to indicate editing. The underscore is
     // animated with the same loop as the call to action. It will not be
     // appended when the username is already of maxlength.
-    if (usernameValue.size() < 16 && renderCta) username.setString("Playing as: " + usernameValue + "_");
+    username.setString("Playing as: " + usernameValue + (usernameValue.size() < 16 && renderCta? "_": ""));
     Window::getInstance().draw(username);
 
     Window::getInstance().draw(highscoresTitle);

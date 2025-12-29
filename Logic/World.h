@@ -39,7 +39,7 @@ namespace logic {
         void resetLevel();
         void resetFright();
 
-        [[nodiscard]] Events update(double dt);
+        void update(double dt);
 
         void handleMove(const Moves& move) const;
 

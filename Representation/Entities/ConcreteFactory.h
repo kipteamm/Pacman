@@ -12,9 +12,7 @@ enum Layer { PACMAN, FOREGROUND, BACKGROUND };
 
 class ConcreteFactory final : public logic::AbstractFactory {
 public:
-    explicit ConcreteFactory();
-
-    void setViews(std::unordered_map<Layer, std::vector<std::shared_ptr<EntityView>>>* views);
+    explicit ConcreteFactory(std::unordered_map<Layer, std::vector<std::shared_ptr<EntityView>>>& views);
 
     std::shared_ptr<logic::PacmanModel> createPacMan(float x, float y, float mapWidth, float mapHeight) override;
     std::shared_ptr<logic::ChasingGhost> createBlinky(float x, float y, float mapWidth, float mapHeight) override;
@@ -26,7 +24,8 @@ public:
     std::shared_ptr<logic::FruitModel> createFruit(float x, float y) override;
 
 private:
-    std::unordered_map<Layer, std::vector<std::shared_ptr<EntityView>>>* entityViews;
+    std::unordered_map<Layer, std::vector<std::shared_ptr<EntityView>>>& entityViews;
+    std::vector<std::shared_ptr<EntityView>> garbageBin;
 };
 
 

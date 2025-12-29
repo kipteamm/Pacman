@@ -148,12 +148,12 @@ void World::resetFright() {
 }
 
 
-Events World::update(const double dt) {
+void World::update(const double dt) {
     if (state == WorldState::RESTARTING) {
         timer += dt;
 
         if (timer >= DEATH_DURATION) resetLevel();
-        return Events::NO_EVENT;
+        return;
     }
 
     if (state == WorldState::FRIGHTENED) {
@@ -189,7 +189,7 @@ Events World::update(const double dt) {
         if (lives == 0) {
             Difficulty::getInstance().reset();
             notify(Events::GAME_OVER);
-            return Events::GAME_OVER;
+            return;
         };
 
         state = WorldState::RESTARTING;
@@ -224,12 +224,10 @@ Events World::update(const double dt) {
         ++it;
     }
 
-    if (collectibles.empty()) {
-        Difficulty::getInstance().increaseDifficulty();
-        return Events::LEVEL_COMPLETED;
-    }
+    if (!collectibles.empty()) return;
 
-    return Events::NO_EVENT;
+    Difficulty::getInstance().increaseDifficulty();
+    notify(Events::LEVEL_COMPLETED);
 }
 
 void World::handleMove(const Moves &move) const {

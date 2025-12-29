@@ -6,7 +6,6 @@ State::State(StateManager& ctx) : context(ctx) {}
 
 StateManager::StateManager() {
     gameContext = std::make_unique<GameContext>(
-        std::make_shared<ConcreteFactory>(),
         std::make_shared<logic::Score>(),
         std::make_shared<SoundManager>(),
         3

@@ -59,7 +59,6 @@ protected:
  * having to pass around a lot of arguments to different states.
  */
 struct GameContext {
-    std::shared_ptr<ConcreteFactory> factory;
     std::shared_ptr<logic::Score> scoreSystem;
     std::shared_ptr<SoundManager> soundManager;
     unsigned int lives;
