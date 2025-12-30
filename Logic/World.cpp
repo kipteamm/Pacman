@@ -169,7 +169,7 @@ void World::update(const double dt) {
 
     pacman->move(*this, dt);
 
-    constexpr float epsilon = 0.05f;
+    constexpr float epsilon = 0.07f;
 
     for (const auto& ghost : ghosts) {
         ghost->update(*this, dt);
@@ -180,7 +180,6 @@ void World::update(const double dt) {
         }
 
         if (std::abs(pacman->getX() - ghost->getX()) > epsilon || std::abs(pacman->getY() - ghost->getY()) > epsilon) continue;
-        // TODO: oogjes kunnen u nog doden??
         if (ghost->isFrightened()) {
             if (ghost->getState() == GhostState::DEAD) continue;
             collissionCoordinates = {ghost->getX(), ghost->getY()};

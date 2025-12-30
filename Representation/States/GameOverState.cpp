@@ -14,7 +14,7 @@ GameOverState::GameOverState(StateManager& context) : State(context), elapsedTim
     score = sf::Text{
         "Well done "
             + userScore.username
-            + " you got: "
+            + ", you got: "
             + std::to_string(userScore.score),
         AssetManager::getInstance().getFont()
     };

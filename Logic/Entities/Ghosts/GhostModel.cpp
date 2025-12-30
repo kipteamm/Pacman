@@ -33,6 +33,9 @@ void GhostModel::setState(const GhostState state) {
 
 
 void GhostModel::setFrightened(const bool frightened, const World& world) {
+    // Dead ghosts will remain frightened untill they respawn.
+    if (state == GhostState::DEAD) return;
+
     this->frightened = frightened;
     updateDirection(world);
 
@@ -41,7 +44,6 @@ void GhostModel::setFrightened(const bool frightened, const World& world) {
         return;
     }
 
-    if (state == GhostState::DEAD) return;
     notify(Events::GHOST_NORMAL);
     speed = defaultSpeed;
 }

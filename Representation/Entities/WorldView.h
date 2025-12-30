@@ -3,7 +3,6 @@
 
 #include <SFML/Graphics.hpp>
 
-#include "../../Logic/Observer.h"
 #include "../../Logic/Score.h"
 #include "../../Logic/World.h"
 

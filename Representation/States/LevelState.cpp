@@ -18,6 +18,7 @@ LevelState::LevelState(StateManager& context) : State(context), cleanupRequired(
     // appropriately.
     world->loadLevel("../Representation/levels/level_1.txt");
     Camera::getInstance().setScaling(world->getWidth(), world->getHeight());
+    resizeRequired = true;
 
     scoreSystem = context.getGameContext().scoreSystem;
     world->attach(scoreSystem);
