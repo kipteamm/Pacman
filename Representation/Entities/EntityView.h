@@ -17,6 +17,7 @@ public:
     [[nodiscard]] bool shouldDelete() const;
     [[nodiscard]] size_t getFrameIndex(float dt, size_t max);
 
+    virtual void resized();
     virtual void render();
 
 protected:

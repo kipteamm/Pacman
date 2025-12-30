@@ -8,10 +8,6 @@ GameOverState::GameOverState(StateManager& context) : State(context), elapsedTim
     title = sf::Text{"Game Over", AssetManager::getInstance().getFont()};
     title.setCharacterSize(40);
     title.setFillColor(sf::Color::Red);
-    title.setPosition(
-        Window::getInstance().getWidth() / 2 - title.getGlobalBounds().width / 2,
-        200
-    );
 
     const logic::Highscore& userScore = context.getGameContext().scoreSystem->getLastSscore();
 
@@ -24,18 +20,12 @@ GameOverState::GameOverState(StateManager& context) : State(context), elapsedTim
     };
     score.setCharacterSize(20);
     score.setFillColor(sf::Color::White);
-    score.setPosition(
-        Window::getInstance().getWidth() / 2 - score.getGlobalBounds().width / 2,
-        270
-    );
 
     cta = sf::Text{"Press 'esc' to return", AssetManager::getInstance().getFont()};
     cta.setCharacterSize(20);
     cta.setFillColor(sf::Color::Yellow);
-    cta.setPosition(
-        Window::getInstance().getWidth() / 2 - cta.getGlobalBounds().width / 2,
-        850
-    );
+
+    this->resized();
 }
 
 
@@ -48,6 +38,25 @@ void GameOverState::handleInput(const sf::Event::KeyEvent &keyPressed) {
         default: break;
     }
 }
+
+
+void GameOverState::resized() {
+    title.setPosition(
+        Window::getInstance().getWidth() / 2 - title.getGlobalBounds().width / 2,
+        200
+    );
+
+    score.setPosition(
+        Window::getInstance().getWidth() / 2 - score.getGlobalBounds().width / 2,
+        270
+    );
+
+    cta.setPosition(
+        Window::getInstance().getWidth() / 2 - cta.getGlobalBounds().width / 2,
+        850
+    );
+}
+
 
 
 void GameOverState::update(const double dt) {

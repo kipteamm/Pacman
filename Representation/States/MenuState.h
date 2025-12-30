@@ -28,6 +28,11 @@ public:
     void handleInput(const sf::Event::KeyEvent &keyPressed) override;
 
     /**
+     * @brief Will resize the contents of the Menu state.
+     */
+    void resized() override;
+
+    /**
      * @brief Update the MenuState, is used for UI animations.
      * @param dt Deltatime
      */

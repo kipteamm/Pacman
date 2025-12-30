@@ -21,6 +21,11 @@ public:
     virtual void handleInput(const sf::Event::KeyEvent &keyPressed) = 0;
 
     /**
+     * @brief Called when the window is resized.
+     */
+    virtual void resized() = 0;
+
+    /**
      * @bief Update function that is called in the main Game loop.
      *
      * @param dt Deltatime

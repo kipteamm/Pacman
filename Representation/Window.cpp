@@ -50,3 +50,7 @@ unsigned int Window::getWidth() const {
 unsigned int Window::getHeight() const {
     return window.getSize().y;
 }
+
+void Window::setView(const sf::View& view) {
+    window.setView(view);
+}

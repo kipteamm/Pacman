@@ -8,6 +8,8 @@ Camera::Camera() {
     // text UI always fits on screen.
     screenHeight = static_cast<float>(Window::getInstance().getHeight()) - 100;
 
+    mapWidth = 0;
+    mapHeight = 0;
     tileWidth = 0;
     tileHeight = 0;
     offsetX = 0;
@@ -33,23 +35,30 @@ void Camera::setScaling(const float mapWidth, const float mapHeight) {
     const float scaleY = screenHeight / mapHeight;
     const float scale = std::min(scaleX, scaleY);
 
+    this->mapWidth = mapWidth;
+    this->mapHeight = mapHeight;
+
     tileWidth = scale;
     tileHeight = scale;
 
     viewWidth = mapWidth * tileWidth;
     viewHeight = mapHeight * tileHeight;
 
+    // Used for centering
     offsetX = (screenWidth - viewWidth) / 2.0f;
     offsetY = (screenHeight - viewHeight) / 2.0f;
 }
 
-void Camera::resize() {
-    this->screenWidth = Window::getInstance().getWidth();
+void Camera::resized() {
+    this->screenWidth = static_cast<float>(Window::getInstance().getWidth());
     // Subtracting 100 pixels from the screenheight to assure that the Game
     // text UI always fits on screen.
-    this->screenHeight = Window::getInstance().getHeight() - 100;
+    this->screenHeight = static_cast<float>(Window::getInstance().getHeight() - 100);
 
-    this->setScaling(this->viewWidth / tileWidth, this->viewHeight / tileHeight);
+    if (mapWidth == 0 || mapHeight == 0) return;
+    // Rescale everything based on the (unchanged) map dimensions and changed
+    // window dimensions.
+    this->setScaling(mapWidth, mapHeight);
 }
 
 

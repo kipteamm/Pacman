@@ -6,19 +6,22 @@
 #include "../Camera.h"
 #include "../Window.h"
 
-EntityView::EntityView(const std::shared_ptr<logic::EntityModel> &model, const float frameDuration) : model(model), frameDuration(frameDuration) {}
-
-
-void EntityView::render() {
+EntityView::EntityView(const std::shared_ptr<logic::EntityModel> &model, const float frameDuration) : model(model), frameDuration(frameDuration) {
     sprite.setOrigin(8.0f, 8.0f);
+}
 
-    const float x = Camera::getInstance().xToPixel(model->getX());
-    const float y = Camera::getInstance().yToPixel(model->getY());
-    sprite.setPosition(x, y);
 
+void EntityView::resized() {
     const float scaleX = Camera::getInstance().getTileWidth() / 16.0f;
     const float scaleY = Camera::getInstance().getTileHeight() / 16.0f;
     sprite.setScale(scaleX, scaleY);
+}
+
+
+void EntityView::render() {
+    const float x = Camera::getInstance().xToPixel(model->getX());
+    const float y = Camera::getInstance().yToPixel(model->getY());
+    sprite.setPosition(x, y);
 
     Window::getInstance().draw(sprite);
 }

@@ -83,6 +83,21 @@ public:
     void setFramerateLimit(unsigned int frameRate);
 
     /**
+     * @brief Change the current active view
+     *
+     * The view is like a 2D camera, it controls which part of the 2D scene is
+     * visible, and how it is viewed in the render target. The new view will
+     * affect everything that is drawn, until another view is set. The render
+     * target keeps its own copy of the view object, so it is not necessary to
+     * keep the original one alive after calling this function. To restore the
+     * original view of the target, you can pass the result of getDefaultView()
+     * to this function.
+     *
+     * @param view New view to use
+     */
+    void setView(const sf::View& view);
+
+    /**
      * @brief Get the width of the rendering region of the window. This does not
      * include the borders of the window.
      *

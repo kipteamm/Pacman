@@ -69,7 +69,6 @@ PacmanView::PacmanView(const std::shared_ptr<logic::PacmanModel> &model) : Entit
     };
 
     animation = &animations[pacman->getDirection()];
-    sprite.setOrigin(8, 8);
 
     directionSprite.setTexture(AssetManager::getInstance().getSpriteSheet());
     directionSprite.setOrigin(8, 8);
@@ -106,13 +105,19 @@ void PacmanView::update(const logic::Events event) {
 }
 
 
+void PacmanView::resized() {
+    const float scaleX = Camera::getInstance().getTileWidth() / 16.0f;
+    const float scaleY = Camera::getInstance().getTileHeight() / 16.0f;
+
+    directionSprite.setScale(scaleX, scaleY);
+    sprite.setScale(scaleX, scaleY);
+}
+
+
+
 void PacmanView::render() {
     float x = Camera::getInstance().xToPixel(model->getX());
     float y = Camera::getInstance().yToPixel(model->getY());
-
-    const float scaleX = Camera::getInstance().getTileWidth() / 16.0f;
-    const float scaleY = Camera::getInstance().getTileHeight() / 16.0f;
-    directionSprite.setScale(scaleX, scaleY);
 
     if (!dying) {
         sprite.setPosition(x, y);
@@ -149,8 +154,6 @@ void PacmanView::render() {
         Window::getInstance().draw(sprite);
         return;
     }
-
-    sprite.setScale(scaleX, scaleY);
 
     const double dt = logic::Stopwatch::getInstance().getDeltaTime();
     const sf::IntRect rect = animation->at(getFrameIndex(static_cast<float>(dt), animation->size()));

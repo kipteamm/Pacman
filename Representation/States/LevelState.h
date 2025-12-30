@@ -33,6 +33,11 @@ public:
     void handleInput(const sf::Event::KeyEvent &keyPressed) override;
 
     /**
+     * @brief Will resize the Game Views.
+     */
+    void resized() override;
+
+    /**
      * @brief Updates ScoreSystem and World.
      * @param dt Deltatime
      */
@@ -52,6 +57,7 @@ private:
     std::shared_ptr<WorldView> worldView;
 
     bool cleanupRequired;
+    bool resizeRequired;
 
     std::unordered_map<Layer, std::vector<std::shared_ptr<EntityView>>> entityViews{
         {Layer::BACKGROUND, std::vector<std::shared_ptr<EntityView>>()},

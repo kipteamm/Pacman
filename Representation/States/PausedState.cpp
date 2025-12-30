@@ -4,30 +4,20 @@
 #include "../Window.h"
 
 
-PausedState::PausedState(StateManager& context) : State(context) {
+PausedState::PausedState(StateManager& context) : State(context), elapsedTime(0) {
     title = sf::Text{"Paused", AssetManager::getInstance().getFont()};
     title.setCharacterSize(40);
     title.setFillColor(sf::Color::Yellow);
-    title.setPosition(
-        Window::getInstance().getWidth() / 2 - title.getGlobalBounds().width / 2,
-        200
-    );
 
     info = sf::Text{"Press 'ESC' to return to the main menu", AssetManager::getInstance().getFont()};
     info.setCharacterSize(20);
     info.setFillColor(sf::Color::White);
-    info.setPosition(
-        Window::getInstance().getWidth() / 2 - info.getGlobalBounds().width / 2,
-        900
-    );
 
     cta = sf::Text{"Press 'enter' to continue playing", AssetManager::getInstance().getFont()};
     cta.setCharacterSize(20);
     cta.setFillColor(sf::Color::Yellow);
-    cta.setPosition(
-        Window::getInstance().getWidth() / 2 - cta.getGlobalBounds().width / 2,
-        950
-    );
+
+    this->resized();
 }
 
 
@@ -46,6 +36,25 @@ void PausedState::handleInput(const sf::Event::KeyEvent &keyPressed) {
         default: break;
     }
 }
+
+
+void PausedState::resized() {
+    title.setPosition(
+        Window::getInstance().getWidth() / 2 - title.getGlobalBounds().width / 2,
+        200
+    );
+
+    info.setPosition(
+        Window::getInstance().getWidth() / 2 - info.getGlobalBounds().width / 2,
+        900
+    );
+
+    cta.setPosition(
+        Window::getInstance().getWidth() / 2 - cta.getGlobalBounds().width / 2,
+        950
+    );
+}
+
 
 void PausedState::update(const double dt) {
     elapsedTime += dt;

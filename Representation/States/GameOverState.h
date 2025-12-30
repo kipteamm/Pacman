@@ -22,6 +22,11 @@ public:
     void handleInput(const sf::Event::KeyEvent &keyPressed) override;
 
     /**
+     * @brief Will resize the contents of the GameOver state.
+     */
+    void resized() override;
+
+    /**
      * @brief Update the GameOverState, is used for UI animations.
      * @param dt Deltatime
      */

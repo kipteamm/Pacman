@@ -22,6 +22,11 @@ public:
     void handleInput(const sf::Event::KeyEvent& keyPressed) override;
 
     /**
+     * @brief Will resize the contents of the Victory state.
+     */
+    void resized() override;
+
+    /**
      * @brief This is used for UI animations.
      * @param dt Deltatime
      */

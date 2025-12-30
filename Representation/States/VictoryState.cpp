@@ -8,24 +8,32 @@ VictoryState::VictoryState(StateManager& context) : State(context), elapsedTime(
     title = sf::Text{"Level Cleared", AssetManager::getInstance().getFont()};
     title.setCharacterSize(40);
     title.setFillColor(sf::Color::Yellow);
-    title.setPosition(
-        Window::getInstance().getWidth() / 2 - title.getGlobalBounds().width / 2,
-        200
-    );
 
     cta = sf::Text{"Press 'enter' to continue", AssetManager::getInstance().getFont()};
     cta.setCharacterSize(20);
     cta.setFillColor(sf::Color::Yellow);
-    cta.setPosition(
-        Window::getInstance().getWidth() / 2 - cta.getGlobalBounds().width / 2,
-        950
-    );
+
+    this->resized();
 }
 
 
 void VictoryState::handleInput(const sf::Event::KeyEvent& keyPressed) {
     this->context.swap(std::make_unique<LevelState>(context));
 }
+
+
+void VictoryState::resized() {
+    title.setPosition(
+        Window::getInstance().getWidth() / 2 - title.getGlobalBounds().width / 2,
+        200
+    );
+
+    cta.setPosition(
+        Window::getInstance().getWidth() / 2 - cta.getGlobalBounds().width / 2,
+        950
+    );
+}
+
 
 
 void VictoryState::update(const double dt) {

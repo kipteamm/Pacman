@@ -95,6 +95,11 @@ void LevelState::handleInput(const sf::Event::KeyEvent &keyPressed) {
 }
 
 
+void LevelState::resized() {
+    resizeRequired = true;
+}
+
+
 void LevelState::update(const double dt) {
     // Update the ScoreSystem (for score decay)
     scoreSystem->update(dt);
@@ -122,17 +127,28 @@ void LevelState::render() {
     // Render based on layers, assuring certain things are always on top of
     // other things. UI will always be rendered last, overlaying anything.
 
+    // Makes use of the resizeRequired boolean which is toggled on when a
+    // sf::Resized event is captured. Resizing it in the render function saved
+    // me writing an extra loop. Could've instead also done it in
+    // LevelState::resized();
+
     for (const auto& view : this->entityViews[Layer::BACKGROUND]) {
+        if (resizeRequired) view->resized();
         view->render();
     }
 
     for (const auto& view : this->entityViews[Layer::FOREGROUND]) {
+        if (resizeRequired) view->resized();
         view->render();
     }
 
     for (const auto& view : this->entityViews[Layer::PACMAN]) {
+        if (resizeRequired) view->resized();
         view->render();
     }
 
+    if (resizeRequired) worldView->resized();
     worldView->render();
+
+    resizeRequired = false;
 }

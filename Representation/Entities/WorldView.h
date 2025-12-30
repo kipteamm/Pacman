@@ -1,7 +1,3 @@
-//
-// Created by toroe on 19/12/2025.
-//
-
 #ifndef PACMAN_WORLDVIEW_H
 #define PACMAN_WORLDVIEW_H
 
@@ -17,6 +13,7 @@ public:
     explicit WorldView(const std::shared_ptr<logic::World>& world, const std::shared_ptr<logic::Score>& scoreSystem);
 
     void update(logic::Events event) override;
+    void resized();
     void render() const;
 
 private:

@@ -38,9 +38,14 @@ void Game::loop() const {
                 window.close();
                 return;
 
-            case sf::Event::Resized:
-                Camera::getInstance().resize();
+            case sf::Event::Resized: {
+                sf::FloatRect visibleArea(0, 0, event.size.width, event.size.height);
+                window.setView(sf::View(visibleArea));
+
+                Camera::getInstance().resized();
+                context->top().resized();
                 break;
+            }
 
             default: break;
         }

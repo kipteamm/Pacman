@@ -10,22 +10,12 @@ MenuState::MenuState(StateManager& context) : State(context), elapsedTime(0) {
     this->scoreSystem = context.getGameContext().scoreSystem;
 
     this->pacmanLogo.setTexture(AssetManager::getInstance().getPacmanLogo(), true);
-    this->pacmanLogo.setPosition(
-        Window::getInstance().getWidth() / 2 - this->pacmanLogo.getGlobalBounds().width / 2,
-        100
-    );
 
     highscoresTitle = sf::Text{"Highscores", AssetManager::getInstance().getFont()};
     highscoresTitle.setCharacterSize(20);
     highscoresTitle.setFillColor(sf::Color::Yellow);
-    highscoresTitle.setPosition(
-        Window::getInstance().getWidth() / 2 - highscoresTitle.getGlobalBounds().width / 2,
-        500
-    );
 
     const auto _highscores = this->scoreSystem->getHighscores();
-    int y = 500;
-
     for (int i = 0; i < std::min(5, static_cast<int>(_highscores->size())); i++) {
         sf::Text score{
             _highscores->at(i)->username + ": " + std::to_string(_highscores->at(i)->score),
@@ -34,25 +24,18 @@ MenuState::MenuState(StateManager& context) : State(context), elapsedTime(0) {
         score.setCharacterSize(20);
         score.setFillColor(sf::Color::White);
 
-        const float x = Window::getInstance().getWidth() / 2 - score.getGlobalBounds().width / 2;
-        y += 50;
-        score.setPosition(x, y);
-
         highscores.push_back(score);
     };
 
     username = sf::Text{"Playing as: ", AssetManager::getInstance().getFont()};
     username.setCharacterSize(20);
-    username.setPosition(Window::getInstance().getWidth() / 2 - username.getGlobalBounds().width / 2, 400);
     username.setFillColor(sf::Color::Yellow);
 
     cta = sf::Text{"Start with typing your username", AssetManager::getInstance().getFont()};
     cta.setCharacterSize(20);
     cta.setFillColor(sf::Color::Yellow);
-    cta.setPosition(
-        Window::getInstance().getWidth() / 2 - cta.getGlobalBounds().width / 2,
-        950
-    );
+
+    this->resized();
 }
 
 
@@ -120,6 +103,36 @@ void MenuState::handleInput(const sf::Event::KeyEvent& keyPressed) {
     // This way I avoid repositioning it without the position changing.
     if (usernameValue.size() != 1) return;
     cta.setString("Press 'enter' to start");
+    cta.setPosition(
+        Window::getInstance().getWidth() / 2 - cta.getGlobalBounds().width / 2,
+        950
+    );
+}
+
+
+void MenuState::resized() {
+    this->pacmanLogo.setPosition(
+        Window::getInstance().getWidth() / 2 - this->pacmanLogo.getGlobalBounds().width / 2,
+        100
+    );
+
+    highscoresTitle.setPosition(
+        Window::getInstance().getWidth() / 2 - highscoresTitle.getGlobalBounds().width / 2,
+        500
+    );
+
+    float y = 500;
+    for (auto& score: highscores) {
+        const float x = Window::getInstance().getWidth() / 2 - score.getGlobalBounds().width / 2;
+        y += 50;
+        score.setPosition(x, y);
+    }
+
+    username.setPosition(
+        Window::getInstance().getWidth() / 2 - username.getGlobalBounds().width / 2,
+        400
+    );
+
     cta.setPosition(
         Window::getInstance().getWidth() / 2 - cta.getGlobalBounds().width / 2,
         950

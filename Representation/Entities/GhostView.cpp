@@ -70,7 +70,7 @@ GhostView::GhostView(const std::shared_ptr<logic::GhostModel>& model, const int 
 
     animation = &animations[ghost->getDirection()];
     sprite.setTexture(AssetManager::getInstance().getSpriteSheet());
-    sprite.setOrigin(8, 8);
+    // sprite.setOrigin(8, 8);
 }
 
 
@@ -111,9 +111,9 @@ void GhostView::render() {
     const float y = Camera::getInstance().yToPixel(model->getY());
     sprite.setPosition(x, y);
 
-    const float scaleX = Camera::getInstance().getTileWidth() / 16.0f;
-    const float scaleY = Camera::getInstance().getTileHeight() / 16.0f;
-    sprite.setScale(scaleX, scaleY);
+    // const float scaleX = Camera::getInstance().getTileWidth() / 16.0f;
+    // const float scaleY = Camera::getInstance().getTileHeight() / 16.0f;
+    // sprite.setScale(scaleX, scaleY);
 
     const double dt = logic::Stopwatch::getInstance().getDeltaTime();
     const sf::IntRect rect = animation->at(getFrameIndex(static_cast<float>(dt), animation->size()));

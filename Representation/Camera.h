@@ -36,7 +36,7 @@ public:
      * When the window is resized it is important that this is properly
      * reflected by the Camera. Will call setScaling afterward.
      */
-    void resize();
+    void resized();
 
 
     /**
@@ -75,6 +75,9 @@ private:
 
     float screenWidth;
     float screenHeight;
+
+    float mapWidth;
+    float mapHeight;
 
     // Mapped to the screen size
     float tileWidth;
