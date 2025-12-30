@@ -28,6 +28,7 @@ LevelState::LevelState(StateManager& context) : State(context), cleanupRequired(
 
     worldView = std::make_shared<WorldView>(world, scoreSystem);
     scoreSystem->attach(worldView);
+    world->attach(worldView);
 
     // Make LevelState an Observer of the World
     world->attach(std::shared_ptr<Observer>(this));

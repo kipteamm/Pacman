@@ -39,7 +39,8 @@ namespace logic {
 
         [[nodiscard]] std::vector<std::unique_ptr<Highscore>>* getHighscores();
         [[nodiscard]] int getScore() const;
-        [[nodiscard]] const Highscore& getLastSscore() const;
+        [[nodiscard]] const Highscore& getLastScore() const;
+        [[nodiscard]] int getGhostPoints() const;
 
         void setUser(const std::string& username);
         void addScore(int score);

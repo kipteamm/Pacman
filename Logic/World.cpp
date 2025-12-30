@@ -41,6 +41,11 @@ unsigned int World::getLives() const {
 }
 
 
+std::pair<float, float> World::getCollissionCoordinates() const {
+    return collissionCoordinates;
+}
+
+
 bool World::collidesWithWall(const float x, const float y, const bool passDoor) const {
     for (const std::shared_ptr<WallModel>& wall : walls) {
         if (wall->isDoor() && passDoor) continue;
@@ -178,6 +183,7 @@ void World::update(const double dt) {
         // TODO: oogjes kunnen u nog doden??
         if (ghost->isFrightened()) {
             if (ghost->getState() == GhostState::DEAD) continue;
+            collissionCoordinates = {ghost->getX(), ghost->getY()};
             ghost->eat();
             notify(Events::GHOST_EATEN);
 
@@ -203,6 +209,7 @@ void World::update(const double dt) {
 
     for (auto it = collectibles.begin(); it != collectibles.end(); ) {
         if (std::abs(pacman->getX() - (*it)->getX()) <= epsilon && std::abs(pacman->getY() - (*it)->getY()) <= epsilon) {
+            collissionCoordinates = {(*it)->getX(), (*it)->getY()};
             const Events event = (*it)->collect();
             notify(event);
 

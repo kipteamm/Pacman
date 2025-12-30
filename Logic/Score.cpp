@@ -50,8 +50,12 @@ int Score::getScore() const {
     return score;
 }
 
-const Highscore& Score::getLastSscore() const {
+const Highscore& Score::getLastScore() const {
     return lastScore;
+}
+
+int Score::getGhostPoints() const {
+    return ghostPoints;
 }
 
 

@@ -9,7 +9,7 @@ GameOverState::GameOverState(StateManager& context) : State(context), elapsedTim
     title.setCharacterSize(40);
     title.setFillColor(sf::Color::Red);
 
-    const logic::Highscore& userScore = context.getGameContext().scoreSystem->getLastSscore();
+    const logic::Highscore& userScore = context.getGameContext().scoreSystem->getLastScore();
 
     score = sf::Text{
         "Well done "

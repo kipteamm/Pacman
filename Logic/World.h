@@ -28,6 +28,8 @@ namespace logic {
         [[nodiscard]] std::shared_ptr<PacmanModel> getPacman() const;
         [[nodiscard]] unsigned int getLives() const;
 
+        [[nodiscard]] std::pair<float, float> getCollissionCoordinates() const;
+
         [[nodiscard]] bool collidesWithWall(float x, float y, bool passDoor) const;
 
         void loadLevel(const std::string& filename);
@@ -55,6 +57,8 @@ namespace logic {
         WorldState state;
         double timer = 0;
         bool flashing = false;
+
+        std::pair<float, float> collissionCoordinates;
 
         std::shared_ptr<AbstractFactory> factory;
         std::vector<std::shared_ptr<CollectibleEntityModel>> collectibles;
