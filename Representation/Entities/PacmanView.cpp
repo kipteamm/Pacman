@@ -68,7 +68,7 @@ PacmanView::PacmanView(const std::shared_ptr<logic::PacmanModel> &model) : Entit
         sf::IntRect{112, 112, 16, 16},
     };
 
-    animation = &animations[pacman->getDirection()];
+    animationIndex = pacman->getDirection();
 
     directionSprite.setTexture(AssetManager::getInstance().getSpriteSheet());
     directionSprite.setOrigin(8, 8);
@@ -78,12 +78,12 @@ PacmanView::PacmanView(const std::shared_ptr<logic::PacmanModel> &model) : Entit
 void PacmanView::update(const logic::Events event) {
     switch (event) {
         case logic::Events::DIRECTION_CHANGED:
-            animation = &animations[pacman->getDirection()]; break;
+            animationIndex = pacman->getDirection(); break;
 
         case logic::Events::RESPAWN:
             dying = false;
             moving = true;
-            animation = &animations[pacman->getDirection()];
+            animationIndex = pacman->getDirection();
 
             frameIndex = 0;
             elapsedTime = 0;
@@ -91,7 +91,7 @@ void PacmanView::update(const logic::Events event) {
 
         case logic::Events::DEATH:
             dying = true;
-            animation = &animations[5];
+            animationIndex = 5;
 
             frameIndex = 0;
             elapsedTime = 0;
@@ -156,7 +156,8 @@ void PacmanView::render() {
     }
 
     const double dt = logic::Stopwatch::getInstance().getDeltaTime();
-    const sf::IntRect rect = animation->at(getFrameIndex(static_cast<float>(dt), animation->size()));
+    const std::vector<sf::IntRect>& animation = animations[animationIndex];
+    const sf::IntRect rect = animation.at(getFrameIndex(static_cast<float>(dt), animation.size()));
     sprite.setTextureRect(rect);
 
     Window::getInstance().draw(sprite);

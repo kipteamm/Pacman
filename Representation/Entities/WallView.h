@@ -1,7 +1,3 @@
-//
-// Created by toroe on 27/11/2025.
-//
-
 #ifndef PACMAN_WALLVIEW_H
 #define PACMAN_WALLVIEW_H
 
@@ -11,8 +7,14 @@
 
 class WallView final : public EntityView {
 public:
+    /**
+     * @brief WallView renders a specific wall piece.
+     * @param model Reference Model
+     * @param type Char to determine the sprite
+     */
     explicit WallView(const std::shared_ptr<logic::WallModel> &model, char type);
 
+    // Not implemented.
     void update(logic::Events event) override {};
 };
 

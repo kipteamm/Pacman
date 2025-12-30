@@ -109,11 +109,6 @@ void SoundManager::update(const logic::Events event) {
             ghostFrightened.stop();
             deathSound.play(); break;
 
-        // case logic::Events::LEVEL_COMPLETED:
-        // case logic::Events::GAME_OVER:
-        //     ghostMove.stop();
-        //     ghostFrightened.stop(); break;
-
         default: return;
     }
 }

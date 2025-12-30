@@ -68,7 +68,7 @@ GhostView::GhostView(const std::shared_ptr<logic::GhostModel>& model, const int 
         sf::IntRect{144, 32, 16, 16},
     };
 
-    animation = &animations[ghost->getDirection()];
+    animationIndex = ghost->getDirection();
     sprite.setTexture(AssetManager::getInstance().getSpriteSheet());
     // sprite.setOrigin(8, 8);
 }
@@ -78,27 +78,27 @@ void GhostView::update(const logic::Events event) {
     switch (event) {
         case logic::Events::DIRECTION_CHANGED:
             if (frightened) return;
-            animation = &animations[ghost->getDirection() + animationOffset]; break;
+            animationIndex = ghost->getDirection() + animationOffset; break;
 
         case logic::Events::GHOST_FRIGHTENED:
             frightened = true;
-            animation = &animations[8]; break;
+            animationIndex = 8; break;
 
         case logic::Events::GHOST_EATEN:
             frightened = false;
             animationOffset = 4;
-            animation = &animations[ghost->getDirection() + animationOffset]; break;
+            animationIndex = ghost->getDirection() + animationOffset; break;
 
         case logic::Events::GHOST_NORMAL:
         case logic::Events::RESPAWN:
             frameDuration = 0.16;
             animationOffset = 0;
-            animation = &animations[ghost->getDirection()]; break;
+            animationIndex = ghost->getDirection(); break;
 
         case logic::Events::FRIGHTENED_FLASHING:
             if (!frightened) return;
 
-            animation = &animations[9];
+            animationIndex = 9;
             frameDuration = 0.1; break;
 
         default: break;
@@ -116,7 +116,8 @@ void GhostView::render() {
     // sprite.setScale(scaleX, scaleY);
 
     const double dt = logic::Stopwatch::getInstance().getDeltaTime();
-    const sf::IntRect rect = animation->at(getFrameIndex(static_cast<float>(dt), animation->size()));
+    const std::vector<sf::IntRect>& animation = animations[animationIndex];
+    const sf::IntRect rect = animation.at(getFrameIndex(static_cast<float>(dt), animation.size()));
     sprite.setTextureRect(rect);
 
     Window::getInstance().draw(sprite);

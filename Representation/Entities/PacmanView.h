@@ -1,7 +1,3 @@
-//
-// Created by PPetre on 27/11/2025.
-//
-
 #ifndef PACMANVIEW_H
 #define PACMANVIEW_H
 
@@ -20,14 +16,16 @@ public:
     void render() override;
 
 private:
-    // As the PacmanModel is a shared pointer we store it in the view as well
-    // to use PacmanModel specific functions without needing to dynamic cast
+    // I store the PacmanModel in the view insteawd of dynamic casting the
+    // generic model used in the base EntityView class to use PacmanModel
+    // specific functions.
     std::shared_ptr<logic::PacmanModel> pacman;
+
     bool moving = true;
     bool dying = false;
 
     std::unordered_map<int, std::vector<sf::IntRect>> animations{};
-    std::vector<sf::IntRect>* animation;
+    int animationIndex;
 
     sf::Sprite directionSprite;
 };

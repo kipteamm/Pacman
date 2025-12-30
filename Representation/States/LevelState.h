@@ -28,7 +28,7 @@ public:
 
     /**
      * @brief Passes concrete Moves to the World instance & handles pausing.
-     * @param keyPressed
+     * @param keyPressed SFML KeyEvent
      */
     void handleInput(const sf::Event::KeyEvent &keyPressed) override;
 
