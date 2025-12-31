@@ -11,13 +11,16 @@ void Subject::attach(const std::shared_ptr<Observer> &observer) {
     observers.push_back(observer);
 }
 
-void Subject::detach(const std::shared_ptr<Observer> &observer) {
-    observers.remove(observer);
-}
-
 
 void Subject::notify(const Events event) {
-    for (const std::shared_ptr<Observer>& observer : observers) {
-        observer->update(event);
+    auto it = observers.begin();
+
+    while (it != observers.end()) {
+        if (const auto observer = it->lock()) {
+            observer->update(event);
+            ++it;
+        } else {
+            it = observers.erase(it);
+        }
     }
 }

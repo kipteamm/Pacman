@@ -1,7 +1,3 @@
-//
-// Created by toroe on 27/11/2025.
-//
-
 #include "../AssetManager.h"
 #include "../Window.h"
 #include "WallView.h"
@@ -11,6 +7,7 @@ WallView::WallView(const std::shared_ptr<logic::WallModel> &model, const char ty
     sprite.setTexture(AssetManager::getInstance().getSpriteSheet());
     int rectLeft, rectTop;
 
+    // Determine the specific wall peice.
     switch (type) {
         case 't':
             rectLeft = 1;

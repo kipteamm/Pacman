@@ -4,8 +4,6 @@
 #include "../Window.h"
 #include "WorldView.h"
 
-#include <iostream>
-
 
 ScorePopup::ScorePopup() : elapsedTime(0), active(false) {};
 
@@ -53,7 +51,10 @@ void ScorePopup::setScore(const int score) {
 }
 
 
-WorldView::WorldView(const std::shared_ptr<logic::World>& world, const std::shared_ptr<logic::Score>& scoreSystem) : world(world), scoreSystem(scoreSystem) {
+WorldView::WorldView(
+    const std::shared_ptr<logic::World>& world,
+    const std::shared_ptr<logic::Score>& scoreSystem
+) : world(world), scoreSystem(scoreSystem) {
     live1.setTexture(AssetManager::getInstance().getSpriteSheet());
     live2.setTexture(AssetManager::getInstance().getSpriteSheet());
     live3.setTexture(AssetManager::getInstance().getSpriteSheet());
@@ -62,7 +63,14 @@ WorldView::WorldView(const std::shared_ptr<logic::World>& world, const std::shar
     live2.setTextureRect({16, 0, 16, 16});
     live3.setTextureRect({16, 0, 16, 16});
 
-    for (int i = 0; i < 6; i++) {
+    scoreText.setFont(AssetManager::getInstance().getFont());
+    scoreText.setString("0     ");
+    scoreText.setFillColor(sf::Color::White);
+    scoreText.setOrigin(scoreText.getLocalBounds().width, 0);
+
+    // Populates the scores pool with 5 ScorePopup objects. At most (however
+    // practically impossible) 6 Popups could be active at once.
+    for (int i = 0; i < 5; i++) {
         ScorePopup score = ScorePopup();
         score.sprite.setTexture(AssetManager::getInstance().getSpriteSheet());
         score.sprite.setOrigin(8.0f, 8.0f);
@@ -78,27 +86,54 @@ void WorldView::update(const logic::Events event) {
     int score = 0;
 
     switch (event) {
-        case logic::Events::SCORE_UPDATE:
+        case logic::Events::SCORE_UPDATE: {
             scoreText.setString(std::to_string(scoreSystem->getScore()));
+
+            const float scaleX = Camera::getInstance().getTileWidth() / 16.0f;
+            const float gap = 4.0f * scaleX;
+            const float mapRightPixel = Camera::getInstance().xToPixel(1.0f);
+            const float uiYPosition = Camera::getInstance().yToPixel(1.0f) + 10.0f - gap;
+
+            scoreText.setOrigin(scoreText.getLocalBounds().width, 0);
+            scoreText.setPosition(mapRightPixel, uiYPosition - (gap / 2));
+            return; // early return anything not related to ScorePopups
+        }
+
+        case logic::Events::GHOST_FRIGHTENED:
+            // Reset the ghostPoints back to their base value whenever the
+            // ghosts are frightened again. For every ghost eaten within the
+            // frightened time it will be multiplied by 2.
+            ghostPoints = logic::GHOST_POINTS;
             return;
 
         case logic::Events::GHOST_EATEN:
-            score = scoreSystem->getGhostPoints() / 2; break;
+            score = ghostPoints;
+            ghostPoints *= 2;
+            break;
 
         case logic::Events::FRUIT_EATEN:
-            score = logic::Difficulty::getInstance().getDifficulty()->fruitPoints; break;
+            // Get the specific amount of points a fruit is worth at the
+            // current difficulty.
+            score = logic::Difficulty::getInstance().getDifficulty()->fruitPoints;
+            break;
 
-            default: return;
+        default: return; // early return anything not related to ScorePopups
     }
 
     ScorePopup* scorePopup = nullptr;
+
+    // Find the first Popup that is not currently actively displaying a
+    // previous score.
     for (auto& _score : scores) {
         if (_score.active) continue;
         scorePopup = &_score;
         break;
     }
 
-    if (scorePopup == nullptr) return;
+    // If no available score was found (highly unlikely) pick the first Popup
+    // as this is most likely the one displayed the longest.
+    if (!scorePopup) scorePopup = &scores[0];
+
     scorePopup->elapsedTime = 0;
     scorePopup->setScore(score);
     scorePopup->active = true;
@@ -119,10 +154,6 @@ void WorldView::resized() {
     live2.setScale(scaleX, scaleY);
     live3.setScale(scaleX, scaleY);
 
-    for (auto& score : scores) {
-        score.sprite.setScale(scaleX, scaleY);
-    }
-
     const float spriteWidth = 16.0f * scaleX;
     const float gap = 4.0f * scaleX;
 
@@ -134,13 +165,12 @@ void WorldView::resized() {
     live2.setPosition(mapLeftPixel + spriteWidth + gap, uiYPosition);
     live3.setPosition(mapLeftPixel + (spriteWidth + gap) * 2, uiYPosition);
 
-    scoreText.setFont(AssetManager::getInstance().getFont());
-    scoreText.setString("0     ");
     scoreText.setCharacterSize(static_cast<unsigned int>(16 * scaleY));
-    scoreText.setFillColor(sf::Color::White);
-
-    scoreText.setOrigin(scoreText.getLocalBounds().width, 0);
     scoreText.setPosition(mapRightPixel, uiYPosition - (gap / 2));
+
+    for (auto& score : scores) {
+        score.sprite.setScale(scaleX, scaleY);
+    }
 }
 
 
@@ -152,6 +182,9 @@ void WorldView::render() {
 
     const double dt = logic::Stopwatch::getInstance().getDeltaTime();
 
+    // Loop over all scores and render the active ones. Also update the
+    // elapsedTime and set it to inactive after a specific amount of time
+    // passed.
     for (auto& score : scores) {
         if (!score.active) continue;
         Window::getInstance().draw(score.sprite);

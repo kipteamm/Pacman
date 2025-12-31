@@ -24,7 +24,7 @@ void Game::loop() const {
     Window& window = Window::getInstance();
 
     // Firstly, handle SFML events.
-    sf::Event event;
+    sf::Event event{};
     while (window.pollEvent(event)) {
         switch (event.type) {
             // Using KeyPressed event to be more responsive to player input

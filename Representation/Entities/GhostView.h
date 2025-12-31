@@ -22,7 +22,7 @@ private:
     std::shared_ptr<logic::GhostModel> ghost;
 
     std::unordered_map<int, std::vector<sf::IntRect>> animations{};
-    std::vector<sf::IntRect>* animation;
+    int animationIndex;
 
     bool frightened = false;
     int animationOffset = 0;

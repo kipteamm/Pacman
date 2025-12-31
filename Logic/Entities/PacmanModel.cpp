@@ -63,6 +63,21 @@ void PacmanModel::move(const World& world, const float dt) {
             this->notify(Events::DIRECTION_CHANGED);
         }
 
+        if (gridX == 0) {
+            gridX = mapWidth - 1;
+            x = world.normalizeX(gridX + 0.5);
+
+            return updateTarget();
+        }
+
+        if (gridX == mapWidth) {
+            gridX = 1;
+            x = world.normalizeX(gridX - 0.5);
+
+            return updateTarget();
+        }
+
+        // Target reached
         if (!canMoveInDirection(world, direction)) {
             x = targetX;
             y = targetY;
