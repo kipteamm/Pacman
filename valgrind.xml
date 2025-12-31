@@ -1,0 +1,2927 @@
+<?xml version="1.0"?>
+
+<valgrindoutput>
+
+<protocolversion>4</protocolversion>
+<protocoltool>memcheck</protocoltool>
+
+<preamble>
+  <line>Memcheck, a memory error detector</line>
+  <line>Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.</line>
+  <line>Using Valgrind-3.22.0 and LibVEX; rerun with -h for copyright info</line>
+  <line>Command: /home/kipteam/Documents/University/AP/Pacman/cmake-build-debug/Pacman</line>
+</preamble>
+
+<pid>21223</pid>
+<ppid>3267</ppid>
+<tool>memcheck</tool>
+
+<args>
+  <vargv>
+    <exe>/usr/bin/valgrind.bin</exe>
+    <arg>--tool=memcheck</arg>
+    <arg>--xml=yes</arg>
+    <arg>--xml-file=/tmp/clion-valgrind56359af3-3b85-4168-b3fc-d51311a1170f/valgrind_output_%p</arg>
+    <arg>--gen-suppressions=all</arg>
+    <arg>--leak-check=full</arg>
+    <arg>--leak-resolution=med</arg>
+    <arg>--track-origins=yes</arg>
+    <arg>--vgdb=no</arg>
+  </vargv>
+  <argv>
+    <exe>/home/kipteam/Documents/University/AP/Pacman/cmake-build-debug/Pacman</exe>
+  </argv>
+</args>
+
+<status>
+  <state>RUNNING</state>
+  <time>00:00:00:00.084 </time>
+</status>
+
+
+<status>
+  <state>FINISHED</state>
+  <time>00:00:00:32.578 </time>
+</status>
+
+<error>
+  <unique>0x102</unique>
+  <tid>1</tid>
+  <kind>Leak_PossiblyLost</kind>
+  <xwhat>
+    <text>48 bytes in 1 blocks are possibly lost in loss record 259 of 708</text>
+    <leakedbytes>48</leakedbytes>
+    <leakedblocks>1</leakedblocks>
+  </xwhat>
+  <stack>
+    <frame>
+      <ip>0x484D953</ip>
+      <obj>/usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
+      <fn>calloc</fn>
+    </frame>
+    <frame>
+      <ip>0x5B237A4</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj>
+      <fn>pw_memblock_map</fn>
+    </frame>
+    <frame>
+      <ip>0x68B958B</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-client-node.so</obj>
+    </frame>
+    <frame>
+      <ip>0x68CA2BA</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-client-node.so</obj>
+    </frame>
+    <frame>
+      <ip>0x6794EE0</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-protocol-native.so</obj>
+    </frame>
+    <frame>
+      <ip>0x67956C7</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-protocol-native.so</obj>
+    </frame>
+    <frame>
+      <ip>0x5BA6D15</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/spa-0.2/support/libspa-support.so</obj>
+    </frame>
+    <frame>
+      <ip>0x5B4FC66</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj>
+    </frame>
+    <frame>
+      <ip>0x4DB1AA3</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libc.so.6</obj>
+      <fn>start_thread</fn>
+      <dir>./nptl/./nptl</dir>
+      <file>pthread_create.c</file>
+      <line>447</line>
+    </frame>
+    <frame>
+      <ip>0x4E3EA33</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libc.so.6</obj>
+      <fn>clone</fn>
+      <dir>./misc/../sysdeps/unix/sysv/linux/x86_64</dir>
+      <file>clone.S</file>
+      <line>100</line>
+    </frame>
+  </stack>
+  <suppression>
+    <sname>insert_a_suppression_name_here</sname>
+    <skind>Memcheck:Leak</skind>
+    <skaux>match-leak-kinds: possible</skaux>
+    <sframe> <fun>calloc</fun> </sframe>
+    <sframe> <fun>pw_memblock_map</fun> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-client-node.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-client-node.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-protocol-native.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-protocol-native.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/spa-0.2/support/libspa-support.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj> </sframe>
+    <sframe> <fun>start_thread</fun> </sframe>
+    <sframe> <fun>clone</fun> </sframe>
+    <rawtext>
+<![CDATA[
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: possible
+   fun:calloc
+   fun:pw_memblock_map
+   obj:/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-client-node.so
+   obj:/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-client-node.so
+   obj:/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-protocol-native.so
+   obj:/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-protocol-native.so
+   obj:/usr/lib/x86_64-linux-gnu/spa-0.2/support/libspa-support.so
+   obj:/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0
+   fun:start_thread
+   fun:clone
+}
+]]>
+    </rawtext>
+  </suppression>
+</error>
+
+  <suppression>
+    <sname>insert_a_suppression_name_here</sname>
+    <skind>Memcheck:Leak</skind>
+    <skaux>match-leak-kinds: possible</skaux>
+    <sframe> <fun>calloc</fun> </sframe>
+    <sframe> <fun>pw_memblock_map</fun> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-client-node.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-client-node.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-protocol-native.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-protocol-native.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/spa-0.2/support/libspa-support.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj> </sframe>
+    <sframe> <fun>start_thread</fun> </sframe>
+    <sframe> <fun>clone</fun> </sframe>
+    <rawtext>
+<![CDATA[
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: possible
+   fun:calloc
+   fun:pw_memblock_map
+   obj:/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-client-node.so
+   obj:/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-client-node.so
+   obj:/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-protocol-native.so
+   obj:/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-protocol-native.so
+   obj:/usr/lib/x86_64-linux-gnu/spa-0.2/support/libspa-support.so
+   obj:/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0
+   fun:start_thread
+   fun:clone
+}
+]]>
+    </rawtext>
+  </suppression>
+<error>
+  <unique>0x125</unique>
+  <tid>1</tid>
+  <kind>Leak_PossiblyLost</kind>
+  <xwhat>
+    <text>56 bytes in 1 blocks are possibly lost in loss record 294 of 708</text>
+    <leakedbytes>56</leakedbytes>
+    <leakedblocks>1</leakedblocks>
+  </xwhat>
+  <stack>
+    <frame>
+      <ip>0x4846828</ip>
+      <obj>/usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
+      <fn>malloc</fn>
+    </frame>
+    <frame>
+      <ip>0x5B4EBD5</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj>
+      <fn>pw_work_queue_add</fn>
+    </frame>
+    <frame>
+      <ip>0x5B33AAC</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj>
+      <fn>pw_impl_node_set_state</fn>
+    </frame>
+    <frame>
+      <ip>0x68B9EAC</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-client-node.so</obj>
+    </frame>
+    <frame>
+      <ip>0x68C939B</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-client-node.so</obj>
+    </frame>
+    <frame>
+      <ip>0x6794EE0</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-protocol-native.so</obj>
+    </frame>
+    <frame>
+      <ip>0x67956C7</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-protocol-native.so</obj>
+    </frame>
+    <frame>
+      <ip>0x5BA6D15</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/spa-0.2/support/libspa-support.so</obj>
+    </frame>
+    <frame>
+      <ip>0x5B4FC66</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj>
+    </frame>
+    <frame>
+      <ip>0x4DB1AA3</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libc.so.6</obj>
+      <fn>start_thread</fn>
+      <dir>./nptl/./nptl</dir>
+      <file>pthread_create.c</file>
+      <line>447</line>
+    </frame>
+    <frame>
+      <ip>0x4E3EA33</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libc.so.6</obj>
+      <fn>clone</fn>
+      <dir>./misc/../sysdeps/unix/sysv/linux/x86_64</dir>
+      <file>clone.S</file>
+      <line>100</line>
+    </frame>
+  </stack>
+  <suppression>
+    <sname>insert_a_suppression_name_here</sname>
+    <skind>Memcheck:Leak</skind>
+    <skaux>match-leak-kinds: possible</skaux>
+    <sframe> <fun>malloc</fun> </sframe>
+    <sframe> <fun>pw_work_queue_add</fun> </sframe>
+    <sframe> <fun>pw_impl_node_set_state</fun> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-client-node.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-client-node.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-protocol-native.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-protocol-native.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/spa-0.2/support/libspa-support.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj> </sframe>
+    <sframe> <fun>start_thread</fun> </sframe>
+    <sframe> <fun>clone</fun> </sframe>
+    <rawtext>
+<![CDATA[
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: possible
+   fun:malloc
+   fun:pw_work_queue_add
+   fun:pw_impl_node_set_state
+   obj:/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-client-node.so
+   obj:/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-client-node.so
+   obj:/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-protocol-native.so
+   obj:/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-protocol-native.so
+   obj:/usr/lib/x86_64-linux-gnu/spa-0.2/support/libspa-support.so
+   obj:/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0
+   fun:start_thread
+   fun:clone
+}
+]]>
+    </rawtext>
+  </suppression>
+</error>
+
+  <suppression>
+    <sname>insert_a_suppression_name_here</sname>
+    <skind>Memcheck:Leak</skind>
+    <skaux>match-leak-kinds: possible</skaux>
+    <sframe> <fun>malloc</fun> </sframe>
+    <sframe> <fun>pw_work_queue_add</fun> </sframe>
+    <sframe> <fun>pw_impl_node_set_state</fun> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-client-node.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-client-node.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-protocol-native.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-protocol-native.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/spa-0.2/support/libspa-support.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj> </sframe>
+    <sframe> <fun>start_thread</fun> </sframe>
+    <sframe> <fun>clone</fun> </sframe>
+    <rawtext>
+<![CDATA[
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: possible
+   fun:malloc
+   fun:pw_work_queue_add
+   fun:pw_impl_node_set_state
+   obj:/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-client-node.so
+   obj:/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-client-node.so
+   obj:/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-protocol-native.so
+   obj:/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-protocol-native.so
+   obj:/usr/lib/x86_64-linux-gnu/spa-0.2/support/libspa-support.so
+   obj:/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0
+   fun:start_thread
+   fun:clone
+}
+]]>
+    </rawtext>
+  </suppression>
+<error>
+  <unique>0x16b</unique>
+  <tid>1</tid>
+  <kind>Leak_PossiblyLost</kind>
+  <xwhat>
+    <text>64 bytes in 1 blocks are possibly lost in loss record 364 of 708</text>
+    <leakedbytes>64</leakedbytes>
+    <leakedblocks>1</leakedblocks>
+  </xwhat>
+  <stack>
+    <frame>
+      <ip>0x484D953</ip>
+      <obj>/usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
+      <fn>calloc</fn>
+    </frame>
+    <frame>
+      <ip>0x67AC3E1</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-protocol-native.so</obj>
+    </frame>
+    <frame>
+      <ip>0x6795C36</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-protocol-native.so</obj>
+    </frame>
+    <frame>
+      <ip>0x5B059A1</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj>
+    </frame>
+    <frame>
+      <ip>0x5B05D9F</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj>
+      <fn>pw_context_connect</fn>
+    </frame>
+    <frame>
+      <ip>0x5204506</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libopenal.so.1.23.1</obj>
+    </frame>
+    <frame>
+      <ip>0x51D2BBA</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libopenal.so.1.23.1</obj>
+      <fn>alcOpenDevice</fn>
+    </frame>
+    <frame>
+      <ip>0x493C220</ip>
+      <obj>/home/kipteam/SFML-2.6.2/lib/libsfml-audio.so.2.6.2</obj>
+      <fn>sf::priv::AudioDevice::AudioDevice()</fn>
+    </frame>
+    <frame>
+      <ip>0x493C0DC</ip>
+      <obj>/home/kipteam/SFML-2.6.2/lib/libsfml-audio.so.2.6.2</obj>
+      <fn>sf::AlResource::AlResource()</fn>
+    </frame>
+    <frame>
+      <ip>0x4940B61</ip>
+      <obj>/home/kipteam/SFML-2.6.2/lib/libsfml-audio.so.2.6.2</obj>
+      <fn>sf::SoundSource::SoundSource()</fn>
+    </frame>
+    <frame>
+      <ip>0x493D6EC</ip>
+      <obj>/home/kipteam/SFML-2.6.2/lib/libsfml-audio.so.2.6.2</obj>
+      <fn>sf::Sound::Sound()</fn>
+    </frame>
+    <frame>
+      <ip>0x15704E</ip>
+      <obj>/home/kipteam/Documents/University/AP/Pacman/cmake-build-debug/Pacman</obj>
+      <fn>SoundManager::SoundManager()</fn>
+      <dir>/home/kipteam/Documents/University/AP/Pacman/Representation</dir>
+      <file>SoundManager.cpp</file>
+      <line>5</line>
+    </frame>
+  </stack>
+  <suppression>
+    <sname>insert_a_suppression_name_here</sname>
+    <skind>Memcheck:Leak</skind>
+    <skaux>match-leak-kinds: possible</skaux>
+    <sframe> <fun>calloc</fun> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-protocol-native.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-protocol-native.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj> </sframe>
+    <sframe> <fun>pw_context_connect</fun> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/libopenal.so.1.23.1</obj> </sframe>
+    <sframe> <fun>alcOpenDevice</fun> </sframe>
+    <sframe> <fun>_ZN2sf4priv11AudioDeviceC1Ev</fun> </sframe>
+    <sframe> <fun>_ZN2sf10AlResourceC1Ev</fun> </sframe>
+    <sframe> <fun>_ZN2sf11SoundSourceC1Ev</fun> </sframe>
+    <sframe> <fun>_ZN2sf5SoundC1Ev</fun> </sframe>
+    <sframe> <fun>_ZN12SoundManagerC1Ev</fun> </sframe>
+    <rawtext>
+<![CDATA[
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: possible
+   fun:calloc
+   obj:/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-protocol-native.so
+   obj:/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-protocol-native.so
+   obj:/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0
+   fun:pw_context_connect
+   obj:/usr/lib/x86_64-linux-gnu/libopenal.so.1.23.1
+   fun:alcOpenDevice
+   fun:_ZN2sf4priv11AudioDeviceC1Ev
+   fun:_ZN2sf10AlResourceC1Ev
+   fun:_ZN2sf11SoundSourceC1Ev
+   fun:_ZN2sf5SoundC1Ev
+   fun:_ZN12SoundManagerC1Ev
+}
+]]>
+    </rawtext>
+  </suppression>
+</error>
+
+  <suppression>
+    <sname>insert_a_suppression_name_here</sname>
+    <skind>Memcheck:Leak</skind>
+    <skaux>match-leak-kinds: possible</skaux>
+    <sframe> <fun>calloc</fun> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-protocol-native.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-protocol-native.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj> </sframe>
+    <sframe> <fun>pw_context_connect</fun> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/libopenal.so.1.23.1</obj> </sframe>
+    <sframe> <fun>alcOpenDevice</fun> </sframe>
+    <sframe> <fun>_ZN2sf4priv11AudioDeviceC1Ev</fun> </sframe>
+    <sframe> <fun>_ZN2sf10AlResourceC1Ev</fun> </sframe>
+    <sframe> <fun>_ZN2sf11SoundSourceC1Ev</fun> </sframe>
+    <sframe> <fun>_ZN2sf5SoundC1Ev</fun> </sframe>
+    <sframe> <fun>_ZN12SoundManagerC1Ev</fun> </sframe>
+    <rawtext>
+<![CDATA[
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: possible
+   fun:calloc
+   obj:/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-protocol-native.so
+   obj:/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-protocol-native.so
+   obj:/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0
+   fun:pw_context_connect
+   obj:/usr/lib/x86_64-linux-gnu/libopenal.so.1.23.1
+   fun:alcOpenDevice
+   fun:_ZN2sf4priv11AudioDeviceC1Ev
+   fun:_ZN2sf10AlResourceC1Ev
+   fun:_ZN2sf11SoundSourceC1Ev
+   fun:_ZN2sf5SoundC1Ev
+   fun:_ZN12SoundManagerC1Ev
+}
+]]>
+    </rawtext>
+  </suppression>
+<error>
+  <unique>0x16e</unique>
+  <tid>1</tid>
+  <kind>Leak_DefinitelyLost</kind>
+  <xwhat>
+    <text>64 bytes in 1 blocks are definitely lost in loss record 367 of 708</text>
+    <leakedbytes>64</leakedbytes>
+    <leakedblocks>1</leakedblocks>
+  </xwhat>
+  <stack>
+    <frame>
+      <ip>0x4846828</ip>
+      <obj>/usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
+      <fn>malloc</fn>
+    </frame>
+    <frame>
+      <ip>0x400E150</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2</obj>
+      <fn>malloc</fn>
+      <dir>./elf/../include</dir>
+      <file>rtld-malloc.h</file>
+      <line>56</line>
+    </frame>
+    <frame>
+      <ip>0x400E150</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2</obj>
+      <fn>resize_scopes</fn>
+      <dir>./elf/./elf</dir>
+      <file>dl-open.c</file>
+      <line>295</line>
+    </frame>
+    <frame>
+      <ip>0x400E150</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2</obj>
+      <fn>dl_open_worker_begin</fn>
+      <dir>./elf/./elf</dir>
+      <file>dl-open.c</file>
+      <line>728</line>
+    </frame>
+    <frame>
+      <ip>0x400151B</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2</obj>
+      <fn>_dl_catch_exception</fn>
+      <dir>./elf/./elf</dir>
+      <file>dl-catch.c</file>
+      <line>237</line>
+    </frame>
+    <frame>
+      <ip>0x400CD1F</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2</obj>
+      <fn>dl_open_worker</fn>
+      <dir>./elf/./elf</dir>
+      <file>dl-open.c</file>
+      <line>803</line>
+    </frame>
+    <frame>
+      <ip>0x400151B</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2</obj>
+      <fn>_dl_catch_exception</fn>
+      <dir>./elf/./elf</dir>
+      <file>dl-catch.c</file>
+      <line>237</line>
+    </frame>
+    <frame>
+      <ip>0x400D163</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2</obj>
+      <fn>_dl_open</fn>
+      <dir>./elf/./elf</dir>
+      <file>dl-open.c</file>
+      <line>905</line>
+    </frame>
+    <frame>
+      <ip>0x4DAD1A3</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libc.so.6</obj>
+      <fn>dlopen_doit</fn>
+      <dir>./dlfcn/./dlfcn</dir>
+      <file>dlopen.c</file>
+      <line>56</line>
+    </frame>
+    <frame>
+      <ip>0x400151B</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2</obj>
+      <fn>_dl_catch_exception</fn>
+      <dir>./elf/./elf</dir>
+      <file>dl-catch.c</file>
+      <line>237</line>
+    </frame>
+    <frame>
+      <ip>0x4001668</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2</obj>
+      <fn>_dl_catch_error</fn>
+      <dir>./elf/./elf</dir>
+      <file>dl-catch.c</file>
+      <line>256</line>
+    </frame>
+    <frame>
+      <ip>0x4DACC82</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libc.so.6</obj>
+      <fn>_dlerror_run</fn>
+      <dir>./dlfcn/./dlfcn</dir>
+      <file>dlerror.c</file>
+      <line>138</line>
+    </frame>
+    <frame>
+      <ip>0x4DAD25E</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libc.so.6</obj>
+      <fn>dlopen_implementation</fn>
+      <dir>./dlfcn/./dlfcn</dir>
+      <file>dlopen.c</file>
+      <line>71</line>
+    </frame>
+    <frame>
+      <ip>0x4DAD25E</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libc.so.6</obj>
+      <fn>dlopen@@GLIBC_2.34</fn>
+      <dir>./dlfcn/./dlfcn</dir>
+      <file>dlopen.c</file>
+      <line>81</line>
+    </frame>
+    <frame>
+      <ip>0x5B27F9E</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj>
+      <fn>pw_context_load_module</fn>
+    </frame>
+  </stack>
+  <suppression>
+    <sname>insert_a_suppression_name_here</sname>
+    <skind>Memcheck:Leak</skind>
+    <skaux>match-leak-kinds: definite</skaux>
+    <sframe> <fun>malloc</fun> </sframe>
+    <sframe> <fun>malloc</fun> </sframe>
+    <sframe> <fun>resize_scopes</fun> </sframe>
+    <sframe> <fun>dl_open_worker_begin</fun> </sframe>
+    <sframe> <fun>_dl_catch_exception</fun> </sframe>
+    <sframe> <fun>dl_open_worker</fun> </sframe>
+    <sframe> <fun>_dl_catch_exception</fun> </sframe>
+    <sframe> <fun>_dl_open</fun> </sframe>
+    <sframe> <fun>dlopen_doit</fun> </sframe>
+    <sframe> <fun>_dl_catch_exception</fun> </sframe>
+    <sframe> <fun>_dl_catch_error</fun> </sframe>
+    <sframe> <fun>_dlerror_run</fun> </sframe>
+    <sframe> <fun>dlopen_implementation</fun> </sframe>
+    <sframe> <fun>dlopen@@GLIBC_2.34</fun> </sframe>
+    <sframe> <fun>pw_context_load_module</fun> </sframe>
+    <rawtext>
+<![CDATA[
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: definite
+   fun:malloc
+   fun:malloc
+   fun:resize_scopes
+   fun:dl_open_worker_begin
+   fun:_dl_catch_exception
+   fun:dl_open_worker
+   fun:_dl_catch_exception
+   fun:_dl_open
+   fun:dlopen_doit
+   fun:_dl_catch_exception
+   fun:_dl_catch_error
+   fun:_dlerror_run
+   fun:dlopen_implementation
+   fun:dlopen@@GLIBC_2.34
+   fun:pw_context_load_module
+}
+]]>
+    </rawtext>
+  </suppression>
+</error>
+
+  <suppression>
+    <sname>insert_a_suppression_name_here</sname>
+    <skind>Memcheck:Leak</skind>
+    <skaux>match-leak-kinds: definite</skaux>
+    <sframe> <fun>malloc</fun> </sframe>
+    <sframe> <fun>malloc</fun> </sframe>
+    <sframe> <fun>resize_scopes</fun> </sframe>
+    <sframe> <fun>dl_open_worker_begin</fun> </sframe>
+    <sframe> <fun>_dl_catch_exception</fun> </sframe>
+    <sframe> <fun>dl_open_worker</fun> </sframe>
+    <sframe> <fun>_dl_catch_exception</fun> </sframe>
+    <sframe> <fun>_dl_open</fun> </sframe>
+    <sframe> <fun>dlopen_doit</fun> </sframe>
+    <sframe> <fun>_dl_catch_exception</fun> </sframe>
+    <sframe> <fun>_dl_catch_error</fun> </sframe>
+    <sframe> <fun>_dlerror_run</fun> </sframe>
+    <sframe> <fun>dlopen_implementation</fun> </sframe>
+    <sframe> <fun>dlopen@@GLIBC_2.34</fun> </sframe>
+    <sframe> <fun>pw_context_load_module</fun> </sframe>
+    <rawtext>
+<![CDATA[
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: definite
+   fun:malloc
+   fun:malloc
+   fun:resize_scopes
+   fun:dl_open_worker_begin
+   fun:_dl_catch_exception
+   fun:dl_open_worker
+   fun:_dl_catch_exception
+   fun:_dl_open
+   fun:dlopen_doit
+   fun:_dl_catch_exception
+   fun:_dl_catch_error
+   fun:_dlerror_run
+   fun:dlopen_implementation
+   fun:dlopen@@GLIBC_2.34
+   fun:pw_context_load_module
+}
+]]>
+    </rawtext>
+  </suppression>
+<error>
+  <unique>0x199</unique>
+  <tid>1</tid>
+  <kind>Leak_PossiblyLost</kind>
+  <xwhat>
+    <text>96 bytes in 1 blocks are possibly lost in loss record 410 of 708</text>
+    <leakedbytes>96</leakedbytes>
+    <leakedblocks>1</leakedblocks>
+  </xwhat>
+  <stack>
+    <frame>
+      <ip>0x4846828</ip>
+      <obj>/usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
+      <fn>malloc</fn>
+    </frame>
+    <frame>
+      <ip>0x5B43148</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj>
+    </frame>
+    <frame>
+      <ip>0x5B4369B</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj>
+    </frame>
+    <frame>
+      <ip>0x5B49153</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj>
+      <fn>pw_stream_connect</fn>
+    </frame>
+    <frame>
+      <ip>0x5205215</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libopenal.so.1.23.1</obj>
+    </frame>
+    <frame>
+      <ip>0x51CBBDF</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libopenal.so.1.23.1</obj>
+    </frame>
+    <frame>
+      <ip>0x51D1A71</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libopenal.so.1.23.1</obj>
+      <fn>alcCreateContext</fn>
+    </frame>
+    <frame>
+      <ip>0x493C23A</ip>
+      <obj>/home/kipteam/SFML-2.6.2/lib/libsfml-audio.so.2.6.2</obj>
+      <fn>sf::priv::AudioDevice::AudioDevice()</fn>
+    </frame>
+    <frame>
+      <ip>0x493C0DC</ip>
+      <obj>/home/kipteam/SFML-2.6.2/lib/libsfml-audio.so.2.6.2</obj>
+      <fn>sf::AlResource::AlResource()</fn>
+    </frame>
+    <frame>
+      <ip>0x4940B61</ip>
+      <obj>/home/kipteam/SFML-2.6.2/lib/libsfml-audio.so.2.6.2</obj>
+      <fn>sf::SoundSource::SoundSource()</fn>
+    </frame>
+    <frame>
+      <ip>0x493D6EC</ip>
+      <obj>/home/kipteam/SFML-2.6.2/lib/libsfml-audio.so.2.6.2</obj>
+      <fn>sf::Sound::Sound()</fn>
+    </frame>
+    <frame>
+      <ip>0x15704E</ip>
+      <obj>/home/kipteam/Documents/University/AP/Pacman/cmake-build-debug/Pacman</obj>
+      <fn>SoundManager::SoundManager()</fn>
+      <dir>/home/kipteam/Documents/University/AP/Pacman/Representation</dir>
+      <file>SoundManager.cpp</file>
+      <line>5</line>
+    </frame>
+  </stack>
+  <suppression>
+    <sname>insert_a_suppression_name_here</sname>
+    <skind>Memcheck:Leak</skind>
+    <skaux>match-leak-kinds: possible</skaux>
+    <sframe> <fun>malloc</fun> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj> </sframe>
+    <sframe> <fun>pw_stream_connect</fun> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/libopenal.so.1.23.1</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/libopenal.so.1.23.1</obj> </sframe>
+    <sframe> <fun>alcCreateContext</fun> </sframe>
+    <sframe> <fun>_ZN2sf4priv11AudioDeviceC1Ev</fun> </sframe>
+    <sframe> <fun>_ZN2sf10AlResourceC1Ev</fun> </sframe>
+    <sframe> <fun>_ZN2sf11SoundSourceC1Ev</fun> </sframe>
+    <sframe> <fun>_ZN2sf5SoundC1Ev</fun> </sframe>
+    <sframe> <fun>_ZN12SoundManagerC1Ev</fun> </sframe>
+    <rawtext>
+<![CDATA[
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: possible
+   fun:malloc
+   obj:/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0
+   obj:/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0
+   fun:pw_stream_connect
+   obj:/usr/lib/x86_64-linux-gnu/libopenal.so.1.23.1
+   obj:/usr/lib/x86_64-linux-gnu/libopenal.so.1.23.1
+   fun:alcCreateContext
+   fun:_ZN2sf4priv11AudioDeviceC1Ev
+   fun:_ZN2sf10AlResourceC1Ev
+   fun:_ZN2sf11SoundSourceC1Ev
+   fun:_ZN2sf5SoundC1Ev
+   fun:_ZN12SoundManagerC1Ev
+}
+]]>
+    </rawtext>
+  </suppression>
+</error>
+
+  <suppression>
+    <sname>insert_a_suppression_name_here</sname>
+    <skind>Memcheck:Leak</skind>
+    <skaux>match-leak-kinds: possible</skaux>
+    <sframe> <fun>malloc</fun> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj> </sframe>
+    <sframe> <fun>pw_stream_connect</fun> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/libopenal.so.1.23.1</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/libopenal.so.1.23.1</obj> </sframe>
+    <sframe> <fun>alcCreateContext</fun> </sframe>
+    <sframe> <fun>_ZN2sf4priv11AudioDeviceC1Ev</fun> </sframe>
+    <sframe> <fun>_ZN2sf10AlResourceC1Ev</fun> </sframe>
+    <sframe> <fun>_ZN2sf11SoundSourceC1Ev</fun> </sframe>
+    <sframe> <fun>_ZN2sf5SoundC1Ev</fun> </sframe>
+    <sframe> <fun>_ZN12SoundManagerC1Ev</fun> </sframe>
+    <rawtext>
+<![CDATA[
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: possible
+   fun:malloc
+   obj:/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0
+   obj:/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0
+   fun:pw_stream_connect
+   obj:/usr/lib/x86_64-linux-gnu/libopenal.so.1.23.1
+   obj:/usr/lib/x86_64-linux-gnu/libopenal.so.1.23.1
+   fun:alcCreateContext
+   fun:_ZN2sf4priv11AudioDeviceC1Ev
+   fun:_ZN2sf10AlResourceC1Ev
+   fun:_ZN2sf11SoundSourceC1Ev
+   fun:_ZN2sf5SoundC1Ev
+   fun:_ZN12SoundManagerC1Ev
+}
+]]>
+    </rawtext>
+  </suppression>
+<error>
+  <unique>0x19a</unique>
+  <tid>1</tid>
+  <kind>Leak_PossiblyLost</kind>
+  <xwhat>
+    <text>96 bytes in 1 blocks are possibly lost in loss record 411 of 708</text>
+    <leakedbytes>96</leakedbytes>
+    <leakedblocks>1</leakedblocks>
+  </xwhat>
+  <stack>
+    <frame>
+      <ip>0x4846828</ip>
+      <obj>/usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
+      <fn>malloc</fn>
+    </frame>
+    <frame>
+      <ip>0x5B43148</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj>
+    </frame>
+    <frame>
+      <ip>0x5B43821</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj>
+    </frame>
+    <frame>
+      <ip>0x5B49153</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj>
+      <fn>pw_stream_connect</fn>
+    </frame>
+    <frame>
+      <ip>0x5205215</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libopenal.so.1.23.1</obj>
+    </frame>
+    <frame>
+      <ip>0x51CBBDF</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libopenal.so.1.23.1</obj>
+    </frame>
+    <frame>
+      <ip>0x51D1A71</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libopenal.so.1.23.1</obj>
+      <fn>alcCreateContext</fn>
+    </frame>
+    <frame>
+      <ip>0x493C23A</ip>
+      <obj>/home/kipteam/SFML-2.6.2/lib/libsfml-audio.so.2.6.2</obj>
+      <fn>sf::priv::AudioDevice::AudioDevice()</fn>
+    </frame>
+    <frame>
+      <ip>0x493C0DC</ip>
+      <obj>/home/kipteam/SFML-2.6.2/lib/libsfml-audio.so.2.6.2</obj>
+      <fn>sf::AlResource::AlResource()</fn>
+    </frame>
+    <frame>
+      <ip>0x4940B61</ip>
+      <obj>/home/kipteam/SFML-2.6.2/lib/libsfml-audio.so.2.6.2</obj>
+      <fn>sf::SoundSource::SoundSource()</fn>
+    </frame>
+    <frame>
+      <ip>0x493D6EC</ip>
+      <obj>/home/kipteam/SFML-2.6.2/lib/libsfml-audio.so.2.6.2</obj>
+      <fn>sf::Sound::Sound()</fn>
+    </frame>
+    <frame>
+      <ip>0x15704E</ip>
+      <obj>/home/kipteam/Documents/University/AP/Pacman/cmake-build-debug/Pacman</obj>
+      <fn>SoundManager::SoundManager()</fn>
+      <dir>/home/kipteam/Documents/University/AP/Pacman/Representation</dir>
+      <file>SoundManager.cpp</file>
+      <line>5</line>
+    </frame>
+  </stack>
+  <suppression>
+    <sname>insert_a_suppression_name_here</sname>
+    <skind>Memcheck:Leak</skind>
+    <skaux>match-leak-kinds: possible</skaux>
+    <sframe> <fun>malloc</fun> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj> </sframe>
+    <sframe> <fun>pw_stream_connect</fun> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/libopenal.so.1.23.1</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/libopenal.so.1.23.1</obj> </sframe>
+    <sframe> <fun>alcCreateContext</fun> </sframe>
+    <sframe> <fun>_ZN2sf4priv11AudioDeviceC1Ev</fun> </sframe>
+    <sframe> <fun>_ZN2sf10AlResourceC1Ev</fun> </sframe>
+    <sframe> <fun>_ZN2sf11SoundSourceC1Ev</fun> </sframe>
+    <sframe> <fun>_ZN2sf5SoundC1Ev</fun> </sframe>
+    <sframe> <fun>_ZN12SoundManagerC1Ev</fun> </sframe>
+    <rawtext>
+<![CDATA[
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: possible
+   fun:malloc
+   obj:/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0
+   obj:/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0
+   fun:pw_stream_connect
+   obj:/usr/lib/x86_64-linux-gnu/libopenal.so.1.23.1
+   obj:/usr/lib/x86_64-linux-gnu/libopenal.so.1.23.1
+   fun:alcCreateContext
+   fun:_ZN2sf4priv11AudioDeviceC1Ev
+   fun:_ZN2sf10AlResourceC1Ev
+   fun:_ZN2sf11SoundSourceC1Ev
+   fun:_ZN2sf5SoundC1Ev
+   fun:_ZN12SoundManagerC1Ev
+}
+]]>
+    </rawtext>
+  </suppression>
+</error>
+
+  <suppression>
+    <sname>insert_a_suppression_name_here</sname>
+    <skind>Memcheck:Leak</skind>
+    <skaux>match-leak-kinds: possible</skaux>
+    <sframe> <fun>malloc</fun> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj> </sframe>
+    <sframe> <fun>pw_stream_connect</fun> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/libopenal.so.1.23.1</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/libopenal.so.1.23.1</obj> </sframe>
+    <sframe> <fun>alcCreateContext</fun> </sframe>
+    <sframe> <fun>_ZN2sf4priv11AudioDeviceC1Ev</fun> </sframe>
+    <sframe> <fun>_ZN2sf10AlResourceC1Ev</fun> </sframe>
+    <sframe> <fun>_ZN2sf11SoundSourceC1Ev</fun> </sframe>
+    <sframe> <fun>_ZN2sf5SoundC1Ev</fun> </sframe>
+    <sframe> <fun>_ZN12SoundManagerC1Ev</fun> </sframe>
+    <rawtext>
+<![CDATA[
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: possible
+   fun:malloc
+   obj:/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0
+   obj:/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0
+   fun:pw_stream_connect
+   obj:/usr/lib/x86_64-linux-gnu/libopenal.so.1.23.1
+   obj:/usr/lib/x86_64-linux-gnu/libopenal.so.1.23.1
+   fun:alcCreateContext
+   fun:_ZN2sf4priv11AudioDeviceC1Ev
+   fun:_ZN2sf10AlResourceC1Ev
+   fun:_ZN2sf11SoundSourceC1Ev
+   fun:_ZN2sf5SoundC1Ev
+   fun:_ZN12SoundManagerC1Ev
+}
+]]>
+    </rawtext>
+  </suppression>
+<error>
+  <unique>0x1c2</unique>
+  <tid>1</tid>
+  <kind>Leak_PossiblyLost</kind>
+  <xwhat>
+    <text>144 bytes in 2 blocks are possibly lost in loss record 451 of 708</text>
+    <leakedbytes>144</leakedbytes>
+    <leakedblocks>2</leakedblocks>
+  </xwhat>
+  <stack>
+    <frame>
+      <ip>0x484D953</ip>
+      <obj>/usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
+      <fn>calloc</fn>
+    </frame>
+    <frame>
+      <ip>0x5B23827</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj>
+      <fn>pw_memblock_map</fn>
+    </frame>
+    <frame>
+      <ip>0x68B92B2</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-client-node.so</obj>
+    </frame>
+    <frame>
+      <ip>0x68CAB05</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-client-node.so</obj>
+    </frame>
+    <frame>
+      <ip>0x6794EE0</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-protocol-native.so</obj>
+    </frame>
+    <frame>
+      <ip>0x67956C7</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-protocol-native.so</obj>
+    </frame>
+    <frame>
+      <ip>0x5BA6D15</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/spa-0.2/support/libspa-support.so</obj>
+    </frame>
+    <frame>
+      <ip>0x5B4FC66</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj>
+    </frame>
+    <frame>
+      <ip>0x4DB1AA3</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libc.so.6</obj>
+      <fn>start_thread</fn>
+      <dir>./nptl/./nptl</dir>
+      <file>pthread_create.c</file>
+      <line>447</line>
+    </frame>
+    <frame>
+      <ip>0x4E3EA33</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libc.so.6</obj>
+      <fn>clone</fn>
+      <dir>./misc/../sysdeps/unix/sysv/linux/x86_64</dir>
+      <file>clone.S</file>
+      <line>100</line>
+    </frame>
+  </stack>
+  <suppression>
+    <sname>insert_a_suppression_name_here</sname>
+    <skind>Memcheck:Leak</skind>
+    <skaux>match-leak-kinds: possible</skaux>
+    <sframe> <fun>calloc</fun> </sframe>
+    <sframe> <fun>pw_memblock_map</fun> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-client-node.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-client-node.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-protocol-native.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-protocol-native.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/spa-0.2/support/libspa-support.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj> </sframe>
+    <sframe> <fun>start_thread</fun> </sframe>
+    <sframe> <fun>clone</fun> </sframe>
+    <rawtext>
+<![CDATA[
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: possible
+   fun:calloc
+   fun:pw_memblock_map
+   obj:/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-client-node.so
+   obj:/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-client-node.so
+   obj:/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-protocol-native.so
+   obj:/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-protocol-native.so
+   obj:/usr/lib/x86_64-linux-gnu/spa-0.2/support/libspa-support.so
+   obj:/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0
+   fun:start_thread
+   fun:clone
+}
+]]>
+    </rawtext>
+  </suppression>
+</error>
+
+  <suppression>
+    <sname>insert_a_suppression_name_here</sname>
+    <skind>Memcheck:Leak</skind>
+    <skaux>match-leak-kinds: possible</skaux>
+    <sframe> <fun>calloc</fun> </sframe>
+    <sframe> <fun>pw_memblock_map</fun> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-client-node.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-client-node.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-protocol-native.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-protocol-native.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/spa-0.2/support/libspa-support.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj> </sframe>
+    <sframe> <fun>start_thread</fun> </sframe>
+    <sframe> <fun>clone</fun> </sframe>
+    <rawtext>
+<![CDATA[
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: possible
+   fun:calloc
+   fun:pw_memblock_map
+   obj:/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-client-node.so
+   obj:/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-client-node.so
+   obj:/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-protocol-native.so
+   obj:/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-protocol-native.so
+   obj:/usr/lib/x86_64-linux-gnu/spa-0.2/support/libspa-support.so
+   obj:/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0
+   fun:start_thread
+   fun:clone
+}
+]]>
+    </rawtext>
+  </suppression>
+<error>
+  <unique>0x1c3</unique>
+  <tid>1</tid>
+  <kind>Leak_PossiblyLost</kind>
+  <xwhat>
+    <text>144 bytes in 2 blocks are possibly lost in loss record 452 of 708</text>
+    <leakedbytes>144</leakedbytes>
+    <leakedblocks>2</leakedblocks>
+  </xwhat>
+  <stack>
+    <frame>
+      <ip>0x484D953</ip>
+      <obj>/usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
+      <fn>calloc</fn>
+    </frame>
+    <frame>
+      <ip>0x5B23827</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj>
+      <fn>pw_memblock_map</fn>
+    </frame>
+    <frame>
+      <ip>0x68B958B</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-client-node.so</obj>
+    </frame>
+    <frame>
+      <ip>0x68CA2BA</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-client-node.so</obj>
+    </frame>
+    <frame>
+      <ip>0x6794EE0</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-protocol-native.so</obj>
+    </frame>
+    <frame>
+      <ip>0x67956C7</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-protocol-native.so</obj>
+    </frame>
+    <frame>
+      <ip>0x5BA6D15</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/spa-0.2/support/libspa-support.so</obj>
+    </frame>
+    <frame>
+      <ip>0x5B4FC66</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj>
+    </frame>
+    <frame>
+      <ip>0x4DB1AA3</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libc.so.6</obj>
+      <fn>start_thread</fn>
+      <dir>./nptl/./nptl</dir>
+      <file>pthread_create.c</file>
+      <line>447</line>
+    </frame>
+    <frame>
+      <ip>0x4E3EA33</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libc.so.6</obj>
+      <fn>clone</fn>
+      <dir>./misc/../sysdeps/unix/sysv/linux/x86_64</dir>
+      <file>clone.S</file>
+      <line>100</line>
+    </frame>
+  </stack>
+  <suppression>
+    <sname>insert_a_suppression_name_here</sname>
+    <skind>Memcheck:Leak</skind>
+    <skaux>match-leak-kinds: possible</skaux>
+    <sframe> <fun>calloc</fun> </sframe>
+    <sframe> <fun>pw_memblock_map</fun> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-client-node.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-client-node.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-protocol-native.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-protocol-native.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/spa-0.2/support/libspa-support.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj> </sframe>
+    <sframe> <fun>start_thread</fun> </sframe>
+    <sframe> <fun>clone</fun> </sframe>
+    <rawtext>
+<![CDATA[
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: possible
+   fun:calloc
+   fun:pw_memblock_map
+   obj:/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-client-node.so
+   obj:/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-client-node.so
+   obj:/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-protocol-native.so
+   obj:/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-protocol-native.so
+   obj:/usr/lib/x86_64-linux-gnu/spa-0.2/support/libspa-support.so
+   obj:/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0
+   fun:start_thread
+   fun:clone
+}
+]]>
+    </rawtext>
+  </suppression>
+</error>
+
+  <suppression>
+    <sname>insert_a_suppression_name_here</sname>
+    <skind>Memcheck:Leak</skind>
+    <skaux>match-leak-kinds: possible</skaux>
+    <sframe> <fun>calloc</fun> </sframe>
+    <sframe> <fun>pw_memblock_map</fun> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-client-node.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-client-node.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-protocol-native.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-protocol-native.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/spa-0.2/support/libspa-support.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj> </sframe>
+    <sframe> <fun>start_thread</fun> </sframe>
+    <sframe> <fun>clone</fun> </sframe>
+    <rawtext>
+<![CDATA[
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: possible
+   fun:calloc
+   fun:pw_memblock_map
+   obj:/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-client-node.so
+   obj:/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-client-node.so
+   obj:/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-protocol-native.so
+   obj:/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-protocol-native.so
+   obj:/usr/lib/x86_64-linux-gnu/spa-0.2/support/libspa-support.so
+   obj:/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0
+   fun:start_thread
+   fun:clone
+}
+]]>
+    </rawtext>
+  </suppression>
+<error>
+  <unique>0x1e2</unique>
+  <tid>1</tid>
+  <kind>Leak_PossiblyLost</kind>
+  <xwhat>
+    <text>192 bytes in 2 blocks are possibly lost in loss record 483 of 708</text>
+    <leakedbytes>192</leakedbytes>
+    <leakedblocks>2</leakedblocks>
+  </xwhat>
+  <stack>
+    <frame>
+      <ip>0x4846828</ip>
+      <obj>/usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
+      <fn>malloc</fn>
+    </frame>
+    <frame>
+      <ip>0x5B3676F</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj>
+    </frame>
+    <frame>
+      <ip>0x915BE1E</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so</obj>
+    </frame>
+    <frame>
+      <ip>0x91869B4</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so</obj>
+    </frame>
+    <frame>
+      <ip>0x5B3852F</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj>
+    </frame>
+    <frame>
+      <ip>0x5B3DE20</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj>
+      <fn>pw_impl_port_add</fn>
+    </frame>
+    <frame>
+      <ip>0x5B31EF1</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj>
+    </frame>
+    <frame>
+      <ip>0x91646A4</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so</obj>
+    </frame>
+    <frame>
+      <ip>0x916E8A3</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so</obj>
+    </frame>
+    <frame>
+      <ip>0x916FC81</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so</obj>
+    </frame>
+    <frame>
+      <ip>0x91748BA</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so</obj>
+    </frame>
+    <frame>
+      <ip>0x91653D5</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so</obj>
+    </frame>
+  </stack>
+  <suppression>
+    <sname>insert_a_suppression_name_here</sname>
+    <skind>Memcheck:Leak</skind>
+    <skaux>match-leak-kinds: possible</skaux>
+    <sframe> <fun>malloc</fun> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj> </sframe>
+    <sframe> <fun>pw_impl_port_add</fun> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so</obj> </sframe>
+    <rawtext>
+<![CDATA[
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: possible
+   fun:malloc
+   obj:/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0
+   obj:/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so
+   obj:/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so
+   obj:/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0
+   fun:pw_impl_port_add
+   obj:/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0
+   obj:/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so
+   obj:/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so
+   obj:/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so
+   obj:/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so
+   obj:/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so
+}
+]]>
+    </rawtext>
+  </suppression>
+</error>
+
+  <suppression>
+    <sname>insert_a_suppression_name_here</sname>
+    <skind>Memcheck:Leak</skind>
+    <skaux>match-leak-kinds: possible</skaux>
+    <sframe> <fun>malloc</fun> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj> </sframe>
+    <sframe> <fun>pw_impl_port_add</fun> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so</obj> </sframe>
+    <rawtext>
+<![CDATA[
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: possible
+   fun:malloc
+   obj:/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0
+   obj:/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so
+   obj:/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so
+   obj:/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0
+   fun:pw_impl_port_add
+   obj:/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0
+   obj:/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so
+   obj:/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so
+   obj:/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so
+   obj:/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so
+   obj:/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so
+}
+]]>
+    </rawtext>
+  </suppression>
+<error>
+  <unique>0x22e</unique>
+  <tid>1</tid>
+  <kind>Leak_PossiblyLost</kind>
+  <xwhat>
+    <text>400 bytes in 1 blocks are possibly lost in loss record 559 of 708</text>
+    <leakedbytes>400</leakedbytes>
+    <leakedblocks>1</leakedblocks>
+  </xwhat>
+  <stack>
+    <frame>
+      <ip>0x484D953</ip>
+      <obj>/usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
+      <fn>calloc</fn>
+    </frame>
+    <frame>
+      <ip>0x40145AB</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2</obj>
+      <fn>calloc</fn>
+      <dir>./elf/../include</dir>
+      <file>rtld-malloc.h</file>
+      <line>44</line>
+    </frame>
+    <frame>
+      <ip>0x40145AB</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2</obj>
+      <fn>allocate_dtv</fn>
+      <dir>./elf/../elf</dir>
+      <file>dl-tls.c</file>
+      <line>370</line>
+    </frame>
+    <frame>
+      <ip>0x40145AB</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2</obj>
+      <fn>_dl_allocate_tls</fn>
+      <dir>./elf/../elf</dir>
+      <file>dl-tls.c</file>
+      <line>629</line>
+    </frame>
+    <frame>
+      <ip>0x4DB2616</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libc.so.6</obj>
+      <fn>allocate_stack</fn>
+      <dir>./nptl/./nptl</dir>
+      <file>allocatestack.c</file>
+      <line>429</line>
+    </frame>
+    <frame>
+      <ip>0x4DB2616</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libc.so.6</obj>
+      <fn>pthread_create@@GLIBC_2.34</fn>
+      <dir>./nptl/./nptl</dir>
+      <file>pthread_create.c</file>
+      <line>655</line>
+    </frame>
+    <frame>
+      <ip>0x4A6CEB0</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.33</obj>
+      <fn>std::thread::_M_start_thread(std::unique_ptr&lt;std::thread::_State, std::default_delete&lt;std::thread::_State&gt; &gt;, void (*)())</fn>
+    </frame>
+    <frame>
+      <ip>0x51D1EBB</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libopenal.so.1.23.1</obj>
+      <fn>alcCreateContext</fn>
+    </frame>
+    <frame>
+      <ip>0x493C23A</ip>
+      <obj>/home/kipteam/SFML-2.6.2/lib/libsfml-audio.so.2.6.2</obj>
+      <fn>sf::priv::AudioDevice::AudioDevice()</fn>
+    </frame>
+    <frame>
+      <ip>0x493C0DC</ip>
+      <obj>/home/kipteam/SFML-2.6.2/lib/libsfml-audio.so.2.6.2</obj>
+      <fn>sf::AlResource::AlResource()</fn>
+    </frame>
+    <frame>
+      <ip>0x4940B61</ip>
+      <obj>/home/kipteam/SFML-2.6.2/lib/libsfml-audio.so.2.6.2</obj>
+      <fn>sf::SoundSource::SoundSource()</fn>
+    </frame>
+    <frame>
+      <ip>0x493D6EC</ip>
+      <obj>/home/kipteam/SFML-2.6.2/lib/libsfml-audio.so.2.6.2</obj>
+      <fn>sf::Sound::Sound()</fn>
+    </frame>
+    <frame>
+      <ip>0x15704E</ip>
+      <obj>/home/kipteam/Documents/University/AP/Pacman/cmake-build-debug/Pacman</obj>
+      <fn>SoundManager::SoundManager()</fn>
+      <dir>/home/kipteam/Documents/University/AP/Pacman/Representation</dir>
+      <file>SoundManager.cpp</file>
+      <line>5</line>
+    </frame>
+    <frame>
+      <ip>0x125F2B</ip>
+      <obj>/home/kipteam/Documents/University/AP/Pacman/cmake-build-debug/Pacman</obj>
+      <fn>void std::_Construct&lt;SoundManager&gt;(SoundManager*)</fn>
+      <dir>/usr/include/c++/13/bits</dir>
+      <file>stl_construct.h</file>
+      <line>119</line>
+    </frame>
+    <frame>
+      <ip>0x12564A</ip>
+      <obj>/home/kipteam/Documents/University/AP/Pacman/cmake-build-debug/Pacman</obj>
+      <fn>construct&lt;SoundManager&gt;</fn>
+      <dir>/usr/include/c++/13/bits</dir>
+      <file>alloc_traits.h</file>
+      <line>661</line>
+    </frame>
+    <frame>
+      <ip>0x12564A</ip>
+      <obj>/home/kipteam/Documents/University/AP/Pacman/cmake-build-debug/Pacman</obj>
+      <fn>std::_Sp_counted_ptr_inplace&lt;SoundManager, std::allocator&lt;void&gt;, (__gnu_cxx::_Lock_policy)2&gt;::_Sp_counted_ptr_inplace&lt;&gt;(std::allocator&lt;void&gt;)</fn>
+      <dir>/usr/include/c++/13/bits</dir>
+      <file>shared_ptr_base.h</file>
+      <line>604</line>
+    </frame>
+  </stack>
+  <suppression>
+    <sname>insert_a_suppression_name_here</sname>
+    <skind>Memcheck:Leak</skind>
+    <skaux>match-leak-kinds: possible</skaux>
+    <sframe> <fun>calloc</fun> </sframe>
+    <sframe> <fun>calloc</fun> </sframe>
+    <sframe> <fun>allocate_dtv</fun> </sframe>
+    <sframe> <fun>_dl_allocate_tls</fun> </sframe>
+    <sframe> <fun>allocate_stack</fun> </sframe>
+    <sframe> <fun>pthread_create@@GLIBC_2.34</fun> </sframe>
+    <sframe> <fun>_ZNSt6thread15_M_start_threadESt10unique_ptrINS_6_StateESt14default_deleteIS1_EEPFvvE</fun> </sframe>
+    <sframe> <fun>alcCreateContext</fun> </sframe>
+    <sframe> <fun>_ZN2sf4priv11AudioDeviceC1Ev</fun> </sframe>
+    <sframe> <fun>_ZN2sf10AlResourceC1Ev</fun> </sframe>
+    <sframe> <fun>_ZN2sf11SoundSourceC1Ev</fun> </sframe>
+    <sframe> <fun>_ZN2sf5SoundC1Ev</fun> </sframe>
+    <sframe> <fun>_ZN12SoundManagerC1Ev</fun> </sframe>
+    <sframe> <fun>_ZSt10_ConstructI12SoundManagerJEEvPT_DpOT0_</fun> </sframe>
+    <sframe> <fun>construct&lt;SoundManager&gt;</fun> </sframe>
+    <sframe> <fun>_ZNSt23_Sp_counted_ptr_inplaceI12SoundManagerSaIvELN9__gnu_cxx12_Lock_policyE2EEC1IJEEES1_DpOT_</fun> </sframe>
+    <rawtext>
+<![CDATA[
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: possible
+   fun:calloc
+   fun:calloc
+   fun:allocate_dtv
+   fun:_dl_allocate_tls
+   fun:allocate_stack
+   fun:pthread_create@@GLIBC_2.34
+   fun:_ZNSt6thread15_M_start_threadESt10unique_ptrINS_6_StateESt14default_deleteIS1_EEPFvvE
+   fun:alcCreateContext
+   fun:_ZN2sf4priv11AudioDeviceC1Ev
+   fun:_ZN2sf10AlResourceC1Ev
+   fun:_ZN2sf11SoundSourceC1Ev
+   fun:_ZN2sf5SoundC1Ev
+   fun:_ZN12SoundManagerC1Ev
+   fun:_ZSt10_ConstructI12SoundManagerJEEvPT_DpOT0_
+   fun:construct<SoundManager>
+   fun:_ZNSt23_Sp_counted_ptr_inplaceI12SoundManagerSaIvELN9__gnu_cxx12_Lock_policyE2EEC1IJEEES1_DpOT_
+}
+]]>
+    </rawtext>
+  </suppression>
+</error>
+
+  <suppression>
+    <sname>insert_a_suppression_name_here</sname>
+    <skind>Memcheck:Leak</skind>
+    <skaux>match-leak-kinds: possible</skaux>
+    <sframe> <fun>calloc</fun> </sframe>
+    <sframe> <fun>calloc</fun> </sframe>
+    <sframe> <fun>allocate_dtv</fun> </sframe>
+    <sframe> <fun>_dl_allocate_tls</fun> </sframe>
+    <sframe> <fun>allocate_stack</fun> </sframe>
+    <sframe> <fun>pthread_create@@GLIBC_2.34</fun> </sframe>
+    <sframe> <fun>_ZNSt6thread15_M_start_threadESt10unique_ptrINS_6_StateESt14default_deleteIS1_EEPFvvE</fun> </sframe>
+    <sframe> <fun>alcCreateContext</fun> </sframe>
+    <sframe> <fun>_ZN2sf4priv11AudioDeviceC1Ev</fun> </sframe>
+    <sframe> <fun>_ZN2sf10AlResourceC1Ev</fun> </sframe>
+    <sframe> <fun>_ZN2sf11SoundSourceC1Ev</fun> </sframe>
+    <sframe> <fun>_ZN2sf5SoundC1Ev</fun> </sframe>
+    <sframe> <fun>_ZN12SoundManagerC1Ev</fun> </sframe>
+    <sframe> <fun>_ZSt10_ConstructI12SoundManagerJEEvPT_DpOT0_</fun> </sframe>
+    <sframe> <fun>construct&lt;SoundManager&gt;</fun> </sframe>
+    <sframe> <fun>_ZNSt23_Sp_counted_ptr_inplaceI12SoundManagerSaIvELN9__gnu_cxx12_Lock_policyE2EEC1IJEEES1_DpOT_</fun> </sframe>
+    <rawtext>
+<![CDATA[
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: possible
+   fun:calloc
+   fun:calloc
+   fun:allocate_dtv
+   fun:_dl_allocate_tls
+   fun:allocate_stack
+   fun:pthread_create@@GLIBC_2.34
+   fun:_ZNSt6thread15_M_start_threadESt10unique_ptrINS_6_StateESt14default_deleteIS1_EEPFvvE
+   fun:alcCreateContext
+   fun:_ZN2sf4priv11AudioDeviceC1Ev
+   fun:_ZN2sf10AlResourceC1Ev
+   fun:_ZN2sf11SoundSourceC1Ev
+   fun:_ZN2sf5SoundC1Ev
+   fun:_ZN12SoundManagerC1Ev
+   fun:_ZSt10_ConstructI12SoundManagerJEEvPT_DpOT0_
+   fun:construct<SoundManager>
+   fun:_ZNSt23_Sp_counted_ptr_inplaceI12SoundManagerSaIvELN9__gnu_cxx12_Lock_policyE2EEC1IJEEES1_DpOT_
+}
+]]>
+    </rawtext>
+  </suppression>
+<error>
+  <unique>0x23d</unique>
+  <tid>1</tid>
+  <kind>Leak_DefinitelyLost</kind>
+  <xwhat>
+    <text>448 (64 direct, 384 indirect) bytes in 1 blocks are definitely lost in loss record 574 of 708</text>
+    <leakedbytes>448</leakedbytes>
+    <leakedblocks>1</leakedblocks>
+  </xwhat>
+  <stack>
+    <frame>
+      <ip>0x4846FA3</ip>
+      <obj>/usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
+      <fn>operator new(unsigned long)</fn>
+    </frame>
+    <frame>
+      <ip>0x13B463</ip>
+      <obj>/home/kipteam/Documents/University/AP/Pacman/cmake-build-debug/Pacman</obj>
+      <fn>std::__new_allocator&lt;std::_Sp_counted_ptr_inplace&lt;logic::FruitModel, std::allocator&lt;void&gt;, (__gnu_cxx::_Lock_policy)2&gt; &gt;::allocate(unsigned long, void const*)</fn>
+      <dir>/usr/include/c++/13/bits</dir>
+      <file>new_allocator.h</file>
+      <line>151</line>
+    </frame>
+    <frame>
+      <ip>0x1383F4</ip>
+      <obj>/home/kipteam/Documents/University/AP/Pacman/cmake-build-debug/Pacman</obj>
+      <fn>allocate</fn>
+      <dir>/usr/include/c++/13/bits</dir>
+      <file>allocator.h</file>
+      <line>198</line>
+    </frame>
+    <frame>
+      <ip>0x1383F4</ip>
+      <obj>/home/kipteam/Documents/University/AP/Pacman/cmake-build-debug/Pacman</obj>
+      <fn>allocate</fn>
+      <dir>/usr/include/c++/13/bits</dir>
+      <file>alloc_traits.h</file>
+      <line>482</line>
+    </frame>
+    <frame>
+      <ip>0x1383F4</ip>
+      <obj>/home/kipteam/Documents/University/AP/Pacman/cmake-build-debug/Pacman</obj>
+      <fn>std::__allocated_ptr&lt;std::allocator&lt;std::_Sp_counted_ptr_inplace&lt;logic::FruitModel, std::allocator&lt;void&gt;, (__gnu_cxx::_Lock_policy)2&gt; &gt; &gt; std::__allocate_guarded&lt;std::allocator&lt;std::_Sp_counted_ptr_inplace&lt;logic::FruitModel, std::allocator&lt;void&gt;, (__gnu_cxx::_Lock_policy)2&gt; &gt; &gt;(std::allocator&lt;std::_Sp_counted_ptr_inplace&lt;logic::FruitModel, std::allocator&lt;void&gt;, (__gnu_cxx::_Lock_policy)2&gt; &gt;&amp;)</fn>
+      <dir>/usr/include/c++/13/bits</dir>
+      <file>allocated_ptr.h</file>
+      <line>98</line>
+    </frame>
+    <frame>
+      <ip>0x1360AE</ip>
+      <obj>/home/kipteam/Documents/University/AP/Pacman/cmake-build-debug/Pacman</obj>
+      <fn>std::__shared_count&lt;(__gnu_cxx::_Lock_policy)2&gt;::__shared_count&lt;logic::FruitModel, std::allocator&lt;void&gt;, float&amp;, float&amp;, int&gt;(logic::FruitModel*&amp;, std::_Sp_alloc_shared_tag&lt;std::allocator&lt;void&gt; &gt;, float&amp;, float&amp;, int&amp;&amp;)</fn>
+      <dir>/usr/include/c++/13/bits</dir>
+      <file>shared_ptr_base.h</file>
+      <line>969</line>
+    </frame>
+    <frame>
+      <ip>0x13493D</ip>
+      <obj>/home/kipteam/Documents/University/AP/Pacman/cmake-build-debug/Pacman</obj>
+      <fn>std::__shared_ptr&lt;logic::FruitModel, (__gnu_cxx::_Lock_policy)2&gt;::__shared_ptr&lt;std::allocator&lt;void&gt;, float&amp;, float&amp;, int&gt;(std::_Sp_alloc_shared_tag&lt;std::allocator&lt;void&gt; &gt;, float&amp;, float&amp;, int&amp;&amp;)</fn>
+      <dir>/usr/include/c++/13/bits</dir>
+      <file>shared_ptr_base.h</file>
+      <line>1712</line>
+    </frame>
+    <frame>
+      <ip>0x133AB2</ip>
+      <obj>/home/kipteam/Documents/University/AP/Pacman/cmake-build-debug/Pacman</obj>
+      <fn>std::shared_ptr&lt;logic::FruitModel&gt;::shared_ptr&lt;std::allocator&lt;void&gt;, float&amp;, float&amp;, int&gt;(std::_Sp_alloc_shared_tag&lt;std::allocator&lt;void&gt; &gt;, float&amp;, float&amp;, int&amp;&amp;)</fn>
+      <dir>/usr/include/c++/13/bits</dir>
+      <file>shared_ptr.h</file>
+      <line>464</line>
+    </frame>
+    <frame>
+      <ip>0x132E7B</ip>
+      <obj>/home/kipteam/Documents/University/AP/Pacman/cmake-build-debug/Pacman</obj>
+      <fn>std::shared_ptr&lt;logic::FruitModel&gt; std::make_shared&lt;logic::FruitModel, float&amp;, float&amp;, int&gt;(float&amp;, float&amp;, int&amp;&amp;)</fn>
+      <dir>/usr/include/c++/13/bits</dir>
+      <file>shared_ptr.h</file>
+      <line>1010</line>
+    </frame>
+    <frame>
+      <ip>0x131FB6</ip>
+      <obj>/home/kipteam/Documents/University/AP/Pacman/cmake-build-debug/Pacman</obj>
+      <fn>ConcreteFactory::createFruit(float, float)</fn>
+      <dir>/home/kipteam/Documents/University/AP/Pacman/Representation/Entities</dir>
+      <file>ConcreteFactory.cpp</file>
+      <line>87</line>
+    </frame>
+    <frame>
+      <ip>0x13E2DD</ip>
+      <obj>/home/kipteam/Documents/University/AP/Pacman/cmake-build-debug/Pacman</obj>
+      <fn>logic::World::loadLevel(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; const&amp;)</fn>
+      <dir>/home/kipteam/Documents/University/AP/Pacman/Logic</dir>
+      <file>World.cpp</file>
+      <line>92</line>
+    </frame>
+    <frame>
+      <ip>0x1270FC</ip>
+      <obj>/home/kipteam/Documents/University/AP/Pacman/cmake-build-debug/Pacman</obj>
+      <fn>LevelState::LevelState(StateManager&amp;)</fn>
+      <dir>/home/kipteam/Documents/University/AP/Pacman/Representation/States</dir>
+      <file>LevelState.cpp</file>
+      <line>19</line>
+    </frame>
+    <frame>
+      <ip>0x1207A6</ip>
+      <obj>/home/kipteam/Documents/University/AP/Pacman/cmake-build-debug/Pacman</obj>
+      <fn>std::__detail::_MakeUniq&lt;LevelState&gt;::__single_object std::make_unique&lt;LevelState, StateManager&amp;&gt;(StateManager&amp;)</fn>
+      <dir>/usr/include/c++/13/bits</dir>
+      <file>unique_ptr.h</file>
+      <line>1070</line>
+    </frame>
+    <frame>
+      <ip>0x11E76A</ip>
+      <obj>/home/kipteam/Documents/University/AP/Pacman/cmake-build-debug/Pacman</obj>
+      <fn>MenuState::handleInput(sf::Event::KeyEvent const&amp;)</fn>
+      <dir>/home/kipteam/Documents/University/AP/Pacman/Representation/States</dir>
+      <file>MenuState.cpp</file>
+      <line>51</line>
+    </frame>
+  </stack>
+  <suppression>
+    <sname>insert_a_suppression_name_here</sname>
+    <skind>Memcheck:Leak</skind>
+    <skaux>match-leak-kinds: definite</skaux>
+    <sframe> <fun>_Znwm</fun> </sframe>
+    <sframe> <fun>_ZNSt15__new_allocatorISt23_Sp_counted_ptr_inplaceIN5logic10FruitModelESaIvELN9__gnu_cxx12_Lock_policyE2EEE8allocateEmPKv</fun> </sframe>
+    <sframe> <fun>allocate</fun> </sframe>
+    <sframe> <fun>allocate</fun> </sframe>
+    <sframe> <fun>_ZSt18__allocate_guardedISaISt23_Sp_counted_ptr_inplaceIN5logic10FruitModelESaIvELN9__gnu_cxx12_Lock_policyE2EEEESt15__allocated_ptrIT_ERS9_</fun> </sframe>
+    <sframe> <fun>_ZNSt14__shared_countILN9__gnu_cxx12_Lock_policyE2EEC1IN5logic10FruitModelESaIvEJRfS7_iEEERPT_St20_Sp_alloc_shared_tagIT0_EDpOT1_</fun> </sframe>
+    <sframe> <fun>_ZNSt12__shared_ptrIN5logic10FruitModelELN9__gnu_cxx12_Lock_policyE2EEC1ISaIvEJRfS7_iEEESt20_Sp_alloc_shared_tagIT_EDpOT0_</fun> </sframe>
+    <sframe> <fun>_ZNSt10shared_ptrIN5logic10FruitModelEEC1ISaIvEJRfS5_iEEESt20_Sp_alloc_shared_tagIT_EDpOT0_</fun> </sframe>
+    <sframe> <fun>_ZSt11make_sharedIN5logic10FruitModelEJRfS2_iEESt10shared_ptrIT_EDpOT0_</fun> </sframe>
+    <sframe> <fun>_ZN15ConcreteFactory11createFruitEff</fun> </sframe>
+    <sframe> <fun>_ZN5logic5World9loadLevelERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE</fun> </sframe>
+    <sframe> <fun>_ZN10LevelStateC1ER12StateManager</fun> </sframe>
+    <sframe> <fun>_ZSt11make_uniqueI10LevelStateJR12StateManagerEENSt8__detail9_MakeUniqIT_E15__single_objectEDpOT0_</fun> </sframe>
+    <sframe> <fun>_ZN9MenuState11handleInputERKN2sf5Event8KeyEventE</fun> </sframe>
+    <rawtext>
+<![CDATA[
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: definite
+   fun:_Znwm
+   fun:_ZNSt15__new_allocatorISt23_Sp_counted_ptr_inplaceIN5logic10FruitModelESaIvELN9__gnu_cxx12_Lock_policyE2EEE8allocateEmPKv
+   fun:allocate
+   fun:allocate
+   fun:_ZSt18__allocate_guardedISaISt23_Sp_counted_ptr_inplaceIN5logic10FruitModelESaIvELN9__gnu_cxx12_Lock_policyE2EEEESt15__allocated_ptrIT_ERS9_
+   fun:_ZNSt14__shared_countILN9__gnu_cxx12_Lock_policyE2EEC1IN5logic10FruitModelESaIvEJRfS7_iEEERPT_St20_Sp_alloc_shared_tagIT0_EDpOT1_
+   fun:_ZNSt12__shared_ptrIN5logic10FruitModelELN9__gnu_cxx12_Lock_policyE2EEC1ISaIvEJRfS7_iEEESt20_Sp_alloc_shared_tagIT_EDpOT0_
+   fun:_ZNSt10shared_ptrIN5logic10FruitModelEEC1ISaIvEJRfS5_iEEESt20_Sp_alloc_shared_tagIT_EDpOT0_
+   fun:_ZSt11make_sharedIN5logic10FruitModelEJRfS2_iEESt10shared_ptrIT_EDpOT0_
+   fun:_ZN15ConcreteFactory11createFruitEff
+   fun:_ZN5logic5World9loadLevelERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
+   fun:_ZN10LevelStateC1ER12StateManager
+   fun:_ZSt11make_uniqueI10LevelStateJR12StateManagerEENSt8__detail9_MakeUniqIT_E15__single_objectEDpOT0_
+   fun:_ZN9MenuState11handleInputERKN2sf5Event8KeyEventE
+}
+]]>
+    </rawtext>
+  </suppression>
+</error>
+
+  <suppression>
+    <sname>insert_a_suppression_name_here</sname>
+    <skind>Memcheck:Leak</skind>
+    <skaux>match-leak-kinds: definite</skaux>
+    <sframe> <fun>_Znwm</fun> </sframe>
+    <sframe> <fun>_ZNSt15__new_allocatorISt23_Sp_counted_ptr_inplaceIN5logic10FruitModelESaIvELN9__gnu_cxx12_Lock_policyE2EEE8allocateEmPKv</fun> </sframe>
+    <sframe> <fun>allocate</fun> </sframe>
+    <sframe> <fun>allocate</fun> </sframe>
+    <sframe> <fun>_ZSt18__allocate_guardedISaISt23_Sp_counted_ptr_inplaceIN5logic10FruitModelESaIvELN9__gnu_cxx12_Lock_policyE2EEEESt15__allocated_ptrIT_ERS9_</fun> </sframe>
+    <sframe> <fun>_ZNSt14__shared_countILN9__gnu_cxx12_Lock_policyE2EEC1IN5logic10FruitModelESaIvEJRfS7_iEEERPT_St20_Sp_alloc_shared_tagIT0_EDpOT1_</fun> </sframe>
+    <sframe> <fun>_ZNSt12__shared_ptrIN5logic10FruitModelELN9__gnu_cxx12_Lock_policyE2EEC1ISaIvEJRfS7_iEEESt20_Sp_alloc_shared_tagIT_EDpOT0_</fun> </sframe>
+    <sframe> <fun>_ZNSt10shared_ptrIN5logic10FruitModelEEC1ISaIvEJRfS5_iEEESt20_Sp_alloc_shared_tagIT_EDpOT0_</fun> </sframe>
+    <sframe> <fun>_ZSt11make_sharedIN5logic10FruitModelEJRfS2_iEESt10shared_ptrIT_EDpOT0_</fun> </sframe>
+    <sframe> <fun>_ZN15ConcreteFactory11createFruitEff</fun> </sframe>
+    <sframe> <fun>_ZN5logic5World9loadLevelERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE</fun> </sframe>
+    <sframe> <fun>_ZN10LevelStateC1ER12StateManager</fun> </sframe>
+    <sframe> <fun>_ZSt11make_uniqueI10LevelStateJR12StateManagerEENSt8__detail9_MakeUniqIT_E15__single_objectEDpOT0_</fun> </sframe>
+    <sframe> <fun>_ZN9MenuState11handleInputERKN2sf5Event8KeyEventE</fun> </sframe>
+    <rawtext>
+<![CDATA[
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: definite
+   fun:_Znwm
+   fun:_ZNSt15__new_allocatorISt23_Sp_counted_ptr_inplaceIN5logic10FruitModelESaIvELN9__gnu_cxx12_Lock_policyE2EEE8allocateEmPKv
+   fun:allocate
+   fun:allocate
+   fun:_ZSt18__allocate_guardedISaISt23_Sp_counted_ptr_inplaceIN5logic10FruitModelESaIvELN9__gnu_cxx12_Lock_policyE2EEEESt15__allocated_ptrIT_ERS9_
+   fun:_ZNSt14__shared_countILN9__gnu_cxx12_Lock_policyE2EEC1IN5logic10FruitModelESaIvEJRfS7_iEEERPT_St20_Sp_alloc_shared_tagIT0_EDpOT1_
+   fun:_ZNSt12__shared_ptrIN5logic10FruitModelELN9__gnu_cxx12_Lock_policyE2EEC1ISaIvEJRfS7_iEEESt20_Sp_alloc_shared_tagIT_EDpOT0_
+   fun:_ZNSt10shared_ptrIN5logic10FruitModelEEC1ISaIvEJRfS5_iEEESt20_Sp_alloc_shared_tagIT_EDpOT0_
+   fun:_ZSt11make_sharedIN5logic10FruitModelEJRfS2_iEESt10shared_ptrIT_EDpOT0_
+   fun:_ZN15ConcreteFactory11createFruitEff
+   fun:_ZN5logic5World9loadLevelERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
+   fun:_ZN10LevelStateC1ER12StateManager
+   fun:_ZSt11make_uniqueI10LevelStateJR12StateManagerEENSt8__detail9_MakeUniqIT_E15__single_objectEDpOT0_
+   fun:_ZN9MenuState11handleInputERKN2sf5Event8KeyEventE
+}
+]]>
+    </rawtext>
+  </suppression>
+<error>
+  <unique>0x250</unique>
+  <tid>1</tid>
+  <kind>Leak_PossiblyLost</kind>
+  <xwhat>
+    <text>512 bytes in 2 blocks are possibly lost in loss record 593 of 708</text>
+    <leakedbytes>512</leakedbytes>
+    <leakedblocks>2</leakedblocks>
+  </xwhat>
+  <stack>
+    <frame>
+      <ip>0x4846828</ip>
+      <obj>/usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
+      <fn>malloc</fn>
+    </frame>
+    <frame>
+      <ip>0x5B43148</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj>
+    </frame>
+    <frame>
+      <ip>0x5B434D8</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj>
+    </frame>
+    <frame>
+      <ip>0x5B454A1</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj>
+    </frame>
+    <frame>
+      <ip>0x9168442</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so</obj>
+    </frame>
+    <frame>
+      <ip>0x91691C5</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so</obj>
+    </frame>
+    <frame>
+      <ip>0x9169F35</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so</obj>
+    </frame>
+    <frame>
+      <ip>0x5B33C5C</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj>
+      <fn>pw_impl_node_set_state</fn>
+    </frame>
+    <frame>
+      <ip>0x68B9EAC</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-client-node.so</obj>
+    </frame>
+    <frame>
+      <ip>0x68C939B</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-client-node.so</obj>
+    </frame>
+    <frame>
+      <ip>0x6794EE0</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-protocol-native.so</obj>
+    </frame>
+    <frame>
+      <ip>0x67956C7</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-protocol-native.so</obj>
+    </frame>
+  </stack>
+  <suppression>
+    <sname>insert_a_suppression_name_here</sname>
+    <skind>Memcheck:Leak</skind>
+    <skaux>match-leak-kinds: possible</skaux>
+    <sframe> <fun>malloc</fun> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so</obj> </sframe>
+    <sframe> <fun>pw_impl_node_set_state</fun> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-client-node.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-client-node.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-protocol-native.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-protocol-native.so</obj> </sframe>
+    <rawtext>
+<![CDATA[
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: possible
+   fun:malloc
+   obj:/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0
+   obj:/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0
+   obj:/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0
+   obj:/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so
+   obj:/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so
+   obj:/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so
+   fun:pw_impl_node_set_state
+   obj:/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-client-node.so
+   obj:/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-client-node.so
+   obj:/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-protocol-native.so
+   obj:/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-protocol-native.so
+}
+]]>
+    </rawtext>
+  </suppression>
+</error>
+
+  <suppression>
+    <sname>insert_a_suppression_name_here</sname>
+    <skind>Memcheck:Leak</skind>
+    <skaux>match-leak-kinds: possible</skaux>
+    <sframe> <fun>malloc</fun> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so</obj> </sframe>
+    <sframe> <fun>pw_impl_node_set_state</fun> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-client-node.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-client-node.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-protocol-native.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-protocol-native.so</obj> </sframe>
+    <rawtext>
+<![CDATA[
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: possible
+   fun:malloc
+   obj:/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0
+   obj:/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0
+   obj:/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0
+   obj:/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so
+   obj:/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so
+   obj:/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so
+   fun:pw_impl_node_set_state
+   obj:/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-client-node.so
+   obj:/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-client-node.so
+   obj:/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-protocol-native.so
+   obj:/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-protocol-native.so
+}
+]]>
+    </rawtext>
+  </suppression>
+<error>
+  <unique>0x269</unique>
+  <tid>1</tid>
+  <kind>Leak_PossiblyLost</kind>
+  <xwhat>
+    <text>864 bytes in 4 blocks are possibly lost in loss record 618 of 708</text>
+    <leakedbytes>864</leakedbytes>
+    <leakedblocks>4</leakedblocks>
+  </xwhat>
+  <stack>
+    <frame>
+      <ip>0x4846828</ip>
+      <obj>/usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
+      <fn>malloc</fn>
+    </frame>
+    <frame>
+      <ip>0x5B3676F</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj>
+    </frame>
+    <frame>
+      <ip>0x915BE1E</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so</obj>
+    </frame>
+    <frame>
+      <ip>0x91869B4</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so</obj>
+    </frame>
+    <frame>
+      <ip>0x5B3852F</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj>
+    </frame>
+    <frame>
+      <ip>0x5B39061</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj>
+    </frame>
+    <frame>
+      <ip>0x5B31E80</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj>
+    </frame>
+    <frame>
+      <ip>0x91646A4</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so</obj>
+    </frame>
+    <frame>
+      <ip>0x916E8A3</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so</obj>
+    </frame>
+    <frame>
+      <ip>0x917A627</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so</obj>
+    </frame>
+    <frame>
+      <ip>0x5B40715</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj>
+      <fn>pw_impl_port_set_param</fn>
+    </frame>
+    <frame>
+      <ip>0x68BA1BB</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-client-node.so</obj>
+    </frame>
+  </stack>
+  <suppression>
+    <sname>insert_a_suppression_name_here</sname>
+    <skind>Memcheck:Leak</skind>
+    <skaux>match-leak-kinds: possible</skaux>
+    <sframe> <fun>malloc</fun> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so</obj> </sframe>
+    <sframe> <fun>pw_impl_port_set_param</fun> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-client-node.so</obj> </sframe>
+    <rawtext>
+<![CDATA[
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: possible
+   fun:malloc
+   obj:/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0
+   obj:/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so
+   obj:/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so
+   obj:/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0
+   obj:/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0
+   obj:/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0
+   obj:/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so
+   obj:/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so
+   obj:/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so
+   fun:pw_impl_port_set_param
+   obj:/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-client-node.so
+}
+]]>
+    </rawtext>
+  </suppression>
+</error>
+
+  <suppression>
+    <sname>insert_a_suppression_name_here</sname>
+    <skind>Memcheck:Leak</skind>
+    <skaux>match-leak-kinds: possible</skaux>
+    <sframe> <fun>malloc</fun> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so</obj> </sframe>
+    <sframe> <fun>pw_impl_port_set_param</fun> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-client-node.so</obj> </sframe>
+    <rawtext>
+<![CDATA[
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: possible
+   fun:malloc
+   obj:/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0
+   obj:/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so
+   obj:/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so
+   obj:/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0
+   obj:/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0
+   obj:/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0
+   obj:/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so
+   obj:/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so
+   obj:/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so
+   fun:pw_impl_port_set_param
+   obj:/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-client-node.so
+}
+]]>
+    </rawtext>
+  </suppression>
+<error>
+  <unique>0x272</unique>
+  <tid>1</tid>
+  <kind>Leak_PossiblyLost</kind>
+  <xwhat>
+    <text>1,200 bytes in 3 blocks are possibly lost in loss record 627 of 708</text>
+    <leakedbytes>1200</leakedbytes>
+    <leakedblocks>3</leakedblocks>
+  </xwhat>
+  <stack>
+    <frame>
+      <ip>0x484D953</ip>
+      <obj>/usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
+      <fn>calloc</fn>
+    </frame>
+    <frame>
+      <ip>0x40145AB</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2</obj>
+      <fn>calloc</fn>
+      <dir>./elf/../include</dir>
+      <file>rtld-malloc.h</file>
+      <line>44</line>
+    </frame>
+    <frame>
+      <ip>0x40145AB</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2</obj>
+      <fn>allocate_dtv</fn>
+      <dir>./elf/../elf</dir>
+      <file>dl-tls.c</file>
+      <line>370</line>
+    </frame>
+    <frame>
+      <ip>0x40145AB</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2</obj>
+      <fn>_dl_allocate_tls</fn>
+      <dir>./elf/../elf</dir>
+      <file>dl-tls.c</file>
+      <line>629</line>
+    </frame>
+    <frame>
+      <ip>0x4DB2616</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libc.so.6</obj>
+      <fn>allocate_stack</fn>
+      <dir>./nptl/./nptl</dir>
+      <file>allocatestack.c</file>
+      <line>429</line>
+    </frame>
+    <frame>
+      <ip>0x4DB2616</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libc.so.6</obj>
+      <fn>pthread_create@@GLIBC_2.34</fn>
+      <dir>./nptl/./nptl</dir>
+      <file>pthread_create.c</file>
+      <line>655</line>
+    </frame>
+    <frame>
+      <ip>0x5B4723D</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj>
+    </frame>
+    <frame>
+      <ip>0x5B508AD</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj>
+      <fn>pw_thread_loop_start</fn>
+    </frame>
+    <frame>
+      <ip>0x52046EF</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libopenal.so.1.23.1</obj>
+    </frame>
+    <frame>
+      <ip>0x51D2BBA</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libopenal.so.1.23.1</obj>
+      <fn>alcOpenDevice</fn>
+    </frame>
+    <frame>
+      <ip>0x493C220</ip>
+      <obj>/home/kipteam/SFML-2.6.2/lib/libsfml-audio.so.2.6.2</obj>
+      <fn>sf::priv::AudioDevice::AudioDevice()</fn>
+    </frame>
+    <frame>
+      <ip>0x493C0DC</ip>
+      <obj>/home/kipteam/SFML-2.6.2/lib/libsfml-audio.so.2.6.2</obj>
+      <fn>sf::AlResource::AlResource()</fn>
+    </frame>
+    <frame>
+      <ip>0x4940B61</ip>
+      <obj>/home/kipteam/SFML-2.6.2/lib/libsfml-audio.so.2.6.2</obj>
+      <fn>sf::SoundSource::SoundSource()</fn>
+    </frame>
+    <frame>
+      <ip>0x493D6EC</ip>
+      <obj>/home/kipteam/SFML-2.6.2/lib/libsfml-audio.so.2.6.2</obj>
+      <fn>sf::Sound::Sound()</fn>
+    </frame>
+    <frame>
+      <ip>0x15704E</ip>
+      <obj>/home/kipteam/Documents/University/AP/Pacman/cmake-build-debug/Pacman</obj>
+      <fn>SoundManager::SoundManager()</fn>
+      <dir>/home/kipteam/Documents/University/AP/Pacman/Representation</dir>
+      <file>SoundManager.cpp</file>
+      <line>5</line>
+    </frame>
+  </stack>
+  <suppression>
+    <sname>insert_a_suppression_name_here</sname>
+    <skind>Memcheck:Leak</skind>
+    <skaux>match-leak-kinds: possible</skaux>
+    <sframe> <fun>calloc</fun> </sframe>
+    <sframe> <fun>calloc</fun> </sframe>
+    <sframe> <fun>allocate_dtv</fun> </sframe>
+    <sframe> <fun>_dl_allocate_tls</fun> </sframe>
+    <sframe> <fun>allocate_stack</fun> </sframe>
+    <sframe> <fun>pthread_create@@GLIBC_2.34</fun> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj> </sframe>
+    <sframe> <fun>pw_thread_loop_start</fun> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/libopenal.so.1.23.1</obj> </sframe>
+    <sframe> <fun>alcOpenDevice</fun> </sframe>
+    <sframe> <fun>_ZN2sf4priv11AudioDeviceC1Ev</fun> </sframe>
+    <sframe> <fun>_ZN2sf10AlResourceC1Ev</fun> </sframe>
+    <sframe> <fun>_ZN2sf11SoundSourceC1Ev</fun> </sframe>
+    <sframe> <fun>_ZN2sf5SoundC1Ev</fun> </sframe>
+    <sframe> <fun>_ZN12SoundManagerC1Ev</fun> </sframe>
+    <rawtext>
+<![CDATA[
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: possible
+   fun:calloc
+   fun:calloc
+   fun:allocate_dtv
+   fun:_dl_allocate_tls
+   fun:allocate_stack
+   fun:pthread_create@@GLIBC_2.34
+   obj:/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0
+   fun:pw_thread_loop_start
+   obj:/usr/lib/x86_64-linux-gnu/libopenal.so.1.23.1
+   fun:alcOpenDevice
+   fun:_ZN2sf4priv11AudioDeviceC1Ev
+   fun:_ZN2sf10AlResourceC1Ev
+   fun:_ZN2sf11SoundSourceC1Ev
+   fun:_ZN2sf5SoundC1Ev
+   fun:_ZN12SoundManagerC1Ev
+}
+]]>
+    </rawtext>
+  </suppression>
+</error>
+
+  <suppression>
+    <sname>insert_a_suppression_name_here</sname>
+    <skind>Memcheck:Leak</skind>
+    <skaux>match-leak-kinds: possible</skaux>
+    <sframe> <fun>calloc</fun> </sframe>
+    <sframe> <fun>calloc</fun> </sframe>
+    <sframe> <fun>allocate_dtv</fun> </sframe>
+    <sframe> <fun>_dl_allocate_tls</fun> </sframe>
+    <sframe> <fun>allocate_stack</fun> </sframe>
+    <sframe> <fun>pthread_create@@GLIBC_2.34</fun> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj> </sframe>
+    <sframe> <fun>pw_thread_loop_start</fun> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/libopenal.so.1.23.1</obj> </sframe>
+    <sframe> <fun>alcOpenDevice</fun> </sframe>
+    <sframe> <fun>_ZN2sf4priv11AudioDeviceC1Ev</fun> </sframe>
+    <sframe> <fun>_ZN2sf10AlResourceC1Ev</fun> </sframe>
+    <sframe> <fun>_ZN2sf11SoundSourceC1Ev</fun> </sframe>
+    <sframe> <fun>_ZN2sf5SoundC1Ev</fun> </sframe>
+    <sframe> <fun>_ZN12SoundManagerC1Ev</fun> </sframe>
+    <rawtext>
+<![CDATA[
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: possible
+   fun:calloc
+   fun:calloc
+   fun:allocate_dtv
+   fun:_dl_allocate_tls
+   fun:allocate_stack
+   fun:pthread_create@@GLIBC_2.34
+   obj:/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0
+   fun:pw_thread_loop_start
+   obj:/usr/lib/x86_64-linux-gnu/libopenal.so.1.23.1
+   fun:alcOpenDevice
+   fun:_ZN2sf4priv11AudioDeviceC1Ev
+   fun:_ZN2sf10AlResourceC1Ev
+   fun:_ZN2sf11SoundSourceC1Ev
+   fun:_ZN2sf5SoundC1Ev
+   fun:_ZN12SoundManagerC1Ev
+}
+]]>
+    </rawtext>
+  </suppression>
+<error>
+  <unique>0x28e</unique>
+  <tid>1</tid>
+  <kind>Leak_PossiblyLost</kind>
+  <xwhat>
+    <text>3,776 bytes in 8 blocks are possibly lost in loss record 655 of 708</text>
+    <leakedbytes>3776</leakedbytes>
+    <leakedblocks>8</leakedblocks>
+  </xwhat>
+  <stack>
+    <frame>
+      <ip>0x484D953</ip>
+      <obj>/usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
+      <fn>calloc</fn>
+    </frame>
+    <frame>
+      <ip>0x5B467A1</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj>
+    </frame>
+    <frame>
+      <ip>0x5B2BDA3</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj>
+    </frame>
+    <frame>
+      <ip>0x915BE1E</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so</obj>
+    </frame>
+    <frame>
+      <ip>0x9174F78</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so</obj>
+    </frame>
+    <frame>
+      <ip>0x915BCF9</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so</obj>
+    </frame>
+    <frame>
+      <ip>0x91666B9</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so</obj>
+    </frame>
+    <frame>
+      <ip>0x5B2E79C</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj>
+      <fn>pw_impl_node_for_each_param</fn>
+    </frame>
+    <frame>
+      <ip>0x5B47899</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj>
+    </frame>
+    <frame>
+      <ip>0x5B2518A</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj>
+    </frame>
+    <frame>
+      <ip>0x5B318D9</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj>
+    </frame>
+    <frame>
+      <ip>0x91670FD</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so</obj>
+    </frame>
+  </stack>
+  <suppression>
+    <sname>insert_a_suppression_name_here</sname>
+    <skind>Memcheck:Leak</skind>
+    <skaux>match-leak-kinds: possible</skaux>
+    <sframe> <fun>calloc</fun> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so</obj> </sframe>
+    <sframe> <fun>pw_impl_node_for_each_param</fun> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so</obj> </sframe>
+    <rawtext>
+<![CDATA[
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: possible
+   fun:calloc
+   obj:/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0
+   obj:/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0
+   obj:/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so
+   obj:/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so
+   obj:/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so
+   obj:/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so
+   fun:pw_impl_node_for_each_param
+   obj:/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0
+   obj:/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0
+   obj:/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0
+   obj:/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so
+}
+]]>
+    </rawtext>
+  </suppression>
+</error>
+
+  <suppression>
+    <sname>insert_a_suppression_name_here</sname>
+    <skind>Memcheck:Leak</skind>
+    <skaux>match-leak-kinds: possible</skaux>
+    <sframe> <fun>calloc</fun> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so</obj> </sframe>
+    <sframe> <fun>pw_impl_node_for_each_param</fun> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so</obj> </sframe>
+    <rawtext>
+<![CDATA[
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: possible
+   fun:calloc
+   obj:/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0
+   obj:/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0
+   obj:/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so
+   obj:/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so
+   obj:/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so
+   obj:/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so
+   fun:pw_impl_node_for_each_param
+   obj:/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0
+   obj:/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0
+   obj:/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0
+   obj:/usr/lib/x86_64-linux-gnu/spa-0.2/audioconvert/libspa-audioconvert.so
+}
+]]>
+    </rawtext>
+  </suppression>
+<error>
+  <unique>0x294</unique>
+  <tid>1</tid>
+  <kind>Leak_PossiblyLost</kind>
+  <xwhat>
+    <text>4,096 bytes in 1 blocks are possibly lost in loss record 661 of 708</text>
+    <leakedbytes>4096</leakedbytes>
+    <leakedblocks>1</leakedblocks>
+  </xwhat>
+  <stack>
+    <frame>
+      <ip>0x484D953</ip>
+      <obj>/usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
+      <fn>calloc</fn>
+    </frame>
+    <frame>
+      <ip>0x67ACDC3</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-protocol-native.so</obj>
+    </frame>
+    <frame>
+      <ip>0x6794F31</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-protocol-native.so</obj>
+    </frame>
+    <frame>
+      <ip>0x67956C7</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-protocol-native.so</obj>
+    </frame>
+    <frame>
+      <ip>0x5BA6D15</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/spa-0.2/support/libspa-support.so</obj>
+    </frame>
+    <frame>
+      <ip>0x5B4FC66</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj>
+    </frame>
+    <frame>
+      <ip>0x4DB1AA3</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libc.so.6</obj>
+      <fn>start_thread</fn>
+      <dir>./nptl/./nptl</dir>
+      <file>pthread_create.c</file>
+      <line>447</line>
+    </frame>
+    <frame>
+      <ip>0x4E3EA33</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libc.so.6</obj>
+      <fn>clone</fn>
+      <dir>./misc/../sysdeps/unix/sysv/linux/x86_64</dir>
+      <file>clone.S</file>
+      <line>100</line>
+    </frame>
+  </stack>
+  <suppression>
+    <sname>insert_a_suppression_name_here</sname>
+    <skind>Memcheck:Leak</skind>
+    <skaux>match-leak-kinds: possible</skaux>
+    <sframe> <fun>calloc</fun> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-protocol-native.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-protocol-native.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-protocol-native.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/spa-0.2/support/libspa-support.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj> </sframe>
+    <sframe> <fun>start_thread</fun> </sframe>
+    <sframe> <fun>clone</fun> </sframe>
+    <rawtext>
+<![CDATA[
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: possible
+   fun:calloc
+   obj:/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-protocol-native.so
+   obj:/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-protocol-native.so
+   obj:/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-protocol-native.so
+   obj:/usr/lib/x86_64-linux-gnu/spa-0.2/support/libspa-support.so
+   obj:/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0
+   fun:start_thread
+   fun:clone
+}
+]]>
+    </rawtext>
+  </suppression>
+</error>
+
+  <suppression>
+    <sname>insert_a_suppression_name_here</sname>
+    <skind>Memcheck:Leak</skind>
+    <skaux>match-leak-kinds: possible</skaux>
+    <sframe> <fun>calloc</fun> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-protocol-native.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-protocol-native.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-protocol-native.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/spa-0.2/support/libspa-support.so</obj> </sframe>
+    <sframe> <obj>/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0</obj> </sframe>
+    <sframe> <fun>start_thread</fun> </sframe>
+    <sframe> <fun>clone</fun> </sframe>
+    <rawtext>
+<![CDATA[
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: possible
+   fun:calloc
+   obj:/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-protocol-native.so
+   obj:/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-protocol-native.so
+   obj:/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-protocol-native.so
+   obj:/usr/lib/x86_64-linux-gnu/spa-0.2/support/libspa-support.so
+   obj:/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so.0.1005.0
+   fun:start_thread
+   fun:clone
+}
+]]>
+    </rawtext>
+  </suppression>
+<error>
+  <unique>0x2a5</unique>
+  <tid>1</tid>
+  <kind>Leak_DefinitelyLost</kind>
+  <xwhat>
+    <text>16,720 (2,128 direct, 14,592 indirect) bytes in 38 blocks are definitely lost in loss record 678 of 708</text>
+    <leakedbytes>16720</leakedbytes>
+    <leakedblocks>38</leakedblocks>
+  </xwhat>
+  <stack>
+    <frame>
+      <ip>0x4846FA3</ip>
+      <obj>/usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
+      <fn>operator new(unsigned long)</fn>
+    </frame>
+    <frame>
+      <ip>0x13B1D7</ip>
+      <obj>/home/kipteam/Documents/University/AP/Pacman/cmake-build-debug/Pacman</obj>
+      <fn>std::__new_allocator&lt;std::_Sp_counted_ptr_inplace&lt;logic::CoinModel, std::allocator&lt;void&gt;, (__gnu_cxx::_Lock_policy)2&gt; &gt;::allocate(unsigned long, void const*)</fn>
+      <dir>/usr/include/c++/13/bits</dir>
+      <file>new_allocator.h</file>
+      <line>151</line>
+    </frame>
+    <frame>
+      <ip>0x137EC9</ip>
+      <obj>/home/kipteam/Documents/University/AP/Pacman/cmake-build-debug/Pacman</obj>
+      <fn>allocate</fn>
+      <dir>/usr/include/c++/13/bits</dir>
+      <file>allocator.h</file>
+      <line>198</line>
+    </frame>
+    <frame>
+      <ip>0x137EC9</ip>
+      <obj>/home/kipteam/Documents/University/AP/Pacman/cmake-build-debug/Pacman</obj>
+      <fn>allocate</fn>
+      <dir>/usr/include/c++/13/bits</dir>
+      <file>alloc_traits.h</file>
+      <line>482</line>
+    </frame>
+    <frame>
+      <ip>0x137EC9</ip>
+      <obj>/home/kipteam/Documents/University/AP/Pacman/cmake-build-debug/Pacman</obj>
+      <fn>std::__allocated_ptr&lt;std::allocator&lt;std::_Sp_counted_ptr_inplace&lt;logic::CoinModel, std::allocator&lt;void&gt;, (__gnu_cxx::_Lock_policy)2&gt; &gt; &gt; std::__allocate_guarded&lt;std::allocator&lt;std::_Sp_counted_ptr_inplace&lt;logic::CoinModel, std::allocator&lt;void&gt;, (__gnu_cxx::_Lock_policy)2&gt; &gt; &gt;(std::allocator&lt;std::_Sp_counted_ptr_inplace&lt;logic::CoinModel, std::allocator&lt;void&gt;, (__gnu_cxx::_Lock_policy)2&gt; &gt;&amp;)</fn>
+      <dir>/usr/include/c++/13/bits</dir>
+      <file>allocated_ptr.h</file>
+      <line>98</line>
+    </frame>
+    <frame>
+      <ip>0x135DB0</ip>
+      <obj>/home/kipteam/Documents/University/AP/Pacman/cmake-build-debug/Pacman</obj>
+      <fn>std::__shared_count&lt;(__gnu_cxx::_Lock_policy)2&gt;::__shared_count&lt;logic::CoinModel, std::allocator&lt;void&gt;, float&amp;, float&amp;&gt;(logic::CoinModel*&amp;, std::_Sp_alloc_shared_tag&lt;std::allocator&lt;void&gt; &gt;, float&amp;, float&amp;)</fn>
+      <dir>/usr/include/c++/13/bits</dir>
+      <file>shared_ptr_base.h</file>
+      <line>969</line>
+    </frame>
+    <frame>
+      <ip>0x13481D</ip>
+      <obj>/home/kipteam/Documents/University/AP/Pacman/cmake-build-debug/Pacman</obj>
+      <fn>std::__shared_ptr&lt;logic::CoinModel, (__gnu_cxx::_Lock_policy)2&gt;::__shared_ptr&lt;std::allocator&lt;void&gt;, float&amp;, float&amp;&gt;(std::_Sp_alloc_shared_tag&lt;std::allocator&lt;void&gt; &gt;, float&amp;, float&amp;)</fn>
+      <dir>/usr/include/c++/13/bits</dir>
+      <file>shared_ptr_base.h</file>
+      <line>1712</line>
+    </frame>
+    <frame>
+      <ip>0x13394A</ip>
+      <obj>/home/kipteam/Documents/University/AP/Pacman/cmake-build-debug/Pacman</obj>
+      <fn>std::shared_ptr&lt;logic::CoinModel&gt;::shared_ptr&lt;std::allocator&lt;void&gt;, float&amp;, float&amp;&gt;(std::_Sp_alloc_shared_tag&lt;std::allocator&lt;void&gt; &gt;, float&amp;, float&amp;)</fn>
+      <dir>/usr/include/c++/13/bits</dir>
+      <file>shared_ptr.h</file>
+      <line>464</line>
+    </frame>
+    <frame>
+      <ip>0x132D15</ip>
+      <obj>/home/kipteam/Documents/University/AP/Pacman/cmake-build-debug/Pacman</obj>
+      <fn>std::shared_ptr&lt;logic::CoinModel&gt; std::make_shared&lt;logic::CoinModel, float&amp;, float&amp;&gt;(float&amp;, float&amp;)</fn>
+      <dir>/usr/include/c++/13/bits</dir>
+      <file>shared_ptr.h</file>
+      <line>1010</line>
+    </frame>
+    <frame>
+      <ip>0x131E2A</ip>
+      <obj>/home/kipteam/Documents/University/AP/Pacman/cmake-build-debug/Pacman</obj>
+      <fn>ConcreteFactory::createCoin(float, float)</fn>
+      <dir>/home/kipteam/Documents/University/AP/Pacman/Representation/Entities</dir>
+      <file>ConcreteFactory.cpp</file>
+      <line>77</line>
+    </frame>
+    <frame>
+      <ip>0x13E242</ip>
+      <obj>/home/kipteam/Documents/University/AP/Pacman/cmake-build-debug/Pacman</obj>
+      <fn>logic::World::loadLevel(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; const&amp;)</fn>
+      <dir>/home/kipteam/Documents/University/AP/Pacman/Logic</dir>
+      <file>World.cpp</file>
+      <line>90</line>
+    </frame>
+    <frame>
+      <ip>0x1270FC</ip>
+      <obj>/home/kipteam/Documents/University/AP/Pacman/cmake-build-debug/Pacman</obj>
+      <fn>LevelState::LevelState(StateManager&amp;)</fn>
+      <dir>/home/kipteam/Documents/University/AP/Pacman/Representation/States</dir>
+      <file>LevelState.cpp</file>
+      <line>19</line>
+    </frame>
+    <frame>
+      <ip>0x1207A6</ip>
+      <obj>/home/kipteam/Documents/University/AP/Pacman/cmake-build-debug/Pacman</obj>
+      <fn>std::__detail::_MakeUniq&lt;LevelState&gt;::__single_object std::make_unique&lt;LevelState, StateManager&amp;&gt;(StateManager&amp;)</fn>
+      <dir>/usr/include/c++/13/bits</dir>
+      <file>unique_ptr.h</file>
+      <line>1070</line>
+    </frame>
+    <frame>
+      <ip>0x11E76A</ip>
+      <obj>/home/kipteam/Documents/University/AP/Pacman/cmake-build-debug/Pacman</obj>
+      <fn>MenuState::handleInput(sf::Event::KeyEvent const&amp;)</fn>
+      <dir>/home/kipteam/Documents/University/AP/Pacman/Representation/States</dir>
+      <file>MenuState.cpp</file>
+      <line>51</line>
+    </frame>
+  </stack>
+  <suppression>
+    <sname>insert_a_suppression_name_here</sname>
+    <skind>Memcheck:Leak</skind>
+    <skaux>match-leak-kinds: definite</skaux>
+    <sframe> <fun>_Znwm</fun> </sframe>
+    <sframe> <fun>_ZNSt15__new_allocatorISt23_Sp_counted_ptr_inplaceIN5logic9CoinModelESaIvELN9__gnu_cxx12_Lock_policyE2EEE8allocateEmPKv</fun> </sframe>
+    <sframe> <fun>allocate</fun> </sframe>
+    <sframe> <fun>allocate</fun> </sframe>
+    <sframe> <fun>_ZSt18__allocate_guardedISaISt23_Sp_counted_ptr_inplaceIN5logic9CoinModelESaIvELN9__gnu_cxx12_Lock_policyE2EEEESt15__allocated_ptrIT_ERS9_</fun> </sframe>
+    <sframe> <fun>_ZNSt14__shared_countILN9__gnu_cxx12_Lock_policyE2EEC1IN5logic9CoinModelESaIvEJRfS7_EEERPT_St20_Sp_alloc_shared_tagIT0_EDpOT1_</fun> </sframe>
+    <sframe> <fun>_ZNSt12__shared_ptrIN5logic9CoinModelELN9__gnu_cxx12_Lock_policyE2EEC1ISaIvEJRfS7_EEESt20_Sp_alloc_shared_tagIT_EDpOT0_</fun> </sframe>
+    <sframe> <fun>_ZNSt10shared_ptrIN5logic9CoinModelEEC1ISaIvEJRfS5_EEESt20_Sp_alloc_shared_tagIT_EDpOT0_</fun> </sframe>
+    <sframe> <fun>_ZSt11make_sharedIN5logic9CoinModelEJRfS2_EESt10shared_ptrIT_EDpOT0_</fun> </sframe>
+    <sframe> <fun>_ZN15ConcreteFactory10createCoinEff</fun> </sframe>
+    <sframe> <fun>_ZN5logic5World9loadLevelERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE</fun> </sframe>
+    <sframe> <fun>_ZN10LevelStateC1ER12StateManager</fun> </sframe>
+    <sframe> <fun>_ZSt11make_uniqueI10LevelStateJR12StateManagerEENSt8__detail9_MakeUniqIT_E15__single_objectEDpOT0_</fun> </sframe>
+    <sframe> <fun>_ZN9MenuState11handleInputERKN2sf5Event8KeyEventE</fun> </sframe>
+    <rawtext>
+<![CDATA[
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: definite
+   fun:_Znwm
+   fun:_ZNSt15__new_allocatorISt23_Sp_counted_ptr_inplaceIN5logic9CoinModelESaIvELN9__gnu_cxx12_Lock_policyE2EEE8allocateEmPKv
+   fun:allocate
+   fun:allocate
+   fun:_ZSt18__allocate_guardedISaISt23_Sp_counted_ptr_inplaceIN5logic9CoinModelESaIvELN9__gnu_cxx12_Lock_policyE2EEEESt15__allocated_ptrIT_ERS9_
+   fun:_ZNSt14__shared_countILN9__gnu_cxx12_Lock_policyE2EEC1IN5logic9CoinModelESaIvEJRfS7_EEERPT_St20_Sp_alloc_shared_tagIT0_EDpOT1_
+   fun:_ZNSt12__shared_ptrIN5logic9CoinModelELN9__gnu_cxx12_Lock_policyE2EEC1ISaIvEJRfS7_EEESt20_Sp_alloc_shared_tagIT_EDpOT0_
+   fun:_ZNSt10shared_ptrIN5logic9CoinModelEEC1ISaIvEJRfS5_EEESt20_Sp_alloc_shared_tagIT_EDpOT0_
+   fun:_ZSt11make_sharedIN5logic9CoinModelEJRfS2_EESt10shared_ptrIT_EDpOT0_
+   fun:_ZN15ConcreteFactory10createCoinEff
+   fun:_ZN5logic5World9loadLevelERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
+   fun:_ZN10LevelStateC1ER12StateManager
+   fun:_ZSt11make_uniqueI10LevelStateJR12StateManagerEENSt8__detail9_MakeUniqIT_E15__single_objectEDpOT0_
+   fun:_ZN9MenuState11handleInputERKN2sf5Event8KeyEventE
+}
+]]>
+    </rawtext>
+  </suppression>
+</error>
+
+  <suppression>
+    <sname>insert_a_suppression_name_here</sname>
+    <skind>Memcheck:Leak</skind>
+    <skaux>match-leak-kinds: definite</skaux>
+    <sframe> <fun>_Znwm</fun> </sframe>
+    <sframe> <fun>_ZNSt15__new_allocatorISt23_Sp_counted_ptr_inplaceIN5logic9CoinModelESaIvELN9__gnu_cxx12_Lock_policyE2EEE8allocateEmPKv</fun> </sframe>
+    <sframe> <fun>allocate</fun> </sframe>
+    <sframe> <fun>allocate</fun> </sframe>
+    <sframe> <fun>_ZSt18__allocate_guardedISaISt23_Sp_counted_ptr_inplaceIN5logic9CoinModelESaIvELN9__gnu_cxx12_Lock_policyE2EEEESt15__allocated_ptrIT_ERS9_</fun> </sframe>
+    <sframe> <fun>_ZNSt14__shared_countILN9__gnu_cxx12_Lock_policyE2EEC1IN5logic9CoinModelESaIvEJRfS7_EEERPT_St20_Sp_alloc_shared_tagIT0_EDpOT1_</fun> </sframe>
+    <sframe> <fun>_ZNSt12__shared_ptrIN5logic9CoinModelELN9__gnu_cxx12_Lock_policyE2EEC1ISaIvEJRfS7_EEESt20_Sp_alloc_shared_tagIT_EDpOT0_</fun> </sframe>
+    <sframe> <fun>_ZNSt10shared_ptrIN5logic9CoinModelEEC1ISaIvEJRfS5_EEESt20_Sp_alloc_shared_tagIT_EDpOT0_</fun> </sframe>
+    <sframe> <fun>_ZSt11make_sharedIN5logic9CoinModelEJRfS2_EESt10shared_ptrIT_EDpOT0_</fun> </sframe>
+    <sframe> <fun>_ZN15ConcreteFactory10createCoinEff</fun> </sframe>
+    <sframe> <fun>_ZN5logic5World9loadLevelERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE</fun> </sframe>
+    <sframe> <fun>_ZN10LevelStateC1ER12StateManager</fun> </sframe>
+    <sframe> <fun>_ZSt11make_uniqueI10LevelStateJR12StateManagerEENSt8__detail9_MakeUniqIT_E15__single_objectEDpOT0_</fun> </sframe>
+    <sframe> <fun>_ZN9MenuState11handleInputERKN2sf5Event8KeyEventE</fun> </sframe>
+    <rawtext>
+<![CDATA[
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: definite
+   fun:_Znwm
+   fun:_ZNSt15__new_allocatorISt23_Sp_counted_ptr_inplaceIN5logic9CoinModelESaIvELN9__gnu_cxx12_Lock_policyE2EEE8allocateEmPKv
+   fun:allocate
+   fun:allocate
+   fun:_ZSt18__allocate_guardedISaISt23_Sp_counted_ptr_inplaceIN5logic9CoinModelESaIvELN9__gnu_cxx12_Lock_policyE2EEEESt15__allocated_ptrIT_ERS9_
+   fun:_ZNSt14__shared_countILN9__gnu_cxx12_Lock_policyE2EEC1IN5logic9CoinModelESaIvEJRfS7_EEERPT_St20_Sp_alloc_shared_tagIT0_EDpOT1_
+   fun:_ZNSt12__shared_ptrIN5logic9CoinModelELN9__gnu_cxx12_Lock_policyE2EEC1ISaIvEJRfS7_EEESt20_Sp_alloc_shared_tagIT_EDpOT0_
+   fun:_ZNSt10shared_ptrIN5logic9CoinModelEEC1ISaIvEJRfS5_EEESt20_Sp_alloc_shared_tagIT_EDpOT0_
+   fun:_ZSt11make_sharedIN5logic9CoinModelEJRfS2_EESt10shared_ptrIT_EDpOT0_
+   fun:_ZN15ConcreteFactory10createCoinEff
+   fun:_ZN5logic5World9loadLevelERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
+   fun:_ZN10LevelStateC1ER12StateManager
+   fun:_ZSt11make_uniqueI10LevelStateJR12StateManagerEENSt8__detail9_MakeUniqIT_E15__single_objectEDpOT0_
+   fun:_ZN9MenuState11handleInputERKN2sf5Event8KeyEventE
+}
+]]>
+    </rawtext>
+  </suppression>
+<error>
+  <unique>0x2bb</unique>
+  <tid>1</tid>
+  <kind>Leak_DefinitelyLost</kind>
+  <xwhat>
+    <text>95,500 (216 direct, 95,284 indirect) bytes in 1 blocks are definitely lost in loss record 700 of 708</text>
+    <leakedbytes>95500</leakedbytes>
+    <leakedblocks>1</leakedblocks>
+  </xwhat>
+  <stack>
+    <frame>
+      <ip>0x4846FA3</ip>
+      <obj>/usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
+      <fn>operator new(unsigned long)</fn>
+    </frame>
+    <frame>
+      <ip>0x12613F</ip>
+      <obj>/home/kipteam/Documents/University/AP/Pacman/cmake-build-debug/Pacman</obj>
+      <fn>std::__new_allocator&lt;std::_Sp_counted_ptr_inplace&lt;logic::Score, std::allocator&lt;void&gt;, (__gnu_cxx::_Lock_policy)2&gt; &gt;::allocate(unsigned long, void const*)</fn>
+      <dir>/usr/include/c++/13/bits</dir>
+      <file>new_allocator.h</file>
+      <line>151</line>
+    </frame>
+    <frame>
+      <ip>0x1252C8</ip>
+      <obj>/home/kipteam/Documents/University/AP/Pacman/cmake-build-debug/Pacman</obj>
+      <fn>allocate</fn>
+      <dir>/usr/include/c++/13/bits</dir>
+      <file>allocator.h</file>
+      <line>198</line>
+    </frame>
+    <frame>
+      <ip>0x1252C8</ip>
+      <obj>/home/kipteam/Documents/University/AP/Pacman/cmake-build-debug/Pacman</obj>
+      <fn>allocate</fn>
+      <dir>/usr/include/c++/13/bits</dir>
+      <file>alloc_traits.h</file>
+      <line>482</line>
+    </frame>
+    <frame>
+      <ip>0x1252C8</ip>
+      <obj>/home/kipteam/Documents/University/AP/Pacman/cmake-build-debug/Pacman</obj>
+      <fn>std::__allocated_ptr&lt;std::allocator&lt;std::_Sp_counted_ptr_inplace&lt;logic::Score, std::allocator&lt;void&gt;, (__gnu_cxx::_Lock_policy)2&gt; &gt; &gt; std::__allocate_guarded&lt;std::allocator&lt;std::_Sp_counted_ptr_inplace&lt;logic::Score, std::allocator&lt;void&gt;, (__gnu_cxx::_Lock_policy)2&gt; &gt; &gt;(std::allocator&lt;std::_Sp_counted_ptr_inplace&lt;logic::Score, std::allocator&lt;void&gt;, (__gnu_cxx::_Lock_policy)2&gt; &gt;&amp;)</fn>
+      <dir>/usr/include/c++/13/bits</dir>
+      <file>allocated_ptr.h</file>
+      <line>98</line>
+    </frame>
+    <frame>
+      <ip>0x124D22</ip>
+      <obj>/home/kipteam/Documents/University/AP/Pacman/cmake-build-debug/Pacman</obj>
+      <fn>std::__shared_count&lt;(__gnu_cxx::_Lock_policy)2&gt;::__shared_count&lt;logic::Score, std::allocator&lt;void&gt;&gt;(logic::Score*&amp;, std::_Sp_alloc_shared_tag&lt;std::allocator&lt;void&gt; &gt;)</fn>
+      <dir>/usr/include/c++/13/bits</dir>
+      <file>shared_ptr_base.h</file>
+      <line>969</line>
+    </frame>
+    <frame>
+      <ip>0x1246B7</ip>
+      <obj>/home/kipteam/Documents/University/AP/Pacman/cmake-build-debug/Pacman</obj>
+      <fn>std::__shared_ptr&lt;logic::Score, (__gnu_cxx::_Lock_policy)2&gt;::__shared_ptr&lt;std::allocator&lt;void&gt;&gt;(std::_Sp_alloc_shared_tag&lt;std::allocator&lt;void&gt; &gt;)</fn>
+      <dir>/usr/include/c++/13/bits</dir>
+      <file>shared_ptr_base.h</file>
+      <line>1712</line>
+    </frame>
+    <frame>
+      <ip>0x1240D6</ip>
+      <obj>/home/kipteam/Documents/University/AP/Pacman/cmake-build-debug/Pacman</obj>
+      <fn>std::shared_ptr&lt;logic::Score&gt;::shared_ptr&lt;std::allocator&lt;void&gt;&gt;(std::_Sp_alloc_shared_tag&lt;std::allocator&lt;void&gt; &gt;)</fn>
+      <dir>/usr/include/c++/13/bits</dir>
+      <file>shared_ptr.h</file>
+      <line>464</line>
+    </frame>
+    <frame>
+      <ip>0x123D6C</ip>
+      <obj>/home/kipteam/Documents/University/AP/Pacman/cmake-build-debug/Pacman</obj>
+      <fn>std::shared_ptr&lt;logic::Score&gt; std::make_shared&lt;logic::Score&gt;()</fn>
+      <dir>/usr/include/c++/13/bits</dir>
+      <file>shared_ptr.h</file>
+      <line>1010</line>
+    </frame>
+    <frame>
+      <ip>0x1237F2</ip>
+      <obj>/home/kipteam/Documents/University/AP/Pacman/cmake-build-debug/Pacman</obj>
+      <fn>StateManager::StateManager()</fn>
+      <dir>/home/kipteam/Documents/University/AP/Pacman/Representation/States</dir>
+      <file>StateManager.cpp</file>
+      <line>9</line>
+    </frame>
+    <frame>
+      <ip>0x112686</ip>
+      <obj>/home/kipteam/Documents/University/AP/Pacman/cmake-build-debug/Pacman</obj>
+      <fn>std::__detail::_MakeUniq&lt;StateManager&gt;::__single_object std::make_unique&lt;StateManager&gt;()</fn>
+      <dir>/usr/include/c++/13/bits</dir>
+      <file>unique_ptr.h</file>
+      <line>1070</line>
+    </frame>
+    <frame>
+      <ip>0x112085</ip>
+      <obj>/home/kipteam/Documents/University/AP/Pacman/cmake-build-debug/Pacman</obj>
+      <fn>Game::Game()</fn>
+      <dir>/home/kipteam/Documents/University/AP/Pacman/Representation</dir>
+      <file>Game.cpp</file>
+      <line>11</line>
+    </frame>
+    <frame>
+      <ip>0x110FB0</ip>
+      <obj>/home/kipteam/Documents/University/AP/Pacman/cmake-build-debug/Pacman</obj>
+      <fn>main</fn>
+      <dir>/home/kipteam/Documents/University/AP/Pacman</dir>
+      <file>main.cpp</file>
+      <line>7</line>
+    </frame>
+  </stack>
+  <suppression>
+    <sname>insert_a_suppression_name_here</sname>
+    <skind>Memcheck:Leak</skind>
+    <skaux>match-leak-kinds: definite</skaux>
+    <sframe> <fun>_Znwm</fun> </sframe>
+    <sframe> <fun>_ZNSt15__new_allocatorISt23_Sp_counted_ptr_inplaceIN5logic5ScoreESaIvELN9__gnu_cxx12_Lock_policyE2EEE8allocateEmPKv</fun> </sframe>
+    <sframe> <fun>allocate</fun> </sframe>
+    <sframe> <fun>allocate</fun> </sframe>
+    <sframe> <fun>_ZSt18__allocate_guardedISaISt23_Sp_counted_ptr_inplaceIN5logic5ScoreESaIvELN9__gnu_cxx12_Lock_policyE2EEEESt15__allocated_ptrIT_ERS9_</fun> </sframe>
+    <sframe> <fun>_ZNSt14__shared_countILN9__gnu_cxx12_Lock_policyE2EEC1IN5logic5ScoreESaIvEJEEERPT_St20_Sp_alloc_shared_tagIT0_EDpOT1_</fun> </sframe>
+    <sframe> <fun>_ZNSt12__shared_ptrIN5logic5ScoreELN9__gnu_cxx12_Lock_policyE2EEC1ISaIvEJEEESt20_Sp_alloc_shared_tagIT_EDpOT0_</fun> </sframe>
+    <sframe> <fun>_ZNSt10shared_ptrIN5logic5ScoreEEC1ISaIvEJEEESt20_Sp_alloc_shared_tagIT_EDpOT0_</fun> </sframe>
+    <sframe> <fun>_ZSt11make_sharedIN5logic5ScoreEJEESt10shared_ptrIT_EDpOT0_</fun> </sframe>
+    <sframe> <fun>_ZN12StateManagerC1Ev</fun> </sframe>
+    <sframe> <fun>_ZSt11make_uniqueI12StateManagerJEENSt8__detail9_MakeUniqIT_E15__single_objectEDpOT0_</fun> </sframe>
+    <sframe> <fun>_ZN4GameC1Ev</fun> </sframe>
+    <sframe> <fun>main</fun> </sframe>
+    <rawtext>
+<![CDATA[
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: definite
+   fun:_Znwm
+   fun:_ZNSt15__new_allocatorISt23_Sp_counted_ptr_inplaceIN5logic5ScoreESaIvELN9__gnu_cxx12_Lock_policyE2EEE8allocateEmPKv
+   fun:allocate
+   fun:allocate
+   fun:_ZSt18__allocate_guardedISaISt23_Sp_counted_ptr_inplaceIN5logic5ScoreESaIvELN9__gnu_cxx12_Lock_policyE2EEEESt15__allocated_ptrIT_ERS9_
+   fun:_ZNSt14__shared_countILN9__gnu_cxx12_Lock_policyE2EEC1IN5logic5ScoreESaIvEJEEERPT_St20_Sp_alloc_shared_tagIT0_EDpOT1_
+   fun:_ZNSt12__shared_ptrIN5logic5ScoreELN9__gnu_cxx12_Lock_policyE2EEC1ISaIvEJEEESt20_Sp_alloc_shared_tagIT_EDpOT0_
+   fun:_ZNSt10shared_ptrIN5logic5ScoreEEC1ISaIvEJEEESt20_Sp_alloc_shared_tagIT_EDpOT0_
+   fun:_ZSt11make_sharedIN5logic5ScoreEJEESt10shared_ptrIT_EDpOT0_
+   fun:_ZN12StateManagerC1Ev
+   fun:_ZSt11make_uniqueI12StateManagerJEENSt8__detail9_MakeUniqIT_E15__single_objectEDpOT0_
+   fun:_ZN4GameC1Ev
+   fun:main
+}
+]]>
+    </rawtext>
+  </suppression>
+</error>
+
+  <suppression>
+    <sname>insert_a_suppression_name_here</sname>
+    <skind>Memcheck:Leak</skind>
+    <skaux>match-leak-kinds: definite</skaux>
+    <sframe> <fun>_Znwm</fun> </sframe>
+    <sframe> <fun>_ZNSt15__new_allocatorISt23_Sp_counted_ptr_inplaceIN5logic5ScoreESaIvELN9__gnu_cxx12_Lock_policyE2EEE8allocateEmPKv</fun> </sframe>
+    <sframe> <fun>allocate</fun> </sframe>
+    <sframe> <fun>allocate</fun> </sframe>
+    <sframe> <fun>_ZSt18__allocate_guardedISaISt23_Sp_counted_ptr_inplaceIN5logic5ScoreESaIvELN9__gnu_cxx12_Lock_policyE2EEEESt15__allocated_ptrIT_ERS9_</fun> </sframe>
+    <sframe> <fun>_ZNSt14__shared_countILN9__gnu_cxx12_Lock_policyE2EEC1IN5logic5ScoreESaIvEJEEERPT_St20_Sp_alloc_shared_tagIT0_EDpOT1_</fun> </sframe>
+    <sframe> <fun>_ZNSt12__shared_ptrIN5logic5ScoreELN9__gnu_cxx12_Lock_policyE2EEC1ISaIvEJEEESt20_Sp_alloc_shared_tagIT_EDpOT0_</fun> </sframe>
+    <sframe> <fun>_ZNSt10shared_ptrIN5logic5ScoreEEC1ISaIvEJEEESt20_Sp_alloc_shared_tagIT_EDpOT0_</fun> </sframe>
+    <sframe> <fun>_ZSt11make_sharedIN5logic5ScoreEJEESt10shared_ptrIT_EDpOT0_</fun> </sframe>
+    <sframe> <fun>_ZN12StateManagerC1Ev</fun> </sframe>
+    <sframe> <fun>_ZSt11make_uniqueI12StateManagerJEENSt8__detail9_MakeUniqIT_E15__single_objectEDpOT0_</fun> </sframe>
+    <sframe> <fun>_ZN4GameC1Ev</fun> </sframe>
+    <sframe> <fun>main</fun> </sframe>
+    <rawtext>
+<![CDATA[
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: definite
+   fun:_Znwm
+   fun:_ZNSt15__new_allocatorISt23_Sp_counted_ptr_inplaceIN5logic5ScoreESaIvELN9__gnu_cxx12_Lock_policyE2EEE8allocateEmPKv
+   fun:allocate
+   fun:allocate
+   fun:_ZSt18__allocate_guardedISaISt23_Sp_counted_ptr_inplaceIN5logic5ScoreESaIvELN9__gnu_cxx12_Lock_policyE2EEEESt15__allocated_ptrIT_ERS9_
+   fun:_ZNSt14__shared_countILN9__gnu_cxx12_Lock_policyE2EEC1IN5logic5ScoreESaIvEJEEERPT_St20_Sp_alloc_shared_tagIT0_EDpOT1_
+   fun:_ZNSt12__shared_ptrIN5logic5ScoreELN9__gnu_cxx12_Lock_policyE2EEC1ISaIvEJEEESt20_Sp_alloc_shared_tagIT_EDpOT0_
+   fun:_ZNSt10shared_ptrIN5logic5ScoreEEC1ISaIvEJEEESt20_Sp_alloc_shared_tagIT_EDpOT0_
+   fun:_ZSt11make_sharedIN5logic5ScoreEJEESt10shared_ptrIT_EDpOT0_
+   fun:_ZN12StateManagerC1Ev
+   fun:_ZSt11make_uniqueI12StateManagerJEENSt8__detail9_MakeUniqIT_E15__single_objectEDpOT0_
+   fun:_ZN4GameC1Ev
+   fun:main
+}
+]]>
+    </rawtext>
+  </suppression>
+<errorcounts>
+</errorcounts>
+
+<suppcounts>
+</suppcounts>
+
+</valgrindoutput>
+
+

@@ -6,7 +6,7 @@ set(CMAKE_CXX_STANDARD 23)
 IF(WIN32)
     set(SFML_DIR "C:/SFML-2.6.2/lib/cmake/SFML")
 ELSEIF(UNIX)
-    # Do linux specific includes
+    set(SFML_DIR "$ENV{HOME}/SFML-2.6.2/lib/cmake/SFML")
 ENDIF(WIN32)
 
 find_package(SFML 2.6.2 REQUIRED COMPONENTS graphics window system audio)
@@ -41,10 +41,10 @@ add_executable(Pacman main.cpp
         Representation/Entities/EntityView.cpp
         Representation/Entities/EntityView.h
         Logic/Stopwatch.cpp
-        Logic/Entities/PacManModel.cpp
-        Logic/Entities/PacManModel.h
-        Representation/Entities/PacManView.cpp
-        Representation/Entities/PacManView.h
+        Logic/Entities/PacmanModel.cpp
+        Logic/Entities/PacmanModel.h
+        Representation/Entities/PacmanView.cpp
+        Representation/Entities/PacmanView.h
         Representation/Camera.cpp
         Representation/Camera.h
         Logic/Entities/WallModel.cpp
