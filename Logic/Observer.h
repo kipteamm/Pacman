@@ -31,12 +31,12 @@ namespace logic {
         virtual ~Subject() = default;
 
         void attach(const std::shared_ptr<Observer> &observer);
-        void detach(const std::shared_ptr<Observer> &observer);
+        // void detach(const std::shared_ptr<Observer> &observer);
 
         void notify(Events event);
 
     protected:
-        std::list<std::shared_ptr<Observer>> observers;
+        std::list<std::weak_ptr<Observer>> observers;
     };
 }
 

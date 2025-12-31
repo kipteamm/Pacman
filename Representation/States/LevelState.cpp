@@ -23,7 +23,7 @@ LevelState::LevelState(StateManager& context) : State(context), cleanupRequired(
     scoreSystem = context.getGameContext().scoreSystem;
     world->attach(scoreSystem);
 
-    soundManager= context.getGameContext().soundManager;
+    soundManager = context.getGameContext().soundManager;
     soundManager->start();
     world->attach(soundManager);
 

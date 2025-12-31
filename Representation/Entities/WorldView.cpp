@@ -86,9 +86,18 @@ void WorldView::update(const logic::Events event) {
     int score = 0;
 
     switch (event) {
-        case logic::Events::SCORE_UPDATE:
+        case logic::Events::SCORE_UPDATE: {
             scoreText.setString(std::to_string(scoreSystem->getScore()));
+
+            const float scaleX = Camera::getInstance().getTileWidth() / 16.0f;
+            const float gap = 4.0f * scaleX;
+            const float mapRightPixel = Camera::getInstance().xToPixel(1.0f);
+            const float uiYPosition = Camera::getInstance().yToPixel(1.0f) + 10.0f - gap;
+
+            scoreText.setOrigin(scoreText.getLocalBounds().width, 0);
+            scoreText.setPosition(mapRightPixel, uiYPosition - (gap / 2));
             return; // early return anything not related to ScorePopups
+        }
 
         case logic::Events::GHOST_FRIGHTENED:
             // Reset the ghostPoints back to their base value whenever the

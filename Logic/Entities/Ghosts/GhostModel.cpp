@@ -67,6 +67,20 @@ void GhostModel::move(const World& world, const float dt) {
 
     // Target reached
     if (std::abs(x - targetX) < epsilon && std::abs(y - targetY) < epsilon) {
+        if (gridX == 0) {
+            gridX = mapWidth - 1;
+            x = world.normalizeX(gridX + 0.5);
+
+            return updateTarget();
+        }
+
+        if (gridX == mapWidth) {
+            gridX = 1;
+            x = world.normalizeX(gridX - 0.5);
+
+            return updateTarget();
+        }
+
         x = targetX;
         y = targetY;
 

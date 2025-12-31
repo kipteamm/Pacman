@@ -78,7 +78,7 @@ void World::loadLevel(const std::string &filename) {
     for (int row = 0; row < mapHeight; row++) {
         for (int col = 0; col < mapWidth; col++) {
             const char tile = map[row][col];
-            if (tile == ' ') continue;
+            if (tile == ' ' || tile == '/') continue;
 
             const float x = normalizeX(col);
             const float y = normalizeY(row);
