@@ -1,9 +1,4 @@
-//
-// Created by PPetre on 11/12/2025.
-//
-
 #include "Random.h"
-
 
 using namespace logic;
 

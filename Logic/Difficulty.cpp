@@ -1,7 +1,3 @@
-//
-// Created by toroe on 16/12/2025.
-//
-
 #include "Difficulty.h"
 
 #include <iostream>
@@ -10,6 +6,10 @@
 using namespace logic;
 
 
+/**
+ * The difficulty mapping for difficulties 0 up to 10, after difficulty level
+ * 10, the 11th difficulty, it will stay in the 11th difficulty (index 10).
+ */
 Difficulty::Difficulty() :
     difficultyMap({
         {0, DifficultySpecs{0, 100, 4, 2.3, 0.5, 6, 5}},
