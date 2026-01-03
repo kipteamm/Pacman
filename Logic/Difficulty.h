@@ -7,12 +7,12 @@ namespace logic {
 
 
     struct DifficultySpecs {
-        int spriteOffset;
+        int fruitSpriteOffset;
         int fruitPoints;
         float pacmanSpeed;
         float ghostSpeed;
         float frighenedGhostSpeed;
-        float frightTime;
+        float frightenedTime;
         int flashesh;
     };
 
@@ -30,26 +30,22 @@ namespace logic {
 
         void increaseDifficulty();
         void reset();
-        [[nodiscard]] DifficultySpecs* getDifficulty();
+
+        [[nodiscard]] int getFruitSpriteOffset() const;
+        [[nodiscard]] int getFruitPoints() const;
+        [[nodiscard]] float getPacmanSpeed() const;
+        [[nodiscard]] float getGhostSpeed() const;
+        [[nodiscard]] float getFrighenedGhostSpeed() const;
+        [[nodiscard]] float getFrightenedTime() const;
+        [[nodiscard]] int getFlashesh() const;
 
     private:
         Difficulty();
 
+        std::unordered_map<int, DifficultySpecs> difficultyMap;
         int difficulty = 0;
 
-        std::unordered_map<int, DifficultySpecs> difficultyMap = {
-            {0, DifficultySpecs{0, 100, 4, 2.3, 0.5, 6, 5}},
-            {1, DifficultySpecs{1, 300, 4.4, 2.5, 0.6, 5, 5}},
-            {2, DifficultySpecs{2, 500, 4.4, 2.5, 0.6, 4, 5}},
-            {3, DifficultySpecs{2, 500, 4.4, 2.5, 0.6, 3, 5}},
-            {4, DifficultySpecs{3, 700, 4.5, 2.7, 0.7, 2, 5}},
-            {5, DifficultySpecs{3, 700, 4.5, 2.7, 0.7, 5, 5}},
-            {6, DifficultySpecs{4, 1000, 4.5, 2.7, 0.7, 2, 5}},
-            {7, DifficultySpecs{5, 2000, 4.5, 2.7, 0.7, 2, 5}},
-            {8, DifficultySpecs{5, 2000, 4.5, 2.8, 0.7, 1, 2}},
-            {9, DifficultySpecs{6, 3000, 4.5, 2.8, 0.7, 2, 4}},
-            {10, DifficultySpecs{7, 5000, 4.5, 2.8, 0.8, 1, 2}},
-        };
+        DifficultySpecs& currentDifficulty;
     };
 }
 

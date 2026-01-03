@@ -1,10 +1,7 @@
-//
-// Created by PPetre on 26/11/2025.
-//
-
 #include "EntityView.h"
 #include "../Camera.h"
 #include "../Window.h"
+
 
 EntityView::EntityView(const std::shared_ptr<logic::EntityModel> &model, const float frameDuration) : model(model), frameDuration(frameDuration) {
     sprite.setOrigin(8.0f, 8.0f);
@@ -31,13 +28,17 @@ bool EntityView::shouldDelete() const {
     return this->markedForDeletion;
 }
 
-size_t EntityView::getFrameIndex(const float dt, const size_t max) {
-    if (frameIndex >= max) frameIndex = 0;
+size_t EntityView::getFrameIndex(const float dt, const size_t frameLimit) {
+    // Handle maximum frame limits appropriately, that non-existant frame
+    // indexes are never reached
+    if (frameIndex >= frameLimit) frameIndex = 0;
     elapsedTime += dt;
 
     if (elapsedTime > frameDuration) {
         elapsedTime -= frameDuration;
-        frameIndex = (frameIndex + 1) % max;
+        // Handle maximum frame limits appropriately, that non-existant frame
+        // indexes are never reached
+        frameIndex = (frameIndex + 1) % frameLimit;
     }
 
     return frameIndex;

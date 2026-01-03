@@ -114,7 +114,7 @@ void WorldView::update(const logic::Events event) {
         case logic::Events::FRUIT_EATEN:
             // Get the specific amount of points a fruit is worth at the
             // current difficulty.
-            score = logic::Difficulty::getInstance().getDifficulty()->fruitPoints;
+            score = logic::Difficulty::getInstance().getFruitPoints();
             break;
 
         default: return; // early return anything not related to ScorePopups

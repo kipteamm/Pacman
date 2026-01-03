@@ -21,7 +21,7 @@ GhostModel::GhostModel(
     const float mapWidth,
     const float mapHeight,
     const double cooldown
-) : MovingEntityModel(normalizedX, normalizedY, mapWidth, mapHeight, Difficulty::getInstance().getDifficulty()->ghostSpeed), state(GhostState::WAITING), defaultSpeed(speed), startCooldown(cooldown), waitingTime(0) {
+) : MovingEntityModel(normalizedX, normalizedY, mapWidth, mapHeight, Difficulty::getInstance().getGhostSpeed()), state(GhostState::WAITING), defaultSpeed(speed), startCooldown(cooldown), waitingTime(0) {
     gridSpawnX = static_cast<int>((normalizedX + 1.0f) * mapWidth / 2.0f);
     gridSpawnY = static_cast<int>((normalizedY + 1.0f) * mapHeight / 2.0f);
 }
@@ -40,7 +40,7 @@ void GhostModel::setFrightened(const bool frightened, const World& world) {
     updateDirection(world);
 
     if (frightened) {
-        speed = defaultSpeed * Difficulty::getInstance().getDifficulty()->frighenedGhostSpeed;
+        speed = defaultSpeed * Difficulty::getInstance().getFrighenedGhostSpeed();
         return;
     }
 

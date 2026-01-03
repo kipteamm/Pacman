@@ -1,7 +1,3 @@
-//
-// Created by PPetre on 26/11/2025.
-//
-
 #include "ConcreteFactory.h"
 #include "PacmanView.h"
 #include "GhostView.h"
@@ -84,7 +80,7 @@ std::shared_ptr<logic::CoinModel> ConcreteFactory::createCoin(float x, float y) 
 }
 
 std::shared_ptr<logic::FruitModel> ConcreteFactory::createFruit(float x, float y) {
-    const auto model = std::make_shared<logic::FruitModel>(x, y, 100);
+    const auto model = std::make_shared<logic::FruitModel>(x, y);
     const auto view = std::make_shared<FruitView>(model);
 
     model->attach(view);

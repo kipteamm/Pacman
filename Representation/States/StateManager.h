@@ -70,6 +70,23 @@ struct GameContext {
 };
 
 
+/**
+ * StateManager class holds a stack with States. It makes use of the Command
+ * pattern to assure that at no point in time, states are deleting themselves
+ * instantly when calling StateManager methods.
+ *
+ * Stack influencing methods update the StateManager::pendingCommand. The
+ * dedicated StateManager::executeCommand() function will execute the pending
+ * command. Implementation wise a State can now request to be popped/swapped or
+ * replaced, but it does not control when exactly happens.
+ * @code
+ * // Example implementation
+ * stateManager->top().update(dt);
+ * // The top state now can finish it's update function before any Stack
+ * // changing commands will be executed.
+ * stateManager->executeCommand();
+ * @endcode
+ */
 class StateManager {
 public:
     explicit StateManager();

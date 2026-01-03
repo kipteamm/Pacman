@@ -1,7 +1,3 @@
-//
-// Created by toroe on 09/12/2025.
-//
-
 #include "../../Logic/Stopwatch.h"
 #include "../AssetManager.h"
 #include "../Window.h"
@@ -35,21 +31,25 @@ GhostView::GhostView(const std::shared_ptr<logic::GhostModel>& model, const int 
     };
 
     // (Eyes) Up animation
+    // Add the frightened animationOffset (4)
     animations[logic::Moves::UP + 4] = {
         sf::IntRect{160, 48, 16, 16},
     };
 
     // (Eyes) Down animation
+    // Add the frightened animationOffset (4)
     animations[logic::Moves::DOWN + 4] = {
         sf::IntRect{176, 48, 16, 16},
     };
 
     // (Eyes) Right animation
+    // Add the frightened animationOffset (4)
     animations[logic::Moves::RIGHT + 4] = {
         sf::IntRect{128, 48, 16, 16},
     };
 
     // (Eyes) Left animation
+    // Add the frightened animationOffset (4)
     animations[logic::Moves::LEFT + 4] = {
         sf::IntRect{144, 48, 16, 16},
     };
@@ -70,7 +70,6 @@ GhostView::GhostView(const std::shared_ptr<logic::GhostModel>& model, const int 
 
     animationIndex = ghost->getDirection();
     sprite.setTexture(AssetManager::getInstance().getSpriteSheet());
-    // sprite.setOrigin(8, 8);
 }
 
 
@@ -111,10 +110,7 @@ void GhostView::render() {
     const float y = Camera::getInstance().yToPixel(model->getY());
     sprite.setPosition(x, y);
 
-    // const float scaleX = Camera::getInstance().getTileWidth() / 16.0f;
-    // const float scaleY = Camera::getInstance().getTileHeight() / 16.0f;
-    // sprite.setScale(scaleX, scaleY);
-
+    // Update animation frame
     const double dt = logic::Stopwatch::getInstance().getDeltaTime();
     const std::vector<sf::IntRect>& animation = animations[animationIndex];
     const sf::IntRect rect = animation.at(getFrameIndex(static_cast<float>(dt), animation.size()));

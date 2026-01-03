@@ -46,7 +46,7 @@ public:
      * Will update the score UI value and possibly show a ScorePopup at an
      * appropriate location if a specific event is received.
      *
-     * @param event logic::Events
+     * @param event World & Score Events
      */
     void update(logic::Events event) override;
 

@@ -136,7 +136,7 @@ void Score::update(const Events event) {
             ghostPoints = GHOST_POINTS; break;
 
         case Events::FRUIT_EATEN:
-            score += Difficulty::getInstance().getDifficulty()->fruitPoints; break;
+            score += Difficulty::getInstance().getFruitPoints(); break;
 
         case Events::LEVEL_COMPLETED:
             score += LEVEL_CLEAR_POINTS; break;

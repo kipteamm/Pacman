@@ -19,7 +19,7 @@ PacmanModel::PacmanModel(
     normalizedY,
     mapWidth,
     mapHeight,
-    Difficulty::getInstance().getDifficulty()->pacmanSpeed
+    Difficulty::getInstance().getPacmanSpeed()
 ), nextDirection(Moves::RIGHT), moving(true) {}
 
 

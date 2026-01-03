@@ -1,7 +1,3 @@
-//
-// Created by PPetre on 12/12/2025.
-//
-
 #include "../AssetManager.h"
 #include "FruitView.h"
 
@@ -10,8 +6,11 @@
 
 FruitView::FruitView(const std::shared_ptr<logic::FruitModel> &model) : EntityView(model, 0) {
     sprite.setTexture(AssetManager::getInstance().getSpriteSheet());
+
+    // The fruit sprite differs per difficulty. The logic::Difficulty class
+    // gives access to the necessary sprite offset information
     sprite.setTextureRect(sf::IntRect(
-        (6 + logic::Difficulty::getInstance().getDifficulty()->spriteOffset) * 16,
+        (6 + logic::Difficulty::getInstance().getFruitSpriteOffset()) * 16,
         16,
         16,
         16

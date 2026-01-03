@@ -7,7 +7,7 @@
 using namespace logic;
 
 
-FruitModel::FruitModel(const float normalizedX, const float normalizedY, const unsigned int score) : CollectibleEntityModel(normalizedX, normalizedY), score(score) {}
+FruitModel::FruitModel(const float normalizedX, const float normalizedY) : CollectibleEntityModel(normalizedX, normalizedY) {}
 
 
 Events FruitModel::collect() {

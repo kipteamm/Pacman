@@ -11,7 +11,7 @@ namespace logic {
 
     class FruitModel final : public CollectibleEntityModel {
     public:
-        explicit FruitModel(float normalizedX, float normalizedY, unsigned int score);
+        explicit FruitModel(float normalizedX, float normalizedY);
 
         [[nodiscard]] Events collect() override;
     private:

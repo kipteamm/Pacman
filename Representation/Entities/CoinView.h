@@ -1,7 +1,3 @@
-//
-// Created by toroe on 28/11/2025.
-//
-
 #ifndef PACMAN_COINVIEW_H
 #define PACMAN_COINVIEW_H
 
@@ -11,8 +7,17 @@
 
 class CoinView final : public EntityView {
 public:
+    /**
+     * @brief CoinView renders fruit.
+     * @param model Reference model
+     */
     explicit CoinView(const std::shared_ptr<logic::CoinModel> &model);
 
+    /**
+     * @brief Marks this View for deletion when it's model is destroyed by the
+     * World
+     * @param event World events
+     */
     void update(logic::Events event) override;
 };
 

@@ -41,7 +41,7 @@ PacmanView::PacmanView(const std::shared_ptr<logic::PacmanModel> &model) : Entit
     };
 
     // DEATH animation
-    animations[5] = {
+    animations[4] = {
         sf::IntRect{48, 0, 16, 16},
         sf::IntRect{64, 0, 16, 16},
         sf::IntRect{80, 0, 16, 16},
@@ -71,6 +71,7 @@ PacmanView::PacmanView(const std::shared_ptr<logic::PacmanModel> &model) : Entit
 
     animationIndex = pacman->getDirection();
 
+    // Extra Pacman specific sprite that indicates the Pacman's next move.
     directionSprite.setTexture(AssetManager::getInstance().getSpriteSheet());
     directionSprite.setOrigin(8, 8);
 }
@@ -92,7 +93,7 @@ void PacmanView::update(const logic::Events event) {
 
         case logic::Events::DEATH:
             dying = true;
-            animationIndex = 5;
+            animationIndex = 4;
 
             frameIndex = 0;
             elapsedTime = 0;
@@ -120,6 +121,8 @@ void PacmanView::render() {
     float x = Camera::getInstance().xToPixel(model->getX());
     float y = Camera::getInstance().yToPixel(model->getY());
 
+    // If Pacman is not currently playing a death animation, render the
+    // Direction indicator.
     if (!dying) {
         sprite.setPosition(x, y);
 
@@ -151,11 +154,15 @@ void PacmanView::render() {
         Window::getInstance().draw(directionSprite);
     }
 
+    // If Pacman isn't moving, but he isn't dying either he is probably
+    // standing still in some corner. I just draw the current frame and don't
+    // animate a static Pacman.
     if (!moving && !dying) {
         Window::getInstance().draw(sprite);
         return;
     }
 
+    // Determine the index of the current animation frame.
     const double dt = logic::Stopwatch::getInstance().getDeltaTime();
     const std::vector<sf::IntRect>& animation = animations[animationIndex];
     const sf::IntRect rect = animation.at(getFrameIndex(static_cast<float>(dt), animation.size()));
