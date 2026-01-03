@@ -24,24 +24,44 @@ GameContext& StateManager::getGameContext() const {
 
 
 void StateManager::swap(const std::shared_ptr<State>& state) {
-    states.pop();
-    states.push(state);
+    if (states.empty()) throw std::runtime_error("StateManager stack is empty");
+    pendingCommand = {Command::SWAP, state};
 }
 
 void StateManager::push(const std::shared_ptr<State>& state) {
-    states.push(state);
+    pendingCommand = {Command::PUSH, state};
 }
 
 void StateManager::pop() {
     if (states.empty()) throw std::runtime_error("StateManager stack is empty");
-    states.pop();
+    pendingCommand = {Command::POP, nullptr};
+}
+
+void StateManager::clear(const std::shared_ptr<State>& state) {
+    pendingCommand = {Command::CLEAR, state};
 }
 
 
-void StateManager::clear(const std::shared_ptr<State>& state) {
-    while (!states.empty()) {
-        states.pop();
+void StateManager::executeCommand() {
+    switch (pendingCommand.command) {
+        case Command::NONE: return;
+
+        case Command::SWAP:
+            states.pop();
+            states.push(pendingCommand.state); break;
+
+        case Command::PUSH:
+            states.push(pendingCommand.state); break;
+
+        case Command::POP:
+            states.pop(); break;
+
+        case Command::CLEAR:
+            while (!states.empty()) states.pop();
+            states.push(pendingCommand.state); break;
+
+        default: break;
     }
 
-    states.push(state);
+    pendingCommand = {Command::NONE, nullptr};
 }

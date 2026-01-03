@@ -75,7 +75,7 @@ void LevelState::handleInput(const sf::Event::KeyEvent &keyPressed) {
             // LevelState (and thus the World) must be preserved while paused.
             this->context.push(std::make_shared<PausedState>(this->context));
             this->soundManager->stop();
-            return;
+            break;
 
         case sf::Keyboard::Up:
         case sf::Keyboard::W:

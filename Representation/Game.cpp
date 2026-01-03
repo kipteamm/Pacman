@@ -51,11 +51,14 @@ void Game::loop() const {
         }
     }
 
+    context->executeCommand();
+
     // Secondly update the Stopwatch and the current State with delta time
     logic::Stopwatch::getInstance().tick();
     const double dt = logic::Stopwatch::getInstance().getDeltaTime();
 
     context->top().update(dt);
+    context->executeCommand();
 
     // Lastly clear the window and render the current State, display after
     window.clear();

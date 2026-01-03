@@ -89,7 +89,8 @@ public:
 
 
     /**
-     * @brief Helper function for swapping the top state with a new state.
+     * @brief Helper function for swapping the top state with a new state. Does
+     * this by updating the pending command.
      *
      * This function is for when the top state wants to switch itself with a
      * different state. Having the StateManager do the swapping itself, avoids
@@ -100,27 +101,42 @@ public:
     void swap(const std::shared_ptr<State>& state);
 
     /**
-     * @brief Pushes the state to the manager stack.
+     * @brief Pushes the state to the stack. Does this by updating pending command.
      * @param state State
      */
     void push(const std::shared_ptr<State>& state);
 
     /**
-     * @brief Pops the top state from the stack.
+     * @brief Pops the top state from the stack. Does this by updating pending
+     * command.
      * @throws std::runtime_error When the manager stack is empty
      */
     void pop();
 
     /**
-     * @brief Clears the state stack and pushes the new state.
+     * @brief Clears the state stack and pushes the new state. Does this by
+     * updating pending command.
      * @param state State
      */
     void clear(const std::shared_ptr<State>& state);
+
+    /**
+     * @brief Applies any pending command, if there is any pending command.
+     */
+    void executeCommand();
 
 private:
     std::unique_ptr<GameContext> gameContext;
 
     std::stack<std::shared_ptr<State>> states;
+
+    enum Command { NONE, SWAP, PUSH, POP, CLEAR };
+    struct PendingCommand {
+        Command command = Command::NONE;
+        std::shared_ptr<State> state = nullptr;
+    };
+
+    PendingCommand pendingCommand;
 };
 
 #endif //STATEMANAGER_H
