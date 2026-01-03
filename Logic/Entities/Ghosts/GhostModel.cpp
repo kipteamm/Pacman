@@ -48,6 +48,21 @@ void GhostModel::setFrightened(const bool frightened, const World& world) {
     speed = defaultSpeed;
 }
 
+Events GhostModel::pacmanCollides(World& world) {
+    if (state == GhostState::DEAD) return Events::NO_EVENT;
+
+    if (frightened) {
+        state = GhostState::DEAD;
+        speed = defaultSpeed * 2.5f;
+
+        notify(Events::GHOST_EATEN);
+        return Events::GHOST_EATEN;
+    }
+
+    world.killPacman();
+    return Events::NO_EVENT;
+}
+
 
 void GhostModel::update(const World& world, const double dt) {
     if (state != GhostState::WAITING) return;
@@ -63,10 +78,8 @@ void GhostModel::update(const World& world, const double dt) {
 void GhostModel::move(const World& world, const float dt) {
     if (state == GhostState::WAITING) return;
 
-    constexpr float epsilon = 0.01f;
-
     // Target reached
-    if (std::abs(x - targetX) < epsilon && std::abs(y - targetY) < epsilon) {
+    if (std::abs(x - targetX) < TARGET_EPSILON && std::abs(y - targetY) < TARGET_EPSILON) {
         if (gridX == 0) {
             gridX = mapWidth - 1;
             x = world.normalizeX(gridX + 0.5);
@@ -119,8 +132,8 @@ void GhostModel::move(const World& world, const float dt) {
         y += sign * std::min(std::abs(dy), moveDistance * normalizedHeightPerCell);
     }
 
-    if (std::abs(x - targetX) < epsilon) x = targetX;
-    if (std::abs(y - targetY) < epsilon) y = targetY;
+    if (std::abs(x - targetX) < TARGET_EPSILON) x = targetX;
+    if (std::abs(y - targetY) < TARGET_EPSILON) y = targetY;
 }
 
 
@@ -141,13 +154,6 @@ void GhostModel::respawn() {
     targetY = y;
 
     notify(Events::RESPAWN);
-}
-
-void GhostModel::eat() {
-    state = GhostState::DEAD;
-    speed = defaultSpeed * 2.5f;
-
-    notify(Events::GHOST_EATEN);
 }
 
 

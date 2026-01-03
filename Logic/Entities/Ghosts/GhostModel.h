@@ -27,12 +27,12 @@ namespace logic {
         [[nodiscard]] bool isFrightened() const { return this->frightened; }
 
         void setFrightened(bool frightened, const World& world);
+        Events pacmanCollides(World& world);
 
         void update(const World& world, double dt);
         void move(const World& world, float dt) override;
 
         void respawn() override;
-        void eat();
 
     protected:
         GhostState state;

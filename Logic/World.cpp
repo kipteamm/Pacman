@@ -1,11 +1,11 @@
 #include "World.h"
 #include <fstream>
-#include <iostream>
 
 using namespace logic;
 
 
-World::World(const std::shared_ptr<AbstractFactory> &factory, const int lives) : ghostExitX(0), ghostExitY(0), state(WorldState::PLAYING), factory(factory), lives(lives) {}
+World::World(const std::shared_ptr<AbstractFactory> &factory, const int lives)
+    : ghostExitX(0), ghostExitY(0), state(WorldState::PLAYING), factory(factory), lives(lives) {}
 
 
 float World::normalizeX(const int value) const {
@@ -46,6 +46,11 @@ std::pair<float, float> World::getCollissionCoordinates() const {
 }
 
 
+bool World::isColliding(const EntityModel& a, const EntityModel& b) {
+    return  std::abs(a.getX() - b.getX()) <= COLLISSION_EPSILON &&
+            std::abs(a.getY() - b.getY()) <= COLLISSION_EPSILON;
+}
+
 bool World::collidesWithWall(const float x, const float y, const bool passDoor) const {
     for (const std::shared_ptr<WallModel>& wall : walls) {
         if (wall->isDoor() && passDoor) continue;
@@ -69,6 +74,8 @@ void World::loadLevel(const std::string &filename) {
     while (std::getline(fileStream, line)) {
         map.push_back(line);
     }
+
+    fileStream.close();
 
     this->mapWidth = static_cast<float>(map[0].size());
     this->mapHeight = static_cast<float>(map.size());
@@ -131,7 +138,8 @@ void World::loadLevel(const std::string &filename) {
     }
 }
 
-void World::resetLevel() {
+
+void World::respawnEntities() {
     pacman->respawn();
 
     for (const auto& ghost : ghosts) {
@@ -142,93 +150,54 @@ void World::resetLevel() {
     notify(Events::RESPAWN);
 }
 
-void World::resetFright() {
+void World::startFrightened() {
+    state = WorldState::FRIGHTENED;
+    timer = 0;
+
+    for (const auto& ghost : ghosts) {
+        ghost->setFrightened(true, *this);
+        ghost->notify(Events::GHOST_FRIGHTENED);
+    }
+
+    notify(Events::GHOST_FRIGHTENED);
+}
+
+void World::endFrightened() {
+    state = WorldState::PLAYING;
+    flashing = false;
+
     for (const auto& ghost : ghosts) {
         ghost->setFrightened(false, *this);
     }
 
-    state = WorldState::PLAYING;
-    flashing = false;
     notify(Events::GHOST_NORMAL);
 }
 
 
-void World::update(const double dt) {
-    if (state == WorldState::RESTARTING) {
-        timer += dt;
+void World::updateRestartingState(const double dt) {
+    timer += dt;
 
-        if (timer >= DEATH_DURATION) resetLevel();
-        return;
-    }
+    if (timer < DEATH_DURATION) return;
+    respawnEntities();
+}
 
-    if (state == WorldState::FRIGHTENED) {
-        timer += dt;
+void World::updateFrightenedState(const double dt) {
+    timer += dt;
 
-        if (timer >= FEAR_DURATION) resetFright();
-    }
+    if (timer >= FEAR_DURATION) return endFrightened();
+    if (timer <= FLASH_TIMESTAMP || flashing) return;
 
-    pacman->move(*this, dt);
-
-    constexpr float epsilon = 0.07f;
+    flashing = true;
 
     for (const auto& ghost : ghosts) {
-        ghost->update(*this, dt);
-        ghost->move(*this, dt);
-
-        if (timer > FLASH_TIMESTAMP && !flashing && state == WorldState::FRIGHTENED) {
-            ghost->notify(Events::FRIGHTENED_FLASHING);
-        }
-
-        if (std::abs(pacman->getX() - ghost->getX()) > epsilon || std::abs(pacman->getY() - ghost->getY()) > epsilon) continue;
-        if (ghost->isFrightened()) {
-            if (ghost->getState() == GhostState::DEAD) continue;
-            collissionCoordinates = {ghost->getX(), ghost->getY()};
-            ghost->eat();
-            notify(Events::GHOST_EATEN);
-
-            continue;
-        }
-
-        lives--;
-
-        if (lives == 0) {
-            Difficulty::getInstance().reset();
-            notify(Events::GAME_OVER);
-            return;
-        };
-
-        state = WorldState::RESTARTING;
-        timer = 0;
-
-        pacman->notify(Events::DEATH);
-        notify(Events::DEATH);
+        ghost->notify(Events::FRIGHTENED_FLASHING);
     }
+}
 
-    flashing = (timer > FLASH_TIMESTAMP) && (state == WorldState::FRIGHTENED);
-
-    for (auto it = collectibles.begin(); it != collectibles.end(); ) {
-        if (std::abs(pacman->getX() - (*it)->getX()) <= epsilon && std::abs(pacman->getY() - (*it)->getY()) <= epsilon) {
-            collissionCoordinates = {(*it)->getX(), (*it)->getY()};
-            const Events event = (*it)->collect();
-            notify(event);
-
-            if (event == Events::FRUIT_EATEN) {
-                state = WorldState::FRIGHTENED;
-                timer = 0;
-                notify(Events::GHOST_FRIGHTENED);
-
-                for (const auto& ghost : ghosts) {
-                    ghost->setFrightened(true, *this);
-                    ghost->notify(Events::GHOST_FRIGHTENED);
-                }
-            }
-
-            it = collectibles.erase(it);
-            continue;
-        }
-
-        ++it;
-    }
+void World::updatePlayingState(const double dt) {
+    pacman->move(*this, dt);
+    updateGhosts(dt);
+    updateCollectibles();
 
     if (!collectibles.empty()) return;
 
@@ -236,7 +205,72 @@ void World::update(const double dt) {
     notify(Events::LEVEL_COMPLETED);
 }
 
+
+void World::updateGhosts(const double dt) {
+    for (const auto& ghost : ghosts) {
+        ghost->update(*this, dt);
+        ghost->move(*this, dt);
+
+        if (!isColliding(*pacman, *ghost)) continue;
+        collissionCoordinates = {ghost->getX(), ghost->getY()};
+
+        const Events event = ghost->pacmanCollides(*this);
+        notify(event);
+    }
+}
+
+void World::updateCollectibles() {
+    for (auto it = collectibles.begin(); it != collectibles.end(); ) {
+        if (!isColliding(*pacman, **it)) {
+            ++it;
+            continue;
+        }
+
+        collissionCoordinates = {(*it)->getX(), (*it)->getY()};
+        const Events event = (*it)->collect();
+        notify(event);
+
+        if (event == Events::FRUIT_EATEN) startFrightened();
+        it = collectibles.erase(it);
+    }
+}
+
+
+void World::update(const double dt) {
+    switch (state) {
+        case WorldState::RESTARTING:
+            updateRestartingState(dt);
+            break;
+
+        case WorldState::FRIGHTENED:
+            updateFrightenedState(dt);
+            // No break because while frightened, the game continues.
+
+        case WorldState::PLAYING:
+            updatePlayingState(dt);
+            break;
+    }
+}
+
+
 void World::handleMove(const Moves &move) const {
     if (state == WorldState::RESTARTING) return;
     pacman->setNextDirection(move);
+}
+
+
+void World::killPacman() {
+    lives--;
+
+    if (lives == 0) {
+        Difficulty::getInstance().reset();
+        notify(Events::GAME_OVER);
+        return;
+    }
+
+    state = WorldState::RESTARTING;
+    timer = 0;
+
+    pacman->notify(Events::DEATH);
+    notify(Events::DEATH);
 }

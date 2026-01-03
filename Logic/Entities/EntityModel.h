@@ -35,6 +35,8 @@ namespace logic {
     };
 
 
+    constexpr float TARGET_EPSILON = 0.001f;
+
     class MovingEntityModel : public EntityModel {
     public:
         MovingEntityModel(float x, float y, float mapWidth, float mapHeight, float speed);

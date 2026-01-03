@@ -55,9 +55,7 @@ bool PacmanModel::canMoveInDirection(const World& world, const Moves dir) const 
 }
 
 void PacmanModel::move(const World& world, const float dt) {
-    constexpr float epsilon = 0.001f;
-
-    if (std::abs(x - targetX) < epsilon && std::abs(y - targetY) < epsilon) {
+    if (std::abs(x - targetX) < TARGET_EPSILON && std::abs(y - targetY) < TARGET_EPSILON) {
         if (nextDirection != direction && canMoveInDirection(world, nextDirection)) {
             direction = nextDirection;
             this->notify(Events::DIRECTION_CHANGED);
@@ -114,8 +112,8 @@ void PacmanModel::move(const World& world, const float dt) {
         y += sign * std::min(moveDistance * normalizedHeightPerCell, std::abs(dy));
     }
     
-    if (std::abs(x - targetX) < epsilon) x = targetX;
-    if (std::abs(y - targetY) < epsilon) y = targetY;
+    if (std::abs(x - targetX) < TARGET_EPSILON) x = targetX;
+    if (std::abs(y - targetY) < TARGET_EPSILON) y = targetY;
     if (moving) return;
 
     moving = true;

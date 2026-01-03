@@ -11,6 +11,7 @@ namespace logic {
 
     enum WorldState { RESTARTING, FRIGHTENED, PLAYING };
 
+    constexpr float COLLISSION_EPSILON = 0.07f;
 
     class World final : public Subject {
     public:
@@ -33,14 +34,27 @@ namespace logic {
         [[nodiscard]] bool collidesWithWall(float x, float y, bool passDoor) const;
 
         void loadLevel(const std::string& filename);
-        void resetLevel();
-        void resetFright();
 
         void update(double dt);
 
         void handleMove(const Moves& move) const;
 
+        void killPacman();
+
     private:
+        static bool isColliding(const EntityModel& a, const EntityModel& b);
+
+        void respawnEntities();
+        void startFrightened();
+        void endFrightened();
+
+        void updateRestartingState(double dt);
+        void updateFrightenedState(double dt);
+        void updatePlayingState(double dt);
+
+        void updateGhosts(double dt);
+        void updateCollectibles();
+
         float mapHeight = 20;
         float mapWidth = 20;
 
