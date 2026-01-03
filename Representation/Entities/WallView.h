@@ -14,6 +14,7 @@ public:
      */
     explicit WallView(const std::shared_ptr<logic::WallModel> &model, char type);
 
+private:
     // Not implemented.
     void update(logic::Events event) override {};
 };

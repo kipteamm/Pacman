@@ -8,17 +8,19 @@
 
 
 namespace logic {
-
-    enum WorldState { RESTARTING, FRIGHTENED, PLAYING };
+    enum WorldState { AWAITING_MAP, RESTARTING, FRIGHTENED, PLAYING };
 
     constexpr float COLLISSION_EPSILON = 0.07f;
 
     class World final : public Subject {
     public:
+        /**
+         * @brief Creates a World instance. Creating an instance does nothing
+         * on its own.
+         * @param factory Concere implementation of AbstractFactory.
+         * @param lives Amount of lives that Pacman will begin with.
+         */
         explicit World(const std::shared_ptr<AbstractFactory> &factory, int lives);
-
-        [[nodiscard]] float normalizeX(int value) const;
-        [[nodiscard]] float normalizeY(int value) const;
 
         [[nodiscard]] float getWidth() const;
         [[nodiscard]] float getHeight() const;
@@ -31,9 +33,12 @@ namespace logic {
 
         [[nodiscard]] std::pair<float, float> getCollissionCoordinates() const;
 
+        [[nodiscard]] float normalizeX(int value) const;
+        [[nodiscard]] float normalizeY(int value) const;
+
         [[nodiscard]] bool collidesWithWall(float x, float y, bool passDoor) const;
 
-        void loadLevel(const std::string& filename);
+        void loadMap(const std::string& filename);
 
         void update(double dt);
 

@@ -50,6 +50,11 @@ void SoundManager::stop() {
 }
 
 
+void SoundManager::loadSound(sf::Sound& sound, const std::string& name) {
+    sound.setBuffer(AssetManager::getInstance().getSoundBuffer(name));
+}
+
+
 void SoundManager::update(const logic::Events event) {
     switch (event) {
         case logic::Events::COIN_EATEN: {
@@ -111,9 +116,4 @@ void SoundManager::update(const logic::Events event) {
 
         default: return;
     }
-}
-
-
-void SoundManager::loadSound(sf::Sound& sound, const std::string& name) {
-    sound.setBuffer(AssetManager::getInstance().getSoundBuffer(name));
 }

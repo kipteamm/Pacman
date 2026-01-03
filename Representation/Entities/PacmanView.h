@@ -16,12 +16,6 @@ public:
     explicit PacmanView(const std::shared_ptr<logic::PacmanModel> &model);
 
     /**
-     * @brief Handles World events and animates or changes the view accordingly.
-     * @param event World Events
-     */
-    void update(logic::Events event) override;
-
-    /**
      * @brief Resizes the Pacman sprite.
      */
     void resized() override;
@@ -32,6 +26,12 @@ public:
     void render() override;
 
 private:
+    /**
+     * @brief Handles World events and animates or changes the view accordingly.
+     * @param event World Events
+     */
+    void update(logic::Events event) override;
+
     // I store the PacmanModel in the view insteawd of dynamic casting the
     // generic model used in the base EntityView class to use PacmanModel
     // specific functions.

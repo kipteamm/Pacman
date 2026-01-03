@@ -13,6 +13,7 @@ public:
      */
     explicit FruitView(const std::shared_ptr<logic::FruitModel> &model);
 
+private:
     /**
      * @brief Marks this View for deletion when it's model is destroyed by the
      * World

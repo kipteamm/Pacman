@@ -41,16 +41,6 @@ public:
     );
 
     /**
-     * @brief Handles World and ScoreSystem events.
-     *
-     * Will update the score UI value and possibly show a ScorePopup at an
-     * appropriate location if a specific event is received.
-     *
-     * @param event World & Score Events
-     */
-    void update(logic::Events event) override;
-
-    /**
      * @brief Resizes the Game and World UI.
      */
     void resized();
@@ -61,6 +51,16 @@ public:
     void render();
 
 private:
+    /**
+     * @brief Handles World and ScoreSystem events.
+     *
+     * Will update the score UI value and possibly show a ScorePopup at an
+     * appropriate location if a specific event is received.
+     *
+     * @param event World & Score Events
+     */
+    void update(logic::Events event) override;
+
     std::shared_ptr<logic::World> world;
     std::shared_ptr<logic::Score> scoreSystem;
 

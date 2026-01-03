@@ -15,10 +15,10 @@ MenuState::MenuState(StateManager& context) : State(context), elapsedTime(0) {
     highscoresTitle.setCharacterSize(20);
     highscoresTitle.setFillColor(sf::Color::Yellow);
 
-    const auto _highscores = this->scoreSystem->getHighscores();
-    for (int i = 0; i < std::min(5, static_cast<int>(_highscores->size())); i++) {
+    const auto& _highscores = this->scoreSystem->getHighscores();
+    for (int i = 0; i < std::min(5, static_cast<int>(_highscores.size())); i++) {
         sf::Text score{
-            _highscores->at(i)->username + ": " + std::to_string(_highscores->at(i)->score),
+            _highscores.at(i)->username + ": " + std::to_string(_highscores.at(i)->score),
             AssetManager::getInstance().getFont()
         };
         score.setCharacterSize(20);

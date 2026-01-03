@@ -17,17 +17,17 @@ public:
     explicit GhostView(const std::shared_ptr<logic::GhostModel> &model, int spriteY);
 
     /**
-     * @brief Handles World events and animates or changes the view accordingly.
-     * @param event World Events
-     */
-    void update(logic::Events event) override;
-
-    /**
      * @brief Renders the Ghost sprite.
      */
     void render() override;
 
 private:
+    /**
+     * @brief Handles World events and animates or changes the view accordingly.
+     * @param event World Events
+     */
+    void update(logic::Events event) override;
+
     std::shared_ptr<logic::GhostModel> ghost;
 
     std::unordered_map<int, std::vector<sf::IntRect>> animations{};

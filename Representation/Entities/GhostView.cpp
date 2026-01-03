@@ -73,6 +73,21 @@ GhostView::GhostView(const std::shared_ptr<logic::GhostModel>& model, const int 
 }
 
 
+void GhostView::render() {
+    const float x = Camera::getInstance().xToPixel(model->getX());
+    const float y = Camera::getInstance().yToPixel(model->getY());
+    sprite.setPosition(x, y);
+
+    // Update animation frame
+    const double dt = logic::Stopwatch::getInstance().getDeltaTime();
+    const std::vector<sf::IntRect>& animation = animations[animationIndex];
+    const sf::IntRect rect = animation.at(getFrameIndex(static_cast<float>(dt), animation.size()));
+    sprite.setTextureRect(rect);
+
+    Window::getInstance().draw(sprite);
+}
+
+
 void GhostView::update(const logic::Events event) {
     switch (event) {
         case logic::Events::DIRECTION_CHANGED:
@@ -103,19 +118,3 @@ void GhostView::update(const logic::Events event) {
         default: break;
     }
 }
-
-
-void GhostView::render() {
-    const float x = Camera::getInstance().xToPixel(model->getX());
-    const float y = Camera::getInstance().yToPixel(model->getY());
-    sprite.setPosition(x, y);
-
-    // Update animation frame
-    const double dt = logic::Stopwatch::getInstance().getDeltaTime();
-    const std::vector<sf::IntRect>& animation = animations[animationIndex];
-    const sf::IntRect rect = animation.at(getFrameIndex(static_cast<float>(dt), animation.size()));
-    sprite.setTextureRect(rect);
-
-    Window::getInstance().draw(sprite);
-}
-

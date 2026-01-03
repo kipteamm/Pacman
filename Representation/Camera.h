@@ -12,7 +12,6 @@ public:
 
     /**
      * @brief Returns an instance of the Camera class
-     *
      * @return Camera instance
      */
     [[nodiscard]] static Camera& getInstance();

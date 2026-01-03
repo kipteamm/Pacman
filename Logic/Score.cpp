@@ -1,24 +1,29 @@
-#include "Score.h"
-
 #include <algorithm>
+#include <filesystem>
 #include <iostream>
 
 #include "Difficulty.h"
-
+#include "Score.h"
 
 using namespace logic;
 
 
-
 Score::Score() : score(0) {
-    // Try to open the file in read and write mode
-    // If the fil does not exist, create it, the function
-    // will try to reopen the file in read and write after creation
     std::fstream fileStream(filename);
-    if (!fileStream.is_open()) fileStream = createHighscoresFile();
 
+    // If the file does not yet exist, create a new one. I can instantly return
+    // because there are no scores to be read.
+    if (!std::filesystem::exists(filename)) {
+        createHighscoresFile();
+        return;
+    };
+
+    if (!fileStream.is_open()) throw std::runtime_error("Could not open '" + filename + "'");
     fileStream.seekg(0);
 
+    // Loop over all the lines in the file and extract the ScoreEntry
+    // information. Scores must be formatted as USERNAME:SCORE which is parsed
+    // here and added to the ScoreEntry vector.
     std::string line;
     while (std::getline(fileStream, line)) {
         std::string username;
@@ -31,7 +36,7 @@ Score::Score() : score(0) {
             else username += c;
         }
 
-        highscores.push_back(std::make_unique<Highscore>(username, std::stoi(score)));
+        highscores.push_back(std::make_unique<ScoreEntry>(username, std::stoi(score)));
     }
 
     fileStream.close();
@@ -42,20 +47,16 @@ Score::~Score() {
 }
 
 
-std::vector<std::unique_ptr<Highscore>>* Score::getHighscores() {
-    return &highscores;
+std::vector<std::unique_ptr<ScoreEntry>>& Score::getHighscores() {
+    return highscores;
 }
 
 int Score::getScore() const {
     return score;
 }
 
-const Highscore& Score::getLastScore() const {
+const ScoreEntry& Score::getLastScore() const {
     return lastScore;
-}
-
-int Score::getGhostPoints() const {
-    return ghostPoints;
 }
 
 
@@ -63,12 +64,14 @@ void Score::setUser(const std::string& username) {
     this->username = username;
 }
 
-void Score::addScore(const int score) {
-    std::unique_ptr<Highscore> highscore = std::make_unique<Highscore>(username, score);
+
+void Score::addScoreEntry() {
+    auto highscore = std::make_unique<ScoreEntry>(username, score);
     lastScore = *highscore;
     highscores.push_back(std::move(highscore));
     this->score = 0;
 
+    // Sort all score entries when a new one is inserted.
     std::ranges::sort(highscores, [](const auto& a, const auto& b) {
         return *a < *b;
     });
@@ -81,6 +84,8 @@ void Score::write() const {
     std::ofstream out(filename, std::ios::trunc);
     out.seekp(0);
 
+    // Write the score entries to the file, in descending order in the same
+    // USERNAME:SCORE format.
     out << highscores[0]->username << ":" << highscores[0]->score;
     for (int i = 1; i < highscores.size(); i++) {
         out << "\n" << highscores[i]->username << ":" << highscores[i]->score;
@@ -103,39 +108,41 @@ void Score::update(const double dt) {
 }
 
 
-std::fstream Score::createHighscoresFile() const {
+void Score::createHighscoresFile() const {
     std::fstream fileStream(filename, std::ios::out);
     fileStream.close();
-
-    // After creation, try to reopen it in read & try mode
-    fileStream.open(filename, std::ios::in | std::ios::out);
-
-    if (!fileStream.is_open()) throw std::runtime_error("Could not create highscores file.");
-    return fileStream;
 }
-
 
 void Score::update(const Events event) {
     switch (event) {
         case Events::GAME_OVER:
-            addScore(score); break;
+            addScoreEntry(); break;
 
         case Events::COIN_EATEN: {
+            // Rewards the player for eating coins in a short span. The quicker
+            // the succession, the higher the reward. This allows for 'perfect'
+            // runs which optimise the coin eating timing. Based on the
+            // original game, however I never really managed to pull such
+            // 'perfect' runs.
             const int timeBonus = static_cast<int>(50.0 / (timeLastCoin + 0.5));
-            score += (BASE_COIN_POINTS + timeBonus);
+            score += BASE_COIN_POINTS + timeBonus;
 
+            // Resets after every coin to allow for a "combo" like feeling.
             timeLastCoin = 0.0;
             break;
         }
 
         case Events::GHOST_EATEN:
             score += ghostPoints;
+            // ghostPoints work exponentionally when eaten within one
+            // "Frightened" state.
             ghostPoints *= 2; break;
 
         case Events::GHOST_FRIGHTENED:
             ghostPoints = GHOST_POINTS; break;
 
         case Events::FRUIT_EATEN:
+            // The points rewarded for a coin depend on the current difficulty.
             score += Difficulty::getInstance().getFruitPoints(); break;
 
         case Events::LEVEL_COMPLETED:
@@ -152,4 +159,3 @@ void Score::update(const Events event) {
 
     notify(Events::SCORE_UPDATE);
 }
-

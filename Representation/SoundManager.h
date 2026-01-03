@@ -21,22 +21,13 @@ public:
      */
     void stop();
 
-
+private:
     /**
      * @brief Starts playing sounds depending on the event.
      *
      * @param event logic::Event
      */
     void update(logic::Events event) override;
-
-private:
-    std::vector<sf::Sound> coinSoundPool;
-    std::vector<sf::Sound> ghostSoundPool;
-
-    sf::Sound ghostMove;
-    sf::Sound ghostFrightened;
-    sf::Sound eatingFruit;
-    sf::Sound deathSound;
 
     /**
      * @brief Update a sf::Sound SoundBuffer object to hold the contents of the
@@ -48,6 +39,14 @@ private:
      * @param name Filename of the sound.
      */
     static void loadSound(sf::Sound& sound, const std::string& name);
+
+    std::vector<sf::Sound> coinSoundPool;
+    std::vector<sf::Sound> ghostSoundPool;
+
+    sf::Sound ghostMove;
+    sf::Sound ghostFrightened;
+    sf::Sound eatingFruit;
+    sf::Sound deathSound;
 };
 
 

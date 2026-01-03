@@ -5,16 +5,8 @@ using namespace logic;
 
 
 World::World(const std::shared_ptr<AbstractFactory> &factory, const int lives)
-    : ghostExitX(0), ghostExitY(0), state(WorldState::PLAYING), factory(factory), lives(lives) {}
+    : ghostExitX(0), ghostExitY(0), state(WorldState::AWAITING_MAP), factory(factory), lives(lives) {}
 
-
-float World::normalizeX(const int value) const {
-    return (static_cast<float>(value) + 0.5f) / mapWidth * 2.0f - 1.0f;
-}
-
-float World::normalizeY(const int value) const {
-    return (static_cast<float>(value) + 0.5f) / mapHeight * 2.0f - 1.0f;
-}
 
 float World::getWidth() const {
     return mapWidth;
@@ -32,6 +24,7 @@ int World::getGhostExitY() const {
     return ghostExitY;
 }
 
+
 std::shared_ptr<PacmanModel> World::getPacman() const {
     return this->pacman;
 }
@@ -43,6 +36,15 @@ unsigned int World::getLives() const {
 
 std::pair<float, float> World::getCollissionCoordinates() const {
     return collissionCoordinates;
+}
+
+
+float World::normalizeX(const int value) const {
+    return (static_cast<float>(value) + 0.5f) / mapWidth * 2.0f - 1.0f;
+}
+
+float World::normalizeY(const int value) const {
+    return (static_cast<float>(value) + 0.5f) / mapHeight * 2.0f - 1.0f;
 }
 
 
@@ -65,7 +67,7 @@ bool World::collidesWithWall(const float x, const float y, const bool passDoor) 
 }
 
 
-void World::loadLevel(const std::string &filename) {
+void World::loadMap(const std::string &filename) {
     std::fstream fileStream(filename);
     if (!fileStream.is_open()) throw std::runtime_error("File '" + filename + "' not found.");
 
@@ -136,6 +138,8 @@ void World::loadLevel(const std::string &filename) {
             }
         }
     }
+
+    state = WorldState::PLAYING;
 }
 
 
@@ -238,6 +242,9 @@ void World::updateCollectibles() {
 
 void World::update(const double dt) {
     switch (state) {
+        case WorldState::AWAITING_MAP:
+            throw std::runtime_error("You must load a map before calling World::update.");
+
         case WorldState::RESTARTING:
             updateRestartingState(dt);
             break;
@@ -254,12 +261,14 @@ void World::update(const double dt) {
 
 
 void World::handleMove(const Moves &move) const {
+    if (state == WorldState::AWAITING_MAP) throw std::runtime_error("You must load a map before calling World::update.");
     if (state == WorldState::RESTARTING) return;
     pacman->setNextDirection(move);
 }
 
 
 void World::killPacman() {
+    if (state == WorldState::AWAITING_MAP) throw std::runtime_error("You must load a map before calling World::update.");
     lives--;
 
     if (lives == 0) {

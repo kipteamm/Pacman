@@ -77,36 +77,6 @@ PacmanView::PacmanView(const std::shared_ptr<logic::PacmanModel> &model) : Entit
 }
 
 
-void PacmanView::update(const logic::Events event) {
-    switch (event) {
-        case logic::Events::DIRECTION_CHANGED:
-            animationIndex = pacman->getDirection(); break;
-
-        case logic::Events::RESPAWN:
-            dying = false;
-            moving = true;
-            animationIndex = pacman->getDirection();
-
-            frameIndex = 0;
-            elapsedTime = 0;
-            break;
-
-        case logic::Events::DEATH:
-            dying = true;
-            animationIndex = 4;
-
-            frameIndex = 0;
-            elapsedTime = 0;
-            break;
-
-        case logic::Events::ISMOVING_CHANGED:
-            moving = pacman->isMoving(); break;
-
-        default: break;
-    }
-}
-
-
 void PacmanView::resized() {
     const float scaleX = Camera::getInstance().getTileWidth() / 16.0f;
     const float scaleY = Camera::getInstance().getTileHeight() / 16.0f;
@@ -114,7 +84,6 @@ void PacmanView::resized() {
     directionSprite.setScale(scaleX, scaleY);
     sprite.setScale(scaleX, scaleY);
 }
-
 
 
 void PacmanView::render() {
@@ -169,4 +138,34 @@ void PacmanView::render() {
     sprite.setTextureRect(rect);
 
     Window::getInstance().draw(sprite);
+}
+
+
+void PacmanView::update(const logic::Events event) {
+    switch (event) {
+        case logic::Events::DIRECTION_CHANGED:
+            animationIndex = pacman->getDirection(); break;
+
+        case logic::Events::RESPAWN:
+            dying = false;
+            moving = true;
+            animationIndex = pacman->getDirection();
+
+            frameIndex = 0;
+            elapsedTime = 0;
+            break;
+
+        case logic::Events::DEATH:
+            dying = true;
+            animationIndex = 4;
+
+            frameIndex = 0;
+            elapsedTime = 0;
+            break;
+
+        case logic::Events::ISMOVING_CHANGED:
+            moving = pacman->isMoving(); break;
+
+        default: break;
+    }
 }

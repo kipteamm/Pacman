@@ -16,7 +16,7 @@ LevelState::LevelState(passkey, StateManager& context) : State(context), cleanup
 
     // Update the Camera to be aware of the size of the world and scale
     // appropriately.
-    world->loadLevel("../Representation/levels/level_1.txt");
+    world->loadMap("../Representation/levels/level_1.txt");
     Camera::getInstance().setScaling(world->getWidth(), world->getHeight());
     resizeRequired = true;
 
@@ -38,30 +38,6 @@ std::shared_ptr<LevelState> LevelState::create(StateManager& context) {
     levelState->world->attach(levelState);
 
     return levelState;
-}
-
-
-void LevelState::update(const logic::Events event) {
-    switch (event) {
-        case logic::GAME_OVER:
-            soundManager->stop();
-            this->context.getGameContext().lives = 3;
-            this->context.swap(std::make_shared<GameOverState>(this->context));
-            return;
-
-        case logic::LEVEL_COMPLETED:
-            soundManager->stop();
-            this->context.getGameContext().lives = world->getLives();
-            this->context.swap(std::make_shared<VictoryState>(this->context));
-            return;
-
-        case logic::COIN_EATEN:
-        case logic::FRUIT_EATEN:
-            cleanupRequired = true;
-            return;
-
-        default: return;
-    }
 }
 
 
@@ -158,4 +134,28 @@ void LevelState::render() {
     worldView->render();
 
     resizeRequired = false;
+}
+
+
+void LevelState::update(const logic::Events event) {
+    switch (event) {
+        case logic::GAME_OVER:
+            soundManager->stop();
+            this->context.getGameContext().lives = 3;
+            this->context.swap(std::make_shared<GameOverState>(this->context));
+            return;
+
+        case logic::LEVEL_COMPLETED:
+            soundManager->stop();
+            this->context.getGameContext().lives = world->getLives();
+            this->context.swap(std::make_shared<VictoryState>(this->context));
+            return;
+
+        case logic::COIN_EATEN:
+        case logic::FRUIT_EATEN:
+            cleanupRequired = true;
+            return;
+
+        default: return;
+    }
 }

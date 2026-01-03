@@ -82,6 +82,57 @@ WorldView::WorldView(
 }
 
 
+void WorldView::resized() {
+    const float scaleX = Camera::getInstance().getTileWidth() / 16.0f;
+    const float scaleY = Camera::getInstance().getTileHeight() / 16.0f;
+
+    live1.setScale(scaleX, scaleY);
+    live2.setScale(scaleX, scaleY);
+    live3.setScale(scaleX, scaleY);
+
+    const float spriteWidth = 16.0f * scaleX;
+    const float gap = 4.0f * scaleX;
+
+    const float mapLeftPixel = Camera::getInstance().xToPixel(-1.0f);
+    const float mapRightPixel = Camera::getInstance().xToPixel(1.0f);
+    const float uiYPosition = Camera::getInstance().yToPixel(1.0f) + 10.0f - gap;
+
+    live1.setPosition(mapLeftPixel, uiYPosition);
+    live2.setPosition(mapLeftPixel + spriteWidth + gap, uiYPosition);
+    live3.setPosition(mapLeftPixel + (spriteWidth + gap) * 2, uiYPosition);
+
+    scoreText.setCharacterSize(static_cast<unsigned int>(16 * scaleY));
+    scoreText.setPosition(mapRightPixel, uiYPosition - (gap / 2));
+
+    for (auto& score : scores) {
+        score.sprite.setScale(scaleX, scaleY);
+    }
+}
+
+
+void WorldView::render() {
+    const unsigned int lives = world->getLives();
+    if (lives > 0) Window::getInstance().draw(live1);
+    if (lives > 1) Window::getInstance().draw(live2);
+    if (lives > 2) Window::getInstance().draw(live3);
+
+    const double dt = logic::Stopwatch::getInstance().getDeltaTime();
+
+    // Loop over all scores and render the active ones. Also update the
+    // elapsedTime and set it to inactive after a specific amount of time
+    // passed.
+    for (auto& score : scores) {
+        if (!score.active) continue;
+        Window::getInstance().draw(score.sprite);
+
+        score.elapsedTime += dt;
+        if (score.elapsedTime > 1.4) score.active = false;
+    }
+
+    Window::getInstance().draw(scoreText);
+}
+
+
 void WorldView::update(const logic::Events event) {
     int score = 0;
 
@@ -143,55 +194,4 @@ void WorldView::update(const logic::Events event) {
         Camera::getInstance().xToPixel(x),
         Camera::getInstance().yToPixel(y)
     );
-}
-
-
-void WorldView::resized() {
-    const float scaleX = Camera::getInstance().getTileWidth() / 16.0f;
-    const float scaleY = Camera::getInstance().getTileHeight() / 16.0f;
-
-    live1.setScale(scaleX, scaleY);
-    live2.setScale(scaleX, scaleY);
-    live3.setScale(scaleX, scaleY);
-
-    const float spriteWidth = 16.0f * scaleX;
-    const float gap = 4.0f * scaleX;
-
-    const float mapLeftPixel = Camera::getInstance().xToPixel(-1.0f);
-    const float mapRightPixel = Camera::getInstance().xToPixel(1.0f);
-    const float uiYPosition = Camera::getInstance().yToPixel(1.0f) + 10.0f - gap;
-
-    live1.setPosition(mapLeftPixel, uiYPosition);
-    live2.setPosition(mapLeftPixel + spriteWidth + gap, uiYPosition);
-    live3.setPosition(mapLeftPixel + (spriteWidth + gap) * 2, uiYPosition);
-
-    scoreText.setCharacterSize(static_cast<unsigned int>(16 * scaleY));
-    scoreText.setPosition(mapRightPixel, uiYPosition - (gap / 2));
-
-    for (auto& score : scores) {
-        score.sprite.setScale(scaleX, scaleY);
-    }
-}
-
-
-void WorldView::render() {
-    const unsigned int lives = world->getLives();
-    if (lives > 0) Window::getInstance().draw(live1);
-    if (lives > 1) Window::getInstance().draw(live2);
-    if (lives > 2) Window::getInstance().draw(live3);
-
-    const double dt = logic::Stopwatch::getInstance().getDeltaTime();
-
-    // Loop over all scores and render the active ones. Also update the
-    // elapsedTime and set it to inactive after a specific amount of time
-    // passed.
-    for (auto& score : scores) {
-        if (!score.active) continue;
-        Window::getInstance().draw(score.sprite);
-
-        score.elapsedTime += dt;
-        if (score.elapsedTime > 1.4) score.active = false;
-    }
-
-    Window::getInstance().draw(scoreText);
 }

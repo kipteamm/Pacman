@@ -13,6 +13,7 @@ public:
      */
     explicit CoinView(const std::shared_ptr<logic::CoinModel> &model);
 
+private:
     /**
      * @brief Marks this View for deletion when it's model is destroyed by the
      * World

@@ -30,6 +30,9 @@ void PausedState::handleInput(const sf::Event::KeyEvent &keyPressed) {
             break;
 
         case sf::Keyboard::Escape:
+            // While the Game did not end in a GameOver or VictoryState, your
+            // score wil be saved regardless.
+            this->context.getGameContext().scoreSystem->addScoreEntry();
             this->context.clear(std::make_shared<MenuState>(context));
             break;
 

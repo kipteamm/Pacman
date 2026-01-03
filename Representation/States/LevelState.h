@@ -36,16 +36,6 @@ public:
     explicit LevelState(passkey, StateManager& context);
 
     /**
-     * @brief Observer update function called by all subscribed Subjects.
-     *
-     * This function orchestrates what happens after specific World events.
-     * Events handled are GameOver or Victory States and View deletion.
-     *
-     * @param event World events
-     */
-    void update(logic::Events event) override;
-
-    /**
      * @brief Passes concrete Moves to the World instance & handles pausing.
      * @param keyPressed SFML KeyEvent
      */
@@ -69,6 +59,16 @@ public:
     void render() override;
 
 private:
+    /**
+     * @brief Observer update function called by all subscribed Subjects.
+     *
+     * This function orchestrates what happens after specific World events.
+     * Events handled are GameOver or Victory States and View deletion.
+     *
+     * @param event World events
+     */
+    void update(logic::Events event) override;
+
     std::shared_ptr<ConcreteFactory> factory;
     std::shared_ptr<logic::Score> scoreSystem;
     std::shared_ptr<SoundManager> soundManager;
