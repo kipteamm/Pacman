@@ -18,7 +18,7 @@ VictoryState::VictoryState(StateManager& context) : State(context), elapsedTime(
 
 
 void VictoryState::handleInput(const sf::Event::KeyEvent& keyPressed) {
-    this->context.swap(std::make_unique<LevelState>(context));
+    this->context.swap(LevelState::create(this->context));
 }
 
 

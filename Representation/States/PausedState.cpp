@@ -30,7 +30,7 @@ void PausedState::handleInput(const sf::Event::KeyEvent &keyPressed) {
             break;
 
         case sf::Keyboard::Escape:
-            this->context.clear(std::make_unique<MenuState>(context));
+            this->context.clear(std::make_shared<MenuState>(context));
             break;
 
         default: break;

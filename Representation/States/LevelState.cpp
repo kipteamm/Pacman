@@ -8,10 +8,10 @@
 #include "../Window.h"
 
 
-LevelState::LevelState(StateManager& context) : State(context), cleanupRequired(true) {
+LevelState::LevelState(passkey, StateManager& context) : State(context), cleanupRequired(true) {
     // Creata a factory object and pass along the entityViews of this State.
     // The factory appends the Views to their respective layers.
-    factory = std::make_unique<ConcreteFactory>(this->entityViews);
+    factory = std::make_shared<ConcreteFactory>(this->entityViews);
     world = std::make_shared<logic::World>(factory, context.getGameContext().lives);
 
     // Update the Camera to be aware of the size of the world and scale
@@ -30,10 +30,15 @@ LevelState::LevelState(StateManager& context) : State(context), cleanupRequired(
     worldView = std::make_shared<WorldView>(world, scoreSystem);
     scoreSystem->attach(worldView);
     world->attach(worldView);
-
-    // Make LevelState an Observer of the World
-    world->attach(std::shared_ptr<Observer>(this));
 };
+
+
+std::shared_ptr<LevelState> LevelState::create(StateManager& context) {
+    std::shared_ptr<LevelState> levelState = std::make_shared<LevelState>(passkey{}, context);
+    levelState->world->attach(levelState);
+
+    return levelState;
+}
 
 
 void LevelState::update(const logic::Events event) {
@@ -41,13 +46,13 @@ void LevelState::update(const logic::Events event) {
         case logic::GAME_OVER:
             soundManager->stop();
             this->context.getGameContext().lives = 3;
-            this->context.swap(std::make_unique<GameOverState>(this->context));
+            this->context.swap(std::make_shared<GameOverState>(this->context));
             return;
 
         case logic::LEVEL_COMPLETED:
             soundManager->stop();
             this->context.getGameContext().lives = world->getLives();
-            this->context.swap(std::make_unique<VictoryState>(this->context));
+            this->context.swap(std::make_shared<VictoryState>(this->context));
             return;
 
         case logic::COIN_EATEN:
@@ -68,7 +73,7 @@ void LevelState::handleInput(const sf::Event::KeyEvent &keyPressed) {
             // LevelState, ensuring that the World no longer receives updates
             // while paused. Pushing is done and not swapping because the
             // LevelState (and thus the World) must be preserved while paused.
-            this->context.push(std::make_unique<PausedState>(this->context));
+            this->context.push(std::make_shared<PausedState>(this->context));
             this->soundManager->stop();
             return;
 

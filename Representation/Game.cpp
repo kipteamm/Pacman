@@ -9,7 +9,7 @@
 
 Game::Game() {
     context = std::make_unique<StateManager>();
-    context->push(std::make_unique<MenuState>(*context));
+    context->push(std::make_shared<MenuState>(*context));
 
     scoreSystem = context->getGameContext().scoreSystem;
 

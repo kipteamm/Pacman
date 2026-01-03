@@ -32,7 +32,7 @@ GameOverState::GameOverState(StateManager& context) : State(context), elapsedTim
 void GameOverState::handleInput(const sf::Event::KeyEvent &keyPressed) {
     switch (keyPressed.code) {
         case sf::Keyboard::Escape:
-            this->context.swap(std::make_unique<MenuState>(this->context));
+            this->context.swap(std::make_shared<MenuState>(this->context));
             return;
 
         default: break;

@@ -97,13 +97,13 @@ public:
      *
      * @param state State
      */
-    void swap(std::unique_ptr<State> state);
+    void swap(const std::shared_ptr<State>& state);
 
     /**
      * @brief Pushes the state to the manager stack.
      * @param state State
      */
-    void push(std::unique_ptr<State> state);
+    void push(const std::shared_ptr<State>& state);
 
     /**
      * @brief Pops the top state from the stack.
@@ -115,12 +115,12 @@ public:
      * @brief Clears the state stack and pushes the new state.
      * @param state State
      */
-    void clear(std::unique_ptr<State> state);
+    void clear(const std::shared_ptr<State>& state);
 
 private:
     std::unique_ptr<GameContext> gameContext;
 
-    std::stack<std::unique_ptr<State>> states;
+    std::stack<std::shared_ptr<State>> states;
 };
 
 #endif //STATEMANAGER_H

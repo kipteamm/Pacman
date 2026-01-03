@@ -7,14 +7,33 @@
 #include "StateManager.h"
 
 
-class LevelState final : public State, public logic::Observer {
+class LevelState final :
+    public State,
+    public logic::Observer,
+    public std::enable_shared_from_this<LevelState> {
+
+    // The Pass-Key pattern is a way to control who can create instances of a
+    // class when using smart pointers. Smart pointers do not work with private
+    // constructors, so a different method is used.
+    struct passkey{};
+
 public:
     /**
+     * @brief Creates a LevelState which initiates a Pacman Level by setting up
+     * a logic::Word and rendering the game views.
+     * @param context
+     * @return LevelState std::shared_ptr
+     */
+    static std::shared_ptr<LevelState> create(StateManager& context);
+
+    /**
+     * @warning This constructor uses the passkey pattern as you are not
+     * suposed to directly interact with it. Use LevelState::create instead.
      * @brief This State initiates a Pacman level by setting up a logic::World
      * and rendering the game views.
      * @param context StateManager
      */
-    explicit LevelState(StateManager& context);
+    explicit LevelState(passkey, StateManager& context);
 
     /**
      * @brief Observer update function called by all subscribed Subjects.
