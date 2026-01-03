@@ -82,6 +82,12 @@ public:
     [[nodiscard]] State& top();
 
     /**
+     * @brief Returns whether the manager stack is empty.
+     * @return Whether stack is empty
+     */
+    [[nodiscard]] bool empty() const;
+
+    /**
      * @brief Returns the GameContext struct.
      * @return GameContext reference
      */
@@ -119,6 +125,7 @@ public:
      * @param state State
      */
     void clear(const std::shared_ptr<State>& state);
+
 
     /**
      * @brief Applies any pending command, if there is any pending command.

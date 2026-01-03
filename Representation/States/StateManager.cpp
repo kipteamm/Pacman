@@ -18,6 +18,11 @@ State& StateManager::top() {
     return *states.top();
 }
 
+bool StateManager::empty() const {
+    return states.empty();
+}
+
+
 GameContext& StateManager::getGameContext() const {
     return *gameContext;
 }

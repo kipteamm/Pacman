@@ -58,6 +58,7 @@ PacmanView::PacmanView(const std::shared_ptr<logic::PacmanModel> &model) : Entit
         sf::IntRect{208, 0, 16, 16},
         sf::IntRect{208, 0, 16, 16},
         sf::IntRect{208, 0, 16, 16},
+        sf::IntRect{208, 0, 16, 16},
         sf::IntRect{112, 112, 16, 16},
         sf::IntRect{112, 112, 16, 16},
         sf::IntRect{112, 112, 16, 16},

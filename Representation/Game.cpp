@@ -43,6 +43,11 @@ void Game::loop() const {
                 window.setView(sf::View(visibleArea));
 
                 Camera::getInstance().resized();
+
+                // Prevents a SIGSEGV I only encounteredL on linux where this
+                // event would get fired with an empty StateManager stack.
+                if (context->empty()) break;
+
                 context->top().resized();
                 break;
             }
