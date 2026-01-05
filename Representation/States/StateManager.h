@@ -66,6 +66,7 @@ protected:
 struct GameContext {
     std::shared_ptr<logic::Score> scoreSystem;
     std::shared_ptr<SoundManager> soundManager;
+    std::string username;
     unsigned int lives;
 };
 

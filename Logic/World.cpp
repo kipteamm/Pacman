@@ -105,16 +105,16 @@ void World::loadMap(const std::string &filename) {
                     collectibles.push_back(factory->createCoin(x, y)); break;
                 case 't':
                 case 'b':
-                case 'l':
                 case 'r':
-                case 'm':
                 case 'e':
                 case 'f':
                 case 'h':
+                case 'i':
                 case 'j':
                 case 'k':
+                case 'l':
+                case 'm':
                 case 'u':
-                case 'i':
                 case 'o':
                 case 'p':
                 case '1':
@@ -124,6 +124,12 @@ void World::loadMap(const std::string &filename) {
                 case '5':
                 case '6':
                 case 'd':
+
+                // These cases are for the large map only.
+                case 'a':
+                case 'c':
+                case 'g':
+                case 'n':
                     walls.push_back(factory->createWall(x, y, tile)); break;
                 case 'B':
                     ghosts.push_back(factory->createBlinky(x, y, mapWidth, mapHeight)); break;

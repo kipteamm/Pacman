@@ -17,7 +17,6 @@ public:
 
     /**
      * @brief Returns an instance of the AssetManager class
-     *
      * @return AssetManager instance
      */
     [[nodiscard]] static AssetManager& getInstance();
@@ -25,7 +24,6 @@ public:
 
     /**
      * @brief Returns the font used throughout the project.
-     *
      * @return sf::Font
      */
     [[nodiscard]] sf::Font& getFont();
@@ -33,17 +31,22 @@ public:
 
     /**
      * @brief Returns the Pacman logo.
-     *
      * @return Pacman logo
      */
     [[nodiscard]] sf::Texture& getPacmanLogo();
 
     /**
      * @brief Returns the Spritesheet.
-     *
      * @return Spritesheet
      */
     [[nodiscard]] sf::Texture& getSpriteSheet();
+
+
+    /**
+     * @brief Toggle whether the regular or the easteregg spritesheet is used.
+     * @param toggle On or off
+     */
+    void toggleEasterEgg(bool toggle);
 
 
     /**
@@ -64,6 +67,9 @@ private:
 
     sf::Texture pacmanLogo;
     sf::Texture spriteSheet;
+
+    sf::Texture easterEgg;
+    bool easterEggToggle = false;
 
     // Cache of sf::SoundBuffers by filename.
     std::unordered_map<std::string, sf::SoundBuffer> soundBuffers;

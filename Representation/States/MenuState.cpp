@@ -48,7 +48,8 @@ void MenuState::handleInput(const sf::Event::KeyEvent& keyPressed) {
         if (usernameValue.empty()) return;
 
         scoreSystem->setUser(usernameValue);
-        this->context.swap(LevelState::create(this->context));
+        context.getGameContext().username = usernameValue;
+        context.swap(LevelState::create(this->context));
         return;
     }
 

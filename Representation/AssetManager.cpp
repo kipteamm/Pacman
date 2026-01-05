@@ -11,7 +11,10 @@ AssetManager::AssetManager() {
         throw std::runtime_error("Could not load 'Representation/assets/pacman_logo.png' asset");
 
     if (!spriteSheet.loadFromFile("../Representation/assets/sprite_sheet.png"))
-        throw std::runtime_error("Could not load 'Representation/assets/pacman_logo.png' asset");
+        throw std::runtime_error("Could not load 'Representation/assets/sprite_sheet.png' asset");
+
+    if (!easterEgg.loadFromFile("../Representation/assets/easteregg.png"))
+        throw std::runtime_error("Could not load 'Representation/assets/easteregg.png' asset");
 }
 
 AssetManager& AssetManager::getInstance() {
@@ -32,7 +35,13 @@ sf::Texture &AssetManager::getPacmanLogo() {
 }
 
 sf::Texture &AssetManager::getSpriteSheet() {
+    if (easterEggToggle) return easterEgg;
     return spriteSheet;
+}
+
+
+void AssetManager::toggleEasterEgg(const bool toggle) {
+    easterEggToggle = toggle;
 }
 
 

@@ -4,19 +4,30 @@
 #include "VictoryState.h"
 #include "PausedState.h"
 #include "LevelState.h"
+
+#include "../AssetManager.h"
 #include "../Camera.h"
 #include "../Window.h"
 
 
 LevelState::LevelState(passkey, StateManager& context) : State(context), cleanupRequired(true) {
+    // Ssst... these are some eastereggs, no telling around ;)
+    std::string map;
+    if (context.getGameContext().username == "pacman") {
+        map = "../Representation/levels/pacman_map.txt";
+    } else {
+        AssetManager::getInstance().toggleEasterEgg(context.getGameContext().username == "ghost");
+        map = "../Representation/levels/small_map.txt";
+    }
+
     // Creata a factory object and pass along the entityViews of this State.
     // The factory appends the Views to their respective layers.
     factory = std::make_shared<ConcreteFactory>(this->entityViews);
     world = std::make_shared<logic::World>(factory, context.getGameContext().lives);
 
+    world->loadMap(map);
     // Update the Camera to be aware of the size of the world and scale
     // appropriately.
-    world->loadMap("../Representation/levels/level_1.txt");
     Camera::getInstance().setScaling(world->getWidth(), world->getHeight());
     resizeRequired = true;
 
