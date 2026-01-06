@@ -1,7 +1,4 @@
-//
-// Created by PPetre on 11/12/2025.
-//
-
+#include "GhostNavigator.h"
 #include "ChasingGhost.h"
 
 
@@ -21,5 +18,5 @@ Moves ChasingGhost::decideNextMove(const World &world, const PacmanModel &pacman
     const int targetX = pacman.getGridX();
     const int targetY = pacman.getGridY();
 
-    return minimizeDistance(world, targetX, targetY);
+    return GhostNavigator::minimizeDistance(world, *this, targetX, targetY);
 }

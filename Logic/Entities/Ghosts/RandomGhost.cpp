@@ -1,12 +1,8 @@
-//
-// Created by PPetre on 11/12/2025.
-//
-
+#include "GhostNavigator.h"
 #include "../../Random.h"
 #include "RandomGhost.h"
 
 #include <algorithm>
-
 
 using namespace logic;
 
@@ -21,11 +17,11 @@ RandomGhost::RandomGhost(
 
 
 Moves RandomGhost::decideNextMove(const World &world, const PacmanModel &pacman) {
-    const std::vector<Moves> moves = getPossibleMoves(world);
+    const std::vector<Moves> moves = GhostNavigator::getPossibleMoves(world, *this);
 
     // With probability p=0.5 it will remain locked to the same direction (as long as it viable)
     if (Random::getInstance().getFloat() >= 0.5f) {
-        if (std::find(moves.begin(), moves.end(), direction) != moves.end()) return direction;
+        if (std::ranges::find(moves, direction) != moves.end()) return direction;
     }
 
     const int randIndex = Random::getInstance().getInt(0, moves.size() - 1);

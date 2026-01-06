@@ -81,6 +81,8 @@ add_executable(Pacman main.cpp
         Representation/SoundManager.h
         Representation/Entities/WorldView.cpp
         Representation/Entities/WorldView.h
+        Logic/Entities/Ghosts/GhostNavigator.cpp
+        Logic/Entities/Ghosts/GhostNavigator.h
 )
 
 target_link_libraries(Pacman PRIVATE sfml-graphics sfml-window sfml-system sfml-audio)

@@ -1,7 +1,3 @@
-//
-// Created by PPetre on 26/11/2025.
-//
-
 #ifndef ENTITYMODEL_H
 #define ENTITYMODEL_H
 
@@ -66,7 +62,7 @@ namespace logic {
 
         Moves direction = Moves::RIGHT;
 
-        void updateTarget();
+        void updateGridTarget();
     };
 }
 

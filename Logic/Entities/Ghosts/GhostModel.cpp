@@ -1,16 +1,10 @@
-//
-// Created by toroe on 09/12/2025.
-//
-
+#include "../../Difficulty.h"
+#include "GhostNavigator.h"
 #include "../../Random.h"
 #include "../../World.h"
 #include "GhostModel.h"
 
-#include <iostream>
 #include <queue>
-
-#include "../../Difficulty.h"
-
 
 using namespace logic;
 
@@ -27,30 +21,58 @@ GhostModel::GhostModel(
 }
 
 
+GhostState GhostModel::getState() const {
+    return this->state;
+}
+
+bool GhostModel::isFrightened() const {
+    return this->frightened;
+}
+
+int GhostModel::getGridSpawnX() const {
+    return this->gridSpawnX;
+}
+
+int GhostModel::getGridSpawnY() const {
+    return this->gridSpawnY;
+}
+
+
 void GhostModel::setState(const GhostState state) {
     this->state = state;
 }
 
-
 void GhostModel::setFrightened(const bool frightened, const World& world) {
     // Dead ghosts will remain frightened untill they respawn.
     if (state == GhostState::DEAD) return;
-
     this->frightened = frightened;
-    updateDirection(world);
 
     if (frightened) {
+        // Update direction to maximizeDistance to Pacman as the Ghost is now
+        // frightened.
+        direction = GhostNavigator::maximizeDistance(world, *this);
+        notify(Events::DIRECTION_CHANGED);
+
         speed = defaultSpeed * Difficulty::getInstance().getFrighenedGhostSpeed();
         return;
     }
 
-    notify(Events::GHOST_NORMAL);
+    direction = decideNextMove(world, *world.getPacman());
+    notify(Events::DIRECTION_CHANGED);
+
     speed = defaultSpeed;
+    notify(Events::GHOST_NORMAL);
 }
 
+
 Events GhostModel::pacmanCollides(World& world) {
+    // If we are dead (= pathfinding our way back to the Ghost enclosure)
+    // ghosts will still collide with Pacman, but nothing should come of it.
     if (state == GhostState::DEAD) return Events::NO_EVENT;
 
+    // Upon colliding with Pacman there are two possible outcomes:
+    //      1. Ghost is frightened and therefore pacman 'eats' the Ghost
+    //      2. Pacman dies
     if (frightened) {
         state = GhostState::DEAD;
         speed = defaultSpeed * 2.5f;
@@ -64,56 +86,48 @@ Events GhostModel::pacmanCollides(World& world) {
 }
 
 
-void GhostModel::update(const World& world, const double dt) {
-    if (state != GhostState::WAITING) return;
-    waitingTime += dt;
+void GhostModel::gridTargetReached(const World& world) {
+    // These are teleport checks. Only relevant on maps that allow ghosts to
+    // "exit" the map. For instance the typical Pacman map.
+    if (gridX == 0) {
+        gridX = static_cast<int>(mapWidth) - 1;
+        x = world.normalizeX(gridX);
 
-    if (waitingTime > startCooldown) {
-        state = GhostState::EXITING;
-        direction = getPossibleMoves(world)[0];
+        return;
+    }
+
+    if (gridX == static_cast<int>(mapWidth)) {
+        gridX = 1;
+        x = world.normalizeX(gridX);
+
+        return;
+    }
+
+    // If not teleporting, update position as would be normal.
+    x = targetX;
+    y = targetY;
+
+    switch(direction) {
+        case Moves::LEFT:  gridX--; break;
+        case Moves::RIGHT: gridX++; break;
+        case Moves::UP:    gridY--; break;
+        case Moves::DOWN:  gridY++; break;
     }
 }
 
 
 void GhostModel::move(const World& world, const float dt) {
-    if (state == GhostState::WAITING) return;
-
-    // Target reached
-    if (std::abs(x - targetX) < TARGET_EPSILON && std::abs(y - targetY) < TARGET_EPSILON) {
-        if (gridX == 0) {
-            gridX = mapWidth - 1;
-            x = world.normalizeX(gridX + 0.5);
-
-            return updateTarget();
-        }
-
-        if (gridX == mapWidth) {
-            gridX = 1;
-            x = world.normalizeX(gridX - 0.5);
-
-            return updateTarget();
-        }
-
-        x = targetX;
-        y = targetY;
-
-        switch(direction) {
-            case Moves::LEFT:  gridX--; break;
-            case Moves::RIGHT: gridX++; break;
-            case Moves::UP:    gridY--; break;
-            case Moves::DOWN:  gridY++; break;
-        }
-
-        if (state == GhostState::EXITING && gridX == world.getGhostExitX() && gridY == world.getGhostExitY()) {
-            state = GhostState::CHASING;
-        }
-        if (state == GhostState::DEAD && gridX == gridSpawnX && gridY == gridSpawnY) {
-            respawn();
-        }
-
-        if (state == GhostState::DEAD || isAtIntersection(world)) updateDirection(world);
-
-        updateTarget();
+    switch (state) {
+        // Returns because this is the only state in which a Ghost is not
+        // moving.
+    case GhostState::WAITING:
+        updateWaiting(world, dt); return;
+    case GhostState::EXITING:
+        updateExiting(world); break;
+    case GhostState::CHASING:
+        updateChasing(world); break;
+    case GhostState::DEAD:
+        updateDead(world); break;
     }
 
     const float moveDistance = speed * dt;
@@ -132,13 +146,15 @@ void GhostModel::move(const World& world, const float dt) {
         y += sign * std::min(std::abs(dy), moveDistance * normalizedHeightPerCell);
     }
 
+    // Snap to the grid position if we are within TARGET_EPSILON distance.
     if (std::abs(x - targetX) < TARGET_EPSILON) x = targetX;
     if (std::abs(y - targetY) < TARGET_EPSILON) y = targetY;
 }
 
-
 void GhostModel::respawn() {
     state = GhostState::WAITING;
+    // Frightened Ghosts when respawning instantly leave their enclosure. Only
+    // when the game starts or Pacman dies, the Ghosts should wait again.
     if (!frightened) waitingTime = 0;
 
     frightened = false;
@@ -157,193 +173,78 @@ void GhostModel::respawn() {
 }
 
 
-std::vector<Moves> GhostModel::getPossibleMoves(const World &world) const {
-    std::vector<Moves> moves;
+void GhostModel::updateWaiting(const World& world, const double dt) {
+    // Track how long we have been waiting. If this surpasses the cooldown, the
+    // Ghost state changes to EXITING, allowing the Ghost to start moving and
+    // eventually chase Pacman.
+    waitingTime += dt;
 
-    for (int i = Moves::UP; i <= Moves::DOWN; i++) {
-        const Moves move = static_cast<Moves>(i);
-
-        int moveX = gridX;
-        int moveY = gridY;
-
-        switch (move) {
-            case Moves::LEFT:
-                moveX--; break;
-            case Moves::RIGHT:
-                moveX++; break;
-            case Moves::UP:
-                moveY--; break;
-            case Moves::DOWN:
-                moveY++; break;
-        }
-
-        if (world.collidesWithWall(world.normalizeX(moveX), world.normalizeY(moveY), state == GhostState::EXITING || state == GhostState::DEAD)) continue;
-        moves.push_back(move);
-    }
-
-    return moves;
+    if (waitingTime < startCooldown) return;
+    state = GhostState::EXITING;
+    direction = GhostNavigator::getPossibleMoves(world, *this)[0];
 }
 
 
-Moves GhostModel::maximizeDistance(const World &world, const PacmanModel &pacman) const {
-    const std::vector<Moves> options = getPossibleMoves(world);
+void GhostModel::updateExiting(const World& world) {
+    // Early return if we have not yet reached the target.
+    if (std::abs(x - targetX) >= TARGET_EPSILON || std::abs(y - targetY) >= TARGET_EPSILON) return;
+    gridTargetReached(world);
+    updateGridTarget();
 
-    std::vector<Moves> bestCandidates;
-    int longestDistance = 0;
-
-    for (const Moves move : options) {
-        int nextX = gridX;
-        int nextY = gridY;
-
-        // Simulate a move
-        if (move == Moves::UP) nextY--;
-        else if (move == Moves::DOWN) nextY++;
-        else if (move == Moves::LEFT) nextX--;
-        else if (move == Moves::RIGHT) nextX++;
-
-        int dist = std::abs(nextX - pacman.getGridX()) + std::abs(nextY - pacman.getGridY());
-
-        if (dist > longestDistance) {
-            longestDistance = dist;
-            bestCandidates.clear();
-            bestCandidates.push_back(move);
-        }
-        else if (std::abs(dist - longestDistance) == 0) {
-            bestCandidates.push_back(move);
-        }
+    if (gridX == world.getGhostExitX() && gridY == world.getGhostExitY()) {
+        state = GhostState::CHASING;
     }
 
-    return bestCandidates[Random::getInstance().getInt(0, bestCandidates.size() - 1)];
+    // When a Ghost is exiting, it will think about its next direction whenever
+    // at an intersection. The direction of an exiting ghost is whatever gets
+    // it closest to the exit coordinates based on the Manhatten distance
+    if (!GhostNavigator::isAtIntersection(world, *this)) return;
+
+    direction = GhostNavigator::minimizeDistance(world, *this, world.getGhostExitX(), world.getGhostExitY());
+    notify(Events::DIRECTION_CHANGED);
 }
 
 
-Moves GhostModel::minimizeDistance(const World &world, const int targetX, const int targetY) const {
-    const std::vector<Moves> options = getPossibleMoves(world);
+void GhostModel::updateChasing(const World& world) {
+    if (std::abs(x - targetX) >= TARGET_EPSILON || std::abs(y - targetY) >= TARGET_EPSILON) return;
+    gridTargetReached(world);
+    updateGridTarget();
 
-    std::vector<Moves> bestCandidates;
-    int shortestDistance = 99999;
+    if (!GhostNavigator::isAtIntersection(world, *this)) return;
+    // if (!isAtIntersection(world)) return updateGridTarget();
 
-    for (const Moves move : options) {
-        int nextX = gridX;
-        int nextY = gridY;
-
-        // Simulate a move
-        if (move == Moves::UP) nextY--;
-        else if (move == Moves::DOWN) nextY++;
-        else if (move == Moves::LEFT) nextX--;
-        else if (move == Moves::RIGHT) nextX++;
-
-        int dist = std::abs(nextX - targetX) + std::abs(nextY - targetY);
-
-        if (dist < shortestDistance) {
-            shortestDistance = dist;
-            bestCandidates.clear();
-            bestCandidates.push_back(move);
-        }
-        else if (std::abs(dist - shortestDistance) == 0) {
-            bestCandidates.push_back(move);
-        }
+    // When chasing a Ghost is either frightened or not, and will base its
+    // next direction on this.
+    // If frightened it will maximize the Manhattan distance to Pacman
+    // Otherwise it will determine the next move as per its behaviour
+    if (frightened) {
+        direction = GhostNavigator::maximizeDistance(world, *this);
+    } else {
+        direction = decideNextMove(world, *world.getPacman());
     }
-
-    return bestCandidates[Random::getInstance().getInt(0, bestCandidates.size() - 1)];
-}
-
-
-void GhostModel::updatePathToSpawn(const World& world) {
-    cachedPath.clear();
-
-    const int width = static_cast<int>(mapWidth);
-    const int height = static_cast<int>(mapHeight);
-
-    std::vector<std::vector<logic::Moves>> comeFromMap(width, std::vector<logic::Moves>(height, static_cast<Moves>(-1)));
-    std::vector<std::vector<bool>> visited(width, std::vector<bool>(height, false));
-
-    std::queue<std::pair<int, int>> q;
-    q.emplace(gridX, gridY);
-    visited[gridX][gridY] = true;
-
-    while (!q.empty()) {
-        auto [cx, cy] = q.front(); q.pop();
-        if (cx == gridSpawnX && cy == gridSpawnY) break;
-
-        struct Dir { int dx, dy; logic::Moves move; };
-        Dir dirs[] = { {-1, 0, Moves::LEFT}, {1, 0, Moves::RIGHT}, {0, -1, Moves::UP}, {0, 1, Moves::DOWN} };
-
-        for (const auto& dir : dirs) {
-            int nx = cx + dir.dx;
-            int ny = cy + dir.dy;
-
-            if (nx < 0 || nx >= width || ny < 0 || ny >= height) continue;
-            if (visited[nx][ny] || world.collidesWithWall(world.normalizeX(nx), world.normalizeY(ny), true)) continue;
-
-            visited[nx][ny] = true;
-            comeFromMap[nx][ny] = dir.move;
-            q.emplace(nx, ny);
-        }
-    }
-
-    int currentX = gridSpawnX;
-    int currentY = gridSpawnY;
-
-    while (currentX != gridX || currentY != gridY) {
-        Moves move = comeFromMap[currentX][currentY];
-        cachedPath.push_front(move);
-
-        switch (move) {
-            case Moves::LEFT:  currentX++; break;
-            case Moves::RIGHT: currentX--; break;
-            case Moves::UP:    currentY++; break;
-            case Moves::DOWN:  currentY--; break;
-        }
-    }
-}
-
-
-
-bool GhostModel::sameDirection(const Moves a, const Moves b) {
-    if (a == Moves::UP || a == Moves::DOWN) return (b == Moves::UP || b == Moves::DOWN);
-    return (b == Moves::LEFT || b == Moves::RIGHT);
-}
-
-
-bool GhostModel::isAtIntersection(const World &world) const {
-    for (int i = Moves::UP; i <= Moves::DOWN; i++) {
-        const Moves move = static_cast<Moves>(i);
-        if (sameDirection(move, direction)) continue;
-
-        int moveX = gridX;
-        int moveY = gridY;
-
-        switch (move) {
-            case Moves::LEFT:
-                moveX--; break;
-            case Moves::RIGHT:
-                moveX++; break;
-            case Moves::UP:
-                moveY--; break;
-            case Moves::DOWN:
-                moveY++; break;
-        }
-
-        if (!world.collidesWithWall(world.normalizeX(moveX), world.normalizeY(moveY), state == GhostState::EXITING || state == GhostState::DEAD)) return true;
-    }
-
-    return false;
-}
-
-
-void GhostModel::updateDirection(const World& world) {
-    if (state == GhostState::EXITING) direction = minimizeDistance(world, world.getGhostExitX(), world.getGhostExitY());
-
-    else if (state == GhostState::DEAD) {
-        if (cachedPath.empty()) updatePathToSpawn(world);
-        direction = cachedPath.front();
-        cachedPath.pop_front();
-    }
-
-    else if (frightened) direction = maximizeDistance(world, *world.getPacman());
-
-    else direction = decideNextMove(world, *world.getPacman());
 
     notify(Events::DIRECTION_CHANGED);
+    // updateGridTarget();
+}
+
+
+void GhostModel::updateDead(const World& world) {
+    // Early return if we have not yet reached the target.
+    if (std::abs(x - targetX) >= TARGET_EPSILON || std::abs(y - targetY) >= TARGET_EPSILON) return;
+    gridTargetReached(world);
+    updateGridTarget();
+
+    if (gridX == gridSpawnX && gridY == gridSpawnY) return respawn();
+
+    // Gets the next position based on the BFS fastest path to its spawnpoint.
+    // I use BSF here because Manhattan doesn't work. Ghosts would not
+    // correctly navigate to their original spawn points because whether they
+    // are in the passageway below or above it, the Manhattan distance would be
+    // the same.
+    if (cachedPath.empty()) cachedPath = GhostNavigator::findPathToSpawn(world, *this);
+    direction = cachedPath.front();
+    cachedPath.pop_front();
+    notify(Events::DIRECTION_CHANGED);
+
+    // updateGridTarget();
 }

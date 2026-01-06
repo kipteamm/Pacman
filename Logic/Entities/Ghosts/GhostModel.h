@@ -22,30 +22,33 @@ namespace logic {
         explicit GhostModel(float normalizedX, float normalizedY, float mapWidth, float mapHeight, double cooldown);
         ~GhostModel() override = default;
 
+        [[nodiscard]] GhostState getState() const;
+        [[nodiscard]] bool isFrightened() const;
+        [[nodiscard]] int getGridSpawnX() const;
+        [[nodiscard]] int getGridSpawnY() const;
+
         void setState(GhostState state);
-        [[nodiscard]] GhostState getState() const { return this->state; }
-        [[nodiscard]] bool isFrightened() const { return this->frightened; }
-
         void setFrightened(bool frightened, const World& world);
-        Events pacmanCollides(World& world);
 
-        void update(const World& world, double dt);
+        [[nodiscard]] Events pacmanCollides(World& world);
+
         void move(const World& world, float dt) override;
-
         void respawn() override;
 
     protected:
+        virtual Moves decideNextMove(const World& world, const PacmanModel& pacman) = 0;
+
         GhostState state;
         float defaultSpeed;
 
-        [[nodiscard]] std::vector<Moves> getPossibleMoves(const World& world) const;
-        [[nodiscard]] Moves maximizeDistance(const World& world, const PacmanModel& pacman) const;
-        [[nodiscard]] Moves minimizeDistance(const World& world, int targetX, int targetY) const;
-
-        virtual Moves decideNextMove(const World& world, const PacmanModel& pacman) = 0;
-        void updateDirection(const World& world);
-
     private:
+        void gridTargetReached(const World& world);
+
+        void updateWaiting(const World& world, double dt);
+        void updateExiting(const World& world);
+        void updateChasing(const World& world);
+        void updateDead(const World& world);
+
         int gridSpawnX;
         int gridSpawnY;
 
@@ -55,10 +58,6 @@ namespace logic {
         double waitingTime;
 
         std::list<Moves> cachedPath;
-        void updatePathToSpawn(const World& world);
-
-        [[nodiscard]] static bool sameDirection(Moves a, Moves b) ;
-        [[nodiscard]] bool isAtIntersection(const World &world) const;
     };
 
 }

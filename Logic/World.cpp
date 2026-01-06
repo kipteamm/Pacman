@@ -218,7 +218,6 @@ void World::updatePlayingState(const double dt) {
 
 void World::updateGhosts(const double dt) {
     for (const auto& ghost : ghosts) {
-        ghost->update(*this, dt);
         ghost->move(*this, dt);
 
         if (!isColliding(*pacman, *ghost)) continue;

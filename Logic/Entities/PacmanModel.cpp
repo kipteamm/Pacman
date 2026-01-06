@@ -62,17 +62,17 @@ void PacmanModel::move(const World& world, const float dt) {
         }
 
         if (gridX == 0) {
-            gridX = mapWidth - 1;
-            x = world.normalizeX(gridX + 0.5);
+            gridX = static_cast<int>(mapWidth) - 1;
+            x = world.normalizeX(gridX);
 
-            return updateTarget();
+            return updateGridTarget();
         }
 
-        if (gridX == mapWidth) {
+        if (gridX == static_cast<int>(mapWidth)) {
             gridX = 1;
-            x = world.normalizeX(gridX - 0.5);
+            x = world.normalizeX(gridX);
 
-            return updateTarget();
+            return updateGridTarget();
         }
 
         // Target reached
@@ -94,7 +94,7 @@ void PacmanModel::move(const World& world, const float dt) {
             case Moves::DOWN:  gridY++; break;
         }
 
-        updateTarget();
+        updateGridTarget();
     }
 
     const float moveDistance = speed * dt;

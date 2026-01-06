@@ -1,11 +1,5 @@
-//
-// Created by PPetre on 11/12/2025.
-//
-
+#include "GhostNavigator.h"
 #include "AmbushGhost.h"
-
-#include "../../Difficulty.h"
-
 
 using namespace logic;
 
@@ -30,5 +24,5 @@ Moves AmbushGhost::decideNextMove(const World &world, const PacmanModel &pacman)
         case Moves::RIGHT: targetX += 2; break;
     }
 
-    return minimizeDistance(world, targetX, targetY);
+    return GhostNavigator::minimizeDistance(world, *this, targetX, targetY);
 }
