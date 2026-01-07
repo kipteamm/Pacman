@@ -8,7 +8,7 @@ on:
 
 env:
   BUILD_TYPE: Debug
-  SOURCE_DIR: logic
+  SOURCE_DIR: Logic
 
 jobs:
   build:
