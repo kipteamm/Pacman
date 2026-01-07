@@ -41,6 +41,7 @@ void Difficulty::increaseDifficulty() {
 
 void Difficulty::reset() {
     difficulty = 0;
+    currentDifficulty = difficultyMap[difficulty];
 }
 
 
