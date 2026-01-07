@@ -1,4 +1,3 @@
-#include "../../Difficulty.h"
 #include "GhostNavigator.h"
 #include "../../Random.h"
 #include "../../World.h"

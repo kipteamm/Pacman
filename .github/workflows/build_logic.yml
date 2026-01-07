@@ -1,0 +1,27 @@
+name: Build Logic Library
+
+on:
+  push:
+    branches: [ "master" ]
+
+  workflow_dispatch:
+
+env:
+  BUILD_TYPE: Debug
+  SOURCE_DIR: logic
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Configure CMake for 'logic'
+        run: cmake -B ${{github.workspace}}/build -S ${{github.workspace}}/${{env.SOURCE_DIR}} -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
+
+      - name: Build 'logic'
+        run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
+
+      - name: Test 'logic'
+        working-directory: ${{github.workspace}}/build
+        run: ctest -C ${{env.BUILD_TYPE}}
