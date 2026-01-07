@@ -21,7 +21,7 @@ Moves RandomGhost::decideNextMove(const World &world) {
 
     // With probability p=0.5 it will remain locked to the same direction (as long as it viable)
     if (Random::getInstance().getFloat() >= 0.5f) {
-        if (std::ranges::find(moves, direction) != moves.end()) return direction;
+        if (std::find(moves.begin(), moves.end(), direction) != moves.end()) return direction;
     }
 
     const int randIndex = Random::getInstance().getInt(0, moves.size() - 1);
