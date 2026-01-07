@@ -63,6 +63,17 @@ namespace logic {
         Moves direction = Moves::RIGHT;
 
         void updateGridTarget();
+
+        /**
+         * @brief This function should be called when the MovingEntity has
+         * reached its targetX and targetY values (within a certain Epsilon).
+         *
+         * It keeps the grid coordinates up to date and possibly teleports the
+         * Ghost when it is
+         *
+         * @param world World
+         */
+        void gridTargetReached(const World& world);
     };
 }
 

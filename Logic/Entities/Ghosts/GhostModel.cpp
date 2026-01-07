@@ -38,10 +38,6 @@ int GhostModel::getGridSpawnY() const {
 }
 
 
-void GhostModel::setState(const GhostState state) {
-    this->state = state;
-}
-
 void GhostModel::setFrightened(const bool frightened, const World& world) {
     // Dead ghosts will remain frightened untill they respawn.
     if (state == GhostState::DEAD) return;
@@ -54,10 +50,11 @@ void GhostModel::setFrightened(const bool frightened, const World& world) {
         notify(Events::DIRECTION_CHANGED);
 
         speed = defaultSpeed * Difficulty::getInstance().getFrighenedGhostSpeed();
+        notify(Events::GHOST_FRIGHTENED);
         return;
     }
 
-    direction = decideNextMove(world, *world.getPacman());
+    direction = decideNextMove(world);
     notify(Events::DIRECTION_CHANGED);
 
     speed = defaultSpeed;
@@ -65,54 +62,21 @@ void GhostModel::setFrightened(const bool frightened, const World& world) {
 }
 
 
-Events GhostModel::pacmanCollides(World& world) {
+void GhostModel::pacmanCollides(World& world) {
     // If we are dead (= pathfinding our way back to the Ghost enclosure)
     // ghosts will still collide with Pacman, but nothing should come of it.
-    if (state == GhostState::DEAD) return Events::NO_EVENT;
+    if (state == GhostState::DEAD) return;
 
     // Upon colliding with Pacman there are two possible outcomes:
-    //      1. Ghost is frightened and therefore pacman 'eats' the Ghost
-    //      2. Pacman dies
-    if (frightened) {
-        state = GhostState::DEAD;
-        speed = defaultSpeed * 2.5f;
+    // 1. Pacman dies
+    if (!frightened) return world.killPacman();
 
-        notify(Events::GHOST_EATEN);
-        return Events::GHOST_EATEN;
-    }
+    // 2. Ghost is frightened and therefore pacman 'eats' the Ghost
+    state = GhostState::DEAD;
+    speed = defaultSpeed * 2.5f;
 
-    world.killPacman();
-    return Events::NO_EVENT;
-}
-
-
-void GhostModel::gridTargetReached(const World& world) {
-    // These are teleport checks. Only relevant on maps that allow ghosts to
-    // "exit" the map. For instance the typical Pacman map.
-    if (gridX == 0) {
-        gridX = static_cast<int>(mapWidth) - 1;
-        x = world.normalizeX(gridX);
-
-        return;
-    }
-
-    if (gridX == static_cast<int>(mapWidth)) {
-        gridX = 1;
-        x = world.normalizeX(gridX);
-
-        return;
-    }
-
-    // If not teleporting, update position as would be normal.
-    x = targetX;
-    y = targetY;
-
-    switch(direction) {
-        case Moves::LEFT:  gridX--; break;
-        case Moves::RIGHT: gridX++; break;
-        case Moves::UP:    gridY--; break;
-        case Moves::DOWN:  gridY++; break;
-    }
+    notify(Events::GHOST_EATEN);
+    world.notify(Events::GHOST_EATEN);
 }
 
 
@@ -150,6 +114,7 @@ void GhostModel::move(const World& world, const float dt) {
     if (std::abs(x - targetX) < TARGET_EPSILON) x = targetX;
     if (std::abs(y - targetY) < TARGET_EPSILON) y = targetY;
 }
+
 
 void GhostModel::respawn() {
     state = GhostState::WAITING;
@@ -211,7 +176,6 @@ void GhostModel::updateChasing(const World& world) {
     updateGridTarget();
 
     if (!GhostNavigator::isAtIntersection(world, *this)) return;
-    // if (!isAtIntersection(world)) return updateGridTarget();
 
     // When chasing a Ghost is either frightened or not, and will base its
     // next direction on this.
@@ -220,11 +184,10 @@ void GhostModel::updateChasing(const World& world) {
     if (frightened) {
         direction = GhostNavigator::maximizeDistance(world, *this);
     } else {
-        direction = decideNextMove(world, *world.getPacman());
+        direction = decideNextMove(world);
     }
 
     notify(Events::DIRECTION_CHANGED);
-    // updateGridTarget();
 }
 
 
@@ -242,9 +205,11 @@ void GhostModel::updateDead(const World& world) {
     // are in the passageway below or above it, the Manhattan distance would be
     // the same.
     if (cachedPath.empty()) cachedPath = GhostNavigator::findPathToSpawn(world, *this);
+    const bool notify = direction != cachedPath.front();
+
     direction = cachedPath.front();
     cachedPath.pop_front();
-    notify(Events::DIRECTION_CHANGED);
 
-    // updateGridTarget();
+    if (!notify) return;
+    this->notify(Events::DIRECTION_CHANGED);
 }

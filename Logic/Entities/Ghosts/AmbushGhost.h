@@ -14,7 +14,7 @@ namespace logic {
             explicit AmbushGhost(float normalizedX, float normalizedY, float mapWidth, float mapHeight, double cooldown);
 
         private:
-            Moves decideNextMove(const World &world, const PacmanModel &pacman) override;
+            Moves decideNextMove(const World &world) override;
     };
 }
 

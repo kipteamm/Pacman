@@ -5,6 +5,12 @@
 
 
 namespace logic {
+    struct PathNode {
+        int x, y;
+        logic::Moves firstMove;
+        int parentX, parentY;
+    };
+
     class GhostNavigator {
     public:
         [[nodiscard]] static bool sameDirection(Moves a, Moves b) ;

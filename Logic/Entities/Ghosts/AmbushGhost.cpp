@@ -13,11 +13,12 @@ AmbushGhost::AmbushGhost(
 ) : GhostModel(normalizedX, normalizedY, mapWidth, mapHeight, cooldown) {}
 
 
-Moves AmbushGhost::decideNextMove(const World &world, const PacmanModel &pacman) {
-    int targetX = pacman.getGridX();
-    int targetY = pacman.getGridY();
+Moves AmbushGhost::decideNextMove(const World &world) {
+    const std::shared_ptr<PacmanModel> pacman = world.getPacman();
+    int targetX = pacman->getGridX();
+    int targetY = pacman->getGridY();
 
-    switch(pacman.getDirection()) {
+    switch(pacman->getDirection()) {
         case Moves::UP:    targetY -= 2; break;
         case Moves::DOWN:  targetY += 2; break;
         case Moves::LEFT:  targetX -= 2; break;

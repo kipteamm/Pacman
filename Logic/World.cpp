@@ -166,7 +166,6 @@ void World::startFrightened() {
 
     for (const auto& ghost : ghosts) {
         ghost->setFrightened(true, *this);
-        ghost->notify(Events::GHOST_FRIGHTENED);
     }
 
     notify(Events::GHOST_FRIGHTENED);
@@ -223,8 +222,7 @@ void World::updateGhosts(const double dt) {
         if (!isColliding(*pacman, *ghost)) continue;
         collissionCoordinates = {ghost->getX(), ghost->getY()};
 
-        const Events event = ghost->pacmanCollides(*this);
-        notify(event);
+        ghost->pacmanCollides(*this);
     }
 }
 

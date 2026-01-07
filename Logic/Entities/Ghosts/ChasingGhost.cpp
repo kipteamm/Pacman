@@ -14,9 +14,11 @@ ChasingGhost::ChasingGhost(
 ) : GhostModel(normalizedX, normalizedY, mapWidth, mapHeight, cooldown) {}
 
 
-Moves ChasingGhost::decideNextMove(const World &world, const PacmanModel &pacman) {
-    const int targetX = pacman.getGridX();
-    const int targetY = pacman.getGridY();
+Moves ChasingGhost::decideNextMove(const World &world) {
+    const std::shared_ptr<PacmanModel> pacman = world.getPacman();
+
+    const int targetX = pacman->getGridX();
+    const int targetY = pacman->getGridY();
 
     return GhostNavigator::minimizeDistance(world, *this, targetX, targetY);
 }
