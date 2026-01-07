@@ -2,6 +2,7 @@
 #define CONCRETEFACTORY_H
 
 #include <unordered_map>
+#include <vector>
 
 #include "../../Logic/Entities/AbstractFactory.h"
 #include "EntityView.h"

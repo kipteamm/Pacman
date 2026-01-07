@@ -15,6 +15,10 @@ bool GhostNavigator::sameDirection(const Moves a, const Moves b) {
 bool GhostNavigator::isAtIntersection(const World &world, const GhostModel& ghost) {
     for (int i = Moves::UP; i <= Moves::DOWN; i++) {
         const Moves move = static_cast<Moves>(i);
+
+        // A Ghost is at an intersection when there are more directions than
+        // just ahead and where it came from. To determine these we use
+        // collission detection.
         if (sameDirection(move, ghost.getDirection())) continue;
 
         int moveX = ghost.getGridX();
@@ -31,6 +35,9 @@ bool GhostNavigator::isAtIntersection(const World &world, const GhostModel& ghos
             moveY++; break;
         }
 
+        // Check whether the simulated move collides with a wall. If at least
+        // one other direction is found, this function can return True and
+        // there is no need for checking the remaining direction.
         if (!world.collidesWithWall(
             world.normalizeX(moveX),
             world.normalizeY(moveY),
@@ -78,59 +85,6 @@ std::vector<Moves> GhostNavigator::getPossibleMoves(const World &world, const Gh
 }
 
 
-template <typename Scorer>
-Moves GhostNavigator::selectBestMove(const World& world, const GhostModel& ghost, const int targetX, const int targetY, Scorer scoreFunc) {
-    const std::vector<Moves> options = getPossibleMoves(world, ghost);
-    if (options.empty()) return ghost.getDirection();
-
-    std::vector<Moves> bestCandidates;
-    // We use a double or float to be flexible with scoring math
-    double bestScore = -1.0;
-
-    for (const Moves move : options) {
-        int nextX = ghost.getGridX();
-        int nextY = ghost.getGridY();
-
-        if (move == Moves::UP) nextY--;
-        else if (move == Moves::DOWN) nextY++;
-        else if (move == Moves::LEFT) nextX--;
-        else if (move == Moves::RIGHT) nextX++;
-
-        int dist = std::abs(nextX - targetX) + std::abs(nextY - targetY);
-        const double currentScore = scoreFunc(dist);
-
-        if (bestCandidates.empty() || currentScore > bestScore) {
-            bestScore = currentScore;
-            bestCandidates.clear();
-            bestCandidates.push_back(move);
-        } else if (std::abs(currentScore - bestScore) < 0.001) {
-            bestCandidates.push_back(move);
-        }
-    }
-    return bestCandidates[Random::getInstance().getInt(0, bestCandidates.size() - 1)];
-}
-
-Moves GhostNavigator::maximizeDistance(const World& world, const GhostModel& ghost) {
-    return selectBestMove(
-        world,
-        ghost,
-        world.getPacman()->getGridX(),
-        world.getPacman()->getGridY(),
-        [](const int d) { return static_cast<double>(d); }
-    );
-}
-
-Moves GhostNavigator::minimizeDistance(const World& world, const GhostModel& ghost, const int targetX, const int targetY) {
-    return selectBestMove(
-        world,
-        ghost,
-        targetX,
-        targetY,
-        [](const int d) { return -1.0 * d; }
-    );
-}
-
-
 std::list<Moves> GhostNavigator::findPathToSpawn(const World& world, const GhostModel& ghost) {
     const int width = static_cast<int>(world.getWidth());
     const int height = static_cast<int>(world.getHeight());
@@ -142,6 +96,7 @@ std::list<Moves> GhostNavigator::findPathToSpawn(const World& world, const Ghost
     q.emplace(ghost.getGridX(), ghost.getGridY());
     visited[ghost.getGridX()][ghost.getGridY()] = true;
 
+    // TODO explain this
     while (!q.empty()) {
         auto [cx, cy] = q.front(); q.pop();
         if (cx == ghost.getGridSpawnX() && cy == ghost.getGridSpawnY()) break;
@@ -166,6 +121,8 @@ std::list<Moves> GhostNavigator::findPathToSpawn(const World& world, const Ghost
     int currentY = ghost.getGridSpawnY();
     std::list<Moves> cachedPath;
 
+    // Generate a list of concrete moves from the end moving back towards the
+    // starting position.
     while (currentX != ghost.getGridX() || currentY != ghost.getGridY()) {
         Moves move = comeFromMap[currentX][currentY];
         cachedPath.push_front(move);
@@ -179,4 +136,60 @@ std::list<Moves> GhostNavigator::findPathToSpawn(const World& world, const Ghost
     }
 
     return cachedPath;
+}
+
+
+Moves GhostNavigator::maximizeDistance(const World& world, const GhostModel& ghost) {
+    return selectBestMove(
+        world,
+        ghost,
+        world.getPacman()->getGridX(),
+        world.getPacman()->getGridY(),
+        [](const int d) { return static_cast<double>(d); }
+    );
+}
+
+Moves GhostNavigator::minimizeDistance(const World& world, const GhostModel& ghost, const int targetX, const int targetY) {
+    return selectBestMove(
+        world,
+        ghost,
+        targetX,
+        targetY,
+        [](const int d) { return -1.0 * d; }
+    );
+}
+
+template <typename Scorer>
+Moves GhostNavigator::selectBestMove(const World& world, const GhostModel& ghost, const int targetX, const int targetY, Scorer scoreFunc) {
+    const std::vector<Moves> options = getPossibleMoves(world, ghost);
+    if (options.empty()) return ghost.getDirection();
+
+    std::vector<Moves> bestCandidates;
+    double bestScore = -1.0;
+
+    // Simulate all possible moves and calculate their respective Manhattan
+    // distances. Generate a list of all best Moves (multiple in case of ties)
+    // based on the provided scoreFunc.
+    for (const Moves move : options) {
+        int nextX = ghost.getGridX();
+        int nextY = ghost.getGridY();
+
+        if (move == Moves::UP) nextY--;
+        else if (move == Moves::DOWN) nextY++;
+        else if (move == Moves::LEFT) nextX--;
+        else if (move == Moves::RIGHT) nextX++;
+
+        int dist = std::abs(nextX - targetX) + std::abs(nextY - targetY);
+        const double currentScore = scoreFunc(dist);
+
+        if (bestCandidates.empty() || currentScore > bestScore) {
+            bestScore = currentScore;
+            bestCandidates.clear();
+            bestCandidates.push_back(move);
+        } else if (std::abs(currentScore - bestScore) < 0.001) {
+            bestCandidates.push_back(move);
+        }
+    }
+
+    return bestCandidates[Random::getInstance().getInt(0, bestCandidates.size() - 1)];
 }

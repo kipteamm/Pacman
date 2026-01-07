@@ -138,6 +138,38 @@ void GhostModel::respawn() {
 }
 
 
+bool GhostModel::gridTargetReached(const World& world) {
+    // These are teleport checks. Only relevant on maps that allow ghosts to
+    // "exit" the map. For instance the typical Pacman map with tunnels.
+    if (gridX == 0) {
+        gridX = static_cast<int>(mapWidth) - 1;
+        x = world.normalizeX(gridX);
+
+        return true;
+    }
+
+    if (gridX == static_cast<int>(mapWidth)) {
+        gridX = 1;
+        x = world.normalizeX(gridX);
+
+        return true;
+    }
+
+    // If not teleporting, update position as would be normal.
+    x = targetX;
+    y = targetY;
+
+    switch(direction) {
+        case Moves::LEFT:  gridX--; break;
+        case Moves::RIGHT: gridX++; break;
+        case Moves::UP:    gridY--; break;
+        case Moves::DOWN:  gridY++; break;
+    }
+
+    return false;
+}
+
+
 void GhostModel::updateWaiting(const World& world, const double dt) {
     // Track how long we have been waiting. If this surpasses the cooldown, the
     // Ghost state changes to EXITING, allowing the Ghost to start moving and
@@ -154,7 +186,7 @@ void GhostModel::updateExiting(const World& world) {
     // Early return if we have not yet reached the target.
     if (std::abs(x - targetX) >= TARGET_EPSILON || std::abs(y - targetY) >= TARGET_EPSILON) return;
     gridTargetReached(world);
-    updateGridTarget();
+    normalizeTarget();
 
     if (gridX == world.getGhostExitX() && gridY == world.getGhostExitY()) {
         state = GhostState::CHASING;
@@ -173,7 +205,7 @@ void GhostModel::updateExiting(const World& world) {
 void GhostModel::updateChasing(const World& world) {
     if (std::abs(x - targetX) >= TARGET_EPSILON || std::abs(y - targetY) >= TARGET_EPSILON) return;
     gridTargetReached(world);
-    updateGridTarget();
+    normalizeTarget();
 
     if (!GhostNavigator::isAtIntersection(world, *this)) return;
 
@@ -195,7 +227,7 @@ void GhostModel::updateDead(const World& world) {
     // Early return if we have not yet reached the target.
     if (std::abs(x - targetX) >= TARGET_EPSILON || std::abs(y - targetY) >= TARGET_EPSILON) return;
     gridTargetReached(world);
-    updateGridTarget();
+    normalizeTarget();
 
     if (gridX == gridSpawnX && gridY == gridSpawnY) return respawn();
 
@@ -205,11 +237,8 @@ void GhostModel::updateDead(const World& world) {
     // are in the passageway below or above it, the Manhattan distance would be
     // the same.
     if (cachedPath.empty()) cachedPath = GhostNavigator::findPathToSpawn(world, *this);
-    const bool notify = direction != cachedPath.front();
-
     direction = cachedPath.front();
     cachedPath.pop_front();
 
-    if (!notify) return;
-    this->notify(Events::DIRECTION_CHANGED);
+    notify(Events::DIRECTION_CHANGED);
 }

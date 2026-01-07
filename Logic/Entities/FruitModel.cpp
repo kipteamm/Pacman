@@ -1,7 +1,3 @@
-//
-// Created by PPetre on 12/12/2025.
-//
-
 #include "FruitModel.h"
 
 using namespace logic;

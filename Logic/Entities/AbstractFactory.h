@@ -15,6 +15,7 @@ namespace logic {
     public:
         virtual ~AbstractFactory() = default;
 
+        // TODO: how to document abstract factory
         virtual std::shared_ptr<PacmanModel> createPacMan(float x, float y, float mapWidth, float mapHeight) = 0;
         virtual std::shared_ptr<ChasingGhost> createBlinky(float x, float y, float mapWidth, float mapHeight) = 0;
         virtual std::shared_ptr<AmbushGhost> createPinky(float x, float y, float mapWidth, float mapHeight) = 0;

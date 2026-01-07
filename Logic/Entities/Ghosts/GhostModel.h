@@ -143,6 +143,18 @@ namespace logic {
 
     private:
         /**
+         * @brief This function should be called when the MovingEntity has
+         * reached its targetX and targetY values (within a certain Epsilon).
+         *
+         * It keeps the grid coordinates up to date and possibly teleports the
+         * Ghost when it 'exits' the map via tunnels/portals.
+         *
+         * @param world World
+         * @return Whether Pacman continues down its current direction.
+         */
+        bool gridTargetReached(const World& world) override;
+
+        /**
          * @brief Checks whether the Ghost has surpassed its cooldown and may
          * leave its enclosure.
          * @param world World

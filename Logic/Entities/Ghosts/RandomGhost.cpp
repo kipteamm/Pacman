@@ -1,8 +1,8 @@
+#include <algorithm>
+
 #include "GhostNavigator.h"
 #include "../../Random.h"
 #include "RandomGhost.h"
-
-#include <algorithm>
 
 using namespace logic;
 

@@ -1,10 +1,8 @@
-#include "PacmanModel.h"
-#include "../World.h"
 #include <cmath>
-#include <iostream>
 
 #include "../Difficulty.h"
-
+#include "PacmanModel.h"
+#include "../World.h"
 
 using namespace logic;
 
@@ -37,64 +35,64 @@ void PacmanModel::setNextDirection(const Moves& move) {
     this->notify(Events::DIRECTION_CHANGED);
 }
 
-bool PacmanModel::canMoveInDirection(const World& world, const Moves dir) const {
-    int newGridX = gridX;
-    int newGridY = gridY;
-    
-    switch(dir) {
-        case Moves::LEFT:  newGridX--; break;
-        case Moves::RIGHT: newGridX++; break;
-        case Moves::UP:    newGridY--; break;
-        case Moves::DOWN:  newGridY++; break;
-    }
-    
-    const float normalizedX = (static_cast<float>(newGridX) + 0.5f) / mapWidth * 2.0f - 1.0f;
-    const float normalizedY = (static_cast<float>(newGridY) + 0.5f) / mapHeight * 2.0f - 1.0f;
 
-    return !world.collidesWithWall(normalizedX, normalizedY, false);
+bool PacmanModel::gridTargetReached(const World& world) {
+    // If there is a buffered direction that is different from the current
+    // direction and Pacman can move in this direction, we update the
+    // current direction to be the buffered direction.
+    if (nextDirection != direction && canMoveInDirection(world, nextDirection)) {
+        direction = nextDirection;
+        this->notify(Events::DIRECTION_CHANGED);
+    }
+
+    // These are teleport checks. Only relevant on maps that allow ghosts to
+    // "exit" the map. For instance the typical Pacman map with tunnels.
+    if (gridX == 0) {
+        gridX = static_cast<int>(mapWidth) - 1;
+        x = world.normalizeX(gridX);
+
+        normalizeTarget();
+        return false;
+    }
+
+    if (gridX == static_cast<int>(mapWidth)) {
+        gridX = 1;
+        x = world.normalizeX(gridX);
+
+        normalizeTarget();
+        return false;
+    }
+
+    if (!canMoveInDirection(world, direction)) {
+        x = targetX;
+        y = targetY;
+
+        if (!moving) return false;
+        moving = false;
+        notify(Events::ISMOVING_CHANGED);
+
+        return false;
+    }
+
+    switch(direction) {
+        case Moves::LEFT:  gridX--; break;
+        case Moves::RIGHT: gridX++; break;
+        case Moves::UP:    gridY--; break;
+        case Moves::DOWN:  gridY++; break;
+    }
+
+    normalizeTarget();
+    return true;
 }
 
+
+
 void PacmanModel::move(const World& world, const float dt) {
+    // Target reached
     if (std::abs(x - targetX) < TARGET_EPSILON && std::abs(y - targetY) < TARGET_EPSILON) {
-        if (nextDirection != direction && canMoveInDirection(world, nextDirection)) {
-            direction = nextDirection;
-            this->notify(Events::DIRECTION_CHANGED);
-        }
-
-        if (gridX == 0) {
-            gridX = static_cast<int>(mapWidth) - 1;
-            x = world.normalizeX(gridX);
-
-            return updateGridTarget();
-        }
-
-        if (gridX == static_cast<int>(mapWidth)) {
-            gridX = 1;
-            x = world.normalizeX(gridX);
-
-            return updateGridTarget();
-        }
-
-        // Target reached
-        if (!canMoveInDirection(world, direction)) {
-            x = targetX;
-            y = targetY;
-
-            if (!moving) return;
-            moving = false;
-            notify(Events::ISMOVING_CHANGED);
-
-            return;
-        }
-
-        switch(direction) {
-            case Moves::LEFT:  gridX--; break;
-            case Moves::RIGHT: gridX++; break;
-            case Moves::UP:    gridY--; break;
-            case Moves::DOWN:  gridY++; break;
-        }
-
-        updateGridTarget();
+        // If the Pacman does not continue down its current direction, I return
+        // as moving does not make sense.
+        if (!gridTargetReached(world)) return;
     }
 
     const float moveDistance = speed * dt;
@@ -111,7 +109,8 @@ void PacmanModel::move(const World& world, const float dt) {
         const float sign = (dy > 0) ? 1.0f : -1.0f;
         y += sign * std::min(moveDistance * normalizedHeightPerCell, std::abs(dy));
     }
-    
+
+    // Snap to the grid position if we are within TARGET_EPSILON distance.
     if (std::abs(x - targetX) < TARGET_EPSILON) x = targetX;
     if (std::abs(y - targetY) < TARGET_EPSILON) y = targetY;
     if (moving) return;
@@ -135,4 +134,23 @@ void PacmanModel::respawn() {
 
     moving = true;
     notify(Events::RESPAWN);
+}
+
+
+bool PacmanModel::canMoveInDirection(const World& world, const Moves direction) const {
+    int newGridX = gridX;
+    int newGridY = gridY;
+
+    switch(direction) {
+        case Moves::LEFT:  newGridX--; break;
+        case Moves::RIGHT: newGridX++; break;
+        case Moves::UP:    newGridY--; break;
+        case Moves::DOWN:  newGridY++; break;
+    }
+
+    return !world.collidesWithWall(
+        world.normalizeX(newGridX),
+        world.normalizeY(newGridY),
+        false
+    );
 }
