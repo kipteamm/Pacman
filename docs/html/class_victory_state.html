@@ -120,9 +120,12 @@ Collaboration diagram for VictoryState:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:af63f6cc6fbbe77e0059f547a95fa1591" id="r_af63f6cc6fbbe77e0059f547a95fa1591"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af63f6cc6fbbe77e0059f547a95fa1591">VictoryState</a> (<a class="el" href="class_state_manager.html">StateManager</a> &amp;<a class="el" href="class_state.html#a9de31f1ce45c89c183bb929122eb9acb">context</a>)</td></tr>
 <tr class="memdesc:af63f6cc6fbbe77e0059f547a95fa1591"><td class="mdescLeft">&#160;</td><td class="mdescRight">This <a class="el" href="class_state.html">State</a> determines the Victory menu at the end of a single Pacman level.  <br /></td></tr>
-<tr class="memitem:a0309c9c6668dd1f9a6ed0a58c0217871" id="r_a0309c9c6668dd1f9a6ed0a58c0217871"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0309c9c6668dd1f9a6ed0a58c0217871">update</a> (double dt) override</td></tr>
 <tr class="memitem:a40f5a4edb114f00014ecf856e8e1c22e" id="r_a40f5a4edb114f00014ecf856e8e1c22e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a40f5a4edb114f00014ecf856e8e1c22e">handleInput</a> (const sf::Event::KeyEvent &amp;keyPressed) override</td></tr>
 <tr class="memdesc:a40f5a4edb114f00014ecf856e8e1c22e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Will load the next level regardless of what key was pressed.  <br /></td></tr>
+<tr class="memitem:ab3f694154617b5e1409dbe7fc0b3c921" id="r_ab3f694154617b5e1409dbe7fc0b3c921"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab3f694154617b5e1409dbe7fc0b3c921">resized</a> () override</td></tr>
+<tr class="memdesc:ab3f694154617b5e1409dbe7fc0b3c921"><td class="mdescLeft">&#160;</td><td class="mdescRight">Will resize the contents of the Victory state.  <br /></td></tr>
+<tr class="memitem:a0309c9c6668dd1f9a6ed0a58c0217871" id="r_a0309c9c6668dd1f9a6ed0a58c0217871"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0309c9c6668dd1f9a6ed0a58c0217871">update</a> (double dt) override</td></tr>
+<tr class="memdesc:a0309c9c6668dd1f9a6ed0a58c0217871"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is used for UI animations.  <br /></td></tr>
 <tr class="memitem:a7f9c4d40c8a336329c58e47e933e0b47" id="r_a7f9c4d40c8a336329c58e47e933e0b47"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7f9c4d40c8a336329c58e47e933e0b47">render</a> () override</td></tr>
 <tr class="memdesc:a7f9c4d40c8a336329c58e47e933e0b47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders the Victory <a class="el" href="class_state.html">State</a>.  <br /></td></tr>
 <tr class="inherit_header pub_methods_class_state"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_class_state')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="class_state.html">State</a></td></tr>
@@ -235,6 +238,35 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a id="ab3f694154617b5e1409dbe7fc0b3c921" name="ab3f694154617b5e1409dbe7fc0b3c921"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3f694154617b5e1409dbe7fc0b3c921">&#9670;&#160;</a></span>resized()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void VictoryState::resized </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Will resize the contents of the Victory state. </p>
+
+<p>Implements <a class="el" href="class_state.html#a9a8a87b7298203baf5e7e760b2b95a68">State</a>.</p>
+
+</div>
+</div>
 <a id="a0309c9c6668dd1f9a6ed0a58c0217871" name="a0309c9c6668dd1f9a6ed0a58c0217871"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0309c9c6668dd1f9a6ed0a58c0217871">&#9670;&#160;</a></span>update()</h2>
 
@@ -253,11 +285,12 @@ Additional Inherited Members</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>@bief Update function that is called in the main <a class="el" href="class_game.html">Game</a> loop.</p>
+
+<p>This is used for UI animations. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">dt</td><td>Deltatime </td></tr>

@@ -96,28 +96,14 @@ $(function(){initNavTree('struct_game_context.html','','struct_game_context-memb
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:afdf5d2ffca6527325c758ac084511455" id="r_afdf5d2ffca6527325c758ac084511455"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="class_concrete_factory.html">ConcreteFactory</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afdf5d2ffca6527325c758ac084511455">factory</a></td></tr>
 <tr class="memitem:a71bbe4645becbffc85188361f8f5bd05" id="r_a71bbe4645becbffc85188361f8f5bd05"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classlogic_1_1_score.html">logic::Score</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a71bbe4645becbffc85188361f8f5bd05">scoreSystem</a></td></tr>
 <tr class="memitem:ac0a6c91cc263d754fe99071b5b28ab51" id="r_ac0a6c91cc263d754fe99071b5b28ab51"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="class_sound_manager.html">SoundManager</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac0a6c91cc263d754fe99071b5b28ab51">soundManager</a></td></tr>
+<tr class="memitem:a43f41cedeaf0fe5f196ab275e73ec624" id="r_a43f41cedeaf0fe5f196ab275e73ec624"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a43f41cedeaf0fe5f196ab275e73ec624">username</a></td></tr>
 <tr class="memitem:a6deaaa31905458d5496432ebe8bfb598" id="r_a6deaaa31905458d5496432ebe8bfb598"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6deaaa31905458d5496432ebe8bfb598">lives</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Struct used to hold constants throughout the states. This struct is owned by the <a class="el" href="class_state_manager.html">StateManager</a> and used by states to get access to its members. This way I can avoid recreating them, when one instance is enough. By giving ownership to the <a class="el" href="class_state_manager.html">StateManager</a> I can give it a simple getter, saving me from having to pass around a lot of arguments to different states. </p>
 </div><a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
-<a id="afdf5d2ffca6527325c758ac084511455" name="afdf5d2ffca6527325c758ac084511455"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afdf5d2ffca6527325c758ac084511455">&#9670;&#160;</a></span>factory</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::shared_ptr&lt;<a class="el" href="class_concrete_factory.html">ConcreteFactory</a>&gt; GameContext::factory</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a6deaaa31905458d5496432ebe8bfb598" name="a6deaaa31905458d5496432ebe8bfb598"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6deaaa31905458d5496432ebe8bfb598">&#9670;&#160;</a></span>lives</h2>
 
@@ -154,6 +140,20 @@ Public Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">std::shared_ptr&lt;<a class="el" href="class_sound_manager.html">SoundManager</a>&gt; GameContext::soundManager</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a43f41cedeaf0fe5f196ab275e73ec624" name="a43f41cedeaf0fe5f196ab275e73ec624"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43f41cedeaf0fe5f196ab275e73ec624">&#9670;&#160;</a></span>username</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string GameContext::username</td>
         </tr>
       </table>
 </div><div class="memdoc">

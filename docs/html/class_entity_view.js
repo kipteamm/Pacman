@@ -1,8 +1,9 @@
 var class_entity_view =
 [
     [ "EntityView", "class_entity_view.html#a9c92414ec58c2511b43e02ad827e717b", null ],
-    [ "getFrameIndex", "class_entity_view.html#a5052ee0e188d9e3e624cf7996ded9af6", null ],
+    [ "getFrameIndex", "class_entity_view.html#a5580ca8e8e4ed64cd883bfbdffc41238", null ],
     [ "render", "class_entity_view.html#adf2869ddecd4e3f5bf1ae25684b2ee61", null ],
+    [ "resized", "class_entity_view.html#a531a25ee050d86f646aef31658786f1f", null ],
     [ "shouldDelete", "class_entity_view.html#a3a163d4781bde3d7d38be65d5fe1920c", null ],
     [ "elapsedTime", "class_entity_view.html#a43665858104eca1ef3b645da90ed2611", null ],
     [ "frameDuration", "class_entity_view.html#aea9fe4f4b1f0f0dd5304de4a18fe365c", null ],

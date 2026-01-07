@@ -112,6 +112,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a35055c04498121d39741bfcd5082705b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Close the window and destroy all the attached resources.  <br /></td></tr>
 <tr class="memitem:ad2d74b36b23465aaf39c47e6bc230da1" id="r_ad2d74b36b23465aaf39c47e6bc230da1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad2d74b36b23465aaf39c47e6bc230da1">setFramerateLimit</a> (unsigned int frameRate)</td></tr>
 <tr class="memdesc:ad2d74b36b23465aaf39c47e6bc230da1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Limit the framerate to a maximum fixed frequency.  <br /></td></tr>
+<tr class="memitem:ad4d2842c96fb1fd975ce38c2a241078e" id="r_ad4d2842c96fb1fd975ce38c2a241078e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad4d2842c96fb1fd975ce38c2a241078e">setView</a> (const sf::View &amp;view)</td></tr>
+<tr class="memdesc:ad4d2842c96fb1fd975ce38c2a241078e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change the current active view.  <br /></td></tr>
 <tr class="memitem:aba43b0511b05fc2a90f86f9737d8f434" id="r_aba43b0511b05fc2a90f86f9737d8f434"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aba43b0511b05fc2a90f86f9737d8f434">getWidth</a> () const</td></tr>
 <tr class="memdesc:aba43b0511b05fc2a90f86f9737d8f434"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the width of the rendering region of the window. This does not include the borders of the window.  <br /></td></tr>
 <tr class="memitem:aa017b94c100e1953c13f7a9d1e411ef9" id="r_aa017b94c100e1953c13f7a9d1e411ef9"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa017b94c100e1953c13f7a9d1e411ef9">getHeight</a> () const</td></tr>
@@ -424,6 +426,32 @@ Static Public Member Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">frameRate</td><td>Framerate limit, in frames per seconds (use 0 to disable limit). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad4d2842c96fb1fd975ce38c2a241078e" name="ad4d2842c96fb1fd975ce38c2a241078e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4d2842c96fb1fd975ce38c2a241078e">&#9670;&#160;</a></span>setView()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Window::setView </td>
+          <td>(</td>
+          <td class="paramtype">const sf::View &amp;</td>          <td class="paramname"><span class="paramname"><em>view</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Change the current active view. </p>
+<p>The view is like a 2D camera, it controls which part of the 2D scene is visible, and how it is viewed in the render target. The new view will affect everything that is drawn, until another view is set. The render target keeps its own copy of the view object, so it is not necessary to keep the original one alive after calling this function. To restore the original view of the target, you can pass the result of getDefaultView() to this function.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">view</td><td>New view to use </td></tr>
   </table>
   </dd>
 </dl>

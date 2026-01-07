@@ -92,13 +92,16 @@ $(function(){initNavTree('classlogic_1_1_abstract_factory.html','','classlogic_1
 </div><!--header-->
 <div class="contents">
 
+<p>Interface for creating game entities.  
+ <a href="#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_abstract_factory_8h_source.html">AbstractFactory.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for logic::AbstractFactory:</div>
 <div class="dyncontent">
 <div class="center"><img src="classlogic_1_1_abstract_factory__inherit__graph.png" border="0" usemap="#alogic_1_1_abstract_factory_inherit__map" loading="lazy" alt="Inheritance graph"/></div>
 <map name="alogic_1_1_abstract_factory_inherit__map" id="alogic_1_1_abstract_factory_inherit__map">
-<area shape="rect" title=" " alt="" coords="5,5,155,32"/>
+<area shape="rect" title="Interface for creating game entities." alt="" coords="5,5,155,32"/>
 <area shape="rect" href="class_concrete_factory.html" title=" " alt="" coords="21,80,139,107"/>
 <area shape="poly" title=" " alt="" coords="82,46,83,81,77,79,78,50"/>
 </map>
@@ -108,15 +111,26 @@ Inheritance diagram for logic::AbstractFactory:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a391dc2c32c339bb7841b7e41aef2fba5" id="r_a391dc2c32c339bb7841b7e41aef2fba5"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a391dc2c32c339bb7841b7e41aef2fba5">~AbstractFactory</a> ()=default</td></tr>
 <tr class="memitem:a92c7a48371db61cad9311f518a543517" id="r_a92c7a48371db61cad9311f518a543517"><td class="memItemLeft" align="right" valign="top">virtual std::shared_ptr&lt; <a class="el" href="classlogic_1_1_pacman_model.html">PacmanModel</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a92c7a48371db61cad9311f518a543517">createPacMan</a> (float x, float y, float mapWidth, float mapHeight)=0</td></tr>
+<tr class="memdesc:a92c7a48371db61cad9311f518a543517"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a Pacman entity.  <br /></td></tr>
 <tr class="memitem:aa6b1403ef13b4b8d060efd7334b2f44e" id="r_aa6b1403ef13b4b8d060efd7334b2f44e"><td class="memItemLeft" align="right" valign="top">virtual std::shared_ptr&lt; <a class="el" href="classlogic_1_1_chasing_ghost.html">ChasingGhost</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa6b1403ef13b4b8d060efd7334b2f44e">createBlinky</a> (float x, float y, float mapWidth, float mapHeight)=0</td></tr>
+<tr class="memdesc:aa6b1403ef13b4b8d060efd7334b2f44e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="classlogic_1_1_chasing_ghost.html">ChasingGhost</a> entity (Blinky's chasing personality).  <br /></td></tr>
 <tr class="memitem:ab5743d48ea66970745a62b86f0cdcae7" id="r_ab5743d48ea66970745a62b86f0cdcae7"><td class="memItemLeft" align="right" valign="top">virtual std::shared_ptr&lt; <a class="el" href="classlogic_1_1_ambush_ghost.html">AmbushGhost</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab5743d48ea66970745a62b86f0cdcae7">createPinky</a> (float x, float y, float mapWidth, float mapHeight)=0</td></tr>
+<tr class="memdesc:ab5743d48ea66970745a62b86f0cdcae7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="classlogic_1_1_ambush_ghost.html">AmbushGhost</a> entity (Pinky's chasing personality).  <br /></td></tr>
 <tr class="memitem:aa29bbed65146e5a6f20f3afb0cbed6e7" id="r_aa29bbed65146e5a6f20f3afb0cbed6e7"><td class="memItemLeft" align="right" valign="top">virtual std::shared_ptr&lt; <a class="el" href="classlogic_1_1_ambush_ghost.html">AmbushGhost</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa29bbed65146e5a6f20f3afb0cbed6e7">createInky</a> (float x, float y, float mapWidth, float mapHeight)=0</td></tr>
+<tr class="memdesc:aa29bbed65146e5a6f20f3afb0cbed6e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="classlogic_1_1_ambush_ghost.html">AmbushGhost</a> entity (Inky's chasing personality).  <br /></td></tr>
 <tr class="memitem:ad4f43b46a628d1b402b77da1fc764971" id="r_ad4f43b46a628d1b402b77da1fc764971"><td class="memItemLeft" align="right" valign="top">virtual std::shared_ptr&lt; <a class="el" href="classlogic_1_1_random_ghost.html">RandomGhost</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad4f43b46a628d1b402b77da1fc764971">createClyde</a> (float x, float y, float mapWidth, float mapHeight)=0</td></tr>
+<tr class="memdesc:ad4f43b46a628d1b402b77da1fc764971"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="classlogic_1_1_random_ghost.html">RandomGhost</a> entity (Clyde's chasing personality).  <br /></td></tr>
 <tr class="memitem:a24bddc3b28d23f219cdf5c78fb965dde" id="r_a24bddc3b28d23f219cdf5c78fb965dde"><td class="memItemLeft" align="right" valign="top">virtual std::shared_ptr&lt; <a class="el" href="classlogic_1_1_wall_model.html">WallModel</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a24bddc3b28d23f219cdf5c78fb965dde">createWall</a> (float x, float y, char type)=0</td></tr>
+<tr class="memdesc:a24bddc3b28d23f219cdf5c78fb965dde"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a Wall entity.  <br /></td></tr>
 <tr class="memitem:ad2b6e02006284a4f8eb4baa967637ff7" id="r_ad2b6e02006284a4f8eb4baa967637ff7"><td class="memItemLeft" align="right" valign="top">virtual std::shared_ptr&lt; <a class="el" href="classlogic_1_1_coin_model.html">CoinModel</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad2b6e02006284a4f8eb4baa967637ff7">createCoin</a> (float x, float y)=0</td></tr>
+<tr class="memdesc:ad2b6e02006284a4f8eb4baa967637ff7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a Coin entity.  <br /></td></tr>
 <tr class="memitem:a33d41adc2b9ee8a25fec69e6d3e13bdc" id="r_a33d41adc2b9ee8a25fec69e6d3e13bdc"><td class="memItemLeft" align="right" valign="top">virtual std::shared_ptr&lt; <a class="el" href="classlogic_1_1_fruit_model.html">FruitModel</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a33d41adc2b9ee8a25fec69e6d3e13bdc">createFruit</a> (float x, float y)=0</td></tr>
+<tr class="memdesc:a33d41adc2b9ee8a25fec69e6d3e13bdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a Fruit entity.  <br /></td></tr>
 </table>
-<a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Interface for creating game entities. </p>
+<p>Defines the contract that allows the <a class="el" href="classlogic_1_1_world.html">World</a> to create entities without depending on graphical implementations. </p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a391dc2c32c339bb7841b7e41aef2fba5" name="a391dc2c32c339bb7841b7e41aef2fba5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a391dc2c32c339bb7841b7e41aef2fba5">&#9670;&#160;</a></span>~AbstractFactory()</h2>
 
@@ -180,6 +194,18 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Creates a <a class="el" href="classlogic_1_1_chasing_ghost.html">ChasingGhost</a> entity (Blinky's chasing personality). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>Normalized initial x position </td></tr>
+    <tr><td class="paramname">y</td><td>Normalized initial y position </td></tr>
+    <tr><td class="paramname">mapWidth</td><td>Amount of horizontal tiles </td></tr>
+    <tr><td class="paramname">mapHeight</td><td>Amount of vertical tiles </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A shared pointer to the <a class="el" href="classlogic_1_1_chasing_ghost.html">ChasingGhost</a>. </dd></dl>
+
 <p>Implemented in <a class="el" href="class_concrete_factory.html#a66813dbe6892cef0aab915c699be49fe">ConcreteFactory</a>.</p>
 
 </div>
@@ -221,6 +247,18 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Creates a <a class="el" href="classlogic_1_1_random_ghost.html">RandomGhost</a> entity (Clyde's chasing personality). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>Normalized initial x position </td></tr>
+    <tr><td class="paramname">y</td><td>Normalized initial y position </td></tr>
+    <tr><td class="paramname">mapWidth</td><td>Amount of horizontal tiles </td></tr>
+    <tr><td class="paramname">mapHeight</td><td>Amount of vertical tiles </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A shared pointer to the <a class="el" href="classlogic_1_1_random_ghost.html">RandomGhost</a>. </dd></dl>
+
 <p>Implemented in <a class="el" href="class_concrete_factory.html#a1889b76ce9ad24ade0938c73a5d3470e">ConcreteFactory</a>.</p>
 
 </div>
@@ -252,6 +290,16 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Creates a Coin entity. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>Normalized initial x position </td></tr>
+    <tr><td class="paramname">y</td><td>Normalized initial y position </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A shared pointer to the Coin. </dd></dl>
+
 <p>Implemented in <a class="el" href="class_concrete_factory.html#a93d8f084fc8bbd7ae4251cd0ec789dbf">ConcreteFactory</a>.</p>
 
 </div>
@@ -282,6 +330,16 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Creates a Fruit entity. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>Normalized initial x position </td></tr>
+    <tr><td class="paramname">y</td><td>Normalized initial y position </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A shared pointer to the Fruit. </dd></dl>
 
 <p>Implemented in <a class="el" href="class_concrete_factory.html#a3359375a6a6022edc3aa911603b5c1dc">ConcreteFactory</a>.</p>
 
@@ -324,6 +382,18 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Creates a <a class="el" href="classlogic_1_1_ambush_ghost.html">AmbushGhost</a> entity (Inky's chasing personality). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>Normalized initial x position </td></tr>
+    <tr><td class="paramname">y</td><td>Normalized initial y position </td></tr>
+    <tr><td class="paramname">mapWidth</td><td>Amount of horizontal tiles </td></tr>
+    <tr><td class="paramname">mapHeight</td><td>Amount of vertical tiles </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A shared pointer to the <a class="el" href="classlogic_1_1_ambush_ghost.html">AmbushGhost</a>. </dd></dl>
+
 <p>Implemented in <a class="el" href="class_concrete_factory.html#ab8a2f15c82a5c7372c2ccf55df474172">ConcreteFactory</a>.</p>
 
 </div>
@@ -364,6 +434,18 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Creates a Pacman entity. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>Normalized initial x position </td></tr>
+    <tr><td class="paramname">y</td><td>Normalized initial y position </td></tr>
+    <tr><td class="paramname">mapWidth</td><td>Amount of horizontal tiles </td></tr>
+    <tr><td class="paramname">mapHeight</td><td>Amount of vertical tiles </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A shared pointer to the <a class="el" href="classlogic_1_1_pacman_model.html">PacmanModel</a>. </dd></dl>
 
 <p>Implemented in <a class="el" href="class_concrete_factory.html#ad27adc03b34b54f5d033f0f51a41edbf">ConcreteFactory</a>.</p>
 
@@ -406,6 +488,18 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Creates a <a class="el" href="classlogic_1_1_ambush_ghost.html">AmbushGhost</a> entity (Pinky's chasing personality). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>Normalized initial x position </td></tr>
+    <tr><td class="paramname">y</td><td>Normalized initial y position </td></tr>
+    <tr><td class="paramname">mapWidth</td><td>Amount of horizontal tiles </td></tr>
+    <tr><td class="paramname">mapHeight</td><td>Amount of vertical tiles </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A shared pointer to the <a class="el" href="classlogic_1_1_ambush_ghost.html">AmbushGhost</a>. </dd></dl>
+
 <p>Implemented in <a class="el" href="class_concrete_factory.html#a06286775ea970b5373965f7bc52c73ca">ConcreteFactory</a>.</p>
 
 </div>
@@ -441,6 +535,17 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Creates a Wall entity. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>Normalized initial x position </td></tr>
+    <tr><td class="paramname">y</td><td>Normalized initial y position </td></tr>
+    <tr><td class="paramname">type</td><td>Used by to determine the sprite of the view and whether the model is a door </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A shared pointer to the Wall. </dd></dl>
 
 <p>Implemented in <a class="el" href="class_concrete_factory.html#a95febfe91440eda48ddce03e062df401">ConcreteFactory</a>.</p>
 

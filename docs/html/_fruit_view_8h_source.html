@@ -91,36 +91,32 @@ $(function(){initNavTree('_fruit_view_8h_source.html','',''); });
   <div class="headertitle"><div class="title">FruitView.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="_fruit_view_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">//</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// Created by PPetre on 12/12/2025.</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">//</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#ifndef FRUITVIEW_H</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#define FRUITVIEW_H</span></div>
+<a href="_fruit_view_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef FRUITVIEW_H</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define FRUITVIEW_H</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="_fruit_model_8h.html">../../Logic/Entities/FruitModel.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="_entity_view_8h.html">EntityView.h</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="_fruit_model_8h.html">../../Logic/Entities/FruitModel.h</a>&quot;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="_entity_view_8h.html">EntityView.h</a>&quot;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="foldopen" id="foldopen00012" data-start="{" data-end="};">
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="class_fruit_view.html">   12</a></span><span class="keyword">class </span><a class="code hl_function" href="class_fruit_view.html#a522b425a1238f94f05c65a9a205308ac">FruitView</a> final : <span class="keyword">public</span> <a class="code hl_function" href="class_entity_view.html#a9c92414ec58c2511b43e02ad827e717b">EntityView</a> {</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00008" data-start="{" data-end="};">
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="class_fruit_view.html">    8</a></span><span class="keyword">class </span><a class="code hl_function" href="class_fruit_view.html#a522b425a1238f94f05c65a9a205308ac">FruitView</a> final : <span class="keyword">public</span> <a class="code hl_function" href="class_entity_view.html#a9c92414ec58c2511b43e02ad827e717b">EntityView</a> {</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">public</span>:</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="class_fruit_view.html#a522b425a1238f94f05c65a9a205308ac">FruitView</a>(<span class="keyword">const</span> std::shared_ptr&lt;logic::FruitModel&gt; &amp;<a class="code hl_variable" href="class_entity_view.html#a5d95738cd4f30a10597eea2e4e106a3a">model</a>);</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_fruit_view.html#ac7a9a7eecdd6fc2c8d0d4f1ab941eb88">update</a>(<a class="code hl_enumeration" href="namespacelogic.html#a5054eadf2d20b609706894ae1bc5f250">logic::Events</a> event) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>};</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keywordtype">void</span> update(<a class="code hl_enumeration" href="namespacelogic.html#a5054eadf2d20b609706894ae1bc5f250">logic::Events</a> event) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>};</div>
 </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#endif </span><span class="comment">//FRUITVIEW_H</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#endif </span><span class="comment">//FRUITVIEW_H</span></div>
 <div class="ttc" id="a_entity_view_8h_html"><div class="ttname"><a href="_entity_view_8h.html">EntityView.h</a></div></div>
 <div class="ttc" id="a_fruit_model_8h_html"><div class="ttname"><a href="_fruit_model_8h.html">FruitModel.h</a></div></div>
-<div class="ttc" id="aclass_entity_view_html_a5d95738cd4f30a10597eea2e4e106a3a"><div class="ttname"><a href="class_entity_view.html#a5d95738cd4f30a10597eea2e4e106a3a">EntityView::model</a></div><div class="ttdeci">std::shared_ptr&lt; logic::EntityModel &gt; model</div><div class="ttdef"><b>Definition</b> EntityView.h:23</div></div>
-<div class="ttc" id="aclass_entity_view_html_a9c92414ec58c2511b43e02ad827e717b"><div class="ttname"><a href="class_entity_view.html#a9c92414ec58c2511b43e02ad827e717b">EntityView::EntityView</a></div><div class="ttdeci">EntityView(const std::shared_ptr&lt; logic::EntityModel &gt; &amp;model, float frameDuration)</div><div class="ttdef"><b>Definition</b> EntityView.cpp:9</div></div>
-<div class="ttc" id="aclass_fruit_view_html_a522b425a1238f94f05c65a9a205308ac"><div class="ttname"><a href="class_fruit_view.html#a522b425a1238f94f05c65a9a205308ac">FruitView::FruitView</a></div><div class="ttdeci">FruitView(const std::shared_ptr&lt; logic::FruitModel &gt; &amp;model)</div><div class="ttdef"><b>Definition</b> FruitView.cpp:11</div></div>
-<div class="ttc" id="aclass_fruit_view_html_ac7a9a7eecdd6fc2c8d0d4f1ab941eb88"><div class="ttname"><a href="class_fruit_view.html#ac7a9a7eecdd6fc2c8d0d4f1ab941eb88">FruitView::update</a></div><div class="ttdeci">void update(logic::Events event) override</div><div class="ttdef"><b>Definition</b> FruitView.cpp:22</div></div>
-<div class="ttc" id="anamespacelogic_html_a5054eadf2d20b609706894ae1bc5f250"><div class="ttname"><a href="namespacelogic.html#a5054eadf2d20b609706894ae1bc5f250">logic::Events</a></div><div class="ttdeci">Events</div><div class="ttdef"><b>Definition</b> Observer.h:19</div></div>
+<div class="ttc" id="aclass_entity_view_html_a5d95738cd4f30a10597eea2e4e106a3a"><div class="ttname"><a href="class_entity_view.html#a5d95738cd4f30a10597eea2e4e106a3a">EntityView::model</a></div><div class="ttdeci">std::shared_ptr&lt; logic::EntityModel &gt; model</div><div class="ttdef"><b>Definition</b> EntityView.h:46</div></div>
+<div class="ttc" id="aclass_entity_view_html_a9c92414ec58c2511b43e02ad827e717b"><div class="ttname"><a href="class_entity_view.html#a9c92414ec58c2511b43e02ad827e717b">EntityView::EntityView</a></div><div class="ttdeci">EntityView(const std::shared_ptr&lt; logic::EntityModel &gt; &amp;model, float frameDuration)</div><div class="ttdef"><b>Definition</b> EntityView.cpp:6</div></div>
+<div class="ttc" id="aclass_fruit_view_html_a522b425a1238f94f05c65a9a205308ac"><div class="ttname"><a href="class_fruit_view.html#a522b425a1238f94f05c65a9a205308ac">FruitView::FruitView</a></div><div class="ttdeci">FruitView(const std::shared_ptr&lt; logic::FruitModel &gt; &amp;model)</div><div class="ttdoc">FruitView renders fruit.</div><div class="ttdef"><b>Definition</b> FruitView.cpp:7</div></div>
+<div class="ttc" id="anamespacelogic_html_a5054eadf2d20b609706894ae1bc5f250"><div class="ttname"><a href="namespacelogic.html#a5054eadf2d20b609706894ae1bc5f250">logic::Events</a></div><div class="ttdeci">Events</div><div class="ttdef"><b>Definition</b> Observer.h:14</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

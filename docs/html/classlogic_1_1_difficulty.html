@@ -98,13 +98,29 @@ $(function(){initNavTree('classlogic_1_1_difficulty.html','','classlogic_1_1_dif
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a5eb779852a724e71aa0a932dc1889ac6" id="r_a5eb779852a724e71aa0a932dc1889ac6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5eb779852a724e71aa0a932dc1889ac6">Difficulty</a> (Difficulty &amp;other)=delete</td></tr>
 <tr class="memitem:a5f6603da314696e31bc0a51fd7ca2d7b" id="r_a5f6603da314696e31bc0a51fd7ca2d7b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5f6603da314696e31bc0a51fd7ca2d7b">operator=</a> (const <a class="el" href="#a5eb779852a724e71aa0a932dc1889ac6">Difficulty</a> &amp;)=delete</td></tr>
+<tr class="memitem:a243b525965b1e4cb20307b0890e981f4" id="r_a243b525965b1e4cb20307b0890e981f4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a243b525965b1e4cb20307b0890e981f4">getFruitSpriteOffset</a> () const</td></tr>
+<tr class="memdesc:a243b525965b1e4cb20307b0890e981f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the sprite sheet offset for the fruit associated with the current difficulty level.  <br /></td></tr>
+<tr class="memitem:ae7b332b0f0feb1c45f949004b8922d78" id="r_ae7b332b0f0feb1c45f949004b8922d78"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae7b332b0f0feb1c45f949004b8922d78">getFruitPoints</a> () const</td></tr>
+<tr class="memdesc:ae7b332b0f0feb1c45f949004b8922d78"><td class="mdescLeft">&#160;</td><td class="mdescRight">The point value differs per difficulty level. As per the original game. <a href="https://pacman.fandom.com/wiki/Point_Configurations">https://pacman.fandom.com/wiki/Point_Configurations</a>.  <br /></td></tr>
+<tr class="memitem:a93e63b3e4d483f50c0ae3f15ee9c7e35" id="r_a93e63b3e4d483f50c0ae3f15ee9c7e35"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a93e63b3e4d483f50c0ae3f15ee9c7e35">getPacmanSpeed</a> () const</td></tr>
+<tr class="memdesc:a93e63b3e4d483f50c0ae3f15ee9c7e35"><td class="mdescLeft">&#160;</td><td class="mdescRight">The speed of Pacman is different on some levels.  <br /></td></tr>
+<tr class="memitem:a6bb542bfca311567a340d999b516ff53" id="r_a6bb542bfca311567a340d999b516ff53"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6bb542bfca311567a340d999b516ff53">getGhostSpeed</a> () const</td></tr>
+<tr class="memdesc:a6bb542bfca311567a340d999b516ff53"><td class="mdescLeft">&#160;</td><td class="mdescRight">The speed of the Ghosts is different on some levels.  <br /></td></tr>
+<tr class="memitem:a920167893b23c7655bc1c2bdd214a96e" id="r_a920167893b23c7655bc1c2bdd214a96e"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a920167893b23c7655bc1c2bdd214a96e">getFrighenedGhostSpeed</a> () const</td></tr>
+<tr class="memdesc:a920167893b23c7655bc1c2bdd214a96e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The speed decrease of the ghosts varies on some levels.  <br /></td></tr>
+<tr class="memitem:a22cad51d45203cfd23bb8b6da4dfe230" id="r_a22cad51d45203cfd23bb8b6da4dfe230"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a22cad51d45203cfd23bb8b6da4dfe230">getFrightenedTime</a> () const</td></tr>
+<tr class="memdesc:a22cad51d45203cfd23bb8b6da4dfe230"><td class="mdescLeft">&#160;</td><td class="mdescRight">This duration differs on every level and goes up and down.  <br /></td></tr>
+<tr class="memitem:a3b23cd6a01f4f329fca95bb683b89a15" id="r_a3b23cd6a01f4f329fca95bb683b89a15"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3b23cd6a01f4f329fca95bb683b89a15">getFlashesh</a> () const</td></tr>
+<tr class="memdesc:a3b23cd6a01f4f329fca95bb683b89a15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flashes determine how many warnings the player gets before frightened ghosts turn normal again.  <br /></td></tr>
 <tr class="memitem:a477e3544c52c8f2a031c760af6e687b6" id="r_a477e3544c52c8f2a031c760af6e687b6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a477e3544c52c8f2a031c760af6e687b6">increaseDifficulty</a> ()</td></tr>
+<tr class="memdesc:a477e3544c52c8f2a031c760af6e687b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Increases the difficulty for as long as it doesn't out~index the difficulty map. Reuses the final difficulty for anything beyond.  <br /></td></tr>
 <tr class="memitem:a24798002fe8e54037e1b66ce49384eaf" id="r_a24798002fe8e54037e1b66ce49384eaf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a24798002fe8e54037e1b66ce49384eaf">reset</a> ()</td></tr>
-<tr class="memitem:a95ff4d3f4394b4f2e1cc8a886a498dfc" id="r_a95ff4d3f4394b4f2e1cc8a886a498dfc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structlogic_1_1_difficulty_specs.html">DifficultySpecs</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a95ff4d3f4394b4f2e1cc8a886a498dfc">getDifficulty</a> ()</td></tr>
+<tr class="memdesc:a24798002fe8e54037e1b66ce49384eaf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the difficulty back to 0.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a38971767be12e25051962d310c3ebd18" id="r_a38971767be12e25051962d310c3ebd18"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="#a5eb779852a724e71aa0a932dc1889ac6">Difficulty</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a38971767be12e25051962d310c3ebd18">getInstance</a> ()</td></tr>
+<tr class="memdesc:a38971767be12e25051962d310c3ebd18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an instance of the <a class="el" href="classlogic_1_1_difficulty.html">Difficulty</a> class.  <br /></td></tr>
 </table>
 <a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a5eb779852a724e71aa0a932dc1889ac6" name="a5eb779852a724e71aa0a932dc1889ac6"></a>
@@ -134,8 +150,8 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a95ff4d3f4394b4f2e1cc8a886a498dfc" name="a95ff4d3f4394b4f2e1cc8a886a498dfc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a95ff4d3f4394b4f2e1cc8a886a498dfc">&#9670;&#160;</a></span>getDifficulty()</h2>
+<a id="a3b23cd6a01f4f329fca95bb683b89a15" name="a3b23cd6a01f4f329fca95bb683b89a15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b23cd6a01f4f329fca95bb683b89a15">&#9670;&#160;</a></span>getFlashesh()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -144,10 +160,10 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structlogic_1_1_difficulty_specs.html">DifficultySpecs</a> * Difficulty::getDifficulty </td>
+          <td class="memname">int Difficulty::getFlashesh </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
   </td>
@@ -156,6 +172,151 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Flashes determine how many warnings the player gets before frightened ghosts turn normal again. </p>
+<p>Just like the frigthenedTime, this goes up and down between levels to catch the player of guard.</p>
+<dl class="section return"><dt>Returns</dt><dd>Amount of flashes </dd></dl>
+
+</div>
+</div>
+<a id="a920167893b23c7655bc1c2bdd214a96e" name="a920167893b23c7655bc1c2bdd214a96e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a920167893b23c7655bc1c2bdd214a96e">&#9670;&#160;</a></span>getFrighenedGhostSpeed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Difficulty::getFrighenedGhostSpeed </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The speed decrease of the ghosts varies on some levels. </p>
+<dl class="section return"><dt>Returns</dt><dd>Frightened Ghost Speed negative multiplier. </dd></dl>
+
+</div>
+</div>
+<a id="a22cad51d45203cfd23bb8b6da4dfe230" name="a22cad51d45203cfd23bb8b6da4dfe230"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22cad51d45203cfd23bb8b6da4dfe230">&#9670;&#160;</a></span>getFrightenedTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Difficulty::getFrightenedTime </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>This duration differs on every level and goes up and down. </p>
+<p>By going up and down the player is slightly thrown of guard which makes timing things more difficult for the player.</p>
+<dl class="section return"><dt>Returns</dt><dd>How long ghosts are frightened </dd></dl>
+
+</div>
+</div>
+<a id="ae7b332b0f0feb1c45f949004b8922d78" name="ae7b332b0f0feb1c45f949004b8922d78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7b332b0f0feb1c45f949004b8922d78">&#9670;&#160;</a></span>getFruitPoints()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Difficulty::getFruitPoints </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The point value differs per difficulty level. As per the original game. <a href="https://pacman.fandom.com/wiki/Point_Configurations">https://pacman.fandom.com/wiki/Point_Configurations</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>Point value for fruit. </dd></dl>
+
+</div>
+</div>
+<a id="a243b525965b1e4cb20307b0890e981f4" name="a243b525965b1e4cb20307b0890e981f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a243b525965b1e4cb20307b0890e981f4">&#9670;&#160;</a></span>getFruitSpriteOffset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Difficulty::getFruitSpriteOffset </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retrieves the sprite sheet offset for the fruit associated with the current difficulty level. </p>
+<dl class="section return"><dt>Returns</dt><dd>Integer offset for the fruit sprite. </dd></dl>
+
+</div>
+</div>
+<a id="a6bb542bfca311567a340d999b516ff53" name="a6bb542bfca311567a340d999b516ff53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6bb542bfca311567a340d999b516ff53">&#9670;&#160;</a></span>getGhostSpeed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Difficulty::getGhostSpeed </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The speed of the Ghosts is different on some levels. </p>
+<dl class="section return"><dt>Returns</dt><dd>Ghost Speed </dd></dl>
 
 </div>
 </div>
@@ -182,6 +343,37 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Returns an instance of the <a class="el" href="classlogic_1_1_difficulty.html">Difficulty</a> class. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classlogic_1_1_difficulty.html">Difficulty</a> instance </dd></dl>
+
+</div>
+</div>
+<a id="a93e63b3e4d483f50c0ae3f15ee9c7e35" name="a93e63b3e4d483f50c0ae3f15ee9c7e35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93e63b3e4d483f50c0ae3f15ee9c7e35">&#9670;&#160;</a></span>getPacmanSpeed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Difficulty::getPacmanSpeed </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The speed of Pacman is different on some levels. </p>
+<dl class="section return"><dt>Returns</dt><dd>Pacman speed </dd></dl>
+
 </div>
 </div>
 <a id="a477e3544c52c8f2a031c760af6e687b6" name="a477e3544c52c8f2a031c760af6e687b6"></a>
@@ -198,6 +390,8 @@ Static Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Increases the difficulty for as long as it doesn't out~index the difficulty map. Reuses the final difficulty for anything beyond. </p>
 
 </div>
 </div>
@@ -240,6 +434,8 @@ Static Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Resets the difficulty back to 0. </p>
 
 </div>
 </div>

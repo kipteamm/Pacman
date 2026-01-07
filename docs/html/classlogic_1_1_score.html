@@ -121,25 +121,36 @@ Collaboration diagram for logic::Score:</div>
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a039c99843551e5e4b512ecee99e46617" id="r_a039c99843551e5e4b512ecee99e46617"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a039c99843551e5e4b512ecee99e46617">Score</a> ()</td></tr>
+<tr class="memdesc:a039c99843551e5e4b512ecee99e46617"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates new <a class="el" href="classlogic_1_1_score.html">Score</a> object, and loads entries from highscores.txt file.  <br /></td></tr>
 <tr class="memitem:a45f1e94100acf50919e5c4e7239a788d" id="r_a45f1e94100acf50919e5c4e7239a788d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a45f1e94100acf50919e5c4e7239a788d">~Score</a> () override</td></tr>
-<tr class="memitem:a3534476919bbdae5ce752a7069e8cf32" id="r_a3534476919bbdae5ce752a7069e8cf32"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::unique_ptr&lt; <a class="el" href="structlogic_1_1_highscore.html">Highscore</a> &gt; &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3534476919bbdae5ce752a7069e8cf32">getHighscores</a> ()</td></tr>
+<tr class="memdesc:a45f1e94100acf50919e5c4e7239a788d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overrides destructor behaviour to call <a class="el" href="#a571465689026b16c4f5b7f83771d7d60" title="Writes the ScoreEntry objects to the highscores.txt file.">Score::write</a>;.  <br /></td></tr>
+<tr class="memitem:aee08936c2d875788364c400d45869b56" id="r_aee08936c2d875788364c400d45869b56"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::unique_ptr&lt; <a class="el" href="structlogic_1_1_score_entry.html">ScoreEntry</a> &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aee08936c2d875788364c400d45869b56">getHighscores</a> ()</td></tr>
+<tr class="memdesc:aee08936c2d875788364c400d45869b56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a reference to the vector holding all known Highscore objects.  <br /></td></tr>
 <tr class="memitem:a0b481b4e3963090980301b2dbe2c3f95" id="r_a0b481b4e3963090980301b2dbe2c3f95"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0b481b4e3963090980301b2dbe2c3f95">getScore</a> () const</td></tr>
+<tr class="memdesc:a0b481b4e3963090980301b2dbe2c3f95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the current score.  <br /></td></tr>
+<tr class="memitem:a42ea93b23627c2df6f1cedbad36bf6ef" id="r_a42ea93b23627c2df6f1cedbad36bf6ef"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structlogic_1_1_score_entry.html">ScoreEntry</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a42ea93b23627c2df6f1cedbad36bf6ef">getLastScore</a> () const</td></tr>
+<tr class="memdesc:a42ea93b23627c2df6f1cedbad36bf6ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the last achieved score as a Highscore object.  <br /></td></tr>
 <tr class="memitem:a549bb6a002478f2444e1b2e98de14f78" id="r_a549bb6a002478f2444e1b2e98de14f78"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a549bb6a002478f2444e1b2e98de14f78">setUser</a> (const std::string &amp;username)</td></tr>
-<tr class="memitem:a98fec863f2043b4c205985cb8ce53b09" id="r_a98fec863f2043b4c205985cb8ce53b09"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a98fec863f2043b4c205985cb8ce53b09">addScore</a> (int score)</td></tr>
-<tr class="memitem:a571465689026b16c4f5b7f83771d7d60" id="r_a571465689026b16c4f5b7f83771d7d60"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a571465689026b16c4f5b7f83771d7d60">write</a> () const</td></tr>
+<tr class="memdesc:a549bb6a002478f2444e1b2e98de14f78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the user to whom the next <a class="el" href="structlogic_1_1_score_entry.html">ScoreEntry</a> will be attributed.  <br /></td></tr>
 <tr class="memitem:a203d2c0c8b97953eeefdc9ad6ab024a1" id="r_a203d2c0c8b97953eeefdc9ad6ab024a1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a203d2c0c8b97953eeefdc9ad6ab024a1">update</a> (double dt)</td></tr>
+<tr class="memdesc:a203d2c0c8b97953eeefdc9ad6ab024a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates time since last coin collection and time accumulator, te determine score decay.  <br /></td></tr>
+<tr class="memitem:af58d95c335d15050441cb89841984c26" id="r_af58d95c335d15050441cb89841984c26"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af58d95c335d15050441cb89841984c26">addScoreEntry</a> ()</td></tr>
+<tr class="memdesc:af58d95c335d15050441cb89841984c26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new score entry for the current user with the current score.  <br /></td></tr>
+<tr class="memitem:a571465689026b16c4f5b7f83771d7d60" id="r_a571465689026b16c4f5b7f83771d7d60"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a571465689026b16c4f5b7f83771d7d60">write</a> () const</td></tr>
+<tr class="memdesc:a571465689026b16c4f5b7f83771d7d60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the <a class="el" href="structlogic_1_1_score_entry.html">ScoreEntry</a> objects to the highscores.txt file.  <br /></td></tr>
 <tr class="inherit_header pub_methods_classlogic_1_1_observer"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classlogic_1_1_observer')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="classlogic_1_1_observer.html">logic::Observer</a></td></tr>
 <tr class="memitem:a9ffb621699cd68a8e165297d145f593e inherit pub_methods_classlogic_1_1_observer" id="r_a9ffb621699cd68a8e165297d145f593e"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlogic_1_1_observer.html#a9ffb621699cd68a8e165297d145f593e">~Observer</a> ()=default</td></tr>
 <tr class="inherit_header pub_methods_classlogic_1_1_subject"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classlogic_1_1_subject')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="classlogic_1_1_subject.html">logic::Subject</a></td></tr>
 <tr class="memitem:ae4238075ca667706bba792bfb96ee6c0 inherit pub_methods_classlogic_1_1_subject" id="r_ae4238075ca667706bba792bfb96ee6c0"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlogic_1_1_subject.html#ae4238075ca667706bba792bfb96ee6c0">~Subject</a> ()=default</td></tr>
 <tr class="memitem:a62a415ccc278f93b40f386a10a669d50 inherit pub_methods_classlogic_1_1_subject" id="r_a62a415ccc278f93b40f386a10a669d50"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlogic_1_1_subject.html#a62a415ccc278f93b40f386a10a669d50">attach</a> (const std::shared_ptr&lt; <a class="el" href="classlogic_1_1_observer.html">Observer</a> &gt; &amp;observer)</td></tr>
-<tr class="memitem:a867eae02dd2392c01ee949a5fdb8099d inherit pub_methods_classlogic_1_1_subject" id="r_a867eae02dd2392c01ee949a5fdb8099d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlogic_1_1_subject.html#a867eae02dd2392c01ee949a5fdb8099d">detach</a> (const std::shared_ptr&lt; <a class="el" href="classlogic_1_1_observer.html">Observer</a> &gt; &amp;observer)</td></tr>
+<tr class="memdesc:a62a415ccc278f93b40f386a10a669d50 inherit pub_methods_classlogic_1_1_subject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attaches an observer to this <a class="el" href="classlogic_1_1_subject.html">Subject</a>.  <br /></td></tr>
 <tr class="memitem:a9b8fd61bd7407486a7be6b0756f79a11 inherit pub_methods_classlogic_1_1_subject" id="r_a9b8fd61bd7407486a7be6b0756f79a11"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlogic_1_1_subject.html#a9b8fd61bd7407486a7be6b0756f79a11">notify</a> (<a class="el" href="namespacelogic.html#a5054eadf2d20b609706894ae1bc5f250">Events</a> event)</td></tr>
+<tr class="memdesc:a9b8fd61bd7407486a7be6b0756f79a11 inherit pub_methods_classlogic_1_1_subject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Call the <a class="el" href="classlogic_1_1_observer.html">Observer</a> update function with the provided event.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_attribs_classlogic_1_1_subject"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_classlogic_1_1_subject')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Attributes inherited from <a class="el" href="classlogic_1_1_subject.html">logic::Subject</a></td></tr>
-<tr class="memitem:a2053bceb8a22b4ee7be76ef1d338b505 inherit pro_attribs_classlogic_1_1_subject" id="r_a2053bceb8a22b4ee7be76ef1d338b505"><td class="memItemLeft" align="right" valign="top">std::list&lt; std::shared_ptr&lt; <a class="el" href="classlogic_1_1_observer.html">Observer</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlogic_1_1_subject.html#a2053bceb8a22b4ee7be76ef1d338b505">observers</a></td></tr>
+<tr class="memitem:a99cc8f6df0eb9536dbdae77b4ef2408b inherit pro_attribs_classlogic_1_1_subject" id="r_a99cc8f6df0eb9536dbdae77b4ef2408b"><td class="memItemLeft" align="right" valign="top">std::list&lt; std::weak_ptr&lt; <a class="el" href="classlogic_1_1_observer.html">Observer</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlogic_1_1_subject.html#a99cc8f6df0eb9536dbdae77b4ef2408b">observers</a></td></tr>
 </table>
 <a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a039c99843551e5e4b512ecee99e46617" name="a039c99843551e5e4b512ecee99e46617"></a>
@@ -156,6 +167,8 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Creates new <a class="el" href="classlogic_1_1_score.html">Score</a> object, and loads entries from highscores.txt file. </p>
 
 </div>
 </div>
@@ -182,28 +195,32 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Overrides destructor behaviour to call <a class="el" href="#a571465689026b16c4f5b7f83771d7d60" title="Writes the ScoreEntry objects to the highscores.txt file.">Score::write</a>;. </p>
+
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a98fec863f2043b4c205985cb8ce53b09" name="a98fec863f2043b4c205985cb8ce53b09"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a98fec863f2043b4c205985cb8ce53b09">&#9670;&#160;</a></span>addScore()</h2>
+<a id="af58d95c335d15050441cb89841984c26" name="af58d95c335d15050441cb89841984c26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af58d95c335d15050441cb89841984c26">&#9670;&#160;</a></span>addScoreEntry()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Score::addScore </td>
+          <td class="memname">void Score::addScoreEntry </td>
           <td>(</td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>score</em></span></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p>Creates a new score entry for the current user with the current score. </p>
+
 </div>
 </div>
-<a id="a3534476919bbdae5ce752a7069e8cf32" name="a3534476919bbdae5ce752a7069e8cf32"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3534476919bbdae5ce752a7069e8cf32">&#9670;&#160;</a></span>getHighscores()</h2>
+<a id="aee08936c2d875788364c400d45869b56" name="aee08936c2d875788364c400d45869b56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee08936c2d875788364c400d45869b56">&#9670;&#160;</a></span>getHighscores()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -212,7 +229,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt; std::unique_ptr&lt; <a class="el" href="structlogic_1_1_highscore.html">Highscore</a> &gt; &gt; * Score::getHighscores </td>
+          <td class="memname">std::vector&lt; std::unique_ptr&lt; <a class="el" href="structlogic_1_1_score_entry.html">ScoreEntry</a> &gt; &gt; &amp; Score::getHighscores </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -224,6 +241,37 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Returns a reference to the vector holding all known Highscore objects. </p>
+<dl class="section return"><dt>Returns</dt><dd>Reference to Highscores vector </dd></dl>
+
+</div>
+</div>
+<a id="a42ea93b23627c2df6f1cedbad36bf6ef" name="a42ea93b23627c2df6f1cedbad36bf6ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42ea93b23627c2df6f1cedbad36bf6ef">&#9670;&#160;</a></span>getLastScore()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structlogic_1_1_score_entry.html">ScoreEntry</a> &amp; Score::getLastScore </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the last achieved score as a Highscore object. </p>
+<dl class="section return"><dt>Returns</dt><dd>Last score </dd></dl>
 
 </div>
 </div>
@@ -250,6 +298,10 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Returns the current score. </p>
+<p>The current score is updated by <a class="el" href="classlogic_1_1_world.html">World</a> events while the <a class="el" href="classlogic_1_1_world.html">World</a> is active so the score will vary from time to time.</p>
+<dl class="section return"><dt>Returns</dt><dd>Current score </dd></dl>
+
 </div>
 </div>
 <a id="a549bb6a002478f2444e1b2e98de14f78" name="a549bb6a002478f2444e1b2e98de14f78"></a>
@@ -266,6 +318,14 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Sets the user to whom the next <a class="el" href="structlogic_1_1_score_entry.html">ScoreEntry</a> will be attributed. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">username</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -284,6 +344,14 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Updates time since last coin collection and time accumulator, te determine score decay. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dt</td><td>Deltatime </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a571465689026b16c4f5b7f83771d7d60" name="a571465689026b16c4f5b7f83771d7d60"></a>
@@ -300,6 +368,8 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Writes the <a class="el" href="structlogic_1_1_score_entry.html">ScoreEntry</a> objects to the highscores.txt file. </p>
 
 </div>
 </div>

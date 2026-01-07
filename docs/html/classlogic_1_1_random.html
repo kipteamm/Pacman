@@ -99,13 +99,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:affaefb818059c94b4b5993ad8d05b595" id="r_affaefb818059c94b4b5993ad8d05b595"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#affaefb818059c94b4b5993ad8d05b595">Random</a> (Random &amp;other)=delete</td></tr>
 <tr class="memitem:a50541e485c5015a8a31f7879c7f3e812" id="r_a50541e485c5015a8a31f7879c7f3e812"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a50541e485c5015a8a31f7879c7f3e812">operator=</a> (const <a class="el" href="#affaefb818059c94b4b5993ad8d05b595">Random</a> &amp;)=delete</td></tr>
 <tr class="memitem:a2498fad76196a0ede1cc9ad2c1b843b7" id="r_a2498fad76196a0ede1cc9ad2c1b843b7"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2498fad76196a0ede1cc9ad2c1b843b7">getFloat</a> ()</td></tr>
+<tr class="memdesc:a2498fad76196a0ede1cc9ad2c1b843b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that returns a random float value between 0 and 1.  <br /></td></tr>
 <tr class="memitem:a7aac570ca0e486704a9c7f27ea884fe6" id="r_a7aac570ca0e486704a9c7f27ea884fe6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7aac570ca0e486704a9c7f27ea884fe6">getInt</a> (int min, int max)</td></tr>
+<tr class="memdesc:a7aac570ca0e486704a9c7f27ea884fe6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper function that returns a random value between the given min and max. Including the max.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a2aa30d2f678fc76f75efc60356c6ea4d" id="r_a2aa30d2f678fc76f75efc60356c6ea4d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="#affaefb818059c94b4b5993ad8d05b595">Random</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2aa30d2f678fc76f75efc60356c6ea4d">getInstance</a> ()</td></tr>
+<tr class="memdesc:a2aa30d2f678fc76f75efc60356c6ea4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an instance of the <a class="el" href="classlogic_1_1_random.html">Random</a> class.  <br /></td></tr>
 </table>
-<a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Singleton wrapper for the Mersenne Twister random number engine. </p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="affaefb818059c94b4b5993ad8d05b595" name="affaefb818059c94b4b5993ad8d05b595"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#affaefb818059c94b4b5993ad8d05b595">&#9670;&#160;</a></span>Random()</h2>
 
@@ -156,6 +161,9 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Function that returns a random float value between 0 and 1. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classlogic_1_1_random.html">Random</a> float between 0 and 1 </dd></dl>
+
 </div>
 </div>
 <a id="a2aa30d2f678fc76f75efc60356c6ea4d" name="a2aa30d2f678fc76f75efc60356c6ea4d"></a>
@@ -180,6 +188,9 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Returns an instance of the <a class="el" href="classlogic_1_1_random.html">Random</a> class. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classlogic_1_1_random.html">Random</a> instance </dd></dl>
 
 </div>
 </div>
@@ -209,6 +220,16 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Helper function that returns a random value between the given min and max. Including the max. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">min</td><td></td></tr>
+    <tr><td class="paramname">max</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
 </div>
 </div>

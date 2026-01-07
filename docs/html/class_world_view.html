@@ -117,8 +117,11 @@ Collaboration diagram for WorldView:</div>
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a0ca7fbb77429a17fa7ce35fd226d4825" id="r_a0ca7fbb77429a17fa7ce35fd226d4825"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0ca7fbb77429a17fa7ce35fd226d4825">WorldView</a> (const std::shared_ptr&lt; <a class="el" href="classlogic_1_1_world.html">logic::World</a> &gt; &amp;world, const std::shared_ptr&lt; <a class="el" href="classlogic_1_1_score.html">logic::Score</a> &gt; &amp;scoreSystem)</td></tr>
-<tr class="memitem:a5741da6aea638944935c481428a5aae8" id="r_a5741da6aea638944935c481428a5aae8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5741da6aea638944935c481428a5aae8">update</a> (<a class="el" href="namespacelogic.html#a5054eadf2d20b609706894ae1bc5f250">logic::Events</a> event) override</td></tr>
-<tr class="memitem:a8e80adfe5029d0fb784306e0a12bae06" id="r_a8e80adfe5029d0fb784306e0a12bae06"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8e80adfe5029d0fb784306e0a12bae06">render</a> () const</td></tr>
+<tr class="memdesc:a0ca7fbb77429a17fa7ce35fd226d4825"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_world_view.html">WorldView</a> renders and manages the <a class="el" href="class_game.html">Game</a> UI.  <br /></td></tr>
+<tr class="memitem:a8649a79e6058fcf3190a7f38dbc6f01b" id="r_a8649a79e6058fcf3190a7f38dbc6f01b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8649a79e6058fcf3190a7f38dbc6f01b">resized</a> ()</td></tr>
+<tr class="memdesc:a8649a79e6058fcf3190a7f38dbc6f01b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resizes the <a class="el" href="class_game.html">Game</a> and World UI.  <br /></td></tr>
+<tr class="memitem:ae8ee677599ac2ab62d351ce329f74195" id="r_ae8ee677599ac2ab62d351ce329f74195"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae8ee677599ac2ab62d351ce329f74195">render</a> ()</td></tr>
+<tr class="memdesc:ae8ee677599ac2ab62d351ce329f74195"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders the <a class="el" href="class_game.html">Game</a> and World UI.  <br /></td></tr>
 <tr class="inherit_header pub_methods_classlogic_1_1_observer"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classlogic_1_1_observer')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="classlogic_1_1_observer.html">logic::Observer</a></td></tr>
 <tr class="memitem:a9ffb621699cd68a8e165297d145f593e inherit pub_methods_classlogic_1_1_observer" id="r_a9ffb621699cd68a8e165297d145f593e"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlogic_1_1_observer.html#a9ffb621699cd68a8e165297d145f593e">~Observer</a> ()=default</td></tr>
 </table>
@@ -150,11 +153,20 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p><a class="el" href="class_world_view.html">WorldView</a> renders and manages the <a class="el" href="class_game.html">Game</a> UI. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">world</td><td>the World </td></tr>
+    <tr><td class="paramname">scoreSystem</td><td>the ScoreSystem </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a8e80adfe5029d0fb784306e0a12bae06" name="a8e80adfe5029d0fb784306e0a12bae06"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8e80adfe5029d0fb784306e0a12bae06">&#9670;&#160;</a></span>render()</h2>
+<a id="ae8ee677599ac2ab62d351ce329f74195" name="ae8ee677599ac2ab62d351ce329f74195"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8ee677599ac2ab62d351ce329f74195">&#9670;&#160;</a></span>render()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -163,37 +175,31 @@ Public Member Functions</h2></td></tr>
           <td class="memname">void WorldView::render </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a5741da6aea638944935c481428a5aae8" name="a5741da6aea638944935c481428a5aae8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5741da6aea638944935c481428a5aae8">&#9670;&#160;</a></span>update()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void WorldView::update </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacelogic.html#a5054eadf2d20b609706894ae1bc5f250">logic::Events</a></td>          <td class="paramname"><span class="paramname"><em>event</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="classlogic_1_1_observer.html#a037d49687e2bcd83c56fd8af8111ca0e">logic::Observer</a>.</p>
+<p>Renders the <a class="el" href="class_game.html">Game</a> and World UI. </p>
+
+</div>
+</div>
+<a id="a8649a79e6058fcf3190a7f38dbc6f01b" name="a8649a79e6058fcf3190a7f38dbc6f01b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8649a79e6058fcf3190a7f38dbc6f01b">&#9670;&#160;</a></span>resized()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WorldView::resized </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Resizes the <a class="el" href="class_game.html">Game</a> and World UI. </p>
 
 </div>
 </div>

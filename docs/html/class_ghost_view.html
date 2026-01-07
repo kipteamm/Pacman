@@ -121,12 +121,16 @@ Collaboration diagram for GhostView:</div>
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a9e1e83cec0c6d0936c60bd913fde207b" id="r_a9e1e83cec0c6d0936c60bd913fde207b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9e1e83cec0c6d0936c60bd913fde207b">GhostView</a> (const std::shared_ptr&lt; <a class="el" href="classlogic_1_1_ghost_model.html">logic::GhostModel</a> &gt; &amp;<a class="el" href="class_entity_view.html#a5d95738cd4f30a10597eea2e4e106a3a">model</a>, int spriteY)</td></tr>
-<tr class="memitem:a34e1f50e8d99e6dd92c69e0df84d4324" id="r_a34e1f50e8d99e6dd92c69e0df84d4324"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a34e1f50e8d99e6dd92c69e0df84d4324">update</a> (<a class="el" href="namespacelogic.html#a5054eadf2d20b609706894ae1bc5f250">logic::Events</a> event) override</td></tr>
+<tr class="memdesc:a9e1e83cec0c6d0936c60bd913fde207b"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_ghost_view.html">GhostView</a> renders &amp; animates Ghosts.  <br /></td></tr>
 <tr class="memitem:a3898ad0c1ffa185f2fa7d8817f88e6f3" id="r_a3898ad0c1ffa185f2fa7d8817f88e6f3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3898ad0c1ffa185f2fa7d8817f88e6f3">render</a> () override</td></tr>
+<tr class="memdesc:a3898ad0c1ffa185f2fa7d8817f88e6f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders the Ghost sprite.  <br /></td></tr>
 <tr class="inherit_header pub_methods_class_entity_view"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_class_entity_view')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="class_entity_view.html">EntityView</a></td></tr>
 <tr class="memitem:a9c92414ec58c2511b43e02ad827e717b inherit pub_methods_class_entity_view" id="r_a9c92414ec58c2511b43e02ad827e717b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entity_view.html#a9c92414ec58c2511b43e02ad827e717b">EntityView</a> (const std::shared_ptr&lt; <a class="el" href="classlogic_1_1_entity_model.html">logic::EntityModel</a> &gt; &amp;<a class="el" href="class_entity_view.html#a5d95738cd4f30a10597eea2e4e106a3a">model</a>, float <a class="el" href="class_entity_view.html#aea9fe4f4b1f0f0dd5304de4a18fe365c">frameDuration</a>)</td></tr>
 <tr class="memitem:a3a163d4781bde3d7d38be65d5fe1920c inherit pub_methods_class_entity_view" id="r_a3a163d4781bde3d7d38be65d5fe1920c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entity_view.html#a3a163d4781bde3d7d38be65d5fe1920c">shouldDelete</a> () const</td></tr>
-<tr class="memitem:a5052ee0e188d9e3e624cf7996ded9af6 inherit pub_methods_class_entity_view" id="r_a5052ee0e188d9e3e624cf7996ded9af6"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entity_view.html#a5052ee0e188d9e3e624cf7996ded9af6">getFrameIndex</a> (float dt, size_t max)</td></tr>
+<tr class="memitem:a5580ca8e8e4ed64cd883bfbdffc41238 inherit pub_methods_class_entity_view" id="r_a5580ca8e8e4ed64cd883bfbdffc41238"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entity_view.html#a5580ca8e8e4ed64cd883bfbdffc41238">getFrameIndex</a> (float dt, size_t frameLimit)</td></tr>
+<tr class="memdesc:a5580ca8e8e4ed64cd883bfbdffc41238 inherit pub_methods_class_entity_view"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the current frameIndex based on the elapsed time.  <br /></td></tr>
+<tr class="memitem:a531a25ee050d86f646aef31658786f1f inherit pub_methods_class_entity_view" id="r_a531a25ee050d86f646aef31658786f1f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entity_view.html#a531a25ee050d86f646aef31658786f1f">resized</a> ()</td></tr>
+<tr class="memdesc:a531a25ee050d86f646aef31658786f1f inherit pub_methods_class_entity_view"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines how the sprites should react when the Screen dimension changes.  <br /></td></tr>
 <tr class="inherit_header pub_methods_classlogic_1_1_observer"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classlogic_1_1_observer')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="classlogic_1_1_observer.html">logic::Observer</a></td></tr>
 <tr class="memitem:a9ffb621699cd68a8e165297d145f593e inherit pub_methods_classlogic_1_1_observer" id="r_a9ffb621699cd68a8e165297d145f593e"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlogic_1_1_observer.html#a9ffb621699cd68a8e165297d145f593e">~Observer</a> ()=default</td></tr>
 </table><table class="memberdecls">
@@ -168,6 +172,15 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p><a class="el" href="class_ghost_view.html">GhostView</a> renders &amp; animates Ghosts. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">model</td><td>Reference model </td></tr>
+    <tr><td class="paramname">spriteY</td><td>Used to differentiate between Ghost sprites (Blinky, Pinky, Inky, Clyde) </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
@@ -194,34 +207,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Renders the Ghost sprite. </p>
+
 <p>Reimplemented from <a class="el" href="class_entity_view.html#adf2869ddecd4e3f5bf1ae25684b2ee61">EntityView</a>.</p>
-
-</div>
-</div>
-<a id="a34e1f50e8d99e6dd92c69e0df84d4324" name="a34e1f50e8d99e6dd92c69e0df84d4324"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a34e1f50e8d99e6dd92c69e0df84d4324">&#9670;&#160;</a></span>update()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void GhostView::update </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacelogic.html#a5054eadf2d20b609706894ae1bc5f250">logic::Events</a></td>          <td class="paramname"><span class="paramname"><em>event</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Implements <a class="el" href="classlogic_1_1_observer.html#a037d49687e2bcd83c56fd8af8111ca0e">logic::Observer</a>.</p>
 
 </div>
 </div>

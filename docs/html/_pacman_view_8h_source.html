@@ -91,52 +91,56 @@ $(function(){initNavTree('_pacman_view_8h_source.html','',''); });
   <div class="headertitle"><div class="title">PacmanView.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="_pacman_view_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">//</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// Created by PPetre on 27/11/2025.</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">//</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#ifndef PACMANVIEW_H</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#define PACMANVIEW_H</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;unordered_map&gt;</span></div>
+<a href="_pacman_view_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef PACMANVIEW_H</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define PACMANVIEW_H</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;unordered_map&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="_pacman_model_8h.html">../../Logic/Entities/PacmanModel.h</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="_entity_view_8h.html">EntityView.h</a>&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="_pacman_model_8h.html">../../Logic/Entities/PacmanModel.h</a>&quot;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="_entity_view_8h.html">EntityView.h</a>&quot;</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="foldopen" id="foldopen00014" data-start="{" data-end="};">
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="class_pacman_view.html">   14</a></span><span class="keyword">class </span><a class="code hl_function" href="class_pacman_view.html#a61344557a1ba4af9a9d08d1e5986e473">PacmanView</a> final : <span class="keyword">public</span> <a class="code hl_function" href="class_entity_view.html#a9c92414ec58c2511b43e02ad827e717b">EntityView</a> {</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00010" data-start="{" data-end="};">
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="class_pacman_view.html">   10</a></span><span class="keyword">class </span><a class="code hl_function" href="class_pacman_view.html#a61344557a1ba4af9a9d08d1e5986e473">PacmanView</a> final : <span class="keyword">public</span> <a class="code hl_function" href="class_entity_view.html#a9c92414ec58c2511b43e02ad827e717b">EntityView</a> {</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">public</span>:</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="class_pacman_view.html#a61344557a1ba4af9a9d08d1e5986e473">PacmanView</a>(<span class="keyword">const</span> std::shared_ptr&lt;logic::PacmanModel&gt; &amp;<a class="code hl_variable" href="class_entity_view.html#a5d95738cd4f30a10597eea2e4e106a3a">model</a>);</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_pacman_view.html#aebb6fa9102e792de0d7db500b5787545">update</a>(<a class="code hl_enumeration" href="namespacelogic.html#a5054eadf2d20b609706894ae1bc5f250">logic::Events</a> event) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_pacman_view.html#a75442e323958cab1443ea85d55a3b473">render</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="comment">// As the PacmanModel is a shared pointer we store it in the view as well</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="comment">// to use PacmanModel specific functions without needing to dynamic cast</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    std::shared_ptr&lt;logic::PacmanModel&gt; pacman;</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keywordtype">bool</span> moving = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keywordtype">bool</span> dying = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_pacman_view.html#ac40cad781e3c16b2418ea4f8e71a4cd0">resized</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_pacman_view.html#a75442e323958cab1443ea85d55a3b473">render</a>() <span class="keyword">override</span>;</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    std::unordered_map&lt;int, std::vector&lt;sf::IntRect&gt;&gt; animations{};</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    std::vector&lt;sf::IntRect&gt;* animation;</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    sf::Sprite directionSprite;</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>};</div>
-</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keywordtype">void</span> update(<a class="code hl_enumeration" href="namespacelogic.html#a5054eadf2d20b609706894ae1bc5f250">logic::Events</a> event) <span class="keyword">override</span>;</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">#endif </span><span class="comment">//PACMANVIEW_H</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="comment">// I store the PacmanModel in the view insteawd of dynamic casting the</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="comment">// generic model used in the base EntityView class to use PacmanModel</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="comment">// specific functions.</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    std::shared_ptr&lt;logic::PacmanModel&gt; pacman;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordtype">bool</span> dying = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="comment">// When the model did not move, the current frame of the Pacman walking</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="comment">// animation will not update until this boolean changes, effectively</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="comment">// freezing Pacman.</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keywordtype">bool</span> moving = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    std::unordered_map&lt;int, std::vector&lt;sf::IntRect&gt;&gt; animations{};</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keywordtype">int</span> animationIndex;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    sf::Sprite directionSprite;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>};</div>
+</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="preprocessor">#endif </span><span class="comment">//PACMANVIEW_H</span></div>
 <div class="ttc" id="a_entity_view_8h_html"><div class="ttname"><a href="_entity_view_8h.html">EntityView.h</a></div></div>
 <div class="ttc" id="a_pacman_model_8h_html"><div class="ttname"><a href="_pacman_model_8h.html">PacmanModel.h</a></div></div>
-<div class="ttc" id="aclass_entity_view_html_a5d95738cd4f30a10597eea2e4e106a3a"><div class="ttname"><a href="class_entity_view.html#a5d95738cd4f30a10597eea2e4e106a3a">EntityView::model</a></div><div class="ttdeci">std::shared_ptr&lt; logic::EntityModel &gt; model</div><div class="ttdef"><b>Definition</b> EntityView.h:23</div></div>
-<div class="ttc" id="aclass_entity_view_html_a9c92414ec58c2511b43e02ad827e717b"><div class="ttname"><a href="class_entity_view.html#a9c92414ec58c2511b43e02ad827e717b">EntityView::EntityView</a></div><div class="ttdeci">EntityView(const std::shared_ptr&lt; logic::EntityModel &gt; &amp;model, float frameDuration)</div><div class="ttdef"><b>Definition</b> EntityView.cpp:9</div></div>
-<div class="ttc" id="aclass_pacman_view_html_a61344557a1ba4af9a9d08d1e5986e473"><div class="ttname"><a href="class_pacman_view.html#a61344557a1ba4af9a9d08d1e5986e473">PacmanView::PacmanView</a></div><div class="ttdeci">PacmanView(const std::shared_ptr&lt; logic::PacmanModel &gt; &amp;model)</div><div class="ttdef"><b>Definition</b> PacmanView.cpp:8</div></div>
-<div class="ttc" id="aclass_pacman_view_html_a75442e323958cab1443ea85d55a3b473"><div class="ttname"><a href="class_pacman_view.html#a75442e323958cab1443ea85d55a3b473">PacmanView::render</a></div><div class="ttdeci">void render() override</div><div class="ttdef"><b>Definition</b> PacmanView.cpp:109</div></div>
-<div class="ttc" id="aclass_pacman_view_html_aebb6fa9102e792de0d7db500b5787545"><div class="ttname"><a href="class_pacman_view.html#aebb6fa9102e792de0d7db500b5787545">PacmanView::update</a></div><div class="ttdeci">void update(logic::Events event) override</div><div class="ttdef"><b>Definition</b> PacmanView.cpp:79</div></div>
-<div class="ttc" id="anamespacelogic_html_a5054eadf2d20b609706894ae1bc5f250"><div class="ttname"><a href="namespacelogic.html#a5054eadf2d20b609706894ae1bc5f250">logic::Events</a></div><div class="ttdeci">Events</div><div class="ttdef"><b>Definition</b> Observer.h:19</div></div>
+<div class="ttc" id="aclass_entity_view_html_a5d95738cd4f30a10597eea2e4e106a3a"><div class="ttname"><a href="class_entity_view.html#a5d95738cd4f30a10597eea2e4e106a3a">EntityView::model</a></div><div class="ttdeci">std::shared_ptr&lt; logic::EntityModel &gt; model</div><div class="ttdef"><b>Definition</b> EntityView.h:46</div></div>
+<div class="ttc" id="aclass_entity_view_html_a9c92414ec58c2511b43e02ad827e717b"><div class="ttname"><a href="class_entity_view.html#a9c92414ec58c2511b43e02ad827e717b">EntityView::EntityView</a></div><div class="ttdeci">EntityView(const std::shared_ptr&lt; logic::EntityModel &gt; &amp;model, float frameDuration)</div><div class="ttdef"><b>Definition</b> EntityView.cpp:6</div></div>
+<div class="ttc" id="aclass_pacman_view_html_a61344557a1ba4af9a9d08d1e5986e473"><div class="ttname"><a href="class_pacman_view.html#a61344557a1ba4af9a9d08d1e5986e473">PacmanView::PacmanView</a></div><div class="ttdeci">PacmanView(const std::shared_ptr&lt; logic::PacmanModel &gt; &amp;model)</div><div class="ttdoc">PacmanView renders &amp; animates Pacman.</div><div class="ttdef"><b>Definition</b> PacmanView.cpp:8</div></div>
+<div class="ttc" id="aclass_pacman_view_html_a75442e323958cab1443ea85d55a3b473"><div class="ttname"><a href="class_pacman_view.html#a75442e323958cab1443ea85d55a3b473">PacmanView::render</a></div><div class="ttdeci">void render() override</div><div class="ttdoc">Renders the Pacman sprite and the Pacman direction indicator.</div><div class="ttdef"><b>Definition</b> PacmanView.cpp:89</div></div>
+<div class="ttc" id="aclass_pacman_view_html_ac40cad781e3c16b2418ea4f8e71a4cd0"><div class="ttname"><a href="class_pacman_view.html#ac40cad781e3c16b2418ea4f8e71a4cd0">PacmanView::resized</a></div><div class="ttdeci">void resized() override</div><div class="ttdoc">Resizes the Pacman sprite.</div><div class="ttdef"><b>Definition</b> PacmanView.cpp:80</div></div>
+<div class="ttc" id="anamespacelogic_html_a5054eadf2d20b609706894ae1bc5f250"><div class="ttname"><a href="namespacelogic.html#a5054eadf2d20b609706894ae1bc5f250">logic::Events</a></div><div class="ttdeci">Events</div><div class="ttdef"><b>Definition</b> Observer.h:14</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

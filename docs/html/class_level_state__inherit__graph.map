@@ -1,5 +1,9 @@
 <map id="LevelState" name="LevelState">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,80,89,107"/>
-<area shape="rect" id="Node000002" href="$class_state.html" title=" " alt="" coords="21,5,73,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="49,46,50,80,44,79,45,50"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="95,96,178,123"/>
+<area shape="rect" id="Node000002" href="$class_state.html" title=" " alt="" coords="5,13,58,40"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="61,47,123,94,118,97,59,52"/>
+<area shape="rect" id="Node000003" href="$classlogic_1_1_observer.html" title=" " alt="" coords="82,13,192,40"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="139,54,139,97,134,95,135,57"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="215,5,384,48"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="247,55,163,98,161,93,241,56"/>
 </map>

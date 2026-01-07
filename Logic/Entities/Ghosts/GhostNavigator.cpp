@@ -85,6 +85,18 @@ std::vector<Moves> GhostNavigator::getPossibleMoves(const World &world, const Gh
 }
 
 
+/**
+ * A breadth-first search is started from the ghost's current grid position and
+ * expands outward until the spawn position is reached. During the search,
+ * the direction taken to enter each cell is recorded.
+ *
+ * Once the spawn tile is found, the path is reconstructed by walking backwards
+ * from the spawn to the start using the recorded directions, producing a
+ * sequence of concrete Moves (LEFT, RIGHT, UP, DOWN).
+ *
+ * The returned list represents the shortest possible path in grid steps.
+ * If multiple shortest paths exist, the chosen one depends on exploration order.
+ */
 std::list<Moves> GhostNavigator::findPathToSpawn(const World& world, const GhostModel& ghost) {
     const int width = static_cast<int>(world.getWidth());
     const int height = static_cast<int>(world.getHeight());
@@ -96,7 +108,10 @@ std::list<Moves> GhostNavigator::findPathToSpawn(const World& world, const Ghost
     q.emplace(ghost.getGridX(), ghost.getGridY());
     visited[ghost.getGridX()][ghost.getGridY()] = true;
 
-    // TODO explain this
+    // Standard BFS expansion:
+    // Explore all reachable tiles layer by layer, recording for each tile
+    // which move was used to reach it. This guarantees the first time we
+    // encounter the spawn tile is via the shortest path.
     while (!q.empty()) {
         auto [cx, cy] = q.front(); q.pop();
         if (cx == ghost.getGridSpawnX() && cy == ghost.getGridSpawnY()) break;

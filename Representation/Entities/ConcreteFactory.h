@@ -49,8 +49,8 @@ public:
      * also be appended to the FOREGROUND layer in the LevelState views
      * container.
      *
-     * @param x Initial x position
-     * @param y Initial y position
+     * @param x Normalized initial x position
+     * @param y Normalized initial y position
      * @param mapWidth Amount of horizontal tiles
      * @param mapHeight Amount of vertical tiles
      * @return ChasingGhost to be used by the world
@@ -65,8 +65,8 @@ public:
      * also be appended to the FOREGROUND layer in the LevelState views
      * container.
      *
-     * @param x Initial x position
-     * @param y Initial y position
+     * @param x Normalized initial x position
+     * @param y Normalized initial y position
      * @param mapWidth Amount of horizontal tiles
      * @param mapHeight Amount of vertical tiles
      * @return AmbushGhost to be used by the world
@@ -80,8 +80,8 @@ public:
      * also be appended to the FOREGROUND layer in the LevelState views
      * container.
      *
-     * @param x Initial x position
-     * @param y Initial y position
+     * @param x Normalized initial x position
+     * @param y Normalized initial y position
      * @param mapWidth Amount of horizontal tiles
      * @param mapHeight Amount of vertical tiles
      * @return AmbushGhost to be used by the world
@@ -96,8 +96,8 @@ public:
      * also be appended to the FOREGROUND layer in the LevelState views
      * container.
      *
-     * @param x Initial x position
-     * @param y Initial y position
+     * @param x Normalized initial x position
+     * @param y Normalized initial y position
      * @param mapWidth Amount of horizontal tiles
      * @param mapHeight Amount of vertical tiles
      * @return RandomGhost to be used by the world
@@ -111,9 +111,10 @@ public:
      * also be appended to the BACKGROUND layer in the LevelState views
      * container.
      *
-     * @param x Initial x position
-     * @param y Initial y position
-     * @param type Used by the View to determine its sprite
+     * @param x Normalized initial x position
+     * @param y Normalized initial y position
+     * @param type Used by to determine the sprite of the view and whether the
+     * model is a door
      * @return WallModel to be used by the world
      */
     std::shared_ptr<logic::WallModel> createWall(float x, float y, char type) override;
@@ -125,8 +126,8 @@ public:
      * also be appended to the BACKGROUND layer in the LevelState views
      * container.
      *
-     * @param x Initial x position
-     * @param y Initial y position
+     * @param x Normalized initial x position
+     * @param y Normalized initial y position
      * @return CoinModel to be used by the world
      */
     std::shared_ptr<logic::CoinModel> createCoin(float x, float y) override;
@@ -138,8 +139,8 @@ public:
      * also be appended to the BACKGROUND layer in the LevelState views
      * container.
      *
-     * @param x Initial x position
-     * @param y Initial y position
+     * @param x Normalized initial x position
+     * @param y Normalized initial y position
      * @return FruitModel to be used by the world
      */
     std::shared_ptr<logic::FruitModel> createFruit(float x, float y) override;

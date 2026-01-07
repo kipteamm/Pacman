@@ -91,36 +91,34 @@ $(function(){initNavTree('_wall_model_8h_source.html','',''); });
   <div class="headertitle"><div class="title">WallModel.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="_wall_model_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">//</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// Created by toroe on 27/11/2025.</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">//</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#ifndef PACMAN_WALLMODEL_H</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#define PACMAN_WALLMODEL_H</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="_entity_model_8h.html">EntityModel.h</a>&quot;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacelogic.html">logic</a> {</div>
-<div class="foldopen" id="foldopen00011" data-start="{" data-end="};">
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="classlogic_1_1_wall_model.html">   11</a></span>    <span class="keyword">class </span><a class="code hl_function" href="classlogic_1_1_wall_model.html#a5084299bd0892cbfec895dba1334c561">WallModel</a> final : <span class="keyword">public</span> <a class="code hl_function" href="classlogic_1_1_entity_model.html#a791da21c5860667eae2c5bccd30dbd9b">EntityModel</a> {</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        <span class="keyword">explicit</span> <a class="code hl_function" href="classlogic_1_1_wall_model.html#a5084299bd0892cbfec895dba1334c561">WallModel</a>(<span class="keywordtype">float</span> normalizedX, <span class="keywordtype">float</span> normalizedY, <span class="keywordtype">bool</span> <a class="code hl_function" href="classlogic_1_1_wall_model.html#ac34e490aae836aca7dd9ff0e9eea7b2b">isDoor</a>);</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="classlogic_1_1_wall_model.html#ac34e490aae836aca7dd9ff0e9eea7b2b">   15</a></span>        [[nodiscard]] <span class="keywordtype">bool</span> <a class="code hl_function" href="classlogic_1_1_wall_model.html#ac34e490aae836aca7dd9ff0e9eea7b2b">isDoor</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> door; };</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <span class="keywordtype">bool</span> door;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    };</div>
-</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>}</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<a href="_wall_model_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef PACMAN_WALLMODEL_H</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define PACMAN_WALLMODEL_H</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="_entity_model_8h.html">EntityModel.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacelogic.html">logic</a> {</div>
+<div class="foldopen" id="foldopen00008" data-start="{" data-end="};">
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="classlogic_1_1_wall_model.html">    8</a></span>    <span class="keyword">class </span><a class="code hl_function" href="classlogic_1_1_wall_model.html#a5084299bd0892cbfec895dba1334c561">WallModel</a> final : <span class="keyword">public</span> <a class="code hl_function" href="classlogic_1_1_entity_model.html#a791da21c5860667eae2c5bccd30dbd9b">EntityModel</a> {</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <span class="keyword">explicit</span> <a class="code hl_function" href="classlogic_1_1_wall_model.html#a5084299bd0892cbfec895dba1334c561">WallModel</a>(<span class="keywordtype">float</span> normalizedX, <span class="keywordtype">float</span> normalizedY, <span class="keywordtype">bool</span> <a class="code hl_function" href="classlogic_1_1_wall_model.html#ac34e490aae836aca7dd9ff0e9eea7b2b">isDoor</a>);</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#endif </span><span class="comment">//PACMAN_WALLMODEL_H</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="classlogic_1_1_wall_model.html#ac34e490aae836aca7dd9ff0e9eea7b2b">   39</a></span>        [[nodiscard]] <span class="keywordtype">bool</span> <a class="code hl_function" href="classlogic_1_1_wall_model.html#ac34e490aae836aca7dd9ff0e9eea7b2b">isDoor</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> door; };</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <span class="keywordtype">bool</span> door;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    };</div>
+</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>}</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="preprocessor">#endif </span><span class="comment">//PACMAN_WALLMODEL_H</span></div>
 <div class="ttc" id="a_entity_model_8h_html"><div class="ttname"><a href="_entity_model_8h.html">EntityModel.h</a></div></div>
-<div class="ttc" id="aclasslogic_1_1_entity_model_html_a791da21c5860667eae2c5bccd30dbd9b"><div class="ttname"><a href="classlogic_1_1_entity_model.html#a791da21c5860667eae2c5bccd30dbd9b">logic::EntityModel::EntityModel</a></div><div class="ttdeci">EntityModel(float normalizedX, float normalizedY)</div><div class="ttdef"><b>Definition</b> EntityModel.cpp:12</div></div>
-<div class="ttc" id="aclasslogic_1_1_wall_model_html_a5084299bd0892cbfec895dba1334c561"><div class="ttname"><a href="classlogic_1_1_wall_model.html#a5084299bd0892cbfec895dba1334c561">logic::WallModel::WallModel</a></div><div class="ttdeci">WallModel(float normalizedX, float normalizedY, bool isDoor)</div><div class="ttdef"><b>Definition</b> WallModel.cpp:10</div></div>
-<div class="ttc" id="aclasslogic_1_1_wall_model_html_ac34e490aae836aca7dd9ff0e9eea7b2b"><div class="ttname"><a href="classlogic_1_1_wall_model.html#ac34e490aae836aca7dd9ff0e9eea7b2b">logic::WallModel::isDoor</a></div><div class="ttdeci">bool isDoor() const</div><div class="ttdef"><b>Definition</b> WallModel.h:15</div></div>
+<div class="ttc" id="aclasslogic_1_1_entity_model_html_a791da21c5860667eae2c5bccd30dbd9b"><div class="ttname"><a href="classlogic_1_1_entity_model.html#a791da21c5860667eae2c5bccd30dbd9b">logic::EntityModel::EntityModel</a></div><div class="ttdeci">EntityModel(float normalizedX, float normalizedY)</div><div class="ttdoc">Base class for entities.</div><div class="ttdef"><b>Definition</b> EntityModel.cpp:7</div></div>
+<div class="ttc" id="aclasslogic_1_1_wall_model_html_a5084299bd0892cbfec895dba1334c561"><div class="ttname"><a href="classlogic_1_1_wall_model.html#a5084299bd0892cbfec895dba1334c561">logic::WallModel::WallModel</a></div><div class="ttdeci">WallModel(float normalizedX, float normalizedY, bool isDoor)</div><div class="ttdoc">Constructs a WallModel instance.</div><div class="ttdef"><b>Definition</b> WallModel.cpp:6</div></div>
+<div class="ttc" id="aclasslogic_1_1_wall_model_html_ac34e490aae836aca7dd9ff0e9eea7b2b"><div class="ttname"><a href="classlogic_1_1_wall_model.html#ac34e490aae836aca7dd9ff0e9eea7b2b">logic::WallModel::isDoor</a></div><div class="ttdeci">bool isDoor() const</div><div class="ttdoc">Returns whether this wall piece is a door. Doors are walls that can be passed through by ghosts under...</div><div class="ttdef"><b>Definition</b> WallModel.h:39</div></div>
 <div class="ttc" id="anamespacelogic_html"><div class="ttname"><a href="namespacelogic.html">logic</a></div><div class="ttdef"><b>Definition</b> Difficulty.h:6</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

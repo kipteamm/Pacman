@@ -6,6 +6,8 @@ var searchData=
   ['gameoverstate_2eh_3',['GameOverState.h',['../_game_over_state_8h.html',1,'']]],
   ['ghostmodel_2ecpp_4',['GhostModel.cpp',['../_ghost_model_8cpp.html',1,'']]],
   ['ghostmodel_2eh_5',['GhostModel.h',['../_ghost_model_8h.html',1,'']]],
-  ['ghostview_2ecpp_6',['GhostView.cpp',['../_ghost_view_8cpp.html',1,'']]],
-  ['ghostview_2eh_7',['GhostView.h',['../_ghost_view_8h.html',1,'']]]
+  ['ghostnavigator_2ecpp_6',['GhostNavigator.cpp',['../_ghost_navigator_8cpp.html',1,'']]],
+  ['ghostnavigator_2eh_7',['GhostNavigator.h',['../_ghost_navigator_8h.html',1,'']]],
+  ['ghostview_2ecpp_8',['GhostView.cpp',['../_ghost_view_8cpp.html',1,'']]],
+  ['ghostview_2eh_9',['GhostView.h',['../_ghost_view_8h.html',1,'']]]
 ];

@@ -124,9 +124,11 @@ Collaboration diagram for State:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ac4a5be39cd72ab792e73e339754dfc5f" id="r_ac4a5be39cd72ab792e73e339754dfc5f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac4a5be39cd72ab792e73e339754dfc5f">update</a> (double dt)=0</td></tr>
 <tr class="memitem:a03d494dbd02afaae6c75cbaa32740b3f" id="r_a03d494dbd02afaae6c75cbaa32740b3f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a03d494dbd02afaae6c75cbaa32740b3f">handleInput</a> (const sf::Event::KeyEvent &amp;keyPressed)=0</td></tr>
 <tr class="memdesc:a03d494dbd02afaae6c75cbaa32740b3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handler for KeyPressed events.  <br /></td></tr>
+<tr class="memitem:a9a8a87b7298203baf5e7e760b2b95a68" id="r_a9a8a87b7298203baf5e7e760b2b95a68"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9a8a87b7298203baf5e7e760b2b95a68">resized</a> ()=0</td></tr>
+<tr class="memdesc:a9a8a87b7298203baf5e7e760b2b95a68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the window is resized.  <br /></td></tr>
+<tr class="memitem:ac4a5be39cd72ab792e73e339754dfc5f" id="r_ac4a5be39cd72ab792e73e339754dfc5f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac4a5be39cd72ab792e73e339754dfc5f">update</a> (double dt)=0</td></tr>
 <tr class="memitem:a71f5105bcdc39481be7684d853fe12e9" id="r_a71f5105bcdc39481be7684d853fe12e9"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a71f5105bcdc39481be7684d853fe12e9">render</a> ()=0</td></tr>
 <tr class="memdesc:a71f5105bcdc39481be7684d853fe12e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Render function that is called in the main <a class="el" href="class_game.html">Game</a> loop.  <br /></td></tr>
 <tr class="memitem:a783d52422b544bb226e13de8ecfd6ad6" id="r_a783d52422b544bb226e13de8ecfd6ad6"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a783d52422b544bb226e13de8ecfd6ad6">~State</a> ()=default</td></tr>
@@ -263,6 +265,35 @@ Protected Attributes</h2></td></tr>
 <p>Should render everything relevant to the current state, that could be UI components, game elements or specific Views. </p>
 
 <p>Implemented in <a class="el" href="class_game_over_state.html#ad696ff18e7d4449406861fe746d34986">GameOverState</a>, <a class="el" href="class_level_state.html#a35bcf6729c5becf048fc132fc891cbf4">LevelState</a>, <a class="el" href="class_menu_state.html#ac216e0b4c7f5c5d39520165c45af0da6">MenuState</a>, <a class="el" href="class_paused_state.html#a37b3c32ccc689b9529a61aba74ba077c">PausedState</a>, and <a class="el" href="class_victory_state.html#a7f9c4d40c8a336329c58e47e933e0b47">VictoryState</a>.</p>
+
+</div>
+</div>
+<a id="a9a8a87b7298203baf5e7e760b2b95a68" name="a9a8a87b7298203baf5e7e760b2b95a68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a8a87b7298203baf5e7e760b2b95a68">&#9670;&#160;</a></span>resized()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void State::resized </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Called when the window is resized. </p>
+
+<p>Implemented in <a class="el" href="class_game_over_state.html#acb9c04a3839bea2498bb49771860d711">GameOverState</a>, <a class="el" href="class_level_state.html#a4a7ea817bb25ce2b5195d2344fcbfbf6">LevelState</a>, <a class="el" href="class_menu_state.html#a758bd0267332f34e733f1524b1effa22">MenuState</a>, <a class="el" href="class_paused_state.html#a7f32ad5c14f01ded5f8c882db34add68">PausedState</a>, and <a class="el" href="class_victory_state.html#ab3f694154617b5e1409dbe7fc0b3c921">VictoryState</a>.</p>
 
 </div>
 </div>

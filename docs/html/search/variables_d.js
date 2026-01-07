@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['x_0',['x',['../classlogic_1_1_entity_model.html#a2ce36a83c4d031cf644b845b41104939',1,'logic::EntityModel::x'],['../structlogic_1_1_path_node.html#a45a27195a0c8906bdda7c01cf90d32a2',1,'logic::PathNode::x']]]
+  ['username_0',['username',['../structlogic_1_1_score_entry.html#a43392e9c251ac8dac2f99e902017b4ec',1,'logic::ScoreEntry::username'],['../struct_game_context.html#a43f41cedeaf0fe5f196ab275e73ec624',1,'GameContext::username']]]
 ];

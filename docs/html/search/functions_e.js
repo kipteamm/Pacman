@@ -1,19 +1,9 @@
 var searchData=
 [
-  ['score_0',['Score',['../classlogic_1_1_score.html#a039c99843551e5e4b512ecee99e46617',1,'logic::Score']]],
-  ['setframeratelimit_1',['setFramerateLimit',['../class_window.html#ad2d74b36b23465aaf39c47e6bc230da1',1,'Window']]],
-  ['setfrightened_2',['setFrightened',['../classlogic_1_1_ghost_model.html#ab44698edc35bb357b5261768a2bd4925',1,'logic::GhostModel']]],
-  ['setnextdirection_3',['setNextDirection',['../classlogic_1_1_pacman_model.html#ab310b2f2dc17b219fb33b6f0d708dde9',1,'logic::PacmanModel']]],
-  ['setscaling_4',['setScaling',['../class_camera.html#a0e7b50980e8ebb0a28c05fa67aa5ab62',1,'Camera']]],
-  ['setstate_5',['setState',['../classlogic_1_1_ghost_model.html#a0c165497fcb03c65f1026cf1d3cbe591',1,'logic::GhostModel']]],
-  ['setuser_6',['setUser',['../classlogic_1_1_score.html#a549bb6a002478f2444e1b2e98de14f78',1,'logic::Score']]],
-  ['setviews_7',['setViews',['../class_concrete_factory.html#a69dc709d543df39e1d6e49b241a750d9',1,'ConcreteFactory']]],
-  ['shoulddelete_8',['shouldDelete',['../class_entity_view.html#a3a163d4781bde3d7d38be65d5fe1920c',1,'EntityView']]],
-  ['soundmanager_9',['SoundManager',['../class_sound_manager.html#abcc1fbf3488be5788a42c9a4fe56df35',1,'SoundManager']]],
-  ['start_10',['start',['../class_sound_manager.html#a5514e839347c036dd7ecf5b9af869015',1,'SoundManager']]],
-  ['state_11',['State',['../class_state.html#a08febc2efb52c152040efda1fb93634b',1,'State']]],
-  ['statemanager_12',['StateManager',['../class_state_manager.html#a3e2be96d935eb56813b096a885d58587',1,'StateManager']]],
-  ['stop_13',['stop',['../class_sound_manager.html#a3820a512212edaaf294a1d67ea9c9c55',1,'SoundManager']]],
-  ['stopwatch_14',['Stopwatch',['../classlogic_1_1_stopwatch.html#aef5301b0593339e01c50a83022e7b801',1,'logic::Stopwatch']]],
-  ['swap_15',['swap',['../class_state_manager.html#ab0f7726aa3e964ebf5cbafa9b5d3efa2',1,'StateManager']]]
+  ['random_0',['Random',['../classlogic_1_1_random.html#affaefb818059c94b4b5993ad8d05b595',1,'logic::Random']]],
+  ['randomghost_1',['RandomGhost',['../classlogic_1_1_random_ghost.html#adaada2ea1df27d8c63bdbef9eb7b3b10',1,'logic::RandomGhost']]],
+  ['render_2',['render',['../class_entity_view.html#adf2869ddecd4e3f5bf1ae25684b2ee61',1,'EntityView::render()'],['../class_ghost_view.html#a3898ad0c1ffa185f2fa7d8817f88e6f3',1,'GhostView::render()'],['../class_pacman_view.html#a75442e323958cab1443ea85d55a3b473',1,'PacmanView::render()'],['../class_world_view.html#ae8ee677599ac2ab62d351ce329f74195',1,'WorldView::render()'],['../class_game_over_state.html#ad696ff18e7d4449406861fe746d34986',1,'GameOverState::render()'],['../class_level_state.html#a35bcf6729c5becf048fc132fc891cbf4',1,'LevelState::render()'],['../class_menu_state.html#ac216e0b4c7f5c5d39520165c45af0da6',1,'MenuState::render()'],['../class_paused_state.html#a37b3c32ccc689b9529a61aba74ba077c',1,'PausedState::render()'],['../class_state.html#a71f5105bcdc39481be7684d853fe12e9',1,'State::render()'],['../class_victory_state.html#a7f9c4d40c8a336329c58e47e933e0b47',1,'VictoryState::render()']]],
+  ['reset_3',['reset',['../classlogic_1_1_difficulty.html#a24798002fe8e54037e1b66ce49384eaf',1,'logic::Difficulty::reset()'],['../classlogic_1_1_stopwatch.html#a42c7014e7fffcf4c56ca6fb07f8eb31c',1,'logic::Stopwatch::reset()']]],
+  ['resized_4',['resized',['../class_camera.html#a6790f653a358cd27b6872855b1ab4ce0',1,'Camera::resized()'],['../class_entity_view.html#a531a25ee050d86f646aef31658786f1f',1,'EntityView::resized()'],['../class_pacman_view.html#ac40cad781e3c16b2418ea4f8e71a4cd0',1,'PacmanView::resized()'],['../class_world_view.html#a8649a79e6058fcf3190a7f38dbc6f01b',1,'WorldView::resized()'],['../class_game_over_state.html#acb9c04a3839bea2498bb49771860d711',1,'GameOverState::resized()'],['../class_level_state.html#a4a7ea817bb25ce2b5195d2344fcbfbf6',1,'LevelState::resized()'],['../class_menu_state.html#a758bd0267332f34e733f1524b1effa22',1,'MenuState::resized()'],['../class_paused_state.html#a7f32ad5c14f01ded5f8c882db34add68',1,'PausedState::resized()'],['../class_state.html#a9a8a87b7298203baf5e7e760b2b95a68',1,'State::resized()'],['../class_victory_state.html#ab3f694154617b5e1409dbe7fc0b3c921',1,'VictoryState::resized()']]],
+  ['respawn_5',['respawn',['../classlogic_1_1_moving_entity_model.html#a96e734c1cc7b91eece9ae00451c64a62',1,'logic::MovingEntityModel::respawn()'],['../classlogic_1_1_ghost_model.html#ab699975eea1214f470e49afe60bc7436',1,'logic::GhostModel::respawn()'],['../classlogic_1_1_pacman_model.html#ab14cc8f37db8bd233e1354ffd127104c',1,'logic::PacmanModel::respawn()']]]
 ];

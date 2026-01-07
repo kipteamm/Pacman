@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['chasing_0',['CHASING',['../namespacelogic.html#a0adadbaf39d39f42c97e3f52a88ea866ab1cdb24e3483650f45299987269d835e',1,'logic']]],
-  ['coin_5featen_1',['COIN_EATEN',['../namespacelogic.html#a5054eadf2d20b609706894ae1bc5f250a9b4ea3c0f64a54bb996ca3a872ea8b5b',1,'logic']]]
+  ['background_0',['BACKGROUND',['../_concrete_factory_8h.html#a9a8118be7780e95363d631cbca7e7800aa44b734476c2f3d073ee7aca08660a0e',1,'ConcreteFactory.h']]]
 ];

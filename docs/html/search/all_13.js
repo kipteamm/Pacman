@@ -1,21 +1,6 @@
 var searchData=
 [
-  ['waiting_0',['WAITING',['../namespacelogic.html#a0adadbaf39d39f42c97e3f52a88ea866a1869d56535e8b1449a6da54ff5e11f50',1,'logic']]],
-  ['wallmodel_1',['WallModel',['../classlogic_1_1_wall_model.html',1,'logic::WallModel'],['../classlogic_1_1_wall_model.html#a5084299bd0892cbfec895dba1334c561',1,'logic::WallModel::WallModel()']]],
-  ['wallmodel_2ecpp_2',['WallModel.cpp',['../_wall_model_8cpp.html',1,'']]],
-  ['wallmodel_2eh_3',['WallModel.h',['../_wall_model_8h.html',1,'']]],
-  ['wallview_4',['WallView',['../class_wall_view.html',1,'WallView'],['../class_wall_view.html#a223f18237e6232010effb246ca3cca9e',1,'WallView::WallView()']]],
-  ['wallview_2ecpp_5',['WallView.cpp',['../_wall_view_8cpp.html',1,'']]],
-  ['wallview_2eh_6',['WallView.h',['../_wall_view_8h.html',1,'']]],
-  ['window_7',['Window',['../class_window.html',1,'Window'],['../class_window.html#a3b760cdf58517c8c4a91237ccc582b57',1,'Window::Window()']]],
-  ['window_2ecpp_8',['Window.cpp',['../_window_8cpp.html',1,'']]],
-  ['window_2eh_9',['Window.h',['../_window_8h.html',1,'']]],
-  ['world_10',['World',['../classlogic_1_1_world.html',1,'logic::World'],['../classlogic_1_1_world.html#a3f4729efd28e1200d8fdb4ca84899828',1,'logic::World::World()']]],
-  ['world_2ecpp_11',['World.cpp',['../_world_8cpp.html',1,'']]],
-  ['world_2eh_12',['World.h',['../_world_8h.html',1,'']]],
-  ['worldstate_13',['WorldState',['../namespacelogic.html#a5d383bf4594e209ad9c4421348b085ba',1,'logic']]],
-  ['worldview_14',['WorldView',['../class_world_view.html',1,'WorldView'],['../class_world_view.html#a0ca7fbb77429a17fa7ce35fd226d4825',1,'WorldView::WorldView()']]],
-  ['worldview_2ecpp_15',['WorldView.cpp',['../_world_view_8cpp.html',1,'']]],
-  ['worldview_2eh_16',['WorldView.h',['../_world_view_8h.html',1,'']]],
-  ['write_17',['write',['../classlogic_1_1_score.html#a571465689026b16c4f5b7f83771d7d60',1,'logic::Score']]]
+  ['victorystate_0',['VictoryState',['../class_victory_state.html',1,'VictoryState'],['../class_victory_state.html#af63f6cc6fbbe77e0059f547a95fa1591',1,'VictoryState::VictoryState()']]],
+  ['victorystate_2ecpp_1',['VictoryState.cpp',['../_victory_state_8cpp.html',1,'']]],
+  ['victorystate_2eh_2',['VictoryState.h',['../_victory_state_8h.html',1,'']]]
 ];

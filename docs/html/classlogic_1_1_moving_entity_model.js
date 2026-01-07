@@ -1,13 +1,13 @@
 var classlogic_1_1_moving_entity_model =
 [
-    [ "MovingEntityModel", "classlogic_1_1_moving_entity_model.html#a5a1b102fc6367727cdeb272b138f5efe", null ],
+    [ "MovingEntityModel", "classlogic_1_1_moving_entity_model.html#a56e8a93eaf6cec682e93d9d5176f31c6", null ],
     [ "getDirection", "classlogic_1_1_moving_entity_model.html#aab982269578096285c7e2f2fb3d23fd0", null ],
-    [ "getGridX", "classlogic_1_1_moving_entity_model.html#aa90b5e5a34ae4c2c9a1066cb09b0adcf", null ],
-    [ "getGridY", "classlogic_1_1_moving_entity_model.html#a3c1357cb79778329a5176d3ec0ca3be7", null ],
-    [ "getSpeed", "classlogic_1_1_moving_entity_model.html#a74c4a717cb9c1ca3482ceecd8987f862", null ],
+    [ "getGridX", "classlogic_1_1_moving_entity_model.html#a9d83f79b383fb67d156fd4ebb7bd46e3", null ],
+    [ "getGridY", "classlogic_1_1_moving_entity_model.html#a6702cb3108254fa5eac5f88de276fe32", null ],
+    [ "gridTargetReached", "classlogic_1_1_moving_entity_model.html#ac52205f02bf862e1ea68dee6cd767912", null ],
     [ "move", "classlogic_1_1_moving_entity_model.html#a6a80731adfff4cdf806e320145d34e7f", null ],
+    [ "normalizeTarget", "classlogic_1_1_moving_entity_model.html#a5d850d6492dde7e484d1f26f104006a6", null ],
     [ "respawn", "classlogic_1_1_moving_entity_model.html#a96e734c1cc7b91eece9ae00451c64a62", null ],
-    [ "updateTarget", "classlogic_1_1_moving_entity_model.html#a3fde35c4d0a5778899d254e8cc19d1ed", null ],
     [ "direction", "classlogic_1_1_moving_entity_model.html#a8f467334a6e63da7367ded7b20202932", null ],
     [ "gridX", "classlogic_1_1_moving_entity_model.html#a0b6226d7814fbc8b686e4c2a8cba0b3e", null ],
     [ "gridY", "classlogic_1_1_moving_entity_model.html#a534277e84a63b5a6e9b588bbb879fc23", null ],

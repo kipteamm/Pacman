@@ -104,40 +104,42 @@ $(function(){initNavTree('_menu_state_8h_source.html','',''); });
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">public</span>:</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="class_menu_state.html#a1f1f6ce09b7c1f5fd29aae708665d16c">MenuState</a>(<a class="code hl_class" href="class_state_manager.html">StateManager</a>&amp; <a class="code hl_variable" href="class_state.html#a9de31f1ce45c89c183bb929122eb9acb">context</a>);</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_menu_state.html#a98b2778bfb8aaa192c2a23e8c3d89204">update</a>(<span class="keywordtype">double</span> dt) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_menu_state.html#ab0a752741d44348fff67fdee8cad16f5">handleInput</a>(<span class="keyword">const</span> sf::Event::KeyEvent &amp;keyPressed) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span></div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_menu_state.html#ac216e0b4c7f5c5d39520165c45af0da6">render</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    std::shared_ptr&lt;logic::Score&gt; scoreSystem;</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    sf::Sprite pacmanLogo;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_menu_state.html#ab0a752741d44348fff67fdee8cad16f5">handleInput</a>(<span class="keyword">const</span> sf::Event::KeyEvent &amp;keyPressed) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_menu_state.html#a758bd0267332f34e733f1524b1effa22">resized</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_menu_state.html#a98b2778bfb8aaa192c2a23e8c3d89204">update</a>(<span class="keywordtype">double</span> dt) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_menu_state.html#ac216e0b4c7f5c5d39520165c45af0da6">render</a>() <span class="keyword">override</span>;</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    sf::Text highscoresTitle;</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    std::vector&lt;sf::Text&gt; highscores;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    std::shared_ptr&lt;logic::Score&gt; scoreSystem;</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    sf::Text username;</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    std::string usernameValue;</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    sf::Text cta;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    sf::Sprite pacmanLogo;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    sf::Text highscoresTitle;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    std::vector&lt;sf::Text&gt; highscores;</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keywordtype">bool</span> renderCta = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keywordtype">double</span> elapsedTime;</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>};</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    sf::Text username;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    std::string usernameValue;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    sf::Text cta;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keywordtype">bool</span> renderCta = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordtype">double</span> elapsedTime;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>};</div>
 </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="preprocessor">#endif </span><span class="comment">//MENUSTATE_H</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="preprocessor">#endif </span><span class="comment">//MENUSTATE_H</span></div>
 <div class="ttc" id="a_state_manager_8h_html"><div class="ttname"><a href="_state_manager_8h.html">StateManager.h</a></div></div>
 <div class="ttc" id="aclass_menu_state_html_a1f1f6ce09b7c1f5fd29aae708665d16c"><div class="ttname"><a href="class_menu_state.html#a1f1f6ce09b7c1f5fd29aae708665d16c">MenuState::MenuState</a></div><div class="ttdeci">MenuState(StateManager &amp;context)</div><div class="ttdoc">This State determines the main Pacman game menu.</div><div class="ttdef"><b>Definition</b> MenuState.cpp:9</div></div>
-<div class="ttc" id="aclass_menu_state_html_a98b2778bfb8aaa192c2a23e8c3d89204"><div class="ttname"><a href="class_menu_state.html#a98b2778bfb8aaa192c2a23e8c3d89204">MenuState::update</a></div><div class="ttdeci">void update(double dt) override</div><div class="ttdoc">Update the MenuState, is used for UI animations.</div><div class="ttdef"><b>Definition</b> MenuState.cpp:109</div></div>
-<div class="ttc" id="aclass_menu_state_html_ab0a752741d44348fff67fdee8cad16f5"><div class="ttname"><a href="class_menu_state.html#ab0a752741d44348fff67fdee8cad16f5">MenuState::handleInput</a></div><div class="ttdeci">void handleInput(const sf::Event::KeyEvent &amp;keyPressed) override</div><div class="ttdoc">Will start the game when specific keys are a pressed. Also handles usernames.</div><div class="ttdef"><b>Definition</b> MenuState.cpp:61</div></div>
-<div class="ttc" id="aclass_menu_state_html_ac216e0b4c7f5c5d39520165c45af0da6"><div class="ttname"><a href="class_menu_state.html#ac216e0b4c7f5c5d39520165c45af0da6">MenuState::render</a></div><div class="ttdeci">void render() override</div><div class="ttdoc">Renders the menu state.</div><div class="ttdef"><b>Definition</b> MenuState.cpp:121</div></div>
+<div class="ttc" id="aclass_menu_state_html_a758bd0267332f34e733f1524b1effa22"><div class="ttname"><a href="class_menu_state.html#a758bd0267332f34e733f1524b1effa22">MenuState::resized</a></div><div class="ttdeci">void resized() override</div><div class="ttdoc">Will resize the contents of the Menu state.</div><div class="ttdef"><b>Definition</b> MenuState.cpp:114</div></div>
+<div class="ttc" id="aclass_menu_state_html_a98b2778bfb8aaa192c2a23e8c3d89204"><div class="ttname"><a href="class_menu_state.html#a98b2778bfb8aaa192c2a23e8c3d89204">MenuState::update</a></div><div class="ttdeci">void update(double dt) override</div><div class="ttdoc">Update the MenuState, is used for UI animations.</div><div class="ttdef"><b>Definition</b> MenuState.cpp:144</div></div>
+<div class="ttc" id="aclass_menu_state_html_ab0a752741d44348fff67fdee8cad16f5"><div class="ttname"><a href="class_menu_state.html#ab0a752741d44348fff67fdee8cad16f5">MenuState::handleInput</a></div><div class="ttdeci">void handleInput(const sf::Event::KeyEvent &amp;keyPressed) override</div><div class="ttdoc">Will start the game when specific keys are a pressed. Also handles usernames.</div><div class="ttdef"><b>Definition</b> MenuState.cpp:45</div></div>
+<div class="ttc" id="aclass_menu_state_html_ac216e0b4c7f5c5d39520165c45af0da6"><div class="ttname"><a href="class_menu_state.html#ac216e0b4c7f5c5d39520165c45af0da6">MenuState::render</a></div><div class="ttdeci">void render() override</div><div class="ttdoc">Renders the menu state.</div><div class="ttdef"><b>Definition</b> MenuState.cpp:156</div></div>
 <div class="ttc" id="aclass_state_html_a08febc2efb52c152040efda1fb93634b"><div class="ttname"><a href="class_state.html#a08febc2efb52c152040efda1fb93634b">State::State</a></div><div class="ttdeci">State(StateManager &amp;ctx)</div><div class="ttdoc">Creates the base State object.</div><div class="ttdef"><b>Definition</b> StateManager.cpp:4</div></div>
-<div class="ttc" id="aclass_state_html_a9de31f1ce45c89c183bb929122eb9acb"><div class="ttname"><a href="class_state.html#a9de31f1ce45c89c183bb929122eb9acb">State::context</a></div><div class="ttdeci">StateManager &amp; context</div><div class="ttdef"><b>Definition</b> StateManager.h:50</div></div>
-<div class="ttc" id="aclass_state_manager_html"><div class="ttname"><a href="class_state_manager.html">StateManager</a></div><div class="ttdef"><b>Definition</b> StateManager.h:69</div></div>
+<div class="ttc" id="aclass_state_html_a9de31f1ce45c89c183bb929122eb9acb"><div class="ttname"><a href="class_state.html#a9de31f1ce45c89c183bb929122eb9acb">State::context</a></div><div class="ttdeci">StateManager &amp; context</div><div class="ttdef"><b>Definition</b> StateManager.h:55</div></div>
+<div class="ttc" id="aclass_state_manager_html"><div class="ttname"><a href="class_state_manager.html">StateManager</a></div><div class="ttdef"><b>Definition</b> StateManager.h:91</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

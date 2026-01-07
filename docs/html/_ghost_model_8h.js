@@ -1,6 +1,5 @@
 var _ghost_model_8h =
 [
-    [ "logic::PathNode", "structlogic_1_1_path_node.html", "structlogic_1_1_path_node" ],
     [ "logic::GhostModel", "classlogic_1_1_ghost_model.html", "classlogic_1_1_ghost_model" ],
     [ "logic::GhostState", "namespacelogic.html#a0adadbaf39d39f42c97e3f52a88ea866", [
       [ "logic::GhostState::WAITING", "namespacelogic.html#a0adadbaf39d39f42c97e3f52a88ea866a1869d56535e8b1449a6da54ff5e11f50", null ],

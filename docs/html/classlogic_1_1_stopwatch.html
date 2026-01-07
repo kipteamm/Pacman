@@ -99,12 +99,16 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aef5301b0593339e01c50a83022e7b801" id="r_aef5301b0593339e01c50a83022e7b801"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aef5301b0593339e01c50a83022e7b801">Stopwatch</a> (Stopwatch &amp;other)=delete</td></tr>
 <tr class="memitem:a1f1cb639ce3b527dc066e0646e944baa" id="r_a1f1cb639ce3b527dc066e0646e944baa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1f1cb639ce3b527dc066e0646e944baa">operator=</a> (const <a class="el" href="#aef5301b0593339e01c50a83022e7b801">Stopwatch</a> &amp;)=delete</td></tr>
 <tr class="memitem:af3270e4ab050781a8b8dbe1aedbe43e0" id="r_af3270e4ab050781a8b8dbe1aedbe43e0"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af3270e4ab050781a8b8dbe1aedbe43e0">getDeltaTime</a> () const</td></tr>
+<tr class="memdesc:af3270e4ab050781a8b8dbe1aedbe43e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the deltatime, updated by <a class="el" href="#a76c97b8ae59f93b713e2bd191fda48ed" title="Updates deltatime to hold the time difference between now and the last tick.">Stopwatch::tick</a>.  <br /></td></tr>
 <tr class="memitem:a76c97b8ae59f93b713e2bd191fda48ed" id="r_a76c97b8ae59f93b713e2bd191fda48ed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a76c97b8ae59f93b713e2bd191fda48ed">tick</a> ()</td></tr>
+<tr class="memdesc:a76c97b8ae59f93b713e2bd191fda48ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates deltatime to hold the time difference between now and the last tick.  <br /></td></tr>
 <tr class="memitem:a42c7014e7fffcf4c56ca6fb07f8eb31c" id="r_a42c7014e7fffcf4c56ca6fb07f8eb31c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a42c7014e7fffcf4c56ca6fb07f8eb31c">reset</a> ()</td></tr>
+<tr class="memdesc:a42c7014e7fffcf4c56ca6fb07f8eb31c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the <a class="el" href="classlogic_1_1_stopwatch.html">Stopwatch</a>.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:ae8cfd6ad5161541a7dc62fe3b3e1ca6b" id="r_ae8cfd6ad5161541a7dc62fe3b3e1ca6b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="#aef5301b0593339e01c50a83022e7b801">Stopwatch</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae8cfd6ad5161541a7dc62fe3b3e1ca6b">getInstance</a> ()</td></tr>
+<tr class="memdesc:ae8cfd6ad5161541a7dc62fe3b3e1ca6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an instance of the <a class="el" href="classlogic_1_1_stopwatch.html">Stopwatch</a> class.  <br /></td></tr>
 </table>
 <a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aef5301b0593339e01c50a83022e7b801" name="aef5301b0593339e01c50a83022e7b801"></a>
@@ -157,6 +161,9 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Returns the deltatime, updated by <a class="el" href="#a76c97b8ae59f93b713e2bd191fda48ed" title="Updates deltatime to hold the time difference between now and the last tick.">Stopwatch::tick</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>Deltatime </dd></dl>
+
 </div>
 </div>
 <a id="ae8cfd6ad5161541a7dc62fe3b3e1ca6b" name="ae8cfd6ad5161541a7dc62fe3b3e1ca6b"></a>
@@ -181,6 +188,9 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Returns an instance of the <a class="el" href="classlogic_1_1_stopwatch.html">Stopwatch</a> class. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classlogic_1_1_stopwatch.html">Stopwatch</a> instance </dd></dl>
 
 </div>
 </div>
@@ -224,6 +234,8 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Resets the <a class="el" href="classlogic_1_1_stopwatch.html">Stopwatch</a>. </p>
+
 </div>
 </div>
 <a id="a76c97b8ae59f93b713e2bd191fda48ed" name="a76c97b8ae59f93b713e2bd191fda48ed"></a>
@@ -240,6 +252,8 @@ Static Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Updates deltatime to hold the time difference between now and the last tick. </p>
 
 </div>
 </div>

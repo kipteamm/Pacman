@@ -98,15 +98,17 @@ Inheritance diagram for logic::Observer:</div>
 <div class="dyncontent">
 <div class="center"><img src="classlogic_1_1_observer__inherit__graph.png" border="0" usemap="#alogic_1_1_observer_inherit__map" loading="lazy" alt="Inheritance graph"/></div>
 <map name="alogic_1_1_observer_inherit__map" id="alogic_1_1_observer_inherit__map">
-<area shape="rect" title=" " alt="" coords="376,5,485,32"/>
+<area shape="rect" title=" " alt="" coords="424,5,533,32"/>
 <area shape="rect" href="class_entity_view.html" title=" " alt="" coords="208,80,293,107"/>
-<area shape="poly" title=" " alt="" coords="388,37,283,82,281,77,383,39"/>
-<area shape="rect" href="class_sound_manager.html" title=" " alt="" coords="316,80,425,107"/>
-<area shape="poly" title=" " alt="" coords="413,43,383,82,379,77,408,45"/>
-<area shape="rect" href="class_world_view.html" title=" " alt="" coords="449,80,532,107"/>
-<area shape="poly" title=" " alt="" coords="452,42,483,80,478,79,450,46"/>
-<area shape="rect" href="classlogic_1_1_score.html" title=" " alt="" coords="556,80,646,107"/>
-<area shape="poly" title=" " alt="" coords="475,36,574,79,569,79,474,41"/>
+<area shape="poly" title=" " alt="" coords="422,38,292,82,290,77,427,36"/>
+<area shape="rect" href="class_level_state.html" title=" " alt="" coords="317,80,400,107"/>
+<area shape="poly" title=" " alt="" coords="447,39,381,82,379,77,442,41"/>
+<area shape="rect" href="class_sound_manager.html" title=" " alt="" coords="424,80,533,107"/>
+<area shape="poly" title=" " alt="" coords="480,46,481,81,476,78,477,50"/>
+<area shape="rect" href="class_world_view.html" title=" " alt="" coords="557,80,640,107"/>
+<area shape="poly" title=" " alt="" coords="513,38,580,80,575,79,512,43"/>
+<area shape="rect" href="classlogic_1_1_score.html" title=" " alt="" coords="664,80,754,107"/>
+<area shape="poly" title=" " alt="" coords="534,34,672,79,666,80,533,40"/>
 <area shape="rect" href="class_coin_view.html" title=" " alt="" coords="5,155,83,181"/>
 <area shape="poly" title=" " alt="" coords="201,115,81,157,79,152,200,110"/>
 <area shape="rect" href="class_fruit_view.html" title=" " alt="" coords="107,155,184,181"/>
@@ -124,6 +126,7 @@ Inheritance diagram for logic::Observer:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a9ffb621699cd68a8e165297d145f593e" id="r_a9ffb621699cd68a8e165297d145f593e"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9ffb621699cd68a8e165297d145f593e">~Observer</a> ()=default</td></tr>
 <tr class="memitem:a037d49687e2bcd83c56fd8af8111ca0e" id="r_a037d49687e2bcd83c56fd8af8111ca0e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a037d49687e2bcd83c56fd8af8111ca0e">update</a> (<a class="el" href="namespacelogic.html#a5054eadf2d20b609706894ae1bc5f250">Events</a> event)=0</td></tr>
+<tr class="memdesc:a037d49687e2bcd83c56fd8af8111ca0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update method that is called by the observed Subjects.  <br /></td></tr>
 </table>
 <a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a9ffb621699cd68a8e165297d145f593e" name="a9ffb621699cd68a8e165297d145f593e"></a>
@@ -175,7 +178,14 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="class_coin_view.html#a3ac21bdc868e29cb7f4bc6fba1a4bb16">CoinView</a>, <a class="el" href="class_fruit_view.html#ac7a9a7eecdd6fc2c8d0d4f1ab941eb88">FruitView</a>, <a class="el" href="class_ghost_view.html#a34e1f50e8d99e6dd92c69e0df84d4324">GhostView</a>, <a class="el" href="class_pacman_view.html#aebb6fa9102e792de0d7db500b5787545">PacmanView</a>, <a class="el" href="class_sound_manager.html#a5018ab48b9c098324e5c91b9f78c732c">SoundManager</a>, <a class="el" href="class_wall_view.html#a7998113d539249cc76c8b639be199a98">WallView</a>, and <a class="el" href="class_world_view.html#a5741da6aea638944935c481428a5aae8">WorldView</a>.</p>
+<p>Update method that is called by the observed Subjects. </p>
+<p><a class="el" href="classlogic_1_1_world.html">World</a> <a class="el" href="namespacelogic.html#a5054eadf2d20b609706894ae1bc5f250">Events</a> are passed down as such that Observers know what has happened and can act properly.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event</td><td><a class="el" href="classlogic_1_1_world.html">World</a> event </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

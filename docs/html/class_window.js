@@ -10,5 +10,6 @@ var class_window =
     [ "isOpen", "class_window.html#a761d614931fb5a5daa70e4f580c3e78e", null ],
     [ "operator=", "class_window.html#a95028c2deac2197b676c422c4bc2ee3c", null ],
     [ "pollEvent", "class_window.html#a7a0dc05fe03c166f3e2350e3316c6097", null ],
-    [ "setFramerateLimit", "class_window.html#ad2d74b36b23465aaf39c47e6bc230da1", null ]
+    [ "setFramerateLimit", "class_window.html#ad2d74b36b23465aaf39c47e6bc230da1", null ],
+    [ "setView", "class_window.html#ad4d2842c96fb1fd975ce38c2a241078e", null ]
 ];

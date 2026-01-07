@@ -125,19 +125,21 @@ $(function(){initNavTree('_window_8h_source.html','',''); });
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span></div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_window.html#ad2d74b36b23465aaf39c47e6bc230da1">setFramerateLimit</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> frameRate);</div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span></div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    [[nodiscard]] <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_function" href="class_window.html#aba43b0511b05fc2a90f86f9737d8f434">getWidth</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span></div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    [[nodiscard]] <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_function" href="class_window.html#aa017b94c100e1953c13f7a9d1e411ef9">getHeight</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <a class="code hl_function" href="class_window.html#a3b760cdf58517c8c4a91237ccc582b57">Window</a>();</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    sf::RenderWindow window;</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>};</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_window.html#ad4d2842c96fb1fd975ce38c2a241078e">setView</a>(<span class="keyword">const</span> sf::View&amp; view);</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span></div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    [[nodiscard]] <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_function" href="class_window.html#aba43b0511b05fc2a90f86f9737d8f434">getWidth</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span></div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    [[nodiscard]] <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_function" href="class_window.html#aa017b94c100e1953c13f7a9d1e411ef9">getHeight</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <a class="code hl_function" href="class_window.html#a3b760cdf58517c8c4a91237ccc582b57">Window</a>();</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    sf::RenderWindow window;</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>};</div>
 </div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span><span class="preprocessor">#endif </span><span class="comment">//WINDOW_H</span></div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span><span class="preprocessor">#endif </span><span class="comment">//WINDOW_H</span></div>
 <div class="ttc" id="aclass_window_html_a27532de1433b896e6586c3a9e045349d"><div class="ttname"><a href="class_window.html#a27532de1433b896e6586c3a9e045349d">Window::getInstance</a></div><div class="ttdeci">static Window &amp; getInstance()</div><div class="ttdoc">Returns an instance of the Window class.</div><div class="ttdef"><b>Definition</b> Window.cpp:10</div></div>
 <div class="ttc" id="aclass_window_html_a35055c04498121d39741bfcd5082705b"><div class="ttname"><a href="class_window.html#a35055c04498121d39741bfcd5082705b">Window::close</a></div><div class="ttdeci">void close()</div><div class="ttdoc">Close the window and destroy all the attached resources.</div><div class="ttdef"><b>Definition</b> Window.cpp:38</div></div>
 <div class="ttc" id="aclass_window_html_a38bc43bdd1a97e5de7f346ba4c3957ef"><div class="ttname"><a href="class_window.html#a38bc43bdd1a97e5de7f346ba4c3957ef">Window::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdoc">Clear the window.</div><div class="ttdef"><b>Definition</b> Window.cpp:30</div></div>
@@ -148,6 +150,7 @@ $(function(){initNavTree('_window_8h_source.html','',''); });
 <div class="ttc" id="aclass_window_html_aa017b94c100e1953c13f7a9d1e411ef9"><div class="ttname"><a href="class_window.html#aa017b94c100e1953c13f7a9d1e411ef9">Window::getHeight</a></div><div class="ttdeci">unsigned int getHeight() const</div><div class="ttdoc">Get the height of the rendering region of the window. This does not include the titlebar or borders o...</div><div class="ttdef"><b>Definition</b> Window.cpp:50</div></div>
 <div class="ttc" id="aclass_window_html_aba43b0511b05fc2a90f86f9737d8f434"><div class="ttname"><a href="class_window.html#aba43b0511b05fc2a90f86f9737d8f434">Window::getWidth</a></div><div class="ttdeci">unsigned int getWidth() const</div><div class="ttdoc">Get the width of the rendering region of the window. This does not include the borders of the window.</div><div class="ttdef"><b>Definition</b> Window.cpp:46</div></div>
 <div class="ttc" id="aclass_window_html_ad2d74b36b23465aaf39c47e6bc230da1"><div class="ttname"><a href="class_window.html#ad2d74b36b23465aaf39c47e6bc230da1">Window::setFramerateLimit</a></div><div class="ttdeci">void setFramerateLimit(unsigned int frameRate)</div><div class="ttdoc">Limit the framerate to a maximum fixed frequency.</div><div class="ttdef"><b>Definition</b> Window.cpp:42</div></div>
+<div class="ttc" id="aclass_window_html_ad4d2842c96fb1fd975ce38c2a241078e"><div class="ttname"><a href="class_window.html#ad4d2842c96fb1fd975ce38c2a241078e">Window::setView</a></div><div class="ttdeci">void setView(const sf::View &amp;view)</div><div class="ttdoc">Change the current active view.</div><div class="ttdef"><b>Definition</b> Window.cpp:54</div></div>
 <div class="ttc" id="aclass_window_html_adfb2d5826942693e289d13f314a341f7"><div class="ttname"><a href="class_window.html#adfb2d5826942693e289d13f314a341f7">Window::draw</a></div><div class="ttdeci">void draw(const sf::Drawable &amp;drawable)</div><div class="ttdoc">Draw a drawable object to the window.</div><div class="ttdef"><b>Definition</b> Window.cpp:26</div></div>
 <div class="ttc" id="aclass_window_html_afadfafa5a0b9472554759004aafb327e"><div class="ttname"><a href="class_window.html#afadfafa5a0b9472554759004aafb327e">Window::display</a></div><div class="ttdeci">void display()</div><div class="ttdoc">Display on screen what has been drawn to the window since the last clear.</div><div class="ttdef"><b>Definition</b> Window.cpp:34</div></div>
 </div><!-- fragment --></div><!-- contents -->

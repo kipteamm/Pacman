@@ -10,15 +10,15 @@ var namespacelogic =
     [ "FruitModel", "classlogic_1_1_fruit_model.html", "classlogic_1_1_fruit_model" ],
     [ "AmbushGhost", "classlogic_1_1_ambush_ghost.html", "classlogic_1_1_ambush_ghost" ],
     [ "ChasingGhost", "classlogic_1_1_chasing_ghost.html", "classlogic_1_1_chasing_ghost" ],
-    [ "PathNode", "structlogic_1_1_path_node.html", "structlogic_1_1_path_node" ],
     [ "GhostModel", "classlogic_1_1_ghost_model.html", "classlogic_1_1_ghost_model" ],
+    [ "GhostNavigator", "classlogic_1_1_ghost_navigator.html", null ],
     [ "RandomGhost", "classlogic_1_1_random_ghost.html", "classlogic_1_1_random_ghost" ],
     [ "PacmanModel", "classlogic_1_1_pacman_model.html", "classlogic_1_1_pacman_model" ],
     [ "WallModel", "classlogic_1_1_wall_model.html", "classlogic_1_1_wall_model" ],
     [ "Observer", "classlogic_1_1_observer.html", "classlogic_1_1_observer" ],
     [ "Subject", "classlogic_1_1_subject.html", "classlogic_1_1_subject" ],
     [ "Random", "classlogic_1_1_random.html", "classlogic_1_1_random" ],
-    [ "Highscore", "structlogic_1_1_highscore.html", "structlogic_1_1_highscore" ],
+    [ "ScoreEntry", "structlogic_1_1_score_entry.html", "structlogic_1_1_score_entry" ],
     [ "Score", "classlogic_1_1_score.html", "classlogic_1_1_score" ],
     [ "Stopwatch", "classlogic_1_1_stopwatch.html", "classlogic_1_1_stopwatch" ],
     [ "World", "classlogic_1_1_world.html", "classlogic_1_1_world" ],
@@ -51,12 +51,15 @@ var namespacelogic =
       [ "DOWN", "namespacelogic.html#a2ff69ac881d2a3e3d7a4142b7776afb3a19d623ed9d84cd892cb0d6618771bfc5", null ]
     ] ],
     [ "WorldState", "namespacelogic.html#a5d383bf4594e209ad9c4421348b085ba", [
+      [ "AWAITING_MAP", "namespacelogic.html#a5d383bf4594e209ad9c4421348b085baaeef0a576bae8d3347b150cda9614b9e8", null ],
       [ "RESTARTING", "namespacelogic.html#a5d383bf4594e209ad9c4421348b085baa44031c2c69a70db692d9b827cd5bc4c8", null ],
       [ "FRIGHTENED", "namespacelogic.html#a5d383bf4594e209ad9c4421348b085baa50662a932416094c15a98444b296f4ac", null ],
       [ "PLAYING", "namespacelogic.html#a5d383bf4594e209ad9c4421348b085baa9825f8f0169a2257ff2209629eb800cb", null ]
     ] ],
     [ "BASE_COIN_POINTS", "namespacelogic.html#af62c6308f17aead2b08ef3bb0dd4d7e9", null ],
+    [ "COLLISSION_EPSILON", "namespacelogic.html#aee4936063c17db6f3e7464fa906d9418", null ],
     [ "GHOST_POINTS", "namespacelogic.html#a9737ba9906c9346f5b702fa83fc94f9b", null ],
     [ "LEVEL_CLEAR_POINTS", "namespacelogic.html#ae0d1b7b4cddc655b4425231ddb413a63", null ],
-    [ "SCORE_DECAY", "namespacelogic.html#accce5f3260a0adf8f69dc49c170383fd", null ]
+    [ "SCORE_DECAY", "namespacelogic.html#accce5f3260a0adf8f69dc49c170383fd", null ],
+    [ "TARGET_EPSILON", "namespacelogic.html#a2fddc8e0d9afff57d5788561940bb66d", null ]
 ];

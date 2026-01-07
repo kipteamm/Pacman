@@ -119,11 +119,15 @@ Collaboration diagram for GameOverState:</div>
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a333089cf02537ef85b964a993840fcea" id="r_a333089cf02537ef85b964a993840fcea"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a333089cf02537ef85b964a993840fcea">GameOverState</a> (<a class="el" href="class_state_manager.html">StateManager</a> &amp;<a class="el" href="class_state.html#a9de31f1ce45c89c183bb929122eb9acb">context</a>)</td></tr>
-<tr class="memitem:af84f34348ab5505185886f973965d8af" id="r_af84f34348ab5505185886f973965d8af"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af84f34348ab5505185886f973965d8af">update</a> (double dt) override</td></tr>
+<tr class="memdesc:a333089cf02537ef85b964a993840fcea"><td class="mdescLeft">&#160;</td><td class="mdescRight">This <a class="el" href="class_state.html">State</a> determines the GameOver menu when the Player has lost all their lives.  <br /></td></tr>
 <tr class="memitem:a3ed23bddfcbd2e2acda494dec1abcab3" id="r_a3ed23bddfcbd2e2acda494dec1abcab3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3ed23bddfcbd2e2acda494dec1abcab3">handleInput</a> (const sf::Event::KeyEvent &amp;keyPressed) override</td></tr>
-<tr class="memdesc:a3ed23bddfcbd2e2acda494dec1abcab3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handler for KeyPressed events.  <br /></td></tr>
+<tr class="memdesc:a3ed23bddfcbd2e2acda494dec1abcab3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Will return to the Menu when a specific key is pressed.  <br /></td></tr>
+<tr class="memitem:acb9c04a3839bea2498bb49771860d711" id="r_acb9c04a3839bea2498bb49771860d711"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acb9c04a3839bea2498bb49771860d711">resized</a> () override</td></tr>
+<tr class="memdesc:acb9c04a3839bea2498bb49771860d711"><td class="mdescLeft">&#160;</td><td class="mdescRight">Will resize the contents of the GameOver state.  <br /></td></tr>
+<tr class="memitem:af84f34348ab5505185886f973965d8af" id="r_af84f34348ab5505185886f973965d8af"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af84f34348ab5505185886f973965d8af">update</a> (double dt) override</td></tr>
+<tr class="memdesc:af84f34348ab5505185886f973965d8af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the <a class="el" href="class_game_over_state.html">GameOverState</a>, is used for UI animations.  <br /></td></tr>
 <tr class="memitem:ad696ff18e7d4449406861fe746d34986" id="r_ad696ff18e7d4449406861fe746d34986"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad696ff18e7d4449406861fe746d34986">render</a> () override</td></tr>
-<tr class="memdesc:ad696ff18e7d4449406861fe746d34986"><td class="mdescLeft">&#160;</td><td class="mdescRight">Render function that is called in the main <a class="el" href="class_game.html">Game</a> loop.  <br /></td></tr>
+<tr class="memdesc:ad696ff18e7d4449406861fe746d34986"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders the GameOver <a class="el" href="class_state.html">State</a>.  <br /></td></tr>
 <tr class="inherit_header pub_methods_class_state"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_class_state')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="class_state.html">State</a></td></tr>
 <tr class="memitem:a783d52422b544bb226e13de8ecfd6ad6 inherit pub_methods_class_state" id="r_a783d52422b544bb226e13de8ecfd6ad6"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_state.html#a783d52422b544bb226e13de8ecfd6ad6">~State</a> ()=default</td></tr>
 </table><table class="memberdecls">
@@ -159,6 +163,14 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>This <a class="el" href="class_state.html">State</a> determines the GameOver menu when the Player has lost all their lives. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">context</td><td><a class="el" href="class_state_manager.html">StateManager</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
@@ -185,10 +197,10 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Handler for KeyPressed events. </p>
+<p>Will return to the Menu when a specific key is pressed. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">keyPressed</td><td>SFML KeyEvent </td></tr>
+    <tr><td class="paramname">keyPressed</td><td>KeyPressed event </td></tr>
   </table>
   </dd>
 </dl>
@@ -220,10 +232,38 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Render function that is called in the main <a class="el" href="class_game.html">Game</a> loop. </p>
-<p>Should render everything relevant to the current state, that could be UI components, game elements or specific Views. </p>
+<p>Renders the GameOver <a class="el" href="class_state.html">State</a>. </p>
 
 <p>Implements <a class="el" href="class_state.html#a71f5105bcdc39481be7684d853fe12e9">State</a>.</p>
+
+</div>
+</div>
+<a id="acb9c04a3839bea2498bb49771860d711" name="acb9c04a3839bea2498bb49771860d711"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb9c04a3839bea2498bb49771860d711">&#9670;&#160;</a></span>resized()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameOverState::resized </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Will resize the contents of the GameOver state. </p>
+
+<p>Implements <a class="el" href="class_state.html#a9a8a87b7298203baf5e7e760b2b95a68">State</a>.</p>
 
 </div>
 </div>
@@ -245,11 +285,12 @@ Additional Inherited Members</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>@bief Update function that is called in the main <a class="el" href="class_game.html">Game</a> loop.</p>
+
+<p>Update the <a class="el" href="class_game_over_state.html">GameOverState</a>, is used for UI animations. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">dt</td><td>Deltatime </td></tr>

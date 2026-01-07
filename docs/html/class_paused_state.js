@@ -3,5 +3,6 @@ var class_paused_state =
     [ "PausedState", "class_paused_state.html#a345bc2bd1ab9308b412d4d584aff5232", null ],
     [ "handleInput", "class_paused_state.html#a60cf07692dbd712ede263ebdc6566263", null ],
     [ "render", "class_paused_state.html#a37b3c32ccc689b9529a61aba74ba077c", null ],
+    [ "resized", "class_paused_state.html#a7f32ad5c14f01ded5f8c882db34add68", null ],
     [ "update", "class_paused_state.html#a5f7e76236a2130625fd579700f79a043", null ]
 ];
