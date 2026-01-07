@@ -68,6 +68,12 @@ struct GameContext {
     std::shared_ptr<SoundManager> soundManager;
     std::string username;
     unsigned int lives;
+
+    GameContext(
+        const std::shared_ptr<logic::Score>& scoreSystem,
+        const std::shared_ptr<SoundManager>& soundManager,
+        const unsigned int lives
+    ) : scoreSystem(scoreSystem), soundManager(soundManager), username(""), lives(lives) {}
 };
 
 

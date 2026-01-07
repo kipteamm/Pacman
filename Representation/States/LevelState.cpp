@@ -107,10 +107,12 @@ void LevelState::update(const double dt) {
     // Will delete any entities which were notified to delete themselves after
     // their Model was deleted by the World. Is called at the end of the update
     // loop assuring the World update has finished.
-    for (auto& views : this->entityViews | std::views::values) {
-        std::erase_if(views,[](const std::shared_ptr<EntityView>& view) {
-            return view->shouldDelete();
-        });
+    for (auto& [key, views] : this->entityViews) {
+        views.erase(
+            std::remove_if(views.begin(), views.end(),
+                [](const auto& view) { return view->shouldDelete(); }),
+            views.end()
+        );
     }
 
     cleanupRequired = false;

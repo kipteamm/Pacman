@@ -72,7 +72,7 @@ void Score::addScoreEntry() {
     this->score = 0;
 
     // Sort all score entries when a new one is inserted.
-    std::ranges::sort(highscores, [](const auto& a, const auto& b) {
+    std::sort(highscores.begin(), highscores.end(), [](const auto& a, const auto& b) {
         return *a < *b;
     });
 }
