@@ -114,8 +114,6 @@ namespace logic {
 
         std::unordered_map<int, DifficultySpecs> difficultyMap;
         int difficulty = 0;
-
-        DifficultySpecs& currentDifficulty;
     };
 }
 

@@ -1,5 +1,6 @@
 #include "../AssetManager.h"
 #include "PausedState.h"
+#include "Difficulty.h"
 #include "MenuState.h"
 #include "../Window.h"
 
@@ -32,6 +33,7 @@ void PausedState::handleInput(const sf::Event::KeyEvent &keyPressed) {
         case sf::Keyboard::Escape:
             // While the Game did not end in a GameOver or VictoryState, your
             // score wil be saved regardless.
+            logic::Difficulty::getInstance().reset();
             this->context.getGameContext().scoreSystem->addScoreEntry();
             this->context.clear(std::make_shared<MenuState>(context));
             break;

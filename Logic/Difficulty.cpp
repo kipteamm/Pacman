@@ -23,7 +23,7 @@ Difficulty::Difficulty() :
         {8, DifficultySpecs{5, 2000, 4.5, 2.8, 0.7, 1, 2}},
         {9, DifficultySpecs{6, 3000, 4.5, 2.8, 0.7, 2, 4}},
         {10, DifficultySpecs{7, 5000, 4.5, 2.8, 0.8, 1, 2}},
-    }), currentDifficulty(difficultyMap[difficulty])
+    })
 {}
 
 
@@ -36,39 +36,37 @@ Difficulty& Difficulty::getInstance() {
 void Difficulty::increaseDifficulty() {
     if (difficulty + 1 == difficultyMap.size()) return;
     difficulty++;
-    currentDifficulty = difficultyMap[difficulty];
 }
 
 void Difficulty::reset() {
     difficulty = 0;
-    currentDifficulty = difficultyMap[difficulty];
 }
 
 
 int Difficulty::getFruitSpriteOffset() const {
-    return currentDifficulty.fruitSpriteOffset;
+    return difficultyMap.at(difficulty).fruitSpriteOffset;
 }
 
 int Difficulty::getFruitPoints() const {
-    return currentDifficulty.fruitPoints;
+    return difficultyMap.at(difficulty).fruitPoints;
 }
 
 float Difficulty::getPacmanSpeed() const {
-    return currentDifficulty.pacmanSpeed;
+    return difficultyMap.at(difficulty).pacmanSpeed;
 }
 
 float Difficulty::getGhostSpeed() const {
-    return currentDifficulty.ghostSpeed;
+    return difficultyMap.at(difficulty).ghostSpeed;
 }
 
 float Difficulty::getFrighenedGhostSpeed() const {
-    return currentDifficulty.frighenedGhostSpeed;
+    return difficultyMap.at(difficulty).frighenedGhostSpeed;
 }
 
 float Difficulty::getFrightenedTime() const {
-    return currentDifficulty.frightenedTime;
+    return difficultyMap.at(difficulty).frightenedTime;
 }
 
 int Difficulty::getFlashesh() const {
-    return currentDifficulty.flashesh;
+    return difficultyMap.at(difficulty).flashesh;
 }

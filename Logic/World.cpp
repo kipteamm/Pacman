@@ -5,9 +5,7 @@ using namespace logic;
 
 
 World::World(const std::shared_ptr<AbstractFactory> &factory, const int lives)
-    : ghostExitX(0), ghostExitY(0), state(WorldState::AWAITING_MAP), factory(factory), lives(lives) {
-    Difficulty::getInstance().reset();
-}
+    : ghostExitX(0), ghostExitY(0), state(WorldState::AWAITING_MAP), factory(factory), lives(lives) {}
 
 
 float World::getWidth() const {
@@ -277,6 +275,7 @@ void World::killPacman() {
     lives--;
 
     if (lives == 0) {
+        Difficulty::getInstance().reset();
         notify(Events::GAME_OVER);
         return;
     }
