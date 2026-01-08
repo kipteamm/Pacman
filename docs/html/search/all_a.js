@@ -7,7 +7,8 @@ var searchData=
   ['levelstate_4',['LevelState',['../class_level_state.html',1,'LevelState'],['../class_level_state.html#a240d5aebc7a23e6aef57313189803e10',1,'LevelState::LevelState()']]],
   ['levelstate_2ecpp_5',['LevelState.cpp',['../_level_state_8cpp.html',1,'']]],
   ['levelstate_2eh_6',['LevelState.h',['../_level_state_8h.html',1,'']]],
-  ['lives_7',['lives',['../struct_game_context.html#a6deaaa31905458d5496432ebe8bfb598',1,'GameContext']]],
-  ['loadmap_8',['loadMap',['../classlogic_1_1_world.html#a1689801a0c7b6841f22b5f4492c44d51',1,'logic::World']]],
-  ['logic_9',['logic',['../namespacelogic.html',1,'']]]
+  ['like_20a_20coin_20and_20defines_20the_20exit_20coordinates_7',['- Exit tile (acts like a coin and defines the exit coordinates).',['../classlogic_1_1_world.html#autotoc_md0',1,'']]],
+  ['lives_8',['lives',['../struct_game_context.html#a6deaaa31905458d5496432ebe8bfb598',1,'GameContext']]],
+  ['loadmap_9',['loadMap',['../classlogic_1_1_world.html#a4ae33782db6a0f214f48fdf3ac005641',1,'logic::World']]],
+  ['logic_10',['logic',['../namespacelogic.html',1,'']]]
 ];

@@ -1,0 +1,47 @@
+{
+   Suppress_LLVM_Noise
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   ...
+   obj:/*/libLLVM.so.*
+}
+
+{
+   Suppress_X11_Noise
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   ...
+   obj:/*/libX11.so.*
+}
+
+{
+   Suppress_DBus_Noise
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   ...
+   obj:/*/libdbus-1.so.*
+}
+
+{
+   Suppress_Pipewire_Noise
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   ...
+   obj:/*/libpipewire-*.so.*
+}
+
+{
+   Suppress_SFML_Internal_Init
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   ...
+   obj:/*/libsfml-*.so.*
+}
+
+{
+   Suppress_DL_Loader_Internal
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   ...
+   fun:_dl_open
+}

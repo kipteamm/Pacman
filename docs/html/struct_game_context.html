@@ -94,6 +94,10 @@ $(function(){initNavTree('struct_game_context.html','','struct_game_context-memb
 
 <p><code>#include &lt;<a class="el" href="_state_manager_8h_source.html">StateManager.h</a>&gt;</code></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:afd4df1db1310e41071adba22fed02b3b" id="r_afd4df1db1310e41071adba22fed02b3b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afd4df1db1310e41071adba22fed02b3b">GameContext</a> (const std::shared_ptr&lt; <a class="el" href="classlogic_1_1_score.html">logic::Score</a> &gt; &amp;<a class="el" href="#a71bbe4645becbffc85188361f8f5bd05">scoreSystem</a>, const std::shared_ptr&lt; <a class="el" href="class_sound_manager.html">SoundManager</a> &gt; &amp;<a class="el" href="#ac0a6c91cc263d754fe99071b5b28ab51">soundManager</a>, const unsigned int <a class="el" href="#a6deaaa31905458d5496432ebe8bfb598">lives</a>)</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a71bbe4645becbffc85188361f8f5bd05" id="r_a71bbe4645becbffc85188361f8f5bd05"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classlogic_1_1_score.html">logic::Score</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a71bbe4645becbffc85188361f8f5bd05">scoreSystem</a></td></tr>
@@ -103,7 +107,42 @@ Public Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Struct used to hold constants throughout the states. This struct is owned by the <a class="el" href="class_state_manager.html">StateManager</a> and used by states to get access to its members. This way I can avoid recreating them, when one instance is enough. By giving ownership to the <a class="el" href="class_state_manager.html">StateManager</a> I can give it a simple getter, saving me from having to pass around a lot of arguments to different states. </p>
-</div><a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="afd4df1db1310e41071adba22fed02b3b" name="afd4df1db1310e41071adba22fed02b3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd4df1db1310e41071adba22fed02b3b">&#9670;&#160;</a></span>GameContext()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GameContext::GameContext </td>
+          <td>(</td>
+          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="classlogic_1_1_score.html">logic::Score</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>scoreSystem</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="class_sound_manager.html">SoundManager</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>soundManager</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned int</td>          <td class="paramname"><span class="paramname"><em>lives</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
 <a id="a6deaaa31905458d5496432ebe8bfb598" name="a6deaaa31905458d5496432ebe8bfb598"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6deaaa31905458d5496432ebe8bfb598">&#9670;&#160;</a></span>lives</h2>
 

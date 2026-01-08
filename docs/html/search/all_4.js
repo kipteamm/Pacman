@@ -10,5 +10,7 @@ var searchData=
   ['entityview_2eh_7',['EntityView.h',['../_entity_view_8h.html',1,'']]],
   ['events_8',['Events',['../namespacelogic.html#a5054eadf2d20b609706894ae1bc5f250',1,'logic']]],
   ['executecommand_9',['executeCommand',['../class_state_manager.html#a5c66f90cca02ab41deea67c526896579',1,'StateManager']]],
-  ['exiting_10',['EXITING',['../namespacelogic.html#a0adadbaf39d39f42c97e3f52a88ea866a835d592fc110ac5d9471b44151d96d40',1,'logic']]]
+  ['exit_20coordinates_10',['- Exit tile (acts like a coin and defines the exit coordinates).',['../classlogic_1_1_world.html#autotoc_md0',1,'']]],
+  ['exit_20tile_20acts_20like_20a_20coin_20and_20defines_20the_20exit_20coordinates_11',['- Exit tile (acts like a coin and defines the exit coordinates).',['../classlogic_1_1_world.html#autotoc_md0',1,'']]],
+  ['exiting_12',['EXITING',['../namespacelogic.html#a0adadbaf39d39f42c97e3f52a88ea866a835d592fc110ac5d9471b44151d96d40',1,'logic']]]
 ];

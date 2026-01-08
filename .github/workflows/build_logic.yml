@@ -1,27 +1,48 @@
-name: Build Logic Library
+name: Build Pacman Project
 
 on:
   push:
     branches: [ "master" ]
-
+  pull_request:
+    branches: [ "master" ]
   workflow_dispatch:
 
 env:
   BUILD_TYPE: Debug
-  SOURCE_DIR: Logic
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     steps:
       - uses: actions/checkout@v4
-      - name: Configure CMake for 'logic'
-        run: cmake -B ${{github.workspace}}/build -S ${{github.workspace}}/${{env.SOURCE_DIR}} -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
 
-      - name: Build 'logic'
-        run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
+      - name: Install Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            libsfml-dev \
+            libxrandr-dev \
+            libxcursor-dev \
+            libudev-dev \
+            libopenal-dev \
+            libflac-dev \
+            libvorbis-dev \
+            libgl1-mesa-dev \
+            libegl1-mesa-dev
 
-      - name: Test 'logic'
-        working-directory: ${{github.workspace}}/build
+      - name: Configure Logic Library
+        run: cmake -B ${{github.workspace}}/build-logic -S ${{github.workspace}}/Logic -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
+
+      - name: Build Logic Library
+        run: cmake --build ${{github.workspace}}/build-logic --config ${{env.BUILD_TYPE}}
+
+      - name: Test Logic Library
+        working-directory: ${{github.workspace}}/build-logic
         run: ctest -C ${{env.BUILD_TYPE}}
+
+      - name: Configure Full Project
+        run: cmake -B ${{github.workspace}}/build-full -S ${{github.workspace}} -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
+
+      - name: Build Full Project
+        run: cmake --build ${{github.workspace}}/build-full --config ${{env.BUILD_TYPE}}

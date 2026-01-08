@@ -4,7 +4,7 @@ var searchData=
   ['game_2ecpp_1',['Game.cpp',['../_game_8cpp.html',1,'']]],
   ['game_2eh_2',['Game.h',['../_game_8h.html',1,'']]],
   ['game_5fover_3',['GAME_OVER',['../namespacelogic.html#a5054eadf2d20b609706894ae1bc5f250adec3ee0582a8b3895949934d48913929',1,'logic']]],
-  ['gamecontext_4',['GameContext',['../struct_game_context.html',1,'']]],
+  ['gamecontext_4',['GameContext',['../struct_game_context.html',1,'GameContext'],['../struct_game_context.html#afd4df1db1310e41071adba22fed02b3b',1,'GameContext::GameContext()']]],
   ['gameoverstate_5',['GameOverState',['../class_game_over_state.html',1,'GameOverState'],['../class_game_over_state.html#a333089cf02537ef85b964a993840fcea',1,'GameOverState::GameOverState()']]],
   ['gameoverstate_2ecpp_6',['GameOverState.cpp',['../_game_over_state_8cpp.html',1,'']]],
   ['gameoverstate_2eh_7',['GameOverState.h',['../_game_over_state_8h.html',1,'']]],

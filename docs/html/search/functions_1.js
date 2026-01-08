@@ -8,7 +8,7 @@ var searchData=
   ['coinview_5',['CoinView',['../class_coin_view.html#ae6fe3765f1357c43d1c97183d18f2f4d',1,'CoinView']]],
   ['collect_6',['collect',['../classlogic_1_1_coin_model.html#aacddb1a7ab6acee3fa8665e07d8af626',1,'logic::CoinModel::collect()'],['../classlogic_1_1_collectible_entity_model.html#a2dc7828af5eb81d80f0aae4595d3a456',1,'logic::CollectibleEntityModel::collect()'],['../classlogic_1_1_fruit_model.html#a84b770e4aed04ff4e1064bc50331881c',1,'logic::FruitModel::collect()']]],
   ['collectibleentitymodel_7',['CollectibleEntityModel',['../classlogic_1_1_collectible_entity_model.html#a56a630edd63809dcd3ed66e9627eed9e',1,'logic::CollectibleEntityModel']]],
-  ['collideswithwall_8',['collidesWithWall',['../classlogic_1_1_world.html#ae37a7d1d42001f4fe44868f483b8f46f',1,'logic::World']]],
+  ['collideswithwall_8',['collidesWithWall',['../classlogic_1_1_world.html#afe5287d93033a63b74c2ef236aa7ae7d',1,'logic::World']]],
   ['concretefactory_9',['ConcreteFactory',['../class_concrete_factory.html#a776478ae99b20a7a4cfce9dd2122376f',1,'ConcreteFactory']]],
   ['create_10',['create',['../class_level_state.html#a152b0a4d2603ec4145e079488cadf0f1',1,'LevelState']]],
   ['createblinky_11',['createBlinky',['../classlogic_1_1_abstract_factory.html#aa6b1403ef13b4b8d060efd7334b2f44e',1,'logic::AbstractFactory::createBlinky()'],['../class_concrete_factory.html#a66813dbe6892cef0aab915c699be49fe',1,'ConcreteFactory::createBlinky()']]],
