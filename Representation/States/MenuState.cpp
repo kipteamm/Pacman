@@ -114,7 +114,7 @@ void MenuState::handleInput(const sf::Event::KeyEvent& keyPressed) {
 void MenuState::resized() {
     this->pacmanLogo.setPosition(
         Window::getInstance().getWidth() / 2 - this->pacmanLogo.getGlobalBounds().width / 2,
-        100
+        140
     );
 
     highscoresTitle.setPosition(

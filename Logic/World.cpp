@@ -53,23 +53,23 @@ bool World::isColliding(const EntityModel& a, const EntityModel& b) {
             std::abs(a.getY() - b.getY()) <= COLLISSION_EPSILON;
 }
 
-bool World::collidesWithWall(const float x, const float y, const bool passDoor) const {
+bool World::collidesWithWall(const float normalizedX, const float normalizedY, const bool passDoor) const {
     for (const std::shared_ptr<WallModel>& wall : walls) {
         if (wall->isDoor() && passDoor) continue;
 
         const float wallX = wall->getX();
         const float wallY = wall->getY();
 
-        if (std::abs(x - wallX) < tileWidth / 2.0f && std::abs(y - wallY) < tileHeight / 2.0f) return true;
+        if (std::abs(normalizedX - wallX) < tileWidth / 2.0f && std::abs(normalizedY - wallY) < tileHeight / 2.0f) return true;
     }
 
     return false;
 }
 
 
-void World::loadMap(const std::string &filename) {
-    std::fstream fileStream(filename);
-    if (!fileStream.is_open()) throw std::runtime_error("File '" + filename + "' not found.");
+void World::loadMap(const std::string &path) {
+    std::fstream fileStream(path);
+    if (!fileStream.is_open()) throw std::runtime_error("File '" + path + "' not found.");
 
     std::vector<std::string> map;
     std::string line;
@@ -140,11 +140,13 @@ void World::loadMap(const std::string &filename) {
                 case 'C':
                     ghosts.push_back(factory->createClyde(x, y, mapWidth, mapHeight)); break;
 
-                default: throw std::runtime_error("Unsupported tile '" + std::string(1, tile) + "' in level '" + filename + "'");
+                default: throw std::runtime_error("Unsupported tile '" + std::string(1, tile) + "' in level '" + path + "'");
             }
         }
     }
 
+    // After the map is loaded it can be changed from an AWAITING_MAP state to
+    // the active PLAYING state.
     state = WorldState::PLAYING;
 }
 
@@ -194,8 +196,9 @@ void World::updateFrightenedState(const double dt) {
     timer += dt;
 
     if (timer >= FEAR_DURATION) return endFrightened();
-    if (timer <= FLASH_TIMESTAMP || flashing) return;
 
+    // Tells the Ghosts when they are allowed to start 'flashing'.
+    if (timer <= FLASH_TIMESTAMP || flashing) return;
     flashing = true;
 
     for (const auto& ghost : ghosts) {

@@ -82,7 +82,6 @@ namespace logic {
         [[nodiscard]] int getGridX() const;
 
         /**
-         *
          * @return Current grid aligned Y coordinate
          */
         [[nodiscard]] int getGridY() const;

@@ -4,7 +4,6 @@
 #include <SFML/Window/Event.hpp>
 #include <stack>
 
-#include "../Entities/ConcreteFactory.h"
 #include "../../Logic/Score.h"
 #include "../SoundManager.h"
 
