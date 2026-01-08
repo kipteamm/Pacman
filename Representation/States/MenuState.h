@@ -1,6 +1,7 @@
 #ifndef MENUSTATE_H
 #define MENUSTATE_H
 
+#include <SFML/Graphics/Sprite.hpp>
 #include <SFML/Graphics/Text.hpp>
 
 #include "StateManager.h"

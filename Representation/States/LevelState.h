@@ -3,6 +3,7 @@
 
 #include <unordered_map>
 
+#include "../Entities/ConcreteFactory.h"
 #include "../Entities/WorldView.h"
 #include "StateManager.h"
 
